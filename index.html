@@ -1,48 +1,218 @@
-<!doctype html>
+<!DOCTYPE HTML>
+<!--
+    Prologue by HTML5 UP
+    html5up.net | @n33co
+    Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
 <html>
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="chrome=1">
-    <title>Julia for Astronomy by JuliaAstro</title>
-    <link rel="stylesheet" href="stylesheets/styles.css">
-    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
-    <script src="javascripts/respond.js"></script>
-    <!--[if lt IE 9]>
-      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
-    <!--[if lt IE 8]>
-    <link rel="stylesheet" href="stylesheets/ie.css">
-    <![endif]-->
-    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <head>
+	<title>Julia Astro</title>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+	<meta name="description" content="" />
+	<meta name="keywords" content="" />
+	<!--[if lte IE 8]><script src="css/ie/html5shiv.js"></script><![endif]-->
+	<script src="js/jquery.min.js"></script>
+	<script src="js/jquery.scrolly.min.js"></script>
+	<script src="js/jquery.scrollzer.min.js"></script>
+	<script src="js/skel.min.js"></script>
+	<script src="js/skel-layers.min.js"></script>
+	<script src="js/init.js"></script>
+	<noscript>
+	    <link rel="stylesheet" href="css/skel.css" />
+	    <link rel="stylesheet" href="css/style.css" />
+	    <link rel="stylesheet" href="css/style-wide.css" />
+	    <link rel="stylesheet" href="css/custom.css" />
+	</noscript>
+	<!--[if lte IE 9]><link rel="stylesheet" href="css/ie/v9.css" /><![endif]-->
+	<!--[if lte IE 8]><link rel="stylesheet" href="css/ie/v8.css" /><![endif]-->
+    </head>
+    <body>
+	
+	<!-- Header -->
+	<div id="header" class="skel-layers-fixed">
+	    
+	    <div class="top">
+		
+		<!-- Logo -->
+		<div id="logo">
+		    <span class="image avatar48">
+			<img src="images/logo.svg" alt="" />
+		    </span>
+		    <h1 id="title">Julia Astro</h1>
+		    <p>Astronomy Packages for Julia</p>
+		</div>
+		
+		<!-- Nav -->
+		<nav id="nav">
+		    <!--
+			
+			Prologue's nav expects links in one of two formats:
+			
+			1. Hash link (scrolls to a different section within the page)
+			
+			<li><a href="#foobar" id="foobar-link" class="icon fa-whatever-icon-you-want skel-layers-ignoreHref"><span class="label">Foobar</span></a></li>
+			
+			2. Standard link (sends the user to another page/site)
+			
+		    <li><a href="http://foobar.tld" id="foobar-link" class="icon fa-whatever-icon-you-want"><span class="label">Foobar</span></a></li>
+		    
+		    -->
+		    <ul>
+			<li><a href="#top" id="top-link" class="skel-layers-ignoreHref"><span class="icon fa-home">Top</span></a></li>
+			<li><a href="#packages" id="portfolio-link" class="skel-layers-ignoreHref"><span class="icon fa-list">Packages</span></a></li>
+			<li><a href="#contributing" id="about-link" class="skel-layers-ignoreHref"><span class="icon fa-users">Contributing</span></a></li>
+		    </ul>
+		</nav>
+		
+	    </div>
+	    
+	    <div class="bottom">
+		
+		<!-- Social Icons -->
+		<ul class="icons">
+		    <li><a href="https://github.com/JuliaAstro" class="icon fa-github"><span class="label">Github</span></a></li>
+		    <li><a href="https://groups.google.com/forum/#!forum/julia-astro" class="icon fa-envelope"><span class="label">Mailing List</span></a></li>
+		</ul>
+		
+	    </div>
+	    
+	</div>
+	
+	<!-- Main -->
+	<div id="main">
+	    
+	    <!-- Intro -->
+	    <section id="top" class="one">
+		<div class="container">
+		    <div class="row">
+			<div>
+			    <span class="image image-full">
+				<img src="images/logo.svg">
+			    </span>
+			</div>
+			<div>
+			    <header>
+				<h1>Julia Astro</h1>
+				<h3>Community Astronomy and Astrophysics</br>packages for Julia</h3>
+			    </header>
+			</div>
+		    </div>
 
-  </head>
-  <body>
-      <div id="header">
-        <nav>
-          <li class="fork"><a href="https://github.com/JuliaAstro">View On GitHub</a></li>
-        </nav>
-      </div><!-- end header -->
+		    <!-- Here's an example of a big button, in case we
+			 want to add such a thing.
+	            <footer>
+			<a href="#packages" class="button scrolly">
+			    Learn More!
+			</a>
+		    </footer>
+		    -->
 
-    <div class="wrapper">
+		</div>
+	    </section>
+	    
+	    <!-- Packages -->
+	    <section id="packages" class="two">
+		<div class="container">
+		    
+		    <header>
+			<h2>Packages</h2>
+		    </header>
+		    
+		    <p>We follow the Julia practice of high
+	            modularity: packages are separated by
+	            functionality and Julia's declarative package
+	            manager takes care of resolving dependencies. You
+	            get just the functionality you need, and smaller
+	            packages lead to more rapid development.</p>
 
-      <section>
-        <div id="title">
-          <h1>Julia for Astronomy</h1>
-          <p></p>
-          <hr>
-          <span class="credits left">Project maintained by <a href="https://github.com/JuliaAstro">JuliaAstro</a></span>
-          <span class="credits right">Hosted on GitHub Pages &mdash; Theme by <a href="https://twitter.com/michigangraham">mattgraham</a></span>
-        </div>
+		    <p>Package documentation is either in the package
+		    README on Github or at ReadTheDocs (indicated by
+		    the book icon)</p>
+		    
+		    <table style="max-width: 750px">
+			<tr>
+			    <td><a href="https://github.com/JuliaAstro/FITSIO.jl">FITSIO</a></td>
+			    <td>Reading and writing FITS files</td>
+			    <td><a href="http://julia-fitsio.readthedocs.org" class="icon fa-book"><span class="label">Documentation</span></a></td>
+			</tr>
 
-        <h3>
-<a name="welcome-to-juliaastro" class="anchor" href="#welcome-to-juliaastro"><span class="octicon octicon-link"></span></a>Welcome to JuliaAstro</h3>
+			<tr>
+			    <td><a href="https://github.com/JuliaAstro/Cosmology.jl">Cosmology</a></td>
+			    <td>cosmological distance calculations</td>
+			</tr>
 
-<p>TBD</p>
-      </section>
+			<tr>
+			    <td><a href="https://github.com/JuliaAstro/DustExtinction.jl">DustExtinction</a></td>
+			    <td>Interstellar dust extinction laws</td>
+			</tr>
 
-    </div>
-    <!--[if !IE]><script>fixScale(document);</script><![endif]-->
-    
-  </body>
+			<tr>
+			    <td></br>Low-level wrappers:</td>
+			</tr>
+
+			<tr>
+			    <td><a href="https://github.com/JuliaAstro/ERFA.jl">ERFA</a></td>
+			    <td>wrapper for liberfa</td>
+			</tr>
+
+			<tr>
+			    <td><a href="https://github.com/JuliaAstro/WCSLIB.jl">WCSLIB</a></td>
+			    <td>wrapper for WCSLIB</td>
+			</tr>
+		    </table>
+
+		    <!-- Here's an example of some tiles with images in them:
+		    <div class="row">
+			<div class="4u">
+			    <article class="item">
+				<a href="#" class="image fit"><img src="images/pic02.jpg" alt="" /></a>
+				<header>
+				    <h3>Ipsum Feugiat</h3>
+				</header>
+			    </article>
+			    <article class="item">
+				<a href="#" class="image fit"><img src="images/pic03.jpg" alt="" /></a>
+				<header>
+				    <h3>Rhoncus Semper</h3>
+				</header>
+			    </article>
+			</div>
+			... etc ...
+		    </div>
+		    -->
+
+		    
+		</div>
+	    </section>
+	    
+	    <!-- Contributing -->
+	    <section id="contributing" class="three">
+		<div class="container">
+		    
+		    <header>
+			<h2>Contributing</h2>
+		    </header>
+		    
+		    <!-- <a href="#" class="image featured"><img src="images/pic08.jpg" alt="" /></a> -->
+		    
+		    <p>Use the packages, file issues and join the conversation on our mailing list!</p>
+
+		    <ul>
+			<li><a href="https://groups.google.com/forum/#!forum/julia-astro"><span class="icon fa-envelope">&nbsp;&nbsp;julia-astro mailing list</span></a> (on Google Groups)</li>
+			<li><a href="https://github.com/JuliaAstro"><span class="icon fa-github">&nbsp;&nbsp;https://github.com/JuliaAstro</span></a> on GitHub</li>
+		    </ul>
+		    
+		</div>
+	    </section>
+
+	</div>
+
+	<!-- Footer -->
+	<div id="footer">
+	    <ul class="copyright">
+		<li>&copy; 2015 JuliaAstro contributors</li><li>Design: Prologue by <a href="http://html5up.net">HTML5 UP</a></li>
+	    </ul>				
+	</div>
+	
+    </body>
 </html>
