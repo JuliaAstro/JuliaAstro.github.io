@@ -119,72 +119,96 @@
 			<h2>Packages</h2>
 		    </header>
 		    
-		    <p>We follow the Julia practice of high
-	            modularity: packages are separated by
+		    <p>Packages are separated by
 	            functionality and Julia's declarative package
 	            manager takes care of resolving dependencies. You
 	            get just the functionality you need, and smaller
 	            packages lead to more rapid development.</p>
-
-		    <p>Package documentation is either in the package
-		    README on Github or at ReadTheDocs (indicated by
-		    the book icon).</p>
 		    
-		    <table style="max-width: 750px">
-			<tr>
-			    <td><a href="https://github.com/JuliaAstro/FITSIO.jl">FITSIO</a>&nbsp;&nbsp;&nbsp;<a href="http://julia-fitsio.readthedocs.org" class="icon fa-book"><span class="label">Documentation</span></a></td>
-			    <td>Reading and writing FITS files</td>
-			</tr>
-
-			<tr>
-			    <td><a href="https://github.com/JuliaAstro/Cosmology.jl">Cosmology</a></td>
-			    <td>cosmological distance calculations</td>
-			</tr>
-
-			<tr>
-			    <td><a href="https://github.com/JuliaAstro/DustExtinction.jl">DustExtinction</a></td>
-			    <td>Interstellar dust extinction laws</td>
-			</tr>
-
-			<tr>
-			    <td></br>Low-level wrappers:</td>
-			</tr>
-
-			<tr>
-			    <td><a href="https://github.com/JuliaAstro/ERFA.jl">ERFA</a></td>
-			    <td>wrapper for liberfa</td>
-			</tr>
-
-			<tr>
-			    <td><a href="https://github.com/JuliaAstro/WCSLIB.jl">WCSLIB</a></td>
-			    <td>wrapper for WCSLIB</td>
-			</tr>
-		    </table>
-
-		    <!-- Here's an example of some tiles with images in them:
 		    <div class="row">
 			<div class="4u">
-			    <article class="item">
-				<a href="#" class="image fit"><img src="images/pic02.jpg" alt="" /></a>
-				<header>
-				    <h3>Ipsum Feugiat</h3>
-				</header>
-			    </article>
-			    <article class="item">
-				<a href="#" class="image fit"><img src="images/pic03.jpg" alt="" /></a>
-				<header>
-				    <h3>Rhoncus Semper</h3>
-				</header>
-			    </article>
-			</div>
-			... etc ...
-		    </div>
-		    -->
+			    <section class="box">
+				<h3><a href="https://github.com/JuliaAstro/FITSIO.jl">FITSIO</a></h3>
+				<p>Reading and writing FITS files</p>
+				<ul>
+				    <li>Image and table extensions</li>
+				    <li>Based on cfitsio C library</li>
+				</ul>
+				<p class="links">
+				    <a href="http://julia-fitsio.readthedocs.org">
+					<span class="icon fa-book">&nbsp;Docs</span>
+				    </a>
+				</p>
 
+			    </section>
+			</div>
+
+			<div class="4u">
+			    <section class="box">
+				<h3><a href="https://github.com/JuliaAstro/Cosmology.jl">Cosmology</a></h3>
+				<p>Distances in the Universe</p>
+				<ul>
+				    <li>&#x39b;CDM and w0-wa cosmologies</li>
+				    <li>Open, closed, flat variants</li>
+				</ul>
+			    </section>
+			</div>
+
+			<div class="4u">
+			    <section class="box">
+				<h3><a href="https://github.com/JuliaAstro/DustExtinction.jl">DustExtinction</a></h3>
+				<p>Dust extinction laws & maps</p>
+				<ul>
+				    <li>CCM (1989) and O'Donnell (1994) dust laws</li>
+				    <li>SFD (1998) galactic dust map</li>
+				</ul>
+			    </section>
+			</div>
+		    </div>
+
+		    <div class="row">
+			<div class="4u">
+			    <section class="box">
+				<h3><a href="https://github.com/JuliaAstro/ERFA.jl">ERFA</a></h3>
+				<p>Low-level ERFA wrapper</p>
+				<ul>
+				    <li>Wrapper for <a href="https://github.com/liberfa/erfa">erfa</a> C library</li>
+				    <li>Time system conversions</li>
+				</ul>
+			    </section>
+			</div>
+
+			<div class="4u">
+			    <section class="box">
+				<h3><a href="https://github.com/JuliaAstro/WCSLIB.jl">WCSLIB</a></h3>
+				<p>Low-level WCSLIB wrapper</p>
+				<ul>
+				    <li>Wrapper for <a href="http://www.atnf.csiro.au/people/mcalabre/WCS/wcslib">wcslib</a> C library</li>
+				    <li>World Coordinate System transformations</li>
+				</ul>
+			    </section>
+			</div>
+		    </div>
 		    
+		    <hr>
+
+		    <div id="otherpkgs">
+			<h2>Other Packages</h2>
+
+			<p>Astronomy-related Julia packages hosted elsewhere.</p>
+
+			<ul>
+			    <li>
+				<a href="https://github.com/emmt/OIFITS.jl">OIFITS</a>
+				Support for OI-FITS (optical interferometry data format)
+			    </li>
+			</ul>
+		    </div>
+
 		</div>
 	    </section>
 	    
+
 	    <!-- Contributing -->
 	    <section id="contributing" class="three">
 		<div class="container">
@@ -198,8 +222,8 @@
 		    <p>Use the packages, file issues and join the conversation on our mailing list!</p>
 
 		    <ul>
-			<li><a href="https://groups.google.com/forum/#!forum/julia-astro"><span class="icon fa-envelope">&nbsp;&nbsp;julia-astro mailing list</span></a> (on Google Groups)</li>
-			<li><a href="https://github.com/JuliaAstro"><span class="icon fa-github">&nbsp;&nbsp;https://github.com/JuliaAstro</span></a> on GitHub</li>
+			<li><a href="https://groups.google.com/forum/#!forum/julia-astro"><span class="icon fa-envelope">&nbsp;&nbsp;julia-astro mailing list</span></a> on Google Groups</li>
+			<li><a href="https://github.com/JuliaAstro"><span class="icon fa-github">&nbsp;&nbsp;JuliaAstro</span></a> on GitHub</li>
 		    </ul>
 		    
 		</div>

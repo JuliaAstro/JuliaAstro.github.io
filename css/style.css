@@ -115,7 +115,7 @@
 	{
 		text-decoration: none;
 		color: inherit;
-		border-bottom: dotted 1px rgba(128,128,128,0.5);
+		/* border-bottom: dotted 1px rgba(128,128,128,0.5); */
 		-moz-transition: color 0.35s ease-in-out, border-bottom-color 0.35s ease-in-out;
 		-webkit-transition: color 0.35s ease-in-out, border-bottom-color 0.35s ease-in-out;
 		-o-transition: color 0.35s ease-in-out, border-bottom-color 0.35s ease-in-out;
@@ -146,6 +146,7 @@
 	
 	hr
 	{
+	    margin: 2em 0em;
 		border: 0;
 		border-top: solid 1px #ddd;
 	}
@@ -770,21 +771,80 @@
 			#main > section.one
 			{
 			    padding: 1em 0;
-				background-color: #fafafa;
+				background-color: #fff;
+				background-image: none;
+			}
+			#main > section.two
+			{
+			    padding: 1em 0;
+				background-color: #fdfdfd;
 				background-image: url('images/bg.png');
 			}
 
-			#main > section.two
+			#main > section.three
 			{
 				background-color: #f5fafa;
 			}
 		
-			#main > section.three
+			#main > section.four
 			{
 				background-color: #ecf1f1;
 			}
-		
+			/*
 			#main > section.four
 			{
 				background-color: #e8edec;
 			}
+			*/
+
+/*********************************************************************************/
+/* Custom                                                                        */
+/*********************************************************************************/
+
+	/* Box */
+			
+			.box
+			{
+			    padding: 1.5em;
+			    background: #fff;
+			    box-shadow: inset 0px 0px 0px 1px rgba(0,0,0,0.15), 0px 2px 3px 0px rgba(0,0,0,0.1);
+			    /* text-align: center; */
+			}
+			.box h3
+			{
+			    font-weight: 600;
+			}
+			.box p
+			{
+			    font-size: 90%;
+			    font-weight: 600;
+			    margin-bottom: 0.5em;
+			}
+			.box ul
+			{
+			    font-size: 90%;
+			    list-style-type: disc;
+			    margin-left: 1em;
+			    margin-bottom: 0.5em;
+			}
+			.box p.links
+			{
+			    font-size: 100%;
+			    text-align: center;
+			}
+			.box p.links a
+			{
+			    margin-right: 1em;
+			}
+
+			/* Other packages list */
+			#otherpkgs > ul a
+			{
+			    font-size: 1.5em;
+			    font-weight: 600;
+			    margin-right: 0.5em;
+			}
+			#otherpkgs > p
+			{
+			    margin-bottom: 0.5em;
+			    }
