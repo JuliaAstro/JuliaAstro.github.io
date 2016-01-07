@@ -850,12 +850,12 @@
 			    }
 
                         /* status section table */
-                        section#status th
+                        #status > th
                         {
                             font-weight: bold;
                         }
 
-                        section#status th, td
+                        #status > th, td
                         {
                             padding: 5px;
                         }
