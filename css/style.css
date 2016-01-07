@@ -848,3 +848,14 @@
 			{
 			    margin-bottom: 0.5em;
 			    }
+
+                        /* status section table */
+                        section#status th
+                        {
+                            font-weight: bold;
+                        }
+
+                        section#status th, td
+                        {
+                            padding: 5px;
+                        }
