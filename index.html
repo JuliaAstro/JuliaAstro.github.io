@@ -221,9 +221,79 @@
 			</ul>
 		    </div>
 
-		</div>
-	    </section>
+                    <hr>
 	    
+		    <div id="status">
+		        <h2>Package Status Table</h2>
+
+                        <table>
+                            <tr>
+                                <th>Package</th>
+                                <th>Julia 0.3</th>
+                                <th>Julia 0.4</th>
+                                <th>Julia 0.5-dev</th>
+                                <th>master (all Julia versions)</th>
+                            </tr>
+                            <tr>
+                                <td>Cosmology</td>
+                                <td><a href="http://pkg.julialang.org/?pkg=Cosmology"><img src="http://pkg.julialang.org/badges/Cosmology_0.3.svg"></a></td>
+                                <td><a href="http://pkg.julialang.org/?pkg=Cosmology"><img src="http://pkg.julialang.org/badges/Cosmology_0.4.svg"></a></td>
+                                <td><a href="http://pkg.julialang.org/?pkg=Cosmology"><img src="http://pkg.julialang.org/badges/Cosmology_0.5.svg"></a></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>DustExtinction</td>
+                                <td></td>
+                                <td><a href="http://pkg.julialang.org/?pkg=DustExtinction"><img src="http://pkg.julialang.org/badges/DustExtinction_0.4.svg"></a></td>
+                                <td><a href="http://pkg.julialang.org/?pkg=DustExtinction"><img src="http://pkg.julialang.org/badges/DustExtinction_0.5.svg"></a></td>
+                                <td>
+                                    <a href="https://travis-ci.org/JuliaAstro/DustExtinction.jl">
+                                        <img src="https://img.shields.io/travis/JuliaAstro/DustExtinction.jl.svg?style=flat-square&label=linux">
+                                    </a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>ERFA</td>
+                                <td><a href="http://pkg.julialang.org/?pkg=ERFA"><img src="http://pkg.julialang.org/badges/ERFA_0.3.svg"></a></td>
+                                <td><a href="http://pkg.julialang.org/?pkg=ERFA"><img src="http://pkg.julialang.org/badges/ERFA_0.4.svg"></a></td>
+                                <td><a href="http://pkg.julialang.org/?pkg=ERFA"><img src="http://pkg.julialang.org/badges/ERFA_0.5.svg"></a></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>FITSIO</td>
+                                <td><a href="http://pkg.julialang.org/?pkg=FITSIO"><img src="http://pkg.julialang.org/badges/FITSIO_0.3.svg"></a></td>
+                                <td><a href="http://pkg.julialang.org/?pkg=FITSIO"><img src="http://pkg.julialang.org/badges/FITSIO_0.4.svg"></a></td>
+                                <td><a href="http://pkg.julialang.org/?pkg=FITSIO"><img src="http://pkg.julialang.org/badges/FITSIO_0.5.svg"></a></td>
+                                <td>
+                                    <a href="https://travis-ci.org/JuliaAstro/FITSIO.jl">
+                                        <img src="https://img.shields.io/travis/JuliaAstro/FITSIO.jl.svg?style=flat-square&label=linux">
+                                    </a>
+                                    <a href="https://ci.appveyor.com/project/kbarbary/fitsio-jl/branch/master">
+                                        <img src="https://img.shields.io/appveyor/ci/kbarbary/fitsio-jl.svg?style=flat-square&label=windows">
+                                    </a>
+                                    <!-- leave out coverage for now -->
+                                    <!--
+                                        <a href="https://coveralls.io/r/JuliaAstro/FITSIO.jl?branch=master">
+                                            <img src="http://img.shields.io/coveralls/JuliaAstro/FITSIO.jl.svg?style=flat-square">
+                                        </a>
+                                    -->
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>WCSLIB</td>
+                                <td><a href="http://pkg.julialang.org/?pkg=WCSLIB"><img src="http://pkg.julialang.org/badges/WCSLIB_0.3.svg"></a></td>
+                                <td><a href="http://pkg.julialang.org/?pkg=WCSLIB"><img src="http://pkg.julialang.org/badges/WCSLIB_0.4.svg"></a></td>
+                                <td><a href="http://pkg.julialang.org/?pkg=WCSLIB"><img src="http://pkg.julialang.org/badges/WCSLIB_0.5.svg"></a></td>
+                                <td></td>
+                            </tr>
+                        </table>
+                        <p>Julia 0.3, 0.4, 0.5-dev show the status of the released package version, as reported by PkgEvaluator. PkgEvaluator is not necessarily up-to-date with the latest release version of each package.<br>
+                        "Master" shows the status of the lastest (unreleased) development version of each package, as reported by Travis and AppVeyor. This includes all supported Julia versions.</p>
+
+                    </div>
+
+                </div>
+            </section>
 
 	    <!-- Contributing -->
 	    <section id="contributing" class="three">
