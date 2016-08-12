@@ -28,12 +28,12 @@
 	<!--[if lte IE 8]><link rel="stylesheet" href="css/ie/v8.css" /><![endif]-->
     </head>
     <body>
-	
+
 	<!-- Header -->
 	<div id="header" class="skel-layers-fixed">
-	    
+
 	    <div class="top">
-		
+
 		<!-- Logo -->
 		<div id="logo">
 		    <span class="image avatar48">
@@ -42,21 +42,21 @@
 		    <h1 id="title">Julia Astro</h1>
 		    <p>Astronomy Packages for Julia</p>
 		</div>
-		
+
 		<!-- Nav -->
 		<nav id="nav">
 		    <!--
-			
+
 			Prologue's nav expects links in one of two formats:
-			
+
 			1. Hash link (scrolls to a different section within the page)
-			
+
 			<li><a href="#foobar" id="foobar-link" class="icon fa-whatever-icon-you-want skel-layers-ignoreHref"><span class="label">Foobar</span></a></li>
-			
+
 			2. Standard link (sends the user to another page/site)
-			
+
 		    <li><a href="http://foobar.tld" id="foobar-link" class="icon fa-whatever-icon-you-want"><span class="label">Foobar</span></a></li>
-		    
+
 		    -->
 		    <ul>
 			<li><a href="#top" id="top-link" class="skel-layers-ignoreHref"><span class="icon fa-home">Top</span></a></li>
@@ -64,24 +64,24 @@
 			<li><a href="#contributing" id="about-link" class="skel-layers-ignoreHref"><span class="icon fa-users">Contributing</span></a></li>
 		    </ul>
 		</nav>
-		
+
 	    </div>
-	    
+
 	    <div class="bottom">
-		
+
 		<!-- Social Icons -->
 		<ul class="icons">
 		    <li><a href="https://github.com/JuliaAstro" class="icon fa-github"><span class="label">Github</span></a></li>
 		    <li><a href="https://groups.google.com/forum/#!forum/julia-astro" class="icon fa-envelope"><span class="label">Mailing List</span></a></li>
 		</ul>
-		
+
 	    </div>
-	    
+
 	</div>
-	
+
 	<!-- Main -->
 	<div id="main">
-	    
+
 	    <!-- Intro -->
 	    <section id="top" class="one">
 		<div class="container">
@@ -110,22 +110,40 @@
 
 		</div>
 	    </section>
-	    
+
 	    <!-- Packages -->
 	    <section id="packages" class="two">
 		<div class="container">
-		    
+
 		    <header>
 			<h2>Packages</h2>
 		    </header>
-		    
+
 		    <p>Packages are separated by
 	            functionality and Julia's declarative package
 	            manager takes care of resolving dependencies. You
 	            get just the functionality you need, and smaller
 	            packages lead to more rapid development.</p>
-		    
+
 		    <div class="row">
+
+			<div class="4u">
+			    <section class="box">
+				<h3><a href="https://github.com/JuliaAstro/AstroLib.jl">AstroLib</a></h3>
+				<p>Collection of generic astronomical and
+				astrophysical functions</p>
+				<ul>
+				    <li>Translation of many IDL AstroLib
+				    procedures</li>
+				</ul>
+				<p class="links">
+				    <a href="http://astrolibjl.readthedocs.io">
+					<span class="icon fa-book">&nbsp;Docs</span>
+				    </a>
+				</p>
+
+			    </section>
+			</div>
 
 			<div class="4u">
 			    <section class="box">
@@ -149,6 +167,10 @@
 			    </section>
 			</div>
 
+		    </div>
+
+		    <div class="row">
+
 			<div class="4u">
 			    <section class="box">
 				<h3><a href="https://github.com/JuliaAstro/ERFA.jl">ERFA</a></h3>
@@ -159,10 +181,6 @@
 				</ul>
 			    </section>
 			</div>
-
-		    </div>
-
-		    <div class="row">
 
 			<div class="4u">
 			    <section class="box">
@@ -192,7 +210,7 @@
 			</div>
 
 		    </div>
-		    
+
 		    <hr>
 
 		    <div id="otherpkgs">
@@ -221,7 +239,7 @@
 		    </div>
 
                     <hr>
-	    
+
 		    <div id="status">
 		        <h2>Package Status Table</h2>
 
@@ -232,6 +250,26 @@
                                 <th>Julia 0.4</th>
                                 <th>Julia 0.5</th>
                                 <th>master (all Julia versions)</th>
+                            </tr>
+                            <tr>
+                                <td>AstroLib</td>
+                                <td></td>
+                                <td><a href="http://pkg.julialang.org/?pkg=AstroLib"><img src="http://pkg.julialang.org/badges/AstroLib_0.4.svg"></a></td>
+                                <td><a href="http://pkg.julialang.org/?pkg=AstroLib"><img src="http://pkg.julialang.org/badges/AstroLib_0.5.svg"></a></td>
+                                <td>
+                                    <a href="https://travis-ci.org/JuliaAstro/AstroLib.jl">
+                                        <img src="https://img.shields.io/travis/JuliaAstro/AstroLib.jl.svg?style=flat-square&label=linux">
+                                    </a>
+                                    <a href="https://ci.appveyor.com/project/giordano/astrolib-jl">
+                                        <img src="https://img.shields.io/appveyor/ci/giordano/astrolib-jl.svg?style=flat-square&label=windows">
+                                    </a>
+                                    <!-- leave out coverage for now -->
+                                    <!--
+                                        <a href="https://coveralls.io/r/JuliaAstro/AstroLib.jl?branch=master">
+                                            <img src="http://img.shields.io/coveralls/JuliaAstro/AstroLib.jl.svg?style=flat-square">
+                                        </a>
+                                    -->
+                                </td>
                             </tr>
                             <tr>
                                 <td>Cosmology</td>
@@ -310,20 +348,20 @@
 	    <!-- Contributing -->
 	    <section id="contributing" class="three">
 		<div class="container">
-		    
+
 		    <header>
 			<h2>Contributing</h2>
 		    </header>
-		    
+
 		    <!-- <a href="#" class="image featured"><img src="images/pic08.jpg" alt="" /></a> -->
-		    
+
 		    <p>Use the packages, file issues and join the conversation on our mailing list!</p>
 
 		    <ul>
 			<li><a href="https://groups.google.com/forum/#!forum/julia-astro"><span class="icon fa-envelope">&nbsp;&nbsp;julia-astro mailing list</span></a> on Google Groups</li>
 			<li><a href="https://github.com/JuliaAstro"><span class="icon fa-github">&nbsp;&nbsp;JuliaAstro</span></a> on GitHub</li>
 		    </ul>
-		    
+
 		</div>
 	    </section>
 
@@ -333,8 +371,8 @@
 	<div id="footer">
 	    <ul class="copyright">
 		<li>&copy; 2015 JuliaAstro contributors</li><li>Design: Prologue by <a href="http://html5up.net">HTML5 UP</a></li>
-	    </ul>				
+	    </ul>
 	</div>
-	
+
     </body>
 </html>
