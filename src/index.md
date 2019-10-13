@@ -47,7 +47,7 @@ Packages are separated by functionality and Julia's declarative package manager 
 - Wrapper for [cfitsio](https://heasarc.gsfc.nasa.gov/fitsio/)
 - Image and table extensions
 
-### [JPLEphemeric](https://github.com/JuliaAstro/JPLEphemeric.jl) 
+### [JPLEphemeris](https://github.com/JuliaAstro/JPLEphemeris.jl) 
 **JPL Development Ephemerides**
 
 - Calculate positions and velocities of solar system bodies
