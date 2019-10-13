@@ -5,5 +5,7 @@ makedocs(sitename = "JuliaAstro",
         assets = [
             "assets/favicon.ico",
         ],
-    ))
+    ),
+    strict = true
+)
 
