@@ -16,7 +16,7 @@ Packages are separated by functionality and Julia's declarative package manager 
 - High-precision, time-scale aware, DateTime-like data type
 - Support all commonly used astronomical time scales
 
-### [Cosmology](https://github.com/JuliaAstro/Cosmology.jl) 
+### [Cosmology](https://github.com/JuliaAstro/Cosmology.jl) [![](assets/book.png)](https://juliaastro.github.io/Cosmology.jl/stable/)
 **Distances in the universe**
 
 - ``\Lambda``-CDM and w0-wa cosmologies
