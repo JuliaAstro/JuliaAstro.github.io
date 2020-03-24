@@ -40,14 +40,14 @@ Packages are separated by functionality and Julia's declarative package manager 
 **Earth orientation parameters**
 
 - Calculate Earth orientation parameters from IERS tables
-  
+
 ### [FITSIO](https://github.com/JuliaAstro/FITSIO.jl) [![](assets/book.png)](https://juliaastro.github.io/FITSIO.jl/stable/)
 **Reading and writing FITS files**
 
 - Wrapper for [cfitsio](https://heasarc.gsfc.nasa.gov/fitsio/)
 - Image and table extensions
 
-### [JPLEphemeris](https://github.com/JuliaAstro/JPLEphemeris.jl) 
+### [JPLEphemeris](https://github.com/JuliaAstro/JPLEphemeris.jl)
 **JPL Development Ephemerides**
 
 - Calculate positions and velocities of solar system bodies
@@ -58,7 +58,12 @@ Packages are separated by functionality and Julia's declarative package manager 
 - Determine period of unevenly sampled periodic signals
 - Supports multi-threading
 
-### [SkyCoords](https://github.com/JuliaAstro/SkyCoords.jl) 
+### [Photometry](https://github.com/JuliaAstro/Photometry.jl) [![](assets/book.png)](https://juliaastro.github.io/Photometry.jl/stable/)
+**Photometry**
+
+- Utilities for characterizing sources in astronomical images.
+
+### [SkyCoords](https://github.com/JuliaAstro/SkyCoords.jl)
 **Astronomical coordinate systems**
 
 - Supports ICRS, galactic, and FK5 coordinate systems
@@ -70,7 +75,7 @@ Packages are separated by functionality and Julia's declarative package manager 
 - Extension of [Unitful.jl](https://github.com/painterqubits/unitful.jl)
 
 ### [WCS](https://github.com/JuliaAstro/WCS.jl) [![](assets/book.png)](https://juliaastro.github.io/WCS.jl/stable/)
-**Wolrd Coordinate System transformations**
+**World Coordinate System transformations**
 
 - Wrapper for [wcslib](https://www.atnf.csiro.au/people/mcalabre/WCS/wcslib/)
 
