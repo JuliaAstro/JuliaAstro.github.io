@@ -21,4 +21,5 @@ deploydocs(;
     push_preview = true,
     branch = "master",
     devbranch = "source",
+    devurl = "",
 )
