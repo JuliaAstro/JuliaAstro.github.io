@@ -1,8 +1,8 @@
 JuliaAstro.github.io
 ====================
 
-The JuliaAstro website.
+[![Build Status](https://github.com/juliaastro/juliaastro.github.io/workflows/build/badge.svg?branch=source)](https://github.com/juliaastro/juliaastro.github.io/actions)
 
-The site template is a slightly modified version of Prologue by HTML5
-UP (html5up.net, @n33co), used under the CCA 3.0 license
-(html5up.net/license).
+[The JuliaAstro website](https://juliaastro.github.io/).
+
+Built using [Documenter.jl](https://github.com/JuliaDocs/Documenter.jl/)
