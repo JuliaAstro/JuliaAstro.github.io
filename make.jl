@@ -20,6 +20,5 @@ deploydocs(;
     repo = "github.com/JuliaAstro/JuliaAstro.github.io",
     push_preview = true,
     branch = "master",
-    devbranch = "source",
-    devurl = "",
+    devbranch = "source"
 )
