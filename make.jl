@@ -17,7 +17,7 @@ makedocs(;
 
 
 deploydocs(;
-    repo = "github.com/juliaastro/juliaastro.github.io",
+    repo = "github.com/JuliaAstro/JuliaAstro.github.io",
     push_preview = true,
     branch = "master",
     devbranch = "source",
