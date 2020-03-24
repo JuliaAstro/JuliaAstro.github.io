@@ -1,4 +1,3 @@
-
 # Created by https://www.gitignore.io/api/julia
 # Edit at https://www.gitignore.io/?templates=julia
 
@@ -29,3 +28,5 @@ site/
 Manifest.toml
 
 # End of https://www.gitignore.io/api/julia
+.vscode
+.DS_Store
