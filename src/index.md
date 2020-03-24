@@ -98,4 +98,4 @@ Use the packages, file issues, and join the conversation!
 - [#astronomy](slack://channel?id=CMXU6SD7V&team=T68168MUP) on [JuliaLang Slack](https://slackinvite.julialang.org/)
 
 ## Google Summer of Code
-Would you like to contribute to JuliaAstro as part of Google Summer of Code? You can! We are member of OpenAstronomy, go to the GSoC page to see how to apply and the list of ideas. You can also propose us your own idea!
+Would you like to contribute to JuliaAstro as part of Google Summer of Code? You can! We are member of [OpenAstronomy](https://openastronomy.org), go to the [GSoC page](https://openastronomy.org/gsoc/) to see how to apply and the list of ideas. You can also propose us your own idea!
