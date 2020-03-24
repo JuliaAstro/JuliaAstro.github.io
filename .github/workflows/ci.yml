@@ -3,6 +3,8 @@ name: build
 on:
   push:
     branches: [source]
+  pull_request:
+
 jobs:
   docs:
     name: Documentation
