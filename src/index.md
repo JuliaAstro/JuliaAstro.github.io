@@ -26,7 +26,7 @@ Packages are separated by functionality and Julia's declarative package manager 
 ### [DustExtinction](https://github.com/JuliaAstro/DustExtinction.jl) [![](assets/book.png)](https://juliaastro.github.io/DustExtinction.jl/stable/)
 **Dust extinction laws and maps**
 
-- CCM (1989), O'Donnell (1994), Calzetti (2000), VCG (2004) and GCC (2009) dust laws
+- Various empirical extinction models
 - SFD (1998) galactic dust map
 
 ### [ERFA](https://github.com/JuliaAstro/ERFA.jl)
