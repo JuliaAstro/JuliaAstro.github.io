@@ -1,9 +1,11 @@
 # JuliaAstro
 
-Community Astronomy and Astrophysics packages for Julia
+JuliaAstro and its affiliated organizations are a community for astronomy in Julia. We have a wide variety of packages from [aperture photometry](https://github.com/juliaastro/Photometry.jl) to [cosmology](https://github.com/juliaastro/Cosmology.jl). Our contributors come from a wide variety of backgrounds and have various levels of interactions within astronomy and academia. 
 
-## Ecosystem
-Packages are separated by functionality and Julia's declarative package manager takes care of resolving dependencies. You get just the functionality you need, and smaller packages lead to more rapid development.
+## JuliaAstro
+
+The joy of our community are the many packages available for wide use. Community Astronomy and Astrophysics packages for Julia. Packages are separated by functionality and Julia's declarative package manager takes care of resolving dependencies. You get just the functionality you need, and smaller packages lead to more rapid development.
+
 
 ### [AstroLib](https://github.com/JuliaAstro/astrolib.jl) [![](assets/book.png)](https://juliaastro.github.io/AstroLib.jl/stable/)
 **Collection of generic astronomical and astrophysical functions**
@@ -61,7 +63,9 @@ Packages are separated by functionality and Julia's declarative package manager 
 ### [Photometry](https://github.com/JuliaAstro/Photometry.jl) [![](assets/book.png)](https://juliaastro.github.io/Photometry.jl/stable/)
 **Photometry**
 
-- Utilities for characterizing sources in astronomical images.
+- Background estimation and source extraction
+- Fast and precise photometry
+- Image segmentation, PSF photometry, and isophot fitting
 
 ### [SkyCoords](https://github.com/JuliaAstro/SkyCoords.jl)
 **Astronomical coordinate systems**
@@ -79,7 +83,23 @@ Packages are separated by functionality and Julia's declarative package manager 
 
 - Wrapper for [wcslib](https://www.atnf.csiro.au/people/mcalabre/WCS/wcslib/)
 
-## Other Packages
+## JuliaHCI
+
+[JuliaHCI](https://github.com/JuliaHCI) is an organization with packages for performing high-contrast imaging processing and analysis. It is primarily maintained by [Miles Lucas](https://github.com/mileslucas). If you are interested in getting involved, please reach out since there are many algorithms to get implemented.
+
+### [HCIToolbox](https://github.com/JuliaHCI/HCIToolbox.jl) [![](assets/book.png)](http://JuliaHCI.github.io/HCIToolbox.jl/stable/)
+**Common utilities for high-contrast imaging (HCI) processing**
+- Common morphological operations (rotation, stacking, shifting)
+- Common masking routines
+- Image registration
+- Common high-contrast imaging metrics
+
+### [ADI](https://github.com/JuliaHCI/ADI.jl) [![](assets/book.png)](http://JuliaHCI.github.io/ADI.jl/stable/)
+**Angular Differential Imaging (ADI) routines in Julia**
+- PCA, NMF, LLSG, LOCI, etc.
+- Provide an interface for using these algorithms in other tools
+
+## Other
 
 Registered Julia astronomy packages hosted elsewhere
 
@@ -97,6 +117,7 @@ Registered Julia astronomy packages hosted elsewhere
 Use the packages, file issues, and join the conversation!
 
 - [JuliaAstro](https://github.com/juliaastro) on GitHub
+- [JuliaHCI](https://github.com/juliahci) on GitHub
 - [julia-astro](https://groups.google.com/forum/#!forum/julia-astro) mailing list on Google Groups
 - [Astro/Space](https://discourse.julialang.org/c/domain/astro) topics on JuliaLang Discourse
 - [#JuliaAstro:openastronomy.org](https://riot.im/app/#/room/#JuliaAstro:openastronomy.org) on Matrix
