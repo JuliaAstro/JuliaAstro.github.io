@@ -2,7 +2,7 @@
 
 JuliaAstro and its affiliated organizations are a community for astronomy in Julia. We have a wide variety of packages from [aperture photometry](https://github.com/juliaastro/Photometry.jl) to [cosmology](https://github.com/juliaastro/Cosmology.jl). Our contributors come from a wide variety of backgrounds and have various levels of interactions within astronomy and academia. 
 
-## JuliaAstro
+## Ecosystem
 
 The joy of our community are the many packages available for wide use. Community Astronomy and Astrophysics packages for Julia. Packages are separated by functionality and Julia's declarative package manager takes care of resolving dependencies. You get just the functionality you need, and smaller packages lead to more rapid development.
 
