@@ -121,7 +121,7 @@ Use the packages, file issues, and join the conversation!
 - [julia-astro](https://groups.google.com/forum/#!forum/julia-astro) mailing list on Google Groups
 - [Astro/Space](https://discourse.julialang.org/c/domain/astro) topics on JuliaLang Discourse
 - [#JuliaAstro:openastronomy.org](https://riot.im/app/#/room/#JuliaAstro:openastronomy.org) on Matrix
-- [#astronomy](slack://channel?id=CMXU6SD7V&team=T68168MUP) on [JuliaLang Slack](https://slackinvite.julialang.org/)
+- [#astronomy](slack://channel?id=CMXU6SD7V&team=T68168MUP) on [JuliaLang Slack](https://julialang.org/slack/)
 
 ## Google Summer of Code
 Would you like to contribute to JuliaAstro as part of Google Summer of Code? You can! We are member of [OpenAstronomy](https://openastronomy.org), go to the [GSoC page](https://openastronomy.org/gsoc/) to see how to apply and the list of ideas. You can also propose us your own idea!
