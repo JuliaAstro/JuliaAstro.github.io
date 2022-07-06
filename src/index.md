@@ -7,6 +7,9 @@ JuliaAstro and its affiliated organizations are a community for astronomy in Jul
 The joy of our community are the many packages available for wide use. Community Astronomy and Astrophysics packages for Julia. Packages are separated by functionality and Julia's declarative package manager takes care of resolving dependencies. You get just the functionality you need, and smaller packages lead to more rapid development.
 
 
+### [AstroImages](https://github.com/JuliaAstro/AstroImages.jl) [![](assets/book.png)](https://juliaastro.github.io/AstroImages.jl/stable/)
+**Load, manipulate, and visualize astronomical images**
+
 ### [AstroLib](https://github.com/JuliaAstro/astrolib.jl) [![](assets/book.png)](https://juliaastro.github.io/AstroLib.jl/stable/)
 **Collection of generic astronomical and astrophysical functions**
 
