@@ -43,11 +43,17 @@ The joy of our community are the many packages available for wide use. Community
 
 **Load, manipulate, and visualize astronomical images**
 
+- Works with the [FileIO.jl](https://github.com/JuliaIO/FileIO.jl) interface
+- Automatic visualizations are directly integrated into many environments like [VSCode](https://code.visualstudio.com/), [Pluto.jl](https://github.com/fonsp/Pluto.jl), and [IJulia.jl](https://github.com/JuliaLang/IJulia.jl)
+- Includes recipes for plotting with [Plots.jl](https://github.com/JuliaPlots/Plots.jl)
+
 ### [SAOImageDS9.jl](https://github.com/JuliaAstro/SAOImageDS9.jl) [![](assets/book.png)](https://juliaastro.github.io/SAOImageDS9.jl/stable/)
 
 **Interface with the DS9 image viewer**
 
-- Uses [XPA.jl](https://github.com/JuliaAstro/XPA.jl) to communicate with DS9 instances with [xpa](https://github.com/ericmandel/xpa)
+- Uses [XPA.jl](https://github.com/JuliaAstro/XPA.jl) to communicate with DS9 instances
+- Easily display images in DS9 and add features like circles and lines
+- Low-level API accessible with `set` and `get`
 
 ## Image Processing
 
@@ -57,7 +63,7 @@ The joy of our community are the many packages available for wide use. Community
 
 - Creation of calibration files
 - Dark subtraction, flat normalization, bias subtraction, cropping
-- Specialized iterator for processing directories of FITS files using a `DataFrame` of the FITS headers.
+- Specialized iterator for processing directories of FITS files using a table built from the FITS headers.
 
 ### [LACosmic.jl](https://github.com/JuliaAstro/LACosmic.jl) [![](assets/book.png)](https://juliaastro.github.io/LACosmic.jl/stable/)
 
@@ -99,7 +105,7 @@ The joy of our community are the many packages available for wide use. Community
 **Sub-pixel registration using discrete Fourier transforms**
 
 - Uses FFTs to register images, with arbitrary precision
-- Spectral scaling and descaling
+- Includes methods for Fourier based image-translation (phase-shifting)
 
 ### [JuliaHCI/ADI.jl](https://github.com/JuliaHCI/ADI.jl) [![](assets/book.png)](http://JuliaHCI.github.io/ADI.jl/stable/)
 
