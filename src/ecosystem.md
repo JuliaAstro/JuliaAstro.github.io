@@ -15,7 +15,7 @@ The joy of our community are the many packages available for wide use. Community
 **Reading and writing FITS files**
 
 - Interact with header data units (HDUs), FITS headers, and FITS data: both images and tables
-- FITS tables follow the [Tables.jl](https://github.com/JuliaData/Tables.jl) interface, allowing seamless integration with the rich data ecosytem, like [CSV.jl](https://github.com/JuliaData/CSV.jl), [DataFrames.jl](https://github.com/JuliaData/DataFrames.jl), etc.
+- FITS tables follow the [Tables.jl](https://github.com/JuliaData/Tables.jl) interface, allowing seamless integration with the rich data ecosystem, like [CSV.jl](https://github.com/JuliaData/CSV.jl), [DataFrames.jl](https://github.com/JuliaData/DataFrames.jl), etc.
 
 ### [CFITSIO.jl](https://github.com/JuliaAstro/CFITSIO.jl) [![](assets/book.png)](https://juliaastro.github.io/FITSIO.jl/stable/)
 
@@ -48,16 +48,6 @@ The joy of our community are the many packages available for wide use. Community
 **Interface with the DS9 image viewer**
 
 - Uses [XPA.jl](https://github.com/JuliaAstro/XPA.jl) to communicate with DS9 instances with [xpa](https://github.com/ericmandel/xpa)
-
-### [JuliaPlots/Plots.jl](https://github.com/JuliaPlots/Plots.jl)[![](assets/book.png)](https://docs.juliaplots.org/stable/)
-
-**Plotting in Julia with flexible backends**
-
-- Uses a recipe system which many JuliaAstro packages support (like [Photometry.jl](https://github.com/JuliaAstro/Photometry.jl))
-
-### [JuliaPlots/Makie.jl](https://github.com/JuliaPlots/Makie.jl)[![](assets/book.png)](https://makie.juliaplots.org/stable/)
-
-**Plotting with support for GPUs**
 
 ## Image Processing
 
@@ -106,7 +96,7 @@ The joy of our community are the many packages available for wide use. Community
 
 ### [JuliaHCI/SubpixelRegistration.jl](https://github.com/JuliaHCI/SubpixelRegistration.jl) [![](assets/book.png)](http://JuliaHCI.github.io/SubpixelRegistration.jl/stable/)
 
-**Sub-pixel registraiton using discrete Fourier transforms**
+**Sub-pixel registration using discrete Fourier transforms**
 
 - Uses FFTs to register images, with arbitrary precision
 - Spectral scaling and descaling
