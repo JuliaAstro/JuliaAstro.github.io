@@ -10,7 +10,8 @@ makedocs(;
         assets = String[],
     ),
     pages = [
-        "JuliaAstro" => "index.md",
+        "Home" => "index.md",
+        "Ecosystem" => "ecosystem.md"
     ],
     strict = true
 )
