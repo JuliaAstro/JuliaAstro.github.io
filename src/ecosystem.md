@@ -36,7 +36,19 @@ The joy of our community are the many packages available for wide use. Community
 **Support for OI-FITS**
 
 - Read and write OI-FITS optical interferometry data format
+### [aplavin/VLBIData.jl](https://gitlab.com/aplavin/VLBIData.jl) [![](assets/book.png)](https://aplavin.github.io/VLBIData.jl/test/examples.html)
 
+**Work with data formats common in very long baseline interferometry (VLBI)**
+
+- Read interferometric visibilities (`uvfits`), images (`fits`), and source models
+- Minimal writing support for source models
+
+### [aplavin/Difmap.jl](https://gitlab.com/aplavin/Difmap.jl)
+
+**Wrapper for the Difmap program used in synthesis imaging**
+
+- Execute Difmap scripts, handle inputs/outputs and logs
+- Display images and plots from Difmap in interactive Julia environments
 ## Visualization and Plotting
 
 ### [AstroImages.jl](https://github.com/JuliaAstro/AstroImages.jl) [![](assets/book.png)](https://juliaastro.github.io/AstroImages.jl/stable/)
