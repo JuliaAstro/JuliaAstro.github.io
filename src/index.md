@@ -4,7 +4,7 @@
 
 ## Contributing
 
-Our contributors come from a wide variety of backgrounds and have various levels of interactions within astronomy and academia. Use the packages, file issues, and join the conversation!
+Our contributors come from diverse backgrounds and have various levels of interactions within astronomy and academia. Use the packages, file issues, and join the conversation!
 
 - [JuliaAstro](https://github.com/juliaastro) on GitHub
 - [JuliaHCI](https://github.com/juliahci) on GitHub
@@ -15,4 +15,4 @@ Our contributors come from a wide variety of backgrounds and have various levels
 
 ## Google Summer of Code (GSoC)
 
-Would you like to contribute to JuliaAstro as part of Google Summer of Code? You can! We are member of [OpenAstronomy](https://openastronomy.org), go to the [GSoC page](https://openastronomy.org/gsoc/) to see how to apply and the list of ideas. You can also propose us your own idea!
+Would you like to contribute to JuliaAstro through Google Summer of Code? You can! We are member of [OpenAstronomy](https://openastronomy.org), go to the [GSoC page](https://openastronomy.org/gsoc/) to see how to apply and the list of ideas. You can also propose your own idea to us!

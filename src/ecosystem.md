@@ -1,6 +1,6 @@
 # [Ecosystem](@id eco)
 
-The joy of our community are the many packages available for wide use. Community Astronomy and Astrophysics packages for Julia. Packages are separated by functionality and Julia's declarative package manager takes care of resolving dependencies. You get just the functionality you need, and smaller packages lead to more rapid development.
+The joy of our community is the many astronomy and astrophysics packages available for wide use. Packages are separated by functionality and Julia's declarative package manager takes care of resolving dependencies. You get just the functionality you need, and smaller packages lead to more rapid development.
 
 ## Data I/O
 
@@ -82,7 +82,7 @@ The joy of our community are the many packages available for wide use. Community
 **Cosmic-ray rejection by Laplacian edge detection**
 
 - Implementation of the L.A.Cosmic algorithm ([van Dokkum, 2001](https://ui.adsabs.harvard.edu/abs/2001PASP..113.1420V/abstract))
-- Clean bad-pixels from cosmic rays or other sources like hot pixels.
+- Returns bad pixel masks and cleaned data
 
 ### [Photometry.jl](https://github.com/JuliaAstro/Photometry.jl) [![](assets/book.png)](https://juliaastro.github.io/Photometry.jl/stable/)
 
@@ -126,7 +126,7 @@ The joy of our community are the many packages available for wide use. Community
 - PCA, NMF, LLSG, LOCI, etc.
 - Apply algorithms framewise or in spectral differential imaging (SDI) using Julia's multiple dispatch
 - Provide an interface for using these algorithms in other tools
-- HCI metrics including S/N maps, contrast curves, throughput curves (from PSF injection), STIM, etc.
+- Common HCI metrics including S/N maps, contrast curves, throughput curves (from PSF injection), STIM, etc.
 
 ## Statistics
 
@@ -143,7 +143,7 @@ The joy of our community are the many packages available for wide use. Community
 - PCA, NMF, LLSG, LOCI, etc.
 - Apply algorithms framewise or in spectral differential imaging (SDI) using Julia's multiple dispatch
 - Provide an interface for using these algorithms in other tools
-- HCI metrics including S/N maps, contrast curves, throughput curves (from PSF injection), STIM, etc.
+- Common HCI metrics including S/N maps, contrast curves, throughput curves (from PSF injection), STIM, etc.
 
 ## Time, Coordinates, Units
 
@@ -165,8 +165,7 @@ The joy of our community are the many packages available for wide use. Community
 
 **Time systems conversions**
 
-- Low-level ERFA wrapper
-- Wrapper for [liberfa](https://github.com/liberfa/erfa)
+- Low-level wrapper for [liberfa](https://github.com/liberfa/erfa)
 
 ### [SkyCoords.jl](https://github.com/JuliaAstro/SkyCoords.jl)
 
@@ -197,9 +196,9 @@ The joy of our community are the many packages available for wide use. Community
 - Includes Keplerian orbits and generic orbits
 - Fully compatible with [Unitful.jl](https://github.com/painterqubits/Unitful.jl)
 
-### [sefffal/DirectOrbits.jl](https://github.com/sefffal/DirectOrbits.jl) [![](assets/book.png)](https://sefffal.github.io/DirectOrbits.jl/stable/)
+### [sefffal/PlanetOrbits.jl](https://github.com/sefffal/PlanetOrbits.jl) [![](assets/book.png)](https://sefffal.github.io/PlanetOrbits.jl/stable/)
 
-**Tools for displaying, solving Keplerian orbits in the context of direct imaging**
+**Tools for displaying and solving Keplerian orbits in the context of direct imaging**
 
 ### [EarthOrientation.jl](https://github.com/JuliaAstro/EarthOrientation.jl) [![](assets/book.png)](https://juliaastro.github.io/EarthOrientation.jl/stable/)
 
@@ -255,9 +254,8 @@ The joy of our community are the many packages available for wide use. Community
 
 **Compute Lomb-Scargle periodogram**
 
-- Determine period of unevenly sampled periodic signals
+- Create periodograms from unevenly sampled periodic signals
 - Supports multi-threading
-- Fully compatible with [Unitful.jl](https://github.com/painterqubits/Unitful.jl)
 
 ### [Photometry.jl](https://github.com/JuliaAstro/Photometry.jl) [![](assets/book.png)](https://juliaastro.github.io/Photometry.jl/stable/)
 
