@@ -15,4 +15,4 @@ Our contributors come from diverse backgrounds and have various levels of intera
 
 ## Google Summer of Code (GSoC)
 
-Would you like to contribute to JuliaAstro through Google Summer of Code? You can! We are member of [OpenAstronomy](https://openastronomy.org), go to the [GSoC page](https://openastronomy.org/gsoc/) to see how to apply and the list of ideas. You can also propose your own idea to us!
+Would you like to contribute to JuliaAstro through Google Summer of Code? You can! We are member of [OpenAstronomy](https://openastronomy.org); go to the [GSoC page](https://openastronomy.org/gsoc/) to see how to apply and the list of ideas. You can also propose your own idea to us!
