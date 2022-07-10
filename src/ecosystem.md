@@ -47,7 +47,7 @@ The joy of our community is the many astronomy and astrophysics packages availab
 
 **Wrapper for the Difmap program used in synthesis imaging**
 
-- Execute [Difmap](https://github.com/sabourke/difmap) scripts, handle inputs/outputs and logs
+- Execute [Difmap](http://www.ascl.net/1103.001) scripts, handle inputs/outputs and logs
 - Display images and plots from Difmap in interactive Julia environments
 ## Visualization and Plotting
 
