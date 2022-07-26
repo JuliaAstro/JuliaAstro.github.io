@@ -16,3 +16,19 @@ Our contributors come from diverse backgrounds and have various levels of intera
 ## Google Summer of Code (GSoC)
 
 Would you like to contribute to JuliaAstro through Google Summer of Code? You can! We are member of [OpenAstronomy](https://openastronomy.org); go to the [GSoC page](https://openastronomy.org/gsoc/) to see how to apply and the list of ideas. You can also propose your own idea to us!
+
+## Talks and Presentations
+
+```@raw html
+<details>
+<summary>JuliaCon 2022</summary>
+```
+- [Julia in Astronomy & Astrophysics Research](https://github.com/eford/AstroMiniSymposiumAtJuliaCon2022)
+- [Comrade: High-Performance Black Hole Imaging](https://pretalx.com/juliacon-2022/talk/3LHDTD/)
+- [RVSpectML: Precision Velocities from Spectroscopic Time Series](https://pretalx.com/juliacon-2022/talk/BLBKZM/)
+- [Finding Fast Radio Bursts, Faster](https://pretalx.com/juliacon-2022/talk/ML8N7S/)
+- [Cosmological Emulators with Flux.jl and DifferentialEquations.jl](https://pretalx.com/juliacon-2022/talk/VWGBAL/)
+- [Visualizing astronomical data with AstroImages.jl](https://pretalx.com/juliacon-2022/talk/VVPY9G/)
+```@raw html
+</details>
+```
