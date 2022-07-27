@@ -257,6 +257,14 @@ The joy of our community is the many astronomy and astrophysics packages availab
 - Create periodograms from unevenly sampled periodic signals
 - Supports multi-threading
 
+### [Mera.jl](https://github.com/ManuelBehrendt/Mera.jl) [![](assets/book.png)](https://manuelbehrendt.github.io/Mera.jl/stable/)
+
+**Working with large hydrodynamical simulation data**
+
+- Loading, writing, analysing 3D AMR/uniform-grid and N-body data sets
+- Memory lightweight data processing within a database framework
+- Many predefined functions and examples
+
 ### [Photometry.jl](https://github.com/JuliaAstro/Photometry.jl) [![](assets/book.png)](https://juliaastro.github.io/Photometry.jl/stable/)
 
 **Aperture photometry**
