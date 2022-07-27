@@ -257,7 +257,7 @@ The joy of our community is the many astronomy and astrophysics packages availab
 - Create periodograms from unevenly sampled periodic signals
 - Supports multi-threading
 
-### [Mera.jl](https://github.com/ManuelBehrendt/Mera.jl) [![](assets/book.png)](https://manuelbehrendt.github.io/Mera.jl/stable/)
+### [manuelbehrendt/Mera.jl](https://github.com/ManuelBehrendt/Mera.jl) [![](assets/book.png)](https://manuelbehrendt.github.io/Mera.jl/stable/)
 
 **Working with large hydrodynamical simulation data**
 
