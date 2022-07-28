@@ -11,7 +11,8 @@ makedocs(;
     ),
     pages = [
         "Home" => "index.md",
-        "Ecosystem" => "ecosystem.md"
+        "Ecosystem" => "ecosystem.md",
+        "Tutorials" => "tutorials.md"
     ],
     strict = true
 )
