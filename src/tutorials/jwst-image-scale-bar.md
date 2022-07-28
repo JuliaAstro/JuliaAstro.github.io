@@ -84,6 +84,10 @@ The image header already contains WCS keys to specify the location of the image 
 println(carina["CTYPE1", Comment])
 println(carina["CTYPE1"])
 ```
+```
+first axis coordinate type
+RA---TAN
+```
 
 This shows that the coordinate type for the first axis is "RA---TAN".
 
