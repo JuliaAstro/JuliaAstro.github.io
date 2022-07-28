@@ -1,16 +1,16 @@
-# [Plot a JWST image with world coordinates and a scale bar](@id tutorial-jwst-scalebar)
+# [JWST image with scale bar](@id tutorial-jwst-scalebar)
 
 This tutorial shows how to download one of the new famous JWST release images of the Carina nebula, plot it with world coordinates (RA and DEC), and add a scalebar.
 Let's get started!
 
 ## Packages we'll need
 
-* `Downloads`: we'll use this built-in Julia standard library to download the raw image data
+* [`Downloads`](https://docs.julialang.org/en/v1/stdlib/Downloads/): we'll use this built-in Julia standard library to download the raw image data
 * [`AstroImages`](http://juliaastro.org/AstroImages.jl/dev/): We'll use this package to load and display the image
 * [`Plots`](https://docs.juliaplots.org/latest/): We'll use this package to display coordinates along the image and add the scalebar
 
-You can install the necessary packages by running Julia, and typing `]` to enter Pkg-mode. Then: `add AstroImages`.
-Alternatively, you can run `using Pkg; Pkg.add("AstroImages")`.
+You can install the necessary packages by running Julia, and typing `]` to enter Pkg-mode. Then: `add AstroImages Plots`.
+Alternatively, you can run `using Pkg; Pkg.add(["AstroImages", "Plots"])`.
 
 If you will be using these tools as part of a bigger project, it's strongly recommended to create a [Julia Project](https://pkgdocs.julialang.org/v1/environments/) to record package versions.
 
@@ -31,7 +31,8 @@ A mirror of the JWST initial release data is also hosted on AWS. We'll use this 
 using Downloads
 
 fname = Downloads.download(
-   "https://stpubdata-jwst.stsci.edu/ero/jw02731/L3/t/jw02731-o001_t017_nircam_clear-f187n_i2d.fits"
+   "https://stpubdata-jwst.stsci.edu/ero/jw02731/L3/t/"*
+   "jw02731-o001_t017_nircam_clear-f187n_i2d.fits"
 )
 ```
 
@@ -135,7 +136,9 @@ stop_coord_world  = start_coord_world .+ [0, 1/60]
 # Convert back to pixel coordinates
 stop_coord_pix = world_to_pix(carina_full, stop_coord_world)
 
-# Measure how long it is here in pixel coordinates (note: in theory this depends on where in the image we make this calculation because the coordinate system is warped)
+# Measure how long it is here in pixel coordinates
+# note: in theory this depends on where in the image we make this calculation
+# because the coordinate system is warped
 arcmin_px = norm(stop_coord_pix .- start_coord_pix)
 # TODO: Linear algebra
 
@@ -158,7 +161,7 @@ plot!(
 annx = 11000+arcmin_px/2
 anny = 1000+100
 annotate!(
-    (annx, anny, text(" 1' ", 10, :white, :center, :bottom)) # we have to escape the " arcsecond symbol with a backslash
+    (annx, anny, text(" 1' ", 10, :white, :center, :bottom))
 )
 ```
 ![Carina nebula displayed with a scale bar](../assets/tutorials/jwst-1/carina-5.svg)
@@ -196,7 +199,7 @@ plot!(
 annx = 11000+arcmin_px/2
 anny = 1000+100
 annotate!(
-    (annx, anny, text(" 1' ", 10, :white, :center, :bottom)) # we have to escape the " arcsecond symbol with a backslash
+    (annx, anny, text(" 1' ", 10, :white, :center, :bottom)) 
 )
 ```
 ![Carina nebula displayed with a scale bar and no other plot decorations](../assets/tutorials/jwst-1/carina-6.svg)

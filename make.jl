@@ -12,7 +12,13 @@ makedocs(;
     pages = [
         "Home" => "index.md",
         "Ecosystem" => "ecosystem.md",
-        "Tutorials" => "tutorials.md"
+        "Tutorials" => [
+            "tutorials/index.md",
+            "General" => [
+                "tutorials/jwst-image-scale-bar.md",
+                "tutorials/tabular-data.md",
+            ]
+        ]
     ],
     strict = true
 )
