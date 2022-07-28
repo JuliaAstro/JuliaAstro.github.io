@@ -23,6 +23,8 @@ You can either use it interactively by entering "Pkg mode" in your terminal, or 
 
 This will take a little while to download all the required packages and precompile for your system. If you have several packages to install, list them all at once instead of one by one to save time: `add SomePackage1 SomePackage2 SomePackage3`
 
+It's recommended to use Julia projects to store what packages you use. You can create or activate a previously created project by entering Pkg-mode (type `]`) and running `activate myproject`. Another option is to create a folder for your project, and start julia in that folder with the option `julia --project=./`. 
+
 For more information on how to use the Julia package manager, refer to the [Pkg.jl documentation](https://pkgdocs.julialang.org/v1/repl/).
 
 
