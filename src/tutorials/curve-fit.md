@@ -9,9 +9,10 @@ This tutorial will demonstrate fitting data with a straight line (linear regress
 * [`Optimization`](http://optimization.sciml.ai/stable/): We'll use this package to display coordinates along the image and add the scalebar
 * `OptimizationOptimJL`: the specific optimizer backend we will use.  For your own problems, select the best backend from the Optimization.jl documentation page.
 * [`Turing`](https://turing.ml/stable/): We'll use this package for Bayesian modelling.
+* [`PairPlots`](https://github.com/sefffal/PairPlots.jl): We'll use this for creating a corner plot of the posterior from our Bayesian models.
 
-You can install the necessary packages by running Julia, and typing `]` to enter Pkg-mode. Then: `add Plots Optimization OptimizationOptimJL Turing`.
-Alternatively, you can run `using Pkg; Pkg.add(["Plots", "Optimization", "OptimizationOptimJL", "Turing"])`.
+You can install the necessary packages by running Julia, and typing `]` to enter Pkg-mode. Then: `add Plots Optimization OptimizationOptimJL Turing PairPlots`.
+Alternatively, you can run `using Pkg; Pkg.add(["Plots", "Optimization", "OptimizationOptimJL", "Turing", "PairPlots"])`.
 In your own code, you most likely won't need all of these packages. Pick and choose the one that best fits your problem.
 
 If you will be using these tools as part of a bigger project, it's strongly recommended to create a [Julia Project](https://pkgdocs.julialang.org/v1/environments/) to record package versions. If you're just experimenting, you can create a temporary project by running `] activate --temp`.
@@ -46,13 +47,12 @@ julia> scatter(x, y, xlabel="x", ylabel="y", label="data")
 ![](../assets/tutorials/curve-fit/data-scatter.svg)
 
 
-## Linear Regression
+## Linear regression
 
 Before using any packages, let's perform a linear fit from scratch using some linear algebra.
 
 The equation of a line can be written in matrix form as 
-$$
-\begin{equation}
+```math
 \quad
 \begin{pmatrix} 
 N & \sum y_i \\
@@ -66,15 +66,13 @@ c_2 \\
 \sum y_i \\
 \sum y_i x_i
 \end{pmatrix}
-\end{equation}
-$$
+```
 
 where $c_1$ and $c_2$ are the intercept and slope.
 
 Multiplying both sides by the inverse of the first matrix gives
 
-$$
-\begin{equation}
+```math
 \quad
 \begin{pmatrix}
 c_1 \\
@@ -88,8 +86,7 @@ N & \sum y_i \\
 \sum y_i \\
 \sum y_i x_i
 \end{pmatrix}
-\end{equation}
-$$
+```
 
 We can write the right-hand side matrix and vector (let's call them `A` and `b`) in Julia notation like so:
 ```julia
@@ -136,7 +133,7 @@ julia> plot!(x, linfunc.(x; slope=c[2], intercept=c[1]), label="best fit")
 
 The package [LsqFit](https://julianlsolvers.github.io/LsqFit.jl/latest/) contains helper functions for performing these types of fits and evaluating their goodness of fit.
 
-## (Non-)Linear Curve Fit
+## (Non-)linear curve fit
 
 We can fit a general function to data using the [Optimization.jl](http://optimization.sciml.ai/stable/) package. Through its various backends, Optimization.jl supports a very wide range of algorithms for local, global, convex, and non-convex optimization. 
 
@@ -229,7 +226,8 @@ Let's start with a linear model once, now with the Turing `@model` syntax:
     # Set the prior on our slope coefficient.
     slope ~ Normal(sqrt(10))
 
-    # Calculate all the mu terms.
+    # Each point is drawn from a gaussian (Normal) distribution
+    # with mean calculated form our linear model, and standard deviation as the square root of the variance variable
     for i in eachindex(x,y)
         y[i] ~ Normal(x[i] * slope + intercept, sqrt(σ₂))
     end
@@ -257,6 +255,21 @@ plot!(x, x .* slope' .+ intercept';
 )
 ```
 ![](../assets/tutorials/curve-fit/bayesian-lin-regression.svg)
+
+Each gray curve is a sample from the posterior distribution of this model. To examine the model parameters and their covariance in greater detail, we can make a corner plot using the PairPlots.jl package. We'll need a few more samples for a nice plot, so re-run the NUTS sampler with more iterations first.
+```
+Random.seed!(1234)
+chain = sample(model, NUTS(0.65), 25_000)
+
+using PairPlots
+table = (;
+    intercept= chain["intercept"],
+    slope= chain["slope"],
+    σ= sqrt.(chain["σ₂"])
+)
+PairPlots.corner(table)
+```
+![](../assets/tutorials/curve-fit/lin-regress-corner.svg)
 
 
 Let's now repeat this proceedure with a Bayesian quadratic model.
