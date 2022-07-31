@@ -38,3 +38,5 @@ The following tutorials show how to use Julia to perform common taks in astronom
 * [Plot a JWST image with world coordinates and a scale bar](@ref tutorial-jwst-scalebar)
 
 * [Load tabular data from a FITS file and plot acceleration of nearby stars](@ref tabular-data)
+
+* [Curve fitting: least square and Bayesian](@ref curve-fit)

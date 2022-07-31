@@ -17,6 +17,7 @@ makedocs(;
             "General" => [
                 "tutorials/jwst-image-scale-bar.md",
                 "tutorials/tabular-data.md",
+                "tutorials/curve-fit.md",
             ]
         ]
     ],
