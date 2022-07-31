@@ -3,11 +3,11 @@
 This tutorial shows how to download one of the new famous JWST release images of the Carina nebula, plot it with world coordinates (RA and DEC), and add a scalebar.
 Let's get started!
 
-## Packages we'll need
+## Packages
 
 * [`Downloads`](https://docs.julialang.org/en/v1/stdlib/Downloads/): we'll use this built-in Julia standard library to download the raw image data
-* [`AstroImages`](http://juliaastro.org/AstroImages.jl/dev/): We'll use this package to load and display the image
-* [`Plots`](https://docs.juliaplots.org/latest/): We'll use this package to display coordinates along the image and add the scalebar
+* [`AstroImages`](http://juliaastro.org/AstroImages.jl/dev/): we'll use this package to load and display the image
+* [`Plots`](https://docs.juliaplots.org/latest/): we'll use this package to display coordinates along the image and add the scalebar
 
 You can install the necessary packages by running Julia, and typing `]` to enter Pkg-mode. Then: `add AstroImages Plots`.
 Alternatively, you can run `using Pkg; Pkg.add(["AstroImages", "Plots"])`.

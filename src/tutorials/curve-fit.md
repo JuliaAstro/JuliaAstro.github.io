@@ -3,13 +3,13 @@
 
 This tutorial will demonstrate fitting data with a straight line (linear regression), an abitrary non-linear model, and finally a Bayesian model.
 
-## Packages we'll need
+## Packages
 
 * [`LinearAlgebra`](https://docs.julialang.org/en/v1/stdlib/LinearAlgebra/) we'll use this built-in Julia standard library to perform a linear regression
-* [`Optimization`](http://optimization.sciml.ai/stable/): We'll use this package to display coordinates along the image and add the scalebar
+* [`Optimization`](http://optimization.sciml.ai/stable/): we'll use this package to display coordinates along the image and add the scalebar
 * `OptimizationOptimJL`: the specific optimizer backend we will use.  For your own problems, select the best backend from the Optimization.jl documentation page.
-* [`Turing`](https://turing.ml/stable/): We'll use this package for Bayesian modelling.
-* [`PairPlots`](https://github.com/sefffal/PairPlots.jl): We'll use this for creating a corner plot of the posterior from our Bayesian models.
+* [`Turing`](https://turing.ml/stable/): we'll use this package for Bayesian modelling.
+* [`PairPlots`](https://github.com/sefffal/PairPlots.jl): we'll use this for creating a corner plot of the posterior from our Bayesian models.
 
 You can install the necessary packages by running Julia, and typing `]` to enter Pkg-mode. Then: `add Plots Optimization OptimizationOptimJL Turing PairPlots`.
 Alternatively, you can run `using Pkg; Pkg.add(["Plots", "Optimization", "OptimizationOptimJL", "Turing", "PairPlots"])`.

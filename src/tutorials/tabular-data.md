@@ -9,12 +9,12 @@ A wide range of tabular data formats are supported in Julia under a common [Tabl
 [CSV](https://github.com/JuliaData/CSV.jl.git), [Excel](https://github.com/felipenoris/XLSX.jl.git), [Arrow](https://github.com/apache/arrow-julia), [CASA Tables](http://mweastwood.info/CasaCore.jl/stable/), and various SQL formats to name a few.
 
 
-## Packages we'll need
+## Packages
 
-* [`FITSIO`](http://juliaastro.org/FITSIO.jl/stable/): We'll use this package to load a table stored in a FITS file
-* [`DataFrames`](https://dataframes.juliadata.org/stable/): We'll use this package to examine and manipulate the table
-* [`Plots`](https://docs.juliaplots.org/latest/): We'll use this package to visualize the contents of the table
-* [`AstroLib`](https://juliaastro.org/AstroLib.jl/stable/): General utility package. We'll use a helper function to compute a map projection.
+* [`FITSIO`](http://juliaastro.org/FITSIO.jl/stable/): we'll use this package to load a table stored in a FITS file
+* [`DataFrames`](https://dataframes.juliadata.org/stable/): we'll use this package to examine and manipulate the table
+* [`Plots`](https://docs.juliaplots.org/latest/): we'll use this package to visualize the contents of the table
+* [`AstroLib`](https://juliaastro.org/AstroLib.jl/stable/): general utility package. We'll use a helper function to compute a map projection.
 
 You can install the necessary packages by running Julia, and typing `]` to enter Pkg-mode. Then: `add FITSIO DataFrames Plots AstroLib`.
 Alternatively, you can run `using Pkg; Pkg.add(["FITSIO", "DataFrames", "Plots", "AstroLib"])`.
