@@ -16,10 +16,10 @@ A wide range of tabular data formats are supported in Julia under a common [Tabl
 * [`Plots`](https://docs.juliaplots.org/latest/): We'll use this package to visualize the contents of the table
 * [`AstroLib`](https://juliaastro.org/AstroLib.jl/stable/): General utility package. We'll use a helper function to compute a map projection.
 
-You can install the necessary packages by running Julia, and typing `]` to enter Pkg-mode. Then: `add AstroImages`.
-Alternatively, you can run `using Pkg; Pkg.add("AstroImages")`.
+You can install the necessary packages by running Julia, and typing `]` to enter Pkg-mode. Then: `add FITSIO DataFrames Plots AstroLib`.
+Alternatively, you can run `using Pkg; Pkg.add(["FITSIO", "DataFrames", "Plots", "AstroLib"])`.
 
-If you will be using these tools as part of a bigger project, it's strongly recommended to create a [Julia Project](https://pkgdocs.julialang.org/v1/environments/) to record package versions.
+If you will be using these tools as part of a larger project, it's strongly recommended to create a [Julia Project](https://pkgdocs.julialang.org/v1/environments/) to record package versions.  If you're just experimenting, you can create a temporary project by running `] activate --temp`.
 
 If you're using [Pluto notebooks](https://github.com/fonsp/Pluto.jl), installing and recording package versions in a project are handled for you automatically.
 

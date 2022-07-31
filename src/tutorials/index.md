@@ -23,7 +23,7 @@ You can either use it interactively by entering "Pkg mode" in your terminal, or 
 
 This will take a little while to download all the required packages and precompile for your system. If you have several packages to install, list them all at once instead of one by one to save time: `add SomePackage1 SomePackage2 SomePackage3`
 
-It's recommended to use Julia projects to store what packages you use. You can create or activate a previously created project by entering Pkg-mode (type `]`) and running `activate myproject`. Another option is to create a folder for your project, and start julia in that folder with the option `julia --project=./`. 
+It's recommended to use Julia projects to store what packages you use and make it easier to reproduce your work. You can create or activate a previously created project by entering Pkg-mode (type `]`) and running `activate myproject`. Another option is to create a folder for your project, and start julia in that folder with the option `julia --project=./`. 
 
 For more information on how to use the Julia package manager, refer to the [Pkg.jl documentation](https://pkgdocs.julialang.org/v1/repl/).
 
@@ -37,5 +37,4 @@ The following tutorials show how to use Julia to perform common taks in astronom
 
 * [Plot a JWST image with world coordinates and a scale bar](@ref tutorial-jwst-scalebar)
 
-* [Loading tabular data from a FITS file](@ref tabular-data)
-
+* [Load tabular data from a FITS file and plot acceleration of nearby stars](@ref tabular-data)
