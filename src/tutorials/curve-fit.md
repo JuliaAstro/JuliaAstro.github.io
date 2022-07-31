@@ -211,7 +211,7 @@ Let's shift gears and now create a fully Bayesian model using the [Turing.jl](ht
 
 Instead of defining an arbitrary Julia function, this package requires us to use a macro called `@model`.
 
-Let's start with a linear model once, now with the Turing `@model` syntax:
+Let's start with a linear model once more, now with the Turing `@model` syntax:
 
 ```julia
 # Bayesian linear regression.
@@ -235,7 +235,7 @@ end
 
 ```
 
-We can now draw posterior samples from this model using one of many available samplers, `NUTS`, or the No U-Turn Sampler.
+We can now draw posterior samples from this model using one of many available samplers, `NUTS`, the No U-Turn Sampler.
 
 ```julia
 model = linear_regression(x, y)
