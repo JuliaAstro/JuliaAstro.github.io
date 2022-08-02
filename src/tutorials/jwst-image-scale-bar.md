@@ -140,7 +140,6 @@ stop_coord_pix = world_to_pix(carina_full, stop_coord_world)
 # note: in theory this depends on where in the image we make this calculation
 # because the coordinate system is warped
 arcmin_px = norm(stop_coord_pix .- start_coord_pix)
-# TODO: Linear algebra
 
 # Plot our image again
 implot(carina; grid=false, clims=Percent(98))
