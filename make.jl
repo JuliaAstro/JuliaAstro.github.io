@@ -29,12 +29,9 @@ docsmodules = [
         "UnitfulAstro",
         "AstroAngles",
         "AstroTime",
+        "SkyCoords",
         "WCS",
     ],
-    # "Visualization & Plotting" => [
-    #     # "AstroImages",
-    #     # "Plots"
-    # ],
     "Images" => [
         "AstroImages",
         "SAOImageDS9",
@@ -54,18 +51,26 @@ docsmodules = [
     "Cosmology" => [
         "Cosmology"
     ],
+    "Orbits & Emphemerides" => [
+        # "JPLEphemeris",
+        "EarthOrientation",
+        "Transits",
+        "PlanetOrbits",
+        "AstroLib",
+    ],
     "Numerical Utilities" => [
         "FFTW",
-        "Optimization"
+        # "Optimization"
+        "BoxLeastSquares"
     ],
     "Statistics" => [
     #     "Statistics",
         # "StatsBase",
-        "Turing",
+        # "Turing",
         "PairPlots"
     ]
 ]
-#   Reproject ERFA SkyCoords  Transits EarthOrientation  BoxLeastSquares DustExtinction LombScargle
+#   Reproject   DustExtinction 
 
 
 # Intro pages to a given category.
@@ -73,10 +78,9 @@ docsmodules = [
 catpagestarts = [
     Any["highlevels/timecoords.md"],
     Any["highlevels/images.md"],
-    # Any["highlevels/vizplot.md"],
     Any["highlevels/dataio.md"],
     Any["highlevels/cosmology.md"],
-    Any["highlevels/images.md"],
+    Any["highlevels/orb-ephem.md"],
     Any["highlevels/numerical-utils.md"],
     Any["highlevels/stats.md"],
 ]
@@ -84,15 +88,14 @@ catpagestarts = [
 # 3rd party packages: pull in README only
 usereadme = Dict(
 
-    # No docs yet
+
+    # These take longer to build. Uncomment to disable and just use the README.
+    "AstroImages" => "https://github.com/JuliaAstro/AstroImages.jl",
+    # "PSFModels" => "https://github.com/JuliaAstro/PSFModels.jl",
+    # "LACosmic" => "https://github.com/JuliaAstro/LACosmic.jl",
+
+    # No docs page yet
     "AstroAngles" => "https://github.com/JuliaAstro/AstroAngles.jl",
-
-    # Not building right
-    "PSFModels" => "https://github.com/JuliaAstro/PSFModels.jl",
-    "LACosmic" => "https://github.com/JuliaAstro/LACosmic.jl",
-
-    # Too slow to build
-    "Optimization" => "https://github.com/SciML/Optimization.jl",
 
     # Ecosystem
     "CasaCore" => "https://github.com/mweastwood/CasaCore.jl",
@@ -101,10 +104,7 @@ usereadme = Dict(
     "Difmap" => "https://gitlab.com/aplavin/Difmap.jl",
 
     # External
-    "Plots" => "https://github.com/JuliaPlots/Plots.jl",
     "FFTW" => "https://github.com/JuliaMath/FFTW.jl",
-    "StatsBase" => "https://github.com/JuliaStats/StatsBase.jl",
-    "Turing" => "https://github.com/TuringLang/Turing.jl",
     "PairPlots" => "https://github.com/sefffal/PairPlots.jl"
 )
 
