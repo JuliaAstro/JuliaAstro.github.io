@@ -1,4 +1,4 @@
-using Documenter, LibGit2, Pkg
+using Documenter, LibGit2, Pkg, TOML, UUIDs
 
 # This make file compiles the documentation for the JuliaAstro website.
 # It consists of the usual documeter structure, but also follows the approach
@@ -24,61 +24,88 @@ fullpages = Any[
 # Categories to pull in from external docs
 # Ordering Matters!
 docsmodules = [
-    "Images" => ["FITSIO"],
-    # "Images" => ["AstroImages", "FITSIO"],
-    # "Time & Coordinates" => ["WCS", "AstroTime"]
-    "Visualization & Plotting" => [
-        # "AstroImages",
+    "Time, Coordinates, & Units" => [
+        "AstroLib",
+        "UnitfulAstro",
+        "AstroAngles",
+        "AstroTime",
+        "WCS",
+    ],
+    # "Visualization & Plotting" => [
+    #     # "AstroImages",
+    #     # "Plots"
+    # ],
+    "Images" => [
+        "AstroImages",
         "SAOImageDS9",
-        # "Plots"
+        "Photometry",
+        "PSFModels",
+        "CCDReduction",
+        "LACosmic",
     ],
     "Data I/O" => [
-        # "CFITSIO",
+        "FITSIO",
+        "CFITSIO",
         "CasaCore",
         "OIFITS",
         "VLBIData",
         "Difmap",
     ],
     "Cosmology" => [
-
-    ],
-    "Images" => [
-        # "CCDReduction",
-        # "LACosmic"
+        "Cosmology"
     ],
     "Numerical Utilities" => [
-        "FFTW"
+        "FFTW",
+        "Optimization"
     ],
-    # "Statistics" => [
+    "Statistics" => [
     #     "Statistics",
-    #     "StatsBase",
-    #     "Turing",
-    #     "PairPlots",
-    # ]
+        # "StatsBase",
+        "Turing",
+        "PairPlots"
+    ]
 ]
-# CCDReduction LACosmic Photometry PSFModels Reproject AstroAngles AstroTime ERFA SkyCoords UnitfulAstro WCS Transits EarthOrientation AstroLib BoxLeastSquares Cosmology DustExtinction LombScargle
+#   Reproject ERFA SkyCoords  Transits EarthOrientation  BoxLeastSquares DustExtinction LombScargle
 
 
 # Intro pages to a given category.
 # Ensure order matches the above.
 catpagestarts = [
+    Any["highlevels/timecoords.md"],
     Any["highlevels/images.md"],
-    Any["highlevels/vizplot.md"],
+    # Any["highlevels/vizplot.md"],
     Any["highlevels/dataio.md"],
     Any["highlevels/cosmology.md"],
     Any["highlevels/images.md"],
     Any["highlevels/numerical-utils.md"],
+    Any["highlevels/stats.md"],
 ]
 
 # 3rd party packages: pull in README only
 usereadme = Dict(
-    "FFTW" => "https://github.com/JuliaMath/FFTW.jl",
-    # "CFITSIO" => "https://github.com/JuliaAstro/CFITSIO.jl",
+
+    # No docs yet
+    "AstroAngles" => "https://github.com/JuliaAstro/AstroAngles.jl",
+
+    # Not building right
+    "PSFModels" => "https://github.com/JuliaAstro/PSFModels.jl",
+    "LACosmic" => "https://github.com/JuliaAstro/LACosmic.jl",
+
+    # Too slow to build
+    "Optimization" => "https://github.com/SciML/Optimization.jl",
+
+    # Ecosystem
     "CasaCore" => "https://github.com/mweastwood/CasaCore.jl",
     "OIFITS" => "https://github.com/emmt/OIFITS.jl",
     "VLBIData" => "https://gitlab.com/aplavin/VLBIData.jl",
     "Difmap" => "https://gitlab.com/aplavin/Difmap.jl",
-    # "Plots" => "https://github.com/JuliaPlots/Plots.jl",
+
+    # External
+    "Plots" => "https://github.com/JuliaPlots/Plots.jl",
+    "FFTW" => "https://github.com/JuliaMath/FFTW.jl",
+    "StatsBase" => "https://github.com/JuliaStats/StatsBase.jl",
+    "Turing" => "https://github.com/TuringLang/Turing.jl",
+    "PairPlots" => "https://github.com/sefffal/PairPlots.jl"
 )
 
 
@@ -132,6 +159,7 @@ function recursive_append(pages::AbstractArray{<:Any}, str)
     pages
 end
 
+installed_pkg_names = getproperty.(values(Pkg.dependencies()), :name)
 for (i, cat) in enumerate(docsmodules)
     global catpage
     catpage = catpagestarts[i]
@@ -168,20 +196,51 @@ for (i, cat) in enumerate(docsmodules)
                 mkpath(targdir)
                 cp(sourcedir, targdir, force=true)
                 pagefile = joinpath(pkgdir($(Symbol(mod))), "docs", "pages.jl")
-                include(pagefile)
-                push!(allmods, $(Symbol(mod))) # Sub-package we are documenting
+                if isfile(pagefile)
 
-                # Dependencies required for sub-package docs
-                # All sub-deps are already installed but we have to mess with LOAD_PATH
-                # so that we can import them directly.
-                push!(Base.LOAD_PATH, joinpath(pkgdir($(Symbol(mod))), "docs"))
-                for depe in requiredmods
-                    eval(quote
-                        using $depe
-                        push!(allmods, $depe)
-                    end)
+                    # By default, don't require any external modules
+                    requiredmods = Symbol[]
+
+                    # Load page index for package
+                    include(pagefile)
+                    push!(allmods, $(Symbol(mod))) # Sub-package we are documenting
+
+                    # Dependencies of sub-package docs Project.toml
+                    # This one is hackier. We parse the docs/Project.toml, add a name and uuid field,
+                    # and then dev it.
+                    docprojectname = string($(Symbol(mod)), "docs")
+                    docsprojectfname = joinpath(pkgdir($(Symbol(mod))), "docs", "Project.toml")
+                    if isfile(docsprojectfname) && docprojectname ∉ installed_pkg_names
+                        @info "  Naming and dev'ing docs folder" docsprojectfname
+                        docsproject = TOML.parsefile(docsprojectfname)
+                        docsproject["name"] = docprojectname
+                        docsproject["uuid"] = string(uuid4())
+                        open(docsprojectfname, "w") do io
+                            TOML.print(io, docsproject)
+                        end
+                        open(joinpath(dirname(docsprojectfname), "src", docprojectname*".jl"), write=true) do io
+                            write(io, "module $docprojectname; end")
+                        end
+                        Pkg.develop(path=dirname(docsprojectfname))
+                    end
+                    # Dependencies of sub-packages
+                    # All sub-deps are already installed but we have to mess with LOAD_PATH
+                    # so that we can import them directly.
+                    push!(Base.LOAD_PATH, joinpath(pkgdir($(Symbol(mod))), "docs"))
+
+
+
+                    # These are a list of modules supplied by packages that are necesary
+                    # to load before the docs can be built
+                    for depe in requiredmods
+                        eval(quote
+                            using $depe
+                            push!(allmods, $depe)
+                        end)
+                    end
+
+                    push!(catpage, $mod => recursive_append(pages, joinpath("modules", $mod)))
                 end
-                push!(catpage, $mod => recursive_append(pages, joinpath("modules", $mod)))
             end
             @eval $ex
         end
