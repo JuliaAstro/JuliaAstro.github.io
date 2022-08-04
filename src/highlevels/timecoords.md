@@ -8,7 +8,7 @@
 - Parse and represent sexagesimal angles with a variety of delimiters
 - Methods for converting to hour-minute-second angles from degrees and radians, and vice-versa
 
-### [AstroTime.jl](https://github.com/JuliaAstro/AstroTime.jl) [![](assets/book.png)](https://juliaastro.github.io/AstroTime.jl/stable/)
+### [AstroTime.jl](https://github.com/JuliaAstro/AstroTime.jl) [![](../assets/book.png)](https://juliaastro.github.io/AstroTime.jl/stable/)
 
 **Astronomical time keeping**
 
@@ -28,13 +28,13 @@
 - Supports ICRS, galactic, and FK5 coordinate systems
 - Fast conversion of coordinates between different systems
 
-### [UnitfulAstro.jl](https://github.com/JuliaAstro/UnitfulAstro.jl) [![](assets/book.png)](https://juliaastro.github.io/UnitfulAstro.jl/stable/)
+### [UnitfulAstro.jl](https://github.com/JuliaAstro/UnitfulAstro.jl) [![](../assets/book.png)](https://juliaastro.github.io/UnitfulAstro.jl/stable/)
 
 **Astronomical units**
 
 - Extension of [Unitful.jl](https://github.com/painterqubits/Unitful.jl)
 
-### [WCS.jl](https://github.com/JuliaAstro/WCS.jl) [![](assets/book.png)](https://juliaastro.github.io/WCS.jl/stable/)
+### [WCS.jl](https://github.com/JuliaAstro/WCS.jl) [![](../assets/book.png)](https://juliaastro.github.io/WCS.jl/stable/)
 
 **World Coordinate System transformations**
 
