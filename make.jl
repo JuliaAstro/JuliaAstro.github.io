@@ -90,7 +90,7 @@ usereadme = Dict(
 
 
     # These take longer to build. Uncomment to disable and just use the README.
-    "AstroImages" => "https://github.com/JuliaAstro/AstroImages.jl",
+    # "AstroImages" => "https://github.com/JuliaAstro/AstroImages.jl",
     # "PSFModels" => "https://github.com/JuliaAstro/PSFModels.jl",
     # "LACosmic" => "https://github.com/JuliaAstro/LACosmic.jl",
 
@@ -114,6 +114,8 @@ allmods = Vector{Module}()
 if isdir("src/modules")
     rm("src/modules", recursive=true)
 end
+
+ENV["DATADEPS_ALWAYS_ACCEPT"] = true
 
 function recursive_append(pages::AbstractArray{<:AbstractArray}, str)
     map(recursive_append, pages, str)
