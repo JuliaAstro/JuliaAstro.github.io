@@ -1,4 +1,4 @@
-using Documenter, LibGit2, Pkg, TOML, UUIDs
+using LibGit2, Pkg, TOML, UUIDs
 
 # This make file compiles the documentation for the JuliaAstro website.
 # It consists of the usual documeter structure, but also follows the approach
@@ -249,7 +249,12 @@ for (i, cat) in enumerate(docsmodules)
     end
     push!(fullpages, cat[1] => catpage)
 end
-# @show fullpages allmods
+
+
+# We wait to import Documenter in case one of the packages requires
+# an older version. If that was the case, it's version may have changed
+# after the above for-loop
+using Documenter
 
 mathengine = MathJax3(Dict(
     :loader => Dict("load" => ["[tex]/require", "[tex]/mathtools"]),
