@@ -60,8 +60,8 @@ docsmodules = [
     ],
     "Numerical Utilities" => [
         "FFTW",
-        # "Optimization"
-        "BoxLeastSquares"
+        "Optimization",
+        "BoxLeastSquares",
     ],
     "Statistics" => [
     #     "Statistics",
