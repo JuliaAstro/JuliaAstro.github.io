@@ -133,6 +133,7 @@ pkgrevs = Dict(
     "Transits" =>  "main",
     "AstroLib" =>  "master",
     "BoxLeastSquares" => "main",
+    "Optimization" => "master",
 )
 
 allmods = Vector{Module}()
