@@ -291,7 +291,6 @@ for (i, cat) in enumerate(docsmodules)
     end
     push!(fullpages, cat[1] => catpage)
 end
-error()
 Pkg.precompile()
 
 # We wait to import Documenter in case one of the packages requires
