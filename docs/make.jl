@@ -247,16 +247,19 @@ for (i, cat) in enumerate(docsmodules)
                     docprojectname = string($(Symbol(mod)), "docs")
                     docsprojectfname = joinpath(pkgdir($(Symbol(mod))), "docs", "Project.toml")
                     if isfile(docsprojectfname) && docprojectname ∉ installed_pkg_names
-                        @info "  Naming and dev'ing docs folder" docsprojectfname
                         docsproject = TOML.parsefile(docsprojectfname)
-                        docsproject["name"] = docprojectname
-                        docsproject["uuid"] = string(uuid4())
-                        @info "  Writing new docsproject file" project=docsprojectfname*".toml"
-                        open(docsprojectfname, "w") do io
-                            TOML.print(io, docsproject)
-                        end
-                        open(joinpath(dirname(docsprojectfname), "src", docprojectname*".jl"), write=true) do io
-                            write(io, "module $docprojectname; end")
+                        @info "  dev'ing docs folder" docsprojectfname
+                        if !haskey(docsproject, "name") || !haskey(docsproject, "uuid")
+                            @info "  giving docs folder name and uui" docsprojectname
+                            docsproject["name"] = docprojectname
+                            docsproject["uuid"] = string(uuid4())
+                            @info "  updating docsproject file" project=docsprojectfname
+                            open(docsprojectfname, "w") do io
+                                TOML.print(io, docsproject)
+                            end
+                            open(joinpath(dirname(docsprojectfname), "src", docprojectname*".jl"), write=true) do io
+                                write(io, "module $docprojectname; end")
+                            end
                         end
                         Pkg.develop(path=dirname(docsprojectfname))
                     else
@@ -265,7 +268,7 @@ for (i, cat) in enumerate(docsmodules)
                     # Dependencies of sub-packages
                     # All sub-deps are already installed but we have to mess with LOAD_PATH
                     # so that we can import them directly.
-                    push!(Base.LOAD_PATH, joinpath(pkgdir($(Symbol(mod))), "docs", docprojectname))
+                    push!(Base.LOAD_PATH, joinpath(pkgdir($(Symbol(mod))), "docs"))
 
 
 
@@ -288,6 +291,7 @@ for (i, cat) in enumerate(docsmodules)
     end
     push!(fullpages, cat[1] => catpage)
 end
+error()
 Pkg.precompile()
 
 # We wait to import Documenter in case one of the packages requires
