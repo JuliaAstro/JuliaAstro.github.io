@@ -251,7 +251,7 @@ for (i, cat) in enumerate(docsmodules)
                         docsproject = TOML.parsefile(docsprojectfname)
                         @info "  dev'ing docs folder" docsprojectfname
                         if !haskey(docsproject, "name") || !haskey(docsproject, "uuid")
-                            @info "  giving docs folder name and uui" docsprojectname
+                            @info "  giving docs folder name and uui" docprojectname
                             docsproject["name"] = docprojectname
                             docsproject["uuid"] = string(uuid4())
                             @info "  updating docsproject file" project=docsprojectfname
