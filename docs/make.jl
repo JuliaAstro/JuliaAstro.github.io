@@ -193,7 +193,7 @@ for (name,rev) in pkgrevs
     # Add latest development version
     Pkg.add(PackageSpec(;name, rev))
 end
-Pkg.precompile()
+
 
 installed_pkg_names = getproperty.(values(Pkg.dependencies()), :name)
 for (i, cat) in enumerate(docsmodules)
@@ -251,6 +251,7 @@ for (i, cat) in enumerate(docsmodules)
                         docsproject = TOML.parsefile(docsprojectfname)
                         docsproject["name"] = docprojectname
                         docsproject["uuid"] = string(uuid4())
+                        @info "  Writing new docsproject file" project=docsprojectfname*".toml"
                         open(docsprojectfname, "w") do io
                             TOML.print(io, docsproject)
                         end
@@ -258,11 +259,13 @@ for (i, cat) in enumerate(docsmodules)
                             write(io, "module $docprojectname; end")
                         end
                         Pkg.develop(path=dirname(docsprojectfname))
+                    else
+                        @info "  No docs sub-project to dev" docprojectname docsprojectfname
                     end
                     # Dependencies of sub-packages
                     # All sub-deps are already installed but we have to mess with LOAD_PATH
                     # so that we can import them directly.
-                    push!(Base.LOAD_PATH, joinpath(pkgdir($(Symbol(mod))), "docs"))
+                    push!(Base.LOAD_PATH, joinpath(pkgdir($(Symbol(mod))), "docs", docprojectname))
 
 
 
@@ -285,7 +288,7 @@ for (i, cat) in enumerate(docsmodules)
     end
     push!(fullpages, cat[1] => catpage)
 end
-
+Pkg.precompile()
 
 # We wait to import Documenter in case one of the packages requires
 # an older version. If that was the case, it's version may have changed
