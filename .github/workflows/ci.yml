@@ -4,7 +4,8 @@ on:
   push:
     branches: [source]
   pull_request:
-
+  schedule:
+    - cron:  '15 2 * * *' # 2:15 AM UTC every day
 jobs:
   docs:
     name: Documentation
