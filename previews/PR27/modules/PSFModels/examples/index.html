@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><title>Examples · JuliaAstro</title><script data-outdated-warner src="../../../assets/warner.js"></script><link rel="canonical" href="https://juliaastro.github.io/modules/PSFModels/examples/"/><link href="https://cdnjs.cloudflare.com/ajax/libs/lato-font/3.0.0/css/lato-font.min.css" rel="stylesheet" type="text/css"/><link href="https://cdnjs.cloudflare.com/ajax/libs/juliamono/0.045/juliamono.min.css" rel="stylesheet" type="text/css"/><link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/fontawesome.min.css" rel="stylesheet" type="text/css"/><link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/solid.min.css" rel="stylesheet" type="text/css"/><link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/brands.min.css" rel="stylesheet" type="text/css"/><link href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.13.24/katex.min.css" rel="stylesheet" type="text/css"/><script>documenterBaseURL="../../.."</script><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js" data-main="../../../assets/documenter.js"></script><script src="../../../siteinfo.js"></script><script src="../../../../versions.js"></script><link class="docs-theme-link" rel="stylesheet" type="text/css" href="../../../assets/themes/documenter-dark.css" data-theme-name="documenter-dark" data-theme-primary-dark/><link class="docs-theme-link" rel="stylesheet" type="text/css" href="../../../assets/themes/documenter-light.css" data-theme-name="documenter-light" data-theme-primary/><script src="../../../assets/themeswap.js"></script></head><body><div id="documenter"><nav class="docs-sidebar"><a class="docs-logo" href="../../../"><img src="../../../assets/logo.svg" alt="JuliaAstro logo"/></a><div class="docs-package-name"><span class="docs-autofit"><a href="../../../">JuliaAstro</a></span></div><form class="docs-search" action="../../../search/"><input class="docs-search-query" id="documenter-search-query" name="q" type="text" placeholder="Search docs"/></form><ul class="docs-menu"><li><a class="tocitem" href="../../../">Home</a></li><li><span class="tocitem">Tutorials</span><ul><li><a class="tocitem" href="../../../tutorials/">Getting Started</a></li><li><input class="collapse-toggle" id="menuitem-2-2" type="checkbox"/><label class="tocitem" for="menuitem-2-2"><span class="docs-label">General</span><i class="docs-chevron"></i></label><ul class="collapsed"><li><a class="tocitem" href="../../../tutorials/jwst-image-scale-bar/">JWST image with scale bar</a></li><li><a class="tocitem" href="../../../tutorials/tabular-data/">Working with tabular data</a></li><li><a class="tocitem" href="../../../tutorials/curve-fit/">Curve Fitting</a></li></ul></li></ul></li><li><span class="tocitem">Time, Coordinates, &amp; Units</span><ul><li><a class="tocitem" href="../../../highlevels/timecoords/">Time, Coordinates, &amp; Units Overview</a></li><li><a class="tocitem" href="../../AstroAngles/">AstroAngles</a></li></ul></li><li><span class="tocitem">Images</span><ul><li><a class="tocitem" href="../../../highlevels/images/">Images Overview</a></li></ul></li><li><span class="tocitem">Data I/O</span><ul><li><a class="tocitem" href="../../../highlevels/dataio/">Data I/O Overview</a></li><li><a class="tocitem" href="../../CasaCore/">CasaCore</a></li><li><a class="tocitem" href="../../OIFITS/">OIFITS</a></li><li><a class="tocitem" href="../../VLBIData/">VLBIData</a></li><li><a class="tocitem" href="../../Difmap/">Difmap</a></li></ul></li><li><span class="tocitem">Cosmology</span><ul><li><a class="tocitem" href="../../../highlevels/cosmology/">Cosmology Overview</a></li></ul></li><li><span class="tocitem">Orbits &amp; Emphemerides</span><ul><li><a class="tocitem" href="../../../highlevels/orb-ephem/">Orbits &amp; Ephemerides Overview</a></li><li><a class="tocitem" href="../../PlanetOrbits/">PlanetOrbits</a></li></ul></li><li><span class="tocitem">Numerical Utilities</span><ul><li><a class="tocitem" href="../../../highlevels/numerical-utils/">Numerical Utilities Overview</a></li><li><a class="tocitem" href="../../FFTW/">FFTW</a></li></ul></li><li><span class="tocitem">Statistics</span><ul><li><a class="tocitem" href="../../../highlevels/stats/">Statistics Overview</a></li><li><a class="tocitem" href="../../PairPlots/">PairPlots</a></li></ul></li></ul><div class="docs-version-selector field has-addons"><div class="control"><span class="docs-label button is-static is-size-7">Version</span></div><div class="docs-selector control is-expanded"><div class="select is-fullwidth is-size-7"><select id="documenter-version-selector"></select></div></div></div></nav><div class="docs-main"><header class="docs-navbar"><nav class="breadcrumb"><ul class="is-hidden-mobile"><li class="is-active"><a href>Examples</a></li></ul><ul class="is-hidden-tablet"><li class="is-active"><a href>Examples</a></li></ul></nav><div class="docs-right"><a class="docs-edit-link" href="https://github.com/JuliaAstro/JuliaAstro.github.io/blob/source/docs/src/modules/PSFModels/examples.md" title="Edit on GitHub"><span class="docs-icon fab"></span><span class="docs-label is-hidden-touch">Edit on GitHub</span></a><a class="docs-settings-button fas fa-cog" id="documenter-settings-button" href="#" title="Settings"></a><a class="docs-sidebar-button fa fa-bars is-hidden-desktop" id="documenter-sidebar-button" href="#"></a></div></header><article class="content" id="documenter-page"><h1 id="Examples"><a class="docs-heading-anchor" href="#Examples">Examples</a><a id="Examples-1"></a><a class="docs-heading-anchor-permalink" href="#Examples" title="Permalink"></a></h1><h2 id="Fitting-a-PSF"><a class="docs-heading-anchor" href="#Fitting-a-PSF">Fitting a PSF</a><a id="Fitting-a-PSF-1"></a><a class="docs-heading-anchor-permalink" href="#Fitting-a-PSF" title="Permalink"></a></h2><p>Here is a brief example which shows how to construct a loss function for fitting a <code>PSFModel</code> to some data.</p><pre><code class="language- hljs">using PSFModels
+using PSFModels: fit
+using HCIDatasets: BetaPictoris
+using Plots
+using Statistics
+
+# convenience function for plotting
+function imshow(data; kwargs...)
+    xlim = extrema(axes(data, 1))
+    ylim = extrema(axes(data, 2))
+    heatmap(transpose(data); xlim=xlim, ylim=ylim,
+            aspect_ratio=1, clims=(1e-5, Inf), kwargs...)
+end
+
+# get a PSF from HCIDatasets.jl;
+# you may be prompted to download the file
+psf = BetaPictoris[:psf]
+inds = CartesianIndices(psf)
+
+imshow(psf)</code></pre><p>We can fit this data with a variety of models, here showcasing the flexible <a href="../api/#PSFModels.fit"><code>PSFModels.fit</code></a> function.</p><h3 id="Gaussian"><a class="docs-heading-anchor" href="#Gaussian">Gaussian</a><a id="Gaussian-1"></a><a class="docs-heading-anchor-permalink" href="#Gaussian" title="Permalink"></a></h3><p>Using <a href="../api/#PSFModels.gaussian"><code>gaussian</code></a></p><pre><code class="language- hljs">params = (x=20, y=20, fwhm=5, amp=0.1)
+P_gauss, mod_gauss = fit(gaussian, params, psf)
+pairs(P_gauss)</code></pre><pre><code class="language- hljs">plot(
+    imshow(psf, title=&quot;Data&quot;),
+    imshow(mod_gauss.(inds), title=&quot;Model&quot;),
+    cbar=false,
+    ticks=false,
+    xlabel=&quot;&quot;,
+    ylabel=&quot;&quot;,
+    layout=2,
+    size=(600, 300)
+)</code></pre><p>and now using a rotated, elliptical Gaussian</p><pre><code class="language- hljs">params = (x=20, y=20, fwhm=(5, 5), amp=0.1, theta=0)
+P_ellip, mod_ellip = fit(gaussian, params, psf)
+pairs(P_ellip)</code></pre><pre><code class="language- hljs">plot(
+    imshow(psf, title=&quot;Data&quot;),
+    imshow(mod_ellip.(inds), title=&quot;Model&quot;),
+    cbar=false,
+    ticks=false,
+    xlabel=&quot;&quot;,
+    ylabel=&quot;&quot;,
+    layout=2,
+    size=(600, 300)
+)</code></pre><h3 id="Airy-disk"><a class="docs-heading-anchor" href="#Airy-disk">Airy disk</a><a id="Airy-disk-1"></a><a class="docs-heading-anchor-permalink" href="#Airy-disk" title="Permalink"></a></h3><p>Now with <a href="../api/#PSFModels.airydisk"><code>airydisk</code></a></p><pre><code class="language- hljs">params = (x=20, y=20, fwhm=5, amp=0.1, ratio=0.3)
+P_airy, mod_airy = fit(airydisk, params, psf)
+pairs(P_airy)</code></pre><pre><code class="language- hljs">plot(
+    imshow(psf, title=&quot;Data&quot;),
+    imshow(mod_airy.(inds), title=&quot;Model&quot;),
+    cbar=false,
+    ticks=false,
+    xlabel=&quot;&quot;,
+    ylabel=&quot;&quot;,
+    layout=2,
+    size=(600, 300)
+)</code></pre><h3 id="Moffat"><a class="docs-heading-anchor" href="#Moffat">Moffat</a><a id="Moffat-1"></a><a class="docs-heading-anchor-permalink" href="#Moffat" title="Permalink"></a></h3><p>And finally, with <a href="../api/#PSFModels.moffat"><code>moffat</code></a></p><pre><code class="language- hljs">params = (x=20, y=20, fwhm=(5, 5), amp=0.1, theta=0, alpha=2)
+P_moff, mod_moff = fit(moffat, params, psf)
+pairs(P_moff)</code></pre><pre><code class="language- hljs">plot(
+    imshow(psf, title=&quot;Data&quot;),
+    imshow(mod_moff.(inds), title=&quot;Model&quot;),
+    cbar=false,
+    ticks=false,
+    xlabel=&quot;&quot;,
+    ylabel=&quot;&quot;,
+    layout=2,
+    size=(600, 300)
+)</code></pre><h3 id="Changing-optimization-parameters"><a class="docs-heading-anchor" href="#Changing-optimization-parameters">Changing optimization parameters</a><a id="Changing-optimization-parameters-1"></a><a class="docs-heading-anchor-permalink" href="#Changing-optimization-parameters" title="Permalink"></a></h3><p>Any keyword arguments get passed on to <code>Optim.optimize</code>, and you can change the algorithm used with the <code>alg</code> keyword</p><pre><code class="language- hljs"># load Optim.jl to use the Newton method
+using Optim
+
+params = (x=20, y=20, fwhm=(5, 5), amp=0.1, theta=0, alpha=2)
+P_moff, mod_moff = fit(moffat, params, psf; alg=Newton())
+pairs(P_moff)</code></pre><p>We can also &quot;freeze&quot; parameters by creating a named tuple and passing it to <code>func_kwargs</code></p><pre><code class="language- hljs">
+params = (;x=10, y=20, fwhm=(5, 5), amp=0.1)
+func_kwargs = (;alpha=2)
+P_moff2, mod_moff2 = fit(moffat, params, psf; func_kwargs)
+pairs(P_moff2)</code></pre><pre><code class="language- hljs">plot(
+    imshow(psf, title=&quot;Data&quot;),
+    imshow(mod_moff2.(inds), title=&quot;Model&quot;),
+    cbar=false,
+    ticks=false,
+    xlabel=&quot;&quot;,
+    ylabel=&quot;&quot;,
+    layout=2,
+    size=(600, 300)
+)</code></pre></article><nav class="docs-footer"><p class="footer-message">Powered by <a href="https://github.com/JuliaDocs/Documenter.jl">Documenter.jl</a> and the <a href="https://julialang.org/">Julia Programming Language</a>.</p></nav></div><div class="modal" id="documenter-settings"><div class="modal-background"></div><div class="modal-card"><header class="modal-card-head"><p class="modal-card-title">Settings</p><button class="delete"></button></header><section class="modal-card-body"><p><label class="label">Theme</label><div class="select"><select id="documenter-themepicker"><option value="documenter-light">documenter-light</option><option value="documenter-dark">documenter-dark</option></select></div></p><hr/><p>This document was generated with <a href="https://github.com/JuliaDocs/Documenter.jl">Documenter.jl</a> version 0.27.22 on <span class="colophon-date" title="Friday 5 August 2022 20:48">Friday 5 August 2022</span>. Using Julia version 1.7.3.</p></section><footer class="modal-card-foot"></footer></div></div></div></body></html>
