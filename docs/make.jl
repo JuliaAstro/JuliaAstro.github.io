@@ -105,9 +105,35 @@ usereadme = Dict(
 
     # External
     "FFTW" => "https://github.com/JuliaMath/FFTW.jl",
-    "PairPlots" => "https://github.com/sefffal/PairPlots.jl"
+    "PairPlots" => "https://github.com/sefffal/PairPlots.jl",
+    "PlanetOrbits" => "https://github.com/sefffal/PlanetOrbits.jl"
 )
 
+# Specify revision to install and build docs for.
+# Every package must be listed here UNLESS it's listed in `usereadme` above.
+pkgrevs = Dict(
+    "AstroLib" =>  "master",
+    "UnitfulAstro" =>  "master",
+    "AstroAngles" =>  "main",
+    "AstroTime" =>  "main",
+    "SkyCoords" =>  "master",
+    "WCS" => "master",
+    "AstroImages" =>  "master",
+    "SAOImageDS9" =>  "master",
+    "Photometry" =>  "main",
+    "PSFModels" =>  "main",
+    "CCDReduction" =>  "main",
+    "LACosmic" =>  "main",
+    "FITSIO" =>  "master",
+    "CFITSIO" =>  "master",
+    "Cosmology" =>  "master",
+    "DustExtinction" =>  "master",
+    #  "JPLEphemeris" =>  "master",
+    "EarthOrientation" =>  "master",
+    "Transits" =>  "main",
+    "AstroLib" =>  "master",
+    "BoxLeastSquares" => "main",
+)
 
 allmods = Vector{Module}()
 
@@ -160,6 +186,14 @@ function recursive_append(pages::AbstractArray{<:Any}, str)
     end
     pages
 end
+
+# Step 1: loop through packages and install JuliaAstro ones at their latest revision.
+ENV["JULIA_PKG_PRECOMPILE_AUTO"]=0
+for (name,rev) in pkgrevs
+    # Add latest development version
+    Pkg.add(PackageSpec(;name, rev))
+end
+Pkg.precompile()
 
 installed_pkg_names = getproperty.(values(Pkg.dependencies()), :name)
 for (i, cat) in enumerate(docsmodules)
@@ -242,6 +276,8 @@ for (i, cat) in enumerate(docsmodules)
                     end
 
                     push!(catpage, $mod => recursive_append(pages, joinpath("modules", $mod)))
+                else
+                    @warn "  pages.jl not present, skipping package."
                 end
             end
             @eval $ex
@@ -278,20 +314,6 @@ makedocs(
     pages=fullpages
 )
 
-
-# makedocs(;
-#     repo = "https://github.com/juliaastro/juliaastro.github.io/blob/{commit}{path}#L{line}",
-#     sitename = "JuliaAstro",
-#     format = Documenter.HTML(;
-#         prettyurls = get(ENV, "CI", "false") == "true",
-#         canonical = "https://juliaastro.github.io/",
-#         assets = String[],
-#     ),
-#     pages = [
-
-#     ],
-#     strict = true
-# )
 
 
 deploydocs(;

@@ -1,33 +1,15 @@
+name = "JuliaAstroDocs"
+uuid = "5ba9df79-bc07-467f-bade-66a1d49082bd"
+
 [deps]
-AstroAngles = "5c4adb95-c1fc-4c53-b4ea-2a94080c53d2"
-AstroImages = "fe3fc30c-9b16-11e9-1c73-17dabf39f4ad"
-AstroLib = "c7932e45-9af1-51e7-9da9-f004cd3a462b"
-AstroTime = "c61b5328-d09d-5e37-a9a8-0eb41c39009c"
-BoxLeastSquares = "6c353534-c22b-44cc-9076-7b904de9fadc"
-CCDReduction = "b790e538-3052-4cb9-9f1f-e05859a455f5"
-CFITSIO = "3b1b4be9-1499-4b22-8d78-7db3344d1961"
-Cosmology = "76746363-e552-5dba-9a5a-cef6fa9cc5ab"
-Documenter = "e30172f5-a6a5-5a46-863b-614d45cd2de4"
-DustExtinction = "fb44c06c-c62f-5397-83f5-69249e0a3c8e"
-ERFA = "17511681-8477-586a-8d98-4cfd5a1f2ec3"
-EarthOrientation = "732a3c5d-d6c0-58bc-adb1-1b51709a25e2"
-FITSIO = "525bcba6-941b-5504-bd06-fd0dc1a4d2eb"
-ForwardDiff = "f6369f11-7733-5829-9624-2563aa707210"
-LACosmic = "a188e134-b1c0-4a25-bc7e-93a99f0f0e06"
-LinearAlgebra = "37e2e46d-f89d-539d-b4ee-838fcccc9c8e"
-LombScargle = "fc60dff9-86e7-5f2f-a8a0-edeadbb75bd9"
-PSFModels = "9ba017d1-7760-46cd-84a3-1e79e9ae9ddc"
-Photometry = "af68cb61-81ac-52ed-8703-edc140936be4"
-PlanetOrbits = "fd6f9641-d78f-43ce-a379-ceb0bddb468a"
-Plots = "91a5bcdd-55d7-5caf-9e0b-520d859cae80"
-Reproject = "d1dcc2e6-806e-11e9-2897-3f99785db2ae"
-SAOImageDS9 = "dbce9b26-8eb4-4825-964b-d4940cf8daff"
-SkyCoords = "fc659fc5-75a3-5475-a2ea-3da92c065361"
-TOML = "fa267f1f-6049-4f14-aa54-33bafae1ed76"
-Transits = "2e59a628-7bac-4d38-8059-3a73ba0928ab"
-UUIDs = "cf7118a7-6976-5b1a-9a39-7adc72f591a4"
-UnitfulAstro = "6112ee07-acf9-5e0f-b108-d242c714bf9f"
-WCS = "15f3aee2-9e10-537f-b834-a6fb8bdb944d"
+Pkg = "44cfe95a-1eb2-52ea-b672-e2afdf69b78f"
+Test = "8dfed614-e22c-5e08-85e1-65c5234f0b40"
 
 [compat]
-Documenter = "0.24, 0.25, 0.26, 0.27"
+julia = "1.6"
+
+[extras]
+Test = "8dfed614-e22c-5e08-85e1-65c5234f0b40"
+
+[targets]
+test = ["Test"]
