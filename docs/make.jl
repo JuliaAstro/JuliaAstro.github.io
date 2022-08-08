@@ -142,6 +142,7 @@ if isdir("src/modules")
     rm("src/modules", recursive=true)
 end
 
+ENV["GKSwstype"] = "100"
 ENV["DATADEPS_ALWAYS_ACCEPT"] = true
 
 function recursive_append(pages::AbstractArray{<:AbstractArray}, str)
@@ -288,6 +289,7 @@ for (i, cat) in enumerate(docsmodules)
     end
     push!(fullpages, cat[1] => catpage)
 end
+run(`ls -R`)
 Pkg.resolve()
 Pkg.precompile()
 
