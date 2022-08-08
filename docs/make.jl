@@ -227,12 +227,12 @@ for (i, cat) in enumerate(docsmodules)
             @info "  Will use pages.jl directly"
             ex = quote
                 using $(Symbol(mod))
-                sourcedir = joinpath(pkgdir($(Symbol(mod))), "docs", "src")
-                targdir = joinpath("src", "modules", $mod)
-                mkpath(targdir)
-                cp(sourcedir, targdir, force=true)
                 pagefile = joinpath(pkgdir($(Symbol(mod))), "docs", "pages.jl")
                 if isfile(pagefile)
+                    sourcedir = joinpath(pkgdir($(Symbol(mod))), "docs", "src")
+                    targdir = joinpath("src", "modules", $mod)
+                    mkpath(targdir)
+                    cp(sourcedir, targdir, force=true)
 
                     # By default, don't require any external modules
                     requiredmods = Symbol[]
