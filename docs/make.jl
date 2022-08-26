@@ -97,7 +97,7 @@ usereadme = Dict(
     "Difmap" => "https://gitlab.com/aplavin/Difmap.jl",
     "OIFITS" => "https://github.com/emmt/OIFITS.jl",
     "PairPlots" => "https://github.com/sefffal/PairPlots.jl",
-    "PlanetOrbits" => "https://github.com/sefffal/PlanetOrbits.jl"
+    "PlanetOrbits" => "https://github.com/sefffal/PlanetOrbits.jl",
     "VLBIData" => "https://gitlab.com/aplavin/VLBIData.jl",
 )
 
