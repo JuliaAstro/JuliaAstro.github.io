@@ -190,6 +190,7 @@ for (name,rev) in pkgrevs
 end
 
 installed_pkg_names = getproperty.(values(Pkg.dependencies()), :name)
+to_use = []
 for (i, cat) in enumerate(docsmodules)
     global catpage
     catpage = catpagestarts[i]
@@ -271,10 +272,7 @@ for (i, cat) in enumerate(docsmodules)
                     # These are a list of modules supplied by packages that are necesary
                     # to load before the docs can be built
                     for depe in requiredmods
-                        eval(quote
-                            using $depe
-                            push!(allmods, $depe)
-                        end)
+                        push!(to_use, depe)
                     end
 
                     push!(catpage, $mod => recursive_append(pages, joinpath("modules", $mod)))
@@ -287,9 +285,15 @@ for (i, cat) in enumerate(docsmodules)
     end
     push!(fullpages, cat[1] => catpage)
 end
-run(`ls -R`)
 Pkg.resolve()
 Pkg.precompile()
+
+for depe in to_use
+    eval(quote
+        using $depe
+        push!(allmods, $depe)
+    end)
+end
 
 # We wait to import Documenter in case one of the packages requires
 # an older version. If that was the case, it's version may have changed
