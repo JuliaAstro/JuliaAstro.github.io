@@ -241,6 +241,10 @@ for (i, cat) in enumerate(docsmodules)
                     docprojectname = string($(Symbol(mod)), "docs")
                     docsprojectfname = joinpath(pkgdir($(Symbol(mod))), "docs", "Project.toml")
                     if isfile(docsprojectfname) && docprojectname ∉ installed_pkg_names
+                        try
+                            Pkg.rm(docprojectname)
+                        catch
+                        end
                         docsproject = TOML.parsefile(docsprojectfname)
                         @info "  dev'ing docs folder" docsprojectfname
                         @info "  giving docs folder name and uuid" docprojectname
