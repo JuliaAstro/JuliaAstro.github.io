@@ -59,18 +59,13 @@ docsmodules = [
         "AstroLib",
     ],
     "Numerical Utilities" => [
-        # "FFTW",
-        "Optimization",
         "BoxLeastSquares",
+        "LombScargle"
     ],
     "Statistics" => [
-    #     "Statistics",
-        # "StatsBase",
-        # "Turing",
         "PairPlots"
     ]
 ]
-#   Reproject   DustExtinction 
 
 
 # Intro pages to a given category.
@@ -99,41 +94,39 @@ usereadme = Dict(
 
     # Ecosystem
     "CasaCore" => "https://github.com/mweastwood/CasaCore.jl",
-    "OIFITS" => "https://github.com/emmt/OIFITS.jl",
-    "VLBIData" => "https://gitlab.com/aplavin/VLBIData.jl",
     "Difmap" => "https://gitlab.com/aplavin/Difmap.jl",
-
-    # External
-    "FFTW" => "https://github.com/JuliaMath/FFTW.jl",
+    "OIFITS" => "https://github.com/emmt/OIFITS.jl",
     "PairPlots" => "https://github.com/sefffal/PairPlots.jl",
     "PlanetOrbits" => "https://github.com/sefffal/PlanetOrbits.jl"
+    "VLBIData" => "https://gitlab.com/aplavin/VLBIData.jl",
 )
 
 # Specify revision to install and build docs for.
 # Every package must be listed here UNLESS it's listed in `usereadme` above.
 pkgrevs = Dict(
-    "AstroLib" =>  "master",
-    "UnitfulAstro" =>  "master",
     "AstroAngles" =>  "main",
-    "AstroTime" =>  "main",
-    "SkyCoords" =>  "master",
-    "WCS" => "master",
     "AstroImages" =>  "master",
-    "SAOImageDS9" =>  "master",
-    "Photometry" =>  "main",
-    "PSFModels" =>  "main",
+    "AstroLib" =>  "master",
+    "AstroLib" =>  "master",
+    "AstroTime" =>  "main",
+    "BoxLeastSquares" => "main",
     "CCDReduction" =>  "main",
-    "LACosmic" =>  "main",
-    "FITSIO" =>  "master",
     "CFITSIO" =>  "master",
     "Cosmology" =>  "master",
     "DustExtinction" =>  "master",
-    #  "JPLEphemeris" =>  "master",
     "EarthOrientation" =>  "master",
+    "ERFA" => "main",
+    "FITSIO" =>  "master",
+    "LACosmic" =>  "main",
+    #"JPLEphemeris" =>  "master",
+    "LombScargle" => "master",
+    "Photometry" =>  "main",
+    "PSFModels" =>  "main",
+    "SAOImageDS9" =>  "master",
+    "SkyCoords" =>  "master",
     "Transits" =>  "main",
-    "AstroLib" =>  "master",
-    "BoxLeastSquares" => "main",
-    "Optimization" => "master",
+    "UnitfulAstro" =>  "master",
+    "WCS" => "master",
 )
 
 allmods = Vector{Module}()
