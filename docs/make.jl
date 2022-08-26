@@ -185,7 +185,8 @@ end
 # Step 1: loop through packages and install JuliaAstro ones at their latest revision.
 ENV["JULIA_PKG_PRECOMPILE_AUTO"]=0
 for (name,rev) in pkgrevs
-    Pkg.add(PackageSpec(;name,rev))
+    # Pkg.add(PackageSpec(;name,rev))
+    Pkg.develop(PackageSpec(;name))
 end
 
 installed_pkg_names = getproperty.(values(Pkg.dependencies()), :name)
@@ -238,24 +239,24 @@ for (i, cat) in enumerate(docsmodules)
                     # This one is hackier. We parse the docs/Project.toml, add a name and uuid field,
                     # and then dev it.
                     docprojectname = string($(Symbol(mod)), "docs")
-                    # docsprojectfname = joinpath(pkgdir($(Symbol(mod))), "docs", "Project.toml")
-                    # if isfile(docsprojectfname) && docprojectname ∉ installed_pkg_names
-                    #     # docsproject = TOML.parsefile(docsprojectfname)
-                    #     # @info "  dev'ing docs folder" docsprojectfname
-                    #     # @info "  giving docs folder name and uui" docprojectname
-                    #     # docsproject["name"] = docprojectname
-                    #     # docsproject["uuid"] = string(uuid4())
-                    #     # @info "  updating docsproject file" project=docsprojectfname
-                    #     # open(docsprojectfname, "w") do io
-                    #     #     TOML.print(io, docsproject)
-                    #     # end
-                    #     # open(joinpath(dirname(docsprojectfname), "src", docprojectname*".jl"), write=true) do io
-                    #     #     write(io, "module $docprojectname; end")
-                    #     # end
-                    #     # Pkg.develop(path=dirname(docsprojectfname))
-                    # else
-                    #     @info "  No docs sub-project to dev" docprojectname docsprojectfname
-                    # end
+                    docsprojectfname = joinpath(pkgdir($(Symbol(mod))), "docs", "Project.toml")
+                    if isfile(docsprojectfname) && docprojectname ∉ installed_pkg_names
+                        docsproject = TOML.parsefile(docsprojectfname)
+                        @info "  dev'ing docs folder" docsprojectfname
+                        @info "  giving docs folder name and uuid" docprojectname
+                        docsproject["name"] = docprojectname
+                        docsproject["uuid"] = string(uuid4())
+                        @info "  updating docsproject file" project=docsprojectfname
+                        open(docsprojectfname, "w") do io
+                            TOML.print(io, docsproject)
+                        end
+                        open(joinpath(dirname(docsprojectfname), "src", docprojectname*".jl"), write=true) do io
+                            write(io, "module $docprojectname; end")
+                        end
+                        Pkg.develop(path=dirname(docsprojectfname))
+                    else
+                        @info "  No docs sub-project to dev" docprojectname docsprojectfname
+                    end
                     # Dependencies of sub-packages
                     # All sub-deps are already installed but we have to mess with LOAD_PATH
                     # so that we can import them directly.
