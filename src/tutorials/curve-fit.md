@@ -22,7 +22,7 @@ If you're using [Pluto notebooks](https://github.com/fonsp/Pluto.jl), installing
 
 ## Generating the data
 
-We'll generate synthetic data for this problem. We'll make a weak parabola with some noise. For consitency, we'll seed the Julia random number generator so that we see the same noise each time the tutorial is run.
+We'll generate synthetic data for this problem. We'll make a weak parabola with some noise. For consistency, we'll seed the Julia random number generator so that we see the same noise each time the tutorial is run.
 
 ```julia-repl
 julia> using Random
