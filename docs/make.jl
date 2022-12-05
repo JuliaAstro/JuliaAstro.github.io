@@ -37,7 +37,7 @@ docsmodules = [
         "SAOImageDS9",
         "Photometry",
         "PSFModels",
-        "CCDReduction",
+        #"CCDReduction",
         "LACosmic",
     ],
     "Data I/O" => [
