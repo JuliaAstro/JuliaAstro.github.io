@@ -6,7 +6,33 @@ These are tests that confirm various packages can be installed and work together
 
 using Test, Pkg
 
-include("pages.jl")
+# Specify revision to install and build docs for.
+# Every package must be listed here UNLESS it's listed in `usereadme` above.
+pkgrevs = Dict(
+    "AstroAngles" =>  "main",
+    "AstroImages" =>  "master",
+    "AstroLib" =>  "master",
+    "AstroLib" =>  "master",
+    "AstroTime" =>  "main",
+    "BoxLeastSquares" => "main",
+    # "CCDReduction" =>  "main",
+    "CFITSIO" =>  "master",
+    "Cosmology" =>  "master",
+    "DustExtinction" =>  "master",
+    "EarthOrientation" =>  "master",
+    "ERFA" => "main",
+    "FITSIO" =>  "master",
+    "LACosmic" =>  "main",
+    #"JPLEphemeris" =>  "master",
+    "LombScargle" => "master",
+    "Photometry" =>  "main",
+    # "PSFModels" =>  "main",
+    "SAOImageDS9" =>  "master",
+    "SkyCoords" =>  "master",
+    "Transits" =>  "main",
+    "UnitfulAstro" =>  "master",
+    "WCS" => "master",
+)
 
 @testset "JuliaAstro Package Evalauation" begin
 
