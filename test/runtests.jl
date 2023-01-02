@@ -4,7 +4,7 @@ This file defines integration tests for the JuliaAstro package ecosystem.
 These are tests that confirm various packages can be installed and work together.
 =#
 
-using Test, Pkg
+using Test, Pkg, InteractiveUtils
 
 # Specify revision to install and build docs for.
 # Every package must be listed here UNLESS it's listed in `usereadme` above.
