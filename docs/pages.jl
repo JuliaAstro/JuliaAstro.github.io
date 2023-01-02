@@ -76,11 +76,10 @@ catpagestarts = [
 # 3rd party packages: pull in README only
 usereadme = Dict(
 
-
-    # These take longer to build. Uncomment to disable and just use the README.
-    # "AstroImages" => "https://github.com/JuliaAstro/AstroImages.jl",
+    # These are breaking the build for some reason
     "PSFModels" => "https://github.com/JuliaAstro/PSFModels.jl",
     # "LACosmic" => "https://github.com/JuliaAstro/LACosmic.jl",
+    "Transits" => "https://github.com/JuliaAstro/Transits.jl",
 
     # No docs page yet
     "AstroAngles" => "https://github.com/JuliaAstro/AstroAngles.jl",
@@ -117,7 +116,7 @@ pkgrevs = Dict(
     # "PSFModels" =>  "main",
     "SAOImageDS9" =>  "master",
     "SkyCoords" =>  "master",
-    "Transits" =>  "main",
+    # "Transits" =>  "main",
     "UnitfulAstro" =>  "master",
     "WCS" => "master",
 )
