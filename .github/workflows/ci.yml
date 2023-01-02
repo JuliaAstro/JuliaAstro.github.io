@@ -18,10 +18,15 @@ jobs:
       - working-directory: docs
         run: julia --project=. -e '
           using Pkg;
-          Pkg.instantiate();'
+          Pkg.instantiate();
+          include("install.jl");'
+      - uses: julia-actions/cache@v1
+        with:
+          cache-registries: "true"
       - working-directory: docs
         env:
           DOCUMENTER_KEY: ${{ secrets.DOCUMENTER_KEY }}
+          JULIA_PKG_OFFLINE: true
         run: julia --project=. make.jl
   test:
     name: Julia ${{ matrix.version }} - ${{ matrix.os }} - ${{ matrix.arch }} - ${{ github.event_name }}
