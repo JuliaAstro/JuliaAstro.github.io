@@ -86,7 +86,7 @@ usereadme = Dict(
 
     # These take longer to build. Uncomment to disable and just use the README.
     # "AstroImages" => "https://github.com/JuliaAstro/AstroImages.jl",
-    # "PSFModels" => "https://github.com/JuliaAstro/PSFModels.jl",
+    "PSFModels" => "https://github.com/JuliaAstro/PSFModels.jl",
     # "LACosmic" => "https://github.com/JuliaAstro/LACosmic.jl",
 
     # No docs page yet
@@ -121,7 +121,7 @@ pkgrevs = Dict(
     #"JPLEphemeris" =>  "master",
     "LombScargle" => "master",
     "Photometry" =>  "main",
-    "PSFModels" =>  "main",
+    # "PSFModels" =>  "main",
     "SAOImageDS9" =>  "master",
     "SkyCoords" =>  "master",
     "Transits" =>  "main",
