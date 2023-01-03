@@ -1,0 +1,1 @@
+module AstroLibdocs; end
