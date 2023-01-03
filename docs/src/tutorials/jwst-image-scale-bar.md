@@ -119,24 +119,32 @@ Full documentation for the `implot` function is available in the [AstroImages.jl
 
 ## Adding a Scalebar
 
-Another way we can communicate the scale of this image is by adding a scalebar. We'll need to compute the length of a 2D vector (i.e. using the Pythagorean theorem) but we use the LinearAlgebra standard library function `norm` here for convenience.
+Another way we can communicate the scale of this image is by adding a scalebar. Since we are working in spherical coordinates, the cartesian Pythagorean theorem won't quite cut it. There are approximations we can use for small angles, but let's go ahead and compute the scale bar length in a fully general way.
+
+For two points of right-ascension $\alpha$ and declination $\delta$, $a=(\alpha_a, \delta_a)$ and $b=(\alpha_b, \delta_b)$, the angular separation is
+```math
+\cos (\gamma) = \cos (90° - \delta_a) \cos (90° - \delta_b) + \sin (90° - \delta_a) \sin (90° - \delta_b) \cos (\alpha_a - \alpha_b)
+```
+
+We can calculate the length of our scalebar in pixels by picking a coordinate $a$, picking an angular separation $\gamma$, and then solving for $b$:
+
 
 ```julia
 using LinearAlgebra
 
 # Start the scalebar here in pixel coordinates
-start_coord_pix = [1000, 100]
+a_px = [1000, 100]
 
 # Convert to world coordinates
-start_coord_world = pix_to_world(carina_full, start_coord_pix)
+a_deg = pix_to_world(carina_full, a_px)
 
 # Extend by 10 arcminutes of declination
-stop_coord_world  = start_coord_world .+ [0, 1/60]
+b_deg  = a_deg .+ [0, 1/60]
 
 # Convert back to pixel coordinates
-stop_coord_pix = world_to_pix(carina_full, stop_coord_world)
+b_px = world_to_pix(carina_full, b_deg)
 
-# Measure how long it is here in pixel coordinates
+# Measure the angular distance in pixel coordinates
 # note: in theory this depends on where in the image we make this calculation
 # because the coordinate system is warped
 arcmin_px = norm(stop_coord_pix .- start_coord_pix)

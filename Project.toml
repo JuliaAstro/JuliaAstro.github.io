@@ -1,10 +1,15 @@
+name = "JuliaAstroDocs"
+uuid = "5ba9df79-bc07-467f-bade-66a1d49082bd"
+
 [deps]
-AstroImages = "fe3fc30c-9b16-11e9-1c73-17dabf39f4ad"
-AstroLib = "c7932e45-9af1-51e7-9da9-f004cd3a462b"
-Documenter = "e30172f5-a6a5-5a46-863b-614d45cd2de4"
-Downloads = "f43a241f-c20a-4ad4-852c-f6b1247861c6"
-LinearAlgebra = "37e2e46d-f89d-539d-b4ee-838fcccc9c8e"
-Plots = "91a5bcdd-55d7-5caf-9e0b-520d859cae80"
+Pkg = "44cfe95a-1eb2-52ea-b672-e2afdf69b78f"
+Test = "8dfed614-e22c-5e08-85e1-65c5234f0b40"
 
 [compat]
-Documenter = "0.24, 0.25, 0.26"
+julia = "1.6"
+
+[extras]
+Test = "8dfed614-e22c-5e08-85e1-65c5234f0b40"
+
+[targets]
+test = ["Test"]
