@@ -20,9 +20,6 @@ jobs:
           using Pkg;
           Pkg.instantiate();
           include("install.jl");'
-      - uses: julia-actions/cache@v1
-        with:
-          cache-registries: "true"
       - working-directory: docs
         env:
           DOCUMENTER_KEY: ${{ secrets.DOCUMENTER_KEY }}
