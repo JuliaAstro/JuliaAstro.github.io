@@ -174,6 +174,13 @@ The joy of our community is the many astronomy and astrophysics packages availab
 - Supports ICRS, galactic, and FK5 coordinate systems
 - Fast conversion of coordinates between different systems
 
+### [SPICE.jl](https://github.com/JuliaAstro/SPICE.jl)
+
+**SPICE data retrieval and usage**
+
+- Wrapper for [CSPICE](https://naif.jpl.nasa.gov/pub/naif/toolkit_docs/C/index.html)
+- Read SPICE data files and compute derived observation geometry such as altitude, latitude/longitude and lighting angles
+
 ### [UnitfulAstro.jl](https://github.com/JuliaAstro/UnitfulAstro.jl) [![](assets/book.png)](https://juliaastro.github.io/UnitfulAstro.jl/stable/)
 
 **Astronomical units**
