@@ -1,6 +1,7 @@
 # Visualization & Plotting Overview
 
-### [AstroImages.jl](https://github.com/JuliaAstro/AstroImages.jl) [![](../assets/book.png)](https://juliaastro.github.io/AstroImages.jl/stable/)
+### [AstroImages.jl](https://github.com/JuliaAstro/AstroImages.jl)
+[![book icon](../assets/book.png) Documentation](https://juliaastro.github.io/AstroImages.jl/stable/)
 
 **Load, manipulate, and visualize astronomical images**
 
@@ -8,7 +9,8 @@
 - Automatic visualizations are directly integrated into many environments like [VSCode](https://code.visualstudio.com/), [Pluto.jl](https://github.com/fonsp/Pluto.jl), and [IJulia.jl](https://github.com/JuliaLang/IJulia.jl)
 - Includes recipes for plotting with [Plots.jl](https://github.com/JuliaPlots/Plots.jl)
 
-### [SAOImageDS9.jl](https://github.com/JuliaAstro/SAOImageDS9.jl) [![](../assets/book.png)](https://juliaastro.github.io/SAOImageDS9.jl/stable/)
+### [SAOImageDS9.jl](https://github.com/JuliaAstro/SAOImageDS9.jl)
+[![book icon](../assets/book.png) Documentation](https://juliaastro.github.io/SAOImageDS9.jl/stable/)
 
 **Interface with the DS9 image viewer**
 
