@@ -1,8 +1,6 @@
 # Data I/O Overview
 
 
-## Data I/O
-
 ### AstroImages.jl
 
 [![curly braces](../assets/code.png) Repository](https://github.com/JuliaAstro/AstroImages.jl)
@@ -28,7 +26,7 @@
 
 [![curly braces](../assets/code.png) Repository](https://github.com/JuliaAstro/CFITSIO.jl)
 
-[![book icon](../assets/book.png) Documentation](https://juliaastro.github.io/FITSIO.jl/stable/)
+[![book icon](../assets/book.png) Documentation](https://juliaastro.github.io/CFITSIO.jl/stable/)
 
 **Reading and writing FITS files**
 
@@ -56,7 +54,7 @@
 
 ### aplavin/VLBIData.jl
 
-[![curly braces](../assets/code.png) Repository](https://gitlab.com/aplavin/VLBIData.jl)
+[![curly braces](../assets/code.png) Repository](https://github.com/JuliaAPlavin/VLBIData.jl)
 
 [![book icon](../assets/book.png) Documentation](https://aplavin.github.io/VLBIData.jl/test/examples.html)
 
@@ -67,7 +65,9 @@
 
 ### aplavin/Difmap.jl
 
-[![curly braces](../assets/code.png) Repository](https://gitlab.com/aplavin/Difmap.jl)
+[![curly braces](../assets/code.png) Repository](https://github.com/JuliaAPlavin/Difmap.jl)
+
+[![book icon](assets/book.png) Documentation](https://aplavin.github.io/Difmap.jl/test/examples.html)
 
 **Wrapper for the Difmap program used in synthesis imaging**
 

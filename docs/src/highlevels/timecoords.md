@@ -24,6 +24,8 @@
 
 [![curly braces](../assets/code.png) Repository](https://github.com/JuliaAstro/ERFA.jl)
 
+[![book icon](../assets/book.png) Documentation](https://juliaastro.org/ERFA.jl/stable/)
+
 **Time systems conversions**
 
 - Low-level wrapper for [liberfa](https://github.com/liberfa/erfa)

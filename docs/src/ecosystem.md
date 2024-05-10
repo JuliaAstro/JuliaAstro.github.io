@@ -57,7 +57,7 @@ The joy of our community is the many astronomy and astrophysics packages availab
 
 ### aplavin/VLBIData.jl
 
-[![curly braces](assets/code.png) Repository](https://gitlab.com/aplavin/VLBIData.jl)
+[![curly braces](assets/code.png) Repository](https://github.com/JuliaAPlavin/VLBIData.jl)
 
 [![book icon](assets/book.png) Documentation](https://aplavin.github.io/VLBIData.jl/test/examples.html)
 
@@ -68,7 +68,9 @@ The joy of our community is the many astronomy and astrophysics packages availab
 
 ### aplavin/Difmap.jl
 
-[![curly braces](assets/code.png) Repository](https://gitlab.com/aplavin/Difmap.jl)
+[![curly braces](assets/code.png) Repository](https://github.com/JuliaAPlavin/Difmap.jl)
+
+[![book icon](assets/book.png) Documentation](https://aplavin.github.io/Difmap.jl/test/examples.html)
 
 **Wrapper for the Difmap program used in synthesis imaging**
 

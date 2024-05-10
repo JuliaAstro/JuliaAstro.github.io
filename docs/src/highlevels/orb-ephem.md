@@ -16,7 +16,7 @@
 
 [![curly braces](../assets/code.png) Repository](https://github.com/sefffal/PlanetOrbits.jl)
 
-[![book icon](../assets/book.png) Documentation](https://sefffal.github.io/PlanetOrbits.jl/stable/)
+[![book icon](../assets/book.png) Documentation](https://sefffal.github.io/PlanetOrbits.jl)
 
 **Tools for displaying and solving Keplerian orbits in the context of direct imaging**
 
