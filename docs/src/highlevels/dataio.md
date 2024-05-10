@@ -67,7 +67,7 @@
 
 [![curly braces](../assets/code.png) Repository](https://github.com/JuliaAPlavin/Difmap.jl)
 
-[![book icon](assets/book.png) Documentation](https://aplavin.github.io/Difmap.jl/test/examples.html)
+[![book icon](../assets/book.png) Documentation](https://aplavin.github.io/Difmap.jl/test/examples.html)
 
 **Wrapper for the Difmap program used in synthesis imaging**
 
