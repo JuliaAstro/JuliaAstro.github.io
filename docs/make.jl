@@ -32,12 +32,15 @@ makedocs(
     sitename="JuliaAstro",
     authors = "Julia Astro Contributors",
     modules=identity.(allmods),
-    clean=true, doctest=false,
+    clean=true,
+    doctest=false,
     format=Documenter.HTML(
         mathengine=mathengine,
         prettyurls = get(ENV, "CI", "false") == "true",
         canonical = "https://juliaastro.github.io/",
-        assets = String[],
+        assets = String[
+            "assets/styles.css",
+        ],
     ),
     pages=fullpages
 )
