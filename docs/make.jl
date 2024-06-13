@@ -42,9 +42,9 @@ makedocs(
             "assets/styles.css",
         ],
     ),
-    pages=fullpages
+    pages=fullpages,
+    warnonly=[:missing_docs],
 )
-
 
 
 deploydocs(;
