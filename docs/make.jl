@@ -43,7 +43,13 @@ makedocs(
         ],
     ),
     pages=fullpages,
-    warnonly=[:missing_docs],
+    # turn errors into warnings
+    # :cross_references -> AstroImages uses some weird docstring pulling from
+    #   DimensionalData.jl which is outside the scope of this website.
+    # :citations, :bibliography_block -> integration with DocumenterCitations
+    #   isn't complete enough yet, so this is added piecemeal and the errors
+    #   silenced for now
+    warnonly=[:missing_docs, :cross_references, :citations, :bibliography_block],
 )
 
 
