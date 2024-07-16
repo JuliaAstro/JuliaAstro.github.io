@@ -1,4 +1,5 @@
 using LibGit2, Pkg, TOML, UUIDs
+using DocumenterCitations
 
 # This prepares the documentation for all JuliaAstro packages to be built.
 # It installs the latest versions of all JuliaAstro packages and prepares
