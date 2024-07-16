@@ -5,3 +5,4 @@ Pkg = "44cfe95a-1eb2-52ea-b672-e2afdf69b78f"
 
 [compat]
 Documenter = "1"
+DocumenterCitations = "1"
