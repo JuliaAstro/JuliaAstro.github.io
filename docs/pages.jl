@@ -32,6 +32,7 @@ docsmodules = [
         "PSFModels",
         #"CCDReduction",
         "LACosmic",
+        "SkyImages",
     ],
     "Data I/O" => [
         "FITSIO",
@@ -40,6 +41,8 @@ docsmodules = [
         "OIFITS",
         "VLBIData",
         "Difmap",
+        "VOTables",
+        "VirtualObservatory",
     ],
     "Cosmology" => [
         "Cosmology"
@@ -86,11 +89,14 @@ usereadme = Dict(
 
     # Ecosystem
     "CasaCore" => "https://github.com/mweastwood/CasaCore.jl",
-    "Difmap" => "https://gitlab.com/aplavin/Difmap.jl",
+    "Difmap" => "https://github.com/JuliaAPlavin/Difmap.jl",
     "OIFITS" => "https://github.com/emmt/OIFITS.jl",
     "PairPlots" => "https://github.com/sefffal/PairPlots.jl",
     "PlanetOrbits" => "https://github.com/sefffal/PlanetOrbits.jl",
-    "VLBIData" => "https://gitlab.com/aplavin/VLBIData.jl",
+    "SkyImages" => "https://github.com/JuliaAPlavin/SkyImages.jl",
+    "VLBIData" => "https://github.com/JuliaAPlavin/VLBIData.jl",
+    "VOTables" => "https://github.com/JuliaAPlavin/VOTables.jl",
+    "VirtualObservatory" => "https://github.com/JuliaAPlavin/VirtualObservatory.jl",
 )
 
 # Specify revision to install and build docs for.
