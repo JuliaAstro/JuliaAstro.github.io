@@ -31,3 +31,15 @@ Manifest.toml
 # End of https://www.gitignore.io/api/julia
 .vscode
 .DS_Store
+
+
+# Ignore the cloned JuliaAstro repos being served
+docs/AstroAngles/
+docs/CasaCore/
+docs/Difmap/
+docs/OIFITS/
+docs/PairPlots/
+docs/PlanetOrbits/
+docs/PSFModels/
+docs/Transits/
+docs/VLBIData/
