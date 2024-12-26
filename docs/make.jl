@@ -6,14 +6,7 @@ using LibGit2, Pkg, TOML, UUIDs
 # by generating nested documentation for packages under the JuliaAstro organization.
 # That way, docs for all packages are browesable and searchable in one place!
 
-include("install.jl")
-
-for depe in to_use
-    eval(quote
-        using $depe
-        push!(allmods, $depe)
-    end)
-end
+include("pages.jl")
 
 # We wait to import Documenter in case one of the packages requires
 # an older version. If that was the case, it's version may have changed
@@ -31,7 +24,6 @@ mathengine = MathJax3(Dict(
 makedocs(
     sitename="JuliaAstro",
     authors = "Julia Astro Contributors",
-    modules=identity.(allmods),
     clean=true,
     doctest=false,
     format=Documenter.HTML(
