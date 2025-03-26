@@ -410,6 +410,14 @@ The joy of our community is the many astronomy and astrophysics packages availab
 See also:
 - [HealpixMPI.jl](https://github.com/LeeoBianchi/HealpixMPI.jl)
 
+### Korg.jl
+
+[![curly braces](assets/code.png) Repository](https://github.com/ajwheeler/Korg.jl)
+
+[![book icon](assets/book.png) Documentation](https://ajwheeler.github.io/Korg.jl/stable/)
+
+**Theoretical stellar spectra from 1D model atmospheres and linelists, assuming LTE**
+
 ### LombScargle.jl
 
 [![curly braces](assets/code.png) Repository](https://github.com/JuliaAstro/LombScargle.jl)
