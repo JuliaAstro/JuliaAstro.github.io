@@ -4,6 +4,14 @@ The joy of our community is the many astronomy and astrophysics packages availab
 
 ## Data I/O
 
+### ASDF2.jl
+
+[![curly braces](assets/code.png) Repository](https://github.com/eschnett/ASDF2.jl)
+
+[![book icon](assets/book.png) Documentation](https://eschnett.github.io/ASDF2.jl/dev/)
+
+**Load files in ASDF format, which is the upcoming stadnard for STScI/Roman**
+
 ### AstroImages.jl
 
 [![curly braces](assets/code.png) Repository](https://github.com/JuliaAstro/AstroImages.jl)
@@ -387,6 +395,29 @@ The joy of our community is the many astronomy and astrophysics packages availab
 - SFD (1998) galactic dust map
 - Fully compatible with [Unitful.jl](https://github.com/painterqubits/Unitful.jl)
 
+### Healpix.jl
+
+[![curly braces](assets/code.png) Repository](https://github.com/ziotom78/Healpix.jl)
+
+[![book icon](assets/book.png) Documentation](https://ziotom78.github.io/Healpix.jl/stable/)
+
+**Implementation of Healpix spherical tesselation scheme in pure Julia**
+
+- pixel functions, query functions, map functions
+- power spectrum support
+- plotting support
+
+See also:
+- [HealpixMPI.jl](https://github.com/LeeoBianchi/HealpixMPI.jl)
+
+### Korg.jl
+
+[![curly braces](assets/code.png) Repository](https://github.com/ajwheeler/Korg.jl)
+
+[![book icon](assets/book.png) Documentation](https://ajwheeler.github.io/Korg.jl/stable/)
+
+**Theoretical stellar spectra from 1D model atmospheres and linelists, assuming LTE**
+
 ### LombScargle.jl
 
 [![curly braces](assets/code.png) Repository](https://github.com/JuliaAstro/LombScargle.jl)
@@ -420,6 +451,20 @@ The joy of our community is the many astronomy and astrophysics packages availab
 
 - Background estimation and source extraction
 - Fast and precise aperture photometry
+
+### SatelliteToolbox.jl
+
+[![curly braces](assets/code.png) Repository](https://github.com/JuliaSpace/SatelliteToolbox.jl)
+
+[![book icon](assets/book.png) Documentation](https://juliaspace.github.io/SatelliteToolbox.jl/stable/)
+
+**Perform analysis and build simulations related to satellites**
+
+- Atmospheric, gravitational, and geomagnetic field models
+- Orbit propagators
+
+See also:
+- [ReferenceFrameRotations.jl](https://github.com/JuliaSpace/ReferenceFrameRotations.jl)
 
 ### Transits.jl
 
