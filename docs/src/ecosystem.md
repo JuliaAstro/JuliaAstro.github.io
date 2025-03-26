@@ -4,6 +4,14 @@ The joy of our community is the many astronomy and astrophysics packages availab
 
 ## Data I/O
 
+### ASDF2.jl
+
+[![curly braces](assets/code.png) Repository](https://github.com/eschnett/ASDF2.jl)
+
+[![book icon](assets/book.png) Documentation](https://eschnett.github.io/ASDF2.jl/dev/)
+
+**Load files in ASDF format, which is the upcoming stadnard for STScI/Roman**
+
 ### AstroImages.jl
 
 [![curly braces](assets/code.png) Repository](https://github.com/JuliaAstro/AstroImages.jl)
