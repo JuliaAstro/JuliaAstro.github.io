@@ -1,0 +1,21 @@
+name: Build
+on:
+  push:
+    branches: [source]
+  pull_request:
+  schedule:
+    - cron:  '15 2 * * *' # 2:15 AM UTC every day
+jobs:
+  docs:
+    name: Documentation
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: julia-actions/setup-julia@v2
+        with:
+          version: "1"
+      - uses: julia-actions/cache@v2
+      - uses: julia-actions/julia-docdeploy@v1
+        env:
+          DOCUMENTER_KEY: ${{ secrets.DOCUMENTER_KEY }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
