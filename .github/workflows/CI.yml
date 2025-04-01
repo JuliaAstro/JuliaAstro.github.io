@@ -1,4 +1,4 @@
-name: build
+name: Test JuliaAstro packages
 
 on:
   push:
@@ -7,18 +7,6 @@ on:
   schedule:
     - cron:  '15 2 * * *' # 2:15 AM UTC every day
 jobs:
-  docs:
-    name: Documentation
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-      - uses: julia-actions/setup-julia@v2
-        with:
-          version: "1"
-      - uses: julia-actions/cache@v2
-      - uses: julia-actions/julia-docdeploy@v1
-        env:
-          DOCUMENTER_KEY: ${{ secrets.DOCUMENTER_KEY }}
   test:
     name: Julia ${{ matrix.version }} - ${{ matrix.os }} - ${{ matrix.arch }} - ${{ github.event_name }}
     runs-on: ${{ matrix.os }}
