@@ -14,7 +14,7 @@ Cloning packages into: $(clonedir)
 Building aggregate site into: $(outpath)
 """
 
-@info "Building Documenter site for JuliaAstro"
+@info "Building MultiDocumenter site for JuliaAstro"
 
 include("pages.jl")
 mathengine = MathJax3(Dict(
@@ -44,7 +44,7 @@ makedocs(
 
 @info "Building aggregate JuliaAstro site"
 docs = [
-     # We also add JuliaAstro's own generated pages
+    # We also add JuliaAstro's own generated pages
     MultiDocumenter.MultiDocRef(
         upstream = joinpath(@__DIR__, outpath),
         path = "docs",
@@ -263,7 +263,9 @@ Downloads.download(
 )
 @info "Final build done"
 
-if "deploy" in ARGS
+# TODO: is there a way to pass args to julia-docdeploy?
+if true
+#if "deploy" in ARGS
     @warn "Deploying to GitHub" ARGS
     gitroot = normpath(joinpath(@__DIR__, ".."))
     run(`git pull`)
