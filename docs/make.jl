@@ -9,6 +9,7 @@ using LibGit2, Pkg, TOML, UUIDs, Downloads
 
 clonedir = ("--temp" in ARGS) ? mktempdir() : joinpath(@__DIR__, "clones")
 outpath =  ("--temp" in ARGS) ? mktempdir() : joinpath(@__DIR__, "out")
+
 @info """
 Cloning packages into: $(clonedir)
 Building aggregate site into: $(outpath)
