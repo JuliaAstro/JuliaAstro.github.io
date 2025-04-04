@@ -296,8 +296,8 @@ if "deploy" in ARGS
         @info "No changes to aggregated documentation."
     end
 else
-    @info "Skipping deployment, 'deploy' not passed. Generated files in docs/build." ARGS
-    cp(outpath, joinpath(@__DIR__, "build"), force = true)
+    @info "Skipping deployment, 'deploy' not passed. Generated files in docs/out." ARGS
+    cp(outpath, joinpath(@__DIR__, "out"), force = true)
 end
 
 #deploydocs(;
