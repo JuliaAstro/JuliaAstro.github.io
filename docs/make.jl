@@ -7,8 +7,8 @@ using LibGit2, Pkg, TOML, UUIDs, Downloads
 # by generating nested documentation for packages under the JuliaAstro organization.
 # That way, docs for all packages are browsable and searchable in one place!
 
-clonedir = ("--temp" in ARGS) ? mktempdir() : joinpath(@__DIR__, "clones")
-outpath =  ("--temp" in ARGS) ? mktempdir() : joinpath(@__DIR__, "out")
+clonedir = ("--temp" in ARGS) ? mktempdir(; cleanup=false) : joinpath(@__DIR__, "clones")
+outpath =  ("--temp" in ARGS) ? mktempdir(; cleanup=false) : joinpath(@__DIR__, "build")
 
 @info """
 Cloning packages into: $(clonedir)
@@ -238,9 +238,7 @@ docs = [
         ]
     ),
 ]
-@info "Aggregate build done"
 
-@info "Final build"
 MultiDocumenter.make(
     outpath,
     docs;
@@ -254,6 +252,7 @@ MultiDocumenter.make(
     brand_image = MultiDocumenter.BrandImage(".", joinpath("assets", "logo.svg"))
     #sitemap = true,
 )
+@info "Aggregate build done"
 
 # Download logo
 assets_dir = joinpath(outpath, "assets")
@@ -266,47 +265,47 @@ Downloads.download(
 @info "Final build done"
 
 @info "Deployng docs"
-if "--deploy" in ARGS
-    @warn "Deploying to GitHub" ARGS
-    gitroot = normpath(joinpath(@__DIR__, ".."))
-    run(`git pull origin master`)
-    outbranch = "master"
-    has_outbranch = true
-    if !success(`git checkout $outbranch`)
-        has_outbranch = false
-        if !success(`git switch --orphan $outbranch`)
-            @error "Cannot create new orphaned branch $outbranch."
-            exit(1)
-        end
-    end
-    for file in readdir(gitroot; join = true)
-        endswith(file, ".git") && continue
-        rm(file; force = true, recursive = true)
-    end
-    for file in readdir(outpath)
-        cp(joinpath(outpath, file), joinpath(gitroot, file))
-    end
-    run(`git add .`)
-    if success(`git commit -m 'Aggregate documentation'`)
-        @info "Pushing updated documentation."
-        if has_outbranch
-            run(`git push`)
-        else
-            run(`git push -u origin $outbranch`)
-        end
-        run(`git checkout source`)
-    else
-        @info "No changes to aggregated documentation."
-    end
-else
-    @info "Skipping deployment, 'deploy' not passed. Generated files in docs/$(outpath)." ARGS
-    cp(outpath, joinpath(@__DIR__, "build"), force = true)
-end
-@info "Deploy complete"
+#if "--deploy" in ARGS
+#    @warn "Deploying to GitHub" ARGS
+#    gitroot = normpath(joinpath(@__DIR__, ".."))
+#    run(`git pull`)
+#    outbranch = "master"
+#    has_outbranch = true
+#    if !success(`git checkout $outbranch`)
+#        has_outbranch = false
+#        if !success(`git switch --orphan $outbranch`)
+#            @error "Cannot create new orphaned branch $outbranch."
+#            exit(1)
+#        end
+#    end
+#    for file in readdir(gitroot; join = true)
+#        (endswith(file, ".git") || (basename(file) == "CNAME")) && continue
+#        rm(file; force = true, recursive = true)
+#    end
+#    for file in readdir(outpath)
+#        cp(joinpath(outpath, file), joinpath(gitroot, file))
+#    end
+#    run(`git add .`)
+#    if success(`git commit -m 'Aggregate documentation'`)
+#        @info "Pushing updated documentation."
+#        if has_outbranch
+#            run(`git push`)
+#        else
+#            run(`git push -u origin $outbranch`)
+#        end
+#        run(`git checkout source`)
+#    else
+#        @info "No changes to aggregated documentation."
+#    end
+#else
+#    @info "Skipping deployment, 'deploy' not passed. Generated files in docs/$(outpath)." ARGS
+#    cp(outpath, joinpath(@__DIR__, "build"), force = true)
+#end
 
-#deploydocs(;
-#    repo = "github.com/JuliaAstro/JuliaAstro.github.io",
-#    push_preview = true,
-#    branch = "master",
-#    devbranch = "multidocumenter"
-#)
+deploydocs(;
+    repo = "github.com/JuliaAstro/JuliaAstro.github.io",
+    push_preview = true,
+    branch = "master",
+    devbranch = "multidocumenter"
+)
+@info "Deploy complete"
