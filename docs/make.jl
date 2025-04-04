@@ -269,7 +269,7 @@ if true
     @warn "Deploying to GitHub" ARGS
     gitroot = normpath(joinpath(@__DIR__, ".."))
     run(`git pull`)
-    outbranch = "gh-pages"
+    outbranch = "master"
     has_outbranch = true
     if !success(`git checkout $outbranch`)
         has_outbranch = false
