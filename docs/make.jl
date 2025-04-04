@@ -269,7 +269,7 @@ Downloads.download(
 if "--deploy" in ARGS
     @warn "Deploying to GitHub" ARGS
     gitroot = normpath(joinpath(@__DIR__, ".."))
-    run(`git pull`)
+    run(`git pull origin master`)
     outbranch = "master"
     has_outbranch = true
     if !success(`git checkout $outbranch`)
