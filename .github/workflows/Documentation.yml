@@ -1,13 +1,13 @@
 name: Build
 on:
   push:
-    branches: [source]
+    branches: [multidocumenter]
   pull_request:
   schedule:
     - cron:  '15 2 * * *' # 2:15 AM UTC every day
 jobs:
   docs:
-    name: Documentation
+    name: MultiDocumentation
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
