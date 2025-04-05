@@ -261,7 +261,7 @@ mkpath(assets_dir)
 Downloads.download(
     "https://raw.githubusercontent.com/JuliaAstro/JuliaAstro.github.io/refs/heads/source/docs/src/assets/logo.svg",
     joinpath(assets_dir, "logo.svg");
-    verbose=true,
+    verbose = true,
 )
 @info "Final build done"
 
@@ -307,6 +307,7 @@ deploydocs(;
     repo = "github.com/JuliaAstro/JuliaAstro.github.io",
     push_preview = true,
     branch = "master",
-    devbranch = "multidocumenter"
+    devbranch = "multidocumenter",
+    versions = nothing,
 )
 @info "Deploy complete"
