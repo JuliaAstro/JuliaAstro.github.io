@@ -16,7 +16,10 @@ jobs:
           version: "1"
       - uses: julia-actions/cache@v2
       - name: Install dependencies
-        run: julia --project=docs/ -e 'using Pkg; Pkg.instantiate()'
+        shell: julia --color=yes --project=docs {0}
+        run: |
+          using Pkg
+          Pkg.instantiate()
       - name: Aggregate and deploy
         run: |
           git config user.name github-actions
