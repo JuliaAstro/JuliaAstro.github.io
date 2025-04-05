@@ -37,6 +37,7 @@ makedocs(
         canonical = "https://juliaastro.org/",
         assets = String[
             "assets/styles.css",
+            "assets/favicon.ico",
         ],
     ),
     pages=fullpages,
