@@ -59,6 +59,8 @@ The joy of our community is the many astronomy and astrophysics packages availab
 
 [![curly braces](assets/code.png) Repository](https://github.com/emmt/OIFITS.jl)
 
+[![book icon](assets/book.png) Documentation](https://github.com/emmt/OIFITS.jl?tab=readme-ov-file#support-for-oi-fits-data-in-julia)
+
 **Support for OI-FITS**
 
 - Read and write OI-FITS optical interferometry data format
@@ -162,7 +164,7 @@ The joy of our community is the many astronomy and astrophysics packages availab
 
 [![curly braces](assets/code.png) Repository](https://github.com/JuliaAstro/Reproject.jl)
 
-[![book icon](assets/book.png) Documentation](https://juliaastro.github.io/Reproject.jl/stable/)
+[![book icon](assets/book.png) Documentation](https://github.com/JuliaAstro/Reproject.jl?tab=readme-ov-file#reproject)
 
 **Astronomical image reprojection**
 
@@ -257,6 +259,8 @@ The joy of our community is the many astronomy and astrophysics packages availab
 
 [![curly braces](assets/code.png) Repository](https://github.com/JuliaAstro/ERFA.jl)
 
+[![book icon](assets/book.png) Documentation](https://github.com/JuliaAstro/ERFA.jl?tab=readme-ov-file#erfajl)
+
 **Time systems conversions**
 
 - Low-level wrapper for [liberfa](https://github.com/liberfa/erfa)
@@ -264,6 +268,8 @@ The joy of our community is the many astronomy and astrophysics packages availab
 ### SkyCoords.jl
 
 [![curly braces](assets/code.png) Repository](https://github.com/JuliaAstro/SkyCoords.jl)
+
+[![book icon](assets/book.png) Documentation](https://juliaastro.org/SkyCoords.jl/stable/)
 
 **Astronomical coordinate systems**
 
@@ -273,6 +279,8 @@ The joy of our community is the many astronomy and astrophysics packages availab
 ### SPICE.jl
 
 [![curly braces](assets/code.png) Repository](https://github.com/JuliaAstro/SPICE.jl)
+
+[![book icon](assets/book.png) Documentation](https://juliaastro.org/SPICE.jl/stable/)
 
 **SPICE data retrieval and usage**
 
@@ -334,6 +342,8 @@ The joy of our community is the many astronomy and astrophysics packages availab
 ### JPLEphemeris.jl
 
 [![curly braces](assets/code.png) Repository](https://github.com/JuliaAstro/JPLEphemeris.jl)
+
+[![book icon](assets/book.png) Documentation](https://github.com/helgee/JPLEphemeris.jl?tab=readme-ov-file#jplephemerisjl)
 
 **JPL Development Ephemerides**
 
