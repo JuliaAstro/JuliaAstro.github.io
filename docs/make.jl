@@ -17,7 +17,6 @@ Building aggregate site into: $(outpath)
 
 @info "Building MultiDocumenter site for JuliaAstro"
 
-include("pages.jl")
 mathengine = MathJax3(Dict(
     :loader => Dict("load" => ["[tex]/require", "[tex]/mathtools"]),
     :tex => Dict(
@@ -27,11 +26,11 @@ mathengine = MathJax3(Dict(
 ))
 
 makedocs(
-    sitename="JuliaAstro",
+    sitename = "JuliaAstro",
     authors = "Julia Astro Contributors",
-    clean=true,
-    doctest=false,
-    format=Documenter.HTML(
+    clean = true,
+    doctest = false,
+    format = Documenter.HTML(
         mathengine=mathengine,
         prettyurls = get(ENV, "CI", "false") == "true",
         canonical = "https://juliaastro.org/",
@@ -40,8 +39,19 @@ makedocs(
             "assets/favicon.ico",
         ],
     ),
-    pages=fullpages,
-    warnonly=[:missing_docs],
+    pages = [
+        "Home"=>"index.md",
+        "Ecosystem" => "ecosystem.md",
+        "Tutorials" => [
+            "tutorials/index.md",
+            "General" => [
+                "tutorials/jwst-image-scale-bar.md",
+                "tutorials/tabular-data.md",
+                "tutorials/curve-fit.md",
+            ],
+        ],
+    ],
+    warnonly = [:missing_docs],
 )
 
 @info "Building aggregate JuliaAstro site"
