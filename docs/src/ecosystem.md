@@ -91,7 +91,7 @@ The joy of our community is the many astronomy and astrophysics packages availab
 
 ---
 
-## Image Processing
+## Images
 
 ### AstroImages.jl
 
@@ -210,7 +210,7 @@ The joy of our community is the many astronomy and astrophysics packages availab
 
 ---
 
-## Time, Coordinates, Units
+## Coords, Units
 
 ### AstroAngles.jl
 
@@ -288,7 +288,7 @@ The joy of our community is the many astronomy and astrophysics packages availab
 
 ---
 
-## Orbits and Ephemerides
+## Orbits
 
 ### EarthOrientation.jl
 

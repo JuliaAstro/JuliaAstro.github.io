@@ -41,7 +41,6 @@ makedocs(
     ),
     pages = [
         "Home"=>"index.md",
-        "Ecosystem" => "ecosystem.md",
         "Tutorials" => [
             "tutorials/index.md",
             "General" => [
@@ -50,6 +49,7 @@ makedocs(
                 "tutorials/curve-fit.md",
             ],
         ],
+        "Ecosystem" => "ecosystem.md",
     ],
     warnonly = [:missing_docs],
 )
@@ -109,7 +109,7 @@ docs = [
     MultiDocumenter.MultiDocRef(
         upstream = joinpath(@__DIR__, "build"),
         path = "docs",
-        name = "JuliaAstro",
+        name = "Home",
         fix_canonical_url = false,
     ),
     map(highlevels(ecosystem.content)) do (highlevel, packages)

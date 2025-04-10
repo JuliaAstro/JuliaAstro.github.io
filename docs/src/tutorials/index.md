@@ -31,7 +31,7 @@ For more information on how to use the Julia package manager, refer to the [Pkg.
 
 ## Tutorial Index
 
-The following tutorials show how to use Julia to perform common taks in astronomy and astrophysics.
+The following tutorials show how to use Julia to perform common tasks in astronomy and astrophysics.
 
 ### General
 
