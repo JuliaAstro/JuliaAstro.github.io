@@ -78,6 +78,16 @@ The joy of our community is the many astronomy and astrophysics packages availab
 
 - Read and write OI-FITS optical interferometry data format
 
+### JuliaAPlavin/VirtualObservatory.jl
+
+[![curly braces](assets/code.png) Repository](https://github.com/JuliaAPlavin/VirtualObservatory.jl)
+
+[![book icon](assets/book.png) Documentation](https://github.com/JuliaAPlavin/VirtualObservatory.jl?tab=readme-ov-file#virtualobservatoryjl)
+
+**Access remote data and services that follow Virtual Observatory (VO, <https://www.ivoa.net/>) protocols.**
+
+- Currently supports the Table Access Protocol (TAP), and a few key features specific to the VizieR database
+
 ### JuliaAPlavin/VLBIData.jl
 
 [![curly braces](assets/code.png) Repository](https://github.com/JuliaAPlavin/VLBIData.jl)
