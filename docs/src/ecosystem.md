@@ -2,6 +2,8 @@
 
 The joy of our community is the many astronomy and astrophysics packages available for wide use. Packages are separated by functionality and Julia's declarative package manager takes care of resolving dependencies. You get just the functionality you need, and smaller packages lead to more rapid development.
 
+---
+
 ## Data I/O
 
 ### AstroImages.jl
@@ -86,6 +88,8 @@ The joy of our community is the many astronomy and astrophysics packages availab
 
 - Read interferometric visibilities (`uvfits`), images (`fits`), and source models
 - Minimal writing support for source models
+
+---
 
 ## Image Processing
 
@@ -204,6 +208,8 @@ The joy of our community is the many astronomy and astrophysics packages availab
 - Uses FFTs to register images, with arbitrary precision
 - Includes methods for Fourier based image-translation (phase-shifting)
 
+---
+
 ## Time, Coordinates, Units
 
 ### AstroAngles.jl
@@ -280,6 +286,8 @@ The joy of our community is the many astronomy and astrophysics packages availab
 
 - Wrapper for [wcslib](https://www.atnf.csiro.au/people/mcalabre/WCS/wcslib/)
 
+---
+
 ## Orbits and Ephemerides
 
 ### EarthOrientation.jl
@@ -291,16 +299,6 @@ The joy of our community is the many astronomy and astrophysics packages availab
 **Earth orientation parameters**
 
 - Calculate Earth orientation parameters from IERS tables
-
-### JPLEphemeris.jl
-
-[![curly braces](assets/code.png) Repository](https://github.com/JuliaAstro/JPLEphemeris.jl)
-
-[![book icon](assets/book.png) Documentation](https://github.com/helgee/JPLEphemeris.jl?tab=readme-ov-file#jplephemerisjl)
-
-**JPL Development Ephemerides**
-
-- Calculate positions and velocities of solar system bodies
 
 ### Transits.jl
 
@@ -314,6 +312,16 @@ The joy of our community is the many astronomy and astrophysics packages availab
 - Includes Keplerian orbits and generic orbits
 - Fully compatible with [Unitful.jl](https://github.com/painterqubits/Unitful.jl)
 
+### helgee/JPLEphemeris.jl
+
+[![curly braces](assets/code.png) Repository](https://github.com/JuliaAstro/JPLEphemeris.jl)
+
+[![book icon](assets/book.png) Documentation](https://github.com/helgee/JPLEphemeris.jl?tab=readme-ov-file#jplephemerisjl)
+
+**JPL Development Ephemerides**
+
+- Calculate positions and velocities of solar system bodies
+
 ### sefffal/PlanetOrbits.jl
 
 [![curly braces](assets/code.png) Repository](https://github.com/sefffal/PlanetOrbits.jl)
@@ -321,6 +329,8 @@ The joy of our community is the many astronomy and astrophysics packages availab
 [![book icon](assets/book.png) Documentation](https://sefffal.github.io/PlanetOrbits.jl/stable/)
 
 **Tools for displaying and solving Keplerian orbits in the context of direct imaging**
+
+---
 
 ## General
 
