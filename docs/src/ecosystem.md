@@ -2,15 +2,9 @@
 
 The joy of our community is the many astronomy and astrophysics packages available for wide use. Packages are separated by functionality and Julia's declarative package manager takes care of resolving dependencies. You get just the functionality you need, and smaller packages lead to more rapid development.
 
+---
+
 ## Data I/O
-
-### ASDF2.jl
-
-[![curly braces](assets/code.png) Repository](https://github.com/eschnett/ASDF2.jl)
-
-[![book icon](assets/book.png) Documentation](https://eschnett.github.io/ASDF2.jl/dev/)
-
-**Load files in ASDF format, which is the upcoming stadnard for STScI/Roman**
 
 ### AstroImages.jl
 
@@ -21,17 +15,6 @@ The joy of our community is the many astronomy and astrophysics packages availab
 **Load, manipulate, and visualize astronomical images**
 
 - Works with the [FileIO.jl](https://github.com/JuliaIO/FileIO.jl) interface
-
-### FITSIO.jl
-
-[![curly braces](assets/code.png) Repository](https://github.com/JuliaAstro/FITSIO.jl)
-
-[![book icon](assets/book.png) Documentation](https://juliaastro.github.io/FITSIO.jl/stable/)
-
-**Reading and writing FITS files**
-
-- Interact with header data units (HDUs), FITS headers, and FITS data: both images and tables
-- FITS tables follow the [Tables.jl](https://github.com/JuliaData/Tables.jl) interface, allowing seamless integration with the rich data ecosystem, like [CSV.jl](https://github.com/JuliaData/CSV.jl), [DataFrames.jl](https://github.com/JuliaData/DataFrames.jl), etc.
 
 ### CFITSIO.jl
 
@@ -44,6 +27,25 @@ The joy of our community is the many astronomy and astrophysics packages availab
 - Low-level wrapper for [cfitsio](https://heasarc.gsfc.nasa.gov/fitsio/)
 - The c interface can be directly accessed with the [CFITSIO_jll package](https://juliapackaging.github.io/BinaryBuilder.jl/dev/jll/)
 
+### FITSIO.jl
+
+[![curly braces](assets/code.png) Repository](https://github.com/JuliaAstro/FITSIO.jl)
+
+[![book icon](assets/book.png) Documentation](https://juliaastro.github.io/FITSIO.jl/stable/)
+
+**Reading and writing FITS files**
+
+- Interact with header data units (HDUs), FITS headers, and FITS data: both images and tables
+- FITS tables follow the [Tables.jl](https://github.com/JuliaData/Tables.jl) interface, allowing seamless integration with the rich data ecosystem, like [CSV.jl](https://github.com/JuliaData/CSV.jl), [DataFrames.jl](https://github.com/JuliaData/DataFrames.jl), etc.
+
+### eschnett/ASDF2.jl
+
+[![curly braces](assets/code.png) Repository](https://github.com/eschnett/ASDF2.jl)
+
+[![book icon](assets/book.png) Documentation](https://eschnett.github.io/ASDF2.jl/dev/)
+
+**Load files in ASDF format, which is the upcoming stadnard for STScI/Roman**
+
 ### mweastwood/CasaCore.jl
 
 [![curly braces](assets/code.png) Repository](https://github.com/mweastwood/CasaCore.jl)
@@ -55,26 +57,7 @@ The joy of our community is the many astronomy and astrophysics packages availab
 - Wrapper for [CasaCore](http://casacore.github.io/casacore/)
 - Interface for CASA tables and measures
 
-### emmt/OIFITS.jl
-
-[![curly braces](assets/code.png) Repository](https://github.com/emmt/OIFITS.jl)
-
-**Support for OI-FITS**
-
-- Read and write OI-FITS optical interferometry data format
-
-### aplavin/VLBIData.jl
-
-[![curly braces](assets/code.png) Repository](https://github.com/JuliaAPlavin/VLBIData.jl)
-
-[![book icon](assets/book.png) Documentation](https://aplavin.github.io/VLBIData.jl/test/examples.html)
-
-**Work with data formats common in very long baseline interferometry (VLBI)**
-
-- Read interferometric visibilities (`uvfits`), images (`fits`), and source models
-- Minimal writing support for source models
-
-### aplavin/Difmap.jl
+### JuliaAPlavin/Difmap.jl
 
 [![curly braces](assets/code.png) Repository](https://github.com/JuliaAPlavin/Difmap.jl)
 
@@ -85,7 +68,40 @@ The joy of our community is the many astronomy and astrophysics packages availab
 - Execute [Difmap](http://www.ascl.net/1103.001) scripts, handle inputs/outputs and logs
 - Display images and plots from Difmap in interactive Julia environments
 
-## Visualization and Plotting
+### emmt/OIFITS.jl
+
+[![curly braces](assets/code.png) Repository](https://github.com/emmt/OIFITS.jl)
+
+[![book icon](assets/book.png) Documentation](https://github.com/emmt/OIFITS.jl?tab=readme-ov-file#support-for-oi-fits-data-in-julia)
+
+**Support for OI-FITS**
+
+- Read and write OI-FITS optical interferometry data format
+
+### JuliaAPlavin/VirtualObservatory.jl
+
+[![curly braces](assets/code.png) Repository](https://github.com/JuliaAPlavin/VirtualObservatory.jl)
+
+[![book icon](assets/book.png) Documentation](https://github.com/JuliaAPlavin/VirtualObservatory.jl?tab=readme-ov-file#virtualobservatoryjl)
+
+**Access remote data and services that follow Virtual Observatory (VO, <https://www.ivoa.net/>) protocols.**
+
+- Currently supports the Table Access Protocol (TAP), and a few key features specific to the VizieR database
+
+### JuliaAPlavin/VLBIData.jl
+
+[![curly braces](assets/code.png) Repository](https://github.com/JuliaAPlavin/VLBIData.jl)
+
+[![book icon](assets/book.png) Documentation](https://aplavin.github.io/VLBIData.jl/test/examples.html)
+
+**Work with data formats common in very long baseline interferometry (VLBI)**
+
+- Read interferometric visibilities (`uvfits`), images (`fits`), and source models
+- Minimal writing support for source models
+
+---
+
+## Images
 
 ### AstroImages.jl
 
@@ -98,20 +114,6 @@ The joy of our community is the many astronomy and astrophysics packages availab
 - Works with the [FileIO.jl](https://github.com/JuliaIO/FileIO.jl) interface
 - Automatic visualizations are directly integrated into many environments like [VSCode](https://code.visualstudio.com/), [Pluto.jl](https://github.com/fonsp/Pluto.jl), and [IJulia.jl](https://github.com/JuliaLang/IJulia.jl)
 - Includes recipes for plotting with [Plots.jl](https://github.com/JuliaPlots/Plots.jl)
-
-### SAOImageDS9.jl
-
-[![curly braces](assets/code.png) Repository](https://github.com/JuliaAstro/SAOImageDS9.jl)
-
-[![book icon](assets/book.png) Documentation](https://juliaastro.github.io/SAOImageDS9.jl/stable/)
-
-**Interface with the DS9 image viewer**
-
-- Uses [XPA.jl](https://github.com/JuliaAstro/XPA.jl) to communicate with DS9 instances
-- Easily display images in DS9 and add features like circles and lines
-- Low-level API accessible with `set` and `get`
-
-## Image Processing
 
 ### CCDReduction.jl
 
@@ -162,11 +164,36 @@ The joy of our community is the many astronomy and astrophysics packages availab
 
 [![curly braces](assets/code.png) Repository](https://github.com/JuliaAstro/Reproject.jl)
 
-[![book icon](assets/book.png) Documentation](https://juliaastro.github.io/Reproject.jl/stable/)
+[![book icon](assets/book.png) Documentation](https://github.com/JuliaAstro/Reproject.jl?tab=readme-ov-file#reproject)
 
 **Astronomical image reprojection**
 
 - Uses [FITSIO.jl](https://github.com/JuliaAstro/FITSIO.jl) and [WCS.jl](https://github.com/JuliaAstro/WCS.jl) to reproject coordinate systems between FITS images
+
+### SAOImageDS9.jl
+
+[![curly braces](assets/code.png) Repository](https://github.com/JuliaAstro/SAOImageDS9.jl)
+
+[![book icon](assets/book.png) Documentation](https://juliaastro.github.io/SAOImageDS9.jl/stable/)
+
+**Interface with the DS9 image viewer**
+
+- Uses [XPA.jl](https://github.com/JuliaAstro/XPA.jl) to communicate with DS9 instances
+- Easily display images in DS9 and add features like circles and lines
+- Low-level API accessible with `set` and `get`
+
+### JuliaHCI/ADI.jl
+
+[![curly braces](assets/code.png) Repository](https://github.com/JuliaHCI/ADI.jl)
+
+[![book icon](assets/book.png) Documentation](http://JuliaHCI.github.io/ADI.jl/stable/)
+
+**Angular Differential Imaging (ADI) routines in Julia**
+
+- PCA, NMF, LLSG, LOCI, etc.
+- Apply algorithms framewise or in spectral differential imaging (SDI) using Julia's multiple dispatch
+- Provide an interface for using these algorithms in other tools
+- Common HCI metrics including S/N maps, contrast curves, throughput curves (from PSF injection), STIM, etc.
 
 ### JuliaHCI/HCIToolbox.jl
 
@@ -191,49 +218,15 @@ The joy of our community is the many astronomy and astrophysics packages availab
 - Uses FFTs to register images, with arbitrary precision
 - Includes methods for Fourier based image-translation (phase-shifting)
 
-### JuliaHCI/ADI.jl
+---
 
-[![curly braces](assets/code.png) Repository](https://github.com/JuliaHCI/ADI.jl)
-
-[![book icon](assets/book.png) Documentation](http://JuliaHCI.github.io/ADI.jl/stable/)
-
-**Angular Differential Imaging (ADI) routines in Julia**
-
-- PCA, NMF, LLSG, LOCI, etc.
-- Apply algorithms framewise or in spectral differential imaging (SDI) using Julia's multiple dispatch
-- Provide an interface for using these algorithms in other tools
-- Common HCI metrics including S/N maps, contrast curves, throughput curves (from PSF injection), STIM, etc.
-
-## Statistics
-
-### mileslucas/BiweightStats.jl
-
-[![curly braces](assets/code.png) Repository](https://github.com/mileslucas/BiweightStats.jl)
-
-[![book icon](assets/book.png) Documentation](http://mileslucas.com/BiweightStats.jl/stable/)
-
-**Robust statistics based on the biweight transform**
-
-- Implements the location, scale, midvariance, midcovariance, and midcorrelation statistics
-
-### JuliaHCI/ADI.jl
-
-[![curly braces](assets/code.png) Repository](https://github.com/JuliaHCI/ADI.jl)
-
-[![book icon](assets/book.png) Documentation](http://JuliaHCI.github.io/ADI.jl/stable/)
-
-**Angular Differential Imaging (ADI) routines in Julia**
-
-- PCA, NMF, LLSG, LOCI, etc.
-- Apply algorithms framewise or in spectral differential imaging (SDI) using Julia's multiple dispatch
-- Provide an interface for using these algorithms in other tools
-- Common HCI metrics including S/N maps, contrast curves, throughput curves (from PSF injection), STIM, etc.
-
-## Time, Coordinates, Units
+## Coords, Units
 
 ### AstroAngles.jl
 
 [![curly braces](assets/code.png) Repository](https://github.com/JuliaAstro/AstroAngles.jl)
+
+[![book icon](assets/book.png) Documentation](https://juliaastro.org/AstroAngles.jl/dev/)
 
 **String parsing and representation of angles**
 
@@ -255,6 +248,8 @@ The joy of our community is the many astronomy and astrophysics packages availab
 
 [![curly braces](assets/code.png) Repository](https://github.com/JuliaAstro/ERFA.jl)
 
+[![book icon](assets/book.png) Documentation](https://github.com/JuliaAstro/ERFA.jl?tab=readme-ov-file#erfajl)
+
 **Time systems conversions**
 
 - Low-level wrapper for [liberfa](https://github.com/liberfa/erfa)
@@ -262,6 +257,8 @@ The joy of our community is the many astronomy and astrophysics packages availab
 ### SkyCoords.jl
 
 [![curly braces](assets/code.png) Repository](https://github.com/JuliaAstro/SkyCoords.jl)
+
+[![book icon](assets/book.png) Documentation](https://juliaastro.org/SkyCoords.jl/stable/)
 
 **Astronomical coordinate systems**
 
@@ -271,6 +268,8 @@ The joy of our community is the many astronomy and astrophysics packages availab
 ### SPICE.jl
 
 [![curly braces](assets/code.png) Repository](https://github.com/JuliaAstro/SPICE.jl)
+
+[![book icon](assets/book.png) Documentation](https://juliaastro.org/SPICE.jl/stable/)
 
 **SPICE data retrieval and usage**
 
@@ -297,7 +296,19 @@ The joy of our community is the many astronomy and astrophysics packages availab
 
 - Wrapper for [wcslib](https://www.atnf.csiro.au/people/mcalabre/WCS/wcslib/)
 
-## Orbits and Ephemerides
+---
+
+## Orbits
+
+### EarthOrientation.jl
+
+[![curly braces](assets/code.png) Repository](https://github.com/JuliaAstro/EarthOrientation.jl)
+
+[![book icon](assets/book.png) Documentation](https://juliaastro.github.io/EarthOrientation.jl/stable/)
+
+**Earth orientation parameters**
+
+- Calculate Earth orientation parameters from IERS tables
 
 ### Transits.jl
 
@@ -311,6 +322,36 @@ The joy of our community is the many astronomy and astrophysics packages availab
 - Includes Keplerian orbits and generic orbits
 - Fully compatible with [Unitful.jl](https://github.com/painterqubits/Unitful.jl)
 
+### EphemerisSources.jl
+
+[![curly braces](assets/code.png) Repository](https://github.com/JuliaAstro/EphemerisSources.jl)
+
+[![book icon](assets/book.png) Documentation](https://juliaastro.org/EphemerisSources.jl/docs)
+
+**Meta package for accessing JPL HORIZONS and SPICE sources**
+
+- Calculate positions and velocities of solar system bodies
+
+### PerezHz/HORIZONS.jl
+
+[![curly braces](assets/code.png) Repository](https://github.com/PerezHz/HORIZONS.jl)
+
+[![book icon](assets/book.png) Documentation](https://github.com/PerezHz/HORIZONS.jl?tab=readme-ov-file#horizonsjl)
+
+**An interface to NASA-JPL HORIZONS system and other Solar System Dynamics APIs in Julia**
+
+- Calculate positions and velocities of solar system bodies
+
+### helgee/JPLEphemeris.jl
+
+[![curly braces](assets/code.png) Repository](https://github.com/JuliaAstro/JPLEphemeris.jl)
+
+[![book icon](assets/book.png) Documentation](https://github.com/helgee/JPLEphemeris.jl?tab=readme-ov-file#jplephemerisjl)
+
+**JPL Development Ephemerides**
+
+- Calculate positions and velocities of solar system bodies
+
 ### sefffal/PlanetOrbits.jl
 
 [![curly braces](assets/code.png) Repository](https://github.com/sefffal/PlanetOrbits.jl)
@@ -319,33 +360,7 @@ The joy of our community is the many astronomy and astrophysics packages availab
 
 **Tools for displaying and solving Keplerian orbits in the context of direct imaging**
 
-### EarthOrientation.jl
-
-[![curly braces](assets/code.png) Repository](https://github.com/JuliaAstro/EarthOrientation.jl)
-
-[![book icon](assets/book.png) Documentation](https://juliaastro.github.io/EarthOrientation.jl/stable/)
-
-**Earth orientation parameters**
-
-- Calculate Earth orientation parameters from IERS tables
-
-### JPLEphemeris.jl
-
-[![curly braces](assets/code.png) Repository](https://github.com/JuliaAstro/JPLEphemeris.jl)
-
-**JPL Development Ephemerides**
-
-- Calculate positions and velocities of solar system bodies
-
-### AstroLib.jl
-
-[![curly braces](assets/code.png) Repository](https://github.com/JuliaAstro/astrolib.jl)
-
-[![book icon](assets/book.png) Documentation](https://juliaastro.github.io/AstroLib.jl/stable/)
-
-**Collection of generic astronomical and astrophysical functions**
-
-- Translation of many IDL AstroLib procedures
+---
 
 ## General
 
@@ -395,7 +410,39 @@ The joy of our community is the many astronomy and astrophysics packages availab
 - SFD (1998) galactic dust map
 - Fully compatible with [Unitful.jl](https://github.com/painterqubits/Unitful.jl)
 
-### Healpix.jl
+### LombScargle.jl
+
+[![curly braces](assets/code.png) Repository](https://github.com/JuliaAstro/LombScargle.jl)
+
+[![book icon](assets/book.png) Documentation](https://juliaastro.github.io/LombScargle.jl/stable/)
+
+**Compute Lomb-Scargle periodogram**
+
+- Create periodograms from unevenly sampled periodic signals
+- Supports multi-threading
+
+### Photometry.jl
+
+[![curly braces](assets/code.png) Repository](https://github.com/JuliaAstro/Photometry.jl)
+
+[![book icon](assets/book.png) Documentation](https://juliaastro.github.io/Photometry.jl/stable/)
+
+**Aperture photometry**
+
+- Background estimation and source extraction
+- Fast and precise aperture photometry
+
+### mileslucas/BiweightStats.jl
+
+[![curly braces](assets/code.png) Repository](https://github.com/mileslucas/BiweightStats.jl)
+
+[![book icon](assets/book.png) Documentation](http://mileslucas.com/BiweightStats.jl/stable/)
+
+**Robust statistics based on the biweight transform**
+
+- Implements the location, scale, midvariance, midcovariance, and midcorrelation statistics
+
+### ziotom78/Healpix.jl
 
 [![curly braces](assets/code.png) Repository](https://github.com/ziotom78/Healpix.jl)
 
@@ -410,7 +457,7 @@ The joy of our community is the many astronomy and astrophysics packages availab
 See also:
 - [HealpixMPI.jl](https://github.com/LeeoBianchi/HealpixMPI.jl)
 
-### Korg.jl
+### ajwheeler/Korg.jl
 
 [![curly braces](assets/code.png) Repository](https://github.com/ajwheeler/Korg.jl)
 
@@ -418,18 +465,7 @@ See also:
 
 **Theoretical stellar spectra from 1D model atmospheres and linelists, assuming LTE**
 
-### LombScargle.jl
-
-[![curly braces](assets/code.png) Repository](https://github.com/JuliaAstro/LombScargle.jl)
-
-[![book icon](assets/book.png) Documentation](https://juliaastro.github.io/LombScargle.jl/stable/)
-
-**Compute Lomb-Scargle periodogram**
-
-- Create periodograms from unevenly sampled periodic signals
-- Supports multi-threading
-
-### manuelbehrendt/Mera.jl
+### ManuelBehrendt/Mera.jl
 
 [![curly braces](assets/code.png) Repository](https://github.com/ManuelBehrendt/Mera.jl)
 
@@ -441,18 +477,7 @@ See also:
 - Memory lightweight data processing within a database framework
 - Many predefined functions and examples
 
-### Photometry.jl
-
-[![curly braces](assets/code.png) Repository](https://github.com/JuliaAstro/Photometry.jl)
-
-[![book icon](assets/book.png) Documentation](https://juliaastro.github.io/Photometry.jl/stable/)
-
-**Aperture photometry**
-
-- Background estimation and source extraction
-- Fast and precise aperture photometry
-
-### SatelliteToolbox.jl
+### JuliaSpace/SatelliteToolbox.jl
 
 [![curly braces](assets/code.png) Repository](https://github.com/JuliaSpace/SatelliteToolbox.jl)
 
@@ -465,17 +490,3 @@ See also:
 
 See also:
 - [ReferenceFrameRotations.jl](https://github.com/JuliaSpace/ReferenceFrameRotations.jl)
-
-### Transits.jl
-
-[![curly braces](assets/code.png) Repository](https://github.com/JuliaAstro/Transits.jl)
-
-[![book icon](assets/book.png) Documentation](https://juliaastro.github.io/Transits.jl/stable/)
-
-**Flexible photometric transit curves with limb darkening**
-
-- Inspired by [exoplanet](https://github.com/exoplanet-dev/exoplanet)
-- Includes Keplerian orbits and generic orbits
-- Fast polynomial limb-darkening laws based on [Agol, Luger, Foreman-Mackey (2020)](https://arxiv.org/abs/1908.03222)
-- Composable limb-darkening extensions for integrated light curves and secondary light curves.
-- Fully compatible with [Unitful.jl](https://github.com/painterqubits/Unitful.jl)
