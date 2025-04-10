@@ -312,6 +312,26 @@ The joy of our community is the many astronomy and astrophysics packages availab
 - Includes Keplerian orbits and generic orbits
 - Fully compatible with [Unitful.jl](https://github.com/painterqubits/Unitful.jl)
 
+### EphemerisSources.jl
+
+[![curly braces](assets/code.png) Repository](https://github.com/JuliaAstro/EphemerisSources.jl)
+
+[![book icon](assets/book.png) Documentation](https://juliaastro.org/EphemerisSources.jl/docs)
+
+**Meta package for accessing JPL HORIZONS and SPICE sources**
+
+- Calculate positions and velocities of solar system bodies
+
+### PerezHz/HORIZONS.jl
+
+[![curly braces](assets/code.png) Repository](https://github.com/PerezHz/HORIZONS.jl)
+
+[![book icon](assets/book.png) Documentation](https://github.com/PerezHz/HORIZONS.jl?tab=readme-ov-file#horizonsjl)
+
+**An interface to NASA-JPL HORIZONS system and other Solar System Dynamics APIs in Julia**
+
+- Calculate positions and velocities of solar system bodies
+
 ### helgee/JPLEphemeris.jl
 
 [![curly braces](assets/code.png) Repository](https://github.com/JuliaAstro/JPLEphemeris.jl)
