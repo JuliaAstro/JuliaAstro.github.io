@@ -332,6 +332,16 @@ The joy of our community is the many astronomy and astrophysics packages availab
 
 - Calculate positions and velocities of solar system bodies
 
+### barrettp/Astrometry.jl
+
+[![curly braces](assets/code.png) Repository](https://github.com/barrettp/Astrometry.jl)
+
+[![book icon](assets/book.png) Documentation](https://barrettp.github.io/Astrometry/dev)
+
+**Set of IAU standard algorithms for calculating the time and position of celestial objects**
+
+- More information can be found on the official website of the [Standards of Fundamental Astronomy](http://www.iausofa.org/).
+
 ### PerezHz/HORIZONS.jl
 
 [![curly braces](assets/code.png) Repository](https://github.com/PerezHz/HORIZONS.jl)
