@@ -1,1 +1,0 @@
-module Photometrydocs; end
