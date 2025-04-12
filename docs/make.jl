@@ -17,6 +17,7 @@ Building aggregate site into: $(outpath)
 
 @info "Building MultiDocumenter site for JuliaAstro"
 
+include("pages.jl")
 mathengine = MathJax3(Dict(
     :loader => Dict("load" => ["[tex]/require", "[tex]/mathtools"]),
     :tex => Dict(
@@ -187,7 +188,7 @@ deploydocs(;
     repo = "github.com/JuliaAstro/JuliaAstro.github.io",
     push_preview = true,
     branch = "master",
-    devbranch = "multidocumenter",
+    devbranch = "source",
     versions = nothing,
 )
 @info "Deploy complete"
