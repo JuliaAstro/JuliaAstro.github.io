@@ -307,7 +307,7 @@ deploydocs(;
     repo = "github.com/JuliaAstro/JuliaAstro.github.io",
     push_preview = true,
     branch = "master",
-    devbranch = "multidocumenter",
+    devbranch = "source",
     versions = nothing,
 )
 @info "Deploy complete"
