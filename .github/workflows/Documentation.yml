@@ -7,7 +7,7 @@ on:
     - cron:  '15 2 * * *' # 2:15 AM UTC every day
 jobs:
   docs:
-    name: Documentation
+    name: MultiDocumentation
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -15,7 +15,16 @@ jobs:
         with:
           version: "1"
       - uses: julia-actions/cache@v2
-      - uses: julia-actions/julia-docdeploy@v1
+      - name: Install dependencies
+        shell: julia --color=yes --project=docs {0}
+        run: |
+          using Pkg
+          Pkg.instantiate()
+      - name: Aggregate and deploy
+        run: |
+          git config user.name github-actions
+          git config user.email github-actions@github.com
+          julia --color=yes --project=docs docs/make.jl --deploy
         env:
           DOCUMENTER_KEY: ${{ secrets.DOCUMENTER_KEY }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

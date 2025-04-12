@@ -235,6 +235,8 @@ The joy of our community is the many astronomy and astrophysics packages availab
 
 [![curly braces](assets/code.png) Repository](https://github.com/JuliaAstro/AstroAngles.jl)
 
+[![book icon](assets/book.png) Documentation](https://juliaastro.org/AstroAngles.jl/dev/)
+
 **String parsing and representation of angles**
 
 - Parse and represent sexagesimal angles with a variety of delimiters
