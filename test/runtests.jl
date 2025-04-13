@@ -35,8 +35,6 @@ pkgrevs = Dict(
 )
 
 @testset "JuliaAstro Package Evalauation" begin
-
-
     @testset "Compatible versions exist" begin
 
         ENV["JULIA_PKG_PRECOMPILE_AUTO"]=0
@@ -45,8 +43,6 @@ pkgrevs = Dict(
             name, rev = pkgspec
             @test Pkg.add(PackageSpec(;name)) == nothing
         end
-        
-
     end
 
     @testset "Development versions compatible" begin
@@ -59,7 +55,6 @@ pkgrevs = Dict(
             name, rev = pkgspec
             @test Pkg.add(PackageSpec(;name, rev)) == nothing
         end
-        
     end
 
     @testset "Precompilation" begin
