@@ -32,7 +32,7 @@ makedocs(
     format = Documenter.HTML(
         mathengine=mathengine,
         prettyurls = get(ENV, "CI", "false") == "true",
-        canonical = "https://juliaastro.org/",
+        canonical = "https://JuliaAstro.github.io/",
         assets = String[
             "assets/styles.css",
             "assets/favicon.ico",
@@ -127,8 +127,8 @@ MultiDocumenter.make(
         index_versions = ["stable"],
         engine = MultiDocumenter.FlexSearch
     ),
-    rootpath = "/previews/PR43/",
-    canonical_domain = "https://JuliaAstro.org/",
+    rootpath = "/previews/PR44/",
+    canonical_domain = "https://JuliaAstro.github.io/",
     brand_image = MultiDocumenter.BrandImage(".", joinpath("assets", "logo.svg")),
     sitemap = true,
 )
@@ -144,12 +144,14 @@ Downloads.download(
 )
 @info "Final build done"
 
-@info "Deploying docs"
-deploydocs(;
-    repo = "github.com/JuliaAstro/JuliaAstro.github.io",
-    push_preview = true,
-    branch = "master",
-    devbranch = "multidocumenter",
-    versions = nothing,
-)
-@info "Deploy complete"
+if "deploy" in ARGS
+    @info "Deploying docs"
+    deploydocs(;
+        repo = "github.com/JuliaAstro/JuliaAstro.github.io",
+        push_preview = true,
+        branch = "master",
+        devbranch = "multidoc-auto-highlevels",
+        versions = nothing,
+    )
+    @info "Deploy complete"
+end
