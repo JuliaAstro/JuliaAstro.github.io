@@ -16,8 +16,6 @@ Building aggregate site into: $(outpath)
 """
 
 @info "Building MultiDocumenter site for JuliaAstro"
-
-include("pages.jl")
 mathengine = MathJax3(Dict(
     :loader => Dict("load" => ["[tex]/require", "[tex]/mathtools"]),
     :tex => Dict(
@@ -146,49 +144,12 @@ Downloads.download(
 )
 @info "Final build done"
 
-@info "Deployng docs"
-#if "--deploy" in ARGS
-#    @warn "Deploying to GitHub" ARGS
-#    gitroot = normpath(joinpath(@__DIR__, ".."))
-#    run(`git pull`)
-#    outbranch = "master"
-#    has_outbranch = true
-#    if !success(`git checkout $outbranch`)
-#        has_outbranch = false
-#        if !success(`git switch --orphan $outbranch`)
-#            @error "Cannot create new orphaned branch $outbranch."
-#            exit(1)
-#        end
-#    end
-#    for file in readdir(gitroot; join = true)
-#        (endswith(file, ".git") || (basename(file) == "CNAME")) && continue
-#        rm(file; force = true, recursive = true)
-#    end
-#    for file in readdir(outpath)
-#        cp(joinpath(outpath, file), joinpath(gitroot, file))
-#    end
-#    run(`git add .`)
-#    if success(`git commit -m 'Aggregate documentation'`)
-#        @info "Pushing updated documentation."
-#        if has_outbranch
-#            run(`git push`)
-#        else
-#            run(`git push -u origin $outbranch`)
-#        end
-#        run(`git checkout source`)
-#    else
-#        @info "No changes to aggregated documentation."
-#    end
-#else
-#    @info "Skipping deployment, 'deploy' not passed. Generated files in docs/$(outpath)." ARGS
-#    cp(outpath, joinpath(@__DIR__, "build"), force = true)
-#end
-
+@info "Deploying docs"
 deploydocs(;
     repo = "github.com/JuliaAstro/JuliaAstro.github.io",
     push_preview = true,
     branch = "master",
-    devbranch = "source",
+    devbranch = "multidocumenter",
     versions = nothing,
 )
 @info "Deploy complete"
