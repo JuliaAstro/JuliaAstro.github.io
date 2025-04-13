@@ -220,7 +220,7 @@ The joy of our community is the many astronomy and astrophysics packages availab
 
 ---
 
-## Coords, Units
+## Time, Coords, Units
 
 ### AstroAngles.jl
 
