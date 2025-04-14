@@ -41,10 +41,9 @@ end
     end
 
     @testset "Package loading" begin
-        for pkgspec in pkgrevs
-            name, rev = pkgspec
+        for package in packages_juliaastro
             @test eval(quote
-                @time_imports using $(Symbol(name))
+                @time_imports using $(Symbol(chopsuffix(package.name, ".jl")))
             end) == nothing
         end
     end

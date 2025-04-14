@@ -427,6 +427,19 @@ ecosystem = (
             """,
         ),
         (
+            name = "sefffal/PairPlots.jl",
+            repo = "https://github.com/sefffal/PairPlots.jl",
+            doc = "https://sefffal.github.io/PairPlots.jl/dev/",
+            tagline = "Beautiful and flexible visualizations of high dimensional data",
+            descr = """
+            - Corner plots or scatter plot matrices. Both Julia and Python are supported (PairPlots.jl and [pairplots.py](https://pypi.org/project/pairplots/))
+            - Inspired by [corner.py](https://corner.readthedocs.io/en/latest/index.html) and [chainconsumer.py](https://samreay.github.io/ChainConsumer/usage.html) 
+
+            See also:
+            - [ReferenceFrameRotations.jl](https://github.com/JuliaSpace/ReferenceFrameRotations.jl)
+            """,
+        ),
+        (
             name = "JuliaSpace/SatelliteToolbox.jl",
             repo = "https://github.com/JuliaSpace/SatelliteToolbox.jl",
             doc = "https://juliaspace.github.io/SatelliteToolbox.jl/stable/",
