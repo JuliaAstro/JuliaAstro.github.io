@@ -501,6 +501,21 @@ The joy of our community is the many astronomy and astrophysics packages availab
 - Many predefined functions and examples
 
 
+### sefffal/PairPlots.jl
+
+[![curly braces](assets/code.png) Repository](https://github.com/sefffal/PairPlots.jl)
+
+[![book icon](assets/book.png) Documentation](https://sefffal.github.io/PairPlots.jl/dev/)
+
+**Beautiful and flexible visualizations of high dimensional data**
+
+- Corner plots or scatter plot matrices. Both Julia and Python are supported (PairPlots.jl and [pairplots.py](https://pypi.org/project/pairplots/))
+- Inspired by [corner.py](https://corner.readthedocs.io/en/latest/index.html) and [chainconsumer.py](https://samreay.github.io/ChainConsumer/usage.html) 
+
+See also:
+- [ReferenceFrameRotations.jl](https://github.com/JuliaSpace/ReferenceFrameRotations.jl)
+
+
 ### JuliaSpace/SatelliteToolbox.jl
 
 [![curly braces](assets/code.png) Repository](https://github.com/JuliaSpace/SatelliteToolbox.jl)

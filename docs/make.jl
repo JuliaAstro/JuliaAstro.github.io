@@ -1,7 +1,8 @@
 import Pkg
 Pkg.develop(path=".") # Maybe register JuliaAstroDocs at some point?
+import JuliaAstroDocs
 
-using MultiDocumenter, Documenter, JuliaAstroDocs
+using MultiDocumenter, Documenter
 using LibGit2, Pkg, TOML, UUIDs, Downloads
 
 # This make file compiles the documentation for the JuliaAstro website.
@@ -35,7 +36,7 @@ makedocs(
     format = Documenter.HTML(
         mathengine=mathengine,
         prettyurls = get(ENV, "CI", "false") == "true",
-        canonical = "https://JuliaAstro.github.io/",
+        canonical = "https://JuliaAstro.org/",
         assets = String[
             "assets/styles.css",
             "assets/favicon.ico",

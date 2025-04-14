@@ -5,7 +5,8 @@ These are tests that confirm various packages can be installed and work together
 =#
 
 using Test, Pkg, InteractiveUtils
-Pkg.develop(path="..") # Maybe register JuliaAstroDocs at some point?
+
+Pkg.develop(path="..")
 import JuliaAstroDocs
 
 ecos = JuliaAstroDocs.ecosystem

@@ -500,7 +500,12 @@ function write_ecosystem()
 end
 
 function __init__()
-    #write_ecosystem()
+    # Generate ../docs/src/ecosystem.md on startup
+    # Note: loops twice if trying to run LiveServer.jl:
+    #     once from ./docs/make.jl, and
+    #     once from ./test/runtests.jl
+    # so this is commented out by default and just run once, manually
+    # write_ecosystem()
 end
 
 end
