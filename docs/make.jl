@@ -128,6 +128,7 @@ if "deploy" in ARGS
         push_preview = true,
         branch = "master",
         devbranch = "multidoc-auto-highlevels",
+        cname = "juliaastro.org",
         versions = nothing,
     )
     @info "Deploy complete"
