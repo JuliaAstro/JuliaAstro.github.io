@@ -1,4 +1,7 @@
-using MultiDocumenter, Documenter
+import Pkg
+Pkg.develop(path=".") # Maybe register JuliaAstroDocs at some point?
+
+using MultiDocumenter, Documenter, JuliaAstroDocs
 using LibGit2, Pkg, TOML, UUIDs, Downloads
 
 # This make file compiles the documentation for the JuliaAstro website.
@@ -54,54 +57,28 @@ makedocs(
 )
 
 @info "Building aggregate JuliaAstro site"
-import Markdown
-function highlevels(content)
-    arr = []
-    i = 0
-    for line in content
-        if line isa Markdown.Header{2}
-            push!(arr, [first(line.text), Vector{String}[]])
-            i += 1
+function generate_multidoc_refs(p; clonedir=joinpath(@__DIR__, "clones"))
+    package_name = string(chopsuffix(p.name, ".jl"))
+    multidoc_type = if any(occursin.(("stable", "dev"), p.doc)) && startswith(p.doc, "https://juliaastro")
+            "MultiDocRef"
+        else
+            "Link"
         end
-        if line isa Markdown.Header{3}
-            push!(last(arr[i]), [first(line.text)])
-        end
-        if line isa Markdown.Paragraph && first(line.content) isa Markdown.Link
-            link_type = strip(last(first(line.content).text))
-            url = first(line.content).url
-            push!(last(last(arr[i])), url)
-            if link_type == "Documentation"
-                multidoc_type = if any(occursin.(("stable", "dev"), url)) && startswith(url, "https://juliaastro")
-                    "MultiDocRef"
-                else
-                    "Link"
-                end
-                push!(last(last(arr[i])), multidoc_type)
-            end
-        end
-    end
 
-    return arr
-end
-
-function generate_multidoc_refs(package; clonedir=joinpath(@__DIR__, "clones"))
-    package_name = string(chopsuffix(first(package), ".jl"))
-    if last(package) == "MultiDocRef"
+    if multidoc_type == "MultiDocRef"
         MultiDocumenter.MultiDocRef(
             upstream = joinpath(clonedir, package_name),
             path = package_name,
             name = package_name,
-            giturl = package[2],
+            giturl = p.repo,
         )
     else
         MultiDocumenter.Link(
             package_name,
-            package[3],
+            p.doc,
         )
     end
 end
-
-ecosystem = read("./docs/src/ecosystem.md") |> String |> Markdown.parse
 
 docs = [
     # We also add JuliaAstro's own generated pages
@@ -111,10 +88,10 @@ docs = [
         name = "Home",
         fix_canonical_url = false,
     ),
-    map(highlevels(ecosystem.content)) do (highlevel, packages)
+    map(JuliaAstroDocs.ecosystem) do (highlevel, packages)
         MultiDocumenter.DropdownNav(
             highlevel,
-            generate_multidoc_refs.(packages)
+            collect(generate_multidoc_refs.(packages))
         )
     end...
 ]

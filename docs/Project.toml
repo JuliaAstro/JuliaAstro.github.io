@@ -1,6 +1,5 @@
 [deps]
 Documenter = "e30172f5-a6a5-5a46-863b-614d45cd2de4"
-Markdown = "d6f4376e-aef5-505a-96c1-9c027394607a"
 MultiDocumenter = "87ed4bf0-c935-4a67-83c3-2a03bee4197c"
 Pkg = "44cfe95a-1eb2-52ea-b672-e2afdf69b78f"
 

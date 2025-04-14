@@ -16,6 +16,7 @@ The joy of our community is the many astronomy and astrophysics packages availab
 
 - Works with the [FileIO.jl](https://github.com/JuliaIO/FileIO.jl) interface
 
+
 ### CFITSIO.jl
 
 [![curly braces](assets/code.png) Repository](https://github.com/JuliaAstro/CFITSIO.jl)
@@ -26,6 +27,7 @@ The joy of our community is the many astronomy and astrophysics packages availab
 
 - Low-level wrapper for [cfitsio](https://heasarc.gsfc.nasa.gov/fitsio/)
 - The c interface can be directly accessed with the [CFITSIO_jll package](https://juliapackaging.github.io/BinaryBuilder.jl/dev/jll/)
+
 
 ### FITSIO.jl
 
@@ -38,6 +40,7 @@ The joy of our community is the many astronomy and astrophysics packages availab
 - Interact with header data units (HDUs), FITS headers, and FITS data: both images and tables
 - FITS tables follow the [Tables.jl](https://github.com/JuliaData/Tables.jl) interface, allowing seamless integration with the rich data ecosystem, like [CSV.jl](https://github.com/JuliaData/CSV.jl), [DataFrames.jl](https://github.com/JuliaData/DataFrames.jl), etc.
 
+
 ### eschnett/ASDF2.jl
 
 [![curly braces](assets/code.png) Repository](https://github.com/eschnett/ASDF2.jl)
@@ -45,6 +48,8 @@ The joy of our community is the many astronomy and astrophysics packages availab
 [![book icon](assets/book.png) Documentation](https://eschnett.github.io/ASDF2.jl/dev/)
 
 **Load files in ASDF format, which is the upcoming stadnard for STScI/Roman**
+
+
 
 ### mweastwood/CasaCore.jl
 
@@ -57,6 +62,7 @@ The joy of our community is the many astronomy and astrophysics packages availab
 - Wrapper for [CasaCore](http://casacore.github.io/casacore/)
 - Interface for CASA tables and measures
 
+
 ### JuliaAPlavin/Difmap.jl
 
 [![curly braces](assets/code.png) Repository](https://github.com/JuliaAPlavin/Difmap.jl)
@@ -68,6 +74,7 @@ The joy of our community is the many astronomy and astrophysics packages availab
 - Execute [Difmap](http://www.ascl.net/1103.001) scripts, handle inputs/outputs and logs
 - Display images and plots from Difmap in interactive Julia environments
 
+
 ### emmt/OIFITS.jl
 
 [![curly braces](assets/code.png) Repository](https://github.com/emmt/OIFITS.jl)
@@ -78,6 +85,7 @@ The joy of our community is the many astronomy and astrophysics packages availab
 
 - Read and write OI-FITS optical interferometry data format
 
+
 ### JuliaAPlavin/VirtualObservatory.jl
 
 [![curly braces](assets/code.png) Repository](https://github.com/JuliaAPlavin/VirtualObservatory.jl)
@@ -87,6 +95,7 @@ The joy of our community is the many astronomy and astrophysics packages availab
 **Access remote data and services that follow Virtual Observatory (VO, <https://www.ivoa.net/>) protocols.**
 
 - Currently supports the Table Access Protocol (TAP), and a few key features specific to the VizieR database
+
 
 ### JuliaAPlavin/VLBIData.jl
 
@@ -112,8 +121,7 @@ The joy of our community is the many astronomy and astrophysics packages availab
 **Load, manipulate, and visualize astronomical images**
 
 - Works with the [FileIO.jl](https://github.com/JuliaIO/FileIO.jl) interface
-- Automatic visualizations are directly integrated into many environments like [VSCode](https://code.visualstudio.com/), [Pluto.jl](https://github.com/fonsp/Pluto.jl), and [IJulia.jl](https://github.com/JuliaLang/IJulia.jl)
-- Includes recipes for plotting with [Plots.jl](https://github.com/JuliaPlots/Plots.jl)
+
 
 ### CCDReduction.jl
 
@@ -127,6 +135,7 @@ The joy of our community is the many astronomy and astrophysics packages availab
 - Dark subtraction, flat normalization, bias subtraction, cropping
 - Specialized iterator for processing directories of FITS files using a table built from the FITS headers.
 
+
 ### LACosmic.jl
 
 [![curly braces](assets/code.png) Repository](https://github.com/JuliaAstro/LACosmic.jl)
@@ -137,6 +146,7 @@ The joy of our community is the many astronomy and astrophysics packages availab
 
 - Implementation of the L.A.Cosmic algorithm ([van Dokkum, 2001](https://ui.adsabs.harvard.edu/abs/2001PASP..113.1420V/abstract))
 - Returns bad pixel masks and cleaned data
+
 
 ### Photometry.jl
 
@@ -149,6 +159,7 @@ The joy of our community is the many astronomy and astrophysics packages availab
 - Background estimation and source extraction
 - Fast and precise aperture photometry
 
+
 ### PSFModels.jl
 
 [![curly braces](assets/code.png) Repository](https://github.com/JuliaAstro/PSFModels.jl)
@@ -160,6 +171,7 @@ The joy of our community is the many astronomy and astrophysics packages availab
 - Lazy representation allows fast allocation-free calculations
 - Gaussian (Normal), Moffat, and Airy disk.
 
+
 ### Reproject.jl
 
 [![curly braces](assets/code.png) Repository](https://github.com/JuliaAstro/Reproject.jl)
@@ -169,6 +181,7 @@ The joy of our community is the many astronomy and astrophysics packages availab
 **Astronomical image reprojection**
 
 - Uses [FITSIO.jl](https://github.com/JuliaAstro/FITSIO.jl) and [WCS.jl](https://github.com/JuliaAstro/WCS.jl) to reproject coordinate systems between FITS images
+
 
 ### SAOImageDS9.jl
 
@@ -181,6 +194,7 @@ The joy of our community is the many astronomy and astrophysics packages availab
 - Uses [XPA.jl](https://github.com/JuliaAstro/XPA.jl) to communicate with DS9 instances
 - Easily display images in DS9 and add features like circles and lines
 - Low-level API accessible with `set` and `get`
+
 
 ### JuliaHCI/ADI.jl
 
@@ -195,6 +209,7 @@ The joy of our community is the many astronomy and astrophysics packages availab
 - Provide an interface for using these algorithms in other tools
 - Common HCI metrics including S/N maps, contrast curves, throughput curves (from PSF injection), STIM, etc.
 
+
 ### JuliaHCI/HCIToolbox.jl
 
 [![curly braces](assets/code.png) Repository](https://github.com/JuliaHCI/HCIToolbox.jl)
@@ -206,17 +221,6 @@ The joy of our community is the many astronomy and astrophysics packages availab
 - Morphological operations (rotation, stacking, shifting)
 - Masking routines (circles, annulus, series of annuli)
 - Spectral scaling and descaling
-
-### JuliaHCI/SubpixelRegistration.jl
-
-[![curly braces](assets/code.png) Repository](https://github.com/JuliaHCI/SubpixelRegistration.jl)
-
-[![book icon](assets/book.png) Documentation](http://JuliaHCI.github.io/SubpixelRegistration.jl/stable/)
-
-**Sub-pixel registration using discrete Fourier transforms**
-
-- Uses FFTs to register images, with arbitrary precision
-- Includes methods for Fourier based image-translation (phase-shifting)
 
 ---
 
@@ -233,6 +237,7 @@ The joy of our community is the many astronomy and astrophysics packages availab
 - Parse and represent sexagesimal angles with a variety of delimiters
 - Methods for converting to hour-minute-second angles from degrees and radians, and vice-versa
 
+
 ### AstroTime.jl
 
 [![curly braces](assets/code.png) Repository](https://github.com/JuliaAstro/AstroTime.jl)
@@ -244,6 +249,7 @@ The joy of our community is the many astronomy and astrophysics packages availab
 - High-precision, time-scale aware, DateTime-like data type
 - Support all commonly used astronomical time scales
 
+
 ### ERFA.jl
 
 [![curly braces](assets/code.png) Repository](https://github.com/JuliaAstro/ERFA.jl)
@@ -253,6 +259,7 @@ The joy of our community is the many astronomy and astrophysics packages availab
 **Time systems conversions**
 
 - Low-level wrapper for [liberfa](https://github.com/liberfa/erfa)
+
 
 ### SkyCoords.jl
 
@@ -265,6 +272,7 @@ The joy of our community is the many astronomy and astrophysics packages availab
 - Supports ICRS, galactic, and FK5 coordinate systems
 - Fast conversion of coordinates between different systems
 
+
 ### SPICE.jl
 
 [![curly braces](assets/code.png) Repository](https://github.com/JuliaAstro/SPICE.jl)
@@ -276,6 +284,7 @@ The joy of our community is the many astronomy and astrophysics packages availab
 - Wrapper for [CSPICE](https://naif.jpl.nasa.gov/pub/naif/toolkit_docs/C/index.html)
 - Read SPICE data files and compute derived observation geometry such as altitude, latitude/longitude and lighting angles
 
+
 ### UnitfulAstro.jl
 
 [![curly braces](assets/code.png) Repository](https://github.com/JuliaAstro/UnitfulAstro.jl)
@@ -285,6 +294,7 @@ The joy of our community is the many astronomy and astrophysics packages availab
 **Astronomical units**
 
 - Extension of [Unitful.jl](https://github.com/painterqubits/Unitful.jl)
+
 
 ### WCS.jl
 
@@ -310,6 +320,7 @@ The joy of our community is the many astronomy and astrophysics packages availab
 
 - Calculate Earth orientation parameters from IERS tables
 
+
 ### Transits.jl
 
 [![curly braces](assets/code.png) Repository](https://github.com/JuliaAstro/Transits.jl)
@@ -322,6 +333,7 @@ The joy of our community is the many astronomy and astrophysics packages availab
 - Includes Keplerian orbits and generic orbits
 - Fully compatible with [Unitful.jl](https://github.com/painterqubits/Unitful.jl)
 
+
 ### EphemerisSources.jl
 
 [![curly braces](assets/code.png) Repository](https://github.com/JuliaAstro/EphemerisSources.jl)
@@ -331,6 +343,7 @@ The joy of our community is the many astronomy and astrophysics packages availab
 **Meta package for accessing JPL HORIZONS and SPICE sources**
 
 - Calculate positions and velocities of solar system bodies
+
 
 ### barrettp/Astrometry.jl
 
@@ -342,6 +355,7 @@ The joy of our community is the many astronomy and astrophysics packages availab
 
 - More information can be found on the official website of the [Standards of Fundamental Astronomy](http://www.iausofa.org/).
 
+
 ### PerezHz/HORIZONS.jl
 
 [![curly braces](assets/code.png) Repository](https://github.com/PerezHz/HORIZONS.jl)
@@ -351,6 +365,7 @@ The joy of our community is the many astronomy and astrophysics packages availab
 **An interface to NASA-JPL HORIZONS system and other Solar System Dynamics APIs in Julia**
 
 - Calculate positions and velocities of solar system bodies
+
 
 ### helgee/JPLEphemeris.jl
 
@@ -362,6 +377,7 @@ The joy of our community is the many astronomy and astrophysics packages availab
 
 - Calculate positions and velocities of solar system bodies
 
+
 ### sefffal/PlanetOrbits.jl
 
 [![curly braces](assets/code.png) Repository](https://github.com/sefffal/PlanetOrbits.jl)
@@ -369,6 +385,7 @@ The joy of our community is the many astronomy and astrophysics packages availab
 [![book icon](assets/book.png) Documentation](https://sefffal.github.io/PlanetOrbits.jl/stable/)
 
 **Tools for displaying and solving Keplerian orbits in the context of direct imaging**
+
 
 ---
 
@@ -384,6 +401,7 @@ The joy of our community is the many astronomy and astrophysics packages availab
 
 - Translation of many IDL AstroLib procedures
 
+
 ### BoxLeastSquares.jl
 
 [![curly braces](assets/code.png) Repository](https://github.com/JuliaAstro/BoxLeastSquares.jl)
@@ -395,6 +413,7 @@ The joy of our community is the many astronomy and astrophysics packages availab
 - Fit BLS periodograms to time-series data
 - Extract best-fitting transit parameters from the BLS periodogram
 - Fully compatible with [Unitful.jl](https://github.com/painterqubits/Unitful.jl)
+
 
 ### Cosmology.jl
 
@@ -408,6 +427,7 @@ The joy of our community is the many astronomy and astrophysics packages availab
 - Open, closed, and flat variants
 - Fully compatible with [Unitful.jl](https://github.com/painterqubits/Unitful.jl)
 
+
 ### DustExtinction.jl
 
 [![curly braces](assets/code.png) Repository](https://github.com/JuliaAstro/DustExtinction.jl)
@@ -420,6 +440,7 @@ The joy of our community is the many astronomy and astrophysics packages availab
 - SFD (1998) galactic dust map
 - Fully compatible with [Unitful.jl](https://github.com/painterqubits/Unitful.jl)
 
+
 ### LombScargle.jl
 
 [![curly braces](assets/code.png) Repository](https://github.com/JuliaAstro/LombScargle.jl)
@@ -430,6 +451,7 @@ The joy of our community is the many astronomy and astrophysics packages availab
 
 - Create periodograms from unevenly sampled periodic signals
 - Supports multi-threading
+
 
 ### Photometry.jl
 
@@ -442,6 +464,7 @@ The joy of our community is the many astronomy and astrophysics packages availab
 - Background estimation and source extraction
 - Fast and precise aperture photometry
 
+
 ### mileslucas/BiweightStats.jl
 
 [![curly braces](assets/code.png) Repository](https://github.com/mileslucas/BiweightStats.jl)
@@ -451,6 +474,7 @@ The joy of our community is the many astronomy and astrophysics packages availab
 **Robust statistics based on the biweight transform**
 
 - Implements the location, scale, midvariance, midcovariance, and midcorrelation statistics
+
 
 ### ziotom78/Healpix.jl
 
@@ -464,8 +488,6 @@ The joy of our community is the many astronomy and astrophysics packages availab
 - power spectrum support
 - plotting support
 
-See also:
-- [HealpixMPI.jl](https://github.com/LeeoBianchi/HealpixMPI.jl)
 
 ### ajwheeler/Korg.jl
 
@@ -474,6 +496,8 @@ See also:
 [![book icon](assets/book.png) Documentation](https://ajwheeler.github.io/Korg.jl/stable/)
 
 **Theoretical stellar spectra from 1D model atmospheres and linelists, assuming LTE**
+
+
 
 ### ManuelBehrendt/Mera.jl
 
@@ -486,6 +510,7 @@ See also:
 - Loading, writing, analysing 3D AMR/uniform-grid and N-body data sets
 - Memory lightweight data processing within a database framework
 - Many predefined functions and examples
+
 
 ### JuliaSpace/SatelliteToolbox.jl
 

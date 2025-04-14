@@ -5,6 +5,7 @@ These are tests that confirm various packages can be installed and work together
 =#
 
 using Test, Pkg, InteractiveUtils
+#Pkg.develop(path="..") # Maybe register JuliaAstroDocs at some point?
 
 # Specify revision to install and build docs for.
 # Every package must be listed here UNLESS it's listed in `usereadme` above.
@@ -35,14 +36,32 @@ pkgrevs = Dict(
 )
 
 @testset "JuliaAstro Package Evalauation" begin
+
     @testset "Compatible versions exist" begin
 
-        ENV["JULIA_PKG_PRECOMPILE_AUTO"]=0
+        ENV["JULIA_PKG_PRECOMPILE_AUTO"] = 0
 
         for pkgspec in pkgrevs
             name, rev = pkgspec
             @test Pkg.add(PackageSpec(;name)) == nothing
         end
+
+        #for highlevel in JuliaAstroDocs.packages
+        #    for info in last(highlevel)
+        #        package_name = first(split(basename(first(info)), "."))
+        #        @testset "$(package_name)" begin
+        #            @info string("Trying ", package_name)
+        #            try
+        #                @test Pkg.add(package_name) == nothing
+        #            catch
+        #                @error :Nope package_name
+        #                @test false broken=true
+        #                Pkg.undo()
+        #            end
+        #        end
+        #    end
+        #end
+
     end
 
     @testset "Development versions compatible" begin
