@@ -5,74 +5,34 @@ These are tests that confirm various packages can be installed and work together
 =#
 
 using Test, Pkg, InteractiveUtils
-#Pkg.develop(path="..") # Maybe register JuliaAstroDocs at some point?
+Pkg.develop(path="..") # Maybe register JuliaAstroDocs at some point?
+import JuliaAstroDocs
 
-# Specify revision to install and build docs for.
-# Every package must be listed here UNLESS it's listed in `usereadme` above.
-pkgrevs = Dict(
-    "AstroAngles" =>  "main",
-    "AstroImages" =>  "master",
-    "AstroLib" =>  "master",
-    "AstroLib" =>  "master",
-    "AstroTime" =>  "main",
-    "BoxLeastSquares" => "main",
-    # "CCDReduction" =>  "main",
-    "CFITSIO" =>  "master",
-    "Cosmology" =>  "master",
-    "DustExtinction" =>  "master",
-    "EarthOrientation" =>  "master",
-    "ERFA" => "main",
-    "FITSIO" =>  "master",
-    "LACosmic" =>  "main",
-    #"JPLEphemeris" =>  "master",
-    "LombScargle" => "master",
-    "Photometry" =>  "main",
-    # "PSFModels" =>  "main",
-    "SAOImageDS9" =>  "master",
-    "SkyCoords" =>  "master",
-    "Transits" =>  "main",
-    "UnitfulAstro" =>  "master",
-    "WCS" => "master",
-)
+ecos = JuliaAstroDocs.ecosystem
+
+packages_juliaastro = Iterators.filter(p for (h, ps) in ecos for p in ps) do package
+    occursin("juliaastro", lowercase(package.repo))
+end
 
 @testset "JuliaAstro Package Evalauation" begin
-
     @testset "Compatible versions exist" begin
-
         ENV["JULIA_PKG_PRECOMPILE_AUTO"] = 0
-
-        for pkgspec in pkgrevs
-            name, rev = pkgspec
-            @test Pkg.add(PackageSpec(;name)) == nothing
+        for package in packages_juliaastro
+            @testset "$(package.name)" begin
+                @test Pkg.add(chopsuffix(package.name, ".jl")) == nothing
+            end
         end
-
-        #for highlevel in JuliaAstroDocs.packages
-        #    for info in last(highlevel)
-        #        package_name = first(split(basename(first(info)), "."))
-        #        @testset "$(package_name)" begin
-        #            @info string("Trying ", package_name)
-        #            try
-        #                @test Pkg.add(package_name) == nothing
-        #            catch
-        #                @error :Nope package_name
-        #                @test false broken=true
-        #                Pkg.undo()
-        #            end
-        #        end
-        #    end
-        #end
-
     end
 
     @testset "Development versions compatible" begin
-
         # Start by testing that we can install all packages
         # Worry if they compile successfully after
-        ENV["JULIA_PKG_PRECOMPILE_AUTO"]=0
+        ENV["JULIA_PKG_PRECOMPILE_AUTO"] = 0
 
-        for pkgspec in pkgrevs
-            name, rev = pkgspec
-            @test Pkg.add(PackageSpec(;name, rev)) == nothing
+        for package in packages_juliaastro
+            @testset "$(package.name)" begin
+                @test Pkg.add(url=package.repo) == nothing
+            end
         end
     end
 

@@ -42,13 +42,15 @@ ecosystem = (
             """,
         ),
         (
-            name = "mweastwood/CasaCore.jl",
-            repo = "https://github.com/mweastwood/CasaCore.jl",
-            doc = "http://mweastwood.info/CasaCore.jl/stable/",
-            tagline = "Tables and measurement sets for radio astronomy",
+            # TODO: Update for Julia v1.11
+            # https://github.com/torrance/Casacore.jl/issues/12
+            name = "torrance/Casacore.jl",
+            repo = "https://github.com/torrance/Casacore.jl",
+            doc = "https://github.com/torrance/Casacore.jl?tab=readme-ov-file#casacorejl",
+            tagline = "A high level Julia interface to Casacore",
             descr = """
             - Wrapper for [CasaCore](http://casacore.github.io/casacore/)
-            - Interface for CASA tables and measures
+            - Uses [casacorecxx](https://github.com/torrance/casacorecxx) which uses [CxxWrap](https://github.com/JuliaInterop/CxxWrap.jl) to wrap the C++ Casacore codebase. These raw objects and methods are available in `Casacore.LibCasacore`
             """,
         ),
         (
@@ -302,19 +304,21 @@ ecosystem = (
             - Calculate positions and velocities of solar system bodies
             """,
         ),
-        (
-            name = "helgee/JPLEphemeris.jl",
-            repo = "https://github.com/JuliaAstro/JPLEphemeris.jl",
-            doc = "https://github.com/helgee/JPLEphemeris.jl?tab=readme-ov-file#jplephemerisjl",
-            tagline = "JPL Development Ephemerides",
-            descr = """
-            - Calculate positions and velocities of solar system bodies
-            """,
-        ),
+        #(
+        #    # TODO: Follow-up on status of this package
+        #    # https://github.com/helgee/JPLEphemeris.jl/issues/23
+        #    name = "helgee/JPLEphemeris.jl",
+        #    repo = "https://github.com/JuliaAstro/JPLEphemeris.jl",
+        #    doc = "https://github.com/helgee/JPLEphemeris.jl?tab=readme-ov-file#jplephemerisjl",
+        #    tagline = "JPL Development Ephemerides",
+        #    descr = """
+        #    - Calculate positions and velocities of solar system bodies
+        #    """,
+        #),
         (
             name = "sefffal/PlanetOrbits.jl",
             repo = "https://github.com/sefffal/PlanetOrbits.jl",
-            doc = "https://sefffal.github.io/PlanetOrbits.jl/stable/",
+            doc = "https://sefffal.github.io/PlanetOrbits.jl/dev/",
             tagline = "Tools for displaying and solving Keplerian orbits in the context of direct imaging",
             descr = """
             """,
@@ -439,7 +443,9 @@ ecosystem = (
 )
 
 function write_ecosystem()
-    open("docs/src/ecosystem.md", "w") do io
+    fpath = joinpath(@__DIR__, "..", "docs", "src", "ecosystem.md")
+    @info "Writing to:" fpath
+    open(fpath, "w") do io
         write(io,
             """
             # [Ecosystem](@id eco)
@@ -481,7 +487,7 @@ function write_ecosystem()
 end
 
 function __init__()
-    write_ecosystem()
+    #write_ecosystem()
 end
 
 end

@@ -51,16 +51,16 @@ The joy of our community is the many astronomy and astrophysics packages availab
 
 
 
-### mweastwood/CasaCore.jl
+### torrance/Casacore.jl
 
-[![curly braces](assets/code.png) Repository](https://github.com/mweastwood/CasaCore.jl)
+[![curly braces](assets/code.png) Repository](https://github.com/torrance/Casacore.jl)
 
-[![book icon](assets/book.png) Documentation](http://mweastwood.info/CasaCore.jl/stable/)
+[![book icon](assets/book.png) Documentation](https://github.com/torrance/Casacore.jl?tab=readme-ov-file#casacorejl)
 
-**Tables and measurement sets for radio astronomy**
+**A high level Julia interface to Casacore**
 
 - Wrapper for [CasaCore](http://casacore.github.io/casacore/)
-- Interface for CASA tables and measures
+- Uses [casacorecxx](https://github.com/torrance/casacorecxx) which uses [CxxWrap](https://github.com/JuliaInterop/CxxWrap.jl) to wrap the C++ Casacore codebase. These raw objects and methods are available in `Casacore.LibCasacore`
 
 
 ### JuliaAPlavin/Difmap.jl
@@ -367,22 +367,11 @@ The joy of our community is the many astronomy and astrophysics packages availab
 - Calculate positions and velocities of solar system bodies
 
 
-### helgee/JPLEphemeris.jl
-
-[![curly braces](assets/code.png) Repository](https://github.com/JuliaAstro/JPLEphemeris.jl)
-
-[![book icon](assets/book.png) Documentation](https://github.com/helgee/JPLEphemeris.jl?tab=readme-ov-file#jplephemerisjl)
-
-**JPL Development Ephemerides**
-
-- Calculate positions and velocities of solar system bodies
-
-
 ### sefffal/PlanetOrbits.jl
 
 [![curly braces](assets/code.png) Repository](https://github.com/sefffal/PlanetOrbits.jl)
 
-[![book icon](assets/book.png) Documentation](https://sefffal.github.io/PlanetOrbits.jl/stable/)
+[![book icon](assets/book.png) Documentation](https://sefffal.github.io/PlanetOrbits.jl/dev/)
 
 **Tools for displaying and solving Keplerian orbits in the context of direct imaging**
 
