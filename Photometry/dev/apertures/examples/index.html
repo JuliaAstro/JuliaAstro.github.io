@@ -6,7 +6,7 @@ plot!(CircularAnnulus(5, 5, 2.1, 3), c=2)
 plot!(EllipticalAperture(0, 0, 10, 1, 32), c=3)
 plot!(EllipticalAnnulus(5, 5, 4, 5, 2, -32), c=4)
 plot!(RectangularAperture(0, 0, 4, 4, 4), c=5)
-plot!(RectangularAnnulus(5, 1, 3, 4, 4, 4), c=6)</code></pre><img alt="Example block output" src="f48d4364.svg"/><h2 id="Simple-Stars"><a class="docs-heading-anchor" href="#Simple-Stars">Simple Stars</a><a id="Simple-Stars-1"></a><a class="docs-heading-anchor-permalink" href="#Simple-Stars" title="Permalink"></a></h2><p>Here is an example where we will find aperture fluxes for stars from M67. The dataset is provided as part of the <a href="https://github.com/astropy/photutils-datasets">astropy/photutils-datasets</a> repository.</p><p>Let's start by downloading and showing our image</p><pre><code class="language-julia hljs">using Photometry
+plot!(RectangularAnnulus(5, 1, 3, 4, 4, 4), c=6)</code></pre><img alt="Example block output" src="bc17419c.svg"/><h2 id="Simple-Stars"><a class="docs-heading-anchor" href="#Simple-Stars">Simple Stars</a><a id="Simple-Stars-1"></a><a class="docs-heading-anchor-permalink" href="#Simple-Stars" title="Permalink"></a></h2><p>Here is an example where we will find aperture fluxes for stars from M67. The dataset is provided as part of the <a href="https://github.com/astropy/photutils-datasets">astropy/photutils-datasets</a> repository.</p><p>Let's start by downloading and showing our image</p><pre><code class="language-julia hljs">using Photometry
 using Plots
 using FITSIO
 
@@ -22,7 +22,7 @@ function imshow(image; kwargs...)
     heatmap(xs, ys, data; aspect_ratio=1, xlim=extrema(xs), ylim=extrema(ys), kwargs...)
 end
 
-imshow(chunk)</code></pre><img alt="Example block output" src="4ad19a35.svg"/><p>Now let's add some apertures!</p><pre><code class="language-julia hljs">positions = [
+imshow(chunk)</code></pre><img alt="Example block output" src="e0aec480.svg"/><p>Now let's add some apertures!</p><pre><code class="language-julia hljs">positions = [
     [47.5 , 67.5],
     [29.5 , 62.5],
     [23.5 , 48.5],
@@ -40,7 +40,7 @@ aps = CircularAperture.(positions, radii)</code></pre><pre class="documenter-exa
  CircularAperture(17.5, 29.5, r=2.0)
  CircularAperture(13.25, 10.5, r=2.7)
  CircularAperture(65.5, 14.0, r=3.0)</code></pre><p>now let's plot them up</p><pre><code class="language-julia hljs">imshow(chunk)
-plot!(aps, c=:white)</code></pre><img alt="Example block output" src="13279f1d.svg"/><p>and finally let's get our output table for the photometry</p><pre><code class="language-julia hljs">table = photometry(aps, chunk)</code></pre><pre class="documenter-example-output"><code class="nohighlight hljs ansi">Table with 3 columns and 6 rows:
+plot!(aps, c=:white)</code></pre><img alt="Example block output" src="7faab693.svg"/><p>and finally let's get our output table for the photometry</p><pre><code class="language-julia hljs">table = photometry(aps, chunk)</code></pre><pre class="documenter-example-output"><code class="nohighlight hljs ansi">Table with 3 columns and 6 rows:
      xcenter  ycenter  aperture_sum
    ┌───────────────────────────────
  1 │ 47.5     67.5     2.48267e5
@@ -58,13 +58,13 @@ plot(
     imshow(bkg, title="Background"),
     imshow(bkg_rms, title="Background RMS");
     layout=(2, 2), size=(600, 600), ticks=false
-)</code></pre><img alt="Example block output" src="6e7ce63f.svg"/><p>Now, using the same apertures, let's find the output using the background-subtracted image</p><pre><code class="language-julia hljs">plot(
+)</code></pre><img alt="Example block output" src="956e0b1c.svg"/><p>Now, using the same apertures, let's find the output using the background-subtracted image</p><pre><code class="language-julia hljs">plot(
     imshow(chunk, title="Original"),
     imshow(chunk .- bkg, title="Subtracted");
     layout=2, size=(600, 260), ticks=false, colorbar=false
 )
 plot!(aps, c=:white, subplot=1)
-plot!(aps, c=:white, subplot=2)</code></pre><img alt="Example block output" src="ef91dc97.svg"/><pre><code class="language-julia hljs">table = photometry(aps, chunk .- bkg, bkg_rms)</code></pre><pre class="documenter-example-output"><code class="nohighlight hljs ansi">Table with 4 columns and 6 rows:
+plot!(aps, c=:white, subplot=2)</code></pre><img alt="Example block output" src="d4def4bd.svg"/><pre><code class="language-julia hljs">table = photometry(aps, chunk .- bkg, bkg_rms)</code></pre><pre class="documenter-example-output"><code class="nohighlight hljs ansi">Table with 4 columns and 6 rows:
      xcenter  ycenter  aperture_sum  aperture_sum_err
    ┌─────────────────────────────────────────────────
  1 │ 47.5     67.5     2.13534e5     431.48
@@ -72,4 +72,4 @@ plot!(aps, c=:white, subplot=2)</code></pre><img alt="Example block output" src=
  3 │ 23.5     48.5     59230.7       1061.28
  4 │ 17.5     29.5     23159.6       697.556
  5 │ 13.25    10.5     54638.1       1048.67
- 6 │ 65.5     14.0     91179.1       1168.71</code></pre></article><nav class="docs-footer"><a class="docs-footer-prevpage" href="../apertures/">« Apertures</a><div class="flexbox-break"></div><p class="footer-message">Powered by <a href="https://github.com/JuliaDocs/Documenter.jl">Documenter.jl</a> and the <a href="https://julialang.org/">Julia Programming Language</a>.</p></nav></div><div class="modal" id="documenter-settings"><div class="modal-background"></div><div class="modal-card"><header class="modal-card-head"><p class="modal-card-title">Settings</p><button class="delete"></button></header><section class="modal-card-body"><p><label class="label">Theme</label></p><div class="select"><select id="documenter-themepicker"><option value="auto">Automatic (OS)</option><option value="documenter-light">documenter-light</option><option value="documenter-dark">documenter-dark</option><option value="catppuccin-latte">catppuccin-latte</option><option value="catppuccin-frappe">catppuccin-frappe</option><option value="catppuccin-macchiato">catppuccin-macchiato</option><option value="catppuccin-mocha">catppuccin-mocha</option></select></div><p></p><hr/><p>This document was generated with <a href="https://github.com/JuliaDocs/Documenter.jl">Documenter.jl</a> version 1.9.0 on <span class="colophon-date" title="Tuesday 18 March 2025 17:19">Tuesday 18 March 2025</span>. Using Julia version 1.11.4.</p></section><footer class="modal-card-foot"></footer></div></div></div></body></HTML>
+ 6 │ 65.5     14.0     91179.1       1168.71</code></pre></article><nav class="docs-footer"><a class="docs-footer-prevpage" href="../apertures/">« Apertures</a><div class="flexbox-break"></div><p class="footer-message">Powered by <a href="https://github.com/JuliaDocs/Documenter.jl">Documenter.jl</a> and the <a href="https://julialang.org/">Julia Programming Language</a>.</p></nav></div><div class="modal" id="documenter-settings"><div class="modal-background"></div><div class="modal-card"><header class="modal-card-head"><p class="modal-card-title">Settings</p><button class="delete"></button></header><section class="modal-card-body"><p><label class="label">Theme</label></p><div class="select"><select id="documenter-themepicker"><option value="auto">Automatic (OS)</option><option value="documenter-light">documenter-light</option><option value="documenter-dark">documenter-dark</option><option value="catppuccin-latte">catppuccin-latte</option><option value="catppuccin-frappe">catppuccin-frappe</option><option value="catppuccin-macchiato">catppuccin-macchiato</option><option value="catppuccin-mocha">catppuccin-mocha</option></select></div><p></p><hr/><p>This document was generated with <a href="https://github.com/JuliaDocs/Documenter.jl">Documenter.jl</a> version 1.10.1 on <span class="colophon-date" title="Sunday 20 April 2025 15:41">Sunday 20 April 2025</span>. Using Julia version 1.11.5.</p></section><footer class="modal-card-foot"></footer></div></div></div></body></HTML>
