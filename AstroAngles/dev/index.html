@@ -88,4 +88,34 @@ julia&gt; dec_d = @. dms2deg(table.dec)
   40.05995
   73.21981666666667
  -11.203611111111112
-[...]</code></pre><h2 id="Contributing/Support"><a class="docs-heading-anchor" href="#Contributing/Support">Contributing/Support</a><a id="Contributing/Support-1"></a><a class="docs-heading-anchor-permalink" href="#Contributing/Support" title="Permalink"></a></h2><p>To contribute, feel free to open a <a href="https://github.com/JuliaAstro/AstroAngles.jl/pulls">pull request</a>. If you run into problems, please open an <a href="https://github.com/JuliaAstro/AstroAngles.jl/issues">issue</a>. To discuss ideas, usage, or to plan contributions, open a new <a href="https://github.com/JuliaAstro/AstroAngles.jl/discussions">discussion</a>.</p><h2 id="License"><a class="docs-heading-anchor" href="#License">License</a><a id="License-1"></a><a class="docs-heading-anchor-permalink" href="#License" title="Permalink"></a></h2><p>This code is MIT licensed. For more information, see the LICENSE file in the AstroAngles.jl repository.</p></article><nav class="docs-footer"><a class="docs-footer-nextpage" href="api/">API Reference »</a><div class="flexbox-break"></div><p class="footer-message">Powered by <a href="https://github.com/JuliaDocs/Documenter.jl">Documenter.jl</a> and the <a href="https://julialang.org/">Julia Programming Language</a>.</p></nav></div><div class="modal" id="documenter-settings"><div class="modal-background"></div><div class="modal-card"><header class="modal-card-head"><p class="modal-card-title">Settings</p><button class="delete"></button></header><section class="modal-card-body"><p><label class="label">Theme</label></p><div class="select"><select id="documenter-themepicker"><option value="auto">Automatic (OS)</option><option value="documenter-light">documenter-light</option><option value="documenter-dark">documenter-dark</option><option value="catppuccin-latte">catppuccin-latte</option><option value="catppuccin-frappe">catppuccin-frappe</option><option value="catppuccin-macchiato">catppuccin-macchiato</option><option value="catppuccin-mocha">catppuccin-mocha</option></select></div><p></p><hr/><p>This document was generated with <a href="https://github.com/JuliaDocs/Documenter.jl">Documenter.jl</a> version 1.8.1 on <span class="colophon-date" title="Friday 14 March 2025 04:02">Friday 14 March 2025</span>. Using Julia version 1.11.4.</p></section><footer class="modal-card-foot"></footer></div></div></div></body></HTML>
+[...]</code></pre><h3 id="Handling-Missing-Values"><a class="docs-heading-anchor" href="#Handling-Missing-Values">Handling Missing Values</a><a id="Handling-Missing-Values-1"></a><a class="docs-heading-anchor-permalink" href="#Handling-Missing-Values" title="Permalink"></a></h3><p>All angle parsing, conversion, and formatting functions support <code>Missing</code> input values and propagate them correctly, returning <code>missing</code> as output. This behavior allows these functions to be used smoothly in operations with potentially missing data, such as when working with DataFrames that contain missing values.</p><pre><code class="language-julia-repl hljs">julia&gt; using AstroAngles
+
+julia&gt; # Parsing functions
+
+julia&gt; parse_dms(missing)
+missing
+
+julia&gt; parse_hms(missing)
+missing
+
+julia&gt; # Conversion functions
+
+julia&gt; rad2ha(missing)
+missing
+
+julia&gt; deg2dms(missing)
+missing
+
+julia&gt; dms2rad(missing, missing, missing)
+missing
+
+julia&gt; hms2deg("12:30:45"), hms2deg(missing)
+(187.6875, missing)
+
+julia&gt; # Formatting function
+
+julia&gt; format_angle(missing)
+missing
+
+julia&gt; format_angle(deg2dms(45.0)), format_angle(missing)
+("45:0:0.0", missing)</code></pre><p>This feature ensures type stability when working with data that may contain missing values, which is particularly useful in data analysis workflows involving astronomical data where some measurements might be unavailable.</p><h2 id="Contributing/Support"><a class="docs-heading-anchor" href="#Contributing/Support">Contributing/Support</a><a id="Contributing/Support-1"></a><a class="docs-heading-anchor-permalink" href="#Contributing/Support" title="Permalink"></a></h2><p>To contribute, feel free to open a <a href="https://github.com/JuliaAstro/AstroAngles.jl/pulls">pull request</a>. If you run into problems, please open an <a href="https://github.com/JuliaAstro/AstroAngles.jl/issues">issue</a>. To discuss ideas, usage, or to plan contributions, open a new <a href="https://github.com/JuliaAstro/AstroAngles.jl/discussions">discussion</a>.</p><h2 id="License"><a class="docs-heading-anchor" href="#License">License</a><a id="License-1"></a><a class="docs-heading-anchor-permalink" href="#License" title="Permalink"></a></h2><p>This code is MIT licensed. For more information, see the LICENSE file in the AstroAngles.jl repository.</p></article><nav class="docs-footer"><a class="docs-footer-nextpage" href="api/">API Reference »</a><div class="flexbox-break"></div><p class="footer-message">Powered by <a href="https://github.com/JuliaDocs/Documenter.jl">Documenter.jl</a> and the <a href="https://julialang.org/">Julia Programming Language</a>.</p></nav></div><div class="modal" id="documenter-settings"><div class="modal-background"></div><div class="modal-card"><header class="modal-card-head"><p class="modal-card-title">Settings</p><button class="delete"></button></header><section class="modal-card-body"><p><label class="label">Theme</label></p><div class="select"><select id="documenter-themepicker"><option value="auto">Automatic (OS)</option><option value="documenter-light">documenter-light</option><option value="documenter-dark">documenter-dark</option><option value="catppuccin-latte">catppuccin-latte</option><option value="catppuccin-frappe">catppuccin-frappe</option><option value="catppuccin-macchiato">catppuccin-macchiato</option><option value="catppuccin-mocha">catppuccin-mocha</option></select></div><p></p><hr/><p>This document was generated with <a href="https://github.com/JuliaDocs/Documenter.jl">Documenter.jl</a> version 1.10.1 on <span class="colophon-date" title="Tuesday 22 April 2025 02:24">Tuesday 22 April 2025</span>. Using Julia version 1.11.5.</p></section><footer class="modal-card-foot"></footer></div></div></div></body></HTML>
