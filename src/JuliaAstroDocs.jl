@@ -2,6 +2,15 @@ module JuliaAstroDocs
 
 import Markdown
 
+const ECOSYSTEM_HEADER = """
+# [Ecosystem](@id eco)
+
+The joy of our community is the many astronomy and astrophysics packages available for wide use. Packages are separated by functionality and Julia's declarative package manager takes care of resolving dependencies. You get just the functionality you need, and smaller packages lead to more rapid development.
+
+---
+
+"""
+
 ecosystem = (
     "Data I/O" => (
         (
@@ -478,16 +487,7 @@ function write_ecosystem()
     fpath = joinpath(@__DIR__, "..", "docs", "src", "ecosystem.md")
     @info "Writing to:" fpath
     open(fpath, "w") do io
-        write(io,
-            """
-            # [Ecosystem](@id eco)
-
-            The joy of our community is the many astronomy and astrophysics packages available for wide use. Packages are separated by functionality and Julia's declarative package manager takes care of resolving dependencies. You get just the functionality you need, and smaller packages lead to more rapid development.
-
-            ---
-
-            """
-        )
+        write(io, ECOSYSTEM_HEADER)
         n_highlevels = length(ecosystem)
         for (i, (highlevel, packages)) in enumerate(ecosystem)
             write(io, "## ", highlevel, "\n\n")
