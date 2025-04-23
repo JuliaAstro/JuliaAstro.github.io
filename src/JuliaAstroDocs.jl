@@ -11,7 +11,7 @@ The joy of our community is the many astronomy and astrophysics packages availab
 
 """
 
-ecosystem = (
+const ecosystem = (
     "Data I/O" => (
         (
             name = "AstroImages.jl",
