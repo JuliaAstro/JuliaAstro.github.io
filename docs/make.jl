@@ -53,6 +53,7 @@ makedocs(
             ],
         ],
         "Ecosystem" => "ecosystem.md",
+        "Comparison with Astropy" => "comparison.md",
     ],
     warnonly = [:missing_docs],
 )
