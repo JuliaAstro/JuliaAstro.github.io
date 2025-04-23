@@ -9,8 +9,8 @@ We highlight some of the major packages in Python's `astropy` ecosystem and thei
 
 ### Data structures and transformations
 
-| Python | Julia | Description     |
-| :----- | :---- | :-------- |
+| Python | Julia | Description |
+| :----- | :---- | :---------- |
 | [`astropy.constants`](https://docs.astropy.org/en/stable/constants/index.html) | [Unitful.jl](https://painterqubits.github.io/Unitful.jl/stable/), [UnitfulAstro.jl](https://juliaastro.org/UnitfulAstro/stable/), [PhysicalConstants.jl](https://juliaphysics.github.io/PhysicalConstants.jl/stable/), [DynamicQuantities.jl](https://ai.damtp.cam.ac.uk/dynamicquantities/stable) | Generic units \| Astronomy specific units \| Common constants used in physics \| Efficient and type-stable physical quantities in Julia |
 | [`astropy.units`](https://docs.astropy.org/en/stable/units/index.html) | [Unitful.jl](https://painterqubits.github.io/Unitful.jl/stable/), [UnitfulAstro.jl](https://juliaastro.org/UnitfulAstro/stable/), [PhysicalConstants.jl](https://juliaphysics.github.io/PhysicalConstants.jl/stable/), [DynamicQuantities.jl](https://ai.damtp.cam.ac.uk/dynamicquantities/stable) | Generic units \| Astronomy specific units \| Common constants used in physics \| Efficient and type-stable physical quantities in Julia |
 | [`astropy.nddata`](https://docs.astropy.org/en/stable/nddata/index.html) | | |
@@ -24,16 +24,16 @@ We highlight some of the major packages in Python's `astropy` ecosystem and thei
 
 ### Files, I/O, and Communication
 
-| Python    | Julia   | Description    |
-| -------- | -------- | -------- |
+| Python | Julia | Description |
+| :----- | :---- | :---------- |
 | [`astropy.io.fits`](https://docs.astropy.org/en/stable/io/fits/index.html) | [FITSIO.jl](https://juliaastro.org/FITSIO/stable/), [FITS.jl](https://github.com/barrettp/FITS.jl), [EasyFITS.jl](https://emmt.github.io/EasyFITS.jl/dev) | Flexible Image Transport System (FITS) file support for Julia \| A Julia Flexible Image Transport System (FITS) file IO package \| Using FITS files made easier for Julia |
 | [`astropy.io.ascii`](https://docs.astropy.org/en/stable/io/ascii/index.html) | [FixedWidthTables.jl](https://github.com/JuliaAPlavin/FixedWidthTables.jl) | Read fixed width (so-called ASCII) tables |
 | [`astropy.io.votable`](https://docs.astropy.org/en/stable/io/votable/index.html) | [VOTables.jl](https://github.com/JuliaAPlavin/VOTables.jl) | Support for the VOTable format (Virtual Observatory Table, [defined](https://www.ivoa.net/documents/VOTable/) by [IVOA](https://www.ivoa.net/)) in Julia |
 
 ### Computations and Utilities
 
-| Python    | Julia   | Description    |
-| -------- | -------- | -------- |
+| Python | Julia | Description |
+| :----- | :---- | :---------- |
 | [`astropy.cosmology`](https://docs.astropy.org/en/stable/cosmology/index.html) | [Cosmology.jl](https://juliaastro.org/Cosmology/stable/) | Cosmology library for Julia |
 | [`astropy.convolution`](https://docs.astropy.org/en/stable/convolution/index.html) | [DSP.jl](https://docs.juliadsp.org/stable/contents/) | Filter design, periodograms, window functions, and other digital signal processing functionality |
 | [`astropy.utils.iers`](https://docs.astropy.org/en/stable/utils/iers.html) | [EarthOrientation.jl](https://juliaastro.github.io/EarthOrientation/stable) | Calculate Earth orientation parameters from IERS tables in Julia |
@@ -42,8 +42,8 @@ We highlight some of the major packages in Python's `astropy` ecosystem and thei
 
 ## Astropy [coordinated packages](https://www.astropy.org/affiliated/#coordinated-package-list)
 
-| Python    | Julia   | Description    |
-| -------- | -------- | -------- |
+| Python | Julia | Description |
+| :----- | :---- | :---------- |
 | [`asdf-astropy`](https://asdf-astropy.readthedocs.io/en/latest/) | [ASDF2.jl](https://github.com/eschnett/ASDF2.jl) | A new [Advanced Scientific Data Format (ASDF)](https://asdf-standard.readthedocs.io/en/latest/index.html) package, written in Julia |
 | [`astropy-healpix`](https://astropy-healpix.readthedocs.io/) | [Healpix.jl](https://ziotom78.github.io/Healpix.jl/stable) | Healpix library written in Julia |
 | [`astroquery`](https://astroquery.readthedocs.io/) | [VirtualObservatory.jl](https://github.com/JuliaAPlavin/VirtualObservatory.jl) | Access remote data and services that follow Virtual Observatory (VO, [https://www.ivoa.net/](https://www.ivoa.net/)) protocols |
