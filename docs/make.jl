@@ -31,8 +31,8 @@ makedocs(
     authors = "Julia Astro Contributors",
     clean = true,
     doctest = false,
-    format = Documenter.HTML(
-        mathengine=mathengine,
+    format = Documenter.HTML(;
+        mathengine,
         prettyurls = get(ENV, "CI", "false") == "true",
         canonical = "https://JuliaAstro.org/",
         assets = String[
@@ -41,7 +41,7 @@ makedocs(
         ],
     ),
     pages = [
-        "Home"=>"index.md",
+        "Home" => "index.md",
         "Tutorials" => [
             "tutorials/index.md",
             "General" => [
