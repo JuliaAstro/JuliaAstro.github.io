@@ -75,6 +75,17 @@ The joy of our community is the many astronomy and astrophysics packages availab
 - Display images and plots from Difmap in interactive Julia environments
 
 
+### emmt/EasyFITS.jl
+
+[![curly braces](assets/code.png) Repository](https://github.com/emmt/EasyFITS.jl)
+
+[![book icon](assets/book.png) Documentation](https://emmt.github.io/EasyFITS.jl/dev)
+
+**Using FITS files made easier for Julia**
+
+- EasyFITS is a [Julia](https://julialang.org/) package designed to make it easier to read and write data in [FITS](https://fits.gsfc.nasa.gov/fits_standard.html) format without sacrificing performances, flexibility, or readability.
+
+
 ### emmt/OIFITS.jl
 
 [![curly braces](assets/code.png) Repository](https://github.com/emmt/OIFITS.jl)
@@ -501,6 +512,18 @@ The joy of our community is the many astronomy and astrophysics packages availab
 - Many predefined functions and examples
 
 
+### fabienbaron/OITOOLS.jl
+
+[![curly braces](assets/code.png) Repository](https://github.com/fabienbaron/OITOOLS.jl)
+
+[![book icon](assets/book.png) Documentation](https://fabienbaron.github.io/OITOOLS.jl/dev)
+
+**A collection of tools to load, visualize, model-fit and image optical interferometry data coming from CHARA, NPOI and VLTI**
+
+- OITOOLS is a Julia package to read, plot, model-fit and image optical interferometric data coming from astronomical arrays such as CHARA, VLTI, and NPOI
+- Note that despite having the same name as [JMMC's oitools](https://github.com/JMMC-OpenDev/oitools), they are completely unrelated and were developed independently
+
+
 ### sefffal/PairPlots.jl
 
 [![curly braces](assets/code.png) Repository](https://github.com/sefffal/PairPlots.jl)
@@ -510,7 +533,7 @@ The joy of our community is the many astronomy and astrophysics packages availab
 **Beautiful and flexible visualizations of high dimensional data**
 
 - Corner plots or scatter plot matrices. Both Julia and Python are supported (PairPlots.jl and [pairplots.py](https://pypi.org/project/pairplots/))
-- Inspired by [corner.py](https://corner.readthedocs.io/en/latest/index.html) and [chainconsumer.py](https://samreay.github.io/ChainConsumer/usage.html) 
+- Inspired by [corner.py](https://corner.readthedocs.io/en/latest/index.html) and [chainconsumer.py](https://samreay.github.io/ChainConsumer/usage.html)
 
 See also:
 - [ReferenceFrameRotations.jl](https://github.com/JuliaSpace/ReferenceFrameRotations.jl)
