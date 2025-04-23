@@ -1,5 +1,3 @@
-import Pkg
-Pkg.develop(path=".") # Maybe register JuliaAstroDocs at some point?
 import JuliaAstroDocs
 
 using MultiDocumenter, Documenter
