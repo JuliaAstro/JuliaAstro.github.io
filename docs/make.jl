@@ -39,6 +39,7 @@ makedocs(
             "assets/styles.css",
             "assets/favicon.ico",
         ],
+        inventory_version = "",
     ),
     pages = [
         "Home" => "index.md",
@@ -129,7 +130,6 @@ if "deploy" in ARGS
         branch = "master",
         devbranch = "multidoc-auto-highlevels",
         cname = "juliaastro.org",
-        versions = nothing,
     )
     @info "Deploy complete"
 end
