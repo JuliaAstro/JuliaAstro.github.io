@@ -105,8 +105,8 @@ MultiDocumenter.make(
         index_versions = ["stable"],
         engine = MultiDocumenter.FlexSearch
     ),
-    rootpath = "/previews/PR44/",
-    canonical_domain = "https://JuliaAstro.github.io/",
+    rootpath = "/",
+    canonical_domain = "https://JuliaAstro.org/",
     brand_image = MultiDocumenter.BrandImage(".", joinpath("assets", "logo.svg")),
     sitemap = true,
 )
