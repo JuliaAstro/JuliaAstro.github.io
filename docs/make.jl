@@ -40,6 +40,7 @@ makedocs(
             "assets/favicon.ico",
         ],
         inventory_version = "",
+        edit_link = "source",
     ),
     pages = [
         "Home" => "index.md",
