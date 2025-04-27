@@ -60,7 +60,6 @@ makedocs(
 @info "Building aggregate JuliaAstro site"
 function generate_multidoc_refs(p; clonedir=joinpath(@__DIR__, "clones"))
     package_name = string(chopsuffix(p.name, ".jl"))
-    package_nametag = string(package_name, " - ", p.tagline)
     multidoc_type = if any(occursin.(("stable", "dev"), p.doc)) && startswith(p.doc, "https://juliaastro")
             "MultiDocRef"
         else
@@ -71,12 +70,12 @@ function generate_multidoc_refs(p; clonedir=joinpath(@__DIR__, "clones"))
         MultiDocumenter.MultiDocRef(
             upstream = joinpath(clonedir, package_name),
             path = package_name,
-            name = package_nametag,
+            name = package_name,
             giturl = p.repo,
         )
     else
         MultiDocumenter.Link(
-            package_nametag,
+            package_name,
             p.doc,
         )
     end
