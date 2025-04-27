@@ -122,14 +122,12 @@ Downloads.download(
 )
 @info "Final build done"
 
-if "deploy" in ARGS
-    @info "Deploying docs"
-    deploydocs(;
-        repo = "github.com/JuliaAstro/JuliaAstro.github.io",
-        push_preview = true,
-        branch = "master",
-        devbranch = "multidoc-auto-highlevels",
-        cname = "juliaastro.org",
-    )
-    @info "Deploy complete"
-end
+@info "Deploying docs"
+deploydocs(;
+    repo = "github.com/JuliaAstro/JuliaAstro.github.io",
+    push_preview = true,
+    branch = "master",
+    devbranch = "source",
+    cname = "juliaastro.org",
+)
+@info "Deploy complete"
