@@ -129,7 +129,7 @@ deploydocs(;
     push_preview = true,
     branch = "master",
     devbranch = "source",
-    devurl = "/",
+    devurl = "docs",
     cname = "juliaastro.org",
 )
 @info "Deploy complete"
