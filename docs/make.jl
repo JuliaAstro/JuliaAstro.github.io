@@ -86,7 +86,7 @@ docs = [
     # We also add JuliaAstro's own generated pages
     MultiDocumenter.MultiDocRef(
         upstream = joinpath(@__DIR__, "build"),
-        path = "docs",
+        path = "home",
         name = "Home",
         fix_canonical_url = false,
     ),
@@ -129,7 +129,7 @@ deploydocs(;
     push_preview = true,
     branch = "master",
     devbranch = "source",
-    devurl = "docs",
+    devurl = "home",
     cname = "juliaastro.org",
 )
 @info "Deploy complete"
