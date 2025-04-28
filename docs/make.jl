@@ -106,7 +106,7 @@ MultiDocumenter.make(
         index_versions = ["stable"],
         engine = MultiDocumenter.FlexSearch
     ),
-    rootpath = "/docs/",
+    rootpath = "/",
     canonical_domain = "https://JuliaAstro.org/",
     brand_image = MultiDocumenter.BrandImage(".", joinpath("assets", "logo.svg")),
     sitemap = true,
@@ -129,7 +129,7 @@ deploydocs(;
     push_preview = true,
     branch = "master",
     devbranch = "source",
-    devurl = "docs",
+    devurl = "stable",
     cname = "juliaastro.org",
 )
 @info "Deploy complete"
