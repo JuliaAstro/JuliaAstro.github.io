@@ -131,5 +131,6 @@ deploydocs(;
     devbranch = "source",
     devurl = "home",
     cname = "juliaastro.org",
+    versions = nothing,
 )
 @info "Deploy complete"
