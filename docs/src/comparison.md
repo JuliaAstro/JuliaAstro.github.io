@@ -48,7 +48,7 @@ We highlight some of the major packages in Python's `astropy` ecosystem and thei
 | [`astropy-healpix`](https://astropy-healpix.readthedocs.io/) | [Healpix.jl](https://ziotom78.github.io/Healpix.jl/stable) | Healpix library written in Julia |
 | [`astroquery`](https://astroquery.readthedocs.io/) | [VirtualObservatory.jl](https://github.com/JuliaAPlavin/VirtualObservatory.jl) | Access remote data and services that follow Virtual Observatory (VO, [https://www.ivoa.net/](https://www.ivoa.net/)) protocols |
 | [`ccdproc`](https://ccdproc.readthedocs.io/) | [CCDReduction.jl](https://juliaastro.github.io/CCDReduction/stable) | A package for performing CCD data reduction |
-| [`photutils`](https://photutils.readthedocs.io/) | [Photometry.jl](https://juliaastro.github.io/Photometry/stable) | Utilities for characterizing sources in astronomical images |
+| [`photutils`](https://photutils.readthedocs.io/) | [Photometry.jl](https://juliaastro.org/Photometry/stable) | Utilities for characterizing sources in astronomical images |
 | [`regions`](https://astropy-regions.readthedocs.io/) | | |
 | [`reproject`](https://reproject.readthedocs.io/) | [Reproject.jl](https://github.com/JuliaAstro/Reproject.jl) | Julia-based Astronomical image reprojection |
 | [`specreduce`](https://specreduce.readthedocs.io/) | [Spectra.jl](https://github.com/JuliaAstro/Spectra.jl) | Utilities for interfacing with astronomical spectra and synthetic spectra libraries |
