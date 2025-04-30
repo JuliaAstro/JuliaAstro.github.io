@@ -6,5 +6,5 @@ p > a > img {
 
 table.compare td {
     /*Align entries in the astropy comparison table vertically*/
-    vertical-align: middle;
+    vertical-align: text-bottom;
 }
