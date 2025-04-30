@@ -114,13 +114,13 @@ MultiDocumenter.make(
 @info "Aggregate build done"
 
 # Download logo
-assets_dir = joinpath(outpath, "assets")
-mkpath(assets_dir)
-Downloads.download(
-    "https://raw.githubusercontent.com/JuliaAstro/JuliaAstro.github.io/refs/heads/source/docs/src/assets/logo.svg",
-    joinpath(assets_dir, "logo.svg");
-    verbose = true,
-)
+# assets_dir = joinpath(outpath, "assets")
+# mkpath(assets_dir)
+# Downloads.download(
+#     "https://raw.githubusercontent.com/JuliaAstro/JuliaAstro.github.io/refs/heads/source/docs/src/assets/logo.svg",
+#     joinpath(assets_dir, "logo.svg");
+#     verbose = true,
+# )
 @info "Final build done"
 
 @info "Deploying docs"
