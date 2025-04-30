@@ -364,6 +364,14 @@ const ecosystem = (
             """,
         ),
         (
+            name = "CMPFit.jl",
+            repo = "https://github.com/gcalderone/CMPFit.jl",
+            doc = "https://github.com/gcalderone/CMPFit.jl",
+            tagline = "MINPACK minimization",
+            descr = """
+            """,
+        ),
+        (
             name = "Cosmology.jl",
             repo = "https://github.com/JuliaAstro/Cosmology.jl",
             doc = "https://juliaastro.github.io/Cosmology.jl/stable/",
@@ -383,6 +391,14 @@ const ecosystem = (
             - Various empirical extinction models
             - SFD (1998) galactic dust map
             - Fully compatible with [Unitful.jl](https://github.com/painterqubits/Unitful.jl)
+            """,
+        ),
+        (
+            name = "GModelFit.jl",
+            repo = "https://github.com/gcalderone/GModelFit.jl",
+            doc = "https://gcalderone.github.io/GModelFit.jl/",
+            tagline = "A model fitting framework for Julia",
+            descr = """
             """,
         ),
         (
