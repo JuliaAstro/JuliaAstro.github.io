@@ -9,47 +9,310 @@ We highlight some of the major packages in Python's `astropy` ecosystem and thei
 
 ### Data structures and transformations
 
-| Python | Julia | Description |
-| :----- | :---- | :---------- |
-| [`astropy.constants`](https://docs.astropy.org/en/stable/constants/index.html) | [Unitful.jl](https://painterqubits.github.io/Unitful.jl/stable/), [UnitfulAstro.jl](https://juliaastro.org/UnitfulAstro/stable/), [PhysicalConstants.jl](https://juliaphysics.github.io/PhysicalConstants.jl/stable/), [DynamicQuantities.jl](https://ai.damtp.cam.ac.uk/dynamicquantities/stable) | Generic units \| Astronomy specific units \| Common constants used in physics \| Efficient and type-stable physical quantities in Julia |
-| [`astropy.units`](https://docs.astropy.org/en/stable/units/index.html) | [Unitful.jl](https://painterqubits.github.io/Unitful.jl/stable/), [UnitfulAstro.jl](https://juliaastro.org/UnitfulAstro/stable/), [PhysicalConstants.jl](https://juliaphysics.github.io/PhysicalConstants.jl/stable/), [DynamicQuantities.jl](https://ai.damtp.cam.ac.uk/dynamicquantities/stable) | Generic units \| Astronomy specific units \| Common constants used in physics \| Efficient and type-stable physical quantities in Julia |
-| [`astropy.nddata`](https://docs.astropy.org/en/stable/nddata/index.html) | | |
-| [`astropy.table`](https://docs.astropy.org/en/stable/table/index.html) | [DataFrames.jl](https://juliadata.github.io/DataFrames.jl/stable/) | In-memory tabular data in Julia |
-| [`astropy.time`](https://docs.astropy.org/en/stable/time/index.html) | [AstroTime.jl](https://juliaastro.org/AstroTime/stable/) | Astronomical time keeping in Julia |
-| [`astropy.timeseries`](https://docs.astropy.org/en/stable/timeseries/index.html) | [TimeSeries.jl](https://juliastats.org/TimeSeries.jl/stable/) | Time series toolkit for Julia |
-| [`astropy.coordinates`](https://docs.astropy.org/en/stable/coordinates/index.html) | [SkyCoords.jl](https://juliaastro.org/SkyCoords/stable/), [FlexiJoins.jl](https://github.com/JuliaAPlavin/FlexiJoins.jl), [EphemerisSources.jl](https://juliaastro.org/EphemerisSources.jl/docs), [SPICE.jl](https://juliaastro.org/SPICE/stable/) | Astronomical coordinate systems in Julia \| A fresh take on joining datasets \| Meta package for accessing JPL HORIZONS and SPICE sources \| SPICE data retrieval and usage |
-| [`astropy.wcs`](https://docs.astropy.org/en/stable/wcs/index.html) | [WCS.jl](https://juliaastro.org/WCS/stable/) | Astronomical World Coordinate Systems library for Julia |
-| [`astropy.modeling`](https://docs.astropy.org/en/stable/modeling/index.html) | [NonlinearSolve.jl](https://docs.sciml.ai/NonlinearSolve/stable/), [Optimization.jl](https://docs.sciml.ai/Optimization/stable/), [JuMP.jl](http://jump.dev/JuMP.jl/) | High-performance and differentiation-enabled nonlinear solvers \| Mathematical Optimization in Julia \| Modeling language for Mathematical Optimization |
-| [`astropy.uncertainty`](https://docs.astropy.org/en/stable/uncertainty/index.html) | [Measurements.jl](https://juliaphysics.github.io/Measurements.jl/stable/), [Distributions.jl](https://juliastats.github.io/Distributions.jl/stable/), [Uncertain.jl](https://github.com/JuliaAPlavin/Uncertain.jl), [MonteCarloMeasurements.jl](https://baggepinnen.github.io/MonteCarloMeasurements.jl/stable/) | Error propagation calculator and library for physical measurements \| A Julia package for probability distributions and associated functions \| Handle uncertain values with ease and performance! \| Propagation of distributions by Monte-Carlo sampling |
+```@raw html
+<table class="compare"><thead><tr><th align="left">Python</th><th align="left">Julia</th><th align="left">Description</th></tr></thead>
+<tbody>
+
+<tr><td align="left"><span class="julia-value"><p><a href="https://docs.astropy.org/en/stable/constants/index.html"><code>astropy.constants</code></a></p>
+</span></td><td align="left"><span class="julia-value"><ol>
+<li><a href="https://painterqubits.github.io/Unitful.jl/stable/">Unitful.jl</a></li>
+<li><a href="https://juliaastro.org/UnitfulAstro/stable/">UnitfulAstro.jl</a></li>
+<li><a href="https://juliaphysics.github.io/PhysicalConstants.jl/stable/">PhysicalConstants.jl</a></li>
+<li><a href="https://ai.damtp.cam.ac.uk/dynamicquantities/stable">DynamicQuantities.jl</a></li>
+</ol>
+</span></td><td align="left"><span class="julia-value"><ol>
+<li>Generic units.</li>
+<li>Astronomy specific units.</li>
+<li>Common constants used in physics.</li>
+<li>Efficient and type-stable physical quantities in Julia.</li>
+</ol>
+</span></td>
+</tr>
+
+<tr><td align="left"><span class="julia-value"><p><a href="https://docs.astropy.org/en/stable/units/index.html"><code>astropy.units</code></a></p>
+</span></td><td align="left"><span class="julia-value"><ol>
+<li><a href="https://painterqubits.github.io/Unitful.jl/stable/">Unitful.jl</a></li>
+<li><a href="https://juliaastro.org/UnitfulAstro/stable/">UnitfulAstro.jl</a></li>
+<li><a href="https://juliaphysics.github.io/PhysicalConstants.jl/stable/">PhysicalConstants.jl</a></li>
+<li><a href="https://ai.damtp.cam.ac.uk/dynamicquantities/stable">DynamicQuantities.jl</a></li>
+</ol>
+</span></td><td align="left"><span class="julia-value"><ol>
+<li>Generic units.</li>
+<li>Astronomy specific units.</li>
+<li>Common constants used in physics.</li>
+<li>Efficient and type-stable physical quantities in Julia.</li>
+</ol>
+</span></td></tr>
+
+<tr><td align="left"><span class="julia-value"><p><a href="https://docs.astropy.org/en/stable/nddata/index.html"><code>astropy.nddata</code></a></p>
+</span></td><td align="left"><span class="julia-value">
+</span></td><td align="left"><span class="julia-value">
+</span></td></tr>
+
+<tr><td align="left"><span class="julia-value"><p><a href="https://docs.astropy.org/en/stable/table/index.html"><code>astropy.table</code></a></p>
+</span></td><td align="left"><span class="julia-value"><ol>
+<li><a href="https://juliadata.github.io/DataFrames.jl/stable/">DataFrames.jl</a></li>
+</ol>
+</span></td><td align="left"><span class="julia-value"><ol>
+<li>In-memory tabular data in Julia.</li>
+</ol>
+</span></td></tr>
+
+<tr><td align="left"><span class="julia-value"><p><a href="https://docs.astropy.org/en/stable/time/index.html"><code>astropy.time</code></a></p>
+</span></td><td align="left"><span class="julia-value"><ol>
+<li><a href="https://juliaastro.org/AstroTime/stable/">AstroTime.jl</a></li>
+</ol>
+</span></td><td align="left"><span class="julia-value"><ol>
+<li>Astronomical time keeping in Julia.</li>
+</ol>
+</span></td></tr>
+
+<tr><td align="left"><span class="julia-value"><p><a href="https://docs.astropy.org/en/stable/timeseries/index.html"><code>astropy.timeseries</code></a></p>
+</span></td><td align="left"><span class="julia-value"><ol>
+<li><a href="https://juliastats.org/TimeSeries.jl/stable/">TimeSeries.jl</a></li>
+</ol>
+</span></td><td align="left"><span class="julia-value"><ol>
+<li>Time series toolkit for Julia.</li>
+</ol>
+</span></td></tr>
+
+<tr><td align="left"><span class="julia-value"><p><a href="https://docs.astropy.org/en/stable/coordinates/index.html"><code>astropy.coordinates</code></a></p>
+</span></td><td align="left"><span class="julia-value"><ol>
+<li><a href="https://juliaastro.org/SkyCoords/stable/">SkyCoords.jl</a></li>
+<li><a href="https://github.com/JuliaAPlavin/FlexiJoins.jl">FlexiJoins.jl</a></li>
+<li><a href="https://juliaastro.org/EphemerisSources.jl/docs">EphemerisSources.jl</a></li>
+<li><a href="https://juliaastro.org/SPICE/stable/">SPICE.jl</a></li>
+</ol>
+</span></td><td align="left"><span class="julia-value"><ol>
+<li>Astronomical coordinate systems in Julia.</li>
+<li>A fresh take on joining datasets.</li>
+<li>Meta package for accessing JPL HORIZONS and SPICE sources.</li>
+<li>SPICE data retrieval and usage.</li>
+</ol>
+</span></td></tr>
+
+<tr><td align="left"><span class="julia-value"><p><a href="https://docs.astropy.org/en/stable/wcs/index.html"><code>astropy.wcs</code></a></p>
+</span></td><td align="left"><span class="julia-value"><ol>
+<li><a href="https://juliaastro.org/WCS/stable/">WCS.jl</a></li>
+</ol>
+</span></td><td align="left"><span class="julia-value"><ol>
+<li>Astronomical World Coordinate Systems library for Julia.</li>
+</ol>
+</span></td></tr>
+
+<tr><td align="left"><span class="julia-value"><p><a href="https://docs.astropy.org/en/stable/modeling/index.html"><code>astropy.modeling</code></a></p>
+</span></td><td align="left"><span class="julia-value"><ol>
+<li><a href="https://docs.sciml.ai/NonlinearSolve/stable/">NonlinearSolve.jl</a></li>
+<li><a href="https://docs.sciml.ai/Optimization/stable/">Optimization.jl</a></li>
+<li><a href="http://jump.dev/JuMP.jl/">JuMP.jl</a></li>
+</ol>
+</span></td><td align="left"><span class="julia-value"><ol>
+<li>High-performance and differentiation-enabled nonlinear solvers.</li>
+<li>Mathematical Optimization in Julia.</li>
+<li>Modeling language for Mathematical Optimization.</li>
+</ol>
+</span></td></tr>
+
+<tr><td align="left"><span class="julia-value"><p><a href="https://docs.astropy.org/en/stable/uncertainty/index.html"><code>astropy.uncertainty</code></a></p>
+</span></td><td align="left"><span class="julia-value"><ol>
+<li><a href="https://juliaphysics.github.io/Measurements.jl/stable/">Measurements.jl</a></li>
+<li><a href="https://juliastats.github.io/Distributions.jl/stable/">Distributions.jl</a></li>
+<li><a href="https://github.com/JuliaAPlavin/Uncertain.jl">Uncertain.jl</a></li>
+<li><a href="https://baggepinnen.github.io/MonteCarloMeasurements.jl/stable/">MonteCarloMeasurements.jl</a></li>
+</ol>
+</span></td><td align="left"><span class="julia-value"><ol>
+<li>Error propagation calculator and library for physical measurements.</li>
+<li>A Julia package for probability distributions and associated functions.</li>
+<li>Handle uncertain values with ease and performance!.</li>
+<li>Propagation of distributions by Monte-Carlo sampling.</li>
+</ol>
+</span></td></tr>
+
+</tbody></table>
+```
 
 ### Files, I/O, and Communication
 
-| Python | Julia | Description |
-| :----- | :---- | :---------- |
-| [`astropy.io.fits`](https://docs.astropy.org/en/stable/io/fits/index.html) | [FITSIO.jl](https://juliaastro.org/FITSIO/stable/), [FITS.jl](https://github.com/barrettp/FITS.jl), [EasyFITS.jl](https://emmt.github.io/EasyFITS.jl/dev) | Flexible Image Transport System (FITS) file support for Julia \| A Julia Flexible Image Transport System (FITS) file IO package \| Using FITS files made easier for Julia |
-| [`astropy.io.ascii`](https://docs.astropy.org/en/stable/io/ascii/index.html) | [FixedWidthTables.jl](https://github.com/JuliaAPlavin/FixedWidthTables.jl) | Read fixed width (so-called ASCII) tables |
-| [`astropy.io.votable`](https://docs.astropy.org/en/stable/io/votable/index.html) | [VOTables.jl](https://github.com/JuliaAPlavin/VOTables.jl) | Support for the VOTable format (Virtual Observatory Table, [defined](https://www.ivoa.net/documents/VOTable/) by [IVOA](https://www.ivoa.net/)) in Julia |
+```@raw html
+<table class="compare"><thead><tr><th align="left">Python</th><th align="left">Julia</th><th align="left">Description</th></tr></thead>
+<tbody>
+
+<tr><td align="left"><span class="julia-value"><p><a href="https://docs.astropy.org/en/stable/io/fits/index.html"><code>astropy.io.fits</code></a></p>
+</span></td><td align="left"><span class="julia-value"><ol>
+<li><a href="https://juliaastro.org/FITSIO/stable/">FITSIO.jl</a></li>
+<li><a href="https://github.com/barrettp/FITS.jl">FITS.jl</a></li>
+<li><a href="https://emmt.github.io/EasyFITS.jl/dev">EasyFITS.jl</a></li>
+</ol>
+</span></td><td align="left"><span class="julia-value"><ol>
+<li>Flexible Image Transport System (FITS) file support for Julia.</li>
+<li>A Julia Flexible Image Transport System (FITS) file IO package.</li>
+<li>Using FITS files made easier for Julia.</li>
+</ol>
+</span></td></tr>
+
+<tr><td align="left"><span class="julia-value"><p><a href="https://docs.astropy.org/en/stable/io/ascii/index.html"><code>astropy.io.ascii</code></a></p>
+</span></td><td align="left"><span class="julia-value"><ol>
+<li><a href="https://github.com/JuliaAPlavin/FixedWidthTables.jl">FixedWidthTables.jl</a></li>
+</ol>
+</span></td><td align="left"><span class="julia-value"><ol>
+<li>Read fixed width (so-called ASCII) tables.</li>
+</ol>
+</span></td></tr>
+
+<tr><td align="left"><span class="julia-value"><p><a href="https://docs.astropy.org/en/stable/io/votable/index.html"><code>astropy.io.votable</code></a></p>
+</span></td><td align="left"><span class="julia-value"><ol>
+<li><a href="https://github.com/JuliaAPlavin/VOTables.jl">VOTables.jl</a></li>
+</ol>
+</span></td><td align="left"><span class="julia-value"><ol>
+<li>Support for the VOTable format (Virtual Observatory Table, <a href="https://www.ivoa.net/documents/VOTable/">defined</a> by <a href="https://www.ivoa.net/">IVOA</a>) in Julia.</li>
+</ol>
+</span></td></tr>
+
+</tbody></table>
+```
 
 ### Computations and Utilities
 
-| Python | Julia | Description |
-| :----- | :---- | :---------- |
-| [`astropy.cosmology`](https://docs.astropy.org/en/stable/cosmology/index.html) | [Cosmology.jl](https://juliaastro.org/Cosmology/stable/) | Cosmology library for Julia |
-| [`astropy.convolution`](https://docs.astropy.org/en/stable/convolution/index.html) | [DSP.jl](https://docs.juliadsp.org/stable/contents/) | Filter design, periodograms, window functions, and other digital signal processing functionality |
-| [`astropy.utils.iers`](https://docs.astropy.org/en/stable/utils/iers.html) | [EarthOrientation.jl](https://juliaastro.github.io/EarthOrientation/stable) | Calculate Earth orientation parameters from IERS tables in Julia |
-| [`astropy.visualization`](https://docs.astropy.org/en/stable/visualization/index.html) | [AstroImages.jl](https://juliaastro.org/AstroImages/stable/), [PairPlots.jl](https://sefffal.github.io/PairPlots.jl/dev/) | Visualization of astronomical images \| Beautiful and flexible vizualizations of high dimensional data |
-| [`astropy.stats`](https://docs.astropy.org/en/stable/stats/index.html) | [JuliaStats](https://juliastats.org/)| Statistics and Machine Learning made easy in Julia |
+```@raw html
+<table class="compare"><thead><tr><th align="left">Python</th><th align="left">Julia</th><th align="left">Description</th></tr></thead>
+<tbody>
+
+<tr><td align="left"><span class="julia-value"><p><a href="https://docs.astropy.org/en/stable/cosmology/index.html"><code>astropy.cosmology</code></a></p>
+</span></td><td align="left"><span class="julia-value"><ol>
+<li><a href="https://juliaastro.org/Cosmology/stable/">Cosmology.jl</a></li>
+</ol>
+</span></td><td align="left"><span class="julia-value"><ol>
+<li>Cosmology library for Julia.</li>
+</ol>
+</span></td></tr>
+
+<tr><td align="left"><span class="julia-value"><p><a href="https://docs.astropy.org/en/stable/convolution/index.html"><code>astropy.convolution</code></a></p>
+</span></td><td align="left"><span class="julia-value"><ol>
+<li><a href="https://docs.juliadsp.org/stable/contents/">DSP.jl</a></li>
+</ol>
+</span></td><td align="left"><span class="julia-value"><ol>
+<li>Filter design, periodograms, window functions, and other digital signal processing functionality.</li>
+</ol>
+</span></td></tr>
+
+<tr><td align="left"><span class="julia-value"><p><a href="https://docs.astropy.org/en/stable/utils/iers.html"><code>astropy.utils.iers</code></a></p>
+</span></td><td align="left"><span class="julia-value"><ol>
+<li><a href="https://juliaastro.github.io/EarthOrientation/stable">EarthOrientation.jl</a></li>
+</ol>
+</span></td><td align="left"><span class="julia-value"><ol>
+<li>Calculate Earth orientation parameters from IERS tables in Julia.</li>
+</ol>
+</span></td></tr>
+
+<tr><td align="left"><span class="julia-value"><p><a href="https://docs.astropy.org/en/stable/visualization/index.html"><code>astropy.visualization</code></a></p>
+</span></td><td align="left"><span class="julia-value"><ol>
+<li><a href="https://juliaastro.org/AstroImages/stable/">AstroImages.jl</a></li>
+<li><a href="https://sefffal.github.io/PairPlots.jl/dev/">PairPlots.jl</a></li>
+</ol>
+</span></td><td align="left"><span class="julia-value"><ol>
+<li>Visualization of astronomical images.</li>
+<li>Beautiful and flexible vizualizations of high dimensional data.</li>
+</ol>
+</span></td></tr>
+
+<tr><td align="left"><span class="julia-value"><p><a href="https://docs.astropy.org/en/stable/stats/index.html"><code>astropy.stats</code></a></p>
+</span></td><td align="left"><span class="julia-value"><ol>
+<li><a href="https://juliastats.org/">JuliaStats</a></li>
+</ol>
+</span></td><td align="left"><span class="julia-value"><ol>
+<li>Statistics and Machine Learning made easy in Julia.</li>
+</ol>
+</span></td></tr>
+
+</tbody></table>
+```
 
 ## Astropy [coordinated packages](https://www.astropy.org/affiliated/#coordinated-package-list)
 
-| Python | Julia | Description |
-| :----- | :---- | :---------- |
-| [`asdf-astropy`](https://asdf-astropy.readthedocs.io/en/latest/) | [ASDF2.jl](https://github.com/eschnett/ASDF2.jl) | A new [Advanced Scientific Data Format (ASDF)](https://asdf-standard.readthedocs.io/en/latest/index.html) package, written in Julia |
-| [`astropy-healpix`](https://astropy-healpix.readthedocs.io/) | [Healpix.jl](https://ziotom78.github.io/Healpix.jl/stable) | Healpix library written in Julia |
-| [`astroquery`](https://astroquery.readthedocs.io/) | [VirtualObservatory.jl](https://github.com/JuliaAPlavin/VirtualObservatory.jl) | Access remote data and services that follow Virtual Observatory (VO, [https://www.ivoa.net/](https://www.ivoa.net/)) protocols |
-| [`ccdproc`](https://ccdproc.readthedocs.io/) | [CCDReduction.jl](https://juliaastro.github.io/CCDReduction/stable) | A package for performing CCD data reduction |
-| [`photutils`](https://photutils.readthedocs.io/) | [Photometry.jl](https://juliaastro.org/Photometry/stable) | Utilities for characterizing sources in astronomical images |
-| [`regions`](https://astropy-regions.readthedocs.io/) | | |
-| [`reproject`](https://reproject.readthedocs.io/) | [Reproject.jl](https://github.com/JuliaAstro/Reproject.jl) | Julia-based Astronomical image reprojection |
-| [`specreduce`](https://specreduce.readthedocs.io/) | [Spectra.jl](https://github.com/JuliaAstro/Spectra.jl) | Utilities for interfacing with astronomical spectra and synthetic spectra libraries |
-| [`specutils`](https://specutils.readthedocs.io/) | [Spectra.jl](https://github.com/JuliaAstro/Spectra.jl) | Utilities for interfacing with astronomical spectra and synthetic spectra libraries |
+```@raw html
+<table class="compare"><thead><tr><th align="left">Python</th><th align="left">Julia</th><th align="left">Description</th></tr></thead>
+<tbody>
+
+<tr><td align="left"><span class="julia-value"><p><a href="https://asdf-astropy.readthedocs.io/en/latest/"><code>asdf-astropy</code></a></p>
+</span></td><td align="left"><span class="julia-value"><ol>
+<li><a href="https://github.com/eschnett/ASDF2.jl">ASDF2.jl</a></li>
+</ol>
+</span></td><td align="left"><span class="julia-value"><ol>
+<li>A new <a href="https://asdf-standard.readthedocs.io/en/latest/index.html">Advanced Scientific Data Format (ASDF)</a> package, written in Julia.</li>
+</ol>
+</span></td></tr>
+
+<tr><td align="left"><span class="julia-value"><p><a href="https://astropy-healpix.readthedocs.io/"><code>astropy-healpix</code></a></p>
+</span></td><td align="left"><span class="julia-value"><ol>
+<li><a href="https://ziotom78.github.io/Healpix.jl/stable">Healpix.jl</a></li>
+</ol>
+</span></td><td align="left"><span class="julia-value"><ol>
+<li>Healpix library written in Julia.</li>
+</ol>
+</span></td></tr>
+
+<tr><td align="left"><span class="julia-value"><p><a href="https://astroquery.readthedocs.io/"><code>astroquery</code></a></p>
+</span></td><td align="left"><span class="julia-value"><ol>
+<li><a href="https://github.com/JuliaAPlavin/VirtualObservatory.jl">VirtualObservatory.jl</a></li>
+</ol>
+</span></td><td align="left"><span class="julia-value"><ol>
+<li>Access remote data and services that follow Virtual Observatory (VO, <a href="https://www.ivoa.net/">https://www.ivoa.net/</a>) protocols.</li>
+</ol>
+</span></td></tr>
+
+<tr><td align="left"><span class="julia-value"><p><a href="https://ccdproc.readthedocs.io/"><code>ccdproc</code></a></p>
+</span></td><td align="left"><span class="julia-value"><ol>
+<li><a href="https://juliaastro.github.io/CCDReduction/stable">CCDReduction.jl</a></li>
+</ol>
+</span></td><td align="left"><span class="julia-value"><ol>
+<li>A package for performing CCD data reduction.</li>
+</ol>
+</span></td></tr>
+
+<tr><td align="left"><span class="julia-value"><p><a href="https://photutils.readthedocs.io/"><code>photutils</code></a></p>
+</span></td><td align="left"><span class="julia-value"><ol>
+<li><a href="https://juliaastro.org/Photometry/stable">Photometry.jl</a></li>
+</ol>
+</span></td><td align="left"><span class="julia-value"><ol>
+<li>Utilities for characterizing sources in astronomical images.</li>
+</ol>
+</span></td></tr>
+
+<tr><td align="left"><span class="julia-value"><p><a href="https://astropy-regions.readthedocs.io/"><code>regions</code></a></p>
+</span></td><td align="left"><span class="julia-value"><ol>
+<li></li>
+</ol>
+</span></td><td align="left"><span class="julia-value"><ol>
+<li>.</li>
+</ol>
+</span></td></tr>
+
+<tr><td align="left"><span class="julia-value"><p><a href="https://reproject.readthedocs.io/"><code>reproject</code></a></p>
+</span></td><td align="left"><span class="julia-value"><ol>
+<li><a href="https://github.com/JuliaAstro/Reproject.jl">Reproject.jl</a></li>
+</ol>
+</span></td><td align="left"><span class="julia-value"><ol>
+<li>Julia-based Astronomical image reprojection.</li>
+</ol>
+</span></td></tr>
+
+<tr><td align="left"><span class="julia-value"><p><a href="https://specreduce.readthedocs.io/"><code>specreduce</code></a></p>
+</span></td><td align="left"><span class="julia-value"><ol>
+<li><a href="https://github.com/JuliaAstro/Spectra.jl">Spectra.jl</a></li>
+</ol>
+</span></td><td align="left"><span class="julia-value"><ol>
+<li>Utilities for interfacing with astronomical spectra and synthetic spectra libraries.</li>
+</ol>
+</span></td></tr>
+
+<tr><td align="left"><span class="julia-value"><p><a href="https://specutils.readthedocs.io/"><code>specutils</code></a></p>
+</span></td><td align="left"><span class="julia-value"><ol>
+<li><a href="https://github.com/JuliaAstro/Spectra.jl">Spectra.jl</a></li>
+</ol>
+</span></td><td align="left"><span class="julia-value"><ol>
+<li>Utilities for interfacing with astronomical spectra and synthetic spectra libraries.</li>
+</ol>
+</span></td></tr>
+
+</tbody></table>
+```
