@@ -4,14 +4,16 @@
 
 ## Contributing
 
-Our contributors come from diverse backgrounds and have various levels of interactions within astronomy and academia. Use the packages, file issues, and join the conversation!
+Our contributors come from diverse backgrounds and have various levels of interactions within astronomy, aerospace, and academia. Use the packages, file issues, and join the conversation!
 
 - [JuliaAstro](https://github.com/juliaastro) on GitHub
 - [JuliaHCI](https://github.com/juliahci) on GitHub
+- [JuliaSpace](https://github.com/JuliaSpace) on Github
 - [julia-astro](https://groups.google.com/forum/#!forum/julia-astro) mailing list on Google Groups
 - [Astro/Space](https://discourse.julialang.org/c/domain/astro) topics on JuliaLang Discourse
 - [#JuliaAstro:openastronomy.org](https://riot.im/app/#/room/#JuliaAstro:openastronomy.org) on Matrix
 - [#astronomy](slack://channel?id=CMXU6SD7V&team=T68168MUP) on [JuliaLang Slack](https://julialang.org/slack/)
+- [#astronomy](https://julialang.zulipchat.com/#narrow/channel/astronomy) on [JuliaLang Zulip](https://julialang.zulipchat.com/register/)
 
 ## Google Summer of Code (GSoC)
 
