@@ -3,3 +3,8 @@ p > a > img {
        links are in line with the text */
     vertical-align: text-bottom;
 }
+
+table.compare td {
+    /*Align entries in the astropy comparison table vertically*/
+    vertical-align: text-bottom;
+}
