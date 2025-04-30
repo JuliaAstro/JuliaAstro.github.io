@@ -5,6 +5,9 @@ p > a > img {
 }
 
 table.compare td {
-    /*Vertically align entries in the astropy comparison table*/
-    vertical-align: middle;
+    /* Vertically align entries in the astropy comparison table.
+     * The `!important` property is to keep Documenter.jl's custom
+     * themes from overriding things
+     * */
+    vertical-align: text-bottom !important;
 }
