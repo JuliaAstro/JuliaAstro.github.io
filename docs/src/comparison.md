@@ -9,18 +9,127 @@ We highlight some of the major packages in Python's `astropy` ecosystem and thei
 
 ### Data structures and transformations
 
-| Python | Julia | Description |
-| :----- | :---- | :---------- |
-| [`astropy.constants`](https://docs.astropy.org/en/stable/constants/index.html) | [Unitful.jl](https://painterqubits.github.io/Unitful.jl/stable/), [UnitfulAstro.jl](https://juliaastro.org/UnitfulAstro/stable/), [PhysicalConstants.jl](https://juliaphysics.github.io/PhysicalConstants.jl/stable/), [DynamicQuantities.jl](https://ai.damtp.cam.ac.uk/dynamicquantities/stable) | Generic units \| Astronomy specific units \| Common constants used in physics \| Efficient and type-stable physical quantities in Julia |
-| [`astropy.units`](https://docs.astropy.org/en/stable/units/index.html) | [Unitful.jl](https://painterqubits.github.io/Unitful.jl/stable/), [UnitfulAstro.jl](https://juliaastro.org/UnitfulAstro/stable/), [PhysicalConstants.jl](https://juliaphysics.github.io/PhysicalConstants.jl/stable/), [DynamicQuantities.jl](https://ai.damtp.cam.ac.uk/dynamicquantities/stable) | Generic units \| Astronomy specific units \| Common constants used in physics \| Efficient and type-stable physical quantities in Julia |
-| [`astropy.nddata`](https://docs.astropy.org/en/stable/nddata/index.html) | | |
-| [`astropy.table`](https://docs.astropy.org/en/stable/table/index.html) | [DataFrames.jl](https://juliadata.github.io/DataFrames.jl/stable/) | In-memory tabular data in Julia |
-| [`astropy.time`](https://docs.astropy.org/en/stable/time/index.html) | [AstroTime.jl](https://juliaastro.org/AstroTime/stable/) | Astronomical time keeping in Julia |
-| [`astropy.timeseries`](https://docs.astropy.org/en/stable/timeseries/index.html) | [TimeSeries.jl](https://juliastats.org/TimeSeries.jl/stable/) | Time series toolkit for Julia |
-| [`astropy.coordinates`](https://docs.astropy.org/en/stable/coordinates/index.html) | [SkyCoords.jl](https://juliaastro.org/SkyCoords/stable/), [FlexiJoins.jl](https://github.com/JuliaAPlavin/FlexiJoins.jl), [EphemerisSources.jl](https://juliaastro.org/EphemerisSources.jl/docs), [SPICE.jl](https://juliaastro.org/SPICE/stable/) | Astronomical coordinate systems in Julia \| A fresh take on joining datasets \| Meta package for accessing JPL HORIZONS and SPICE sources \| SPICE data retrieval and usage |
-| [`astropy.wcs`](https://docs.astropy.org/en/stable/wcs/index.html) | [WCS.jl](https://juliaastro.org/WCS/stable/) | Astronomical World Coordinate Systems library for Julia |
-| [`astropy.modeling`](https://docs.astropy.org/en/stable/modeling/index.html) | [NonlinearSolve.jl](https://docs.sciml.ai/NonlinearSolve/stable/), [Optimization.jl](https://docs.sciml.ai/Optimization/stable/), [JuMP.jl](http://jump.dev/JuMP.jl/) | High-performance and differentiation-enabled nonlinear solvers \| Mathematical Optimization in Julia \| Modeling language for Mathematical Optimization |
-| [`astropy.uncertainty`](https://docs.astropy.org/en/stable/uncertainty/index.html) | [Measurements.jl](https://juliaphysics.github.io/Measurements.jl/stable/), [Distributions.jl](https://juliastats.github.io/Distributions.jl/stable/), [Uncertain.jl](https://github.com/JuliaAPlavin/Uncertain.jl), [MonteCarloMeasurements.jl](https://baggepinnen.github.io/MonteCarloMeasurements.jl/stable/) | Error propagation calculator and library for physical measurements \| A Julia package for probability distributions and associated functions \| Handle uncertain values with ease and performance! \| Propagation of distributions by Monte-Carlo sampling |
+```@raw html
+<table class="compare"><thead><tr><th align="left">Python</th><th align="left">Julia</th><th align="left">Description</th></tr></thead>
+<tbody>
+
+<tr><td align="left"><span class="julia-value"><p><a href="https://docs.astropy.org/en/stable/constants/index.html"><code>astropy.constants</code></a></p>
+</span></td><td align="left"><span class="julia-value"><ol>
+<li><a href="https://painterqubits.github.io/Unitful.jl/stable/">Unitful.jl</a></li>
+<li><a href="https://juliaastro.org/UnitfulAstro/stable/">UnitfulAstro.jl</a></li>
+<li><a href="https://juliaphysics.github.io/PhysicalConstants.jl/stable/">PhysicalConstants.jl</a></li>
+<li><a href="https://ai.damtp.cam.ac.uk/dynamicquantities/stable">DynamicQuantities.jl</a></li>
+</ol>
+</span></td><td align="left"><span class="julia-value"><ol>
+<li>Generic units.</li>
+<li>Astronomy specific units.</li>
+<li>Common constants used in physics.</li>
+<li>Efficient and type-stable physical quantities in Julia.</li>
+</ol>
+</span></td>
+</tr>
+
+<tr><td align="left"><span class="julia-value"><p><a href="https://docs.astropy.org/en/stable/units/index.html"><code>astropy.units</code></a></p>
+</span></td><td align="left"><span class="julia-value"><ol>
+<li><a href="https://painterqubits.github.io/Unitful.jl/stable/">Unitful.jl</a></li>
+<li><a href="https://juliaastro.org/UnitfulAstro/stable/">UnitfulAstro.jl</a></li>
+<li><a href="https://juliaphysics.github.io/PhysicalConstants.jl/stable/">PhysicalConstants.jl</a></li>
+<li><a href="https://ai.damtp.cam.ac.uk/dynamicquantities/stable">DynamicQuantities.jl</a></li>
+</ol>
+</span></td><td align="left"><span class="julia-value"><ol>
+<li>Generic units.</li>
+<li>Astronomy specific units.</li>
+<li>Common constants used in physics.</li>
+<li>Efficient and type-stable physical quantities in Julia.</li>
+</ol>
+</span></td></tr>
+
+<tr><td align="left"><span class="julia-value"><p><a href="https://docs.astropy.org/en/stable/nddata/index.html"><code>astropy.nddata</code></a></p>
+</span></td><td align="left"><span class="julia-value">
+</span></td><td align="left"><span class="julia-value">
+</span></td></tr>
+
+<tr><td align="left"><span class="julia-value"><p><a href="https://docs.astropy.org/en/stable/table/index.html"><code>astropy.table</code></a></p>
+</span></td><td align="left"><span class="julia-value"><ol>
+<li><a href="https://juliadata.github.io/DataFrames.jl/stable/">DataFrames.jl</a></li>
+</ol>
+</span></td><td align="left"><span class="julia-value"><ol>
+<li>In-memory tabular data in Julia.</li>
+</ol>
+</span></td></tr>
+
+<tr><td align="left"><span class="julia-value"><p><a href="https://docs.astropy.org/en/stable/time/index.html"><code>astropy.time</code></a></p>
+</span></td><td align="left"><span class="julia-value"><ol>
+<li><a href="https://juliaastro.org/AstroTime/stable/">AstroTime.jl</a></li>
+</ol>
+</span></td><td align="left"><span class="julia-value"><ol>
+<li>Astronomical time keeping in Julia.</li>
+</ol>
+</span></td></tr>
+
+<tr><td align="left"><span class="julia-value"><p><a href="https://docs.astropy.org/en/stable/timeseries/index.html"><code>astropy.timeseries</code></a></p>
+</span></td><td align="left"><span class="julia-value"><ol>
+<li><a href="https://juliastats.org/TimeSeries.jl/stable/">TimeSeries.jl</a></li>
+</ol>
+</span></td><td align="left"><span class="julia-value"><ol>
+<li>Time series toolkit for Julia.</li>
+</ol>
+</span></td></tr>
+
+<tr><td align="left"><span class="julia-value"><p><a href="https://docs.astropy.org/en/stable/coordinates/index.html"><code>astropy.coordinates</code></a></p>
+</span></td><td align="left"><span class="julia-value"><ol>
+<li><a href="https://juliaastro.org/SkyCoords/stable/">SkyCoords.jl</a></li>
+<li><a href="https://github.com/JuliaAPlavin/FlexiJoins.jl">FlexiJoins.jl</a></li>
+<li><a href="https://juliaastro.org/EphemerisSources.jl/docs">EphemerisSources.jl</a></li>
+<li><a href="https://juliaastro.org/SPICE/stable/">SPICE.jl</a></li>
+</ol>
+</span></td><td align="left"><span class="julia-value"><ol>
+<li>Astronomical coordinate systems in Julia.</li>
+<li>A fresh take on joining datasets.</li>
+<li>Meta package for accessing JPL HORIZONS and SPICE sources.</li>
+<li>SPICE data retrieval and usage.</li>
+</ol>
+</span></td></tr>
+
+<tr><td align="left"><span class="julia-value"><p><a href="https://docs.astropy.org/en/stable/wcs/index.html"><code>astropy.wcs</code></a></p>
+</span></td><td align="left"><span class="julia-value"><ol>
+<li><a href="https://juliaastro.org/WCS/stable/">WCS.jl</a></li>
+</ol>
+</span></td><td align="left"><span class="julia-value"><ol>
+<li>Astronomical World Coordinate Systems library for Julia.</li>
+</ol>
+</span></td></tr>
+
+<tr><td align="left"><span class="julia-value"><p><a href="https://docs.astropy.org/en/stable/modeling/index.html"><code>astropy.modeling</code></a></p>
+</span></td><td align="left"><span class="julia-value"><ol>
+<li><a href="https://docs.sciml.ai/NonlinearSolve/stable/">NonlinearSolve.jl</a></li>
+<li><a href="https://docs.sciml.ai/Optimization/stable/">Optimization.jl</a></li>
+<li><a href="http://jump.dev/JuMP.jl/">JuMP.jl</a></li>
+</ol>
+</span></td><td align="left"><span class="julia-value"><ol>
+<li>High-performance and differentiation-enabled nonlinear solvers.</li>
+<li>Mathematical Optimization in Julia.</li>
+<li>Modeling language for Mathematical Optimization.</li>
+</ol>
+</span></td></tr>
+
+<tr><td align="left"><span class="julia-value"><p><a href="https://docs.astropy.org/en/stable/uncertainty/index.html"><code>astropy.uncertainty</code></a></p>
+</span></td><td align="left"><span class="julia-value"><ol>
+<li><a href="https://juliaphysics.github.io/Measurements.jl/stable/">Measurements.jl</a></li>
+<li><a href="https://juliastats.github.io/Distributions.jl/stable/">Distributions.jl</a></li>
+<li><a href="https://github.com/JuliaAPlavin/Uncertain.jl">Uncertain.jl</a></li>
+<li><a href="https://baggepinnen.github.io/MonteCarloMeasurements.jl/stable/">MonteCarloMeasurements.jl</a></li>
+</ol>
+</span></td><td align="left"><span class="julia-value"><ol>
+<li>Error propagation calculator and library for physical measurements.</li>
+<li>A Julia package for probability distributions and associated functions.</li>
+<li>Handle uncertain values with ease and performance!.</li>
+<li>Propagation of distributions by Monte-Carlo sampling.</li>
+</ol>
+</span></td></tr>
+
+</tbody></table>
+```
 
 ### Files, I/O, and Communication
 
