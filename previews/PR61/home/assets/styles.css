@@ -1,0 +1,10 @@
+p > a > img {
+    /* make sure book icon for documentation and curly braces for repository
+       links are in line with the text */
+    vertical-align: text-bottom;
+}
+
+table.compare td {
+    /*Align entries in the astropy comparison table vertically*/
+    vertical-align: text-bottom;
+}
