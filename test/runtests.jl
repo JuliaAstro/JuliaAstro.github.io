@@ -10,9 +10,13 @@ import JuliaAstroDocs
 
 ecos = JuliaAstroDocs.ecosystem
 
-packages_juliaastro = Iterators.filter(p for (h, ps) in ecos for p in ps) do package
-    occursin("juliaastro", lowercase(package.repo))
-end |> unique |> sort
+#packages_juliaastro = Iterators.filter(p for (h, ps) in ecos for p in ps) do package
+#    occursin("juliaastro", lowercase(package.repo))
+#end |> unique |> sort
+packages_juliaastro = [
+    (name="DustExtinction.jl", repo="https://github.com/JuliaAstro/DustExtinction.jl"),
+    (name="Spectra.jl", repo="https://github.com/JuliaAstro/Spectra.jl"),
+]
 
 @testset "JuliaAstro Package Evalauation" begin
     @testset "Compatible versions exist" begin
