@@ -465,6 +465,17 @@ The joy of our community is the many astronomy and astrophysics packages availab
 - Fast and precise aperture photometry
 
 
+### Spectra.jl
+
+[![curly braces](assets/code.png) Repository](https://github.com/JuliaAstro/Spectra.jl)
+
+[![book icon](assets/book.png) Documentation](https://juliaastro.github.io/Spectra.jl/stable)
+
+**Utilities for interfacing with astronomical spectra and synthetic spectra libraries**
+
+- Utilities for interfacing with astronomical spectra and synthetic spectra libraries
+
+
 ### mileslucas/BiweightStats.jl
 
 [![curly braces](assets/code.png) Repository](https://github.com/mileslucas/BiweightStats.jl)
@@ -552,3 +563,16 @@ See also:
 
 See also:
 - [ReferenceFrameRotations.jl](https://github.com/JuliaSpace/ReferenceFrameRotations.jl)
+
+
+### fjebaker/SpectralFitting.jl
+
+[![curly braces](assets/code.png) Repository](https://github.com/fjebaker/SpectralFitting.jl)
+
+[![book icon](assets/book.png) Documentation](https://fjebaker.github.io/SpectralFitting.jl/dev/)
+
+**✨🛰 Fast and flexible spectral fitting in Julia**
+
+- Spectral fitting routines and models with a focus on X-ray astronomy
+- This project is an attempt to modernise the field with new advancements in computational methods and statistical methods
+- SpectralFitting.jl aims to be extensible and reproducible, such that fits may be easily tailored to novel and specific problems, and easily verified by others

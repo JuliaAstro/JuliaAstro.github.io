@@ -298,19 +298,23 @@ We highlight some of the major packages in Python's `astropy` ecosystem and thei
 
 <tr><td align="left"><span class="julia-value"><p><a href="https://specreduce.readthedocs.io/"><code>specreduce</code></a></p>
 </span></td><td align="left"><span class="julia-value"><ol>
-<li><a href="https://github.com/JuliaAstro/Spectra.jl">Spectra.jl</a></li>
+<li><a href="https://juliaastro.org/Spectra/stable/">Spectra.jl</a></li>
+<li><a href="https://fjebaker.github.io/SpectralFitting.jl/dev/">fjebaker/SpectralFitting.jl</a></li>
 </ol>
 </span></td><td align="left"><span class="julia-value"><ol>
 <li>Utilities for interfacing with astronomical spectra and synthetic spectra libraries.</li>
+<li>✨🛰 Fast and flexible spectral fitting in Julia.</li>
 </ol>
 </span></td></tr>
 
 <tr><td align="left"><span class="julia-value"><p><a href="https://specutils.readthedocs.io/"><code>specutils</code></a></p>
 </span></td><td align="left"><span class="julia-value"><ol>
-<li><a href="https://github.com/JuliaAstro/Spectra.jl">Spectra.jl</a></li>
+<li><a href="https://juliaastro.org/Spectra/stable/">Spectra.jl</a></li>
+<li><a href="https://fjebaker.github.io/SpectralFitting.jl/dev/">fjebaker/SpectralFitting.jl</a></li>
 </ol>
 </span></td><td align="left"><span class="julia-value"><ol>
 <li>Utilities for interfacing with astronomical spectra and synthetic spectra libraries.</li>
+<li>✨🛰 Fast and flexible spectral fitting in Julia.</li>
 </ol>
 </span></td></tr>
 
