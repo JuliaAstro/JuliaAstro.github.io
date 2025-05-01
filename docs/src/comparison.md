@@ -1,12 +1,13 @@
-# Comparison with Astropy We highlight some of the major packages in Python's `astropy` ecosystem and their corresponding implementations in the Julia ecosystem. This is an actively evolving document, and suggested additions are welcomed.
+# Comparison with Astropy
 
-!!! note "Affiliated/coordinated packages in Julia" While there is a clear demarcation between core, coordinated, and affiliated packages in Python, this is not really the case in Julia. Composability is a [core
-feature](https://julialang.org/) of the language, allowing for interactions between packages to occur fairly naturally.
+We highlight some of the major packages in Python's `astropy` ecosystem and their corresponding implementations in the Julia ecosystem. This is an actively evolving document, and suggested additions are welcomed.
+
+!!! note "Affiliated/coordinated packages in Julia"
+    While there is a clear demarcation between core, coordinated, and affiliated packages in Python, this is not really the case in Julia. Composability is a [core feature](https://julialang.org/) of the language, allowing for interactions between packages to occur fairly naturally.
 
 ## Astropy [core packages](https://docs.astropy.org/en/stable/index_user_docs.html)
 
-### Data structures and
-transformations
+### Data structures and transformations
 
 ```@raw html
 <table class="compare">
