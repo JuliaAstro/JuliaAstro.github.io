@@ -16,7 +16,7 @@ The rendered JuliaAstro site is published online using GitHub Pages at <https://
 
 Below we walk through two main ways to contribute to the JuliaAstro site:
 
-### 1. Editing existing content
+### 1. Editing existing markdown content
 
 Typo fixes or suggested changes to existing prose is appreciated! The most direct way to create a PR is to navigate to the page that you would like to edit, and select the "Edit source on GitHub" icon that appears at the top of each page. From there, you can submit your edits as usual following [the GitHub guide for submitting in-browser changes](https://docs.github.com/en/repositories/working-with-files/managing-files/editing-files).
 
@@ -31,14 +31,26 @@ Our Ecosystem page is integrated with the rest of the site, including the global
 * `descr`: an extended description of what package does
 
 > [!NOTE]
-> See the packages already included in this structure for examples. Note that this structure is organized in the same order as the top level dropdown menus on the site, alphabetically by package name. Packages under the JuliaAstro organization are listed as their bare name, while packages outside of the organization have their parent repo name prepended to it, e.g., `eschnett/ASDF2.jl`.
+> See the packages already included in this structure for examples. Note that it is organized in the same order as the top level dropdown menus on the site, alphabetically by package name. Packages under the JuliaAstro organization are listed as their bare name, while packages outside of the organization have their parent repo name prepended to it, e.g., `eschnett/ASDF2.jl`.
+
+### 2a. Adding a package to our [Comparison with Astropy page](https://juliaastro.org/home/comparison/)
+
+If appropriate, we also appreciate a quick entry for your package that relates it to a similar package in the [Astropy ecosystem](https://www.astropy.org/). This helps new users who may be more familiar with Python get more easily oriented in the Julia ecosystem. Below is an example of how to add an entry:
+
+* Navigate to `./docs/src/comparison.md`
+
+* Find the corresponding row to add your package to, e.g., https://github.com/JuliaAstro/JuliaAstro.github.io/blob/d5744ca372fc6b790deb1c9666eb4ae32b55ddd3/docs/src/comparison.md?plain=1#L240-L243 to add an entry to the `Julia` column.
+
+* Copy-and-paste the list item and replace with your package's (stable) documentation link and package name, e.g., `eschnett/ASDF2.jl`
+
+* Repeat this process for the `Description column`, e.g.: https://github.com/JuliaAstro/JuliaAstro.github.io/blob/d5744ca372fc6b790deb1c9666eb4ae32b55ddd3/docs/src/comparison.md?plain=1#L240-L242
 
 ## Testing locally / developer docs
 
 Add [LiveServer.jl](https://github.com/JuliaDocs/LiveServer.jl) to your global env and then run the following in the `JuliaAstro.github.io/` folder:
 
 ```julia-repl
-> julia --proj
+> julia --proj=./docs/
 
 julia> using LiveServer
 
