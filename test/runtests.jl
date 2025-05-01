@@ -12,14 +12,19 @@ ecos = JuliaAstroDocs.ecosystem
 
 packages_juliaastro = Iterators.filter(p for (h, ps) in ecos for p in ps) do package
     occursin("juliaastro", lowercase(package.repo))
-end
+end |> unique |> sort
 
 @testset "JuliaAstro Package Evalauation" begin
     @testset "Compatible versions exist" begin
         ENV["JULIA_PKG_PRECOMPILE_AUTO"] = 0
         for package in packages_juliaastro
-            @testset "$(package.name)" begin
-                @test Pkg.add(chopsuffix(package.name, ".jl")) == nothing
+            p_name = package.name
+            @testset "$(p_name)" begin
+                if p_name == "Spectra.jl"
+                    @test Pkg.add(url="https://github.com/JuliaAstro/Spectra.jl") == nothing
+                else
+                    @test Pkg.add(chopsuffix(p_name, ".jl")) == nothing
+                end
             end
         end
     end
