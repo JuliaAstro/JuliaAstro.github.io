@@ -1,7 +1,9 @@
-import JuliaAstroDocs
-
-using MultiDocumenter, Documenter
+using Revise, MultiDocumenter, Documenter
 using LibGit2, Pkg, TOML, UUIDs, Downloads
+
+Revise.revise()
+
+import JuliaAstroDocs
 
 # This make file compiles the documentation for the JuliaAstro website.
 # It consists of the usual documenter structure, but also follows the approach
