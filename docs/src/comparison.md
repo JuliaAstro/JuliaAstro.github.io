@@ -26,18 +26,18 @@ We highlight some of the major packages in Python's `astropy` ecosystem and thei
       </td>
       <td>
         <ol>
-          <li><a href="https://painterqubits.github.io/Unitful.jl/stable/">Unitful.jl</a></li>
+          <li><a href="https://ai.damtp.cam.ac.uk/dynamicquantities/stable">SymbolicML/DynamicQuantities.jl</a></li>
+          <li><a href="https://juliaphysics.github.io/PhysicalConstants.jl/stable/">JuliaPhysics/PhysicalConstants.jl</a></li>
+          <li><a href="https://painterqubits.github.io/Unitful.jl/stable/">PainterQubits/Unitful.jl</a></li>
           <li><a href="https://juliaastro.org/UnitfulAstro/stable/">UnitfulAstro.jl</a></li>
-          <li><a href="https://juliaphysics.github.io/PhysicalConstants.jl/stable/">PhysicalConstants.jl</a></li>
-          <li><a href="https://ai.damtp.cam.ac.uk/dynamicquantities/stable">DynamicQuantities.jl</a></li>
         </ol>
       </td>
       <td>
         <ol>
+          <li>Efficient and type-stable physical quantities in Julia.</li>
+          <li>Common constants used in physics.</li>
           <li>Generic units.</li>
           <li>Astronomy specific units.</li>
-          <li>Common constants used in physics.</li>
-          <li>Efficient and type-stable physical quantities in Julia.</li>
         </ol>
       </td>
     </tr>
@@ -48,18 +48,18 @@ We highlight some of the major packages in Python's `astropy` ecosystem and thei
       </td>
       <td>
         <ol>
+          <li><a href="https://ai.damtp.cam.ac.uk/dynamicquantities/stable">SymbolicML/DynamicQuantities.jl</a></li>
+          <li><a href="https://juliaphysics.github.io/PhysicalConstants.jl/stable/">JuliaPhysics/PhysicalConstants.jl</a></li>
           <li><a href="https://painterqubits.github.io/Unitful.jl/stable/">Unitful.jl</a></li>
           <li><a href="https://juliaastro.org/UnitfulAstro/stable/">UnitfulAstro.jl</a></li>
-          <li><a href="https://juliaphysics.github.io/PhysicalConstants.jl/stable/">PhysicalConstants.jl</a></li>
-          <li><a href="https://ai.damtp.cam.ac.uk/dynamicquantities/stable">DynamicQuantities.jl</a></li>
         </ol>
       </td>
       <td>
         <ol>
+          <li>Efficient and type-stable physical quantities in Julia.</li>
+          <li>Common constants used in physics.</li>
           <li>Generic units.</li>
           <li>Astronomy specific units.</li>
-          <li>Common constants used in physics.</li>
-          <li>Efficient and type-stable physical quantities in Julia.</li>
         </ol>
       </td>
     </tr>
@@ -86,7 +86,7 @@ We highlight some of the major packages in Python's `astropy` ecosystem and thei
       </td>
       <td>
         <ol>
-          <li><a href="https://juliadata.github.io/DataFrames.jl/stable/">DataFrames.jl</a></li>
+          <li><a href="https://juliadata.github.io/DataFrames.jl/stable/">JuliaData/DataFrames.jl</a></li>
         </ol>
       </td>
       <td>
@@ -118,7 +118,7 @@ We highlight some of the major packages in Python's `astropy` ecosystem and thei
       </td>
       <td>
         <ol>
-          <li><a href="https://juliastats.org/TimeSeries.jl/stable/">TimeSeries.jl</a></li>
+          <li><a href="https://juliastats.org/TimeSeries.jl/stable/">JuliaStats/TimeSeries.jl</a></li>
         </ol>
       </td>
       <td>
@@ -134,17 +134,17 @@ We highlight some of the major packages in Python's `astropy` ecosystem and thei
       </td>
       <td>
         <ol>
-          <li><a href="https://juliaastro.org/SkyCoords/stable/">SkyCoords.jl</a></li>
-          <li><a href="https://github.com/JuliaAPlavin/FlexiJoins.jl">FlexiJoins.jl</a></li>
           <li><a href="https://juliaastro.org/EphemerisSources.jl/docs">EphemerisSources.jl</a></li>
+          <li><a href="https://github.com/JuliaAPlavin/FlexiJoins.jl">JuliaAPlavin/FlexiJoins.jl</a></li>
+          <li><a href="https://juliaastro.org/SkyCoords/stable/">SkyCoords.jl</a></li>
           <li><a href="https://juliaastro.org/SPICE/stable/">SPICE.jl</a></li>
         </ol>
       </td>
       <td>
         <ol>
-          <li>Astronomical coordinate systems in Julia.</li>
-          <li>A fresh take on joining datasets.</li>
           <li>Meta package for accessing JPL HORIZONS and SPICE sources.</li>
+          <li>A fresh take on joining datasets.</li>
+          <li>Astronomical coordinate systems in Julia.</li>
           <li>SPICE data retrieval and usage.</li>
         </ol>
       </td>
@@ -172,16 +172,16 @@ We highlight some of the major packages in Python's `astropy` ecosystem and thei
       </td>
       <td>
         <ol>
-          <li><a href="https://docs.sciml.ai/NonlinearSolve/stable/">NonlinearSolve.jl</a></li>
-          <li><a href="https://docs.sciml.ai/Optimization/stable/">Optimization.jl</a></li>
-          <li><a href="http://jump.dev/JuMP.jl/">JuMP.jl</a></li>
+          <li><a href="http://jump.dev/JuMP.jl/">jump-dev/JuMP.jl</a></li>
+          <li><a href="https://docs.sciml.ai/NonlinearSolve/stable/">SciML/NonlinearSolve.jl</a></li>
+          <li><a href="https://docs.sciml.ai/Optimization/stable/">SciML/Optimization.jl</a></li>
         </ol>
       </td>
       <td>
         <ol>
+          <li>Modeling language for Mathematical Optimization.</li>
           <li>High-performance and differentiation-enabled nonlinear solvers.</li>
           <li>Mathematical Optimization in Julia.</li>
-          <li>Modeling language for Mathematical Optimization.</li>
         </ol>
       </td>
     </tr>
@@ -192,18 +192,18 @@ We highlight some of the major packages in Python's `astropy` ecosystem and thei
       </td>
       <td>
         <ol>
-          <li><a href="https://juliaphysics.github.io/Measurements.jl/stable/">Measurements.jl</a></li>
-          <li><a href="https://juliastats.github.io/Distributions.jl/stable/">Distributions.jl</a></li>
-          <li><a href="https://github.com/JuliaAPlavin/Uncertain.jl">Uncertain.jl</a></li>
-          <li><a href="https://baggepinnen.github.io/MonteCarloMeasurements.jl/stable/">MonteCarloMeasurements.jl</a></li>
+          <li><a href="https://juliastats.github.io/Distributions.jl/stable/">JuliaStats/Distributions.jl</a></li>
+          <li><a href="https://juliaphysics.github.io/Measurements.jl/stable/">JuliaPhysics/Measurements.jl</a></li>
+          <li><a href="https://baggepinnen.github.io/MonteCarloMeasurements.jl/stable/">baggepinnen/MonteCarloMeasurements.jl</a></li>
+          <li><a href="https://github.com/JuliaAPlavin/Uncertain.jl">JuliaAPlavin/Uncertain.jl</a></li>
         </ol>
       </td>
       <td>
         <ol>
-          <li>Error propagation calculator and library for physical measurements.</li>
           <li>A Julia package for probability distributions and associated functions.</li>
-          <li>Handle uncertain values with ease and performance!</li>
+          <li>Error propagation calculator and library for physical measurements.</li>
           <li>Propagation of distributions by Monte-Carlo sampling.</li>
+          <li>Handle uncertain values with ease and performance!</li>
         </ol>
       </td>
     </tr>
@@ -231,16 +231,16 @@ We highlight some of the major packages in Python's `astropy` ecosystem and thei
       </td>
       <td>
         <ol>
+          <li><a href="https://emmt.github.io/EasyFITS.jl/dev">emmt/EasyFITS.jl</a></li>
+          <li><a href="https://github.com/barrettp/FITS.jl">barrettp/FITS.jl</a></li>
           <li><a href="https://juliaastro.org/FITSIO/stable/">FITSIO.jl</a></li>
-          <li><a href="https://github.com/barrettp/FITS.jl">FITS.jl</a></li>
-          <li><a href="https://emmt.github.io/EasyFITS.jl/dev">EasyFITS.jl</a></li>
         </ol>
       </td>
       <td>
         <ol>
-          <li>Flexible Image Transport System (FITS) file support for Julia.</li>
-          <li>A Julia Flexible Image Transport System (FITS) file IO package.</li>
           <li>Using FITS files made easier for Julia.</li>
+          <li>A Julia Flexible Image Transport System (FITS) file IO package.</li>
+          <li>Flexible Image Transport System (FITS) file support for Julia.</li>
         </ol>
       </td>
     </tr>
@@ -251,7 +251,7 @@ We highlight some of the major packages in Python's `astropy` ecosystem and thei
       </td>
       <td>
         <ol>
-          <li><a href="https://github.com/JuliaAPlavin/FixedWidthTables.jl">FixedWidthTables.jl</a></li>
+          <li><a href="https://github.com/JuliaAPlavin/FixedWidthTables.jl">JuliaAPlavin/FixedWidthTables.jl</a></li>
         </ol>
       </td>
       <td>
@@ -267,7 +267,7 @@ We highlight some of the major packages in Python's `astropy` ecosystem and thei
       </td>
       <td>
         <ol>
-          <li><a href="https://github.com/JuliaAPlavin/VOTables.jl">VOTables.jl</a></li>
+          <li><a href="https://github.com/JuliaAPlavin/VOTables.jl">JuliaAPlavin/VOTables.jl</a></li>
         </ol>
       </td>
       <td>
@@ -316,7 +316,7 @@ We highlight some of the major packages in Python's `astropy` ecosystem and thei
       </td>
       <td>
         <ol>
-          <li><a href="https://docs.juliadsp.org/stable/contents/">DSP.jl</a></li>
+          <li><a href="https://docs.juliadsp.org/stable/">JuliaDSP/DSP.jl</a></li>
         </ol>
       </td>
       <td>
@@ -349,7 +349,7 @@ We highlight some of the major packages in Python's `astropy` ecosystem and thei
       <td>
         <ol>
           <li><a href="https://juliaastro.org/AstroImages/stable/">AstroImages.jl</a></li>
-          <li><a href="https://sefffal.github.io/PairPlots.jl/dev/">PairPlots.jl</a></li>
+          <li><a href="https://sefffal.github.io/PairPlots.jl/dev/">/sefffal/PairPlots.jl</a></li>
         </ol>
       </td>
       <td>
@@ -399,7 +399,7 @@ We highlight some of the major packages in Python's `astropy` ecosystem and thei
       </td>
       <td>
         <ol>
-          <li><a href="https://github.com/eschnett/ASDF2.jl">ASDF2.jl</a></li>
+          <li><a href="https://github.com/eschnett/ASDF2.jl">eschnett/ASDF2.jl</a></li>
         </ol>
       </td>
       <td>
@@ -415,7 +415,7 @@ We highlight some of the major packages in Python's `astropy` ecosystem and thei
       </td>
       <td>
         <ol>
-          <li><a href="https://ziotom78.github.io/Healpix.jl/stable">Healpix.jl</a></li>
+          <li><a href="https://ziotom78.github.io/Healpix.jl/stable">ziotom78/Healpix.jl</a></li>
         </ol>
       </td>
       <td>
@@ -431,7 +431,7 @@ We highlight some of the major packages in Python's `astropy` ecosystem and thei
       </td>
       <td>
         <ol>
-          <li><a href="https://github.com/JuliaAPlavin/VirtualObservatory.jl">VirtualObservatory.jl</a></li>
+          <li><a href="https://github.com/JuliaAPlavin/VirtualObservatory.jl">JuliaAPlavin/VirtualObservatory.jl</a></li>
         </ol>
       </td>
       <td>
