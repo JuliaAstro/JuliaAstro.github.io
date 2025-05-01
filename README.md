@@ -31,30 +31,29 @@ Our Ecosystem page is integrated with the rest of the site, including the global
 * `descr`: an extended description of what package does
 
 > [!NOTE]
-> See the packages already included in this structure for examples. Note that this structure is organized in the same order as the top level dropdown menus on the site, alphabetically by package name. Packages under the JuliaAstro organization are listed as their bare name, while packages outside of the organization have their parent repo name prepended to it, e.g., `eschnett/ASDF2.jl`. 
+> See the packages already included in this structure for examples. Note that this structure is organized in the same order as the top level dropdown menus on the site, alphabetically by package name. Packages under the JuliaAstro organization are listed as their bare name, while packages outside of the organization have their parent repo name prepended to it, e.g., `eschnett/ASDF2.jl`.
 
 ## Testing locally / developer docs
 
-Add [LiveServer.jl](https://github.com/JuliaDocs/LiveServer.jl) to your global env and then run the following:
+Add [LiveServer.jl](https://github.com/JuliaDocs/LiveServer.jl) to your global env and then run the following in the `JuliaAstro.github.io/` folder:
 
-```julia
-# In JuliaAstroDocs/ folder
-pkg> activate docs/
-  Activating project at `~/projects/org/JuliaAstro.github.io/docs`
-
-(docs) pkg> instantiate
+```julia-repl
+> julia --proj
 
 julia> using LiveServer
 
-julia> servedocs()
+julia> servedocs(; include_dirs=["./src/"], launch_browser=true)
 ```
 
 > [!NOTE]
-> If making changes in `JuliaAstroDocs.jl`, run the following to sync markdown files:
+> If making changes in `JuliaAstroDocs.jl`, run the following in a separate process to sync markdown files:
 > ```julia
 > using JuliaAstroDocs
-> 
+>
 > JuliaAstroDocs.write_ecosystem()
 > ```
+
+> [!TIP]
+> If just making simple markdown changes, you can shorten the build time between edits by commenting out the call to `MultiDocumenter.make` in `./docs/make.jl`. This disables the MultiDocumenter.jl repo-cloning and top navbar build process and can be done without needing to restart your `LiveServer` session.
 
 See our [Contributing page](https://juliaastro.org/home/#Contributing) for more.
