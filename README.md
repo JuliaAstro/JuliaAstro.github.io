@@ -54,6 +54,6 @@ julia> servedocs(; include_dirs=["./src/"], launch_browser=true)
 > ```
 
 > [!TIP]
-> If just making simple markdown changes, you can shorten the build time between edits by commenting out the call to `MultiDocumenter.make` in `./docs/make.jl`. This disables the MultiDocumenter.jl repo-cloning and top navbar build process and can be done without needing to restart your `LiveServer` session.
+> If just making simple markdown changes, you can shorten the build time between edits by commenting out the call to `MultiDocumenter.make` in `./docs/make.jl`. This disables the MultiDocumenter.jl repo-cloning and top navbar build process, and can be done without needing to restart your `LiveServer` session.
 
 See our [Contributing page](https://juliaastro.org/home/#Contributing) for more.
