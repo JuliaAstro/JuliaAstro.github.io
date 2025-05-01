@@ -39,11 +39,11 @@ If appropriate, we also appreciate a quick entry for your package that relates i
 
 * Navigate to `./docs/src/comparison.md`
 
-* Find the corresponding row to add your package to, e.g., https://github.com/JuliaAstro/JuliaAstro.github.io/blob/d5744ca372fc6b790deb1c9666eb4ae32b55ddd3/docs/src/comparison.md?plain=1#L240-L243 to add an entry to the `Julia` column.
+* Find the corresponding row entry to add your package to, e.g., https://github.com/JuliaAstro/JuliaAstro.github.io/blob/42a87f2f2ed064c8da9cc97b2f215a4c1f978386/docs/src/comparison.md?plain=1#L27-L34
 
-* Copy-and-paste the list item and replace with your package's (stable) documentation link and package name, e.g., `eschnett/ASDF2.jl`
+* Copy-and-paste the list item and replace with your package's (stable) documentation link and package name. Place this item in alphebetical order by package name.
 
-* Repeat this process for the `Description column`, e.g.: https://github.com/JuliaAstro/JuliaAstro.github.io/blob/d5744ca372fc6b790deb1c9666eb4ae32b55ddd3/docs/src/comparison.md?plain=1#L240-L242
+* Repeat this process for the `Description` column, e.g., https://github.com/JuliaAstro/JuliaAstro.github.io/blob/42a87f2f2ed064c8da9cc97b2f215a4c1f978386/docs/src/comparison.md?plain=1#L35-L42
 
 ## Testing locally / developer docs
 
