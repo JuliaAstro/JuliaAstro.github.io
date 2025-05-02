@@ -1,9 +1,23 @@
-using Revise, MultiDocumenter, Documenter
+using Revise, MultiDocumenter, Documenter, DocumenterInterLinks
 using LibGit2, Pkg, TOML, UUIDs, Downloads
 
 Revise.revise()
 
 import JuliaAstroDocs
+
+# Prefer online docs, use local as fallback
+links = InterLinks(
+    "AstroImages" => (
+        "https://juliaastro.org/AstroImages/dev/",
+        "https://juliaastro.org/AstroImages/dev/objects.inv",
+        joinpath(@__DIR__, "clones", "AstroImages", "dev", "objects.inv"),
+    ),
+    "AstroLib" => (
+        "https://juliaastro.org/AstroLib/stable/",
+        "https://juliaastro.org/AstroLib/stable/objects.inv",
+        joinpath(@__DIR__, "clones", "AstroLib", "dev", "objects.inv"),
+    )
+)
 
 # This make file compiles the documentation for the JuliaAstro website.
 # It consists of the usual documenter structure, but also follows the approach
@@ -58,6 +72,7 @@ makedocs(
         "Comparison with Astropy" => "comparison.md",
     ],
     warnonly = [:missing_docs],
+    plugins = [links],
 )
 
 @info "Building aggregate JuliaAstro site"

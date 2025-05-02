@@ -16,7 +16,7 @@ ecosystem = (
         (
             name = "AstroImages.jl",
             repo = "https://github.com/JuliaAstro/AstroImages.jl",
-            doc = "https://juliaastro.github.io/AstroImages.jl/stable/",
+            doc = "https://juliaastro.org/AstroImages/stable/",
             tagline = "Load, manipulate, and visualize astronomical images",
             descr = """
             - Works with the [FileIO.jl](https://github.com/JuliaIO/FileIO.jl) interface
@@ -25,7 +25,7 @@ ecosystem = (
         (
             name = "CFITSIO.jl",
             repo = "https://github.com/JuliaAstro/CFITSIO.jl",
-            doc = "https://juliaastro.github.io/FITSIO.jl/stable/",
+            doc = "https://juliaastro.org/CFITSIO/stable/",
             tagline = "Reading and writing FITS files",
             descr = """
             - Low-level wrapper for [cfitsio](https://heasarc.gsfc.nasa.gov/fitsio/)
@@ -35,7 +35,7 @@ ecosystem = (
         (
             name = "FITSIO.jl",
             repo = "https://github.com/JuliaAstro/FITSIO.jl",
-            doc = "https://juliaastro.github.io/FITSIO.jl/stable/",
+            doc = "https://juliaastro.org/FITSIO/stable/",
             tagline = "Reading and writing FITS files",
             descr = """
             - Interact with header data units (HDUs), FITS headers, and FITS data: both images and tables
@@ -114,7 +114,7 @@ ecosystem = (
         (
             name = "AstroImages.jl",
             repo = "https://github.com/JuliaAstro/AstroImages.jl",
-            doc = "https://juliaastro.github.io/AstroImages.jl/stable/",
+            doc = "https://juliaastro.org/AstroImages/stable/",
             tagline = "Load, manipulate, and visualize astronomical images",
             descr = """
             - Works with the [FileIO.jl](https://github.com/JuliaIO/FileIO.jl) interface
@@ -123,7 +123,7 @@ ecosystem = (
         (
             name = "CCDReduction.jl",
             repo = "https://github.com/JuliaAstro/CCDReduction.jl",
-            doc = "https://juliaastro.github.io/CCDReduction.jl/stable/",
+            doc = "https://juliaastro.org/CCDReduction/stable/",
             tagline = "Common CCD image processing routines",
             descr = """
             - Creation of calibration files
@@ -134,7 +134,7 @@ ecosystem = (
         (
             name = "LACosmic.jl",
             repo = "https://github.com/JuliaAstro/LACosmic.jl",
-            doc = "https://juliaastro.github.io/LACosmic.jl/stable/",
+            doc = "https://juliaastro.org/LACosmic/stable/",
             tagline = "Cosmic-ray rejection by Laplacian edge detection",
             descr = """
             - Implementation of the L.A.Cosmic algorithm ([van Dokkum, 2001](https://ui.adsabs.harvard.edu/abs/2001PASP..113.1420V/abstract))
@@ -144,7 +144,7 @@ ecosystem = (
         (
             name = "Photometry.jl",
             repo = "https://github.com/JuliaAstro/Photometry.jl",
-            doc = "https://juliaastro.github.io/Photometry.jl/stable/",
+            doc = "https://juliaastro.org/Photometry/stable/",
             tagline = "Aperture photometry",
             descr = """
             - Background estimation and source extraction
@@ -154,7 +154,7 @@ ecosystem = (
         (
             name = "PSFModels.jl",
             repo = "https://github.com/JuliaAstro/PSFModels.jl",
-            doc = "https://juliaastro.github.io/PSFModels.jl/stable/",
+            doc = "https://juliaastro.org/PSFModels/stable/",
             tagline = "Analytical, allocation-free point-spread-functions (PSF)",
             descr = """
             - Lazy representation allows fast allocation-free calculations
@@ -173,7 +173,7 @@ ecosystem = (
         (
             name = "SAOImageDS9.jl",
             repo = "https://github.com/JuliaAstro/SAOImageDS9.jl",
-            doc = "https://juliaastro.github.io/SAOImageDS9.jl/stable/",
+            doc = "https://juliaastro.org/SAOImageDS9/stable/",
             tagline = "Interface with the DS9 image viewer",
             descr = """
             - Uses [XPA.jl](https://github.com/JuliaAstro/XPA.jl) to communicate with DS9 instances
@@ -209,7 +209,7 @@ ecosystem = (
         (
             name = "AstroAngles.jl",
             repo = "https://github.com/JuliaAstro/AstroAngles.jl",
-            doc = "https://juliaastro.org/AstroAngles.jl/dev/",
+            doc = "https://juliaastro.org/AstroAngles/stable/",
             tagline = "String parsing and representation of angles",
             descr = """
             - Parse and represent sexagesimal angles with a variety of delimiters
@@ -219,7 +219,7 @@ ecosystem = (
         (
             name = "AstroTime.jl",
             repo = "https://github.com/JuliaAstro/AstroTime.jl",
-            doc = "https://juliaastro.github.io/AstroTime.jl/stable/",
+            doc = "https://juliaastro.org/AstroTime/stable/",
             tagline = "Astronomical time keeping",
             descr = """
             - High-precision, time-scale aware, DateTime-like data type
@@ -238,7 +238,7 @@ ecosystem = (
         (
             name = "SkyCoords.jl",
             repo = "https://github.com/JuliaAstro/SkyCoords.jl",
-            doc = "https://juliaastro.org/SkyCoords.jl/stable/",
+            doc = "https://juliaastro.org/SkyCoords/stable/",
             tagline = "Astronomical coordinate systems",
             descr = """
             - Supports ICRS, galactic, and FK5 coordinate systems
@@ -248,7 +248,7 @@ ecosystem = (
         (
             name = "SPICE.jl",
             repo = "https://github.com/JuliaAstro/SPICE.jl",
-            doc = "https://juliaastro.org/SPICE.jl/stable/",
+            doc = "https://juliaastro.org/SPICE/stable/",
             tagline = "SPICE data retrieval and usage",
             descr = """
             - Wrapper for [CSPICE](https://naif.jpl.nasa.gov/pub/naif/toolkit_docs/C/index.html)
@@ -258,7 +258,7 @@ ecosystem = (
         (
             name = "UnitfulAstro.jl",
             repo = "https://github.com/JuliaAstro/UnitfulAstro.jl",
-            doc = "https://juliaastro.github.io/UnitfulAstro.jl/stable/",
+            doc = "https://juliaastro.org/UnitfulAstro/stable/",
             tagline = "Astronomical units",
             descr = """
             - Extension of [Unitful.jl](https://github.com/painterqubits/Unitful.jl)
@@ -267,7 +267,7 @@ ecosystem = (
         (
             name = "WCS.jl",
             repo = "https://github.com/JuliaAstro/WCS.jl",
-            doc = "https://juliaastro.github.io/WCS.jl/stable/",
+            doc = "https://juliaastro.org/WCS/stable/",
             tagline = "World Coordinate System transformations",
             descr = """
             - Wrapper for [wcslib](https://www.atnf.csiro.au/people/mcalabre/WCS/wcslib/)
@@ -278,7 +278,7 @@ ecosystem = (
         (
             name = "EarthOrientation.jl",
             repo = "https://github.com/JuliaAstro/EarthOrientation.jl",
-            doc = "https://juliaastro.github.io/EarthOrientation.jl/stable/",
+            doc = "https://juliaastro.org/EarthOrientation/stable/",
             tagline = "Earth orientation parameters",
             descr = """
             - Calculate Earth orientation parameters from IERS tables
@@ -287,7 +287,7 @@ ecosystem = (
         (
             name = "Transits.jl",
             repo = "https://github.com/JuliaAstro/Transits.jl",
-            doc = "https://juliaastro.github.io/Transits.jl/stable/",
+            doc = "https://juliaastro.org/Transits/stable/",
             tagline = "Flexible photometric transit curves with limb darkening",
             descr = """
             - Inspired by [exoplanet](https://github.com/exoplanet-dev/exoplanet)
@@ -346,7 +346,7 @@ ecosystem = (
         (
             name = "AstroLib.jl",
             repo = "https://github.com/JuliaAstro/astrolib.jl",
-            doc = "https://juliaastro.github.io/AstroLib.jl/stable/",
+            doc = "https://juliaastro.org/AstroLib/stable/",
             tagline = "Collection of generic astronomical and astrophysical functions",
             descr = """
             - Translation of many IDL AstroLib procedures
@@ -355,7 +355,7 @@ ecosystem = (
         (
             name = "BoxLeastSquares.jl",
             repo = "https://github.com/JuliaAstro/BoxLeastSquares.jl",
-            doc = "https://juliaastro.github.io/BoxLeastSquares.jl/stable/",
+            doc = "https://juliaastro.org/BoxLeastSquares/stable/",
             tagline = "Compute box-least-squares periodogram",
             descr = """
             - Fit BLS periodograms to time-series data
@@ -366,7 +366,7 @@ ecosystem = (
         (
             name = "Cosmology.jl",
             repo = "https://github.com/JuliaAstro/Cosmology.jl",
-            doc = "https://juliaastro.github.io/Cosmology.jl/stable/",
+            doc = "https://juliaastro.org/Cosmology/stable/",
             tagline = "Distances in the universe",
             descr = """
             - ``\\Lambda``-CDM and ``w_0``-``w_a`` cosmologies
@@ -377,7 +377,7 @@ ecosystem = (
         (
             name = "DustExtinction.jl",
             repo = "https://github.com/JuliaAstro/DustExtinction.jl",
-            doc = "https://juliaastro.github.io/DustExtinction.jl/stable/",
+            doc = "https://juliaastro.org/DustExtinction/stable/",
             tagline = "Dust extinction laws and maps",
             descr = """
             - Various empirical extinction models
@@ -388,7 +388,7 @@ ecosystem = (
         (
             name = "LombScargle.jl",
             repo = "https://github.com/JuliaAstro/LombScargle.jl",
-            doc = "https://juliaastro.github.io/LombScargle.jl/stable/",
+            doc = "https://juliaastro.org/LombScargle/stable/",
             tagline = "Compute Lomb-Scargle periodogram",
             descr = """
             - Create periodograms from unevenly sampled periodic signals
@@ -398,7 +398,7 @@ ecosystem = (
         (
             name = "Photometry.jl",
             repo = "https://github.com/JuliaAstro/Photometry.jl",
-            doc = "https://juliaastro.github.io/Photometry.jl/stable/",
+            doc = "https://juliaastro.org/Photometry/stable/",
             tagline = "Aperture photometry",
             descr = """
             - Background estimation and source extraction
@@ -408,7 +408,7 @@ ecosystem = (
         (
             name = "Spectra.jl",
             repo = "https://github.com/JuliaAstro/Spectra.jl",
-            doc = "https://juliaastro.github.io/Spectra.jl/stable",
+            doc = "https://juliaastro.org/Spectra/stable",
             tagline = "Utilities for interfacing with astronomical spectra and synthetic spectra libraries",
             descr = """
             - Utilities for interfacing with astronomical spectra and synthetic spectra libraries

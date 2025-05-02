@@ -6,8 +6,8 @@ Let's get started!
 ## Packages
 
 * [`Downloads`](https://docs.julialang.org/en/v1/stdlib/Downloads/): we'll use this built-in Julia standard library to download the raw image data
-* [`AstroImages`](http://juliaastro.org/AstroImages.jl/dev/): we'll use this package to load and display the image
-* [`Plots`](https://docs.juliaplots.org/latest/): we'll use this package to display coordinates along the image and add the scalebar
+* [`AstroImages`](http://juliaastro.org/AstroImages/stable/): we'll use this package to load and display the image
+* [`Plots`](https://docs.juliaplots.org/stable/): we'll use this package to display coordinates along the image and add the scalebar
 
 You can install the necessary packages by running Julia, and typing `]` to enter Pkg-mode. Then: `add AstroImages Plots`.
 Alternatively, you can run `using Pkg; Pkg.add(["AstroImages", "Plots"])`.
@@ -37,7 +37,7 @@ fname = Downloads.download(
 ```
 
 ## Loading the image
-We can use [`AstroImages.jl`](http://juliaastro.org/AstroImages.jl/dev/) to load the image.
+We can use [`AstroImages.jl`](http://juliaastro.org/AstroImages/stable/) to load the image.
 
 ```julia
 using AstroImages
@@ -57,7 +57,7 @@ size(carina)
 ```
 Wow, that's over 120 megapixels! 
 
-AstroImages will fall back to downscaling it automatically before displaying it using [`ImageTransformations.restrict`](https://juliaimages.org/latest/function_reference/#ImageTransformations.restrict), but let's make our lives simpler and just use every 10th pixel:
+AstroImages will fall back to downscaling it automatically before displaying it using [`ImageTransformations.restrict`](https://juliaimages.org/stable/function_reference/#ImageTransformations.restrict), but let's make our lives simpler and just use every 10th pixel:
 
 ```julia
 carina = carina_full[begin:10:end, begin:10:end]
@@ -66,7 +66,7 @@ carina = carina_full[begin:10:end, begin:10:end]
 
 Since we didn't put a semi-colon, the image was displayed. This works automatically if you use the VS Code editor, Jupyter notebooks, or Pluto Notebooks. If you're using a terminal, you can use [ElectronDisplay.jl](https://github.com/queryverse/ElectronDisplay.jl) or [ImageView.jl](https://github.com/JuliaImages/ImageView.jl) to open an interactive window.
 
-[`imview`](http://juliaastro.org/AstroImages.jl/dev/api/#AstroImages.imview) is the function that was called automatically  to display the image, but we can call it ourselves if we want to customize the display.
+[`AstroImages.imview`](@extref) is the function that was called automatically  to display the image, but we can call it ourselves if we want to customize the display.
 We can make the image pop a little more by adjusting the display limits, or `clims`. These can be either a tuple of min and max values (i.e. `(0.0, 100.0)`) or a function to calculate them for us based on some criteria. We'll adjust the limits to remove the top and bottom 1% of all  pixels:
 
 ```julia
@@ -92,7 +92,7 @@ RA---TAN
 
 This shows that the coordinate type for the first axis is "RA---TAN".
 
-Now, we'll combine AstroImages with the [Plots.jl](https://docs.juliaplots.org/latest/) library to display these coordinates.
+Now, we'll combine AstroImages with the [Plots.jl](https://docs.juliaplots.org/stable/) library to display these coordinates.
 
 
 ```julia
@@ -114,8 +114,7 @@ implot(carina; grid=false, clims=Percent(98))
 ![Carina nebula displayed in a plot without grid lines](../assets/tutorials/jwst-1/carina-4.svg)
 
 
-Full documentation for the `implot` function is available in the [AstroImages.jl docs](http://juliaastro.org/AstroImages.jl/dev/api/#AstroImages.implot).
-
+See [`AstroImages.implot`](@extref) for full documentation.
 
 ## Adding a Scalebar
 
@@ -213,6 +212,6 @@ annotate!(
 
 To save the image, just run `savefig("output.png")`. `pdf`, `svg`, and other file formats are also supported.
 
-To learn more about displaying images and world coordinates, see the [AstroImages.jl documentation](http://juliaastro.org/AstroImages.jl/dev/).
+To learn more about displaying images and world coordinates, see the [AstroImages.jl documentation](http://juliaastro.org/AstroImages/stable/).
 
-For more on plotting in general, see the [Plots.jl documentation](https://docs.juliaplots.org/latest/).
+For more on plotting in general, see the [Plots.jl documentation](https://docs.juliaplots.org/stable/).
