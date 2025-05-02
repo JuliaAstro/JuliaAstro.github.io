@@ -107,7 +107,7 @@ docs = [
         name = "Home",
         fix_canonical_url = false,
     ),
-    map(JuliaAstroDocs.ecosystem) do (highlevel, packages)
+    map(pairs(JuliaAstroDocs.ecosystem)) do (highlevel, packages)
         MultiDocumenter.DropdownNav(
             highlevel,
             collect(generate_multidoc_refs.(packages))
@@ -138,7 +138,6 @@ MultiDocumenter.make(
 #     joinpath(assets_dir, "logo.svg");
 #     verbose = true,
 # )
-@info "Final build done"
 
 @info "Deploying docs"
 deploydocs(;
