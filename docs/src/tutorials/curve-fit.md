@@ -141,7 +141,7 @@ julia> plot!(x, yfit, label="best fit")
 ![](../assets/tutorials/curve-fit/linear-regression.svg)
 
 
-The packages [LsqFit](https://julianlsolvers.github.io/LsqFit.jl/latest/) and [GLM](https://juliastats.org/GLM.jl/v0.11/#Minimal-examples-1) (for generalized linear models) contain functions for performing and evaluating these types of linear fits.
+The packages [LsqFit](https://julianlsolvers.github.io/LsqFit.jl/dev/) and [GLM](https://juliastats.org/GLM.jl/v0.11/#Minimal-examples-1) (for generalized linear models) contain functions for performing and evaluating these types of linear fits.
 
 ## (Non-)linear curve fit
 
