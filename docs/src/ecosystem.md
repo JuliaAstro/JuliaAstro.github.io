@@ -21,7 +21,7 @@ The joy of our community is the many astronomy and astrophysics packages availab
 
 [![curly braces](assets/code.png) Repository](https://github.com/JuliaAstro/CFITSIO.jl)
 
-[![book icon](assets/book.png) Documentation](https://juliaastro.org/FITSIO/stable/)
+[![book icon](assets/book.png) Documentation](https://juliaastro.org/CFITSIO/stable/)
 
 **Reading and writing FITS files**
 
