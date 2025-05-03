@@ -10,7 +10,7 @@ import JuliaAstroDocs
 
 ecos = JuliaAstroDocs.ecosystem
 
-packages_juliaastro = Iterators.filter(p for (h, ps) in ecos for p in ps) do package
+packages_juliaastro = Iterators.filter(p for (h, ps) in pairs(ecos) for p in ps) do package
     occursin("juliaastro", lowercase(package.repo))
 end |> unique |> sort
 
