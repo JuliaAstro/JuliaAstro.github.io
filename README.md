@@ -22,16 +22,10 @@ Typo fixes or suggested changes to existing prose is appreciated! The most direc
 
 ### 2. Adding a package to our [Ecosystems page](https://juliaastro.org/home/ecosystem/)
 
-Our Ecosystem page is integrated with the rest of the site, including the global navbar dropdown menu across the top, and in our [integration testing suite](https://github.com/JuliaAstro/JuliaAstro.github.io/actions/workflows/CI.yml). To add a package, include the following metadata for it in the [`JuliaAstroDocs.jl > ecosystem`](https://github.com/JuliaAstro/JuliaAstro.github.io/blob/bca19e11cdfa47014786686ae96a6e02d87ff4b8/src/JuliaAstroDocs.jl#L14) data structure:
-
-* `name`: package name
-* `repo`: url of package repo 
-* `doc`: url of package docs
-* `tagline`: brief summary of what package does
-* `descr`: an extended description of what package does
+Our Ecosystem page is integrated with the rest of the site, including the global navbar dropdown menu across the top, and in our [integration testing suite](https://github.com/JuliaAstro/JuliaAstro.github.io/actions/workflows/CI.yml). To add a package, include an entry in [`docs/src/ecosystem.md`](https://github.com/JuliaAstro/JuliaAstro.github.io/blob/source/docs/src/ecosystem.md), following the same format as the other packages.
 
 > [!NOTE]
-> See the packages already included in this structure for examples. Note that it is organized in the same order as the top level dropdown menus on the site, alphabetically by package name. Packages under the JuliaAstro organization are listed as their bare name, while packages outside of the organization have their parent repo name prepended to it, e.g., `eschnett/ASDF2.jl`.
+> This page determines the order of the top level dropdown menus on the site, alphabetically by package name. Packages under the JuliaAstro organization are listed as their bare name, while packages outside of the organization have their parent repo name prepended to it, e.g., `eschnett/ASDF2.jl`.
 
 ### 2a. Adding a package to our [Comparison with Astropy page](https://juliaastro.org/home/comparison/)
 
@@ -57,15 +51,7 @@ julia> using LiveServer
 julia> servedocs(; include_dirs=["./src/"], launch_browser=true)
 ```
 
-> [!NOTE]
-> If making changes in `JuliaAstroDocs.jl`, run the following in a separate process to sync markdown files:
-> ```julia
-> using JuliaAstroDocs
->
-> JuliaAstroDocs.write_ecosystem()
-> ```
-
 > [!TIP]
-> If just making simple markdown changes, you can shorten the build time between edits by commenting out the call to `MultiDocumenter.make` in `./docs/make.jl`. This disables the MultiDocumenter.jl repo-cloning and top navbar build process, and can be done without needing to restart your `LiveServer` session.
+> If just making simple markdown changes, you can shorten the build time between edits by commenting out the call to `MultiDocumenter.make` in [`./docs/make.jl`](https://github.com/JuliaAstro/JuliaAstro.github.io/blob/source/docs/make.jl). This disables the MultiDocumenter.jl repo-cloning and top navbar build process, and can be done without needing to restart your `LiveServer` session.
 
 See our [Contributing page](https://juliaastro.org/home/#Contributing) for more.
