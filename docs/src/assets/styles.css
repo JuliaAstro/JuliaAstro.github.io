@@ -9,5 +9,5 @@ table.compare td {
      * The `!important` property is to keep Documenter.jl's custom
      * themes from overriding things
      * */
-    vertical-align: text-bottom !important;
+    vertical-align: middle !important;
 }
