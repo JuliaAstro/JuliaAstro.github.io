@@ -119,6 +119,18 @@ The joy of our community is the many astronomy and astrophysics packages availab
 - Read interferometric visibilities (`uvfits`), images (`fits`), and source models
 - Minimal writing support for source models
 
+
+### JuliaAPlavin/VOTables.jl
+
+[![curly braces](assets/code.png) Repository](https://github.com/JuliaAPlavin/VOTables.jl)
+
+[![book icon](assets/book.png) Documentation](https://github.com/JuliaAPlavin/VOTables.jl)
+
+**Read and write VOTable files**
+
+- Text and binary VOTables support
+- Read Unitful numbers and column metadata
+
 ---
 
 ## Images
@@ -232,6 +244,19 @@ The joy of our community is the many astronomy and astrophysics packages availab
 - Morphological operations (rotation, stacking, shifting)
 - Masking routines (circles, annulus, series of annuli)
 - Spectral scaling and descaling
+
+
+### JuliaAPlavin/SkyImages.jl
+
+[![curly braces](assets/code.png) Repository](https://github.com/JuliaAPlavin/SkyImages.jl)
+
+[![book icon](assets/book.png) Documentation](https://aplavin.github.io/SkyImages.jl/test/notebook.html)
+
+**Load astronomical images of the sky and process them with convenient, general, and composable functions.**
+
+- FITS WCS and Healpix images
+- Uniform interface and Makie plotting
+- Work as-is or project onto a rectangular grid
 
 ---
 
