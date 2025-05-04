@@ -256,7 +256,7 @@ The joy of our community is the many astronomy and astrophysics packages availab
 
 - FITS WCS and Healpix images
 - Uniform interface and Makie plotting
-- Work as-is or project onto a rectangular grid
+- Use original data as-is or project onto a rectangular grid
 
 ---
 
