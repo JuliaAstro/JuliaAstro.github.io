@@ -2,7 +2,7 @@
 
 Tables are a common way to represent various forms of catalogs. One common format for storing this data in astronomy is as a FITS file.
 
-In these examples, we will fetch and load the Hipparcos-GAIA Catalog of Accelerations [(HGCA, Brandt et al 2021])](https://iopscience.iop.org/article/10.3847/1538-4365/abf93c).
+In these examples, we will fetch and load the Hipparcos-GAIA Catalog of Accelerations [(HGCA, Brandt et al 2021)](https://iopscience.iop.org/article/10.3847/1538-4365/abf93c).
 This catalog cross matches stars from the Hipparcos and GAIA catalogs in order to calculate the long term astrometric proper motion anomaly; that is, the star's deviation from straight line motion in the plane of the sky over the ~20 baseline between the two missions.
 
 A wide range of tabular data formats are supported in Julia under a common [Tables.jl interface](https://tables.juliadata.org). For example, 
@@ -11,13 +11,19 @@ A wide range of tabular data formats are supported in Julia under a common [Tabl
 
 ## Packages
 
-* [`FITSIO`](http://juliaastro.org/FITSIO.jl/stable/): we'll use this package to load a table stored in a FITS file
+* [`FITSIO`](http://juliaastro.org/FITSIO/stable/): we'll use this package to load a table stored in a FITS file
 * [`DataFrames`](https://dataframes.juliadata.org/stable/): we'll use this package to examine and manipulate the table
-* [`Plots`](https://docs.juliaplots.org/latest/): we'll use this package to visualize the contents of the table
-* [`AstroLib`](https://juliaastro.org/AstroLib.jl/stable/): general utility package. We'll use a helper function to compute a map projection.
+* [`Plots`](https://docs.juliaplots.org/stable/): we'll use this package to visualize the contents of the table
+* [`AstroLib`](https://juliaastro.org/AstroLib/stable/): general utility package. We'll use a helper function to compute a map projection.
 
-You can install the necessary packages by running Julia, and typing `]` to enter Pkg-mode. Then: `add FITSIO DataFrames Plots AstroLib`.
-Alternatively, you can run `using Pkg; Pkg.add(["FITSIO", "DataFrames", "Plots", "AstroLib"])`.
+You can install the necessary packages by running Julia, and typing `]` to enter Pkg-mode. Then:
+```julia-repl
+pkg> add FITSIO DataFrames Plots AstroLib
+```
+Alternatively, you can run
+```julia
+using Pkg; Pkg.add(["FITSIO", "DataFrames", "Plots", "AstroLib"])
+```
 
 If you will be using these tools as part of a larger project, it's strongly recommended to create a [Julia Project](https://pkgdocs.julialang.org/v1/environments/) to record package versions.  If you're just experimenting, you can create a temporary project by running `] activate --temp`.
 
@@ -29,7 +35,7 @@ If you're using [Pluto notebooks](https://github.com/fonsp/Pluto.jl), installing
 
 The table in question is hosted alongside the [article](https://iopscience.iop.org/article/10.3847/1538-4365/abf93c). Go to Table 4 and click the link at the bottom to download it in FITS format. You'll need to uncompress the archive to see the `HGCA_vEDR3.fits` file.
 
-FITS tables can be loaded using the [FITSIO](http://juliaastro.org/FITSIO.jl/stable/) package or the [AstroImages](http://juliaastro.org/AstroImages.jl/dev/) package which wraps it.
+FITS tables can be loaded using the [FITSIO](http://juliaastro.org/FITSIO/stable/) package or the [AstroImages](http://juliaastro.org/AstroImages/stable/) package which wraps it.
 
 
 ## Loading the table
@@ -184,9 +190,9 @@ julia> scatter(
 )
 ```
 
-Let's improve this plot by using a different map projection. We can make this conversion using [AstroLib.jl](https://juliaastro.org/AstroLib.jl/stable/).
+Let's improve this plot by using a different map projection. We can make this conversion using [AstroLib.jl](https://juliaastro.org/AstroLib/stable/).
 
-The function [`aitoff`](https://juliaastro.org/AstroLib.jl/stable/ref/#AstroLib.aitoff-Tuple{Real,%20Real}) takes longitude and latitude (or in this case, right-ascension and delcination) and returns a new position using an Aitoff projection.
+The function [`AstroLib.aitoff`](@extref) takes longitude and latitude (or in this case, right-ascension and delcination) and returns a new position using an Aitoff projection.
 
 ```julia-repl
 julia> using AstroLib
@@ -232,4 +238,4 @@ julia> scatter(
 We can save the plot using `savefig("myplot.pdf")`. `png`, `svg`, and other formats are also supported.
 
 
-For more on plotting in general, see the [Plots.jl documentation](https://docs.juliaplots.org/latest/).
+For more on plotting in general, see the [Plots.jl documentation](https://docs.juliaplots.org/stable/).

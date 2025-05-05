@@ -4,10 +4,14 @@ p > a > img {
     vertical-align: text-bottom;
 }
 
+table.compare tbody > tr:last-child {
+    border-bottom: solid grey !important;
+}
+
 table.compare td {
     /* Vertically align entries in the astropy comparison table.
      * The `!important` property is to keep Documenter.jl's custom
      * themes from overriding things
      * */
-    vertical-align: text-bottom !important;
+    vertical-align: middle !important;
 }

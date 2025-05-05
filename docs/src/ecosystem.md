@@ -10,7 +10,7 @@ The joy of our community is the many astronomy and astrophysics packages availab
 
 [![curly braces](assets/code.png) Repository](https://github.com/JuliaAstro/AstroImages.jl)
 
-[![book icon](assets/book.png) Documentation](https://juliaastro.github.io/AstroImages.jl/stable/)
+[![book icon](assets/book.png) Documentation](https://juliaastro.org/AstroImages/stable/)
 
 **Load, manipulate, and visualize astronomical images**
 
@@ -21,7 +21,7 @@ The joy of our community is the many astronomy and astrophysics packages availab
 
 [![curly braces](assets/code.png) Repository](https://github.com/JuliaAstro/CFITSIO.jl)
 
-[![book icon](assets/book.png) Documentation](https://juliaastro.github.io/FITSIO.jl/stable/)
+[![book icon](assets/book.png) Documentation](https://juliaastro.org/CFITSIO/stable/)
 
 **Reading and writing FITS files**
 
@@ -33,7 +33,7 @@ The joy of our community is the many astronomy and astrophysics packages availab
 
 [![curly braces](assets/code.png) Repository](https://github.com/JuliaAstro/FITSIO.jl)
 
-[![book icon](assets/book.png) Documentation](https://juliaastro.github.io/FITSIO.jl/stable/)
+[![book icon](assets/book.png) Documentation](https://juliaastro.org/FITSIO/stable/)
 
 **Reading and writing FITS files**
 
@@ -119,6 +119,18 @@ The joy of our community is the many astronomy and astrophysics packages availab
 - Read interferometric visibilities (`uvfits`), images (`fits`), and source models
 - Minimal writing support for source models
 
+
+### JuliaAPlavin/VOTables.jl
+
+[![curly braces](assets/code.png) Repository](https://github.com/JuliaAPlavin/VOTables.jl)
+
+[![book icon](assets/book.png) Documentation](https://github.com/JuliaAPlavin/VOTables.jl)
+
+**Read and write VOTable files**
+
+- Text and binary VOTables support
+- Read Unitful numbers and column metadata
+
 ---
 
 ## Images
@@ -127,7 +139,7 @@ The joy of our community is the many astronomy and astrophysics packages availab
 
 [![curly braces](assets/code.png) Repository](https://github.com/JuliaAstro/AstroImages.jl)
 
-[![book icon](assets/book.png) Documentation](https://juliaastro.github.io/AstroImages.jl/stable/)
+[![book icon](assets/book.png) Documentation](https://juliaastro.org/AstroImages/stable/)
 
 **Load, manipulate, and visualize astronomical images**
 
@@ -138,7 +150,7 @@ The joy of our community is the many astronomy and astrophysics packages availab
 
 [![curly braces](assets/code.png) Repository](https://github.com/JuliaAstro/CCDReduction.jl)
 
-[![book icon](assets/book.png) Documentation](https://juliaastro.github.io/CCDReduction.jl/stable/)
+[![book icon](assets/book.png) Documentation](https://juliaastro.org/CCDReduction/stable/)
 
 **Common CCD image processing routines**
 
@@ -151,7 +163,7 @@ The joy of our community is the many astronomy and astrophysics packages availab
 
 [![curly braces](assets/code.png) Repository](https://github.com/JuliaAstro/LACosmic.jl)
 
-[![book icon](assets/book.png) Documentation](https://juliaastro.github.io/LACosmic.jl/stable/)
+[![book icon](assets/book.png) Documentation](https://juliaastro.org/LACosmic/stable/)
 
 **Cosmic-ray rejection by Laplacian edge detection**
 
@@ -163,7 +175,7 @@ The joy of our community is the many astronomy and astrophysics packages availab
 
 [![curly braces](assets/code.png) Repository](https://github.com/JuliaAstro/Photometry.jl)
 
-[![book icon](assets/book.png) Documentation](https://juliaastro.github.io/Photometry.jl/stable/)
+[![book icon](assets/book.png) Documentation](https://juliaastro.org/Photometry/stable/)
 
 **Aperture photometry**
 
@@ -175,7 +187,7 @@ The joy of our community is the many astronomy and astrophysics packages availab
 
 [![curly braces](assets/code.png) Repository](https://github.com/JuliaAstro/PSFModels.jl)
 
-[![book icon](assets/book.png) Documentation](https://juliaastro.github.io/PSFModels.jl/stable/)
+[![book icon](assets/book.png) Documentation](https://juliaastro.org/PSFModels/stable/)
 
 **Analytical, allocation-free point-spread-functions (PSF)**
 
@@ -198,7 +210,7 @@ The joy of our community is the many astronomy and astrophysics packages availab
 
 [![curly braces](assets/code.png) Repository](https://github.com/JuliaAstro/SAOImageDS9.jl)
 
-[![book icon](assets/book.png) Documentation](https://juliaastro.github.io/SAOImageDS9.jl/stable/)
+[![book icon](assets/book.png) Documentation](https://juliaastro.org/SAOImageDS9/stable/)
 
 **Interface with the DS9 image viewer**
 
@@ -233,6 +245,19 @@ The joy of our community is the many astronomy and astrophysics packages availab
 - Masking routines (circles, annulus, series of annuli)
 - Spectral scaling and descaling
 
+
+### JuliaAPlavin/SkyImages.jl
+
+[![curly braces](assets/code.png) Repository](https://github.com/JuliaAPlavin/SkyImages.jl)
+
+[![book icon](assets/book.png) Documentation](https://aplavin.github.io/SkyImages.jl/test/notebook.html)
+
+**Load astronomical images of the sky and process them with convenient, general, and composable functions.**
+
+- FITS WCS and Healpix images
+- Uniform interface and Makie plotting
+- Use original data as-is or project onto a rectangular grid
+
 ---
 
 ## Time, Coords, Units
@@ -241,7 +266,7 @@ The joy of our community is the many astronomy and astrophysics packages availab
 
 [![curly braces](assets/code.png) Repository](https://github.com/JuliaAstro/AstroAngles.jl)
 
-[![book icon](assets/book.png) Documentation](https://juliaastro.org/AstroAngles.jl/dev/)
+[![book icon](assets/book.png) Documentation](https://juliaastro.org/AstroAngles/stable/)
 
 **String parsing and representation of angles**
 
@@ -253,7 +278,7 @@ The joy of our community is the many astronomy and astrophysics packages availab
 
 [![curly braces](assets/code.png) Repository](https://github.com/JuliaAstro/AstroTime.jl)
 
-[![book icon](assets/book.png) Documentation](https://juliaastro.github.io/AstroTime.jl/stable/)
+[![book icon](assets/book.png) Documentation](https://juliaastro.org/AstroTime/stable/)
 
 **Astronomical time keeping**
 
@@ -276,7 +301,7 @@ The joy of our community is the many astronomy and astrophysics packages availab
 
 [![curly braces](assets/code.png) Repository](https://github.com/JuliaAstro/SkyCoords.jl)
 
-[![book icon](assets/book.png) Documentation](https://juliaastro.org/SkyCoords.jl/stable/)
+[![book icon](assets/book.png) Documentation](https://juliaastro.org/SkyCoords/stable/)
 
 **Astronomical coordinate systems**
 
@@ -288,7 +313,7 @@ The joy of our community is the many astronomy and astrophysics packages availab
 
 [![curly braces](assets/code.png) Repository](https://github.com/JuliaAstro/SPICE.jl)
 
-[![book icon](assets/book.png) Documentation](https://juliaastro.org/SPICE.jl/stable/)
+[![book icon](assets/book.png) Documentation](https://juliaastro.org/SPICE/stable/)
 
 **SPICE data retrieval and usage**
 
@@ -300,7 +325,7 @@ The joy of our community is the many astronomy and astrophysics packages availab
 
 [![curly braces](assets/code.png) Repository](https://github.com/JuliaAstro/UnitfulAstro.jl)
 
-[![book icon](assets/book.png) Documentation](https://juliaastro.github.io/UnitfulAstro.jl/stable/)
+[![book icon](assets/book.png) Documentation](https://juliaastro.org/UnitfulAstro/stable/)
 
 **Astronomical units**
 
@@ -311,7 +336,7 @@ The joy of our community is the many astronomy and astrophysics packages availab
 
 [![curly braces](assets/code.png) Repository](https://github.com/JuliaAstro/WCS.jl)
 
-[![book icon](assets/book.png) Documentation](https://juliaastro.github.io/WCS.jl/stable/)
+[![book icon](assets/book.png) Documentation](https://juliaastro.org/WCS/stable/)
 
 **World Coordinate System transformations**
 
@@ -325,7 +350,7 @@ The joy of our community is the many astronomy and astrophysics packages availab
 
 [![curly braces](assets/code.png) Repository](https://github.com/JuliaAstro/EarthOrientation.jl)
 
-[![book icon](assets/book.png) Documentation](https://juliaastro.github.io/EarthOrientation.jl/stable/)
+[![book icon](assets/book.png) Documentation](https://juliaastro.org/EarthOrientation/stable/)
 
 **Earth orientation parameters**
 
@@ -336,7 +361,7 @@ The joy of our community is the many astronomy and astrophysics packages availab
 
 [![curly braces](assets/code.png) Repository](https://github.com/JuliaAstro/Transits.jl)
 
-[![book icon](assets/book.png) Documentation](https://juliaastro.github.io/Transits.jl/stable/)
+[![book icon](assets/book.png) Documentation](https://juliaastro.org/Transits/stable/)
 
 **Flexible photometric transit curves with limb darkening**
 
@@ -395,7 +420,7 @@ The joy of our community is the many astronomy and astrophysics packages availab
 
 [![curly braces](assets/code.png) Repository](https://github.com/JuliaAstro/astrolib.jl)
 
-[![book icon](assets/book.png) Documentation](https://juliaastro.github.io/AstroLib.jl/stable/)
+[![book icon](assets/book.png) Documentation](https://juliaastro.org/AstroLib/stable/)
 
 **Collection of generic astronomical and astrophysical functions**
 
@@ -406,7 +431,7 @@ The joy of our community is the many astronomy and astrophysics packages availab
 
 [![curly braces](assets/code.png) Repository](https://github.com/JuliaAstro/BoxLeastSquares.jl)
 
-[![book icon](assets/book.png) Documentation](https://juliaastro.github.io/BoxLeastSquares.jl/stable/)
+[![book icon](assets/book.png) Documentation](https://juliaastro.org/BoxLeastSquares/stable/)
 
 **Compute box-least-squares periodogram**
 
@@ -419,7 +444,7 @@ The joy of our community is the many astronomy and astrophysics packages availab
 
 [![curly braces](assets/code.png) Repository](https://github.com/JuliaAstro/Cosmology.jl)
 
-[![book icon](assets/book.png) Documentation](https://juliaastro.github.io/Cosmology.jl/stable/)
+[![book icon](assets/book.png) Documentation](https://juliaastro.org/Cosmology/stable/)
 
 **Distances in the universe**
 
@@ -432,7 +457,7 @@ The joy of our community is the many astronomy and astrophysics packages availab
 
 [![curly braces](assets/code.png) Repository](https://github.com/JuliaAstro/DustExtinction.jl)
 
-[![book icon](assets/book.png) Documentation](https://juliaastro.github.io/DustExtinction.jl/stable/)
+[![book icon](assets/book.png) Documentation](https://juliaastro.org/DustExtinction/stable/)
 
 **Dust extinction laws and maps**
 
@@ -445,7 +470,7 @@ The joy of our community is the many astronomy and astrophysics packages availab
 
 [![curly braces](assets/code.png) Repository](https://github.com/JuliaAstro/LombScargle.jl)
 
-[![book icon](assets/book.png) Documentation](https://juliaastro.github.io/LombScargle.jl/stable/)
+[![book icon](assets/book.png) Documentation](https://juliaastro.org/LombScargle/stable/)
 
 **Compute Lomb-Scargle periodogram**
 
@@ -457,7 +482,7 @@ The joy of our community is the many astronomy and astrophysics packages availab
 
 [![curly braces](assets/code.png) Repository](https://github.com/JuliaAstro/Photometry.jl)
 
-[![book icon](assets/book.png) Documentation](https://juliaastro.github.io/Photometry.jl/stable/)
+[![book icon](assets/book.png) Documentation](https://juliaastro.org/Photometry/stable/)
 
 **Aperture photometry**
 
@@ -469,7 +494,7 @@ The joy of our community is the many astronomy and astrophysics packages availab
 
 [![curly braces](assets/code.png) Repository](https://github.com/JuliaAstro/Spectra.jl)
 
-[![book icon](assets/book.png) Documentation](https://juliaastro.github.io/Spectra.jl/stable)
+[![book icon](assets/book.png) Documentation](https://juliaastro.org/Spectra/stable)
 
 **Utilities for interfacing with astronomical spectra and synthetic spectra libraries**
 
