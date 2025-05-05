@@ -1,9 +1,8 @@
 module JuliaAstroDocs
 
-import CommonMark as CM
 using TypedTables, SplitApplyCombine
 
-ecosystem = (
+ecosystem() = (
     # Data I/O
     (
         highlevel = "Data I/O",
@@ -334,7 +333,7 @@ ecosystem = (
         name = "UnitfulAstro.jl",
         repo = "https://github.com/JuliaAstro/UnitfulAstro.jl",
         doc = "https://juliaastro.org/UnitfulAstro/stable/",
-        tagline = "Astronomical units",
+        tagline = "Astronomical units and things",
         descr = """
         - Extension of [Unitful.jl](https://github.com/painterqubits/Unitful.jl)
         """,
@@ -655,64 +654,8 @@ ecosystem = (
         """,
         astropy = ["specreduce", "specutils"],
     ),
-)
+) |> Table
 
-# Write comparison.md
 stake! = String ∘ take!
-
-t = Table(ecosystem)
-
-package_row(p) = """
-<tr>
-  <td><a href="$(p.repo)">$(p.name)</a></td>
-  <td>$(p.tagline)</td>
-</tr>
-"""
-
-function package_section(t, astropy_module, astropy_url)
-    io = IOBuffer()
-    t_astropy = filter(x -> astropy_module in x.astropy, t)
-    write(io, """
-      <tr>
-        <td rowspan=$(length(t_astropy)+1)>
-          <a href="$(astropy_url)"><code>$(astropy_module)</code></a>
-       </td>
-      </tr>
-    """)
-
-    for p in t_astropy 
-      write(io, package_row(p))
-    end
-
-    stake!(io)
-end
-
-fpath = joinpath(dirname(@__DIR__), "docs", "src", "comparison.md")
-
-open(fpath, "w") do io
-    @info "Updating" fpath
-    write(io, """
-    ```@raw html
-    <table class="compare">
-      <thead>
-        <tr>
-          <th>Python</th>
-          <th>Julia</th>
-          <th>Description</th>
-        </tr>
-      </thead>
-      <tbody>\n
-    """)
-
-    write(io, package_section(t, "astropy.constants", "https://docs.astropy.org/en/stable/constants/index.html"), "\n")
-
-    write(io, package_section(t, "astropy.units", "https://docs.astropy.org/en/stable/units/index.html"), "\n")
-
-    write(io, package_section(t, "astropy.nddata", "https://docs.astropy.org/en/stable/nddata/index.html"), "\n")
-
-    write(io, "</table>", "\n")
-
-    write(io, "```")
-end
 
 end

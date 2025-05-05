@@ -1,3 +1,14 @@
+# Comparison with Astropy
+
+We highlight some of the major packages in Python's `astropy` ecosystem and their corresponding implementations in the Julia ecosystem. This is an actively evolving document, and suggested additions are welcomed.
+
+!!! note "Affiliated/coordinated packages in Julia"
+    While there is a clear demarcation between core, coordinated, and affiliated packages in Python, this is not really the case in Julia. Composability is a [core feature](https://julialang.org/) of the language, allowing for interactions between packages to occur fairly naturally.
+
+## Astropy [core packages](https://docs.astropy.org/en/stable/index_user_docs.html)
+
+### Data structures and transformations
+
 ```@raw html
 <table class="compare">
   <thead>
@@ -16,7 +27,7 @@
   </tr>
 <tr>
   <td><a href="https://github.com/JuliaAstro/UnitfulAstro.jl">UnitfulAstro.jl</a></td>
-  <td>Astronomical units</td>
+  <td>Astronomical units and things</td>
 </tr>
 <tr>
   <td><a href="https://github.com/SymbolicML/DynamicQuantities.jl">SymbolicML/DynamicQuantities.jl</a></td>
@@ -38,7 +49,7 @@
   </tr>
 <tr>
   <td><a href="https://github.com/JuliaAstro/UnitfulAstro.jl">UnitfulAstro.jl</a></td>
-  <td>Astronomical units</td>
+  <td>Astronomical units and things</td>
 </tr>
 <tr>
   <td><a href="https://github.com/SymbolicML/DynamicQuantities.jl">SymbolicML/DynamicQuantities.jl</a></td>

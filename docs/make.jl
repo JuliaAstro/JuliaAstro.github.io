@@ -5,6 +5,9 @@ Revise.revise()
 
 import JuliaAstroDocs
 
+# Write comparison.md
+include(joinpath(@__DIR__, "src", "comparison.jl"))
+
 # Prefer online docs, use local as fallback
 links = InterLinks(
     "AstroImages" => (
