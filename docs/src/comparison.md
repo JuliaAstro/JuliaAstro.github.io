@@ -136,10 +136,14 @@ We highlight some of the major packages in Python's `astropy` ecosystem and thei
 
 
     <tr>
-      <td rowspan="3">
+      <td rowspan="4">
         <a href="https://docs.astropy.org/en/stable/modeling/index.html"><code>astropy.modeling</code></a>
       </td>
 
+      <td><a href="https://github.com/gcalderone/GModelFit.jl">gcalderone/GModelFit.jl</a></td>
+      <td>A data-driven model fitting framework</td>
+    </tr>
+    <tr>
       <td><a href="http://jump.dev/JuMP.jl/">jump-dev/JuMP.jl</a></td>
       <td>Modeling language for Mathematical Optimization.</td>
     </tr>

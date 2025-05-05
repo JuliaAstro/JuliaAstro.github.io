@@ -511,6 +511,16 @@ The joy of our community is the many astronomy and astrophysics packages availab
 
 - Implements the location, scale, midvariance, midcovariance, and midcorrelation statistics
 
+### gcalderone/GModelFit.jl
+
+[![curly braces](assets/code.png) Repository](https://github.com/gcalderone/GModelFit.jl)
+
+[![book icon](assets/book.png) Documentation](https://gcalderone.github.io/GModelFit.jl/)
+
+**A data-driven model fitting framework**
+
+- `GModelFit` is a general purpose, data-driven model fitting framework for Julia.
+
 
 ### ziotom78/Healpix.jl
 
