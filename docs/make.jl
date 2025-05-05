@@ -99,35 +99,35 @@ function generate_multidoc_refs(p; clonedir=joinpath(@__DIR__, "clones"))
     end
 end
 
-docs = [
-    # We also add JuliaAstro's own generated pages
-    MultiDocumenter.MultiDocRef(
-        upstream = joinpath(@__DIR__, "build"),
-        path = "home",
-        name = "Home",
-        fix_canonical_url = false,
-    ),
-    map(pairs(JuliaAstroDocs.ecosystem)) do (highlevel, packages)
-        MultiDocumenter.DropdownNav(
-            highlevel,
-            collect(generate_multidoc_refs.(packages))
-        )
-    end...
-]
+#docs = [
+#    # We also add JuliaAstro's own generated pages
+#    MultiDocumenter.MultiDocRef(
+#        upstream = joinpath(@__DIR__, "build"),
+#        path = "home",
+#        name = "Home",
+#        fix_canonical_url = false,
+#    ),
+#    map(JuliaAstroDocs.ecosystem) do (highlevel, packages)
+#        MultiDocumenter.DropdownNav(
+#            highlevel,
+#            collect(generate_multidoc_refs.(packages))
+#        )
+#    end...
+#]
 
-MultiDocumenter.make(
-    outpath,
-    docs;
-    assets_dir = "docs/src/assets",
-    search_engine = MultiDocumenter.SearchConfig(
-        index_versions = ["stable"],
-        engine = MultiDocumenter.FlexSearch
-    ),
-    rootpath = "/",
-    canonical_domain = "https://JuliaAstro.org/",
-    brand_image = MultiDocumenter.BrandImage(".", joinpath("assets", "logo.svg")),
-    sitemap = true,
-)
+#MultiDocumenter.make(
+#    outpath,
+#    docs;
+#    assets_dir = "docs/src/assets",
+#    search_engine = MultiDocumenter.SearchConfig(
+#        index_versions = ["stable"],
+#        engine = MultiDocumenter.FlexSearch
+#    ),
+#    rootpath = "/",
+#    canonical_domain = "https://JuliaAstro.org/",
+#    brand_image = MultiDocumenter.BrandImage(".", joinpath("assets", "logo.svg")),
+#    sitemap = true,
+#)
 @info "Aggregate build done"
 
 # Download logo

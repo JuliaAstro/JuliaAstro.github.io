@@ -1,8 +1,16 @@
-module JuliaAstroDocs
+### A Pluto.jl notebook ###
+# v0.20.8
 
-import CommonMark as CM
+using Markdown
+using InteractiveUtils
+
+# ╔═╡ 10ca0c38-6c3d-4d8f-8db7-bcfc844b5f58
 using TypedTables, SplitApplyCombine
 
+# ╔═╡ 27e444ee-3b56-4a8e-8be4-4f1cc535cad9
+using HypertextLiteral
+
+# ╔═╡ a8539a20-29dd-11f0-0f9a-515548f32a90
 ecosystem = (
     # Data I/O
     (
@@ -657,11 +665,55 @@ ecosystem = (
     ),
 )
 
-# Write comparison.md
-stake! = String ∘ take!
-
+# ╔═╡ 8e09606c-b8db-4185-b066-21e479dbd628
 t = Table(ecosystem)
 
+# ╔═╡ bdf897df-cacb-40fd-9619-3622ee5c872f
+tg = group(t.highlevel, t)
+
+# ╔═╡ 202248a0-a023-458a-a06f-e70493adc996
+tg_astropy = group(t.astropy, t)
+
+# ╔═╡ 1b82c328-5baf-4999-b377-2ebc58a6d6e3
+stake! = String ∘ take!
+
+# ╔═╡ f5f7d442-01aa-40dc-bf5e-f7fc385d1c57
+html"""
+<table class="compare">
+  <thead>
+    <tr>
+      <th>Python</th>
+      <th>Julia</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+
+    <tr>
+      <td rowspan=5>
+        <a href="https://docs.astropy.org/en/stable/constants/index.html"><code>astropy.constants</code></a>
+      </td>
+    </tr>
+        <tr>
+         <td><a href="https://ai.damtp.cam.ac.uk/dynamicquantities/stable">SymbolicML/DynamicQuantities.jl</a></td>
+        <td>Efficient and type-stable physical quantities in Julia.</td>
+        </tr>
+        <tr>
+          <td><a href="https://juliaphysics.github.io/PhysicalConstants.jl/stable/">JuliaPhysics/PhysicalConstants.jl</a></td>
+          <td>Common constants used in physics.</td>
+        </tr>
+        <tr>
+          <td><a href="https://painterqubits.github.io/Unitful.jl/stable/">PainterQubits/Unitful.jl</a></td>
+          <td>Generic units.</td>
+        </tr>
+        <tr>
+          <td><a href="https://juliaastro.org/UnitfulAstro/stable/">UnitfulAstro.jl</a></td>
+          <td>Astronomy specific units.</td>
+        </tr>
+</table>
+"""
+
+# ╔═╡ 4e8bcbaf-5bcd-4704-912f-12f6691c8fb5
 package_row(p) = """
 <tr>
   <td><a href="$(p.repo)">$(p.name)</a></td>
@@ -669,6 +721,7 @@ package_row(p) = """
 </tr>
 """
 
+# ╔═╡ 21b75231-dc54-4043-b091-4bf2f588979a
 function package_section(t, astropy_module, astropy_url)
     io = IOBuffer()
     t_astropy = filter(x -> astropy_module in x.astropy, t)
@@ -679,7 +732,7 @@ function package_section(t, astropy_module, astropy_url)
        </td>
       </tr>
     """)
-
+   
     for p in t_astropy 
       write(io, package_row(p))
     end
@@ -687,12 +740,10 @@ function package_section(t, astropy_module, astropy_url)
     stake!(io)
 end
 
-fpath = joinpath(dirname(@__DIR__), "docs", "src", "comparison.md")
-
-open(fpath, "w") do io
-    @info "Updating" fpath
+# ╔═╡ ebbd03b5-269c-4813-ad41-a61e551c8cf8
+yee = let
+    io = IOBuffer()
     write(io, """
-    ```@raw html
     <table class="compare">
       <thead>
         <tr>
@@ -710,9 +761,245 @@ open(fpath, "w") do io
 
     write(io, package_section(t, "astropy.nddata", "https://docs.astropy.org/en/stable/nddata/index.html"), "\n")
 
-    write(io, "</table>", "\n")
+    write(io, "</table>")
 
-    write(io, "```")
+    stake!(io) |> print
 end
 
-end
+# ╔═╡ fa22c537-909f-413a-b773-072ec75a7301
+html"""<table class="compare">
+  <thead>
+    <tr>
+      <th>Python</th>
+      <th>Julia</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+
+  <tr>
+    <td rowspan=5>
+      <a href="https://docs.astropy.org/en/stable/constants/index.html"><code>astropy.constants</code></a>
+   </td>
+  </tr>
+<tr>
+  <td><a href="https://github.com/JuliaAstro/UnitfulAstro.jl">UnitfulAstro.jl</a></td>
+  <td>Astronomical units</td>
+</tr>
+<tr>
+  <td><a href="https://github.com/SymbolicML/DynamicQuantities.jl">SymbolicML/DynamicQuantities.jl</a></td>
+  <td>Efficient and type-stable physical quantities in Julia</td>
+</tr>
+<tr>
+  <td><a href="https://github.com/JuliaPhysics/PhysicalConstants.jl">JuliaPhysics/PhysicalConstants.jl</a></td>
+  <td>Collection of fundamental physical constants with uncertainties</td>
+</tr>
+<tr>
+  <td><a href="https://github.com/PainterQubits/Unitful.jl">PainterQubits/Unitful.jl</a></td>
+  <td>Physical quantities with arbitrary units</td>
+</tr>
+
+  <tr>
+    <td rowspan=5>
+      <a href="https://docs.astropy.org/en/stable/units/index.html"><code>astropy.units</code></a>
+   </td>
+  </tr>
+<tr>
+  <td><a href="https://github.com/JuliaAstro/UnitfulAstro.jl">UnitfulAstro.jl</a></td>
+  <td>Astronomical units</td>
+</tr>
+<tr>
+  <td><a href="https://github.com/SymbolicML/DynamicQuantities.jl">SymbolicML/DynamicQuantities.jl</a></td>
+  <td>Efficient and type-stable physical quantities in Julia</td>
+</tr>
+<tr>
+  <td><a href="https://github.com/JuliaPhysics/PhysicalConstants.jl">JuliaPhysics/PhysicalConstants.jl</a></td>
+  <td>Collection of fundamental physical constants with uncertainties</td>
+</tr>
+<tr>
+  <td><a href="https://github.com/PainterQubits/Unitful.jl">PainterQubits/Unitful.jl</a></td>
+  <td>Physical quantities with arbitrary units</td>
+</tr>
+
+  <tr>
+    <td rowspan=1>
+      <a href="https://docs.astropy.org/en/stable/nddata/index.html"><code>astropy.nddata</code></a>
+   </td>
+  </tr>
+
+</table>
+    """
+
+# ╔═╡ 00000000-0000-0000-0000-000000000001
+PLUTO_PROJECT_TOML_CONTENTS = """
+[deps]
+HypertextLiteral = "ac1192a8-f4b3-4bfe-ba22-af5b92cd3ab2"
+SplitApplyCombine = "03a91e81-4c3e-53e1-a0a4-9c0c8f19dd66"
+TypedTables = "9d95f2ec-7b3d-5a63-8d20-e2491e220bb9"
+
+[compat]
+HypertextLiteral = "~0.9.5"
+SplitApplyCombine = "~1.2.3"
+TypedTables = "~1.4.6"
+"""
+
+# ╔═╡ 00000000-0000-0000-0000-000000000002
+PLUTO_MANIFEST_TOML_CONTENTS = """
+# This file is machine-generated - editing it directly is not advised
+
+julia_version = "1.11.5"
+manifest_format = "2.0"
+project_hash = "736e5a2dcae15817febe6188b48a5591e6b48020"
+
+[[deps.Adapt]]
+deps = ["LinearAlgebra", "Requires"]
+git-tree-sha1 = "f7817e2e585aa6d924fd714df1e2a84be7896c60"
+uuid = "79e6a3ab-5dfb-504d-930d-738a2a938a0e"
+version = "4.3.0"
+
+    [deps.Adapt.extensions]
+    AdaptSparseArraysExt = "SparseArrays"
+    AdaptStaticArraysExt = "StaticArrays"
+
+    [deps.Adapt.weakdeps]
+    SparseArrays = "2f01184e-e22b-5df5-ae63-d93ebab69eaf"
+    StaticArrays = "90137ffa-7385-5640-81b9-e52037218182"
+
+[[deps.Artifacts]]
+uuid = "56f22d72-fd6d-98f1-02f0-08ddc0907c33"
+version = "1.11.0"
+
+[[deps.CompilerSupportLibraries_jll]]
+deps = ["Artifacts", "Libdl"]
+uuid = "e66e0078-7015-5450-92f7-15fbd957f2ae"
+version = "1.1.1+0"
+
+[[deps.DataAPI]]
+git-tree-sha1 = "abe83f3a2f1b857aac70ef8b269080af17764bbe"
+uuid = "9a962f9c-6df0-11e9-0e5d-c546b8b5ee8a"
+version = "1.16.0"
+
+[[deps.DataValueInterfaces]]
+git-tree-sha1 = "bfc1187b79289637fa0ef6d4436ebdfe6905cbd6"
+uuid = "e2d170a0-9d28-54be-80f0-106bbe20a464"
+version = "1.0.0"
+
+[[deps.Dictionaries]]
+deps = ["Indexing", "Random", "Serialization"]
+git-tree-sha1 = "a86af9c4c4f33e16a2b2ff43c2113b2f390081fa"
+uuid = "85a47980-9c8c-11e8-2b9f-f7ca1fa99fb4"
+version = "0.4.5"
+
+[[deps.HypertextLiteral]]
+deps = ["Tricks"]
+git-tree-sha1 = "7134810b1afce04bbc1045ca1985fbe81ce17653"
+uuid = "ac1192a8-f4b3-4bfe-ba22-af5b92cd3ab2"
+version = "0.9.5"
+
+[[deps.Indexing]]
+git-tree-sha1 = "ce1566720fd6b19ff3411404d4b977acd4814f9f"
+uuid = "313cdc1a-70c2-5d6a-ae34-0150d3930a38"
+version = "1.1.1"
+
+[[deps.IteratorInterfaceExtensions]]
+git-tree-sha1 = "a3f24677c21f5bbe9d2a714f95dcd58337fb2856"
+uuid = "82899510-4779-5014-852e-03e436cf321d"
+version = "1.0.0"
+
+[[deps.Libdl]]
+uuid = "8f399da3-3557-5675-b5ff-fb832c97cbdb"
+version = "1.11.0"
+
+[[deps.LinearAlgebra]]
+deps = ["Libdl", "OpenBLAS_jll", "libblastrampoline_jll"]
+uuid = "37e2e46d-f89d-539d-b4ee-838fcccc9c8e"
+version = "1.11.0"
+
+[[deps.OpenBLAS_jll]]
+deps = ["Artifacts", "CompilerSupportLibraries_jll", "Libdl"]
+uuid = "4536629a-c528-5b80-bd46-f80d51c5b363"
+version = "0.3.27+1"
+
+[[deps.OrderedCollections]]
+git-tree-sha1 = "cc4054e898b852042d7b503313f7ad03de99c3dd"
+uuid = "bac558e1-5e72-5ebc-8fee-abe8a469f55d"
+version = "1.8.0"
+
+[[deps.Random]]
+deps = ["SHA"]
+uuid = "9a3f8284-a2c9-5f02-9a11-845980a1fd5c"
+version = "1.11.0"
+
+[[deps.Requires]]
+deps = ["UUIDs"]
+git-tree-sha1 = "62389eeff14780bfe55195b7204c0d8738436d64"
+uuid = "ae029012-a4dd-5104-9daa-d747884805df"
+version = "1.3.1"
+
+[[deps.SHA]]
+uuid = "ea8e919c-243c-51af-8825-aaa63cd721ce"
+version = "0.7.0"
+
+[[deps.Serialization]]
+uuid = "9e88b42a-f829-5b0c-bbe9-9e923198166b"
+version = "1.11.0"
+
+[[deps.SplitApplyCombine]]
+deps = ["Dictionaries", "Indexing"]
+git-tree-sha1 = "c06d695d51cfb2187e6848e98d6252df9101c588"
+uuid = "03a91e81-4c3e-53e1-a0a4-9c0c8f19dd66"
+version = "1.2.3"
+
+[[deps.TableTraits]]
+deps = ["IteratorInterfaceExtensions"]
+git-tree-sha1 = "c06b2f539df1c6efa794486abfb6ed2022561a39"
+uuid = "3783bdb8-4a98-5b6b-af9a-565f29a5fe9c"
+version = "1.0.1"
+
+[[deps.Tables]]
+deps = ["DataAPI", "DataValueInterfaces", "IteratorInterfaceExtensions", "OrderedCollections", "TableTraits"]
+git-tree-sha1 = "598cd7c1f68d1e205689b1c2fe65a9f85846f297"
+uuid = "bd369af6-aec1-5ad0-b16a-f7cc5008161c"
+version = "1.12.0"
+
+[[deps.Tricks]]
+git-tree-sha1 = "6cae795a5a9313bbb4f60683f7263318fc7d1505"
+uuid = "410a4b4d-49e4-4fbc-ab6d-cb71b17b3775"
+version = "0.1.10"
+
+[[deps.TypedTables]]
+deps = ["Adapt", "Dictionaries", "Indexing", "SplitApplyCombine", "Tables", "Unicode"]
+git-tree-sha1 = "84fd7dadde577e01eb4323b7e7b9cb51c62c60d4"
+uuid = "9d95f2ec-7b3d-5a63-8d20-e2491e220bb9"
+version = "1.4.6"
+
+[[deps.UUIDs]]
+deps = ["Random", "SHA"]
+uuid = "cf7118a7-6976-5b1a-9a39-7adc72f591a4"
+version = "1.11.0"
+
+[[deps.Unicode]]
+uuid = "4ec0a83e-493e-50e2-b9ac-8f72acf5a8f5"
+version = "1.11.0"
+
+[[deps.libblastrampoline_jll]]
+deps = ["Artifacts", "Libdl"]
+uuid = "8e850b90-86db-534c-a0d3-1478176c7d93"
+version = "5.11.0+0"
+"""
+
+# ╔═╡ Cell order:
+# ╠═a8539a20-29dd-11f0-0f9a-515548f32a90
+# ╠═8e09606c-b8db-4185-b066-21e479dbd628
+# ╠═bdf897df-cacb-40fd-9619-3622ee5c872f
+# ╠═202248a0-a023-458a-a06f-e70493adc996
+# ╠═1b82c328-5baf-4999-b377-2ebc58a6d6e3
+# ╠═10ca0c38-6c3d-4d8f-8db7-bcfc844b5f58
+# ╠═f5f7d442-01aa-40dc-bf5e-f7fc385d1c57
+# ╠═4e8bcbaf-5bcd-4704-912f-12f6691c8fb5
+# ╠═21b75231-dc54-4043-b091-4bf2f588979a
+# ╠═ebbd03b5-269c-4813-ad41-a61e551c8cf8
+# ╠═fa22c537-909f-413a-b773-072ec75a7301
+# ╠═27e444ee-3b56-4a8e-8be4-4f1cc535cad9
+# ╟─00000000-0000-0000-0000-000000000001
+# ╟─00000000-0000-0000-0000-000000000002
