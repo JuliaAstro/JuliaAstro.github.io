@@ -2,7 +2,7 @@
 
 Tables are a common way to represent various forms of catalogs. One common format for storing this data in astronomy is as a FITS file.
 
-In these examples, we will fetch and load the Hipparcos-GAIA Catalog of Accelerations [(HGCA, Brandt et al 2021])](https://iopscience.iop.org/article/10.3847/1538-4365/abf93c).
+In these examples, we will fetch and load the Hipparcos-GAIA Catalog of Accelerations [(HGCA, Brandt et al 2021)](https://iopscience.iop.org/article/10.3847/1538-4365/abf93c).
 This catalog cross matches stars from the Hipparcos and GAIA catalogs in order to calculate the long term astrometric proper motion anomaly; that is, the star's deviation from straight line motion in the plane of the sky over the ~20 baseline between the two missions.
 
 A wide range of tabular data formats are supported in Julia under a common [Tables.jl interface](https://tables.juliadata.org). For example, 
@@ -16,8 +16,14 @@ A wide range of tabular data formats are supported in Julia under a common [Tabl
 * [`Plots`](https://docs.juliaplots.org/stable/): we'll use this package to visualize the contents of the table
 * [`AstroLib`](https://juliaastro.org/AstroLib/stable/): general utility package. We'll use a helper function to compute a map projection.
 
-You can install the necessary packages by running Julia, and typing `]` to enter Pkg-mode. Then: `add FITSIO DataFrames Plots AstroLib`.
-Alternatively, you can run `using Pkg; Pkg.add(["FITSIO", "DataFrames", "Plots", "AstroLib"])`.
+You can install the necessary packages by running Julia, and typing `]` to enter Pkg-mode. Then:
+```julia-repl
+pkg> add FITSIO DataFrames Plots AstroLib
+```
+Alternatively, you can run
+```julia
+using Pkg; Pkg.add(["FITSIO", "DataFrames", "Plots", "AstroLib"])
+```
 
 If you will be using these tools as part of a larger project, it's strongly recommended to create a [Julia Project](https://pkgdocs.julialang.org/v1/environments/) to record package versions.  If you're just experimenting, you can create a temporary project by running `] activate --temp`.
 
