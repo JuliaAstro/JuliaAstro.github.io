@@ -373,19 +373,7 @@ We highlight some of the major packages in Python's `astropy` ecosystem and thei
 
     <tr>
       <td rowspan="2">
-        <a href="https://specreduce.readthedocs.io/"><code>specreduce</code></a>
-      </td>
-
-      <td><a href="https://juliaastro.org/Spectra/stable/">Spectra.jl</a></td>
-      <td>Utilities for interfacing with astronomical spectra and synthetic spectra libraries.</td>
-    </tr>
-    <tr>
-      <td><a href="https://fjebaker.github.io/SpectralFitting.jl/dev/">fjebaker/SpectralFitting.jl</a></td>
-      <td>✨🛰 Fast and flexible spectral fitting in Julia.</td>
-    </tr>
-
-    <tr>
-      <td rowspan="2">
+        <a href="https://specreduce.readthedocs.io/"><code>specreduce</code></a>,
         <a href="https://specutils.readthedocs.io/"><code>specutils</code></a>
       </td>
 
