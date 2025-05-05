@@ -39,6 +39,8 @@ If appropriate, we also appreciate a quick entry for your package that relates i
 
 * Repeat this process for the `Description` column, e.g., https://github.com/JuliaAstro/JuliaAstro.github.io/blob/42a87f2f2ed064c8da9cc97b2f215a4c1f978386/docs/src/comparison.md?plain=1#L35-L42
 
+* Don't forget to increment the `rowspan=` HTML attribute for the astropy package row!, e.g., https://github.com/JuliaAstro/JuliaAstro.github.io/blob/7059aa93d4e008e20512d59841baf90b8e80061f/docs/src/comparison.md?plain=1#L107
+
 ## Testing locally / developer docs
 
 Add [LiveServer.jl](https://github.com/JuliaDocs/LiveServer.jl) to your global env and then run the following in the `JuliaAstro.github.io/` folder:
