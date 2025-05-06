@@ -63,6 +63,17 @@ The joy of our community is the many astronomy and astrophysics packages availab
 - Uses [casacorecxx](https://github.com/torrance/casacorecxx) which uses [CxxWrap](https://github.com/JuliaInterop/CxxWrap.jl) to wrap the C++ Casacore codebase. These raw objects and methods are available in `Casacore.LibCasacore`
 
 
+### JuliaData/DataFrames.jl
+
+[![curly braces](assets/code.png) Repository](https://github.com/JuliaData/DataFrames.jl)
+
+[![book icon](assets/book.png) Documentation](https://dataframes.juliadata.org/stable/)
+
+**In-memory tabular data in Julia**
+
+- Tools for working with tabular data in Julia
+
+
 ### JuliaAPlavin/Difmap.jl
 
 [![curly braces](assets/code.png) Repository](https://github.com/JuliaAPlavin/Difmap.jl)
@@ -73,6 +84,18 @@ The joy of our community is the many astronomy and astrophysics packages availab
 
 - Execute [Difmap](http://www.ascl.net/1103.001) scripts, handle inputs/outputs and logs
 - Display images and plots from Difmap in interactive Julia environments
+
+
+### rafaqz/DimensionalData.jl
+
+[![curly braces](assets/code.png) Repository](https://github.com/rafaqz/DimensionalData.jl)
+
+[![book icon](assets/book.png) Documentation](https://rafaqz.github.io/DimensionalData.jl/stable/)
+
+**Named dimensions and indexing for julia arrays and other data**
+
+- DimensionalData.jl provides tools and abstractions for working with datasets that have named dimensions, and optionally a lookup index
+- It provides no-cost abstractions for named indexing, and fast index lookups
 
 
 ### emmt/EasyFITS.jl
@@ -380,6 +403,17 @@ The joy of our community is the many astronomy and astrophysics packages availab
 - They are defined as instances of the new `Constant` type, which is subtype of `AbstractQuantity` (from [`Unitful.jl`](https://github.com/PainterQubits/Unitful.jl) package) and can also be turned into `Measurement` objects (from [`Measurements.jl`](https://github.com/JuliaPhysics/Measurements.jl) package) at request
 
 
+### JuliaStats/TimeSeries.jl
+
+[![curly braces](assets/code.png) Repository](https://github.com/JuliaStats/TimeSeries.jl)
+
+[![book icon](assets/book.png) Documentation](https://juliastats.github.io/TimeSeries.jl/stable)
+
+**Time series toolkit for Julia**
+
+- TimeSeries aims to provide a lightweight framework for working with time series data in Julia
+
+
 ### PainterQubits/Unitful.jl
 
 [![curly braces](assets/code.png) Repository](https://github.com/PainterQubits/Unitful.jl)
@@ -563,6 +597,17 @@ The joy of our community is the many astronomy and astrophysics packages availab
 - Implements the location, scale, midvariance, midcovariance, and midcorrelation statistics
 
 
+### JuliaStats/Distributions.jl
+
+[![curly braces](assets/code.png) Repository](https://github.com/JuliaStats/Distributions.jl)
+
+[![book icon](assets/book.png) Documentation](https://juliastats.github.io/Distributions.jl/stable/)
+
+**A Julia package for probability distributions and associated functions**
+
+- A Julia package for probability distributions and associated functions
+
+
 ### ziotom78/Healpix.jl
 
 [![curly braces](assets/code.png) Repository](https://github.com/ziotom78/Healpix.jl)
@@ -576,6 +621,17 @@ The joy of our community is the many astronomy and astrophysics packages availab
 - plotting support
 
 
+### jump-dev/JuMP.jl
+
+[![curly braces](assets/code.png) Repository](https://github.com/jump-dev/JuMP.jl)
+
+[![book icon](assets/book.png) Documentation](http://jump.dev/JuMP.jl/)
+
+**Modeling language for Mathematical Optimization (linear, mixed-integer, conic, semidefinite, nonlinear)**
+
+- JuMP is a domain-specific modeling language for [mathematical optimization](https://en.wikipedia.org/wiki/Mathematical_optimization) embedded in [Julia](https://julialang.org/)
+
+
 ### ajwheeler/Korg.jl
 
 [![curly braces](assets/code.png) Repository](https://github.com/ajwheeler/Korg.jl)
@@ -584,6 +640,18 @@ The joy of our community is the many astronomy and astrophysics packages availab
 
 **Theoretical stellar spectra from 1D model atmospheres and linelists, assuming LTE**
 
+
+
+### JuliaPhysics/Measurements.jl
+
+[![curly braces](assets/code.png) Repository](https://github.com/JuliaPhysics/Measurements.jl)
+
+[![book icon](assets/book.png) Documentation](https://juliaphysics.github.io/Measurements.jl/stable/)
+
+**Error propagation calculator and library for physical measurements. It supports real and complex numbers with uncertainty, arbitrary precision calculations, operations with arrays, and numerical integration**
+
+-  [Measurements.jl](https://github.com/JuliaPhysics/Measurements.jl) relieves you from the hassle of propagating uncertainties coming from physical measurements, when performing mathematical operations involving them
+- The [linear error propagation theory](https://en.wikipedia.org/wiki/Propagation_of_uncertainty#Linear_combinations) is employed to propagate the errors
 
 
 ### ManuelBehrendt/Mera.jl
@@ -599,6 +667,28 @@ The joy of our community is the many astronomy and astrophysics packages availab
 - Many predefined functions and examples
 
 
+### MonteCarloMeasurements.jl
+
+[![curly braces](assets/code.png) Repository](https://github.com/baggepinnen/MonteCarloMeasurements.jl)
+
+[![book icon](assets/book.png) Documentation](https://baggepinnen.github.io/MonteCarloMeasurements.jl/stable/)
+
+**Propagation of distributions by Monte-Carlo sampling: Real number types with uncertainty represented by samples**
+
+-  This package facilitates working with probability distributions by means of Monte-Carlo methods, in a way that allows for propagation of probability distributions through functions
+
+
+### SciML/NonlinearSolve.jl
+
+[![curly braces](assets/code.png) Repository](https://github.com/SciML/NonlinearSolve.jl)
+
+[![book icon](assets/book.png) Documentation](https://docs.sciml.ai/NonlinearSolve/stable/)
+
+**High-performance and differentiation-enabled nonlinear solvers (Newton methods), bracketed rootfinding (bisection, Falsi), with sparsity and Newton-Krylov support**
+
+- Fast implementations of root finding algorithms in Julia that satisfy the SciML common interface
+
+
 ### fabienbaron/OITOOLS.jl
 
 [![curly braces](assets/code.png) Repository](https://github.com/fabienbaron/OITOOLS.jl)
@@ -609,6 +699,18 @@ The joy of our community is the many astronomy and astrophysics packages availab
 
 - OITOOLS is a Julia package to read, plot, model-fit and image optical interferometric data coming from astronomical arrays such as CHARA, VLTI, and NPOI
 - Note that despite having the same name as [JMMC's oitools](https://github.com/JMMC-OpenDev/oitools), they are completely unrelated and were developed independently
+
+
+### SciML/Optimization.jl
+
+[![curly braces](assets/code.png) Repository](https://github.com/SciML/Optimization.jl)
+
+[![book icon](assets/book.png) Documentation](https://docs.sciml.ai/Optimization/stable/)
+
+**Mathematical Optimization in Julia. Local, global, gradient-based and derivative-free. Linear, Quadratic, Convex, Mixed-Integer, and Nonlinear Optimization in one simple, fast, and differentiable interface**
+
+- Optimization.jl seeks to bring together all of the optimization packages it can find, local and global, into one unified Julia interface
+- This means, you learn one package and you learn them all!
 
 
 ### sefffal/PairPlots.jl
@@ -652,6 +754,17 @@ See also:
 - Spectral fitting routines and models with a focus on X-ray astronomy
 - This project is an attempt to modernise the field with new advancements in computational methods and statistical methods
 - SpectralFitting.jl aims to be extensible and reproducible, such that fits may be easily tailored to novel and specific problems, and easily verified by others
+
+
+### JuliaAPlavin/Uncertain.jl
+
+[![curly braces](assets/code.png) Repository](https://github.com/JuliaAPlavin/Uncertain.jl)
+
+[![book icon](assets/book.png) Documentation](https://baggepinnen.github.io/MonteCarloMeasurements.jl/stable/)
+
+****
+
+-  The ultimate goal of Uncertain.jl is to support arbitrary uncertainty specifications – asymmetric errors, intervals, more complex distributions, and go beyond plain numbers. All within a single uniform interface
 
 
 ---

@@ -53,10 +53,15 @@ open(fpath, "w") do io
     """)
 
     write(io, package_section(t, "astropy.constants", "https://docs.astropy.org/en/stable/constants/index.html"), "\n")
-
     write(io, package_section(t, "astropy.units", "https://docs.astropy.org/en/stable/units/index.html"), "\n")
-
     write(io, package_section(t, "astropy.nddata", "https://docs.astropy.org/en/stable/nddata/index.html"), "\n")
+    write(io, package_section(t, "astropy.table", "https://docs.astropy.org/en/stable/table/index.html"), "\n")
+    write(io, package_section(t, "astropy.time", "https://docs.astropy.org/en/stable/time/index.html"), "\n")
+    write(io, package_section(t, "astropy.timeseries", "https://docs.astropy.org/en/stable/timeseries/index.html"), "\n")
+    write(io, package_section(t, "astropy.coordinates", "https://docs.astropy.org/en/stable/coordinates/index.html"), "\n")
+    write(io, package_section(t, "astropy.wcs", "https://docs.astropy.org/en/stable/wcs/index.html"), "\n")
+    write(io, package_section(t, "astropy.modeling", "https://docs.astropy.org/en/stable/modeling/index.html"), "\n")
+    write(io, package_section(t, "astropy.uncertainty", "https://docs.astropy.org/en/stable/uncertainty/index.html"), "\n")
 
     write(io, "</table>", "\n")
 

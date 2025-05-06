@@ -65,6 +65,17 @@ ecosystem() = (
     ),
     (
         highlevel = "Data I/O",
+        name = "JuliaData/DataFrames.jl",
+        repo = "https://github.com/JuliaData/DataFrames.jl",
+        doc = "https://dataframes.juliadata.org/stable/",
+        tagline = "In-memory tabular data in Julia",
+        descr = """
+        - Tools for working with tabular data in Julia
+        """,
+        astropy = ["astropy.table"],
+    ),
+    (
+        highlevel = "Data I/O",
         name = "JuliaAPlavin/Difmap.jl",
         repo = "https://github.com/JuliaAPlavin/Difmap.jl",
         doc = "https://aplavin.github.io/Difmap.jl/test/examples.html",
@@ -74,6 +85,18 @@ ecosystem() = (
         - Display images and plots from Difmap in interactive Julia environments
         """,
         astropy = [],
+    ),
+    (
+        highlevel = "Data I/O",
+        name = "rafaqz/DimensionalData.jl",
+        repo = "https://github.com/rafaqz/DimensionalData.jl",
+        doc = "https://rafaqz.github.io/DimensionalData.jl/stable/",
+        tagline = "Named dimensions and indexing for julia arrays and other data",
+        descr = """
+        - DimensionalData.jl provides tools and abstractions for working with datasets that have named dimensions, and optionally a lookup index
+        - It provides no-cost abstractions for named indexing, and fast index lookups
+        """,
+        astropy = ["astropy.nddata"],
     ),
     (
         highlevel = "Data I/O",
@@ -376,6 +399,17 @@ ecosystem() = (
     ),
     (
         highlevel = "Time, Coords, Units",
+        name = "JuliaStats/TimeSeries.jl",
+        repo = "https://github.com/JuliaStats/TimeSeries.jl",
+        doc = "https://juliastats.github.io/TimeSeries.jl/stable",
+        tagline = "Time series toolkit for Julia",
+        descr = """
+        - TimeSeries aims to provide a lightweight framework for working with time series data in Julia
+        """,
+        astropy = ["astropy.timeseries"],
+    ),
+    (
+        highlevel = "Time, Coords, Units",
         name = "PainterQubits/Unitful.jl",
         repo = "https://github.com/PainterQubits/Unitful.jl",
         doc = "https://painterqubits.github.io/Unitful.jl/stable",
@@ -565,6 +599,17 @@ ecosystem() = (
     ),
     (
         highlevel = "General",
+        name = "JuliaStats/Distributions.jl",
+        repo = "https://github.com/JuliaStats/Distributions.jl",
+        doc = "https://juliastats.github.io/Distributions.jl/stable/",
+        tagline = "A Julia package for probability distributions and associated functions",
+        descr = """
+        - A Julia package for probability distributions and associated functions
+        """,
+        astropy = ["astropy.uncertainty"],
+    ),
+    (
+        highlevel = "General",
         name = "ziotom78/Healpix.jl",
         repo = "https://github.com/ziotom78/Healpix.jl",
         doc = "https://ziotom78.github.io/Healpix.jl/stable/",
@@ -578,6 +623,17 @@ ecosystem() = (
     ),
     (
         highlevel = "General",
+        name = "jump-dev/JuMP.jl",
+        repo = "https://github.com/jump-dev/JuMP.jl",
+        doc = "http://jump.dev/JuMP.jl/",
+        tagline = "Modeling language for Mathematical Optimization (linear, mixed-integer, conic, semidefinite, nonlinear)",
+        descr = """
+        - JuMP is a domain-specific modeling language for [mathematical optimization](https://en.wikipedia.org/wiki/Mathematical_optimization) embedded in [Julia](https://julialang.org/)
+        """,
+        astropy = ["astropy.modeling"],
+    ),
+    (
+        highlevel = "General",
         name = "ajwheeler/Korg.jl",
         repo = "https://github.com/ajwheeler/Korg.jl",
         doc = "https://ajwheeler.github.io/Korg.jl/stable/",
@@ -585,6 +641,18 @@ ecosystem() = (
         descr = """
         """,
         astropy = [],
+    ),
+    (
+        highlevel = "General",
+        name = "JuliaPhysics/Measurements.jl",
+        repo = "https://github.com/JuliaPhysics/Measurements.jl",
+        doc = "https://juliaphysics.github.io/Measurements.jl/stable/",
+        tagline = "Error propagation calculator and library for physical measurements. It supports real and complex numbers with uncertainty, arbitrary precision calculations, operations with arrays, and numerical integration",
+        descr = """
+        -  [Measurements.jl](https://github.com/JuliaPhysics/Measurements.jl) relieves you from the hassle of propagating uncertainties coming from physical measurements, when performing mathematical operations involving them
+        - The [linear error propagation theory](https://en.wikipedia.org/wiki/Propagation_of_uncertainty#Linear_combinations) is employed to propagate the errors
+        """,
+        astropy = ["astropy.uncertainty"],
     ),
     (
         highlevel = "General",
@@ -601,6 +669,28 @@ ecosystem() = (
     ),
     (
         highlevel = "General",
+        name = "MonteCarloMeasurements.jl",
+        repo = "https://github.com/baggepinnen/MonteCarloMeasurements.jl",
+        doc = "https://baggepinnen.github.io/MonteCarloMeasurements.jl/stable/",
+        tagline = "Propagation of distributions by Monte-Carlo sampling: Real number types with uncertainty represented by samples",
+        descr = """
+        -  This package facilitates working with probability distributions by means of Monte-Carlo methods, in a way that allows for propagation of probability distributions through functions
+        """,
+        astropy = ["astropy.uncertainty"],
+    ),
+    (
+        highlevel = "General",
+        name = "SciML/NonlinearSolve.jl",
+        repo = "https://github.com/SciML/NonlinearSolve.jl",
+        doc = "https://docs.sciml.ai/NonlinearSolve/stable/",
+        tagline = "High-performance and differentiation-enabled nonlinear solvers (Newton methods), bracketed rootfinding (bisection, Falsi), with sparsity and Newton-Krylov support",
+        descr = """
+        - Fast implementations of root finding algorithms in Julia that satisfy the SciML common interface
+        """,
+        astropy = ["astropy.modeling"],
+    ),
+    (
+        highlevel = "General",
         name = "fabienbaron/OITOOLS.jl",
         repo = "https://github.com/fabienbaron/OITOOLS.jl",
         doc = "https://fabienbaron.github.io/OITOOLS.jl/dev",
@@ -610,6 +700,18 @@ ecosystem() = (
         - Note that despite having the same name as [JMMC's oitools](https://github.com/JMMC-OpenDev/oitools), they are completely unrelated and were developed independently
         """,
         astropy = [],
+    ),
+    (
+        highlevel = "General",
+        name = "SciML/Optimization.jl",
+        repo = "https://github.com/SciML/Optimization.jl",
+        doc = "https://docs.sciml.ai/Optimization/stable/",
+        tagline = "Mathematical Optimization in Julia. Local, global, gradient-based and derivative-free. Linear, Quadratic, Convex, Mixed-Integer, and Nonlinear Optimization in one simple, fast, and differentiable interface",
+        descr = """
+        - Optimization.jl seeks to bring together all of the optimization packages it can find, local and global, into one unified Julia interface
+        - This means, you learn one package and you learn them all!
+        """,
+        astropy = ["astropy.modeling"],
     ),
     (
         highlevel = "General",
@@ -653,6 +755,17 @@ ecosystem() = (
         - SpectralFitting.jl aims to be extensible and reproducible, such that fits may be easily tailored to novel and specific problems, and easily verified by others
         """,
         astropy = ["specreduce", "specutils"],
+    ),
+    (
+        highlevel = "General",
+        name = "JuliaAPlavin/Uncertain.jl",
+        repo = "https://github.com/JuliaAPlavin/Uncertain.jl",
+        doc = "https://baggepinnen.github.io/MonteCarloMeasurements.jl/stable/",
+        tagline = "",
+        descr = """
+        -  The ultimate goal of Uncertain.jl is to support arbitrary uncertainty specifications – asymmetric errors, intervals, more complex distributions, and go beyond plain numbers. All within a single uniform interface
+        """,
+        astropy = ["astropy.uncertainty"],
     ),
 ) |> Table
 
