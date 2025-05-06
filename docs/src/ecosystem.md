@@ -1,4 +1,4 @@
-# [Ecosystem](@id eco)
+# Ecosystem
 
 The joy of our community is the many astronomy and astrophysics packages available for wide use. Packages are separated by functionality and Julia's declarative package manager takes care of resolving dependencies. You get just the functionality you need, and smaller packages lead to more rapid development.
 
@@ -86,6 +86,17 @@ The joy of our community is the many astronomy and astrophysics packages availab
 - EasyFITS is a [Julia](https://julialang.org/) package designed to make it easier to read and write data in [FITS](https://fits.gsfc.nasa.gov/fits_standard.html) format without sacrificing performances, flexibility, or readability.
 
 
+### barrettp/FITS.jl
+
+[![curly braces](assets/code.png) Repository](https://github.com/barrettp/FITS.jl)
+
+[![book icon](assets/book.png) Documentation](https://emmt.github.io/EasyFITS.jl/dev)
+
+**Using FITS files made easier for Julia**
+
+- EasyFITS is a [Julia](https://julialang.org/) package designed to make it easier to read and write data in [FITS](https://fits.gsfc.nasa.gov/fits_standard.html) format without sacrificing performances, flexibility, or readability.
+
+
 ### emmt/OIFITS.jl
 
 [![curly braces](assets/code.png) Repository](https://github.com/emmt/OIFITS.jl)
@@ -130,6 +141,7 @@ The joy of our community is the many astronomy and astrophysics packages availab
 
 - Text and binary VOTables support
 - Read Unitful numbers and column metadata
+
 
 ---
 
@@ -258,6 +270,7 @@ The joy of our community is the many astronomy and astrophysics packages availab
 - Uniform interface and Makie plotting
 - Use original data as-is or project onto a rectangular grid
 
+
 ---
 
 ## Time, Coords, Units
@@ -327,7 +340,7 @@ The joy of our community is the many astronomy and astrophysics packages availab
 
 [![book icon](assets/book.png) Documentation](https://juliaastro.org/UnitfulAstro/stable/)
 
-**Astronomical units**
+**Astronomical units and things**
 
 - Extension of [Unitful.jl](https://github.com/painterqubits/Unitful.jl)
 
@@ -341,6 +354,43 @@ The joy of our community is the many astronomy and astrophysics packages availab
 **World Coordinate System transformations**
 
 - Wrapper for [wcslib](https://www.atnf.csiro.au/people/mcalabre/WCS/wcslib/)
+
+
+### SymbolicML/DynamicQuantities.jl
+
+[![curly braces](assets/code.png) Repository](https://github.com/SymbolicML/DynamicQuantities.jl)
+
+[![book icon](assets/book.png) Documentation](https://symbolicml.org/DynamicQuantities.jl/stable/)
+
+**Efficient and type-stable physical quantities in Julia**
+
+- Defines a simple statically-typed `Quantity` type for Julia
+- Physical dimensions are stored as a value, as opposed to a parametric type, as in [Unitful.jl](https://github.com/PainterQubits/Unitful.jl)
+
+
+### JuliaPhysics/PhysicalConstants.jl
+
+[![curly braces](assets/code.png) Repository](https://github.com/JuliaPhysics/PhysicalConstants.jl)
+
+[![book icon](assets/book.png) Documentation](https://juliaphysics.github.io/PhysicalConstants.jl/stable/)
+
+**Collection of fundamental physical constants with uncertainties**
+
+- `PhysicalConstants.jl` provides common physical constants
+- They are defined as instances of the new `Constant` type, which is subtype of `AbstractQuantity` (from [`Unitful.jl`](https://github.com/PainterQubits/Unitful.jl) package) and can also be turned into `Measurement` objects (from [`Measurements.jl`](https://github.com/JuliaPhysics/Measurements.jl) package) at request
+
+
+### PainterQubits/Unitful.jl
+
+[![curly braces](assets/code.png) Repository](https://github.com/PainterQubits/Unitful.jl)
+
+[![book icon](assets/book.png) Documentation](https://painterqubits.github.io/Unitful.jl/stable)
+
+**Physical quantities with arbitrary units**
+
+- Unitful is a Julia package for physical units
+- We want to support not only SI units but also any other unit system
+
 
 ---
 
@@ -410,6 +460,7 @@ The joy of our community is the many astronomy and astrophysics packages availab
 [![book icon](assets/book.png) Documentation](https://sefffal.github.io/PlanetOrbits.jl/dev/)
 
 **Tools for displaying and solving Keplerian orbits in the context of direct imaging**
+
 
 
 ---
@@ -601,3 +652,7 @@ See also:
 - Spectral fitting routines and models with a focus on X-ray astronomy
 - This project is an attempt to modernise the field with new advancements in computational methods and statistical methods
 - SpectralFitting.jl aims to be extensible and reproducible, such that fits may be easily tailored to novel and specific problems, and easily verified by others
+
+
+---
+
