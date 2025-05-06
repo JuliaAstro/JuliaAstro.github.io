@@ -2,6 +2,8 @@ module JuliaAstroDocs
 
 using TypedTables, SplitApplyCombine
 
+stake! = String ∘ take!
+
 ecosystem() = (
     # Data I/O
     (
@@ -780,6 +782,7 @@ ecosystem() = (
     ),
 ) |> Table
 
-stake! = String ∘ take!
+include("ecosystem.jl")
+include("comparison.jl")
 
 end

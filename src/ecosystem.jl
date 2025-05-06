@@ -1,5 +1,5 @@
 const ECOSYSTEM_HEADER = """
-# Ecosystem
+# [Ecosystem](@id eco)
 
 The joy of our community is the many astronomy and astrophysics packages available for wide use. Packages are separated by functionality and Julia's declarative package manager takes care of resolving dependencies. You get just the functionality you need, and smaller packages lead to more rapid development.
 
@@ -7,12 +7,9 @@ The joy of our community is the many astronomy and astrophysics packages availab
 
 """;
 
-t = JuliaAstroDocs.ecosystem()
-
-ecosystem_highlevels = JuliaAstroDocs.group(x -> x.highlevel, JuliaAstroDocs.ecosystem())
-
-function page_ecosystem(ecosystem_highlevels)
-    fpath = joinpath(dirname(@__DIR__), "src", "ecosystem.md")
+function page_ecosystem(t)
+ecosystem_highlevels = JuliaAstroDocs.group(x -> x.highlevel, t)
+    fpath = joinpath(dirname(@__DIR__), "docs", "src", "ecosystem.md")
     open(fpath, "w") do io
         write(io, ECOSYSTEM_HEADER)
         for (highlevel, packages) in pairs(ecosystem_highlevels)
@@ -36,5 +33,3 @@ function page_ecosystem(ecosystem_highlevels)
         end
     end
 end
-
-page_ecosystem(ecosystem_highlevels)
