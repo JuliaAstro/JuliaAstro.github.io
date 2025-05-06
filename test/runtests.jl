@@ -8,9 +8,11 @@ using Test, Pkg, InteractiveUtils
 
 import JuliaAstroDocs
 
-ecos = JuliaAstroDocs.ecosystem
+ecosystem = JuliaAstroDocs.ecosystem()
+ecosystem_highlevels = JuliaAstroDocs.group(x -> x.highlevel, ecosystem)
 
-packages_juliaastro = Iterators.filter(p for (h, ps) in pairs(ecos) for p in ps) do package
+
+packages_juliaastro = Iterators.filter(p for (h, ps) in pairs(ecosystem_highlevels) for p in ps) do package
     occursin("juliaastro", lowercase(package.repo))
 end |> unique |> sort
 
