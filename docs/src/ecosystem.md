@@ -6,6 +6,17 @@ The joy of our community is the many astronomy and astrophysics packages availab
 
 ## Data I/O
 
+### AstroImages.jl
+
+[![curly braces](assets/code.png) Repository](https://github.com/JuliaAstro/AstroImages.jl)
+
+[![book icon](assets/book.png) Documentation](https://juliaastro.org/AstroImages/stable/)
+
+**Load, manipulate, and visualize astronomical images**
+
+- Works with the [FileIO.jl](https://github.com/JuliaIO/FileIO.jl) interface
+
+
 ### CFITSIO.jl
 
 [![curly braces](assets/code.png) Repository](https://github.com/JuliaAstro/CFITSIO.jl)

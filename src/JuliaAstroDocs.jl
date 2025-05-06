@@ -8,6 +8,17 @@ ecosystem() = (
     # Data I/O
     (
         highlevel = "Data I/O",
+        name = "AstroImages.jl",
+        repo = "https://github.com/JuliaAstro/AstroImages.jl",
+        doc = "https://juliaastro.org/AstroImages/stable/",
+        tagline = "Load, manipulate, and visualize astronomical images",
+        descr = """
+        - Works with the [FileIO.jl](https://github.com/JuliaIO/FileIO.jl) interface
+        """,
+        astropy = ["astropy.io.fits"],
+    ),
+    (
+        highlevel = "Data I/O",
         name = "CFITSIO.jl",
         repo = "https://github.com/JuliaAstro/CFITSIO.jl",
         doc = "https://juliaastro.org/CFITSIO/stable/",

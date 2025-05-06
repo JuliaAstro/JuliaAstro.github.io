@@ -194,9 +194,13 @@ We highlight some of the major packages in Python's `astropy` ecosystem and thei
   <tbody>
 
   <tr>
-    <td rowspan=6>
+    <td rowspan=7>
       <a href="https://docs.astropy.org/en/stable/io/fits/index.html"><code>astropy.io.fits</code></a>
    </td>
+  </tr>
+  <tr>
+    <td><a href="https://github.com/JuliaAstro/AstroImages.jl">AstroImages.jl</a></td>
+    <td>Load, manipulate, and visualize astronomical images</td>
   </tr>
   <tr>
     <td><a href="https://github.com/JuliaAstro/CFITSIO.jl">CFITSIO.jl</a></td>
