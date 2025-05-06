@@ -178,3 +178,141 @@ We highlight some of the major packages in Python's `astropy` ecosystem and thei
 
 </table>
 ```
+### Files, I/O, and Communication
+
+```@raw html
+<table class="compare">
+  <thead>
+    <tr>
+      <th>Python</th>
+      <th>Julia</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+
+  <tr>
+    <td rowspan=6>
+      <a href="https://docs.astropy.org/en/stable/io/fits/index.html"><code>astropy.io.fits</code></a>
+   </td>
+  </tr>
+<tr>
+  <td><a href="https://github.com/JuliaAstro/CFITSIO.jl">CFITSIO.jl</a></td>
+  <td>Reading and writing FITS files</td>
+</tr>
+<tr>
+  <td><a href="https://github.com/JuliaAstro/FITSIO.jl">FITSIO.jl</a></td>
+  <td>Reading and writing FITS files</td>
+</tr>
+<tr>
+  <td><a href="https://github.com/emmt/EasyFITS.jl">emmt/EasyFITS.jl</a></td>
+  <td>Using FITS files made easier for Julia</td>
+</tr>
+<tr>
+  <td><a href="https://github.com/barrettp/FITS.jl">barrettp/FITS.jl</a></td>
+  <td>Using FITS files made easier for Julia</td>
+</tr>
+<tr>
+  <td><a href="https://github.com/emmt/OIFITS.jl">emmt/OIFITS.jl</a></td>
+  <td>Support for OI-FITS</td>
+</tr>
+
+  <tr>
+    <td rowspan=2>
+      <a href="https://docs.astropy.org/en/stable/io/ascii/index.html"><code>astropy.io.ascii</code></a>
+   </td>
+  </tr>
+<tr>
+  <td><a href="https://github.com/JuliaAPlavin/FixedWidthTables.jl">FixedWidthTables.jl</a></td>
+  <td></td>
+</tr>
+
+  <tr>
+    <td rowspan=4>
+      <a href="https://docs.astropy.org/en/stable/io/votable/index.html"><code>astropy.io.votable</code></a>
+   </td>
+  </tr>
+<tr>
+  <td><a href="https://github.com/JuliaAPlavin/VirtualObservatory.jl">JuliaAPlavin/VirtualObservatory.jl</a></td>
+  <td></td>
+</tr>
+<tr>
+  <td><a href="https://github.com/JuliaAPlavin/VLBIData.jl">JuliaAPlavin/VLBIData.jl</a></td>
+  <td>Work with data formats common in very long baseline interferometry (VLBI)</td>
+</tr>
+<tr>
+  <td><a href="https://github.com/JuliaAPlavin/VOTables.jl">JuliaAPlavin/VOTables.jl</a></td>
+  <td>Read and write VOTable files</td>
+</tr>
+
+</table>
+```
+### Computations and Utilities
+
+```@raw html
+<table class="compare">
+  <thead>
+    <tr>
+      <th>Python</th>
+      <th>Julia</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+
+  <tr>
+    <td rowspan=2>
+      <a href="https://docs.astropy.org/en/stable/cosmology/index.html"><code>astropy.cosmology</code></a>
+   </td>
+  </tr>
+<tr>
+  <td><a href="https://github.com/JuliaAstro/Cosmology.jl">Cosmology.jl</a></td>
+  <td>Distances in the universe</td>
+</tr>
+
+  <tr>
+    <td rowspan=2>
+      <a href="https://docs.astropy.org/en/stable/convolution/index.html"><code>astropy.convolution</code></a>
+   </td>
+  </tr>
+<tr>
+  <td><a href="https://github.com/JuliaDSP/DSP.jl">JuliaDSP/DSP.jl</a></td>
+  <td>Filter design, periodograms, window functions, and other digital signal processing functionality</td>
+</tr>
+
+  <tr>
+    <td rowspan=2>
+      <a href="https://docs.astropy.org/en/stable/utils/iers.html"><code>astropy.utils.iers</code></a>
+   </td>
+  </tr>
+<tr>
+  <td><a href="https://github.com/JuliaAstro/EarthOrientation.jl">EarthOrientation.jl</a></td>
+  <td>Earth orientation parameters</td>
+</tr>
+
+  <tr>
+    <td rowspan=3>
+      <a href="https://docs.astropy.org/en/stable/visualization/index.html"><code>astropy.visualization</code></a>
+   </td>
+  </tr>
+<tr>
+  <td><a href="https://github.com/JuliaAstro/AstroImages.jl">AstroImages.jl</a></td>
+  <td>Load, manipulate, and visualize astronomical images</td>
+</tr>
+<tr>
+  <td><a href="https://github.com/sefffal/PairPlots.jl">sefffal/PairPlots.jl</a></td>
+  <td>Beautiful and flexible visualizations of high dimensional data</td>
+</tr>
+
+  <tr>
+    <td rowspan=2>
+      <a href="https://docs.astropy.org/en/stable/stats/index.html"><code>astropy.stats</code></a>
+   </td>
+  </tr>
+<tr>
+  <td><a href="https://github.com/JuliaStats">JuliaStats</a></td>
+  <td>Statistics and Machine Learning made easy in Julia</td>
+</tr>
+
+</table>
+```

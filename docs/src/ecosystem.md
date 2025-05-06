@@ -6,17 +6,6 @@ The joy of our community is the many astronomy and astrophysics packages availab
 
 ## Data I/O
 
-### AstroImages.jl
-
-[![curly braces](assets/code.png) Repository](https://github.com/JuliaAstro/AstroImages.jl)
-
-[![book icon](assets/book.png) Documentation](https://juliaastro.org/AstroImages/stable/)
-
-**Load, manipulate, and visualize astronomical images**
-
-- Works with the [FileIO.jl](https://github.com/JuliaIO/FileIO.jl) interface
-
-
 ### CFITSIO.jl
 
 [![curly braces](assets/code.png) Repository](https://github.com/JuliaAstro/CFITSIO.jl)
@@ -120,6 +109,17 @@ The joy of our community is the many astronomy and astrophysics packages availab
 - EasyFITS is a [Julia](https://julialang.org/) package designed to make it easier to read and write data in [FITS](https://fits.gsfc.nasa.gov/fits_standard.html) format without sacrificing performances, flexibility, or readability.
 
 
+### FixedWidthTables.jl
+
+[![curly braces](assets/code.png) Repository](https://github.com/JuliaAPlavin/FixedWidthTables.jl)
+
+[![book icon](assets/book.png) Documentation](https://github.com/JuliaAPlavin/FixedWidthTables.jl?tab=readme-ov-file#fixedwidthtablesjl)
+
+****
+
+- Read fixed width (so-called ASCII) tables. A wide range of format specification options, including autodetection
+
+
 ### emmt/OIFITS.jl
 
 [![curly braces](assets/code.png) Repository](https://github.com/emmt/OIFITS.jl)
@@ -137,8 +137,9 @@ The joy of our community is the many astronomy and astrophysics packages availab
 
 [![book icon](assets/book.png) Documentation](https://github.com/JuliaAPlavin/VirtualObservatory.jl?tab=readme-ov-file#virtualobservatoryjl)
 
-**Access remote data and services that follow Virtual Observatory (VO, <https://www.ivoa.net/>) protocols.**
+****
 
+- Access remote data and services that follow Virtual Observatory (VO, <https://www.ivoa.net/>) protocols
 - Currently supports the Table Access Protocol (TAP), and a few key features specific to the VizieR database
 
 
@@ -608,6 +609,17 @@ The joy of our community is the many astronomy and astrophysics packages availab
 - A Julia package for probability distributions and associated functions
 
 
+### JuliaDSP/DSP.jl
+
+[![curly braces](assets/code.png) Repository](https://github.com/JuliaDSP/DSP.jl)
+
+[![book icon](assets/book.png) Documentation](https://docs.juliadsp.org/stable/contents/)
+
+**Filter design, periodograms, window functions, and other digital signal processing functionality**
+
+- DSP.jl provides a number of common [digital signal processing](https://en.wikipedia.org/wiki/Digital_signal_processing) routines in Julia
+
+
 ### ziotom78/Healpix.jl
 
 [![curly braces](assets/code.png) Repository](https://github.com/ziotom78/Healpix.jl)
@@ -619,6 +631,17 @@ The joy of our community is the many astronomy and astrophysics packages availab
 - pixel functions, query functions, map functions
 - power spectrum support
 - plotting support
+
+
+### JuliaStats
+
+[![curly braces](assets/code.png) Repository](https://github.com/JuliaStats)
+
+[![book icon](assets/book.png) Documentation](https://juliastats.org/)
+
+**Statistics and Machine Learning made easy in Julia**
+
+- Easy to use tools for statistics and machine learning
 
 
 ### jump-dev/JuMP.jl

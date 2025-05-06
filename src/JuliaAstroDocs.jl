@@ -6,17 +6,6 @@ ecosystem() = (
     # Data I/O
     (
         highlevel = "Data I/O",
-        name = "AstroImages.jl",
-        repo = "https://github.com/JuliaAstro/AstroImages.jl",
-        doc = "https://juliaastro.org/AstroImages/stable/",
-        tagline = "Load, manipulate, and visualize astronomical images",
-        descr = """
-        - Works with the [FileIO.jl](https://github.com/JuliaIO/FileIO.jl) interface
-        """,
-        astropy = ["astropy.visualization"],
-    ),
-    (
-        highlevel = "Data I/O",
         name = "CFITSIO.jl",
         repo = "https://github.com/JuliaAstro/CFITSIO.jl",
         doc = "https://juliaastro.org/CFITSIO/stable/",
@@ -122,6 +111,17 @@ ecosystem() = (
     ),
     (
         highlevel = "Data I/O",
+        name = "FixedWidthTables.jl",
+        repo = "https://github.com/JuliaAPlavin/FixedWidthTables.jl",
+        doc = "https://github.com/JuliaAPlavin/FixedWidthTables.jl?tab=readme-ov-file#fixedwidthtablesjl",
+        tagline = "",
+        descr = """
+        - Read fixed width (so-called ASCII) tables. A wide range of format specification options, including autodetection
+        """,
+        astropy = ["astropy.io.ascii"],
+    ),
+    (
+        highlevel = "Data I/O",
         name = "emmt/OIFITS.jl",
         repo = "https://github.com/emmt/OIFITS.jl",
         doc = "https://github.com/emmt/OIFITS.jl?tab=readme-ov-file#support-for-oi-fits-data-in-julia",
@@ -136,8 +136,9 @@ ecosystem() = (
         name = "JuliaAPlavin/VirtualObservatory.jl",
         repo = "https://github.com/JuliaAPlavin/VirtualObservatory.jl",
         doc = "https://github.com/JuliaAPlavin/VirtualObservatory.jl?tab=readme-ov-file#virtualobservatoryjl",
-        tagline = "Access remote data and services that follow Virtual Observatory (VO, <https://www.ivoa.net/>) protocols.",
+        tagline = "",
         descr = """
+        - Access remote data and services that follow Virtual Observatory (VO, <https://www.ivoa.net/>) protocols
         - Currently supports the Table Access Protocol (TAP), and a few key features specific to the VizieR database
         """,
         astropy = ["astropy.io.votable"]
@@ -610,6 +611,17 @@ ecosystem() = (
     ),
     (
         highlevel = "General",
+        name = "JuliaDSP/DSP.jl",
+        repo = "https://github.com/JuliaDSP/DSP.jl",
+        doc = "https://docs.juliadsp.org/stable/contents/",
+        tagline = "Filter design, periodograms, window functions, and other digital signal processing functionality",
+        descr = """
+        - DSP.jl provides a number of common [digital signal processing](https://en.wikipedia.org/wiki/Digital_signal_processing) routines in Julia
+        """,
+        astropy = ["astropy.convolution"],
+    ),
+    (
+        highlevel = "General",
         name = "ziotom78/Healpix.jl",
         repo = "https://github.com/ziotom78/Healpix.jl",
         doc = "https://ziotom78.github.io/Healpix.jl/stable/",
@@ -620,6 +632,17 @@ ecosystem() = (
         - plotting support
         """,
         astropy = ["astropy-healpix"],
+    ),
+    (
+        highlevel = "General",
+        name = "JuliaStats",
+        repo = "https://github.com/JuliaStats",
+        doc = "https://juliastats.org/",
+        tagline = "Statistics and Machine Learning made easy in Julia",
+        descr = """
+        - Easy to use tools for statistics and machine learning
+        """,
+        astropy = ["astropy.stats"]
     ),
     (
         highlevel = "General",

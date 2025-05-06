@@ -65,17 +65,56 @@ open(fpath, "w") do io
 
     write(io, "</table>", "\n")
 
-    write(io, "```")
+    write(io, "```", "\n")
 
     write(io, """
+    ### Files, I/O, and Communication
+
+    ```@raw html
+    <table class="compare">
+      <thead>
+        <tr>
+          <th>Python</th>
+          <th>Julia</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>\n
     """)
+
+    write(io, package_section(t, "astropy.io.fits", "https://docs.astropy.org/en/stable/io/fits/index.html"), "\n")
+    write(io, package_section(t, "astropy.io.ascii", "https://docs.astropy.org/en/stable/io/ascii/index.html"), "\n")
+    write(io, package_section(t, "astropy.io.votable", "https://docs.astropy.org/en/stable/io/votable/index.html"), "\n")
+
+    write(io, "</table>", "\n")
+
+    write(io, "```", "\n")
+
+    write(io, """
+    ### Computations and Utilities
+
+    ```@raw html
+    <table class="compare">
+      <thead>
+        <tr>
+          <th>Python</th>
+          <th>Julia</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>\n
+    """)
+
+    write(io, package_section(t, "astropy.cosmology", "https://docs.astropy.org/en/stable/cosmology/index.html"), "\n")
+    write(io, package_section(t, "astropy.convolution", "https://docs.astropy.org/en/stable/convolution/index.html"), "\n")
+    write(io, package_section(t, "astropy.utils.iers", "https://docs.astropy.org/en/stable/utils/iers.html"), "\n")
+    write(io, package_section(t, "astropy.visualization", "https://docs.astropy.org/en/stable/visualization/index.html"), "\n")
+    write(io, package_section(t, "astropy.stats", "https://docs.astropy.org/en/stable/stats/index.html"), "\n")
+
+    write(io, "</table>", "\n")
+
+    write(io, "```", "\n")
 end
-#### Files, I/O, and Communication
-#
-#```@raw html
-#```
-#
-#### Computations and Utilities
 #
 #```@raw html
 #```
