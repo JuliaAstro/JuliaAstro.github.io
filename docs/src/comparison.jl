@@ -114,13 +114,33 @@ open(fpath, "w") do io
     write(io, "</table>", "\n")
 
     write(io, "```", "\n")
+
+    write(io, """
+    ## Astropy [coordinated packages](https://www.astropy.org/affiliated/#coordinated-package-list)
+
+    ```@raw html
+    <table class="compare">
+      <thead>
+        <tr>
+          <th>Python</th>
+          <th>Julia</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>\n
+    """)
+
+    write(io, package_section(t, "asdf-astropy", "https://asdf-astropy.readthedocs.io/en/latest/"), "\n")
+    write(io, package_section(t, "astropy-healpix", "https://astropy-healpix.readthedocs.io/"), "\n")
+    write(io, package_section(t, "astroquery", "https://astroquery.readthedocs.io/"), "\n")
+    write(io, package_section(t, "ccdproc", "https://ccdproc.readthedocs.io/"), "\n")
+    write(io, package_section(t, "photutils", "https://photutils.readthedocs.io/"), "\n")
+    write(io, package_section(t, "regions", "https://astropy-regions.readthedocs.io/"), "\n")
+    write(io, package_section(t, "reproject", "https://reproject.readthedocs.io/"), "\n")
+    write(io, package_section(t, "specreduce", "https://specreduce.readthedocs.io/"), "\n")
+    write(io, package_section(t, "specutils", "https://specutils.readthedocs.io/"), "\n")
+
+    write(io, "</table>", "\n")
+
+    write(io, "```", "\n")
 end
-#
-#```@raw html
-#```
-#
-### Astropy [coordinated packages](https://www.astropy.org/affiliated/#coordinated-package-list)
-#
-#```@raw html
-#```
-#

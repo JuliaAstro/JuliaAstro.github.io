@@ -115,7 +115,7 @@ The joy of our community is the many astronomy and astrophysics packages availab
 
 [![book icon](assets/book.png) Documentation](https://github.com/JuliaAPlavin/FixedWidthTables.jl?tab=readme-ov-file#fixedwidthtablesjl)
 
-****
+**Read fixed width (so-called ASCII) tables**
 
 - Read fixed width (so-called ASCII) tables. A wide range of format specification options, including autodetection
 
@@ -137,7 +137,7 @@ The joy of our community is the many astronomy and astrophysics packages availab
 
 [![book icon](assets/book.png) Documentation](https://github.com/JuliaAPlavin/VirtualObservatory.jl?tab=readme-ov-file#virtualobservatoryjl)
 
-****
+**Access remote data and services that follow VO protocols**
 
 - Access remote data and services that follow Virtual Observatory (VO, <https://www.ivoa.net/>) protocols
 - Currently supports the Table Access Protocol (TAP), and a few key features specific to the VizieR database
@@ -564,18 +564,6 @@ The joy of our community is the many astronomy and astrophysics packages availab
 - Supports multi-threading
 
 
-### Photometry.jl
-
-[![curly braces](assets/code.png) Repository](https://github.com/JuliaAstro/Photometry.jl)
-
-[![book icon](assets/book.png) Documentation](https://juliaastro.org/Photometry/stable/)
-
-**Aperture photometry**
-
-- Background estimation and source extraction
-- Fast and precise aperture photometry
-
-
 ### Spectra.jl
 
 [![curly braces](assets/code.png) Repository](https://github.com/JuliaAstro/Spectra.jl)
@@ -785,7 +773,7 @@ See also:
 
 [![book icon](assets/book.png) Documentation](https://baggepinnen.github.io/MonteCarloMeasurements.jl/stable/)
 
-****
+**Handle uncertain values with ease and performance!**
 
 -  The ultimate goal of Uncertain.jl is to support arbitrary uncertainty specifications – asymmetric errors, intervals, more complex distributions, and go beyond plain numbers. All within a single uniform interface
 

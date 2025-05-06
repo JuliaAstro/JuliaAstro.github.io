@@ -173,7 +173,7 @@ We highlight some of the major packages in Python's `astropy` ecosystem and thei
 </tr>
 <tr>
   <td><a href="https://github.com/JuliaAPlavin/Uncertain.jl">JuliaAPlavin/Uncertain.jl</a></td>
-  <td></td>
+  <td>Handle uncertain values with ease and performance!</td>
 </tr>
 
 </table>
@@ -224,7 +224,7 @@ We highlight some of the major packages in Python's `astropy` ecosystem and thei
   </tr>
 <tr>
   <td><a href="https://github.com/JuliaAPlavin/FixedWidthTables.jl">FixedWidthTables.jl</a></td>
-  <td></td>
+  <td>Read fixed width (so-called ASCII) tables</td>
 </tr>
 
   <tr>
@@ -234,7 +234,7 @@ We highlight some of the major packages in Python's `astropy` ecosystem and thei
   </tr>
 <tr>
   <td><a href="https://github.com/JuliaAPlavin/VirtualObservatory.jl">JuliaAPlavin/VirtualObservatory.jl</a></td>
-  <td></td>
+  <td>Access remote data and services that follow VO protocols</td>
 </tr>
 <tr>
   <td><a href="https://github.com/JuliaAPlavin/VLBIData.jl">JuliaAPlavin/VLBIData.jl</a></td>
@@ -312,6 +312,119 @@ We highlight some of the major packages in Python's `astropy` ecosystem and thei
 <tr>
   <td><a href="https://github.com/JuliaStats">JuliaStats</a></td>
   <td>Statistics and Machine Learning made easy in Julia</td>
+</tr>
+
+</table>
+```
+## Astropy [coordinated packages](https://www.astropy.org/affiliated/#coordinated-package-list)
+
+```@raw html
+<table class="compare">
+  <thead>
+    <tr>
+      <th>Python</th>
+      <th>Julia</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+
+  <tr>
+    <td rowspan=2>
+      <a href="https://asdf-astropy.readthedocs.io/en/latest/"><code>asdf-astropy</code></a>
+   </td>
+  </tr>
+<tr>
+  <td><a href="https://github.com/eschnett/ASDF2.jl">eschnett/ASDF2.jl</a></td>
+  <td>Load files in ASDF format, which is the upcoming stadnard for STScI/Roman</td>
+</tr>
+
+  <tr>
+    <td rowspan=2>
+      <a href="https://astropy-healpix.readthedocs.io/"><code>astropy-healpix</code></a>
+   </td>
+  </tr>
+<tr>
+  <td><a href="https://github.com/ziotom78/Healpix.jl">ziotom78/Healpix.jl</a></td>
+  <td>Implementation of Healpix spherical tesselation scheme in pure Julia</td>
+</tr>
+
+  <tr>
+    <td rowspan=2>
+      <a href="https://astroquery.readthedocs.io/"><code>astroquery</code></a>
+   </td>
+  </tr>
+<tr>
+  <td><a href="https://github.com/JuliaAPlavin/VirtualObservatory.jl">JuliaAPlavin/VirtualObservatory.jl</a></td>
+  <td>Access remote data and services that follow VO protocols</td>
+</tr>
+
+  <tr>
+    <td rowspan=2>
+      <a href="https://ccdproc.readthedocs.io/"><code>ccdproc</code></a>
+   </td>
+  </tr>
+<tr>
+  <td><a href="https://github.com/JuliaAstro/CCDReduction.jl">CCDReduction.jl</a></td>
+  <td>Common CCD image processing routines</td>
+</tr>
+
+  <tr>
+    <td rowspan=2>
+      <a href="https://photutils.readthedocs.io/"><code>photutils</code></a>
+   </td>
+  </tr>
+<tr>
+  <td><a href="https://github.com/JuliaAstro/Photometry.jl">Photometry.jl</a></td>
+  <td>Aperture photometry</td>
+</tr>
+
+  <tr>
+    <td rowspan=2>
+      <a href="https://astropy-regions.readthedocs.io/"><code>regions</code></a>
+   </td>
+  </tr>
+<tr>
+  <td><a href="https://github.com/JuliaAstro/Photometry.jl">Photometry.jl</a></td>
+  <td>Aperture photometry</td>
+</tr>
+
+  <tr>
+    <td rowspan=2>
+      <a href="https://reproject.readthedocs.io/"><code>reproject</code></a>
+   </td>
+  </tr>
+<tr>
+  <td><a href="https://github.com/JuliaAstro/Reproject.jl">Reproject.jl</a></td>
+  <td>Astronomical image reprojection</td>
+</tr>
+
+  <tr>
+    <td rowspan=3>
+      <a href="https://specreduce.readthedocs.io/"><code>specreduce</code></a>
+   </td>
+  </tr>
+<tr>
+  <td><a href="https://github.com/JuliaAstro/Spectra.jl">Spectra.jl</a></td>
+  <td>Utilities for interfacing with astronomical spectra and synthetic spectra libraries</td>
+</tr>
+<tr>
+  <td><a href="https://github.com/fjebaker/SpectralFitting.jl">fjebaker/SpectralFitting.jl</a></td>
+  <td>✨🛰 Fast and flexible spectral fitting in Julia</td>
+</tr>
+
+  <tr>
+    <td rowspan=3>
+      <a href="https://specutils.readthedocs.io/"><code>specutils</code></a>
+   </td>
+  </tr>
+<tr>
+  <td><a href="https://github.com/JuliaAstro/Spectra.jl">Spectra.jl</a></td>
+  <td>Utilities for interfacing with astronomical spectra and synthetic spectra libraries</td>
+</tr>
+<tr>
+  <td><a href="https://github.com/fjebaker/SpectralFitting.jl">fjebaker/SpectralFitting.jl</a></td>
+  <td>✨🛰 Fast and flexible spectral fitting in Julia</td>
 </tr>
 
 </table>

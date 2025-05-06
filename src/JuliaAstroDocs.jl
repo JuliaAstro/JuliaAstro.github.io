@@ -114,7 +114,7 @@ ecosystem() = (
         name = "FixedWidthTables.jl",
         repo = "https://github.com/JuliaAPlavin/FixedWidthTables.jl",
         doc = "https://github.com/JuliaAPlavin/FixedWidthTables.jl?tab=readme-ov-file#fixedwidthtablesjl",
-        tagline = "",
+        tagline = "Read fixed width (so-called ASCII) tables",
         descr = """
         - Read fixed width (so-called ASCII) tables. A wide range of format specification options, including autodetection
         """,
@@ -136,12 +136,12 @@ ecosystem() = (
         name = "JuliaAPlavin/VirtualObservatory.jl",
         repo = "https://github.com/JuliaAPlavin/VirtualObservatory.jl",
         doc = "https://github.com/JuliaAPlavin/VirtualObservatory.jl?tab=readme-ov-file#virtualobservatoryjl",
-        tagline = "",
+        tagline = "Access remote data and services that follow VO protocols",
         descr = """
         - Access remote data and services that follow Virtual Observatory (VO, <https://www.ivoa.net/>) protocols
         - Currently supports the Table Access Protocol (TAP), and a few key features specific to the VizieR database
         """,
-        astropy = ["astropy.io.votable"]
+        astropy = ["astropy.io.votable", "astroquery"]
     ),
     (
         highlevel = "Data I/O",
@@ -214,7 +214,7 @@ ecosystem() = (
         - Background estimation and source extraction
         - Fast and precise aperture photometry
         """,
-        astropy = ["photutils"],
+        astropy = ["photutils", "regions"],
     ),
     (
         highlevel = "Images",
@@ -566,18 +566,6 @@ ecosystem() = (
     ),
     (
         highlevel = "General",
-        name = "Photometry.jl",
-        repo = "https://github.com/JuliaAstro/Photometry.jl",
-        doc = "https://juliaastro.org/Photometry/stable/",
-        tagline = "Aperture photometry",
-        descr = """
-        - Background estimation and source extraction
-        - Fast and precise aperture photometry
-        """,
-        astropy = ["photutils"],
-    ),
-    (
-        highlevel = "General",
         name = "Spectra.jl",
         repo = "https://github.com/JuliaAstro/Spectra.jl",
         doc = "https://juliaastro.org/Spectra/stable",
@@ -784,7 +772,7 @@ ecosystem() = (
         name = "JuliaAPlavin/Uncertain.jl",
         repo = "https://github.com/JuliaAPlavin/Uncertain.jl",
         doc = "https://baggepinnen.github.io/MonteCarloMeasurements.jl/stable/",
-        tagline = "",
+        tagline = "Handle uncertain values with ease and performance!",
         descr = """
         -  The ultimate goal of Uncertain.jl is to support arbitrary uncertainty specifications – asymmetric errors, intervals, more complex distributions, and go beyond plain numbers. All within a single uniform interface
         """,
