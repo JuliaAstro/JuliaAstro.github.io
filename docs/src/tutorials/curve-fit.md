@@ -11,8 +11,14 @@ This tutorial will demonstrate fitting data with a straight line (linear regress
 * [`Turing`](https://turing.ml/stable/): we'll use this package for Bayesian modelling.
 * [`PairPlots`](https://github.com/sefffal/PairPlots.jl): we'll use this for creating a corner plot of the posterior from our Bayesian models.
 
-You can install the necessary packages by running Julia, and typing `]` to enter Pkg-mode. Then: `add Plots Optimization OptimizationOptimJL Turing PairPlots`.
-Alternatively, you can run `using Pkg; Pkg.add(["Plots", "Optimization", "OptimizationOptimJL", "Turing", "PairPlots"])`.
+You can install the necessary packages by running Julia, and typing `]` to enter Pkg-mode. Then:
+```julia-repl
+pkg> add Plots Optimization OptimizationOptimJL Turing PairPlots
+```
+Alternatively, you can run
+```julia
+using Pkg; Pkg.add(["Plots", "Optimization", "OptimizationOptimJL", "Turing", "PairPlots"])
+```
 In your own code, you most likely won't need all of these packages. Pick and choose the one that best fits your problem.
 
 If you will be using these tools as part of a bigger project, it's strongly recommended to create a [Julia Project](https://pkgdocs.julialang.org/v1/environments/) to record package versions. If you're just experimenting, you can create a temporary project by running `] activate --temp`.

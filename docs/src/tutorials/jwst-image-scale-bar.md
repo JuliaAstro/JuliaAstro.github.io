@@ -9,10 +9,19 @@ Let's get started!
 * [`AstroImages`](http://juliaastro.org/AstroImages/stable/): we'll use this package to load and display the image
 * [`Plots`](https://docs.juliaplots.org/stable/): we'll use this package to display coordinates along the image and add the scalebar
 
-You can install the necessary packages by running Julia, and typing `]` to enter Pkg-mode. Then: `add AstroImages Plots`.
-Alternatively, you can run `using Pkg; Pkg.add(["AstroImages", "Plots"])`.
+You can install the necessary packages by running Julia, and typing `]` to enter Pkg-mode. Then:
+```julia-repl
+pkg> add AstroImages Plots
+```
+Alternatively, you can run
+```julia
+using Pkg; Pkg.add(["AstroImages", "Plots"])
+```
 
-If you will be using these tools as part of a bigger project, it's strongly recommended to create a [Julia Project](https://pkgdocs.julialang.org/v1/environments/) to record package versions.  If you're just experimenting, you can create a temporary project by running `] activate --temp`.
+If you will be using these tools as part of a bigger project, it's strongly recommended to create a [Julia Project](https://pkgdocs.julialang.org/v1/environments/) to record package versions.  If you're just experimenting, you can create a temporary project by running
+```julia-repl
+pkg> activate --temp
+```
 
 If you're using [Pluto notebooks](https://github.com/fonsp/Pluto.jl), installing and recording package versions in a project are handled for you automatically.
 
