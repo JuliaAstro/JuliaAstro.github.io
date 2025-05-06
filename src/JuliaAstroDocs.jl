@@ -35,8 +35,9 @@ ecosystem() = (
         name = "eschnett/ASDF2.jl",
         repo = "https://github.com/eschnett/ASDF2.jl",
         doc = "https://eschnett.github.io/ASDF2.jl/dev/",
-        tagline = "Load files in ASDF format, which is the upcoming stadnard for STScI/Roman",
+        tagline = "ASDF, the Advanced Scientific Data Format",
         descr = """
+        - A new [Advanced Scientific Data Format (ASDF)](https://asdf-standard.readthedocs.io/en/latest/index.html) package, written in Julia
         """,
         astropy = ["asdf-astropy"],
     ),

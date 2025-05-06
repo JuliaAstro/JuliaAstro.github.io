@@ -36,8 +36,9 @@ The joy of our community is the many astronomy and astrophysics packages availab
 
 [![book icon](assets/book.png) Documentation](https://eschnett.github.io/ASDF2.jl/dev/)
 
-**Load files in ASDF format, which is the upcoming stadnard for STScI/Roman**
+**ASDF, the Advanced Scientific Data Format**
 
+- A new [Advanced Scientific Data Format (ASDF)](https://asdf-standard.readthedocs.io/en/latest/index.html) package, written in Julia
 
 
 ### torrance/Casacore.jl

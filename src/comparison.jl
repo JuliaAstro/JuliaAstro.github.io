@@ -1,8 +1,8 @@
 package_row(p) = """
-<tr>
-  <td><a href="$(p.repo)">$(p.name)</a></td>
-  <td>$(p.tagline)</td>
-</tr>
+  <tr>
+    <td><a href="$(p.repo)">$(p.name)</a></td>
+    <td>$(p.tagline)</td>
+  </tr>
 """
 
 function package_section(t, astropy_module, astropy_url)
@@ -62,9 +62,11 @@ function page_compare(t)
         write(io, package_section(t, "astropy.modeling", "https://docs.astropy.org/en/stable/modeling/index.html"), "\n")
         write(io, package_section(t, "astropy.uncertainty", "https://docs.astropy.org/en/stable/uncertainty/index.html"), "\n")
 
-        write(io, "</table>", "\n")
-
-        write(io, "```", "\n")
+        write(io, """
+          </tbody>
+        </table>
+        ```\n
+        """,)
 
         write(io, """
         ### Files, I/O, and Communication
@@ -85,9 +87,11 @@ function page_compare(t)
         write(io, package_section(t, "astropy.io.ascii", "https://docs.astropy.org/en/stable/io/ascii/index.html"), "\n")
         write(io, package_section(t, "astropy.io.votable", "https://docs.astropy.org/en/stable/io/votable/index.html"), "\n")
 
-        write(io, "</table>", "\n")
-
-        write(io, "```", "\n")
+        write(io, """
+          </tbody>
+        </table>
+        ```\n
+        """)
 
         write(io, """
         ### Computations and Utilities
@@ -110,9 +114,11 @@ function page_compare(t)
         write(io, package_section(t, "astropy.visualization", "https://docs.astropy.org/en/stable/visualization/index.html"), "\n")
         write(io, package_section(t, "astropy.stats", "https://docs.astropy.org/en/stable/stats/index.html"), "\n")
 
-        write(io, "</table>", "\n")
-
-        write(io, "```", "\n")
+        write(io, """
+          </tbody>
+        </table>
+        ```\n
+        """)
 
         write(io, """
         ## Astropy [coordinated packages](https://www.astropy.org/affiliated/#coordinated-package-list)
@@ -139,8 +145,10 @@ function page_compare(t)
         write(io, package_section(t, "specreduce", "https://specreduce.readthedocs.io/"), "\n")
         write(io, package_section(t, "specutils", "https://specutils.readthedocs.io/"), "\n")
 
-        write(io, "</table>", "\n")
-
-        write(io, "```", "\n")
+        write(io, """
+          </tbody>
+        </table>
+        ```
+        """)
     end
 end
