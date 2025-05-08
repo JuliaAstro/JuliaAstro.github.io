@@ -1,9 +1,31 @@
-using Revise, MultiDocumenter, Documenter
+using Revise, MultiDocumenter, Documenter, DocumenterInterLinks
 using LibGit2, Pkg, TOML, UUIDs, Downloads
 
 Revise.revise()
 
 import JuliaAstroDocs
+
+t = JuliaAstroDocs.ecosystem()
+
+# Sync ecosystem.md
+JuliaAstroDocs.page_ecosystem(t)
+
+# Sync comparison.md
+JuliaAstroDocs.page_compare(t)
+
+# Prefer online docs, use local as fallback
+links = InterLinks(
+    "AstroImages" => (
+        "https://juliaastro.org/AstroImages/dev/",
+        "https://juliaastro.org/AstroImages/dev/objects.inv",
+        joinpath(@__DIR__, "clones", "AstroImages", "dev", "objects.inv"),
+    ),
+    "AstroLib" => (
+        "https://juliaastro.org/AstroLib/stable/",
+        "https://juliaastro.org/AstroLib/stable/objects.inv",
+        joinpath(@__DIR__, "clones", "AstroLib", "dev", "objects.inv"),
+    )
+)
 
 # This make file compiles the documentation for the JuliaAstro website.
 # It consists of the usual documenter structure, but also follows the approach
@@ -58,6 +80,7 @@ makedocs(
         "Comparison with Astropy" => "comparison.md",
     ],
     warnonly = [:missing_docs],
+    plugins = [links],
 )
 
 @info "Building aggregate JuliaAstro site"
@@ -84,6 +107,8 @@ function generate_multidoc_refs(p; clonedir=joinpath(@__DIR__, "clones"))
     end
 end
 
+ecosystem_highlevels = JuliaAstroDocs.group(x -> x.highlevel, JuliaAstroDocs.ecosystem())
+
 docs = [
     # We also add JuliaAstro's own generated pages
     MultiDocumenter.MultiDocRef(
@@ -92,7 +117,7 @@ docs = [
         name = "Home",
         fix_canonical_url = false,
     ),
-    map(JuliaAstroDocs.ecosystem) do (highlevel, packages)
+    map(pairs(ecosystem_highlevels)) do (highlevel, packages)
         MultiDocumenter.DropdownNav(
             highlevel,
             collect(generate_multidoc_refs.(packages))
@@ -123,7 +148,6 @@ MultiDocumenter.make(
 #     joinpath(assets_dir, "logo.svg");
 #     verbose = true,
 # )
-@info "Final build done"
 
 @info "Deploying docs"
 deploydocs(;

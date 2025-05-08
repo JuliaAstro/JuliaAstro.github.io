@@ -11,8 +11,14 @@ This tutorial will demonstrate fitting data with a straight line (linear regress
 * [`Turing`](https://turing.ml/stable/): we'll use this package for Bayesian modelling.
 * [`PairPlots`](https://github.com/sefffal/PairPlots.jl): we'll use this for creating a corner plot of the posterior from our Bayesian models.
 
-You can install the necessary packages by running Julia, and typing `]` to enter Pkg-mode. Then: `add Plots Optimization OptimizationOptimJL Turing PairPlots`.
-Alternatively, you can run `using Pkg; Pkg.add(["Plots", "Optimization", "OptimizationOptimJL", "Turing", "PairPlots"])`.
+You can install the necessary packages by running Julia, and typing `]` to enter Pkg-mode. Then:
+```julia-repl
+pkg> add Plots Optimization OptimizationOptimJL Turing PairPlots
+```
+Alternatively, you can run
+```julia
+using Pkg; Pkg.add(["Plots", "Optimization", "OptimizationOptimJL", "Turing", "PairPlots"])
+```
 In your own code, you most likely won't need all of these packages. Pick and choose the one that best fits your problem.
 
 If you will be using these tools as part of a bigger project, it's strongly recommended to create a [Julia Project](https://pkgdocs.julialang.org/v1/environments/) to record package versions. If you're just experimenting, you can create a temporary project by running `] activate --temp`.
@@ -141,7 +147,7 @@ julia> plot!(x, yfit, label="best fit")
 ![](../assets/tutorials/curve-fit/linear-regression.svg)
 
 
-The packages [LsqFit](https://julianlsolvers.github.io/LsqFit.jl/latest/) and [GLM](https://juliastats.org/GLM.jl/v0.11/#Minimal-examples-1) (for generalized linear models) contain functions for performing and evaluating these types of linear fits.
+The packages [LsqFit](https://julianlsolvers.github.io/LsqFit.jl/dev/) and [GLM](https://juliastats.org/GLM.jl/v0.11/#Minimal-examples-1) (for generalized linear models) contain functions for performing and evaluating these types of linear fits.
 
 ## (Non-)linear curve fit
 
