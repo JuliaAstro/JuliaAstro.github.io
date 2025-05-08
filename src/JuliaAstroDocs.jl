@@ -623,6 +623,16 @@ ecosystem() = (
         astropy = ["astropy.convolution"],
     ),
     (
+        highlevel = "General",    
+        name = "GModelFit.jl",
+        repo = "https://github.com/gcalderone/GModelFit.jl",
+        doc = "https://gcalderone.github.io/GModelFit.jl/",
+        tagline = "A model fitting framework for Julia",
+        descr = """
+        """,
+        astropy = ["astropy.modeling"],
+    ),
+    (
         highlevel = "General",
         name = "ziotom78/Healpix.jl",
         repo = "https://github.com/ziotom78/Healpix.jl",
