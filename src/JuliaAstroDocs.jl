@@ -623,13 +623,14 @@ ecosystem() = (
         astropy = ["astropy.convolution"],
     ),
     (
-            name = "GModelFit.jl",
-            repo = "https://github.com/gcalderone/GModelFit.jl",
-            doc = "https://gcalderone.github.io/GModelFit.jl/",
-            tagline = "A model fitting framework for Julia",
-            descr = """
-            """,
-            astropy = ["astropy.modeling"],
+        highlevel = "General",    
+        name = "GModelFit.jl",
+        repo = "https://github.com/gcalderone/GModelFit.jl",
+        doc = "https://gcalderone.github.io/GModelFit.jl/",
+        tagline = "A model fitting framework for Julia",
+        descr = """
+        """,
+        astropy = ["astropy.modeling"],
     ),
     (
         highlevel = "General",
