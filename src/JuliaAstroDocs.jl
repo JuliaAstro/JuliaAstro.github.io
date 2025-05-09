@@ -8,6 +8,7 @@ ecosystem() = (
     # Data I/O
     (
         highlevel = "Data I/O",
+        sublevel = "",
         name = "AstroImages.jl",
         repo = "https://github.com/JuliaAstro/AstroImages.jl",
         doc = "https://juliaastro.org/AstroImages/stable/",
@@ -19,6 +20,7 @@ ecosystem() = (
     ),
     (
         highlevel = "Data I/O",
+        sublevel = "",
         name = "CFITSIO.jl",
         repo = "https://github.com/JuliaAstro/CFITSIO.jl",
         doc = "https://juliaastro.org/CFITSIO/stable/",
@@ -31,6 +33,7 @@ ecosystem() = (
     ),
     (
         highlevel = "Data I/O",
+        sublevel = "",
         name = "FITSIO.jl",
         repo = "https://github.com/JuliaAstro/FITSIO.jl",
         doc = "https://juliaastro.org/FITSIO/stable/",
@@ -43,6 +46,7 @@ ecosystem() = (
     ),
     (
         highlevel = "Data I/O",
+        sublevel = "",
         name = "eschnett/ASDF2.jl",
         repo = "https://github.com/eschnett/ASDF2.jl",
         doc = "https://eschnett.github.io/ASDF2.jl/dev/",
@@ -56,6 +60,7 @@ ecosystem() = (
         # TODO: Update for Julia v1.11
         # https://github.com/torrance/Casacore.jl/issues/12
         highlevel = "Data I/O",
+        sublevel = "",
         name = "torrance/Casacore.jl",
         repo = "https://github.com/torrance/Casacore.jl",
         doc = "https://github.com/torrance/Casacore.jl?tab=readme-ov-file#casacorejl",
@@ -68,6 +73,7 @@ ecosystem() = (
     ),
     (
         highlevel = "Data I/O",
+        sublevel = "",
         name = "JuliaData/DataFrames.jl",
         repo = "https://github.com/JuliaData/DataFrames.jl",
         doc = "https://dataframes.juliadata.org/stable/",
@@ -79,6 +85,7 @@ ecosystem() = (
     ),
     (
         highlevel = "Data I/O",
+        sublevel = "",
         name = "JuliaAPlavin/Difmap.jl",
         repo = "https://github.com/JuliaAPlavin/Difmap.jl",
         doc = "https://aplavin.github.io/Difmap.jl/test/examples.html",
@@ -91,6 +98,7 @@ ecosystem() = (
     ),
     (
         highlevel = "Data I/O",
+        sublevel = "",
         name = "rafaqz/DimensionalData.jl",
         repo = "https://github.com/rafaqz/DimensionalData.jl",
         doc = "https://rafaqz.github.io/DimensionalData.jl/stable/",
@@ -103,6 +111,7 @@ ecosystem() = (
     ),
     (
         highlevel = "Data I/O",
+        sublevel = "",
         name = "emmt/EasyFITS.jl",
         repo = "https://github.com/emmt/EasyFITS.jl",
         doc = "https://emmt.github.io/EasyFITS.jl/dev",
@@ -114,6 +123,7 @@ ecosystem() = (
     ),
     (
         highlevel = "Data I/O",
+        sublevel = "",
         name = "barrettp/FITS.jl",
         repo = "https://github.com/barrettp/FITS.jl",
         doc = "https://emmt.github.io/EasyFITS.jl/dev",
@@ -125,6 +135,7 @@ ecosystem() = (
     ),
     (
         highlevel = "Data I/O",
+        sublevel = "",
         name = "FixedWidthTables.jl",
         repo = "https://github.com/JuliaAPlavin/FixedWidthTables.jl",
         doc = "https://github.com/JuliaAPlavin/FixedWidthTables.jl?tab=readme-ov-file#fixedwidthtablesjl",
@@ -136,6 +147,7 @@ ecosystem() = (
     ),
     (
         highlevel = "Data I/O",
+        sublevel = "",
         name = "emmt/OIFITS.jl",
         repo = "https://github.com/emmt/OIFITS.jl",
         doc = "https://github.com/emmt/OIFITS.jl?tab=readme-ov-file#support-for-oi-fits-data-in-julia",
@@ -147,6 +159,7 @@ ecosystem() = (
     ),
     (
         highlevel = "Data I/O",
+        sublevel = "",
         name = "JuliaAPlavin/VirtualObservatory.jl",
         repo = "https://github.com/JuliaAPlavin/VirtualObservatory.jl",
         doc = "https://github.com/JuliaAPlavin/VirtualObservatory.jl?tab=readme-ov-file#virtualobservatoryjl",
@@ -159,6 +172,7 @@ ecosystem() = (
     ),
     (
         highlevel = "Data I/O",
+        sublevel = "",
         name = "JuliaAPlavin/VLBIData.jl",
         repo = "https://github.com/JuliaAPlavin/VLBIData.jl",
         doc = "https://aplavin.github.io/VLBIData.jl/test/examples.html",
@@ -171,6 +185,7 @@ ecosystem() = (
     ),
      (
         highlevel = "Data I/O",
+        sublevel = "",
         name = "JuliaAPlavin/VOTables.jl",
         repo = "https://github.com/JuliaAPlavin/VOTables.jl",
         doc = "https://github.com/JuliaAPlavin/VOTables.jl",
@@ -184,6 +199,7 @@ ecosystem() = (
     # Images
     (
         highlevel = "Images",
+        sublevel = "",
         name = "AstroImages.jl",
         repo = "https://github.com/JuliaAstro/AstroImages.jl",
         doc = "https://juliaastro.org/AstroImages/stable/",
@@ -195,6 +211,7 @@ ecosystem() = (
     ),
     (
         highlevel = "Images",
+        sublevel = "",
         name = "CCDReduction.jl",
         repo = "https://github.com/JuliaAstro/CCDReduction.jl",
         doc = "https://juliaastro.org/CCDReduction/stable/",
@@ -208,6 +225,7 @@ ecosystem() = (
     ),
     (
         highlevel = "Images",
+        sublevel = "",
         name = "LACosmic.jl",
         repo = "https://github.com/JuliaAstro/LACosmic.jl",
         doc = "https://juliaastro.org/LACosmic/stable/",
@@ -220,6 +238,7 @@ ecosystem() = (
     ),
     (
         highlevel = "Images",
+        sublevel = "",
         name = "Photometry.jl",
         repo = "https://github.com/JuliaAstro/Photometry.jl",
         doc = "https://juliaastro.org/Photometry/stable/",
@@ -232,6 +251,7 @@ ecosystem() = (
     ),
     (
         highlevel = "Images",
+        sublevel = "",
         name = "PSFModels.jl",
         repo = "https://github.com/JuliaAstro/PSFModels.jl",
         doc = "https://juliaastro.org/PSFModels/stable/",
@@ -244,6 +264,7 @@ ecosystem() = (
     ),
     (
         highlevel = "Images",
+        sublevel = "",
         name = "Reproject.jl",
         repo = "https://github.com/JuliaAstro/Reproject.jl",
         doc = "https://github.com/JuliaAstro/Reproject.jl?tab=readme-ov-file#reproject",
@@ -255,6 +276,7 @@ ecosystem() = (
     ),
     (
         highlevel = "Images",
+        sublevel = "",
         name = "SAOImageDS9.jl",
         repo = "https://github.com/JuliaAstro/SAOImageDS9.jl",
         doc = "https://juliaastro.org/SAOImageDS9/stable/",
@@ -268,6 +290,7 @@ ecosystem() = (
     ),
     (
         highlevel = "Images",
+        sublevel = "",
         name = "JuliaHCI/ADI.jl",
         repo = "https://github.com/JuliaHCI/ADI.jl",
         doc = "http://JuliaHCI.github.io/ADI.jl/stable/",
@@ -282,6 +305,7 @@ ecosystem() = (
     ),
     (
         highlevel = "Images",
+        sublevel = "",
         name = "JuliaHCI/HCIToolbox.jl",
         repo = "https://github.com/JuliaHCI/HCIToolbox.jl",
         doc = "http://JuliaHCI.github.io/HCIToolbox.jl/stable/",
@@ -295,6 +319,7 @@ ecosystem() = (
     ),
     (
         highlevel = "Images",
+        sublevel = "",
         name = "JuliaAPlavin/SkyImages.jl",
         repo = "https://github.com/JuliaAPlavin/SkyImages.jl",
         doc = "https://aplavin.github.io/SkyImages.jl/test/notebook.html",
@@ -309,6 +334,7 @@ ecosystem() = (
     # Time, Coords, Units
     (
         highlevel = "Time, Coords, Units",
+        sublevel = "",
         name = "AstroAngles.jl",
         repo = "https://github.com/JuliaAstro/AstroAngles.jl",
         doc = "https://juliaastro.org/AstroAngles/stable/",
@@ -321,6 +347,7 @@ ecosystem() = (
     ),
     (
         highlevel = "Time, Coords, Units",
+        sublevel = "",
         name = "AstroTime.jl",
         repo = "https://github.com/JuliaAstro/AstroTime.jl",
         doc = "https://juliaastro.org/AstroTime/stable/",
@@ -333,6 +360,7 @@ ecosystem() = (
     ),
     (
         highlevel = "Time, Coords, Units",
+        sublevel = "",
         name = "BoxLeastSquares.jl",
         repo = "https://github.com/JuliaAstro/BoxLeastSquares.jl",
         doc = "https://juliaastro.org/BoxLeastSquares/stable/",
@@ -346,6 +374,7 @@ ecosystem() = (
     ),
     (
         highlevel = "Time, Coords, Units",
+        sublevel = "",
         name = "JuliaDSP/DSP.jl",
         repo = "https://github.com/JuliaDSP/DSP.jl",
         doc = "https://docs.juliadsp.org/stable/contents/",
@@ -357,6 +386,7 @@ ecosystem() = (
     ),
     (
         highlevel = "Time, Coords, Units",
+        sublevel = "",
         name = "ERFA.jl",
         repo = "https://github.com/JuliaAstro/ERFA.jl",
         doc = "https://github.com/JuliaAstro/ERFA.jl?tab=readme-ov-file#erfajl",
@@ -368,6 +398,7 @@ ecosystem() = (
     ),
     (
         highlevel = "Time, Coords, Units",
+        sublevel = "",
         name = "LombScargle.jl",
         repo = "https://github.com/JuliaAstro/LombScargle.jl",
         doc = "https://juliaastro.org/LombScargle/stable/",
@@ -380,6 +411,7 @@ ecosystem() = (
     ),
     (
         highlevel = "Time, Coords, Units",
+        sublevel = "",
         name = "SkyCoords.jl",
         repo = "https://github.com/JuliaAstro/SkyCoords.jl",
         doc = "https://juliaastro.org/SkyCoords/stable/",
@@ -392,6 +424,7 @@ ecosystem() = (
     ),
     (
         highlevel = "Time, Coords, Units",
+        sublevel = "",
         name = "SPICE.jl",
         repo = "https://github.com/JuliaAstro/SPICE.jl",
         doc = "https://juliaastro.org/SPICE/stable/",
@@ -404,6 +437,7 @@ ecosystem() = (
     ),
     (
         highlevel = "Time, Coords, Units",
+        sublevel = "",
         name = "UnitfulAstro.jl",
         repo = "https://github.com/JuliaAstro/UnitfulAstro.jl",
         doc = "https://juliaastro.org/UnitfulAstro/stable/",
@@ -415,6 +449,7 @@ ecosystem() = (
     ),
     (
         highlevel = "Time, Coords, Units",
+        sublevel = "",
         name = "WCS.jl",
         repo = "https://github.com/JuliaAstro/WCS.jl",
         doc = "https://juliaastro.org/WCS/stable/",
@@ -426,6 +461,7 @@ ecosystem() = (
     ),
     (
         highlevel = "Time, Coords, Units",
+        sublevel = "",
         name = "SymbolicML/DynamicQuantities.jl",
         repo = "https://github.com/SymbolicML/DynamicQuantities.jl",
         doc = "https://symbolicml.org/DynamicQuantities.jl/stable/",
@@ -438,6 +474,7 @@ ecosystem() = (
     ),
     (
         highlevel = "Time, Coords, Units",
+        sublevel = "",
         name = "JuliaPhysics/PhysicalConstants.jl",
         repo = "https://github.com/JuliaPhysics/PhysicalConstants.jl",
         doc = "https://juliaphysics.github.io/PhysicalConstants.jl/stable/",
@@ -450,6 +487,7 @@ ecosystem() = (
     ),
     (
         highlevel = "Time, Coords, Units",
+        sublevel = "",
         name = "JuliaStats/TimeSeries.jl",
         repo = "https://github.com/JuliaStats/TimeSeries.jl",
         doc = "https://juliastats.github.io/TimeSeries.jl/stable",
@@ -461,6 +499,7 @@ ecosystem() = (
     ),
     (
         highlevel = "Time, Coords, Units",
+        sublevel = "",
         name = "PainterQubits/Unitful.jl",
         repo = "https://github.com/PainterQubits/Unitful.jl",
         doc = "https://painterqubits.github.io/Unitful.jl/stable",
@@ -474,6 +513,7 @@ ecosystem() = (
     # Orbits
     (
         highlevel = "Orbits",
+        sublevel = "",
         name = "EarthOrientation.jl",
         repo = "https://github.com/JuliaAstro/EarthOrientation.jl",
         doc = "https://juliaastro.org/EarthOrientation/stable/",
@@ -485,6 +525,7 @@ ecosystem() = (
     ),
     (
         highlevel = "Orbits",
+        sublevel = "",
         name = "Transits.jl",
         repo = "https://github.com/JuliaAstro/Transits.jl",
         doc = "https://juliaastro.org/Transits/stable/",
@@ -498,6 +539,7 @@ ecosystem() = (
     ),
     (
         highlevel = "Orbits",
+        sublevel = "",
         name = "EphemerisSources.jl",
         repo = "https://github.com/JuliaAstro/EphemerisSources.jl",
         doc = "https://juliaastro.org/EphemerisSources.jl/docs",
@@ -509,6 +551,7 @@ ecosystem() = (
     ),
     (
         highlevel = "Orbits",
+        sublevel = "",
         name = "barrettp/Astrometry.jl",
         repo = "https://github.com/barrettp/Astrometry.jl",
         doc = "https://barrettp.github.io/Astrometry/dev",
@@ -520,6 +563,7 @@ ecosystem() = (
     ),
     (
         highlevel = "Orbits",
+        sublevel = "",
         name = "PerezHz/HORIZONS.jl",
         repo = "https://github.com/PerezHz/HORIZONS.jl",
         doc = "https://github.com/PerezHz/HORIZONS.jl?tab=readme-ov-file#horizonsjl",
@@ -543,6 +587,7 @@ ecosystem() = (
     #),
     (
         highlevel = "Orbits",
+        sublevel = "",
         name = "sefffal/PlanetOrbits.jl",
         repo = "https://github.com/sefffal/PlanetOrbits.jl",
         doc = "https://sefffal.github.io/PlanetOrbits.jl/dev/",
@@ -553,6 +598,7 @@ ecosystem() = (
     ),
     (
         highlevel = "Orbits",
+        sublevel = "",
         name = "JuliaSpace/SatelliteToolbox.jl",
         repo = "https://github.com/JuliaSpace/SatelliteToolbox.jl",
         doc = "https://juliaspace.github.io/SatelliteToolbox.jl/stable/",

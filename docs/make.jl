@@ -107,7 +107,12 @@ function generate_multidoc_refs(p; clonedir=joinpath(@__DIR__, "clones"))
     end
 end
 
-ecosystem_highlevels = JuliaAstroDocs.group(x -> x.highlevel, JuliaAstroDocs.ecosystem())
+ecosystem = JuliaAstroDocs.ecosystem()
+ecosystem_not_general = filter(x -> x.highlevel != "General", ecosystem)
+ecosystem_general = filter(x -> x.highlevel == "General", ecosystem)
+
+ecosystem_highlevels = JuliaAstroDocs.group(x -> x.highlevel, ecosystem_not_general)
+general_sublevels = JuliaAstroDocs.group(x -> x.sublevel, ecosystem_general) |> sort
 
 docs = [
     # We also add JuliaAstro's own generated pages
@@ -122,7 +127,12 @@ docs = [
             highlevel,
             collect(generate_multidoc_refs.(packages))
         )
-    end...
+    end...,
+    MultiDocumenter.MegaDropdownNav("General",
+        map(pairs(general_sublevels)) do (sublevel, packages)
+            MultiDocumenter.Column(sublevel, collect(generate_multidoc_refs.(packages)))
+        end |> collect
+    ),
 ]
 
 MultiDocumenter.make(
