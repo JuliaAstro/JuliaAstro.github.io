@@ -352,7 +352,7 @@ The joy of our community is the many astronomy and astrophysics packages availab
 
 [![curly braces](assets/code.png) Repository](https://github.com/JuliaDSP/DSP.jl)
 
-[![book icon](assets/book.png) Documentation](https://docs.juliadsp.org/stable/contents/)
+[![book icon](assets/book.png) Documentation](https://docs.juliadsp.org/stable/)
 
 **Filter design, periodograms, window functions, and other digital signal processing functionality**
 
@@ -363,7 +363,7 @@ The joy of our community is the many astronomy and astrophysics packages availab
 
 [![curly braces](assets/code.png) Repository](https://github.com/JuliaAstro/ERFA.jl)
 
-[![book icon](assets/book.png) Documentation](https://github.com/JuliaAstro/ERFA.jl?tab=readme-ov-file#erfajl)
+[![book icon](assets/book.png) Documentation](https://juliaastro.github.io/ERFA.jl/stable)
 
 **Time systems conversions**
 

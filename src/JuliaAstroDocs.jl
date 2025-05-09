@@ -377,7 +377,7 @@ ecosystem() = (
         sublevel = "",
         name = "JuliaDSP/DSP.jl",
         repo = "https://github.com/JuliaDSP/DSP.jl",
-        doc = "https://docs.juliadsp.org/stable/contents/",
+        doc = "https://docs.juliadsp.org/stable/",
         tagline = "Filter design, periodograms, window functions, and other digital signal processing functionality",
         descr = """
         - DSP.jl provides a number of common [digital signal processing](https://en.wikipedia.org/wiki/Digital_signal_processing) routines in Julia
@@ -389,7 +389,7 @@ ecosystem() = (
         sublevel = "",
         name = "ERFA.jl",
         repo = "https://github.com/JuliaAstro/ERFA.jl",
-        doc = "https://github.com/JuliaAstro/ERFA.jl?tab=readme-ov-file#erfajl",
+        doc = "https://juliaastro.github.io/ERFA.jl/stable",
         tagline = "Time systems conversions",
         descr = """
         - Low-level wrapper for [liberfa](https://github.com/liberfa/erfa)
