@@ -83,9 +83,22 @@ makedocs(
     plugins = [links],
 )
 
+# Differentiate between pure Julia and wrapper packages
+wrapper_packages = [
+    "CFITSIO",
+    "ERFA",
+    "FITSIO",
+    "torrance/Casacore",
+]
+
 @info "Building aggregate JuliaAstro site"
 function generate_multidoc_refs(p; clonedir=joinpath(@__DIR__, "clones"))
-    package_name = string(chopsuffix(p.name, ".jl"))
+    package_path = string(chopsuffix(p.name, ".jl"))
+    package_name = if package_path in wrapper_packages
+        "△ " * package_path
+    else
+        package_path
+    end
     multidoc_type = if any(occursin.(("stable", "dev"), p.doc)) && startswith(p.doc, "https://juliaastro")
             "MultiDocRef"
         else
@@ -95,7 +108,7 @@ function generate_multidoc_refs(p; clonedir=joinpath(@__DIR__, "clones"))
     if multidoc_type == "MultiDocRef"
         MultiDocumenter.MultiDocRef(
             upstream = joinpath(clonedir, package_name),
-            path = package_name,
+            path = package_path,
             name = package_name,
             giturl = p.repo,
         )
