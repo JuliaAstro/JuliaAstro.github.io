@@ -333,6 +333,30 @@ ecosystem() = (
     ),
     (
         highlevel = "Time, Coords, Units",
+        name = "BoxLeastSquares.jl",
+        repo = "https://github.com/JuliaAstro/BoxLeastSquares.jl",
+        doc = "https://juliaastro.org/BoxLeastSquares/stable/",
+        tagline = "Compute box-least-squares periodogram",
+        descr = """
+        - Fit BLS periodograms to time-series data
+        - Extract best-fitting transit parameters from the BLS periodogram
+        - Fully compatible with [Unitful.jl](https://github.com/painterqubits/Unitful.jl)
+        """,
+        astropy = ["astropy.timeseries"],
+    ),
+    (
+        highlevel = "Time, Coords, Units",
+        name = "JuliaDSP/DSP.jl",
+        repo = "https://github.com/JuliaDSP/DSP.jl",
+        doc = "https://docs.juliadsp.org/stable/contents/",
+        tagline = "Filter design, periodograms, window functions, and other digital signal processing functionality",
+        descr = """
+        - DSP.jl provides a number of common [digital signal processing](https://en.wikipedia.org/wiki/Digital_signal_processing) routines in Julia
+        """,
+        astropy = ["astropy.convolution", "astropy.timeseries"],
+    ),
+    (
+        highlevel = "Time, Coords, Units",
         name = "ERFA.jl",
         repo = "https://github.com/JuliaAstro/ERFA.jl",
         doc = "https://github.com/JuliaAstro/ERFA.jl?tab=readme-ov-file#erfajl",
@@ -341,6 +365,18 @@ ecosystem() = (
         - Low-level wrapper for [liberfa](https://github.com/liberfa/erfa)
         """,
         astropy = [],
+    ),
+    (
+        highlevel = "Time, Coords, Units",
+        name = "LombScargle.jl",
+        repo = "https://github.com/JuliaAstro/LombScargle.jl",
+        doc = "https://juliaastro.org/LombScargle/stable/",
+        tagline = "Compute Lomb-Scargle periodogram",
+        descr = """
+        - Create periodograms from unevenly sampled periodic signals
+        - Supports multi-threading
+        """,
+        astropy = ["astropy.timeseries"],
     ),
     (
         highlevel = "Time, Coords, Units",
@@ -515,9 +551,25 @@ ecosystem() = (
         """,
         astropy = [],
     ),
+    (
+        highlevel = "Orbits",
+        name = "JuliaSpace/SatelliteToolbox.jl",
+        repo = "https://github.com/JuliaSpace/SatelliteToolbox.jl",
+        doc = "https://juliaspace.github.io/SatelliteToolbox.jl/stable/",
+        tagline = "Perform analysis and build simulations related to satellites",
+        descr = """
+        - Atmospheric, gravitational, and geomagnetic field models
+        - Orbit propagators
+
+        See also:
+        - [ReferenceFrameRotations.jl](https://github.com/JuliaSpace/ReferenceFrameRotations.jl)
+        """,
+        astropy = [],
+    ),
     # General
     (
         highlevel = "General",
+        sublevel = "Utilities and Data Viz",
         name = "AstroLib.jl",
         repo = "https://github.com/JuliaAstro/astrolib.jl",
         doc = "https://juliaastro.org/AstroLib/stable/",
@@ -529,19 +581,7 @@ ecosystem() = (
     ),
     (
         highlevel = "General",
-        name = "BoxLeastSquares.jl",
-        repo = "https://github.com/JuliaAstro/BoxLeastSquares.jl",
-        doc = "https://juliaastro.org/BoxLeastSquares/stable/",
-        tagline = "Compute box-least-squares periodogram",
-        descr = """
-        - Fit BLS periodograms to time-series data
-        - Extract best-fitting transit parameters from the BLS periodogram
-        - Fully compatible with [Unitful.jl](https://github.com/painterqubits/Unitful.jl)
-        """,
-        astropy = [],
-    ),
-    (
-        highlevel = "General",
+        sublevel = "Galaxies and Cosmology",
         name = "Cosmology.jl",
         repo = "https://github.com/JuliaAstro/Cosmology.jl",
         doc = "https://juliaastro.org/Cosmology/stable/",
@@ -555,6 +595,7 @@ ecosystem() = (
     ),
     (
         highlevel = "General",
+        sublevel = "Galaxies and Cosmology",
         name = "DustExtinction.jl",
         repo = "https://github.com/JuliaAstro/DustExtinction.jl",
         doc = "https://juliaastro.org/DustExtinction/stable/",
@@ -568,18 +609,7 @@ ecosystem() = (
     ),
     (
         highlevel = "General",
-        name = "LombScargle.jl",
-        repo = "https://github.com/JuliaAstro/LombScargle.jl",
-        doc = "https://juliaastro.org/LombScargle/stable/",
-        tagline = "Compute Lomb-Scargle periodogram",
-        descr = """
-        - Create periodograms from unevenly sampled periodic signals
-        - Supports multi-threading
-        """,
-        astropy = [],
-    ),
-    (
-        highlevel = "General",
+        sublevel = "Spectroscopy",
         name = "Spectra.jl",
         repo = "https://github.com/JuliaAstro/Spectra.jl",
         doc = "https://juliaastro.org/Spectra/stable",
@@ -591,6 +621,7 @@ ecosystem() = (
     ),
     (
         highlevel = "General",
+        sublevel = "Statistics and Optimization",
         name = "mileslucas/BiweightStats.jl",
         repo = "https://github.com/mileslucas/BiweightStats.jl",
         doc = "http://mileslucas.com/BiweightStats.jl/stable/",
@@ -598,10 +629,11 @@ ecosystem() = (
         descr = """
         - Implements the location, scale, midvariance, midcovariance, and midcorrelation statistics
         """,
-        astropy = [],
+        astropy = ["astropy.stats"],
     ),
     (
         highlevel = "General",
+        sublevel = "Statistics and Optimization",
         name = "JuliaStats/Distributions.jl",
         repo = "https://github.com/JuliaStats/Distributions.jl",
         doc = "https://juliastats.github.io/Distributions.jl/stable/",
@@ -613,17 +645,7 @@ ecosystem() = (
     ),
     (
         highlevel = "General",
-        name = "JuliaDSP/DSP.jl",
-        repo = "https://github.com/JuliaDSP/DSP.jl",
-        doc = "https://docs.juliadsp.org/stable/contents/",
-        tagline = "Filter design, periodograms, window functions, and other digital signal processing functionality",
-        descr = """
-        - DSP.jl provides a number of common [digital signal processing](https://en.wikipedia.org/wiki/Digital_signal_processing) routines in Julia
-        """,
-        astropy = ["astropy.convolution"],
-    ),
-    (
-        highlevel = "General",
+        sublevel = "Utilities and Data Viz",
         name = "ziotom78/Healpix.jl",
         repo = "https://github.com/ziotom78/Healpix.jl",
         doc = "https://ziotom78.github.io/Healpix.jl/stable/",
@@ -637,6 +659,7 @@ ecosystem() = (
     ),
     (
         highlevel = "General",
+        sublevel = "Statistics and Optimization",
         name = "JuliaStats",
         repo = "https://github.com/JuliaStats",
         doc = "https://juliastats.org/",
@@ -648,6 +671,7 @@ ecosystem() = (
     ),
     (
         highlevel = "General",
+        sublevel = "Statistics and Optimization",
         name = "jump-dev/JuMP.jl",
         repo = "https://github.com/jump-dev/JuMP.jl",
         doc = "http://jump.dev/JuMP.jl/",
@@ -659,16 +683,18 @@ ecosystem() = (
     ),
     (
         highlevel = "General",
+        sublevel = "Spectroscopy",
         name = "ajwheeler/Korg.jl",
         repo = "https://github.com/ajwheeler/Korg.jl",
         doc = "https://ajwheeler.github.io/Korg.jl/stable/",
         tagline = "Theoretical stellar spectra from 1D model atmospheres and linelists, assuming LTE",
         descr = """
         """,
-        astropy = [],
+        astropy = ["specreduce", "specutils"],
     ),
     (
         highlevel = "General",
+        sublevel = "Statistics and Optimization",
         name = "JuliaPhysics/Measurements.jl",
         repo = "https://github.com/JuliaPhysics/Measurements.jl",
         doc = "https://juliaphysics.github.io/Measurements.jl/stable/",
@@ -681,6 +707,7 @@ ecosystem() = (
     ),
     (
         highlevel = "General",
+        sublevel = "Utilities and Data Viz",
         name = "ManuelBehrendt/Mera.jl",
         repo = "https://github.com/ManuelBehrendt/Mera.jl",
         doc = "https://manuelbehrendt.github.io/Mera.jl/stable/",
@@ -694,6 +721,7 @@ ecosystem() = (
     ),
     (
         highlevel = "General",
+        sublevel = "Statistics and Optimization",
         name = "MonteCarloMeasurements.jl",
         repo = "https://github.com/baggepinnen/MonteCarloMeasurements.jl",
         doc = "https://baggepinnen.github.io/MonteCarloMeasurements.jl/stable/",
@@ -705,6 +733,7 @@ ecosystem() = (
     ),
     (
         highlevel = "General",
+        sublevel = "Statistics and Optimization",
         name = "SciML/NonlinearSolve.jl",
         repo = "https://github.com/SciML/NonlinearSolve.jl",
         doc = "https://docs.sciml.ai/NonlinearSolve/stable/",
@@ -716,6 +745,7 @@ ecosystem() = (
     ),
     (
         highlevel = "General",
+        sublevel = "Utilities and Data Viz",
         name = "fabienbaron/OITOOLS.jl",
         repo = "https://github.com/fabienbaron/OITOOLS.jl",
         doc = "https://fabienbaron.github.io/OITOOLS.jl/dev",
@@ -728,6 +758,7 @@ ecosystem() = (
     ),
     (
         highlevel = "General",
+        sublevel = "Statistics and Optimization",
         name = "SciML/Optimization.jl",
         repo = "https://github.com/SciML/Optimization.jl",
         doc = "https://docs.sciml.ai/Optimization/stable/",
@@ -740,6 +771,7 @@ ecosystem() = (
     ),
     (
         highlevel = "General",
+        sublevel = "Utilities and Data Viz",
         name = "sefffal/PairPlots.jl",
         repo = "https://github.com/sefffal/PairPlots.jl",
         doc = "https://sefffal.github.io/PairPlots.jl/dev/",
@@ -755,21 +787,7 @@ ecosystem() = (
     ),
     (
         highlevel = "General",
-        name = "JuliaSpace/SatelliteToolbox.jl",
-        repo = "https://github.com/JuliaSpace/SatelliteToolbox.jl",
-        doc = "https://juliaspace.github.io/SatelliteToolbox.jl/stable/",
-        tagline = "Perform analysis and build simulations related to satellites",
-        descr = """
-        - Atmospheric, gravitational, and geomagnetic field models
-        - Orbit propagators
-
-        See also:
-        - [ReferenceFrameRotations.jl](https://github.com/JuliaSpace/ReferenceFrameRotations.jl)
-        """,
-        astropy = [],
-    ),
-    (
-        highlevel = "General",
+        sublevel = "Spectroscopy",
         name = "fjebaker/SpectralFitting.jl",
         repo = "https://github.com/fjebaker/SpectralFitting.jl",
         doc = "https://fjebaker.github.io/SpectralFitting.jl/dev/",
@@ -783,6 +801,7 @@ ecosystem() = (
     ),
     (
         highlevel = "General",
+        sublevel = "Statistics and Optimization",
         name = "JuliaAPlavin/Uncertain.jl",
         repo = "https://github.com/JuliaAPlavin/Uncertain.jl",
         doc = "https://baggepinnen.github.io/MonteCarloMeasurements.jl/stable/",
