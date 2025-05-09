@@ -95,9 +95,21 @@ We highlight some of the major packages in Python's `astropy` ecosystem and thei
   </tr>
 
   <tr>
-    <td rowspan=2>
+    <td rowspan=5>
       <a href="https://docs.astropy.org/en/stable/timeseries/index.html"><code>astropy.timeseries</code></a>
    </td>
+  </tr>
+  <tr>
+    <td><a href="https://github.com/JuliaAstro/BoxLeastSquares.jl">BoxLeastSquares.jl</a></td>
+    <td>Compute box-least-squares periodogram</td>
+  </tr>
+  <tr>
+    <td><a href="https://github.com/JuliaDSP/DSP.jl">JuliaDSP/DSP.jl</a></td>
+    <td>Filter design, periodograms, window functions, and other digital signal processing functionality</td>
+  </tr>
+  <tr>
+    <td><a href="https://github.com/JuliaAstro/LombScargle.jl">LombScargle.jl</a></td>
+    <td>Compute Lomb-Scargle periodogram</td>
   </tr>
   <tr>
     <td><a href="https://github.com/JuliaStats/TimeSeries.jl">JuliaStats/TimeSeries.jl</a></td>
@@ -313,9 +325,13 @@ We highlight some of the major packages in Python's `astropy` ecosystem and thei
   </tr>
 
   <tr>
-    <td rowspan=2>
+    <td rowspan=3>
       <a href="https://docs.astropy.org/en/stable/stats/index.html"><code>astropy.stats</code></a>
    </td>
+  </tr>
+  <tr>
+    <td><a href="https://github.com/mileslucas/BiweightStats.jl">mileslucas/BiweightStats.jl</a></td>
+    <td>Robust statistics based on the biweight transform</td>
   </tr>
   <tr>
     <td><a href="https://github.com/JuliaStats">JuliaStats</a></td>
@@ -410,7 +426,7 @@ We highlight some of the major packages in Python's `astropy` ecosystem and thei
   </tr>
 
   <tr>
-    <td rowspan=3>
+    <td rowspan=4>
       <a href="https://specreduce.readthedocs.io/"><code>specreduce</code></a>
    </td>
   </tr>
@@ -419,18 +435,26 @@ We highlight some of the major packages in Python's `astropy` ecosystem and thei
     <td>Utilities for interfacing with astronomical spectra and synthetic spectra libraries</td>
   </tr>
   <tr>
+    <td><a href="https://github.com/ajwheeler/Korg.jl">ajwheeler/Korg.jl</a></td>
+    <td>Theoretical stellar spectra from 1D model atmospheres and linelists, assuming LTE</td>
+  </tr>
+  <tr>
     <td><a href="https://github.com/fjebaker/SpectralFitting.jl">fjebaker/SpectralFitting.jl</a></td>
     <td>✨🛰 Fast and flexible spectral fitting in Julia</td>
   </tr>
 
   <tr>
-    <td rowspan=3>
+    <td rowspan=4>
       <a href="https://specutils.readthedocs.io/"><code>specutils</code></a>
    </td>
   </tr>
   <tr>
     <td><a href="https://github.com/JuliaAstro/Spectra.jl">Spectra.jl</a></td>
     <td>Utilities for interfacing with astronomical spectra and synthetic spectra libraries</td>
+  </tr>
+  <tr>
+    <td><a href="https://github.com/ajwheeler/Korg.jl">ajwheeler/Korg.jl</a></td>
+    <td>Theoretical stellar spectra from 1D model atmospheres and linelists, assuming LTE</td>
   </tr>
   <tr>
     <td><a href="https://github.com/fjebaker/SpectralFitting.jl">fjebaker/SpectralFitting.jl</a></td>

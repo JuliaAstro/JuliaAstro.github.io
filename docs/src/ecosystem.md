@@ -335,6 +335,30 @@ The joy of our community is the many astronomy and astrophysics packages availab
 - Support all commonly used astronomical time scales
 
 
+### BoxLeastSquares.jl
+
+[![curly braces](assets/code.png) Repository](https://github.com/JuliaAstro/BoxLeastSquares.jl)
+
+[![book icon](assets/book.png) Documentation](https://juliaastro.org/BoxLeastSquares/stable/)
+
+**Compute box-least-squares periodogram**
+
+- Fit BLS periodograms to time-series data
+- Extract best-fitting transit parameters from the BLS periodogram
+- Fully compatible with [Unitful.jl](https://github.com/painterqubits/Unitful.jl)
+
+
+### JuliaDSP/DSP.jl
+
+[![curly braces](assets/code.png) Repository](https://github.com/JuliaDSP/DSP.jl)
+
+[![book icon](assets/book.png) Documentation](https://docs.juliadsp.org/stable/contents/)
+
+**Filter design, periodograms, window functions, and other digital signal processing functionality**
+
+- DSP.jl provides a number of common [digital signal processing](https://en.wikipedia.org/wiki/Digital_signal_processing) routines in Julia
+
+
 ### ERFA.jl
 
 [![curly braces](assets/code.png) Repository](https://github.com/JuliaAstro/ERFA.jl)
@@ -344,6 +368,18 @@ The joy of our community is the many astronomy and astrophysics packages availab
 **Time systems conversions**
 
 - Low-level wrapper for [liberfa](https://github.com/liberfa/erfa)
+
+
+### LombScargle.jl
+
+[![curly braces](assets/code.png) Repository](https://github.com/JuliaAstro/LombScargle.jl)
+
+[![book icon](assets/book.png) Documentation](https://juliaastro.org/LombScargle/stable/)
+
+**Compute Lomb-Scargle periodogram**
+
+- Create periodograms from unevenly sampled periodic signals
+- Supports multi-threading
 
 
 ### SkyCoords.jl
@@ -510,6 +546,21 @@ The joy of our community is the many astronomy and astrophysics packages availab
 
 
 
+### JuliaSpace/SatelliteToolbox.jl
+
+[![curly braces](assets/code.png) Repository](https://github.com/JuliaSpace/SatelliteToolbox.jl)
+
+[![book icon](assets/book.png) Documentation](https://juliaspace.github.io/SatelliteToolbox.jl/stable/)
+
+**Perform analysis and build simulations related to satellites**
+
+- Atmospheric, gravitational, and geomagnetic field models
+- Orbit propagators
+
+See also:
+- [ReferenceFrameRotations.jl](https://github.com/JuliaSpace/ReferenceFrameRotations.jl)
+
+
 ---
 
 ## General
@@ -523,19 +574,6 @@ The joy of our community is the many astronomy and astrophysics packages availab
 **Collection of generic astronomical and astrophysical functions**
 
 - Translation of many IDL AstroLib procedures
-
-
-### BoxLeastSquares.jl
-
-[![curly braces](assets/code.png) Repository](https://github.com/JuliaAstro/BoxLeastSquares.jl)
-
-[![book icon](assets/book.png) Documentation](https://juliaastro.org/BoxLeastSquares/stable/)
-
-**Compute box-least-squares periodogram**
-
-- Fit BLS periodograms to time-series data
-- Extract best-fitting transit parameters from the BLS periodogram
-- Fully compatible with [Unitful.jl](https://github.com/painterqubits/Unitful.jl)
 
 
 ### Cosmology.jl
@@ -562,18 +600,6 @@ The joy of our community is the many astronomy and astrophysics packages availab
 - Various empirical extinction models
 - SFD (1998) galactic dust map
 - Fully compatible with [Unitful.jl](https://github.com/painterqubits/Unitful.jl)
-
-
-### LombScargle.jl
-
-[![curly braces](assets/code.png) Repository](https://github.com/JuliaAstro/LombScargle.jl)
-
-[![book icon](assets/book.png) Documentation](https://juliaastro.org/LombScargle/stable/)
-
-**Compute Lomb-Scargle periodogram**
-
-- Create periodograms from unevenly sampled periodic signals
-- Supports multi-threading
 
 
 ### Spectra.jl
@@ -607,17 +633,6 @@ The joy of our community is the many astronomy and astrophysics packages availab
 **A Julia package for probability distributions and associated functions**
 
 - A Julia package for probability distributions and associated functions
-
-
-### JuliaDSP/DSP.jl
-
-[![curly braces](assets/code.png) Repository](https://github.com/JuliaDSP/DSP.jl)
-
-[![book icon](assets/book.png) Documentation](https://docs.juliadsp.org/stable/contents/)
-
-**Filter design, periodograms, window functions, and other digital signal processing functionality**
-
-- DSP.jl provides a number of common [digital signal processing](https://en.wikipedia.org/wiki/Digital_signal_processing) routines in Julia
 
 
 ### ziotom78/Healpix.jl
@@ -746,21 +761,6 @@ The joy of our community is the many astronomy and astrophysics packages availab
 
 - Corner plots or scatter plot matrices. Both Julia and Python are supported (PairPlots.jl and [pairplots.py](https://pypi.org/project/pairplots/))
 - Inspired by [corner.py](https://corner.readthedocs.io/en/latest/index.html) and [chainconsumer.py](https://samreay.github.io/ChainConsumer/usage.html)
-
-See also:
-- [ReferenceFrameRotations.jl](https://github.com/JuliaSpace/ReferenceFrameRotations.jl)
-
-
-### JuliaSpace/SatelliteToolbox.jl
-
-[![curly braces](assets/code.png) Repository](https://github.com/JuliaSpace/SatelliteToolbox.jl)
-
-[![book icon](assets/book.png) Documentation](https://juliaspace.github.io/SatelliteToolbox.jl/stable/)
-
-**Perform analysis and build simulations related to satellites**
-
-- Atmospheric, gravitational, and geomagnetic field models
-- Orbit propagators
 
 See also:
 - [ReferenceFrameRotations.jl](https://github.com/JuliaSpace/ReferenceFrameRotations.jl)
