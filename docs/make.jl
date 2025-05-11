@@ -5,8 +5,6 @@ Revise.revise()
 
 import JuliaAstroDocs
 
-include("JuliaPackageComponent.jl")
-
 t = JuliaAstroDocs.ecosystem()
 
 # Sync ecosystem.md
@@ -101,9 +99,9 @@ wrapper_packages = [
 function generate_multidoc_refs(p; clonedir=joinpath(@__DIR__, "clones"))
     package_path = string(chopsuffix(p.name, ".jl"))
     package_name = if package_path in wrapper_packages
-        package_path
+        "🔼 " * package_path
     else
-        package_path
+        "🟢 " * package_path
     end
     multidoc_type = if any(occursin.(("stable", "dev"), p.doc)) && startswith(p.doc, "https://juliaastro")
             "MultiDocRef"
@@ -112,14 +110,14 @@ function generate_multidoc_refs(p; clonedir=joinpath(@__DIR__, "clones"))
         end
 
     if multidoc_type == "MultiDocRef"
-        JuliaPackageComponent(
+        MultiDocumenter.MultiDocRef(
             upstream = joinpath(clonedir, package_path),
             path = package_path,
             name = package_name,
             giturl = p.repo,
         )
     else
-        WrapperLink(
+        MultiDocumenter.Link(
             package_name,
             p.doc,
         )
