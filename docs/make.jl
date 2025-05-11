@@ -5,6 +5,8 @@ Revise.revise()
 
 import JuliaAstroDocs
 
+include("JuliaPackageComponent.jl")
+
 t = JuliaAstroDocs.ecosystem()
 
 # Sync ecosystem.md
@@ -87,15 +89,17 @@ makedocs(
 wrapper_packages = [
     "CFITSIO",
     "ERFA",
+    "emmt/EasyFITS",
     "FITSIO",
     "torrance/Casacore",
 ]
+
 
 @info "Building aggregate JuliaAstro site"
 function generate_multidoc_refs(p; clonedir=joinpath(@__DIR__, "clones"))
     package_path = string(chopsuffix(p.name, ".jl"))
     package_name = if package_path in wrapper_packages
-        "△ " * package_path
+        package_path
     else
         package_path
     end
@@ -106,14 +110,14 @@ function generate_multidoc_refs(p; clonedir=joinpath(@__DIR__, "clones"))
         end
 
     if multidoc_type == "MultiDocRef"
-        MultiDocumenter.MultiDocRef(
-            upstream = joinpath(clonedir, package_name),
+        JuliaPackageComponent(
+            upstream = joinpath(clonedir, package_path),
             path = package_path,
             name = package_name,
             giturl = p.repo,
         )
     else
-        MultiDocumenter.Link(
+        WrapperLink(
             package_name,
             p.doc,
         )
