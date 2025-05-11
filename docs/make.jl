@@ -100,9 +100,9 @@ wrapper_packages = [
 function generate_multidoc_refs(p; clonedir=joinpath(@__DIR__, "clones"))
     package_path = string(chopsuffix(p.name, ".jl"))
     package_name = if package_path in wrapper_packages
-        "🔼 " * package_path
+        "◯ " * package_path
     else
-        "🟢 " * package_path
+        "⬤ " * package_path
     end
     multidoc_type = if any(occursin.(("stable", "dev"), p.doc)) && startswith(p.doc, "https://juliaastro")
             "MultiDocRef"
@@ -126,31 +126,29 @@ function generate_multidoc_refs(p; clonedir=joinpath(@__DIR__, "clones"))
 end
 
 ecosystem = JuliaAstroDocs.ecosystem()
-ecosystem_not_general = filter(x -> x.highlevel != "General", ecosystem)
-ecosystem_general = filter(x -> x.highlevel == "General", ecosystem)
-
-ecosystem_highlevels = JuliaAstroDocs.group(x -> x.highlevel, ecosystem_not_general)
-general_sublevels = JuliaAstroDocs.group(x -> x.sublevel, ecosystem_general) |> sort
+ecosystem_highlevels = sort(JuliaAstroDocs.group(x -> x.highlevel, ecosystem);
+    by = x -> x.highlevel
+)
 
 docs = [
-    # We also add JuliaAstro's own generated pages
+    # JuliaAstro's own generated pages
     MultiDocumenter.MultiDocRef(
         upstream = joinpath(@__DIR__, "build"),
         path = "home",
         name = "Home",
         fix_canonical_url = false,
     ),
-    map(pairs(ecosystem_highlevels)) do (highlevel, packages)
-        MultiDocumenter.DropdownNav(
-            highlevel,
-            collect(generate_multidoc_refs.(packages))
+    # MultiDocumenter pages
+    map(pairs(ecosystem_highlevels)) do (highlevel, package_groups)
+        ecosystem_sublevels = sort(JuliaAstroDocs.group(x -> x.sublevel, package_groups);
+            by = x -> x.sublevel
+        )
+        MultiDocumenter.MegaDropdownNav(highlevel,
+            map(pairs(ecosystem_sublevels)) do (sublevel, packages)
+                MultiDocumenter.Column(sublevel, collect(generate_multidoc_refs.(sort(packages; by = x -> basename(x.name)))))
+            end |> collect
         )
     end...,
-    MultiDocumenter.MegaDropdownNav("General",
-        map(pairs(general_sublevels)) do (sublevel, packages)
-            MultiDocumenter.Column(sublevel, collect(generate_multidoc_refs.(packages)))
-        end |> collect
-    ),
 ]
 
 MultiDocumenter.make(

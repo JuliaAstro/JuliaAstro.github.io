@@ -206,7 +206,7 @@ We highlight some of the major packages in Python's `astropy` ecosystem and thei
   <tbody>
 
   <tr>
-    <td rowspan=7>
+    <td rowspan=8>
       <a href="https://docs.astropy.org/en/stable/io/fits/index.html"><code>astropy.io.fits</code></a>
    </td>
   </tr>
@@ -233,6 +233,10 @@ We highlight some of the major packages in Python's `astropy` ecosystem and thei
   <tr>
     <td><a href="https://github.com/emmt/OIFITS.jl">emmt/OIFITS.jl</a></td>
     <td>Support for OI-FITS</td>
+  </tr>
+  <tr>
+    <td><a href="https://github.com/JuliaAPlavin/SkyImages.jl">JuliaAPlavin/SkyImages.jl</a></td>
+    <td>Load astronomical images of the sky and process them with convenient, general, and composable functions.</td>
   </tr>
 
   <tr>
@@ -291,9 +295,13 @@ We highlight some of the major packages in Python's `astropy` ecosystem and thei
   </tr>
 
   <tr>
-    <td rowspan=2>
+    <td rowspan=3>
       <a href="https://docs.astropy.org/en/stable/convolution/index.html"><code>astropy.convolution</code></a>
    </td>
+  </tr>
+  <tr>
+    <td><a href="https://github.com/JuliaImages/ImageFiltering.jl">JuliaImages/ImageFiltering.jl</a></td>
+    <td>ulia implementations of multidimensional array convolution and nonlinear stencil operations</td>
   </tr>
   <tr>
     <td><a href="https://github.com/JuliaDSP/DSP.jl">JuliaDSP/DSP.jl</a></td>

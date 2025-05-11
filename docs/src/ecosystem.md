@@ -4,7 +4,7 @@ The joy of our community is the many astronomy and astrophysics packages availab
 
 ---
 
-## Data I/O
+## Utilities
 
 ### AstroImages.jl
 
@@ -15,6 +15,19 @@ The joy of our community is the many astronomy and astrophysics packages availab
 **Load, manipulate, and visualize astronomical images**
 
 - Works with the [FileIO.jl](https://github.com/JuliaIO/FileIO.jl) interface
+
+
+### JuliaAPlavin/SkyImages.jl
+
+[![curly braces](assets/code.png) Repository](https://github.com/JuliaAPlavin/SkyImages.jl)
+
+[![book icon](assets/book.png) Documentation](https://aplavin.github.io/SkyImages.jl/test/notebook.html)
+
+**Load astronomical images of the sky and process them with convenient, general, and composable functions.**
+
+- FITS WCS and Healpix images
+- Uniform interface and Makie plotting
+- Use original data as-is or project onto a rectangular grid
 
 
 ### CFITSIO.jl
@@ -75,18 +88,6 @@ The joy of our community is the many astronomy and astrophysics packages availab
 - Tools for working with tabular data in Julia
 
 
-### JuliaAPlavin/Difmap.jl
-
-[![curly braces](assets/code.png) Repository](https://github.com/JuliaAPlavin/Difmap.jl)
-
-[![book icon](assets/book.png) Documentation](https://aplavin.github.io/Difmap.jl/test/examples.html)
-
-**Wrapper for the Difmap program used in synthesis imaging**
-
-- Execute [Difmap](http://www.ascl.net/1103.001) scripts, handle inputs/outputs and logs
-- Display images and plots from Difmap in interactive Julia environments
-
-
 ### rafaqz/DimensionalData.jl
 
 [![curly braces](assets/code.png) Repository](https://github.com/rafaqz/DimensionalData.jl)
@@ -132,17 +133,6 @@ The joy of our community is the many astronomy and astrophysics packages availab
 - Read fixed width (so-called ASCII) tables. A wide range of format specification options, including autodetection
 
 
-### emmt/OIFITS.jl
-
-[![curly braces](assets/code.png) Repository](https://github.com/emmt/OIFITS.jl)
-
-[![book icon](assets/book.png) Documentation](https://github.com/emmt/OIFITS.jl?tab=readme-ov-file#support-for-oi-fits-data-in-julia)
-
-**Support for OI-FITS**
-
-- Read and write OI-FITS optical interferometry data format
-
-
 ### JuliaAPlavin/VirtualObservatory.jl
 
 [![curly braces](assets/code.png) Repository](https://github.com/JuliaAPlavin/VirtualObservatory.jl)
@@ -153,18 +143,6 @@ The joy of our community is the many astronomy and astrophysics packages availab
 
 - Access remote data and services that follow Virtual Observatory (VO, <https://www.ivoa.net/>) protocols
 - Currently supports the Table Access Protocol (TAP), and a few key features specific to the VizieR database
-
-
-### JuliaAPlavin/VLBIData.jl
-
-[![curly braces](assets/code.png) Repository](https://github.com/JuliaAPlavin/VLBIData.jl)
-
-[![book icon](assets/book.png) Documentation](https://aplavin.github.io/VLBIData.jl/test/examples.html)
-
-**Work with data formats common in very long baseline interferometry (VLBI)**
-
-- Read interferometric visibilities (`uvfits`), images (`fits`), and source models
-- Minimal writing support for source models
 
 
 ### JuliaAPlavin/VOTables.jl
@@ -179,10 +157,6 @@ The joy of our community is the many astronomy and astrophysics packages availab
 - Read Unitful numbers and column metadata
 
 
----
-
-## Images
-
 ### AstroImages.jl
 
 [![curly braces](assets/code.png) Repository](https://github.com/JuliaAstro/AstroImages.jl)
@@ -194,55 +168,6 @@ The joy of our community is the many astronomy and astrophysics packages availab
 - Works with the [FileIO.jl](https://github.com/JuliaIO/FileIO.jl) interface
 
 
-### CCDReduction.jl
-
-[![curly braces](assets/code.png) Repository](https://github.com/JuliaAstro/CCDReduction.jl)
-
-[![book icon](assets/book.png) Documentation](https://juliaastro.org/CCDReduction/stable/)
-
-**Common CCD image processing routines**
-
-- Creation of calibration files
-- Dark subtraction, flat normalization, bias subtraction, cropping
-- Specialized iterator for processing directories of FITS files using a table built from the FITS headers.
-
-
-### LACosmic.jl
-
-[![curly braces](assets/code.png) Repository](https://github.com/JuliaAstro/LACosmic.jl)
-
-[![book icon](assets/book.png) Documentation](https://juliaastro.org/LACosmic/stable/)
-
-**Cosmic-ray rejection by Laplacian edge detection**
-
-- Implementation of the L.A.Cosmic algorithm ([van Dokkum, 2001](https://ui.adsabs.harvard.edu/abs/2001PASP..113.1420V/abstract))
-- Returns bad pixel masks and cleaned data
-
-
-### Photometry.jl
-
-[![curly braces](assets/code.png) Repository](https://github.com/JuliaAstro/Photometry.jl)
-
-[![book icon](assets/book.png) Documentation](https://juliaastro.org/Photometry/stable/)
-
-**Aperture photometry**
-
-- Background estimation and source extraction
-- Fast and precise aperture photometry
-
-
-### PSFModels.jl
-
-[![curly braces](assets/code.png) Repository](https://github.com/JuliaAstro/PSFModels.jl)
-
-[![book icon](assets/book.png) Documentation](https://juliaastro.org/PSFModels/stable/)
-
-**Analytical, allocation-free point-spread-functions (PSF)**
-
-- Lazy representation allows fast allocation-free calculations
-- Gaussian (Normal), Moffat, and Airy disk.
-
-
 ### Reproject.jl
 
 [![curly braces](assets/code.png) Repository](https://github.com/JuliaAstro/Reproject.jl)
@@ -252,46 +177,6 @@ The joy of our community is the many astronomy and astrophysics packages availab
 **Astronomical image reprojection**
 
 - Uses [FITSIO.jl](https://github.com/JuliaAstro/FITSIO.jl) and [WCS.jl](https://github.com/JuliaAstro/WCS.jl) to reproject coordinate systems between FITS images
-
-
-### SAOImageDS9.jl
-
-[![curly braces](assets/code.png) Repository](https://github.com/JuliaAstro/SAOImageDS9.jl)
-
-[![book icon](assets/book.png) Documentation](https://juliaastro.org/SAOImageDS9/stable/)
-
-**Interface with the DS9 image viewer**
-
-- Uses [XPA.jl](https://github.com/JuliaAstro/XPA.jl) to communicate with DS9 instances
-- Easily display images in DS9 and add features like circles and lines
-- Low-level API accessible with `set` and `get`
-
-
-### JuliaHCI/ADI.jl
-
-[![curly braces](assets/code.png) Repository](https://github.com/JuliaHCI/ADI.jl)
-
-[![book icon](assets/book.png) Documentation](http://JuliaHCI.github.io/ADI.jl/stable/)
-
-**Angular Differential Imaging (ADI) routines in Julia**
-
-- PCA, NMF, LLSG, LOCI, etc.
-- Apply algorithms framewise or in spectral differential imaging (SDI) using Julia's multiple dispatch
-- Provide an interface for using these algorithms in other tools
-- Common HCI metrics including S/N maps, contrast curves, throughput curves (from PSF injection), STIM, etc.
-
-
-### JuliaHCI/HCIToolbox.jl
-
-[![curly braces](assets/code.png) Repository](https://github.com/JuliaHCI/HCIToolbox.jl)
-
-[![book icon](assets/book.png) Documentation](http://JuliaHCI.github.io/HCIToolbox.jl/stable/)
-
-**Common utilities for high-contrast imaging (HCI) processing**
-
-- Morphological operations (rotation, stacking, shifting)
-- Masking routines (circles, annulus, series of annuli)
-- Spectral scaling and descaling
 
 
 ### JuliaAPlavin/SkyImages.jl
@@ -307,9 +192,16 @@ The joy of our community is the many astronomy and astrophysics packages availab
 - Use original data as-is or project onto a rectangular grid
 
 
----
+### JuliaImages/ImageFiltering.jl
 
-## Time, Coords, Units
+[![curly braces](assets/code.png) Repository](https://github.com/JuliaImages/ImageFiltering.jl)
+
+[![book icon](assets/book.png) Documentation](https://juliaimages.github.io/ImageFiltering.jl/stable)
+
+**ulia implementations of multidimensional array convolution and nonlinear stencil operations**
+
+- ImageFiltering implements blurring, sharpening, gradient computation, and other linear filtering operations, as well nonlinear filters like min/max
+
 
 ### AstroAngles.jl
 
@@ -333,19 +225,6 @@ The joy of our community is the many astronomy and astrophysics packages availab
 
 - High-precision, time-scale aware, DateTime-like data type
 - Support all commonly used astronomical time scales
-
-
-### BoxLeastSquares.jl
-
-[![curly braces](assets/code.png) Repository](https://github.com/JuliaAstro/BoxLeastSquares.jl)
-
-[![book icon](assets/book.png) Documentation](https://juliaastro.org/BoxLeastSquares/stable/)
-
-**Compute box-least-squares periodogram**
-
-- Fit BLS periodograms to time-series data
-- Extract best-fitting transit parameters from the BLS periodogram
-- Fully compatible with [Unitful.jl](https://github.com/painterqubits/Unitful.jl)
 
 
 ### JuliaDSP/DSP.jl
@@ -392,18 +271,6 @@ The joy of our community is the many astronomy and astrophysics packages availab
 
 - Supports ICRS, galactic, and FK5 coordinate systems
 - Fast conversion of coordinates between different systems
-
-
-### SPICE.jl
-
-[![curly braces](assets/code.png) Repository](https://github.com/JuliaAstro/SPICE.jl)
-
-[![book icon](assets/book.png) Documentation](https://juliaastro.org/SPICE/stable/)
-
-**SPICE data retrieval and usage**
-
-- Wrapper for [CSPICE](https://naif.jpl.nasa.gov/pub/naif/toolkit_docs/C/index.html)
-- Read SPICE data files and compute derived observation geometry such as altitude, latitude/longitude and lighting angles
 
 
 ### UnitfulAstro.jl
@@ -475,10 +342,6 @@ The joy of our community is the many astronomy and astrophysics packages availab
 - We want to support not only SI units but also any other unit system
 
 
----
-
-## Orbits
-
 ### EarthOrientation.jl
 
 [![curly braces](assets/code.png) Repository](https://github.com/JuliaAstro/EarthOrientation.jl)
@@ -488,6 +351,248 @@ The joy of our community is the many astronomy and astrophysics packages availab
 **Earth orientation parameters**
 
 - Calculate Earth orientation parameters from IERS tables
+
+
+### barrettp/Astrometry.jl
+
+[![curly braces](assets/code.png) Repository](https://github.com/barrettp/Astrometry.jl)
+
+[![book icon](assets/book.png) Documentation](https://barrettp.github.io/Astrometry/dev)
+
+**Set of IAU standard algorithms for calculating the time and position of celestial objects**
+
+- More information can be found on the official website of the [Standards of Fundamental Astronomy](http://www.iausofa.org/).
+
+
+### ziotom78/Healpix.jl
+
+[![curly braces](assets/code.png) Repository](https://github.com/ziotom78/Healpix.jl)
+
+[![book icon](assets/book.png) Documentation](https://ziotom78.github.io/Healpix.jl/stable/)
+
+**Implementation of Healpix spherical tesselation scheme in pure Julia**
+
+- pixel functions, query functions, map functions
+- power spectrum support
+- plotting support
+
+
+### ManuelBehrendt/Mera.jl
+
+[![curly braces](assets/code.png) Repository](https://github.com/ManuelBehrendt/Mera.jl)
+
+[![book icon](assets/book.png) Documentation](https://manuelbehrendt.github.io/Mera.jl/stable/)
+
+**Working with large hydrodynamical simulation data**
+
+- Loading, writing, analysing 3D AMR/uniform-grid and N-body data sets
+- Memory lightweight data processing within a database framework
+- Many predefined functions and examples
+
+
+### sefffal/PairPlots.jl
+
+[![curly braces](assets/code.png) Repository](https://github.com/sefffal/PairPlots.jl)
+
+[![book icon](assets/book.png) Documentation](https://sefffal.github.io/PairPlots.jl/dev/)
+
+**Beautiful and flexible visualizations of high dimensional data**
+
+- Corner plots or scatter plot matrices. Both Julia and Python are supported (PairPlots.jl and [pairplots.py](https://pypi.org/project/pairplots/))
+- Inspired by [corner.py](https://corner.readthedocs.io/en/latest/index.html) and [chainconsumer.py](https://samreay.github.io/ChainConsumer/usage.html)
+
+See also:
+- [ReferenceFrameRotations.jl](https://github.com/JuliaSpace/ReferenceFrameRotations.jl)
+
+
+---
+
+## Techniques
+
+### JuliaAPlavin/Difmap.jl
+
+[![curly braces](assets/code.png) Repository](https://github.com/JuliaAPlavin/Difmap.jl)
+
+[![book icon](assets/book.png) Documentation](https://aplavin.github.io/Difmap.jl/test/examples.html)
+
+**Wrapper for the Difmap program used in synthesis imaging**
+
+- Execute [Difmap](http://www.ascl.net/1103.001) scripts, handle inputs/outputs and logs
+- Display images and plots from Difmap in interactive Julia environments
+
+
+### emmt/OIFITS.jl
+
+[![curly braces](assets/code.png) Repository](https://github.com/emmt/OIFITS.jl)
+
+[![book icon](assets/book.png) Documentation](https://github.com/emmt/OIFITS.jl?tab=readme-ov-file#support-for-oi-fits-data-in-julia)
+
+**Support for OI-FITS**
+
+- Read and write OI-FITS optical interferometry data format
+
+
+### JuliaAPlavin/VLBIData.jl
+
+[![curly braces](assets/code.png) Repository](https://github.com/JuliaAPlavin/VLBIData.jl)
+
+[![book icon](assets/book.png) Documentation](https://aplavin.github.io/VLBIData.jl/test/examples.html)
+
+**Work with data formats common in very long baseline interferometry (VLBI)**
+
+- Read interferometric visibilities (`uvfits`), images (`fits`), and source models
+- Minimal writing support for source models
+
+
+### CCDReduction.jl
+
+[![curly braces](assets/code.png) Repository](https://github.com/JuliaAstro/CCDReduction.jl)
+
+[![book icon](assets/book.png) Documentation](https://juliaastro.org/CCDReduction/stable/)
+
+**Common CCD image processing routines**
+
+- Creation of calibration files
+- Dark subtraction, flat normalization, bias subtraction, cropping
+- Specialized iterator for processing directories of FITS files using a table built from the FITS headers.
+
+
+### LACosmic.jl
+
+[![curly braces](assets/code.png) Repository](https://github.com/JuliaAstro/LACosmic.jl)
+
+[![book icon](assets/book.png) Documentation](https://juliaastro.org/LACosmic/stable/)
+
+**Cosmic-ray rejection by Laplacian edge detection**
+
+- Implementation of the L.A.Cosmic algorithm ([van Dokkum, 2001](https://ui.adsabs.harvard.edu/abs/2001PASP..113.1420V/abstract))
+- Returns bad pixel masks and cleaned data
+
+
+### Photometry.jl
+
+[![curly braces](assets/code.png) Repository](https://github.com/JuliaAstro/Photometry.jl)
+
+[![book icon](assets/book.png) Documentation](https://juliaastro.org/Photometry/stable/)
+
+**Aperture photometry**
+
+- Background estimation and source extraction
+- Fast and precise aperture photometry
+
+
+### PSFModels.jl
+
+[![curly braces](assets/code.png) Repository](https://github.com/JuliaAstro/PSFModels.jl)
+
+[![book icon](assets/book.png) Documentation](https://juliaastro.org/PSFModels/stable/)
+
+**Analytical, allocation-free point-spread-functions (PSF)**
+
+- Lazy representation allows fast allocation-free calculations
+- Gaussian (Normal), Moffat, and Airy disk.
+
+
+### SAOImageDS9.jl
+
+[![curly braces](assets/code.png) Repository](https://github.com/JuliaAstro/SAOImageDS9.jl)
+
+[![book icon](assets/book.png) Documentation](https://juliaastro.org/SAOImageDS9/stable/)
+
+**Interface with the DS9 image viewer**
+
+- Uses [XPA.jl](https://github.com/JuliaAstro/XPA.jl) to communicate with DS9 instances
+- Easily display images in DS9 and add features like circles and lines
+- Low-level API accessible with `set` and `get`
+
+
+### Spectra.jl
+
+[![curly braces](assets/code.png) Repository](https://github.com/JuliaAstro/Spectra.jl)
+
+[![book icon](assets/book.png) Documentation](https://juliaastro.org/Spectra/stable)
+
+**Utilities for interfacing with astronomical spectra and synthetic spectra libraries**
+
+- Utilities for interfacing with astronomical spectra and synthetic spectra libraries
+
+
+### ajwheeler/Korg.jl
+
+[![curly braces](assets/code.png) Repository](https://github.com/ajwheeler/Korg.jl)
+
+[![book icon](assets/book.png) Documentation](https://ajwheeler.github.io/Korg.jl/stable/)
+
+**Theoretical stellar spectra from 1D model atmospheres and linelists, assuming LTE**
+
+
+
+### fabienbaron/OITOOLS.jl
+
+[![curly braces](assets/code.png) Repository](https://github.com/fabienbaron/OITOOLS.jl)
+
+[![book icon](assets/book.png) Documentation](https://fabienbaron.github.io/OITOOLS.jl/dev)
+
+**A collection of tools to load, visualize, model-fit and image optical interferometry data coming from CHARA, NPOI and VLTI**
+
+- OITOOLS is a Julia package to read, plot, model-fit and image optical interferometric data coming from astronomical arrays such as CHARA, VLTI, and NPOI
+- Note that despite having the same name as [JMMC's oitools](https://github.com/JMMC-OpenDev/oitools), they are completely unrelated and were developed independently
+
+
+### fjebaker/SpectralFitting.jl
+
+[![curly braces](assets/code.png) Repository](https://github.com/fjebaker/SpectralFitting.jl)
+
+[![book icon](assets/book.png) Documentation](https://fjebaker.github.io/SpectralFitting.jl/dev/)
+
+**✨🛰 Fast and flexible spectral fitting in Julia**
+
+- Spectral fitting routines and models with a focus on X-ray astronomy
+- This project is an attempt to modernise the field with new advancements in computational methods and statistical methods
+- SpectralFitting.jl aims to be extensible and reproducible, such that fits may be easily tailored to novel and specific problems, and easily verified by others
+
+
+---
+
+## Domain Specific
+
+### JuliaHCI/ADI.jl
+
+[![curly braces](assets/code.png) Repository](https://github.com/JuliaHCI/ADI.jl)
+
+[![book icon](assets/book.png) Documentation](http://JuliaHCI.github.io/ADI.jl/stable/)
+
+**Angular Differential Imaging (ADI) routines in Julia**
+
+- PCA, NMF, LLSG, LOCI, etc.
+- Apply algorithms framewise or in spectral differential imaging (SDI) using Julia's multiple dispatch
+- Provide an interface for using these algorithms in other tools
+- Common HCI metrics including S/N maps, contrast curves, throughput curves (from PSF injection), STIM, etc.
+
+
+### JuliaHCI/HCIToolbox.jl
+
+[![curly braces](assets/code.png) Repository](https://github.com/JuliaHCI/HCIToolbox.jl)
+
+[![book icon](assets/book.png) Documentation](http://JuliaHCI.github.io/HCIToolbox.jl/stable/)
+
+**Common utilities for high-contrast imaging (HCI) processing**
+
+- Morphological operations (rotation, stacking, shifting)
+- Masking routines (circles, annulus, series of annuli)
+- Spectral scaling and descaling
+
+
+### SPICE.jl
+
+[![curly braces](assets/code.png) Repository](https://github.com/JuliaAstro/SPICE.jl)
+
+[![book icon](assets/book.png) Documentation](https://juliaastro.org/SPICE/stable/)
+
+**SPICE data retrieval and usage**
+
+- Wrapper for [CSPICE](https://naif.jpl.nasa.gov/pub/naif/toolkit_docs/C/index.html)
+- Read SPICE data files and compute derived observation geometry such as altitude, latitude/longitude and lighting angles
 
 
 ### Transits.jl
@@ -512,17 +617,6 @@ The joy of our community is the many astronomy and astrophysics packages availab
 **Meta package for accessing JPL HORIZONS and SPICE sources**
 
 - Calculate positions and velocities of solar system bodies
-
-
-### barrettp/Astrometry.jl
-
-[![curly braces](assets/code.png) Repository](https://github.com/barrettp/Astrometry.jl)
-
-[![book icon](assets/book.png) Documentation](https://barrettp.github.io/Astrometry/dev)
-
-**Set of IAU standard algorithms for calculating the time and position of celestial objects**
-
-- More information can be found on the official website of the [Standards of Fundamental Astronomy](http://www.iausofa.org/).
 
 
 ### PerezHz/HORIZONS.jl
@@ -561,21 +655,6 @@ See also:
 - [ReferenceFrameRotations.jl](https://github.com/JuliaSpace/ReferenceFrameRotations.jl)
 
 
----
-
-## General
-
-### AstroLib.jl
-
-[![curly braces](assets/code.png) Repository](https://github.com/JuliaAstro/astrolib.jl)
-
-[![book icon](assets/book.png) Documentation](https://juliaastro.org/AstroLib/stable/)
-
-**Collection of generic astronomical and astrophysical functions**
-
-- Translation of many IDL AstroLib procedures
-
-
 ### Cosmology.jl
 
 [![curly braces](assets/code.png) Repository](https://github.com/JuliaAstro/Cosmology.jl)
@@ -602,15 +681,21 @@ See also:
 - Fully compatible with [Unitful.jl](https://github.com/painterqubits/Unitful.jl)
 
 
-### Spectra.jl
+---
 
-[![curly braces](assets/code.png) Repository](https://github.com/JuliaAstro/Spectra.jl)
+## Statistics
 
-[![book icon](assets/book.png) Documentation](https://juliaastro.org/Spectra/stable)
+### BoxLeastSquares.jl
 
-**Utilities for interfacing with astronomical spectra and synthetic spectra libraries**
+[![curly braces](assets/code.png) Repository](https://github.com/JuliaAstro/BoxLeastSquares.jl)
 
-- Utilities for interfacing with astronomical spectra and synthetic spectra libraries
+[![book icon](assets/book.png) Documentation](https://juliaastro.org/BoxLeastSquares/stable/)
+
+**Compute box-least-squares periodogram**
+
+- Fit BLS periodograms to time-series data
+- Extract best-fitting transit parameters from the BLS periodogram
+- Fully compatible with [Unitful.jl](https://github.com/painterqubits/Unitful.jl)
 
 
 ### mileslucas/BiweightStats.jl
@@ -635,19 +720,6 @@ See also:
 - A Julia package for probability distributions and associated functions
 
 
-### ziotom78/Healpix.jl
-
-[![curly braces](assets/code.png) Repository](https://github.com/ziotom78/Healpix.jl)
-
-[![book icon](assets/book.png) Documentation](https://ziotom78.github.io/Healpix.jl/stable/)
-
-**Implementation of Healpix spherical tesselation scheme in pure Julia**
-
-- pixel functions, query functions, map functions
-- power spectrum support
-- plotting support
-
-
 ### JuliaStats
 
 [![curly braces](assets/code.png) Repository](https://github.com/JuliaStats)
@@ -670,16 +742,6 @@ See also:
 - JuMP is a domain-specific modeling language for [mathematical optimization](https://en.wikipedia.org/wiki/Mathematical_optimization) embedded in [Julia](https://julialang.org/)
 
 
-### ajwheeler/Korg.jl
-
-[![curly braces](assets/code.png) Repository](https://github.com/ajwheeler/Korg.jl)
-
-[![book icon](assets/book.png) Documentation](https://ajwheeler.github.io/Korg.jl/stable/)
-
-**Theoretical stellar spectra from 1D model atmospheres and linelists, assuming LTE**
-
-
-
 ### JuliaPhysics/Measurements.jl
 
 [![curly braces](assets/code.png) Repository](https://github.com/JuliaPhysics/Measurements.jl)
@@ -690,19 +752,6 @@ See also:
 
 -  [Measurements.jl](https://github.com/JuliaPhysics/Measurements.jl) relieves you from the hassle of propagating uncertainties coming from physical measurements, when performing mathematical operations involving them
 - The [linear error propagation theory](https://en.wikipedia.org/wiki/Propagation_of_uncertainty#Linear_combinations) is employed to propagate the errors
-
-
-### ManuelBehrendt/Mera.jl
-
-[![curly braces](assets/code.png) Repository](https://github.com/ManuelBehrendt/Mera.jl)
-
-[![book icon](assets/book.png) Documentation](https://manuelbehrendt.github.io/Mera.jl/stable/)
-
-**Working with large hydrodynamical simulation data**
-
-- Loading, writing, analysing 3D AMR/uniform-grid and N-body data sets
-- Memory lightweight data processing within a database framework
-- Many predefined functions and examples
 
 
 ### MonteCarloMeasurements.jl
@@ -727,18 +776,6 @@ See also:
 - Fast implementations of root finding algorithms in Julia that satisfy the SciML common interface
 
 
-### fabienbaron/OITOOLS.jl
-
-[![curly braces](assets/code.png) Repository](https://github.com/fabienbaron/OITOOLS.jl)
-
-[![book icon](assets/book.png) Documentation](https://fabienbaron.github.io/OITOOLS.jl/dev)
-
-**A collection of tools to load, visualize, model-fit and image optical interferometry data coming from CHARA, NPOI and VLTI**
-
-- OITOOLS is a Julia package to read, plot, model-fit and image optical interferometric data coming from astronomical arrays such as CHARA, VLTI, and NPOI
-- Note that despite having the same name as [JMMC's oitools](https://github.com/JMMC-OpenDev/oitools), they are completely unrelated and were developed independently
-
-
 ### SciML/Optimization.jl
 
 [![curly braces](assets/code.png) Repository](https://github.com/SciML/Optimization.jl)
@@ -749,34 +786,6 @@ See also:
 
 - Optimization.jl seeks to bring together all of the optimization packages it can find, local and global, into one unified Julia interface
 - This means, you learn one package and you learn them all!
-
-
-### sefffal/PairPlots.jl
-
-[![curly braces](assets/code.png) Repository](https://github.com/sefffal/PairPlots.jl)
-
-[![book icon](assets/book.png) Documentation](https://sefffal.github.io/PairPlots.jl/dev/)
-
-**Beautiful and flexible visualizations of high dimensional data**
-
-- Corner plots or scatter plot matrices. Both Julia and Python are supported (PairPlots.jl and [pairplots.py](https://pypi.org/project/pairplots/))
-- Inspired by [corner.py](https://corner.readthedocs.io/en/latest/index.html) and [chainconsumer.py](https://samreay.github.io/ChainConsumer/usage.html)
-
-See also:
-- [ReferenceFrameRotations.jl](https://github.com/JuliaSpace/ReferenceFrameRotations.jl)
-
-
-### fjebaker/SpectralFitting.jl
-
-[![curly braces](assets/code.png) Repository](https://github.com/fjebaker/SpectralFitting.jl)
-
-[![book icon](assets/book.png) Documentation](https://fjebaker.github.io/SpectralFitting.jl/dev/)
-
-**✨🛰 Fast and flexible spectral fitting in Julia**
-
-- Spectral fitting routines and models with a focus on X-ray astronomy
-- This project is an attempt to modernise the field with new advancements in computational methods and statistical methods
-- SpectralFitting.jl aims to be extensible and reproducible, such that fits may be easily tailored to novel and specific problems, and easily verified by others
 
 
 ### JuliaAPlavin/Uncertain.jl
