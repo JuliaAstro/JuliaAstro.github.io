@@ -87,6 +87,7 @@ makedocs(
 wrapper_packages = [
     "torrance/Casacore",
     "CFITSIO",
+    "JuliaAPlavin/Difmap",
     "emmt/EasyFITS",
     "ERFA",
     "FITSIO",
