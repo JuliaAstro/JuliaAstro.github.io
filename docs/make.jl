@@ -87,11 +87,13 @@ makedocs(
 
 # Differentiate between pure Julia and wrapper packages
 wrapper_packages = [
-    "CFITSIO",
-    "ERFA",
-    "emmt/EasyFITS",
-    "FITSIO",
     "torrance/Casacore",
+    "CFITSIO",
+    "emmt/EasyFITS",
+    "ERFA",
+    "FITSIO",
+    "emmt/OIFITS",
+    "WCS",
 ]
 
 
