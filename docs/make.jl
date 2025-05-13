@@ -6,12 +6,13 @@ Revise.revise()
 import JuliaAstroDocs
 
 ecosystem = JuliaAstroDocs.ecosystem()
+ecosystem_t = JuliaAstroDocs.ecosystem_t()
 
 # Sync ecosystem.md
 JuliaAstroDocs.page_ecosystem(ecosystem)
 
 # Sync comparison.md
-JuliaAstroDocs.page_compare(ecosystem)
+JuliaAstroDocs.page_compare(ecosystem_t)
 
 # Prefer online docs, use local as fallback
 links = InterLinks(

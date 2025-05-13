@@ -1,5 +1,7 @@
 module JuliaAstroDocs
 
+using TypedTables
+
 stake! = String ∘ take!
 
 ecosystem() = (
@@ -756,6 +758,12 @@ ecosystem() = (
             ),
         ),
     ),
+)
+
+ecosystem_t() = Table(package
+    for (highlevel, sublevels) in ecosystem()
+        for (sublevel, packages) in sublevels
+            for package in packages
 )
 
 include("ecosystem.jl")
