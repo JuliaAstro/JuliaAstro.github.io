@@ -75,13 +75,21 @@ We highlight some of the major packages in Python's `astropy` ecosystem and thei
   </tr>
 
   <tr>
-    <td rowspan=2>
+    <td rowspan=4>
       <a href="https://docs.astropy.org/en/stable/table/index.html"><code>astropy.table</code></a>
    </td>
   </tr>
   <tr>
     <td><a href="https://github.com/JuliaData/DataFrames.jl">JuliaData/DataFrames.jl</a></td>
     <td>In-memory tabular data in Julia</td>
+  </tr>
+  <tr>
+    <td><a href="https://github.com/JuliaAPlavin/FlexiJoins.jl">JuliaAPlavin/FlexiJoins.jl</a></td>
+    <td>`FlexiJoins.jl` is a fresh take on joining tabular or non-tabular datasets in Julia.</td>
+  </tr>
+  <tr>
+    <td><a href="https://github.com/gcalderone/SortMerge.jl">gcalderone/SortMerge.jl</a></td>
+    <td>A Julia implementation of the Sort-merge join algorithm</td>
   </tr>
 
   <tr>
@@ -319,7 +327,7 @@ We highlight some of the major packages in Python's `astropy` ecosystem and thei
   </tr>
 
   <tr>
-    <td rowspan=3>
+    <td rowspan=4>
       <a href="https://docs.astropy.org/en/stable/visualization/index.html"><code>astropy.visualization</code></a>
    </td>
   </tr>
@@ -330,6 +338,10 @@ We highlight some of the major packages in Python's `astropy` ecosystem and thei
   <tr>
     <td><a href="https://github.com/sefffal/PairPlots.jl">sefffal/PairPlots.jl</a></td>
     <td>Beautiful and flexible visualizations of high dimensional data</td>
+  </tr>
+  <tr>
+    <td><a href="https://github.com/JuliaAPlavin/SkyImages.jl">JuliaAPlavin/SkyImages.jl</a></td>
+    <td>Load astronomical images of the sky and process them with convenient, general, and composable functions.</td>
   </tr>
 
   <tr>

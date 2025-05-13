@@ -574,6 +574,16 @@ ecosystem() = (
                 astropy = ["astropy.io.ascii"],
             ),
             (
+                name = "JuliaAPlavin/FlexiJoins.jl",
+                repo = "https://github.com/JuliaAPlavin/FlexiJoins.jl",
+                doc = "https://aplavin.github.io/FlexiJoins.jl/test/examples.html",
+                tagline = "`FlexiJoins.jl` is a fresh take on joining tabular or non-tabular datasets in Julia.",
+                descr = """
+                - From simple joins by key, to asof joins, to merging catalogs of terrestrial or celestial coordinates – `FlexiJoins` supports any usecase
+                """,
+                astropy = ["astropy.table"],
+            ),
+            (
                 name = "JuliaAPlavin/SkyImages.jl",
                 repo = "https://github.com/JuliaAPlavin/SkyImages.jl",
                 doc = "https://aplavin.github.io/SkyImages.jl/test/notebook.html",
@@ -584,6 +594,17 @@ ecosystem() = (
                 - Use original data as-is or project onto a rectangular grid
                 """,
                 astropy = ["astropy.io.fits"],
+            ),
+            (
+                name = "gcalderone/SortMerge.jl",
+                repo = "https://github.com/gcalderone/SortMerge.jl",
+                doc = "https://github.com/gcalderone/SortMerge.jl?tab=readme-ov-file#sortmerge",
+                tagline = "A Julia implementation of the Sort-merge join algorithm",
+                descr = """
+                - The [Sort-merge join ](https://en.wikipedia.org/wiki/Sort-merge_join) algorithm allows to **quickly** find the matching pairs in two separate arrays or collections
+                - The best performances are obtained when the input data are already sorted, but the package is able to sort the data if they are not
+                """,
+                astropy = ["astropy.table"],
             ),
             (
                 name = "JuliaAPlavin/VirtualObservatory.jl",
@@ -665,7 +686,7 @@ ecosystem() = (
                 - Uniform interface and Makie plotting
                 - Use original data as-is or project onto a rectangular grid
                 """,
-                astropy = [],
+                astropy = ["astropy.visualization"],
             ),
         ),
         "Units/Constants" => (
