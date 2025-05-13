@@ -239,6 +239,89 @@ See also:
 
 ---
 
+### barrettp/Astrometry.jl
+
+[![curly braces](assets/code.png) Repository](https://github.com/barrettp/Astrometry.jl)
+
+[![book icon](assets/book.png) Documentation](https://barrettp.github.io/Astrometry/dev)
+
+**Set of IAU standard algorithms for calculating the time and position of celestial objects**
+
+- More information can be found on the official website of the [Standards of Fundamental Astronomy](http://www.iausofa.org/).
+
+
+### AstroTime.jl
+
+[![curly braces](assets/code.png) Repository](https://github.com/JuliaAstro/AstroTime.jl)
+
+[![book icon](assets/book.png) Documentation](https://juliaastro.org/AstroTime/stable/)
+
+**Astronomical time keeping**
+
+- High-precision, time-scale aware, DateTime-like data type
+- Support all commonly used astronomical time scales
+
+
+### EarthOrientation.jl
+
+[![curly braces](assets/code.png) Repository](https://github.com/JuliaAstro/EarthOrientation.jl)
+
+[![book icon](assets/book.png) Documentation](https://juliaastro.org/EarthOrientation/stable/)
+
+**Earth orientation parameters**
+
+- Calculate Earth orientation parameters from IERS tables
+
+
+### ERFA.jl
+
+[![curly braces](assets/code.png) Repository](https://github.com/JuliaAstro/ERFA.jl)
+
+[![book icon](assets/book.png) Documentation](https://juliaastro.github.io/ERFA.jl/stable)
+
+**Time systems conversions**
+
+- Low-level wrapper for [liberfa](https://github.com/liberfa/erfa)
+
+
+### ziotom78/Healpix.jl
+
+[![curly braces](assets/code.png) Repository](https://github.com/ziotom78/Healpix.jl)
+
+[![book icon](assets/book.png) Documentation](https://ziotom78.github.io/Healpix.jl/stable/)
+
+**Implementation of Healpix spherical tesselation scheme in pure Julia**
+
+- pixel functions, query functions, map functions
+- power spectrum support
+- plotting support
+
+
+### SkyCoords.jl
+
+[![curly braces](assets/code.png) Repository](https://github.com/JuliaAstro/SkyCoords.jl)
+
+[![book icon](assets/book.png) Documentation](https://juliaastro.org/SkyCoords/stable/)
+
+**Astronomical coordinate systems**
+
+- Supports ICRS, galactic, and FK5 coordinate systems
+- Fast conversion of coordinates between different systems
+
+
+### WCS.jl
+
+[![curly braces](assets/code.png) Repository](https://github.com/JuliaAstro/WCS.jl)
+
+[![book icon](assets/book.png) Documentation](https://juliaastro.org/WCS/stable/)
+
+**World Coordinate System transformations**
+
+- Wrapper for [wcslib](https://www.atnf.csiro.au/people/mcalabre/WCS/wcslib/)
+
+
+---
+
 ### JuliaAPlavin/Difmap.jl
 
 [![curly braces](assets/code.png) Repository](https://github.com/JuliaAPlavin/Difmap.jl)
@@ -386,17 +469,6 @@ See also:
 - Implements the location, scale, midvariance, midcovariance, and midcorrelation statistics
 
 
-### JuliaStats/Distributions.jl
-
-[![curly braces](assets/code.png) Repository](https://github.com/JuliaStats/Distributions.jl)
-
-[![book icon](assets/book.png) Documentation](https://juliastats.github.io/Distributions.jl/stable/)
-
-**A Julia package for probability distributions and associated functions**
-
-- A Julia package for probability distributions and associated functions
-
-
 ### JuliaStats
 
 [![curly braces](assets/code.png) Repository](https://github.com/JuliaStats)
@@ -408,85 +480,20 @@ See also:
 - Easy to use tools for statistics and machine learning
 
 
+### JuliaStats/Distributions.jl
+
+[![curly braces](assets/code.png) Repository](https://github.com/JuliaStats/Distributions.jl)
+
+[![book icon](assets/book.png) Documentation](https://juliastats.github.io/Distributions.jl/stable/)
+
+**A Julia package for probability distributions and associated functions**
+
+- A Julia package for probability distributions and associated functions
+
+
 ---
 
 ## Utilities
-
-### AstroImages.jl
-
-[![curly braces](assets/code.png) Repository](https://github.com/JuliaAstro/AstroImages.jl)
-
-[![book icon](assets/book.png) Documentation](https://juliaastro.org/AstroImages/stable/)
-
-**Load, manipulate, and visualize astronomical images**
-
-- Works with the [FileIO.jl](https://github.com/JuliaIO/FileIO.jl) interface
-
-
-### JuliaImages/ImageFiltering.jl
-
-[![curly braces](assets/code.png) Repository](https://github.com/JuliaImages/ImageFiltering.jl)
-
-[![book icon](assets/book.png) Documentation](https://juliaimages.github.io/ImageFiltering.jl/stable)
-
-**ulia implementations of multidimensional array convolution and nonlinear stencil operations**
-
-- ImageFiltering implements blurring, sharpening, gradient computation, and other linear filtering operations, as well nonlinear filters like min/max
-
-
-### ManuelBehrendt/Mera.jl
-
-[![curly braces](assets/code.png) Repository](https://github.com/ManuelBehrendt/Mera.jl)
-
-[![book icon](assets/book.png) Documentation](https://manuelbehrendt.github.io/Mera.jl/stable/)
-
-**Working with large hydrodynamical simulation data**
-
-- Loading, writing, analysing 3D AMR/uniform-grid and N-body data sets
-- Memory lightweight data processing within a database framework
-- Many predefined functions and examples
-
-
-### sefffal/PairPlots.jl
-
-[![curly braces](assets/code.png) Repository](https://github.com/sefffal/PairPlots.jl)
-
-[![book icon](assets/book.png) Documentation](https://sefffal.github.io/PairPlots.jl/dev/)
-
-**Beautiful and flexible visualizations of high dimensional data**
-
-- Corner plots or scatter plot matrices. Both Julia and Python are supported (PairPlots.jl and [pairplots.py](https://pypi.org/project/pairplots/))
-- Inspired by [corner.py](https://corner.readthedocs.io/en/latest/index.html) and [chainconsumer.py](https://samreay.github.io/ChainConsumer/usage.html)
-
-See also:
-- [ReferenceFrameRotations.jl](https://github.com/JuliaSpace/ReferenceFrameRotations.jl)
-
-
-### Reproject.jl
-
-[![curly braces](assets/code.png) Repository](https://github.com/JuliaAstro/Reproject.jl)
-
-[![book icon](assets/book.png) Documentation](https://juliaastro.org/Reproject.jl/dev/)
-
-**Astronomical image reprojection**
-
-- Uses [FITSIO.jl](https://github.com/JuliaAstro/FITSIO.jl) and [WCS.jl](https://github.com/JuliaAstro/WCS.jl) to reproject coordinate systems between FITS images
-
-
-### JuliaAPlavin/SkyImages.jl
-
-[![curly braces](assets/code.png) Repository](https://github.com/JuliaAPlavin/SkyImages.jl)
-
-[![book icon](assets/book.png) Documentation](https://aplavin.github.io/SkyImages.jl/test/notebook.html)
-
-**Load astronomical images of the sky and process them with convenient, general, and composable functions.**
-
-- FITS WCS and Healpix images
-- Uniform interface and Makie plotting
-- Use original data as-is or project onto a rectangular grid
-
-
----
 
 ### eschnett/ASDF2.jl
 
@@ -641,6 +648,82 @@ See also:
 
 ---
 
+### AstroImages.jl
+
+[![curly braces](assets/code.png) Repository](https://github.com/JuliaAstro/AstroImages.jl)
+
+[![book icon](assets/book.png) Documentation](https://juliaastro.org/AstroImages/stable/)
+
+**Load, manipulate, and visualize astronomical images**
+
+- Works with the [FileIO.jl](https://github.com/JuliaIO/FileIO.jl) interface
+
+
+### JuliaImages/ImageFiltering.jl
+
+[![curly braces](assets/code.png) Repository](https://github.com/JuliaImages/ImageFiltering.jl)
+
+[![book icon](assets/book.png) Documentation](https://juliaimages.github.io/ImageFiltering.jl/stable)
+
+**ulia implementations of multidimensional array convolution and nonlinear stencil operations**
+
+- ImageFiltering implements blurring, sharpening, gradient computation, and other linear filtering operations, as well nonlinear filters like min/max
+
+
+### ManuelBehrendt/Mera.jl
+
+[![curly braces](assets/code.png) Repository](https://github.com/ManuelBehrendt/Mera.jl)
+
+[![book icon](assets/book.png) Documentation](https://manuelbehrendt.github.io/Mera.jl/stable/)
+
+**Working with large hydrodynamical simulation data**
+
+- Loading, writing, analysing 3D AMR/uniform-grid and N-body data sets
+- Memory lightweight data processing within a database framework
+- Many predefined functions and examples
+
+
+### sefffal/PairPlots.jl
+
+[![curly braces](assets/code.png) Repository](https://github.com/sefffal/PairPlots.jl)
+
+[![book icon](assets/book.png) Documentation](https://sefffal.github.io/PairPlots.jl/dev/)
+
+**Beautiful and flexible visualizations of high dimensional data**
+
+- Corner plots or scatter plot matrices. Both Julia and Python are supported (PairPlots.jl and [pairplots.py](https://pypi.org/project/pairplots/))
+- Inspired by [corner.py](https://corner.readthedocs.io/en/latest/index.html) and [chainconsumer.py](https://samreay.github.io/ChainConsumer/usage.html)
+
+See also:
+- [ReferenceFrameRotations.jl](https://github.com/JuliaSpace/ReferenceFrameRotations.jl)
+
+
+### Reproject.jl
+
+[![curly braces](assets/code.png) Repository](https://github.com/JuliaAstro/Reproject.jl)
+
+[![book icon](assets/book.png) Documentation](https://juliaastro.org/Reproject.jl/dev/)
+
+**Astronomical image reprojection**
+
+- Uses [FITSIO.jl](https://github.com/JuliaAstro/FITSIO.jl) and [WCS.jl](https://github.com/JuliaAstro/WCS.jl) to reproject coordinate systems between FITS images
+
+
+### JuliaAPlavin/SkyImages.jl
+
+[![curly braces](assets/code.png) Repository](https://github.com/JuliaAPlavin/SkyImages.jl)
+
+[![book icon](assets/book.png) Documentation](https://aplavin.github.io/SkyImages.jl/test/notebook.html)
+
+**Load astronomical images of the sky and process them with convenient, general, and composable functions.**
+
+- FITS WCS and Healpix images
+- Uniform interface and Makie plotting
+- Use original data as-is or project onto a rectangular grid
+
+
+---
+
 ### AstroAngles.jl
 
 [![curly braces](assets/code.png) Repository](https://github.com/JuliaAstro/AstroAngles.jl)
@@ -698,89 +781,6 @@ See also:
 **Astronomical units and things**
 
 - Extension of [Unitful.jl](https://github.com/painterqubits/Unitful.jl)
-
-
----
-
-### barrettp/Astrometry.jl
-
-[![curly braces](assets/code.png) Repository](https://github.com/barrettp/Astrometry.jl)
-
-[![book icon](assets/book.png) Documentation](https://barrettp.github.io/Astrometry/dev)
-
-**Set of IAU standard algorithms for calculating the time and position of celestial objects**
-
-- More information can be found on the official website of the [Standards of Fundamental Astronomy](http://www.iausofa.org/).
-
-
-### AstroTime.jl
-
-[![curly braces](assets/code.png) Repository](https://github.com/JuliaAstro/AstroTime.jl)
-
-[![book icon](assets/book.png) Documentation](https://juliaastro.org/AstroTime/stable/)
-
-**Astronomical time keeping**
-
-- High-precision, time-scale aware, DateTime-like data type
-- Support all commonly used astronomical time scales
-
-
-### EarthOrientation.jl
-
-[![curly braces](assets/code.png) Repository](https://github.com/JuliaAstro/EarthOrientation.jl)
-
-[![book icon](assets/book.png) Documentation](https://juliaastro.org/EarthOrientation/stable/)
-
-**Earth orientation parameters**
-
-- Calculate Earth orientation parameters from IERS tables
-
-
-### ERFA.jl
-
-[![curly braces](assets/code.png) Repository](https://github.com/JuliaAstro/ERFA.jl)
-
-[![book icon](assets/book.png) Documentation](https://juliaastro.github.io/ERFA.jl/stable)
-
-**Time systems conversions**
-
-- Low-level wrapper for [liberfa](https://github.com/liberfa/erfa)
-
-
-### ziotom78/Healpix.jl
-
-[![curly braces](assets/code.png) Repository](https://github.com/ziotom78/Healpix.jl)
-
-[![book icon](assets/book.png) Documentation](https://ziotom78.github.io/Healpix.jl/stable/)
-
-**Implementation of Healpix spherical tesselation scheme in pure Julia**
-
-- pixel functions, query functions, map functions
-- power spectrum support
-- plotting support
-
-
-### SkyCoords.jl
-
-[![curly braces](assets/code.png) Repository](https://github.com/JuliaAstro/SkyCoords.jl)
-
-[![book icon](assets/book.png) Documentation](https://juliaastro.org/SkyCoords/stable/)
-
-**Astronomical coordinate systems**
-
-- Supports ICRS, galactic, and FK5 coordinate systems
-- Fast conversion of coordinates between different systems
-
-
-### WCS.jl
-
-[![curly braces](assets/code.png) Repository](https://github.com/JuliaAstro/WCS.jl)
-
-[![book icon](assets/book.png) Documentation](https://juliaastro.org/WCS/stable/)
-
-**World Coordinate System transformations**
-
-- Wrapper for [wcslib](https://www.atnf.csiro.au/people/mcalabre/WCS/wcslib/)
 
 
 ---

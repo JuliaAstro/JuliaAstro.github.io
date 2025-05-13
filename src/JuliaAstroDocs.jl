@@ -219,6 +219,82 @@ ecosystem() = (
                 astropy = ["specreduce", "specutils"],
             ),
         ),
+        "Astrometry" => (
+            (
+                name = "barrettp/Astrometry.jl",
+                repo = "https://github.com/barrettp/Astrometry.jl",
+                doc = "https://barrettp.github.io/Astrometry/dev",
+                tagline = "Set of IAU standard algorithms for calculating the time and position of celestial objects",
+                descr = """
+                - More information can be found on the official website of the [Standards of Fundamental Astronomy](http://www.iausofa.org/).
+                """,
+                astropy = [],
+            ),
+            (
+                name = "AstroTime.jl",
+                repo = "https://github.com/JuliaAstro/AstroTime.jl",
+                doc = "https://juliaastro.org/AstroTime/stable/",
+                tagline = "Astronomical time keeping",
+                descr = """
+                - High-precision, time-scale aware, DateTime-like data type
+                - Support all commonly used astronomical time scales
+                """,
+                astropy = ["astropy.time"],
+            ),
+            (
+                name = "EarthOrientation.jl",
+                repo = "https://github.com/JuliaAstro/EarthOrientation.jl",
+                doc = "https://juliaastro.org/EarthOrientation/stable/",
+                tagline = "Earth orientation parameters",
+                descr = """
+                - Calculate Earth orientation parameters from IERS tables
+                """,
+                astropy = ["astropy.utils.iers"],
+            ),
+            (
+                name = "ERFA.jl",
+                repo = "https://github.com/JuliaAstro/ERFA.jl",
+                doc = "https://juliaastro.github.io/ERFA.jl/stable",
+                tagline = "Time systems conversions",
+                descr = """
+                - Low-level wrapper for [liberfa](https://github.com/liberfa/erfa)
+                """,
+                astropy = [],
+            ),
+            (
+                name = "ziotom78/Healpix.jl",
+                repo = "https://github.com/ziotom78/Healpix.jl",
+                doc = "https://ziotom78.github.io/Healpix.jl/stable/",
+                tagline = "Implementation of Healpix spherical tesselation scheme in pure Julia",
+                descr = """
+                - pixel functions, query functions, map functions
+                - power spectrum support
+                - plotting support
+                """,
+                astropy = ["astropy-healpix"],
+            ),
+            (
+                name = "SkyCoords.jl",
+                repo = "https://github.com/JuliaAstro/SkyCoords.jl",
+                doc = "https://juliaastro.org/SkyCoords/stable/",
+                tagline = "Astronomical coordinate systems",
+                descr = """
+                - Supports ICRS, galactic, and FK5 coordinate systems
+                - Fast conversion of coordinates between different systems
+                """,
+                astropy = ["astropy.coordinates"],
+            ),
+            (
+                name = "WCS.jl",
+                repo = "https://github.com/JuliaAstro/WCS.jl",
+                doc = "https://juliaastro.org/WCS/stable/",
+                tagline = "World Coordinate System transformations",
+                descr = """
+                - Wrapper for [wcslib](https://www.atnf.csiro.au/people/mcalabre/WCS/wcslib/)
+                """,
+                astropy = ["astropy.wcs"],
+            ),
+        ),
         "Interferometry" => (
             (
                 name = "JuliaAPlavin/Difmap.jl",
@@ -356,16 +432,6 @@ ecosystem() = (
                 astropy = ["astropy.stats"],
             ),
             (
-                name = "JuliaStats/Distributions.jl",
-                repo = "https://github.com/JuliaStats/Distributions.jl",
-                doc = "https://juliastats.github.io/Distributions.jl/stable/",
-                tagline = "A Julia package for probability distributions and associated functions",
-                descr = """
-                - A Julia package for probability distributions and associated functions
-                """,
-                astropy = ["astropy.uncertainty"],
-            ),
-            (
                 name = "JuliaStats",
                 repo = "https://github.com/JuliaStats",
                 doc = "https://juliastats.org/",
@@ -375,79 +441,19 @@ ecosystem() = (
                 """,
                 astropy = ["astropy.stats"],
             ),
+            (
+                name = "JuliaStats/Distributions.jl",
+                repo = "https://github.com/JuliaStats/Distributions.jl",
+                doc = "https://juliastats.github.io/Distributions.jl/stable/",
+                tagline = "A Julia package for probability distributions and associated functions",
+                descr = """
+                - A Julia package for probability distributions and associated functions
+                """,
+                astropy = ["astropy.uncertainty"],
+            ),
         ),
     ),
     "Utilities" => (
-        "Data Viz" => (
-            (
-                name = "AstroImages.jl",
-                repo = "https://github.com/JuliaAstro/AstroImages.jl",
-                doc = "https://juliaastro.org/AstroImages/stable/",
-                tagline = "Load, manipulate, and visualize astronomical images",
-                descr = """
-                - Works with the [FileIO.jl](https://github.com/JuliaIO/FileIO.jl) interface
-                """,
-                astropy = ["astropy.io.fits"],
-            ),
-            (
-                name = "JuliaImages/ImageFiltering.jl",
-                repo = "https://github.com/JuliaImages/ImageFiltering.jl",
-                doc = "https://juliaimages.github.io/ImageFiltering.jl/stable",
-                tagline = "ulia implementations of multidimensional array convolution and nonlinear stencil operations",
-                descr = """
-                - ImageFiltering implements blurring, sharpening, gradient computation, and other linear filtering operations, as well nonlinear filters like min/max
-                """,
-                astropy = ["astropy.convolution"],
-            ),
-            (
-                name = "ManuelBehrendt/Mera.jl",
-                repo = "https://github.com/ManuelBehrendt/Mera.jl",
-                doc = "https://manuelbehrendt.github.io/Mera.jl/stable/",
-                tagline = "Working with large hydrodynamical simulation data",
-                descr = """
-                - Loading, writing, analysing 3D AMR/uniform-grid and N-body data sets
-                - Memory lightweight data processing within a database framework
-                - Many predefined functions and examples
-                """,
-                astropy = [],
-            ),
-            (
-                name = "sefffal/PairPlots.jl",
-                repo = "https://github.com/sefffal/PairPlots.jl",
-                doc = "https://sefffal.github.io/PairPlots.jl/dev/",
-                tagline = "Beautiful and flexible visualizations of high dimensional data",
-                descr = """
-                - Corner plots or scatter plot matrices. Both Julia and Python are supported (PairPlots.jl and [pairplots.py](https://pypi.org/project/pairplots/))
-                - Inspired by [corner.py](https://corner.readthedocs.io/en/latest/index.html) and [chainconsumer.py](https://samreay.github.io/ChainConsumer/usage.html)
-
-                See also:
-                - [ReferenceFrameRotations.jl](https://github.com/JuliaSpace/ReferenceFrameRotations.jl)
-                """,
-                astropy = ["astropy.visualization"],
-            ),
-            (
-                name = "Reproject.jl",
-                repo = "https://github.com/JuliaAstro/Reproject.jl",
-                doc = "https://juliaastro.org/Reproject.jl/dev/",
-                tagline = "Astronomical image reprojection",
-                descr = """
-                - Uses [FITSIO.jl](https://github.com/JuliaAstro/FITSIO.jl) and [WCS.jl](https://github.com/JuliaAstro/WCS.jl) to reproject coordinate systems between FITS images
-                """,
-                astropy = ["reproject"],
-            ),
-            (
-                name = "JuliaAPlavin/SkyImages.jl",
-                repo = "https://github.com/JuliaAPlavin/SkyImages.jl",
-                doc = "https://aplavin.github.io/SkyImages.jl/test/notebook.html",
-                tagline = "Load astronomical images of the sky and process them with convenient, general, and composable functions.",
-                descr = """
-                - FITS WCS and Healpix images
-                - Uniform interface and Makie plotting
-                - Use original data as-is or project onto a rectangular grid
-                """,
-                astropy = [],
-            ),
-        ),
         "Data I/O" => (
             (
                 name = "eschnett/ASDF2.jl",
@@ -590,6 +596,76 @@ ecosystem() = (
                 astropy = ["astropy.io.votable"],
             ),
         ),
+        "Data Viz" => (
+            (
+                name = "AstroImages.jl",
+                repo = "https://github.com/JuliaAstro/AstroImages.jl",
+                doc = "https://juliaastro.org/AstroImages/stable/",
+                tagline = "Load, manipulate, and visualize astronomical images",
+                descr = """
+                - Works with the [FileIO.jl](https://github.com/JuliaIO/FileIO.jl) interface
+                """,
+                astropy = ["astropy.io.fits"],
+            ),
+            (
+                name = "JuliaImages/ImageFiltering.jl",
+                repo = "https://github.com/JuliaImages/ImageFiltering.jl",
+                doc = "https://juliaimages.github.io/ImageFiltering.jl/stable",
+                tagline = "ulia implementations of multidimensional array convolution and nonlinear stencil operations",
+                descr = """
+                - ImageFiltering implements blurring, sharpening, gradient computation, and other linear filtering operations, as well nonlinear filters like min/max
+                """,
+                astropy = ["astropy.convolution"],
+            ),
+            (
+                name = "ManuelBehrendt/Mera.jl",
+                repo = "https://github.com/ManuelBehrendt/Mera.jl",
+                doc = "https://manuelbehrendt.github.io/Mera.jl/stable/",
+                tagline = "Working with large hydrodynamical simulation data",
+                descr = """
+                - Loading, writing, analysing 3D AMR/uniform-grid and N-body data sets
+                - Memory lightweight data processing within a database framework
+                - Many predefined functions and examples
+                """,
+                astropy = [],
+            ),
+            (
+                name = "sefffal/PairPlots.jl",
+                repo = "https://github.com/sefffal/PairPlots.jl",
+                doc = "https://sefffal.github.io/PairPlots.jl/dev/",
+                tagline = "Beautiful and flexible visualizations of high dimensional data",
+                descr = """
+                - Corner plots or scatter plot matrices. Both Julia and Python are supported (PairPlots.jl and [pairplots.py](https://pypi.org/project/pairplots/))
+                - Inspired by [corner.py](https://corner.readthedocs.io/en/latest/index.html) and [chainconsumer.py](https://samreay.github.io/ChainConsumer/usage.html)
+
+                See also:
+                - [ReferenceFrameRotations.jl](https://github.com/JuliaSpace/ReferenceFrameRotations.jl)
+                """,
+                astropy = ["astropy.visualization"],
+            ),
+            (
+                name = "Reproject.jl",
+                repo = "https://github.com/JuliaAstro/Reproject.jl",
+                doc = "https://juliaastro.org/Reproject.jl/dev/",
+                tagline = "Astronomical image reprojection",
+                descr = """
+                - Uses [FITSIO.jl](https://github.com/JuliaAstro/FITSIO.jl) and [WCS.jl](https://github.com/JuliaAstro/WCS.jl) to reproject coordinate systems between FITS images
+                """,
+                astropy = ["reproject"],
+            ),
+            (
+                name = "JuliaAPlavin/SkyImages.jl",
+                repo = "https://github.com/JuliaAPlavin/SkyImages.jl",
+                doc = "https://aplavin.github.io/SkyImages.jl/test/notebook.html",
+                tagline = "Load astronomical images of the sky and process them with convenient, general, and composable functions.",
+                descr = """
+                - FITS WCS and Healpix images
+                - Uniform interface and Makie plotting
+                - Use original data as-is or project onto a rectangular grid
+                """,
+                astropy = [],
+            ),
+        ),
         "Units/Constants" => (
             (
                 name = "AstroAngles.jl",
@@ -644,82 +720,6 @@ ecosystem() = (
                 - Extension of [Unitful.jl](https://github.com/painterqubits/Unitful.jl)
                 """,
                 astropy = ["astropy.constants", "astropy.units"],
-            ),
-        ),
-        "Astrometry" => (
-            (
-                name = "barrettp/Astrometry.jl",
-                repo = "https://github.com/barrettp/Astrometry.jl",
-                doc = "https://barrettp.github.io/Astrometry/dev",
-                tagline = "Set of IAU standard algorithms for calculating the time and position of celestial objects",
-                descr = """
-                - More information can be found on the official website of the [Standards of Fundamental Astronomy](http://www.iausofa.org/).
-                """,
-                astropy = [],
-            ),
-            (
-                name = "AstroTime.jl",
-                repo = "https://github.com/JuliaAstro/AstroTime.jl",
-                doc = "https://juliaastro.org/AstroTime/stable/",
-                tagline = "Astronomical time keeping",
-                descr = """
-                - High-precision, time-scale aware, DateTime-like data type
-                - Support all commonly used astronomical time scales
-                """,
-                astropy = ["astropy.time"],
-            ),
-            (
-                name = "EarthOrientation.jl",
-                repo = "https://github.com/JuliaAstro/EarthOrientation.jl",
-                doc = "https://juliaastro.org/EarthOrientation/stable/",
-                tagline = "Earth orientation parameters",
-                descr = """
-                - Calculate Earth orientation parameters from IERS tables
-                """,
-                astropy = ["astropy.utils.iers"],
-            ),
-            (
-                name = "ERFA.jl",
-                repo = "https://github.com/JuliaAstro/ERFA.jl",
-                doc = "https://juliaastro.github.io/ERFA.jl/stable",
-                tagline = "Time systems conversions",
-                descr = """
-                - Low-level wrapper for [liberfa](https://github.com/liberfa/erfa)
-                """,
-                astropy = [],
-            ),
-            (
-                name = "ziotom78/Healpix.jl",
-                repo = "https://github.com/ziotom78/Healpix.jl",
-                doc = "https://ziotom78.github.io/Healpix.jl/stable/",
-                tagline = "Implementation of Healpix spherical tesselation scheme in pure Julia",
-                descr = """
-                - pixel functions, query functions, map functions
-                - power spectrum support
-                - plotting support
-                """,
-                astropy = ["astropy-healpix"],
-            ),
-            (
-                name = "SkyCoords.jl",
-                repo = "https://github.com/JuliaAstro/SkyCoords.jl",
-                doc = "https://juliaastro.org/SkyCoords/stable/",
-                tagline = "Astronomical coordinate systems",
-                descr = """
-                - Supports ICRS, galactic, and FK5 coordinate systems
-                - Fast conversion of coordinates between different systems
-                """,
-                astropy = ["astropy.coordinates"],
-            ),
-            (
-                name = "WCS.jl",
-                repo = "https://github.com/JuliaAstro/WCS.jl",
-                doc = "https://juliaastro.org/WCS/stable/",
-                tagline = "World Coordinate System transformations",
-                descr = """
-                - Wrapper for [wcslib](https://www.atnf.csiro.au/people/mcalabre/WCS/wcslib/)
-                """,
-                astropy = ["astropy.wcs"],
             ),
         ),
         "Time Series Analysis" => (

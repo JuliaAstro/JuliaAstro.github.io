@@ -215,10 +215,6 @@ We highlight some of the major packages in Python's `astropy` ecosystem and thei
     <td>Support for OI-FITS</td>
   </tr>
   <tr>
-    <td><a href="https://github.com/JuliaAstro/AstroImages.jl">AstroImages.jl</a></td>
-    <td>Load, manipulate, and visualize astronomical images</td>
-  </tr>
-  <tr>
     <td><a href="https://github.com/JuliaAstro/CFITSIO.jl">CFITSIO.jl</a></td>
     <td>Reading and writing FITS files</td>
   </tr>
@@ -237,6 +233,10 @@ We highlight some of the major packages in Python's `astropy` ecosystem and thei
   <tr>
     <td><a href="https://github.com/JuliaAPlavin/SkyImages.jl">JuliaAPlavin/SkyImages.jl</a></td>
     <td>Load astronomical images of the sky and process them with convenient, general, and composable functions.</td>
+  </tr>
+  <tr>
+    <td><a href="https://github.com/JuliaAstro/AstroImages.jl">AstroImages.jl</a></td>
+    <td>Load, manipulate, and visualize astronomical images</td>
   </tr>
 
   <tr>
@@ -324,12 +324,12 @@ We highlight some of the major packages in Python's `astropy` ecosystem and thei
    </td>
   </tr>
   <tr>
-    <td><a href="https://github.com/sefffal/PairPlots.jl">sefffal/PairPlots.jl</a></td>
-    <td>Beautiful and flexible visualizations of high dimensional data</td>
-  </tr>
-  <tr>
     <td><a href="https://github.com/JuliaAstro/AstroImages.jl">AstroImages.jl</a></td>
     <td>Load, manipulate, and visualize astronomical images</td>
+  </tr>
+  <tr>
+    <td><a href="https://github.com/sefffal/PairPlots.jl">sefffal/PairPlots.jl</a></td>
+    <td>Beautiful and flexible visualizations of high dimensional data</td>
   </tr>
 
   <tr>
