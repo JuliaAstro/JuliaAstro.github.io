@@ -5,13 +5,13 @@ Revise.revise()
 
 import JuliaAstroDocs
 
-t = JuliaAstroDocs.ecosystem()
+ecosystem = JuliaAstroDocs.ecosystem()
 
 # Sync ecosystem.md
-JuliaAstroDocs.page_ecosystem(t)
+JuliaAstroDocs.page_ecosystem(ecosystem)
 
 # Sync comparison.md
-JuliaAstroDocs.page_compare(t)
+JuliaAstroDocs.page_compare(ecosystem)
 
 # Prefer online docs, use local as fallback
 links = InterLinks(
@@ -126,9 +126,6 @@ function generate_multidoc_refs(p; clonedir=joinpath(@__DIR__, "clones"))
 end
 
 ecosystem = JuliaAstroDocs.ecosystem()
-ecosystem_highlevels = sort(JuliaAstroDocs.group(x -> x.highlevel, ecosystem);
-    by = x -> x.highlevel
-)
 
 docs = [
     # JuliaAstro's own generated pages
@@ -139,13 +136,10 @@ docs = [
         fix_canonical_url = false,
     ),
     # MultiDocumenter pages
-    map(pairs(ecosystem_highlevels)) do (highlevel, package_groups)
-        ecosystem_sublevels = sort(JuliaAstroDocs.group(x -> x.sublevel, package_groups);
-            by = x -> x.sublevel
-        )
+    map(ecosystem) do (highlevel, sublevels)
         MultiDocumenter.MegaDropdownNav(highlevel,
-            map(pairs(ecosystem_sublevels)) do (sublevel, packages)
-                MultiDocumenter.Column(sublevel, collect(generate_multidoc_refs.(sort(packages; by = x -> basename(x.name)))))
+            map(sublevels) do (sublevel, packages)
+                MultiDocumenter.Column(sublevel, collect(generate_multidoc_refs.(packages)))
             end |> collect
         )
     end...,

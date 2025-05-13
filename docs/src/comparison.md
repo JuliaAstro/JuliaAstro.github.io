@@ -26,10 +26,6 @@ We highlight some of the major packages in Python's `astropy` ecosystem and thei
    </td>
   </tr>
   <tr>
-    <td><a href="https://github.com/JuliaAstro/UnitfulAstro.jl">UnitfulAstro.jl</a></td>
-    <td>Astronomical units and things</td>
-  </tr>
-  <tr>
     <td><a href="https://github.com/SymbolicML/DynamicQuantities.jl">SymbolicML/DynamicQuantities.jl</a></td>
     <td>Efficient and type-stable physical quantities in Julia</td>
   </tr>
@@ -40,6 +36,10 @@ We highlight some of the major packages in Python's `astropy` ecosystem and thei
   <tr>
     <td><a href="https://github.com/PainterQubits/Unitful.jl">PainterQubits/Unitful.jl</a></td>
     <td>Physical quantities with arbitrary units</td>
+  </tr>
+  <tr>
+    <td><a href="https://github.com/JuliaAstro/UnitfulAstro.jl">UnitfulAstro.jl</a></td>
+    <td>Astronomical units and things</td>
   </tr>
 
   <tr>
@@ -48,10 +48,6 @@ We highlight some of the major packages in Python's `astropy` ecosystem and thei
    </td>
   </tr>
   <tr>
-    <td><a href="https://github.com/JuliaAstro/UnitfulAstro.jl">UnitfulAstro.jl</a></td>
-    <td>Astronomical units and things</td>
-  </tr>
-  <tr>
     <td><a href="https://github.com/SymbolicML/DynamicQuantities.jl">SymbolicML/DynamicQuantities.jl</a></td>
     <td>Efficient and type-stable physical quantities in Julia</td>
   </tr>
@@ -62,6 +58,10 @@ We highlight some of the major packages in Python's `astropy` ecosystem and thei
   <tr>
     <td><a href="https://github.com/PainterQubits/Unitful.jl">PainterQubits/Unitful.jl</a></td>
     <td>Physical quantities with arbitrary units</td>
+  </tr>
+  <tr>
+    <td><a href="https://github.com/JuliaAstro/UnitfulAstro.jl">UnitfulAstro.jl</a></td>
+    <td>Astronomical units and things</td>
   </tr>
 
   <tr>
@@ -122,20 +122,20 @@ We highlight some of the major packages in Python's `astropy` ecosystem and thei
    </td>
   </tr>
   <tr>
-    <td><a href="https://github.com/JuliaAstro/SkyCoords.jl">SkyCoords.jl</a></td>
-    <td>Astronomical coordinate systems</td>
-  </tr>
-  <tr>
-    <td><a href="https://github.com/JuliaAstro/SPICE.jl">SPICE.jl</a></td>
-    <td>SPICE data retrieval and usage</td>
-  </tr>
-  <tr>
     <td><a href="https://github.com/JuliaAstro/EphemerisSources.jl">EphemerisSources.jl</a></td>
     <td>Meta package for accessing JPL HORIZONS and SPICE sources</td>
   </tr>
   <tr>
     <td><a href="https://github.com/PerezHz/HORIZONS.jl">PerezHz/HORIZONS.jl</a></td>
     <td>An interface to NASA-JPL HORIZONS system and other Solar System Dynamics APIs in Julia</td>
+  </tr>
+  <tr>
+    <td><a href="https://github.com/JuliaAstro/SPICE.jl">SPICE.jl</a></td>
+    <td>SPICE data retrieval and usage</td>
+  </tr>
+  <tr>
+    <td><a href="https://github.com/JuliaAstro/SkyCoords.jl">SkyCoords.jl</a></td>
+    <td>Astronomical coordinate systems</td>
   </tr>
 
   <tr>
@@ -172,10 +172,6 @@ We highlight some of the major packages in Python's `astropy` ecosystem and thei
    </td>
   </tr>
   <tr>
-    <td><a href="https://github.com/JuliaStats/Distributions.jl">JuliaStats/Distributions.jl</a></td>
-    <td>A Julia package for probability distributions and associated functions</td>
-  </tr>
-  <tr>
     <td><a href="https://github.com/JuliaPhysics/Measurements.jl">JuliaPhysics/Measurements.jl</a></td>
     <td>Error propagation calculator and library for physical measurements. It supports real and complex numbers with uncertainty, arbitrary precision calculations, operations with arrays, and numerical integration</td>
   </tr>
@@ -186,6 +182,10 @@ We highlight some of the major packages in Python's `astropy` ecosystem and thei
   <tr>
     <td><a href="https://github.com/JuliaAPlavin/Uncertain.jl">JuliaAPlavin/Uncertain.jl</a></td>
     <td>Handle uncertain values with ease and performance!</td>
+  </tr>
+  <tr>
+    <td><a href="https://github.com/JuliaStats/Distributions.jl">JuliaStats/Distributions.jl</a></td>
+    <td>A Julia package for probability distributions and associated functions</td>
   </tr>
 
   </tbody>
@@ -211,15 +211,15 @@ We highlight some of the major packages in Python's `astropy` ecosystem and thei
    </td>
   </tr>
   <tr>
+    <td><a href="https://github.com/emmt/OIFITS.jl">emmt/OIFITS.jl</a></td>
+    <td>Support for OI-FITS</td>
+  </tr>
+  <tr>
     <td><a href="https://github.com/JuliaAstro/AstroImages.jl">AstroImages.jl</a></td>
     <td>Load, manipulate, and visualize astronomical images</td>
   </tr>
   <tr>
     <td><a href="https://github.com/JuliaAstro/CFITSIO.jl">CFITSIO.jl</a></td>
-    <td>Reading and writing FITS files</td>
-  </tr>
-  <tr>
-    <td><a href="https://github.com/JuliaAstro/FITSIO.jl">FITSIO.jl</a></td>
     <td>Reading and writing FITS files</td>
   </tr>
   <tr>
@@ -231,8 +231,8 @@ We highlight some of the major packages in Python's `astropy` ecosystem and thei
     <td>Using FITS files made easier for Julia</td>
   </tr>
   <tr>
-    <td><a href="https://github.com/emmt/OIFITS.jl">emmt/OIFITS.jl</a></td>
-    <td>Support for OI-FITS</td>
+    <td><a href="https://github.com/JuliaAstro/FITSIO.jl">FITSIO.jl</a></td>
+    <td>Reading and writing FITS files</td>
   </tr>
   <tr>
     <td><a href="https://github.com/JuliaAPlavin/SkyImages.jl">JuliaAPlavin/SkyImages.jl</a></td>
@@ -255,12 +255,12 @@ We highlight some of the major packages in Python's `astropy` ecosystem and thei
    </td>
   </tr>
   <tr>
-    <td><a href="https://github.com/JuliaAPlavin/VirtualObservatory.jl">JuliaAPlavin/VirtualObservatory.jl</a></td>
-    <td>Access remote data and services that follow VO protocols</td>
-  </tr>
-  <tr>
     <td><a href="https://github.com/JuliaAPlavin/VLBIData.jl">JuliaAPlavin/VLBIData.jl</a></td>
     <td>Work with data formats common in very long baseline interferometry (VLBI)</td>
+  </tr>
+  <tr>
+    <td><a href="https://github.com/JuliaAPlavin/VirtualObservatory.jl">JuliaAPlavin/VirtualObservatory.jl</a></td>
+    <td>Access remote data and services that follow VO protocols</td>
   </tr>
   <tr>
     <td><a href="https://github.com/JuliaAPlavin/VOTables.jl">JuliaAPlavin/VOTables.jl</a></td>
@@ -324,12 +324,12 @@ We highlight some of the major packages in Python's `astropy` ecosystem and thei
    </td>
   </tr>
   <tr>
-    <td><a href="https://github.com/JuliaAstro/AstroImages.jl">AstroImages.jl</a></td>
-    <td>Load, manipulate, and visualize astronomical images</td>
-  </tr>
-  <tr>
     <td><a href="https://github.com/sefffal/PairPlots.jl">sefffal/PairPlots.jl</a></td>
     <td>Beautiful and flexible visualizations of high dimensional data</td>
+  </tr>
+  <tr>
+    <td><a href="https://github.com/JuliaAstro/AstroImages.jl">AstroImages.jl</a></td>
+    <td>Load, manipulate, and visualize astronomical images</td>
   </tr>
 
   <tr>
@@ -439,12 +439,12 @@ We highlight some of the major packages in Python's `astropy` ecosystem and thei
    </td>
   </tr>
   <tr>
-    <td><a href="https://github.com/JuliaAstro/Spectra.jl">Spectra.jl</a></td>
-    <td>Utilities for interfacing with astronomical spectra and synthetic spectra libraries</td>
-  </tr>
-  <tr>
     <td><a href="https://github.com/ajwheeler/Korg.jl">ajwheeler/Korg.jl</a></td>
     <td>Theoretical stellar spectra from 1D model atmospheres and linelists, assuming LTE</td>
+  </tr>
+  <tr>
+    <td><a href="https://github.com/JuliaAstro/Spectra.jl">Spectra.jl</a></td>
+    <td>Utilities for interfacing with astronomical spectra and synthetic spectra libraries</td>
   </tr>
   <tr>
     <td><a href="https://github.com/fjebaker/SpectralFitting.jl">fjebaker/SpectralFitting.jl</a></td>
@@ -457,12 +457,12 @@ We highlight some of the major packages in Python's `astropy` ecosystem and thei
    </td>
   </tr>
   <tr>
-    <td><a href="https://github.com/JuliaAstro/Spectra.jl">Spectra.jl</a></td>
-    <td>Utilities for interfacing with astronomical spectra and synthetic spectra libraries</td>
-  </tr>
-  <tr>
     <td><a href="https://github.com/ajwheeler/Korg.jl">ajwheeler/Korg.jl</a></td>
     <td>Theoretical stellar spectra from 1D model atmospheres and linelists, assuming LTE</td>
+  </tr>
+  <tr>
+    <td><a href="https://github.com/JuliaAstro/Spectra.jl">Spectra.jl</a></td>
+    <td>Utilities for interfacing with astronomical spectra and synthetic spectra libraries</td>
   </tr>
   <tr>
     <td><a href="https://github.com/fjebaker/SpectralFitting.jl">fjebaker/SpectralFitting.jl</a></td>

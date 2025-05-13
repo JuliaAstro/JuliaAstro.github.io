@@ -7,7 +7,7 @@ package_row(p) = """
 
 function package_section(t, astropy_module, astropy_url)
     io = IOBuffer()
-    t_astropy = filter(x -> astropy_module in x.astropy, t)
+    t_astropy = Iterators.filter(x -> astropy_module in x.astropy, t) |> collect
     write(io, """
       <tr>
         <td rowspan=$(length(t_astropy)+1)>
@@ -23,7 +23,13 @@ function package_section(t, astropy_module, astropy_url)
     JuliaAstroDocs.stake!(io)
 end
 
-function page_compare(t)
+function page_compare(ecosystem)
+    t = map(ecosystem) do (highlevel, sublevels)
+        map(sublevels) do (sublevel, packages)
+            packages
+        end
+    end |> Iterators.flatten |> Iterators.flatten
+
     fpath = joinpath(dirname(@__DIR__), "docs", "src", "comparison.md")
 
     open(fpath, "w") do io
