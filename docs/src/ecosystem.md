@@ -4,7 +4,7 @@ The joy of our community is the many astronomy and astrophysics packages availab
 
 ---
 
-## Domain Specific
+## Domain
 
 ### EphemerisSources.jl
 
@@ -295,6 +295,17 @@ See also:
 - pixel functions, query functions, map functions
 - power spectrum support
 - plotting support
+
+
+### Reproject.jl
+
+[![curly braces](assets/code.png) Repository](https://github.com/JuliaAstro/Reproject.jl)
+
+[![book icon](assets/book.png) Documentation](https://juliaastro.org/Reproject.jl/dev/)
+
+**Astronomical image reprojection**
+
+- Uses [FITSIO.jl](https://github.com/JuliaAstro/FITSIO.jl) and [WCS.jl](https://github.com/JuliaAstro/WCS.jl) to reproject coordinate systems between FITS images
 
 
 ### SkyCoords.jl
@@ -696,17 +707,6 @@ See also:
 
 See also:
 - [ReferenceFrameRotations.jl](https://github.com/JuliaSpace/ReferenceFrameRotations.jl)
-
-
-### Reproject.jl
-
-[![curly braces](assets/code.png) Repository](https://github.com/JuliaAstro/Reproject.jl)
-
-[![book icon](assets/book.png) Documentation](https://juliaastro.org/Reproject.jl/dev/)
-
-**Astronomical image reprojection**
-
-- Uses [FITSIO.jl](https://github.com/JuliaAstro/FITSIO.jl) and [WCS.jl](https://github.com/JuliaAstro/WCS.jl) to reproject coordinate systems between FITS images
 
 
 ### JuliaAPlavin/SkyImages.jl

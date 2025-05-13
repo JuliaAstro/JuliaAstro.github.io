@@ -5,7 +5,7 @@ using TypedTables
 stake! = String ∘ take!
 
 ecosystem() = (
-    "Domain Specific" => (
+    "Domain" => (
         "Solar System" => (
             (
                 name = "EphemerisSources.jl",
@@ -274,6 +274,16 @@ ecosystem() = (
                 - plotting support
                 """,
                 astropy = ["astropy-healpix"],
+            ),
+            (
+                name = "Reproject.jl",
+                repo = "https://github.com/JuliaAstro/Reproject.jl",
+                doc = "https://juliaastro.org/Reproject.jl/dev/",
+                tagline = "Astronomical image reprojection",
+                descr = """
+                - Uses [FITSIO.jl](https://github.com/JuliaAstro/FITSIO.jl) and [WCS.jl](https://github.com/JuliaAstro/WCS.jl) to reproject coordinate systems between FITS images
+                """,
+                astropy = ["reproject"],
             ),
             (
                 name = "SkyCoords.jl",
@@ -644,16 +654,6 @@ ecosystem() = (
                 - [ReferenceFrameRotations.jl](https://github.com/JuliaSpace/ReferenceFrameRotations.jl)
                 """,
                 astropy = ["astropy.visualization"],
-            ),
-            (
-                name = "Reproject.jl",
-                repo = "https://github.com/JuliaAstro/Reproject.jl",
-                doc = "https://juliaastro.org/Reproject.jl/dev/",
-                tagline = "Astronomical image reprojection",
-                descr = """
-                - Uses [FITSIO.jl](https://github.com/JuliaAstro/FITSIO.jl) and [WCS.jl](https://github.com/JuliaAstro/WCS.jl) to reproject coordinate systems between FITS images
-                """,
-                astropy = ["reproject"],
             ),
             (
                 name = "JuliaAPlavin/SkyImages.jl",
