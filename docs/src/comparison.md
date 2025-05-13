@@ -232,7 +232,7 @@ We highlight some of the major packages in Python's `astropy` ecosystem and thei
   </tr>
   <tr>
     <td><a href="https://github.com/barrettp/FITS.jl">barrettp/FITS.jl</a></td>
-    <td>Using FITS files made easier for Julia</td>
+    <td>A Julia Flexible Image Transport System (FITS) file IO package</td>
   </tr>
   <tr>
     <td><a href="https://github.com/JuliaAstro/FITSIO.jl">FITSIO.jl</a></td>

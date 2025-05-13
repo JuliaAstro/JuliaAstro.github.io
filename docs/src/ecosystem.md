@@ -590,11 +590,11 @@ See also:
 
 [![curly braces](assets/code.png) Repository](https://github.com/barrettp/FITS.jl)
 
-[![book icon](assets/book.png) Documentation](https://emmt.github.io/EasyFITS.jl/dev)
+[![book icon](assets/book.png) Documentation](https://github.com/barrettp/FITS.jl?tab=readme-ov-file#fits)
 
-**Using FITS files made easier for Julia**
+**A Julia Flexible Image Transport System (FITS) file IO package**
 
-- EasyFITS is a [Julia](https://julialang.org/) package designed to make it easier to read and write data in [FITS](https://fits.gsfc.nasa.gov/fits_standard.html) format without sacrificing performances, flexibility, or readability.
+- A Julia Flexible Image Transport System (FITS) file IO package
 
 
 ### FITSIO.jl
