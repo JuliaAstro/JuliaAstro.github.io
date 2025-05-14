@@ -26,7 +26,17 @@ Would you like to contribute to JuliaAstro through Google Summer of Code? You ca
     - Going to Jupiter with Julia [[pretalx]](https://pretalx.com/juliacon2021/talk/BPJ3N7/) [[video]](https://www.youtube.com/watch?v=WnvKaUsGv8w)
 
 !!! details "JuliaCon 2022"
-    - [Julia in Astronomy & Astrophysics Research Symposium 2022](https://eford.github.io/AstroMiniSymposiumAtJuliaCon2022/)
+    **Julia in Astronomy & Astrophysics Research Symposium 2022 [[website]](https://eford.github.io/AstroMiniSymposiumAtJuliaCon2022/)**
+    - [Using Julia to build the simulation pipeline of an astronomical instrument](https://www.youtube.com/watch?v=vj1uzilanQI&t=102s)
+    - [Joinly Modeling Telluric Features and Setellar Variability with StellarSpectraObservationFitting.jl](https://www.youtube.com/watch?v=vj1uzilanQI&t=1138s)
+    - [Characterizing the TRAPPIST-1 System with Julia](https://www.youtube.com/watch?v=vj1uzilanQI&t=1977s)
+    - [Gradients of the Big Bang with Bolt.jl](https://www.youtube.com/watch?v=vj1uzilanQI&t=3001s)
+    - [High-dimensional inference from the Cosmic Microwave Background on GPU](https://www.youtube.com/watch?v=vj1uzilanQI&t=4143s)
+    - [Julia for Adaptive Optics](https://www.youtube.com/watch?v=vj1uzilanQI&t=5273s)
+    - [Back to Basics in Analyzing Radio Astronomy Data](https://www.youtube.com/watch?v=vj1uzilanQI&t=6087s)
+    - [Discussion Panel](https://www.youtube.com/watch?v=vj1uzilanQI&t=7204s)
+
+    **More astro talks at JuliaCon**
     - [Comrade: High-Performance Black Hole Imaging](https://pretalx.com/juliacon-2022/talk/3LHDTD/)
     - [RVSpectML: Precision Velocities from Spectroscopic Time Series](https://pretalx.com/juliacon-2022/talk/BLBKZM/)
     - [Finding Fast Radio Bursts, Faster](https://pretalx.com/juliacon-2022/talk/ML8N7S/)
@@ -51,4 +61,14 @@ Would you like to contribute to JuliaAstro through Google Summer of Code? You ca
 ### Upcoming
 
 !!! details "JuliaCon 2025"
-    - [Julia in Astronomy & Astrophysics Research Symposium 2025](https://eford.github.io/AstroMiniSymposiumAtJuliaCon2025/)
+    **Julia in Astronomy & Astrophysics Research Symposium 2025 [[website]](https://eford.github.io/AstroMiniSymposiumAtJuliaCon2025/)**
+    - [Building an Astronomy Code for VLBI in Julia](https://pretalx.com/juliacon-2025/talk/NSZLHS/)
+    - [Instrument Modelling for Radio Telescopes with Julia](https://pretalx.com/juliacon-2025/talk/Q7XZBZ/)
+    - Bayesian Multifrequency Imaging for Radio Astronomy (TBC)
+    - [Regularized Maximum Likelihood Methods for Black Hole Imaging](https://pretalx.com/juliacon-2025/talk/AYBT3G/)
+    - Space time and accretion inference from images of black holes (TBC)
+    - [Building an End-to-End Spectral Reduction Pipeline for APOGEE](https://pretalx.com/juliacon-2025/talk/HYYXTA/)
+    - [Juggling astro catalogs in Julia: convenience meets performance](https://pretalx.com/juliacon-2025/talk/TUXFSL/)
+    - [ScatteringOptics.jl: An Interstellar Scattering Framework](https://pretalx.com/juliacon-2025/talk/N7ZEMF/)
+    - Astrometry.jl: A Fundamental Julia Package for Astronomy (TBC)
+    - Panel Discussion (TBC)
