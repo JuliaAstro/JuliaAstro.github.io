@@ -8,7 +8,8 @@ Our contributors come from diverse backgrounds and have various levels of intera
 
 - [JuliaAstro](https://github.com/juliaastro) on GitHub
 - [JuliaHCI](https://github.com/juliahci) on GitHub
-- [JuliaSpace](https://github.com/JuliaSpace) on Github
+- [JuliaSpace](https://github.com/JuliaSpace) on GitHub
+- [EHTJulia](https://github.com/EHTJulia) on GitHub
 - [julia-astro](https://groups.google.com/forum/#!forum/julia-astro) mailing list on Google Groups
 - [Astro/Space](https://discourse.julialang.org/c/domain/astro) topics on JuliaLang Discourse
 - [#JuliaAstro:openastronomy.org](https://riot.im/app/#/room/#JuliaAstro:openastronomy.org) on Matrix
@@ -36,7 +37,7 @@ Would you like to contribute to JuliaAstro through Google Summer of Code? You ca
     - [Back to Basics in Analyzing Radio Astronomy Data](https://www.youtube.com/watch?v=vj1uzilanQI&t=6087s)
     - [Discussion Panel](https://www.youtube.com/watch?v=vj1uzilanQI&t=7204s)
 
-    **More astro talks at JuliaCon**
+    **More aero/astro talks at JuliaCon**
     - [Comrade: High-Performance Black Hole Imaging](https://pretalx.com/juliacon-2022/talk/3LHDTD/)
     - [RVSpectML: Precision Velocities from Spectroscopic Time Series](https://pretalx.com/juliacon-2022/talk/BLBKZM/)
     - [Finding Fast Radio Bursts, Faster](https://pretalx.com/juliacon-2022/talk/ML8N7S/)
@@ -72,3 +73,6 @@ Would you like to contribute to JuliaAstro through Google Summer of Code? You ca
     - [ScatteringOptics.jl: An Interstellar Scattering Framework](https://pretalx.com/juliacon-2025/talk/N7ZEMF/)
     - Astrometry.jl: A Fundamental Julia Package for Astronomy (TBC)
     - Panel Discussion (TBC)
+
+    **More aero/astro talks at JuliaCon**
+    - [Tuning attitude control gains of a satellite using Julia](https://pretalx.com/juliacon-2025/talk/SAYCCZ/)
