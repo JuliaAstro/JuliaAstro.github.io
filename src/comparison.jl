@@ -7,7 +7,7 @@ package_row(p) = """
 
 function package_section(t, astropy_module, astropy_url)
     io = IOBuffer()
-    t_astropy = filter(x -> astropy_module in x.astropy, t)
+    t_astropy = Iterators.filter(x -> astropy_module in x.astropy, t) |> collect
     write(io, """
       <tr>
         <td rowspan=$(length(t_astropy)+1)>
