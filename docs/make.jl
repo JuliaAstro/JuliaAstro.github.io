@@ -65,7 +65,7 @@ makedocs(
             "assets/favicon.ico",
         ],
         inventory_version = "",
-        edit_link = "source",
+        edit_link = "main",
     ),
     pages = [
         "Home" => "index.md",
@@ -165,7 +165,7 @@ MultiDocumenter.make(
 # assets_dir = joinpath(outpath, "assets")
 # mkpath(assets_dir)
 # Downloads.download(
-#     "https://raw.githubusercontent.com/JuliaAstro/JuliaAstro.github.io/refs/heads/source/docs/src/assets/logo.svg",
+#     "https://raw.githubusercontent.com/JuliaAstro/JuliaAstro.github.io/refs/heads/main/docs/src/assets/logo.svg",
 #     joinpath(assets_dir, "logo.svg");
 #     verbose = true,
 # )
@@ -174,8 +174,8 @@ MultiDocumenter.make(
 deploydocs(;
     repo = "github.com/JuliaAstro/JuliaAstro.github.io",
     push_preview = true,
-    branch = "master",
-    devbranch = "source",
+    branch = "gh-pages",
+    devbranch = "main",
     devurl = "home",
     cname = "juliaastro.org",
     versions = nothing,
