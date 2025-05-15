@@ -23,11 +23,6 @@
 <url><loc>https://JuliaAstro.org/AstroImages/stable/manual/preserving-wrapper/</loc></url>
 <url><loc>https://JuliaAstro.org/AstroImages/stable/manual/spec/</loc></url>
 <url><loc>https://JuliaAstro.org/AstroImages/stable/search/</loc></url>
-<url><loc>https://JuliaAstro.org/AstroLib/stable/</loc></url>
-<url><loc>https://JuliaAstro.org/AstroLib/stable/ref.html</loc></url>
-<url><loc>https://JuliaAstro.org/AstroLib/stable/ref/</loc></url>
-<url><loc>https://JuliaAstro.org/AstroLib/stable/search.html</loc></url>
-<url><loc>https://JuliaAstro.org/AstroLib/stable/search/</loc></url>
 <url><loc>https://JuliaAstro.org/AstroTime/stable/</loc></url>
 <url><loc>https://JuliaAstro.org/AstroTime/stable/api/</loc></url>
 <url><loc>https://JuliaAstro.org/AstroTime/stable/api/epochs.html</loc></url>
@@ -55,6 +50,14 @@
 <url><loc>https://JuliaAstro.org/DustExtinction/stable/color_laws/</loc></url>
 <url><loc>https://JuliaAstro.org/DustExtinction/stable/dust_maps/</loc></url>
 <url><loc>https://JuliaAstro.org/DustExtinction/stable/search/</loc></url>
+<url><loc>https://JuliaAstro.org/ERFA/stable/</loc></url>
+<url><loc>https://JuliaAstro.org/ERFA/stable/api.html</loc></url>
+<url><loc>https://JuliaAstro.org/ERFA/stable/api/</loc></url>
+<url><loc>https://JuliaAstro.org/ERFA/stable/api/functions/</loc></url>
+<url><loc>https://JuliaAstro.org/ERFA/stable/api/name_index/</loc></url>
+<url><loc>https://JuliaAstro.org/ERFA/stable/api/types_and_constants/</loc></url>
+<url><loc>https://JuliaAstro.org/ERFA/stable/search.html</loc></url>
+<url><loc>https://JuliaAstro.org/ERFA/stable/search/</loc></url>
 <url><loc>https://JuliaAstro.org/EarthOrientation/stable/</loc></url>
 <url><loc>https://JuliaAstro.org/EarthOrientation/stable/api.html</loc></url>
 <url><loc>https://JuliaAstro.org/EarthOrientation/stable/api/</loc></url>
@@ -106,6 +109,8 @@
 <url><loc>https://JuliaAstro.org/Photometry/stable/detection/algs/</loc></url>
 <url><loc>https://JuliaAstro.org/Photometry/stable/search.html</loc></url>
 <url><loc>https://JuliaAstro.org/Photometry/stable/search/</loc></url>
+<url><loc>https://JuliaAstro.org/Reproject/dev/</loc></url>
+<url><loc>https://JuliaAstro.org/Reproject/dev/api-reference/</loc></url>
 <url><loc>https://JuliaAstro.org/SAOImageDS9/stable/</loc></url>
 <url><loc>https://JuliaAstro.org/SAOImageDS9/stable/connect/</loc></url>
 <url><loc>https://JuliaAstro.org/SAOImageDS9/stable/drawing/</loc></url>
