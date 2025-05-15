@@ -1,6 +1,6 @@
 # JuliaAstro
 
-[JuliaAstro](https://github.com/JuliaAstro) and its affiliated organizations are a community for astronomy in Julia. We have a wide variety of packages from [aperture photometry](https://github.com/juliaastro/Photometry.jl) to [cosmology](https://github.com/juliaastro/Cosmology.jl). Check out a curated list of packages in the JuliaAstro ecosystem (and beyond) on the [Ecosystem page](@ref eco), or visit their documentation directly via the navbar above.
+[JuliaAstro](https://github.com/JuliaAstro) and its affiliated organizations are a community for astronomy in Julia. We have a wide variety of packages from [aperture photometry](https://github.com/juliaastro/Photometry.jl) to [cosmology](https://github.com/juliaastro/Cosmology.jl). Check out a curated list of packages in the JuliaAstro ecosystem (and beyond) on the [Ecosystem page](@ref eco), or visit their documentation directly via the navbar above. Pure Julia packages are marked with a closed circle ⬤, while wrapper packages for other languages are marked with an open circle ◯. 
 
 ## Contributing
 
