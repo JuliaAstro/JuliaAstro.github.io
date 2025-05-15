@@ -2,8 +2,8 @@ JuliaAstro.github.io
 ====================
 
 [![Static Badge](https://img.shields.io/badge/Docs-stable-blue)](https://juliaastro.org/)
-[![Build website](https://github.com/JuliaAstro/JuliaAstro.github.io/actions/workflows/Documentation.yml/badge.svg?branch=source)](https://github.com/JuliaAstro/JuliaAstro.github.io/actions/workflows/Documentation.yml)
-[![pages-build-deployment](https://github.com/JuliaAstro/JuliaAstro.github.io/actions/workflows/pages/pages-build-deployment/badge.svg?branch=master)](https://github.com/JuliaAstro/JuliaAstro.github.io/actions/workflows/pages/pages-build-deployment)
+[![Build website](https://github.com/JuliaAstro/JuliaAstro.github.io/actions/workflows/Documentation.yml/badge.svg?branch=main)](https://github.com/JuliaAstro/JuliaAstro.github.io/actions/workflows/Documentation.yml)
+[![pages-build-deployment](https://github.com/JuliaAstro/JuliaAstro.github.io/actions/workflows/pages/pages-build-deployment/badge.svg?branch=gh-pages)](https://github.com/JuliaAstro/JuliaAstro.github.io/actions/workflows/pages/pages-build-deployment)
 [![Test JuliaAstro packages](https://github.com/JuliaAstro/JuliaAstro.github.io/actions/workflows/CI.yml/badge.svg)](https://github.com/JuliaAstro/JuliaAstro.github.io/actions/workflows/CI.yml)
 
 ## Description
@@ -47,7 +47,7 @@ Typo fixes or suggested changes to existing prose is appreciated! The most direc
 
 ### 2. Adding a package to our [Ecosystems page](https://juliaastro.org/home/ecosystem/) or [Comparison to Astropy page](https://juliaastro.org/home/comparison/)
 
-Our Ecosystem page and Comparison page are integrated with the rest of the site, including the global navbar dropdown menu across the top, and in our [integration testing suite](https://github.com/JuliaAstro/JuliaAstro.github.io/actions/workflows/CI.yml). To add a package, include an entry in [`src/JuliaAstroDocs.jl`](https://github.com/JuliaAstro/JuliaAstro.github.io/blob/source/src/JuliaAstroDocs.jl), following the same format as the other packages. Below is an example entry of how that might look:
+Our Ecosystem page and Comparison page are integrated with the rest of the site, including the global navbar dropdown menu across the top, and in our [integration testing suite](https://github.com/JuliaAstro/JuliaAstro.github.io/actions/workflows/CI.yml). To add a package, include an entry in [`src/JuliaAstroDocs.jl`](https://github.com/JuliaAstro/JuliaAstro.github.io/blob/main/src/JuliaAstroDocs.jl), following the same format as the other packages. Below is an example entry of how that might look:
 
 ```julia
   (
@@ -82,6 +82,6 @@ julia> 	servedocs(; include_dirs=["src/"], skip_files=["docs/src/comparison.md",
 The `include_dirs` arg allows our internal Revise worklow to pick up changes in `src/JuliaAstro.jl` automatically, and the `skip_files` arg keeps Documenter.jl from falling into an infinite loop as `docs/make.jl` watches for changes to our markdown files.
 
 > [!TIP]
-> If just making simple markdown changes, you can shorten the build time between edits by commenting out the call to `MultiDocumenter.make` in [`docs/make.jl`](https://github.com/JuliaAstro/JuliaAstro.github.io/blob/source/docs/make.jl). This disables the MultiDocumenter.jl repo-cloning and top navbar build process, and can be done without needing to restart your `LiveServer` session.
+> If just making simple markdown changes, you can shorten the build time between edits by commenting out the call to `MultiDocumenter.make` in [`docs/make.jl`](https://github.com/JuliaAstro/JuliaAstro.github.io/blob/main/docs/make.jl). This disables the MultiDocumenter.jl repo-cloning and top navbar build process, and can be done without needing to restart your `LiveServer` session.
 
 See our [Contributing page](https://juliaastro.org/home/#Contributing) for more.
