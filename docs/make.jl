@@ -5,13 +5,14 @@ Revise.revise()
 
 import JuliaAstroDocs
 
-t = JuliaAstroDocs.ecosystem()
+ecosystem = JuliaAstroDocs.ecosystem()
+ecosystem_t = JuliaAstroDocs.ecosystem_t()
 
 # Sync ecosystem.md
-JuliaAstroDocs.page_ecosystem(t)
+JuliaAstroDocs.page_ecosystem(ecosystem)
 
 # Sync comparison.md
-JuliaAstroDocs.page_compare(t)
+JuliaAstroDocs.page_compare(ecosystem_t)
 
 # Prefer online docs, use local as fallback
 links = InterLinks(
@@ -83,9 +84,27 @@ makedocs(
     plugins = [links],
 )
 
+# Differentiate between pure Julia and wrapper packages
+wrapper_packages = [
+    "torrance/Casacore",
+    "CFITSIO",
+    "JuliaAPlavin/Difmap",
+    "emmt/EasyFITS",
+    "ERFA",
+    "FITSIO",
+    "emmt/OIFITS",
+    "WCS",
+]
+
+
 @info "Building aggregate JuliaAstro site"
 function generate_multidoc_refs(p; clonedir=joinpath(@__DIR__, "clones"))
-    package_name = string(chopsuffix(p.name, ".jl"))
+    package_path = string(chopsuffix(p.name, ".jl"))
+    package_name = if package_path in wrapper_packages
+        "◯ " * package_path
+    else
+        "⬤ " * package_path
+    end
     multidoc_type = if any(occursin.(("stable", "dev"), p.doc)) && startswith(p.doc, "https://juliaastro")
             "MultiDocRef"
         else
@@ -94,8 +113,8 @@ function generate_multidoc_refs(p; clonedir=joinpath(@__DIR__, "clones"))
 
     if multidoc_type == "MultiDocRef"
         MultiDocumenter.MultiDocRef(
-            upstream = joinpath(clonedir, package_name),
-            path = package_name,
+            upstream = joinpath(clonedir, package_path),
+            path = package_path,
             name = package_name,
             giturl = p.repo,
         )
@@ -107,22 +126,24 @@ function generate_multidoc_refs(p; clonedir=joinpath(@__DIR__, "clones"))
     end
 end
 
-ecosystem_highlevels = JuliaAstroDocs.group(x -> x.highlevel, JuliaAstroDocs.ecosystem())
+ecosystem = JuliaAstroDocs.ecosystem()
 
 docs = [
-    # We also add JuliaAstro's own generated pages
+    # JuliaAstro's own generated pages
     MultiDocumenter.MultiDocRef(
         upstream = joinpath(@__DIR__, "build"),
         path = "home",
         name = "Home",
         fix_canonical_url = false,
     ),
-    map(pairs(ecosystem_highlevels)) do (highlevel, packages)
-        MultiDocumenter.DropdownNav(
-            highlevel,
-            collect(generate_multidoc_refs.(packages))
+    # MultiDocumenter pages
+    map(ecosystem) do (highlevel, sublevels)
+        MultiDocumenter.MegaDropdownNav(highlevel,
+            map(sublevels) do (sublevel, packages)
+                MultiDocumenter.Column(sublevel, collect(generate_multidoc_refs.(packages)))
+            end |> collect
         )
-    end...
+    end...,
 ]
 
 MultiDocumenter.make(

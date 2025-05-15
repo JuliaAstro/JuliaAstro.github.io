@@ -7,29 +7,30 @@ The joy of our community is the many astronomy and astrophysics packages availab
 
 """;
 
-function page_ecosystem(t)
-ecosystem_highlevels = JuliaAstroDocs.group(x -> x.highlevel, t)
+function page_ecosystem(ecosystem)
     fpath = joinpath(dirname(@__DIR__), "docs", "src", "ecosystem.md")
     open(fpath, "w") do io
         write(io, ECOSYSTEM_HEADER)
-        for (highlevel, packages) in pairs(ecosystem_highlevels)
+        for (highlevel, sublevels) in ecosystem
             write(io, "## ", highlevel, "\n\n")
-            for p in packages
-                write(io, "### ", p.name, "\n\n")
-                write(io,
-                    "[![curly braces](assets/code.png) Repository](",
-                    p.repo,
-                    ")\n\n",
-                )
-                write(io,
-                    "[![book icon](assets/book.png) Documentation](",
-                    p.doc,
-                    ")\n\n",
-                )
-                write(io, "**", p.tagline, "**", "\n\n")
-                write(io, p.descr, "\n\n")
+            for (sublevel, packages) in sublevels
+                for p in packages
+                    write(io, "### ", p.name, "\n\n")
+                    write(io,
+                        "[![curly braces](assets/code.png) Repository](",
+                        p.repo,
+                        ")\n\n",
+                    )
+                    write(io,
+                        "[![book icon](assets/book.png) Documentation](",
+                        p.doc,
+                        ")\n\n",
+                    )
+                    write(io, "**", p.tagline, "**", "\n\n")
+                    write(io, p.descr, "\n\n")
+                end
+                write(io, "---\n\n")
             end
-            write(io, "---\n\n")
         end
     end
 end

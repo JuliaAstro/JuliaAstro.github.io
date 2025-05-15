@@ -31,10 +31,10 @@ The rendered JuliaAstro site is published online using GitHub Pages at <https://
       └── JuliaAstroDocs.jl
   ```
 
-  1. All packages to document are stored as a [`TypedTables.Table`](https://typedtables.juliadata.org/stable/man/reference/#TypedTables.Table) in `src/JuliaAstroDocs.jl`. This contains all of the metadata needed to build the rest of the site, and is the main entrypoint for making documentation contributions.
+  1. All packages to document are stored in a nested NamedTuple (`ecosystem`) in `src/JuliaAstroDocs.jl`. This contains all of the metadata needed to build the rest of the site, and is the main entrypoint for making documentation contributions.
   1. Using this information, the markdown in `doc/src/` for our [comparison page](https://juliaastro.org/home/comparison/) and [ecosystem page](https://juliaastro.org/home/ecosystem/) are programatically created by `src/comparison.jl` and `src/ecosystem.jl`, respectively.
   1.  MultiDocumenter then builds the site via `docs/make.jl`, which also pulls the documentation for each JuliaAstro package and stores it in `docs/clones/`
-  
+
 </details>
 
 ## Contributing
@@ -51,7 +51,6 @@ Our Ecosystem page and Comparison page are integrated with the rest of the site,
 
 ```julia
   (
-      highlevel = "Data I/O",
       name = "eschnett/ASDF2.jl",
       repo = "https://github.com/eschnett/ASDF2.jl",
       doc = "https://eschnett.github.io/ASDF2.jl/dev/",
@@ -64,7 +63,7 @@ Our Ecosystem page and Comparison page are integrated with the rest of the site,
 ```
 
 > [!NOTE]
-> The overall `ecosystem` object that this entry is stored in determines the order of the top level dropdown menus on the site (`highlevel`) and how each package appears on both pages, alphabetically by package name (`name`). Packages under the JuliaAstro organization are listed as their bare name first, while packages outside of the organization have their parent repo name prepended to it, e.g., `eschnett/ASDF2.jl`
+> The overall `ecosystem` object that this entry is stored in determines the order of the top level dropdown menus on the site (`highlevel`) and how each package appears on both pages, alphabetically by package name (`name`). Packages under the JuliaAstro organization are listed as their bare name, while packages outside of the organization have their parent repo name prepended to it, e.g., `eschnett/ASDF2.jl`
 
 If appropriate, we appreciate a quick entry for your package in the `astropy` field that relates it to a similar package in the [Astropy ecosystem](https://www.astropy.org/). This helps new users who may be more familiar with Python get more easily oriented in the Julia ecosystem. See our [Comparison page](https://juliaastro.org/home/comparison/) for examples. If you feel that there is not a good match for your package, you can just leave the `astropy` field blank (i.e., as an empty array `[]`) and it will not appear in this page.
 
