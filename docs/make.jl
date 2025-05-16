@@ -22,8 +22,8 @@ links = InterLinks(
         joinpath(@__DIR__, "clones", "AstroImages", "dev", "objects.inv"),
     ),
     "AstroLib" => (
-        "https://juliaastro.org/AstroLib/stable/",
-        "https://juliaastro.org/AstroLib/stable/objects.inv",
+        "https://juliaastro.org/AstroLib.jl/stable/",
+        "https://juliaastro.org/AstroLib.jl/stable/objects.inv",
         joinpath(@__DIR__, "clones", "AstroLib", "dev", "objects.inv"),
     )
 )
