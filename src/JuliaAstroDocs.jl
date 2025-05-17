@@ -342,16 +342,6 @@ ecosystem() = (
         ),
         "Interferometry" => (
             (
-                name = "ptiede/Comrade.jl",
-                repo = "https://github.com/ptiede/Comrade.jl",
-                doc = "https://ptiede.github.io/Comrade.jl/stable/",
-                tagline = "Composable Modeling of Radio Emission",
-                descr = """
-                - A Bayesian differentiable modular modeling package for very long baseline interferometry
-                """,
-                astropy = [],
-            ),
-            (
                 name = "JuliaAPlavin/Difmap.jl",
                 repo = "https://github.com/JuliaAPlavin/Difmap.jl",
                 doc = "https://aplavin.github.io/Difmap.jl/test/examples.html",
