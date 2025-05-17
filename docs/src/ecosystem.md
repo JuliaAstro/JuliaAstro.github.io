@@ -553,6 +553,17 @@ See also:
 
 ---
 
+### AstroLib.jl
+
+[![curly braces](assets/code.png) Repository](https://github.com/JuliaAstro/astrolib.jl)
+
+[![book icon](assets/book.png) Documentation](https://juliaastro.org/AstroLib/stable/)
+
+**Collection of generic astronomical and astrophysical functions**
+
+- Translation of many IDL AstroLib procedures
+
+
 ### mileslucas/BiweightStats.jl
 
 [![curly braces](assets/code.png) Repository](https://github.com/mileslucas/BiweightStats.jl)

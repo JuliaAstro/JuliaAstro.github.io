@@ -511,6 +511,18 @@ ecosystem() = (
         ),
         "General" => (
             (
+                highlevel = "General",
+                sublevel = "Utilities and Data Viz",
+                name = "AstroLib.jl",
+                repo = "https://github.com/JuliaAstro/astrolib.jl",
+                doc = "https://juliaastro.org/AstroLib/stable/",
+                tagline = "Collection of generic astronomical and astrophysical functions",
+                descr = """
+                - Translation of many IDL AstroLib procedures
+                """,
+                astropy = [],
+            ),
+            (
                 name = "mileslucas/BiweightStats.jl",
                 repo = "https://github.com/mileslucas/BiweightStats.jl",
                 doc = "http://mileslucas.com/BiweightStats.jl/stable/",
