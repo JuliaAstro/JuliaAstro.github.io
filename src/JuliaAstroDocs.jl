@@ -508,17 +508,6 @@ ecosystem() = (
                 """,
                 astropy = ["astropy.uncertainty"],
             ),
-            (
-                name = "FastHartleyTransform.jl",
-                repo = "https://github.com/EHTJulia/FastHartleyTransform.jl",
-                doc = "https://ehtjulia.github.io/FastHartleyTransform.jl/stable/",
-                tagline = "A Julia implementation of the Fast Hartley Transform (FHT)",
-                descr = """
-                - This package provides a Julia implementation of the Fast Hartley Transform (FHT)
-                - It supports both CPUs and NVIDIA CUDA GPUs
-                """,
-                astropy = [],
-            ),
         ),
     ),
     "Utilities" => (

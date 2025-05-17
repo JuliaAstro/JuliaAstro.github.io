@@ -549,18 +549,6 @@ See also:
 - A Julia package for probability distributions and associated functions
 
 
-### FastHartleyTransform.jl
-
-[![curly braces](assets/code.png) Repository](https://github.com/EHTJulia/FastHartleyTransform.jl)
-
-[![book icon](assets/book.png) Documentation](https://ehtjulia.github.io/FastHartleyTransform.jl/stable/)
-
-**A Julia implementation of the Fast Hartley Transform (FHT)**
-
-- This package provides a Julia implementation of the Fast Hartley Transform (FHT)
-- It supports both CPUs and NVIDIA CUDA GPUs
-
-
 ---
 
 ## Utilities
