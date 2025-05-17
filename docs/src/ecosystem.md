@@ -203,42 +203,6 @@ See also:
 
 ---
 
-### ajwheeler/Korg.jl
-
-[![curly braces](assets/code.png) Repository](https://github.com/ajwheeler/Korg.jl)
-
-[![book icon](assets/book.png) Documentation](https://ajwheeler.github.io/Korg.jl/stable/)
-
-**Theoretical stellar spectra from 1D model atmospheres and linelists, assuming LTE**
-
-
-
-### Spectra.jl
-
-[![curly braces](assets/code.png) Repository](https://github.com/JuliaAstro/Spectra.jl)
-
-[![book icon](assets/book.png) Documentation](https://juliaastro.org/Spectra/stable)
-
-**Utilities for interfacing with astronomical spectra and synthetic spectra libraries**
-
-- Utilities for interfacing with astronomical spectra and synthetic spectra libraries
-
-
-### fjebaker/SpectralFitting.jl
-
-[![curly braces](assets/code.png) Repository](https://github.com/fjebaker/SpectralFitting.jl)
-
-[![book icon](assets/book.png) Documentation](https://fjebaker.github.io/SpectralFitting.jl/dev/)
-
-**✨🛰 Fast and flexible spectral fitting in Julia**
-
-- Spectral fitting routines and models with a focus on X-ray astronomy
-- This project is an attempt to modernise the field with new advancements in computational methods and statistical methods
-- SpectralFitting.jl aims to be extensible and reproducible, such that fits may be easily tailored to novel and specific problems, and easily verified by others
-
-
----
-
 ### barrettp/Astrometry.jl
 
 [![curly braces](assets/code.png) Repository](https://github.com/barrettp/Astrometry.jl)
@@ -333,6 +297,78 @@ See also:
 
 ---
 
+### ajwheeler/Korg.jl
+
+[![curly braces](assets/code.png) Repository](https://github.com/ajwheeler/Korg.jl)
+
+[![book icon](assets/book.png) Documentation](https://ajwheeler.github.io/Korg.jl/stable/)
+
+**Theoretical stellar spectra from 1D model atmospheres and linelists, assuming LTE**
+
+
+
+### Spectra.jl
+
+[![curly braces](assets/code.png) Repository](https://github.com/JuliaAstro/Spectra.jl)
+
+[![book icon](assets/book.png) Documentation](https://juliaastro.org/Spectra/stable)
+
+**Utilities for interfacing with astronomical spectra and synthetic spectra libraries**
+
+- Utilities for interfacing with astronomical spectra and synthetic spectra libraries
+
+
+### fjebaker/SpectralFitting.jl
+
+[![curly braces](assets/code.png) Repository](https://github.com/fjebaker/SpectralFitting.jl)
+
+[![book icon](assets/book.png) Documentation](https://fjebaker.github.io/SpectralFitting.jl/dev/)
+
+**✨🛰 Fast and flexible spectral fitting in Julia**
+
+- Spectral fitting routines and models with a focus on X-ray astronomy
+- This project is an attempt to modernise the field with new advancements in computational methods and statistical methods
+- SpectralFitting.jl aims to be extensible and reproducible, such that fits may be easily tailored to novel and specific problems, and easily verified by others
+
+
+---
+
+### JuliaDSP/DSP.jl
+
+[![curly braces](assets/code.png) Repository](https://github.com/JuliaDSP/DSP.jl)
+
+[![book icon](assets/book.png) Documentation](https://docs.juliadsp.org/stable/)
+
+**Filter design, periodograms, window functions, and other digital signal processing functionality**
+
+- DSP.jl provides a number of common [digital signal processing](https://en.wikipedia.org/wiki/Digital_signal_processing) routines in Julia
+
+
+### LombScargle.jl
+
+[![curly braces](assets/code.png) Repository](https://github.com/JuliaAstro/LombScargle.jl)
+
+[![book icon](assets/book.png) Documentation](https://juliaastro.org/LombScargle/stable/)
+
+**Compute Lomb-Scargle periodogram**
+
+- Create periodograms from unevenly sampled periodic signals
+- Supports multi-threading
+
+
+### JuliaStats/TimeSeries.jl
+
+[![curly braces](assets/code.png) Repository](https://github.com/JuliaStats/TimeSeries.jl)
+
+[![book icon](assets/book.png) Documentation](https://juliastats.github.io/TimeSeries.jl/stable)
+
+**Time series toolkit for Julia**
+
+- TimeSeries aims to provide a lightweight framework for working with time series data in Julia
+
+
+---
+
 ### JuliaAPlavin/Difmap.jl
 
 [![curly braces](assets/code.png) Repository](https://github.com/JuliaAPlavin/Difmap.jl)
@@ -384,6 +420,42 @@ See also:
 
 ## Statistics
 
+### JuliaPhysics/Measurements.jl
+
+[![curly braces](assets/code.png) Repository](https://github.com/JuliaPhysics/Measurements.jl)
+
+[![book icon](assets/book.png) Documentation](https://juliaphysics.github.io/Measurements.jl/stable/)
+
+**Error propagation calculator and library for physical measurements. It supports real and complex numbers with uncertainty, arbitrary precision calculations, operations with arrays, and numerical integration**
+
+-  [Measurements.jl](https://github.com/JuliaPhysics/Measurements.jl) relieves you from the hassle of propagating uncertainties coming from physical measurements, when performing mathematical operations involving them
+- The [linear error propagation theory](https://en.wikipedia.org/wiki/Propagation_of_uncertainty#Linear_combinations) is employed to propagate the errors
+
+
+### MonteCarloMeasurements.jl
+
+[![curly braces](assets/code.png) Repository](https://github.com/baggepinnen/MonteCarloMeasurements.jl)
+
+[![book icon](assets/book.png) Documentation](https://baggepinnen.github.io/MonteCarloMeasurements.jl/stable/)
+
+**Propagation of distributions by Monte-Carlo sampling: Real number types with uncertainty represented by samples**
+
+-  This package facilitates working with probability distributions by means of Monte-Carlo methods, in a way that allows for propagation of probability distributions through functions
+
+
+### JuliaAPlavin/Uncertain.jl
+
+[![curly braces](assets/code.png) Repository](https://github.com/JuliaAPlavin/Uncertain.jl)
+
+[![book icon](assets/book.png) Documentation](https://baggepinnen.github.io/MonteCarloMeasurements.jl/stable/)
+
+**Handle uncertain values with ease and performance!**
+
+-  The ultimate goal of Uncertain.jl is to support arbitrary uncertainty specifications – asymmetric errors, intervals, more complex distributions, and go beyond plain numbers. All within a single uniform interface
+
+
+---
+
 ### BoxLeastSquares.jl
 
 [![curly braces](assets/code.png) Repository](https://github.com/JuliaAstro/BoxLeastSquares.jl)
@@ -433,41 +505,16 @@ See also:
 
 ---
 
-### JuliaPhysics/Measurements.jl
+### AstroLib.jl
 
-[![curly braces](assets/code.png) Repository](https://github.com/JuliaPhysics/Measurements.jl)
+[![curly braces](assets/code.png) Repository](https://github.com/JuliaAstro/astrolib.jl)
 
-[![book icon](assets/book.png) Documentation](https://juliaphysics.github.io/Measurements.jl/stable/)
+[![book icon](assets/book.png) Documentation](https://juliaastro.org/AstroLib/stable/)
 
-**Error propagation calculator and library for physical measurements. It supports real and complex numbers with uncertainty, arbitrary precision calculations, operations with arrays, and numerical integration**
+**Collection of generic astronomical and astrophysical functions**
 
--  [Measurements.jl](https://github.com/JuliaPhysics/Measurements.jl) relieves you from the hassle of propagating uncertainties coming from physical measurements, when performing mathematical operations involving them
-- The [linear error propagation theory](https://en.wikipedia.org/wiki/Propagation_of_uncertainty#Linear_combinations) is employed to propagate the errors
+- Translation of many IDL AstroLib procedures
 
-
-### MonteCarloMeasurements.jl
-
-[![curly braces](assets/code.png) Repository](https://github.com/baggepinnen/MonteCarloMeasurements.jl)
-
-[![book icon](assets/book.png) Documentation](https://baggepinnen.github.io/MonteCarloMeasurements.jl/stable/)
-
-**Propagation of distributions by Monte-Carlo sampling: Real number types with uncertainty represented by samples**
-
--  This package facilitates working with probability distributions by means of Monte-Carlo methods, in a way that allows for propagation of probability distributions through functions
-
-
-### JuliaAPlavin/Uncertain.jl
-
-[![curly braces](assets/code.png) Repository](https://github.com/JuliaAPlavin/Uncertain.jl)
-
-[![book icon](assets/book.png) Documentation](https://baggepinnen.github.io/MonteCarloMeasurements.jl/stable/)
-
-**Handle uncertain values with ease and performance!**
-
--  The ultimate goal of Uncertain.jl is to support arbitrary uncertainty specifications – asymmetric errors, intervals, more complex distributions, and go beyond plain numbers. All within a single uniform interface
-
-
----
 
 ### mileslucas/BiweightStats.jl
 
@@ -528,18 +575,6 @@ See also:
 - Works with the [FileIO.jl](https://github.com/JuliaIO/FileIO.jl) interface
 
 
-### torrance/Casacore.jl
-
-[![curly braces](assets/code.png) Repository](https://github.com/torrance/Casacore.jl)
-
-[![book icon](assets/book.png) Documentation](https://github.com/torrance/Casacore.jl?tab=readme-ov-file#casacorejl)
-
-**A high level Julia interface to Casacore**
-
-- Wrapper for [CasaCore](http://casacore.github.io/casacore/)
-- Uses [casacorecxx](https://github.com/torrance/casacorecxx) which uses [CxxWrap](https://github.com/JuliaInterop/CxxWrap.jl) to wrap the C++ Casacore codebase. These raw objects and methods are available in `Casacore.LibCasacore`
-
-
 ### CFITSIO.jl
 
 [![curly braces](assets/code.png) Repository](https://github.com/JuliaAstro/CFITSIO.jl)
@@ -550,29 +585,6 @@ See also:
 
 - Low-level wrapper for [cfitsio](https://heasarc.gsfc.nasa.gov/fitsio/)
 - The c interface can be directly accessed with the [CFITSIO_jll package](https://juliapackaging.github.io/BinaryBuilder.jl/dev/jll/)
-
-
-### JuliaData/DataFrames.jl
-
-[![curly braces](assets/code.png) Repository](https://github.com/JuliaData/DataFrames.jl)
-
-[![book icon](assets/book.png) Documentation](https://dataframes.juliadata.org/stable/)
-
-**In-memory tabular data in Julia**
-
-- Tools for working with tabular data in Julia
-
-
-### rafaqz/DimensionalData.jl
-
-[![curly braces](assets/code.png) Repository](https://github.com/rafaqz/DimensionalData.jl)
-
-[![book icon](assets/book.png) Documentation](https://rafaqz.github.io/DimensionalData.jl/stable/)
-
-**Named dimensions and indexing for julia arrays and other data**
-
-- DimensionalData.jl provides tools and abstractions for working with datasets that have named dimensions, and optionally a lookup index
-- It provides no-cost abstractions for named indexing, and fast index lookups
 
 
 ### emmt/EasyFITS.jl
@@ -620,6 +632,91 @@ See also:
 - Read fixed width (so-called ASCII) tables. A wide range of format specification options, including autodetection
 
 
+### JuliaAPlavin/SkyImages.jl
+
+[![curly braces](assets/code.png) Repository](https://github.com/JuliaAPlavin/SkyImages.jl)
+
+[![book icon](assets/book.png) Documentation](https://aplavin.github.io/SkyImages.jl/test/notebook.html)
+
+**Load astronomical images of the sky and process them with convenient, general, and composable functions.**
+
+- FITS WCS and Healpix images
+- Uniform interface and Makie plotting
+- Use original data as-is or project onto a rectangular grid
+
+
+### JuliaAPlavin/VirtualObservatory.jl
+
+[![curly braces](assets/code.png) Repository](https://github.com/JuliaAPlavin/VirtualObservatory.jl)
+
+[![book icon](assets/book.png) Documentation](https://github.com/JuliaAPlavin/VirtualObservatory.jl?tab=readme-ov-file#virtualobservatoryjl)
+
+**Access remote data and services that follow VO protocols**
+
+- Access remote data and services that follow Virtual Observatory (VO, <https://www.ivoa.net/>) protocols
+- Currently supports the Table Access Protocol (TAP), and a few key features specific to the VizieR database
+
+
+### JuliaAPlavin/VOTables.jl
+
+[![curly braces](assets/code.png) Repository](https://github.com/JuliaAPlavin/VOTables.jl)
+
+[![book icon](assets/book.png) Documentation](https://github.com/JuliaAPlavin/VOTables.jl)
+
+**Read and write VOTable files**
+
+- Text and binary VOTables support
+- Read Unitful numbers and column metadata
+
+
+---
+
+### AstroImages.jl
+
+[![curly braces](assets/code.png) Repository](https://github.com/JuliaAstro/AstroImages.jl)
+
+[![book icon](assets/book.png) Documentation](https://juliaastro.org/AstroImages/stable/)
+
+**Load, manipulate, and visualize astronomical images**
+
+- Works with the [FileIO.jl](https://github.com/JuliaIO/FileIO.jl) interface
+
+
+### torrance/Casacore.jl
+
+[![curly braces](assets/code.png) Repository](https://github.com/torrance/Casacore.jl)
+
+[![book icon](assets/book.png) Documentation](https://github.com/torrance/Casacore.jl?tab=readme-ov-file#casacorejl)
+
+**A high level Julia interface to Casacore**
+
+- Wrapper for [CasaCore](http://casacore.github.io/casacore/)
+- Uses [casacorecxx](https://github.com/torrance/casacorecxx) which uses [CxxWrap](https://github.com/JuliaInterop/CxxWrap.jl) to wrap the C++ Casacore codebase. These raw objects and methods are available in `Casacore.LibCasacore`
+
+
+### JuliaData/DataFrames.jl
+
+[![curly braces](assets/code.png) Repository](https://github.com/JuliaData/DataFrames.jl)
+
+[![book icon](assets/book.png) Documentation](https://dataframes.juliadata.org/stable/)
+
+**In-memory tabular data in Julia**
+
+- Tools for working with tabular data in Julia
+
+
+### rafaqz/DimensionalData.jl
+
+[![curly braces](assets/code.png) Repository](https://github.com/rafaqz/DimensionalData.jl)
+
+[![book icon](assets/book.png) Documentation](https://rafaqz.github.io/DimensionalData.jl/stable/)
+
+**Named dimensions and indexing for julia arrays and other data**
+
+- DimensionalData.jl provides tools and abstractions for working with datasets that have named dimensions, and optionally a lookup index
+- It provides no-cost abstractions for named indexing, and fast index lookups
+
+
 ### JuliaAPlavin/FlexiJoins.jl
 
 [![curly braces](assets/code.png) Repository](https://github.com/JuliaAPlavin/FlexiJoins.jl)
@@ -654,30 +751,6 @@ See also:
 
 - The [Sort-merge join ](https://en.wikipedia.org/wiki/Sort-merge_join) algorithm allows to **quickly** find the matching pairs in two separate arrays or collections
 - The best performances are obtained when the input data are already sorted, but the package is able to sort the data if they are not
-
-
-### JuliaAPlavin/VirtualObservatory.jl
-
-[![curly braces](assets/code.png) Repository](https://github.com/JuliaAPlavin/VirtualObservatory.jl)
-
-[![book icon](assets/book.png) Documentation](https://github.com/JuliaAPlavin/VirtualObservatory.jl?tab=readme-ov-file#virtualobservatoryjl)
-
-**Access remote data and services that follow VO protocols**
-
-- Access remote data and services that follow Virtual Observatory (VO, <https://www.ivoa.net/>) protocols
-- Currently supports the Table Access Protocol (TAP), and a few key features specific to the VizieR database
-
-
-### JuliaAPlavin/VOTables.jl
-
-[![curly braces](assets/code.png) Repository](https://github.com/JuliaAPlavin/VOTables.jl)
-
-[![book icon](assets/book.png) Documentation](https://github.com/JuliaAPlavin/VOTables.jl)
-
-**Read and write VOTable files**
-
-- Text and binary VOTables support
-- Read Unitful numbers and column metadata
 
 
 ---
@@ -804,42 +877,6 @@ See also:
 **Astronomical units and things**
 
 - Extension of [Unitful.jl](https://github.com/painterqubits/Unitful.jl)
-
-
----
-
-### JuliaDSP/DSP.jl
-
-[![curly braces](assets/code.png) Repository](https://github.com/JuliaDSP/DSP.jl)
-
-[![book icon](assets/book.png) Documentation](https://docs.juliadsp.org/stable/)
-
-**Filter design, periodograms, window functions, and other digital signal processing functionality**
-
-- DSP.jl provides a number of common [digital signal processing](https://en.wikipedia.org/wiki/Digital_signal_processing) routines in Julia
-
-
-### LombScargle.jl
-
-[![curly braces](assets/code.png) Repository](https://github.com/JuliaAstro/LombScargle.jl)
-
-[![book icon](assets/book.png) Documentation](https://juliaastro.org/LombScargle/stable/)
-
-**Compute Lomb-Scargle periodogram**
-
-- Create periodograms from unevenly sampled periodic signals
-- Supports multi-threading
-
-
-### JuliaStats/TimeSeries.jl
-
-[![curly braces](assets/code.png) Repository](https://github.com/JuliaStats/TimeSeries.jl)
-
-[![book icon](assets/book.png) Documentation](https://juliastats.github.io/TimeSeries.jl/stable)
-
-**Time series toolkit for Julia**
-
-- TimeSeries aims to provide a lightweight framework for working with time series data in Julia
 
 
 ---
