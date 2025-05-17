@@ -188,39 +188,6 @@ ecosystem() = (
                 astropy = [],
             ),
         ),
-        "Spectroscopy" => (
-            (
-                name = "ajwheeler/Korg.jl",
-                repo = "https://github.com/ajwheeler/Korg.jl",
-                doc = "https://ajwheeler.github.io/Korg.jl/stable/",
-                tagline = "Theoretical stellar spectra from 1D model atmospheres and linelists, assuming LTE",
-                descr = """
-                """,
-                astropy = ["specreduce", "specutils"],
-            ),
-            (
-                name = "Spectra.jl",
-                repo = "https://github.com/JuliaAstro/Spectra.jl",
-                doc = "https://juliaastro.org/Spectra/stable",
-                tagline = "Utilities for interfacing with astronomical spectra and synthetic spectra libraries",
-                descr = """
-                - Utilities for interfacing with astronomical spectra and synthetic spectra libraries
-                """,
-                astropy = ["specreduce", "specutils"],
-            ),
-            (
-                name = "fjebaker/SpectralFitting.jl",
-                repo = "https://github.com/fjebaker/SpectralFitting.jl",
-                doc = "https://fjebaker.github.io/SpectralFitting.jl/dev/",
-                tagline = "✨🛰 Fast and flexible spectral fitting in Julia",
-                descr = """
-                - Spectral fitting routines and models with a focus on X-ray astronomy
-                - This project is an attempt to modernise the field with new advancements in computational methods and statistical methods
-                - SpectralFitting.jl aims to be extensible and reproducible, such that fits may be easily tailored to novel and specific problems, and easily verified by others
-                """,
-                astropy = ["specreduce", "specutils"],
-            ),
-        ),
         "Astrometry" => (
             (
                 name = "barrettp/Astrometry.jl",
@@ -307,6 +274,72 @@ ecosystem() = (
                 astropy = ["astropy.wcs"],
             ),
         ),
+        "Spectroscopy" => (
+            (
+                name = "ajwheeler/Korg.jl",
+                repo = "https://github.com/ajwheeler/Korg.jl",
+                doc = "https://ajwheeler.github.io/Korg.jl/stable/",
+                tagline = "Theoretical stellar spectra from 1D model atmospheres and linelists, assuming LTE",
+                descr = """
+                """,
+                astropy = ["specreduce", "specutils"],
+            ),
+            (
+                name = "Spectra.jl",
+                repo = "https://github.com/JuliaAstro/Spectra.jl",
+                doc = "https://juliaastro.org/Spectra/stable",
+                tagline = "Utilities for interfacing with astronomical spectra and synthetic spectra libraries",
+                descr = """
+                - Utilities for interfacing with astronomical spectra and synthetic spectra libraries
+                """,
+                astropy = ["specreduce", "specutils"],
+            ),
+            (
+                name = "fjebaker/SpectralFitting.jl",
+                repo = "https://github.com/fjebaker/SpectralFitting.jl",
+                doc = "https://fjebaker.github.io/SpectralFitting.jl/dev/",
+                tagline = "✨🛰 Fast and flexible spectral fitting in Julia",
+                descr = """
+                - Spectral fitting routines and models with a focus on X-ray astronomy
+                - This project is an attempt to modernise the field with new advancements in computational methods and statistical methods
+                - SpectralFitting.jl aims to be extensible and reproducible, such that fits may be easily tailored to novel and specific problems, and easily verified by others
+                """,
+                astropy = ["specreduce", "specutils"],
+            ),
+        ),
+        "Time Series Analysis" => (
+            (
+                name = "JuliaDSP/DSP.jl",
+                repo = "https://github.com/JuliaDSP/DSP.jl",
+                doc = "https://docs.juliadsp.org/stable/",
+                tagline = "Filter design, periodograms, window functions, and other digital signal processing functionality",
+                descr = """
+                - DSP.jl provides a number of common [digital signal processing](https://en.wikipedia.org/wiki/Digital_signal_processing) routines in Julia
+                """,
+                astropy = ["astropy.convolution", "astropy.timeseries"],
+            ),
+            (
+                name = "LombScargle.jl",
+                repo = "https://github.com/JuliaAstro/LombScargle.jl",
+                doc = "https://juliaastro.org/LombScargle/stable/",
+                tagline = "Compute Lomb-Scargle periodogram",
+                descr = """
+                - Create periodograms from unevenly sampled periodic signals
+                - Supports multi-threading
+                """,
+                astropy = ["astropy.timeseries"],
+            ),
+            (
+                name = "JuliaStats/TimeSeries.jl",
+                repo = "https://github.com/JuliaStats/TimeSeries.jl",
+                doc = "https://juliastats.github.io/TimeSeries.jl/stable",
+                tagline = "Time series toolkit for Julia",
+                descr = """
+                - TimeSeries aims to provide a lightweight framework for working with time series data in Julia
+                """,
+                astropy = ["astropy.timeseries"],
+            ),
+        ),
         "Interferometry" => (
             (
                 name = "JuliaAPlavin/Difmap.jl",
@@ -354,6 +387,39 @@ ecosystem() = (
         ),
     ),
     "Statistics" => (
+        "Uncertainty" => (
+            (
+                name = "JuliaPhysics/Measurements.jl",
+                repo = "https://github.com/JuliaPhysics/Measurements.jl",
+                doc = "https://juliaphysics.github.io/Measurements.jl/stable/",
+                tagline = "Error propagation calculator and library for physical measurements. It supports real and complex numbers with uncertainty, arbitrary precision calculations, operations with arrays, and numerical integration",
+                descr = """
+                -  [Measurements.jl](https://github.com/JuliaPhysics/Measurements.jl) relieves you from the hassle of propagating uncertainties coming from physical measurements, when performing mathematical operations involving them
+                - The [linear error propagation theory](https://en.wikipedia.org/wiki/Propagation_of_uncertainty#Linear_combinations) is employed to propagate the errors
+                """,
+                astropy = ["astropy.uncertainty"],
+            ),
+            (
+                name = "MonteCarloMeasurements.jl",
+                repo = "https://github.com/baggepinnen/MonteCarloMeasurements.jl",
+                doc = "https://baggepinnen.github.io/MonteCarloMeasurements.jl/stable/",
+                tagline = "Propagation of distributions by Monte-Carlo sampling: Real number types with uncertainty represented by samples",
+                descr = """
+                -  This package facilitates working with probability distributions by means of Monte-Carlo methods, in a way that allows for propagation of probability distributions through functions
+                """,
+                astropy = ["astropy.uncertainty"],
+            ),
+            (
+                name = "JuliaAPlavin/Uncertain.jl",
+                repo = "https://github.com/JuliaAPlavin/Uncertain.jl",
+                doc = "https://baggepinnen.github.io/MonteCarloMeasurements.jl/stable/",
+                tagline = "Handle uncertain values with ease and performance!",
+                descr = """
+                -  The ultimate goal of Uncertain.jl is to support arbitrary uncertainty specifications – asymmetric errors, intervals, more complex distributions, and go beyond plain numbers. All within a single uniform interface
+                """,
+                astropy = ["astropy.uncertainty"],
+            ),
+        ),
         "Optimization" => (
             (
                 name = "BoxLeastSquares.jl",
@@ -397,39 +463,6 @@ ecosystem() = (
                 - This means, you learn one package and you learn them all!
                 """,
                 astropy = ["astropy.modeling"],
-            ),
-        ),
-        "Uncertainty" => (
-            (
-                name = "JuliaPhysics/Measurements.jl",
-                repo = "https://github.com/JuliaPhysics/Measurements.jl",
-                doc = "https://juliaphysics.github.io/Measurements.jl/stable/",
-                tagline = "Error propagation calculator and library for physical measurements. It supports real and complex numbers with uncertainty, arbitrary precision calculations, operations with arrays, and numerical integration",
-                descr = """
-                -  [Measurements.jl](https://github.com/JuliaPhysics/Measurements.jl) relieves you from the hassle of propagating uncertainties coming from physical measurements, when performing mathematical operations involving them
-                - The [linear error propagation theory](https://en.wikipedia.org/wiki/Propagation_of_uncertainty#Linear_combinations) is employed to propagate the errors
-                """,
-                astropy = ["astropy.uncertainty"],
-            ),
-            (
-                name = "MonteCarloMeasurements.jl",
-                repo = "https://github.com/baggepinnen/MonteCarloMeasurements.jl",
-                doc = "https://baggepinnen.github.io/MonteCarloMeasurements.jl/stable/",
-                tagline = "Propagation of distributions by Monte-Carlo sampling: Real number types with uncertainty represented by samples",
-                descr = """
-                -  This package facilitates working with probability distributions by means of Monte-Carlo methods, in a way that allows for propagation of probability distributions through functions
-                """,
-                astropy = ["astropy.uncertainty"],
-            ),
-            (
-                name = "JuliaAPlavin/Uncertain.jl",
-                repo = "https://github.com/JuliaAPlavin/Uncertain.jl",
-                doc = "https://baggepinnen.github.io/MonteCarloMeasurements.jl/stable/",
-                tagline = "Handle uncertain values with ease and performance!",
-                descr = """
-                -  The ultimate goal of Uncertain.jl is to support arbitrary uncertainty specifications – asymmetric errors, intervals, more complex distributions, and go beyond plain numbers. All within a single uniform interface
-                """,
-                astropy = ["astropy.uncertainty"],
             ),
         ),
         "General" => (
@@ -500,19 +533,6 @@ ecosystem() = (
                 astropy = ["astropy.visualization"],
             ),
             (
-                # TODO: Update for Julia v1.11
-                # https://github.com/torrance/Casacore.jl/issues/12
-                name = "torrance/Casacore.jl",
-                repo = "https://github.com/torrance/Casacore.jl",
-                doc = "https://github.com/torrance/Casacore.jl?tab=readme-ov-file#casacorejl",
-                tagline = "A high level Julia interface to Casacore",
-                descr = """
-                - Wrapper for [CasaCore](http://casacore.github.io/casacore/)
-                - Uses [casacorecxx](https://github.com/torrance/casacorecxx) which uses [CxxWrap](https://github.com/JuliaInterop/CxxWrap.jl) to wrap the C++ Casacore codebase. These raw objects and methods are available in `Casacore.LibCasacore`
-                """,
-                astropy = [],
-            ),
-            (
                 name = "CFITSIO.jl",
                 repo = "https://github.com/JuliaAstro/CFITSIO.jl",
                 doc = "https://juliaastro.org/CFITSIO/stable/",
@@ -522,27 +542,6 @@ ecosystem() = (
                 - The c interface can be directly accessed with the [CFITSIO_jll package](https://juliapackaging.github.io/BinaryBuilder.jl/dev/jll/)
                 """,
                 astropy = ["astropy.io.fits"],
-            ),
-            (
-                name = "JuliaData/DataFrames.jl",
-                repo = "https://github.com/JuliaData/DataFrames.jl",
-                doc = "https://dataframes.juliadata.org/stable/",
-                tagline = "In-memory tabular data in Julia",
-                descr = """
-                - Tools for working with tabular data in Julia
-                """,
-                astropy = ["astropy.table"],
-            ),
-            (
-                name = "rafaqz/DimensionalData.jl",
-                repo = "https://github.com/rafaqz/DimensionalData.jl",
-                doc = "https://rafaqz.github.io/DimensionalData.jl/stable/",
-                tagline = "Named dimensions and indexing for julia arrays and other data",
-                descr = """
-                - DimensionalData.jl provides tools and abstractions for working with datasets that have named dimensions, and optionally a lookup index
-                - It provides no-cost abstractions for named indexing, and fast index lookups
-                """,
-                astropy = ["astropy.nddata"],
             ),
             (
                 name = "emmt/EasyFITS.jl",
@@ -586,16 +585,6 @@ ecosystem() = (
                 astropy = ["astropy.io.ascii"],
             ),
             (
-                name = "JuliaAPlavin/FlexiJoins.jl",
-                repo = "https://github.com/JuliaAPlavin/FlexiJoins.jl",
-                doc = "https://aplavin.github.io/FlexiJoins.jl/test/examples.html",
-                tagline = "`FlexiJoins.jl` is a fresh take on joining tabular or non-tabular datasets in Julia.",
-                descr = """
-                - From simple joins by key, to asof joins, to merging catalogs of terrestrial or celestial coordinates – `FlexiJoins` supports any usecase
-                """,
-                astropy = ["astropy.table"],
-            ),
-            (
                 name = "JuliaAPlavin/SkyImages.jl",
                 repo = "https://github.com/JuliaAPlavin/SkyImages.jl",
                 doc = "https://aplavin.github.io/SkyImages.jl/test/notebook.html",
@@ -606,17 +595,6 @@ ecosystem() = (
                 - Use original data as-is or project onto a rectangular grid
                 """,
                 astropy = ["astropy.io.fits"],
-            ),
-            (
-                name = "gcalderone/SortMerge.jl",
-                repo = "https://github.com/gcalderone/SortMerge.jl",
-                doc = "https://github.com/gcalderone/SortMerge.jl?tab=readme-ov-file#sortmerge",
-                tagline = "A Julia implementation of the Sort-merge join algorithm",
-                descr = """
-                - The [Sort-merge join ](https://en.wikipedia.org/wiki/Sort-merge_join) algorithm allows to **quickly** find the matching pairs in two separate arrays or collections
-                - The best performances are obtained when the input data are already sorted, but the package is able to sort the data if they are not
-                """,
-                astropy = ["astropy.table"],
             ),
             (
                 name = "JuliaAPlavin/VirtualObservatory.jl",
@@ -641,6 +619,83 @@ ecosystem() = (
                 astropy = ["astropy.io.votable"],
             ),
         ),
+        "Data processing" => (
+            (
+                name = "AstroImages.jl",
+                repo = "https://github.com/JuliaAstro/AstroImages.jl",
+                doc = "https://juliaastro.org/AstroImages/stable/",
+                tagline = "Load, manipulate, and visualize astronomical images",
+                descr = """
+                - Works with the [FileIO.jl](https://github.com/JuliaIO/FileIO.jl) interface
+                """,
+                astropy = ["astropy.visualization"],
+            ),
+            (
+                name = "torrance/Casacore.jl",
+                repo = "https://github.com/torrance/Casacore.jl",
+                doc = "https://github.com/torrance/Casacore.jl?tab=readme-ov-file#casacorejl",
+                tagline = "A high level Julia interface to Casacore",
+                descr = """
+                - Wrapper for [CasaCore](http://casacore.github.io/casacore/)
+                - Uses [casacorecxx](https://github.com/torrance/casacorecxx) which uses [CxxWrap](https://github.com/JuliaInterop/CxxWrap.jl) to wrap the C++ Casacore codebase. These raw objects and methods are available in `Casacore.LibCasacore`
+                """,
+                astropy = [],
+            ),
+            (
+                name = "JuliaData/DataFrames.jl",
+                repo = "https://github.com/JuliaData/DataFrames.jl",
+                doc = "https://dataframes.juliadata.org/stable/",
+                tagline = "In-memory tabular data in Julia",
+                descr = """
+                - Tools for working with tabular data in Julia
+                """,
+                astropy = ["astropy.table"],
+            ),
+            (
+                name = "rafaqz/DimensionalData.jl",
+                repo = "https://github.com/rafaqz/DimensionalData.jl",
+                doc = "https://rafaqz.github.io/DimensionalData.jl/stable/",
+                tagline = "Named dimensions and indexing for julia arrays and other data",
+                descr = """
+                - DimensionalData.jl provides tools and abstractions for working with datasets that have named dimensions, and optionally a lookup index
+                - It provides no-cost abstractions for named indexing, and fast index lookups
+                """,
+                astropy = ["astropy.nddata"],
+            ),
+            (
+                name = "JuliaAPlavin/FlexiJoins.jl",
+                repo = "https://github.com/JuliaAPlavin/FlexiJoins.jl",
+                doc = "https://aplavin.github.io/FlexiJoins.jl/test/examples.html",
+                tagline = "`FlexiJoins.jl` is a fresh take on joining tabular or non-tabular datasets in Julia.",
+                descr = """
+                - From simple joins by key, to asof joins, to merging catalogs of terrestrial or celestial coordinates – `FlexiJoins` supports any usecase
+                """,
+                astropy = ["astropy.table"],
+            ),
+            (
+                name = "JuliaAPlavin/SkyImages.jl",
+                repo = "https://github.com/JuliaAPlavin/SkyImages.jl",
+                doc = "https://aplavin.github.io/SkyImages.jl/test/notebook.html",
+                tagline = "Load astronomical images of the sky and process them with convenient, general, and composable functions.",
+                descr = """
+                - FITS WCS and Healpix images
+                - Uniform interface and Makie plotting
+                - Use original data as-is or project onto a rectangular grid
+                """,
+                astropy = [],
+            ),
+            (
+                name = "gcalderone/SortMerge.jl",
+                repo = "https://github.com/gcalderone/SortMerge.jl",
+                doc = "https://github.com/gcalderone/SortMerge.jl?tab=readme-ov-file#sortmerge",
+                tagline = "A Julia implementation of the Sort-merge join algorithm",
+                descr = """
+                - The [Sort-merge join ](https://en.wikipedia.org/wiki/Sort-merge_join) algorithm allows to **quickly** find the matching pairs in two separate arrays or collections
+                - The best performances are obtained when the input data are already sorted, but the package is able to sort the data if they are not
+                """,
+                astropy = ["astropy.table"],
+            ),
+        ),
         "Data Viz" => (
             (
                 name = "AstroImages.jl",
@@ -650,7 +705,7 @@ ecosystem() = (
                 descr = """
                 - Works with the [FileIO.jl](https://github.com/JuliaIO/FileIO.jl) interface
                 """,
-                astropy = ["astropy.io.fits"],
+                astropy = ["astropy.visualization"],
             ),
             (
                 name = "JuliaImages/ImageFiltering.jl",
@@ -755,39 +810,6 @@ ecosystem() = (
                 - Extension of [Unitful.jl](https://github.com/painterqubits/Unitful.jl)
                 """,
                 astropy = ["astropy.constants", "astropy.units"],
-            ),
-        ),
-        "Time Series Analysis" => (
-            (
-                name = "JuliaDSP/DSP.jl",
-                repo = "https://github.com/JuliaDSP/DSP.jl",
-                doc = "https://docs.juliadsp.org/stable/",
-                tagline = "Filter design, periodograms, window functions, and other digital signal processing functionality",
-                descr = """
-                - DSP.jl provides a number of common [digital signal processing](https://en.wikipedia.org/wiki/Digital_signal_processing) routines in Julia
-                """,
-                astropy = ["astropy.convolution", "astropy.timeseries"],
-            ),
-            (
-                name = "LombScargle.jl",
-                repo = "https://github.com/JuliaAstro/LombScargle.jl",
-                doc = "https://juliaastro.org/LombScargle/stable/",
-                tagline = "Compute Lomb-Scargle periodogram",
-                descr = """
-                - Create periodograms from unevenly sampled periodic signals
-                - Supports multi-threading
-                """,
-                astropy = ["astropy.timeseries"],
-            ),
-            (
-                name = "JuliaStats/TimeSeries.jl",
-                repo = "https://github.com/JuliaStats/TimeSeries.jl",
-                doc = "https://juliastats.github.io/TimeSeries.jl/stable",
-                tagline = "Time series toolkit for Julia",
-                descr = """
-                - TimeSeries aims to provide a lightweight framework for working with time series data in Julia
-                """,
-                astropy = ["astropy.timeseries"],
             ),
         ),
     ),
