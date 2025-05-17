@@ -108,10 +108,6 @@ We highlight some of the major packages in Python's `astropy` ecosystem and thei
    </td>
   </tr>
   <tr>
-    <td><a href="https://github.com/JuliaAstro/BoxLeastSquares.jl">BoxLeastSquares.jl</a></td>
-    <td>Compute box-least-squares periodogram</td>
-  </tr>
-  <tr>
     <td><a href="https://github.com/JuliaDSP/DSP.jl">JuliaDSP/DSP.jl</a></td>
     <td>Filter design, periodograms, window functions, and other digital signal processing functionality</td>
   </tr>
@@ -122,6 +118,10 @@ We highlight some of the major packages in Python's `astropy` ecosystem and thei
   <tr>
     <td><a href="https://github.com/JuliaStats/TimeSeries.jl">JuliaStats/TimeSeries.jl</a></td>
     <td>Time series toolkit for Julia</td>
+  </tr>
+  <tr>
+    <td><a href="https://github.com/JuliaAstro/BoxLeastSquares.jl">BoxLeastSquares.jl</a></td>
+    <td>Compute box-least-squares periodogram</td>
   </tr>
 
   <tr>
@@ -214,7 +214,7 @@ We highlight some of the major packages in Python's `astropy` ecosystem and thei
   <tbody>
 
   <tr>
-    <td rowspan=8>
+    <td rowspan=7>
       <a href="https://docs.astropy.org/en/stable/io/fits/index.html"><code>astropy.io.fits</code></a>
    </td>
   </tr>
@@ -241,10 +241,6 @@ We highlight some of the major packages in Python's `astropy` ecosystem and thei
   <tr>
     <td><a href="https://github.com/JuliaAPlavin/SkyImages.jl">JuliaAPlavin/SkyImages.jl</a></td>
     <td>Load astronomical images of the sky and process them with convenient, general, and composable functions.</td>
-  </tr>
-  <tr>
-    <td><a href="https://github.com/JuliaAstro/AstroImages.jl">AstroImages.jl</a></td>
-    <td>Load, manipulate, and visualize astronomical images</td>
   </tr>
 
   <tr>
@@ -308,12 +304,12 @@ We highlight some of the major packages in Python's `astropy` ecosystem and thei
    </td>
   </tr>
   <tr>
-    <td><a href="https://github.com/JuliaImages/ImageFiltering.jl">JuliaImages/ImageFiltering.jl</a></td>
-    <td>ulia implementations of multidimensional array convolution and nonlinear stencil operations</td>
-  </tr>
-  <tr>
     <td><a href="https://github.com/JuliaDSP/DSP.jl">JuliaDSP/DSP.jl</a></td>
     <td>Filter design, periodograms, window functions, and other digital signal processing functionality</td>
+  </tr>
+  <tr>
+    <td><a href="https://github.com/JuliaImages/ImageFiltering.jl">JuliaImages/ImageFiltering.jl</a></td>
+    <td>ulia implementations of multidimensional array convolution and nonlinear stencil operations</td>
   </tr>
 
   <tr>
@@ -327,9 +323,17 @@ We highlight some of the major packages in Python's `astropy` ecosystem and thei
   </tr>
 
   <tr>
-    <td rowspan=4>
+    <td rowspan=6>
       <a href="https://docs.astropy.org/en/stable/visualization/index.html"><code>astropy.visualization</code></a>
    </td>
+  </tr>
+  <tr>
+    <td><a href="https://github.com/JuliaAstro/AstroImages.jl">AstroImages.jl</a></td>
+    <td>Load, manipulate, and visualize astronomical images</td>
+  </tr>
+  <tr>
+    <td><a href="https://github.com/JuliaAstro/AstroImages.jl">AstroImages.jl</a></td>
+    <td>Load, manipulate, and visualize astronomical images</td>
   </tr>
   <tr>
     <td><a href="https://github.com/JuliaAstro/AstroImages.jl">AstroImages.jl</a></td>
