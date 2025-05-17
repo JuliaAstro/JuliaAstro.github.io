@@ -369,17 +369,6 @@ See also:
 
 ---
 
-### ptiede/Comrade.jl
-
-[![curly braces](assets/code.png) Repository](https://github.com/ptiede/Comrade.jl)
-
-[![book icon](assets/book.png) Documentation](https://ptiede.github.io/Comrade.jl/stable/)
-
-**Composable Modeling of Radio Emission**
-
-- A Bayesian differentiable modular modeling package for very long baseline interferometry
-
-
 ### JuliaAPlavin/Difmap.jl
 
 [![curly braces](assets/code.png) Repository](https://github.com/JuliaAPlavin/Difmap.jl)
