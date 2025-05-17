@@ -126,18 +126,6 @@ ecosystem() = (
                 """,
                 astropy = [],
             ),
-            (
-                name = "EHTJulia/ScatteringOptics.jl",
-                repo = "https://github.com/EHTJulia/ScatteringOptics.jl",
-                doc = "https://ehtjulia.github.io/ScatteringOptics.jl/stable/",
-                tagline = "A Julia package to simulate and model interstellar scattering in strong regime",
-                descr = """
-                - Analyze interstellar scintillation observed at radio wavelengths
-                - Implements physical models for the anisotropic scattering of radio waves
-                - Modeling, analyze, and interpret the images of the Galactic Center's supermassive black hole, Sagittarius A*, especially with the Event Horizon Telescope
-                """,
-                astropy = [],
-            ),
         ),
     ),
     "Techniques" => (
@@ -396,18 +384,6 @@ ecosystem() = (
                 astropy = [],
             ),
             (
-                name = "EHTJulia/PolarizedTypes.jl",
-                repo = "https://github.com/EHTJulia/PolarizedTypes.jl",
-                doc = "https://ehtjulia.github.io/PolarizedTypes.jl/stable/",
-                tagline = "Basic Polarized types for interferometry",
-                descr = """
-                - This defines the basic for polarized types for use in VLBI, including
-                    - `StokesParams` for the stokes parameters
-                    - `CoherencyMatrix` for coherency matrices in arbitrary bases, including a mixed basis
-                """,
-                astropy = [],
-            ),
-            (
                 name = "JuliaAPlavin/VLBIData.jl",
                 repo = "https://github.com/JuliaAPlavin/VLBIData.jl",
                 doc = "https://aplavin.github.io/VLBIData.jl/test/examples.html",
@@ -417,16 +393,6 @@ ecosystem() = (
                 - Minimal writing support for source models
                 """,
                 astropy = ["astropy.io.votable"],
-            ),
-            (
-                name = "EHTJulia/VLBISkyModels.jl",
-                repo = "https://github.com/EHTJulia/VLBISkyModels.jl",
-                doc = "https://ehtjulia.github.io/VLBISkyModels.jl/stable/",
-                tagline = "Just the Comrade Models",
-                descr = """
-                - `VLBISkyModels` provides an interface and library for of models that can be used to describe the on-sky emission seen by VLBI interferometers
-                """,
-                astropy = [],
             ),
         ),
     ),
