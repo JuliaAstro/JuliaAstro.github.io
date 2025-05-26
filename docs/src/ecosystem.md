@@ -8,9 +8,7 @@ The joy of our community is the many astronomy and astrophysics packages availab
 
 ### EphemerisSources.jl
 
-[![curly braces](assets/code.png) Repository](https://github.com/JuliaAstro/EphemerisSources.jl)
-
-[![book icon](assets/book.png) Documentation](https://juliaastro.org/EphemerisSources.jl/docs)
+[⦃⦄ Repository](https://github.com/JuliaAstro/EphemerisSources.jl) | [🕮 Documentation](https://juliaastro.org/EphemerisSources.jl/docs)
 
 **Meta package for accessing JPL HORIZONS and SPICE sources**
 
@@ -19,9 +17,7 @@ The joy of our community is the many astronomy and astrophysics packages availab
 
 ### PerezHz/HORIZONS.jl
 
-[![curly braces](assets/code.png) Repository](https://github.com/PerezHz/HORIZONS.jl)
-
-[![book icon](assets/book.png) Documentation](https://github.com/PerezHz/HORIZONS.jl?tab=readme-ov-file#horizonsjl)
+[⦃⦄ Repository](https://github.com/PerezHz/HORIZONS.jl) | [🕮 Documentation](https://github.com/PerezHz/HORIZONS.jl?tab=readme-ov-file#horizonsjl)
 
 **An interface to NASA-JPL HORIZONS system and other Solar System Dynamics APIs in Julia**
 
@@ -30,9 +26,7 @@ The joy of our community is the many astronomy and astrophysics packages availab
 
 ### JuliaSpace/SatelliteToolbox.jl
 
-[![curly braces](assets/code.png) Repository](https://github.com/JuliaSpace/SatelliteToolbox.jl)
-
-[![book icon](assets/book.png) Documentation](https://juliaspace.github.io/SatelliteToolbox.jl/stable/)
+[⦃⦄ Repository](https://github.com/JuliaSpace/SatelliteToolbox.jl) | [🕮 Documentation](https://juliaspace.github.io/SatelliteToolbox.jl/stable/)
 
 **Perform analysis and build simulations related to satellites**
 
@@ -45,9 +39,7 @@ See also:
 
 ### SPICE.jl
 
-[![curly braces](assets/code.png) Repository](https://github.com/JuliaAstro/SPICE.jl)
-
-[![book icon](assets/book.png) Documentation](https://juliaastro.org/SPICE/stable/)
+[⦃⦄ Repository](https://github.com/JuliaAstro/SPICE.jl) | [🕮 Documentation](https://juliaastro.org/SPICE/stable/)
 
 **SPICE data retrieval and usage**
 
@@ -59,9 +51,7 @@ See also:
 
 ### JuliaHCI/ADI.jl
 
-[![curly braces](assets/code.png) Repository](https://github.com/JuliaHCI/ADI.jl)
-
-[![book icon](assets/book.png) Documentation](http://JuliaHCI.github.io/ADI.jl/stable/)
+[⦃⦄ Repository](https://github.com/JuliaHCI/ADI.jl) | [🕮 Documentation](http://JuliaHCI.github.io/ADI.jl/stable/)
 
 **Angular Differential Imaging (ADI) routines in Julia**
 
@@ -73,9 +63,7 @@ See also:
 
 ### JuliaHCI/HCIToolbox.jl
 
-[![curly braces](assets/code.png) Repository](https://github.com/JuliaHCI/HCIToolbox.jl)
-
-[![book icon](assets/book.png) Documentation](http://JuliaHCI.github.io/HCIToolbox.jl/stable/)
+[⦃⦄ Repository](https://github.com/JuliaHCI/HCIToolbox.jl) | [🕮 Documentation](http://JuliaHCI.github.io/HCIToolbox.jl/stable/)
 
 **Common utilities for high-contrast imaging (HCI) processing**
 
@@ -86,9 +74,7 @@ See also:
 
 ### sefffal/PlanetOrbits.jl
 
-[![curly braces](assets/code.png) Repository](https://github.com/sefffal/PlanetOrbits.jl)
-
-[![book icon](assets/book.png) Documentation](https://sefffal.github.io/PlanetOrbits.jl/dev/)
+[⦃⦄ Repository](https://github.com/sefffal/PlanetOrbits.jl) | [🕮 Documentation](https://sefffal.github.io/PlanetOrbits.jl/dev/)
 
 **Tools for displaying and solving Keplerian orbits in the context of direct imaging**
 
@@ -96,9 +82,7 @@ See also:
 
 ### Transits.jl
 
-[![curly braces](assets/code.png) Repository](https://github.com/JuliaAstro/Transits.jl)
-
-[![book icon](assets/book.png) Documentation](https://juliaastro.org/Transits/stable/)
+[⦃⦄ Repository](https://github.com/JuliaAstro/Transits.jl) | [🕮 Documentation](https://juliaastro.org/Transits/stable/)
 
 **Flexible photometric transit curves with limb darkening**
 
@@ -111,9 +95,7 @@ See also:
 
 ### Cosmology.jl
 
-[![curly braces](assets/code.png) Repository](https://github.com/JuliaAstro/Cosmology.jl)
-
-[![book icon](assets/book.png) Documentation](https://juliaastro.org/Cosmology/stable/)
+[⦃⦄ Repository](https://github.com/JuliaAstro/Cosmology.jl) | [🕮 Documentation](https://juliaastro.org/Cosmology/stable/)
 
 **Distances in the universe**
 
@@ -124,9 +106,7 @@ See also:
 
 ### DustExtinction.jl
 
-[![curly braces](assets/code.png) Repository](https://github.com/JuliaAstro/DustExtinction.jl)
-
-[![book icon](assets/book.png) Documentation](https://juliaastro.org/DustExtinction/stable/)
+[⦃⦄ Repository](https://github.com/JuliaAstro/DustExtinction.jl) | [🕮 Documentation](https://juliaastro.org/DustExtinction/stable/)
 
 **Dust extinction laws and maps**
 
@@ -141,9 +121,7 @@ See also:
 
 ### CCDReduction.jl
 
-[![curly braces](assets/code.png) Repository](https://github.com/JuliaAstro/CCDReduction.jl)
-
-[![book icon](assets/book.png) Documentation](https://juliaastro.org/CCDReduction/stable/)
+[⦃⦄ Repository](https://github.com/JuliaAstro/CCDReduction.jl) | [🕮 Documentation](https://juliaastro.org/CCDReduction/stable/)
 
 **Common CCD image processing routines**
 
@@ -154,9 +132,7 @@ See also:
 
 ### LACosmic.jl
 
-[![curly braces](assets/code.png) Repository](https://github.com/JuliaAstro/LACosmic.jl)
-
-[![book icon](assets/book.png) Documentation](https://juliaastro.org/LACosmic/stable/)
+[⦃⦄ Repository](https://github.com/JuliaAstro/LACosmic.jl) | [🕮 Documentation](https://juliaastro.org/LACosmic/stable/)
 
 **Cosmic-ray rejection by Laplacian edge detection**
 
@@ -166,9 +142,7 @@ See also:
 
 ### Photometry.jl
 
-[![curly braces](assets/code.png) Repository](https://github.com/JuliaAstro/Photometry.jl)
-
-[![book icon](assets/book.png) Documentation](https://juliaastro.org/Photometry/stable/)
+[⦃⦄ Repository](https://github.com/JuliaAstro/Photometry.jl) | [🕮 Documentation](https://juliaastro.org/Photometry/stable/)
 
 **Aperture photometry**
 
@@ -178,9 +152,7 @@ See also:
 
 ### PSFModels.jl
 
-[![curly braces](assets/code.png) Repository](https://github.com/JuliaAstro/PSFModels.jl)
-
-[![book icon](assets/book.png) Documentation](https://juliaastro.org/PSFModels/stable/)
+[⦃⦄ Repository](https://github.com/JuliaAstro/PSFModels.jl) | [🕮 Documentation](https://juliaastro.org/PSFModels/stable/)
 
 **Analytical, allocation-free point-spread-functions (PSF)**
 
@@ -190,9 +162,7 @@ See also:
 
 ### SAOImageDS9.jl
 
-[![curly braces](assets/code.png) Repository](https://github.com/JuliaAstro/SAOImageDS9.jl)
-
-[![book icon](assets/book.png) Documentation](https://juliaastro.org/SAOImageDS9/stable/)
+[⦃⦄ Repository](https://github.com/JuliaAstro/SAOImageDS9.jl) | [🕮 Documentation](https://juliaastro.org/SAOImageDS9/stable/)
 
 **Interface with the DS9 image viewer**
 
@@ -205,9 +175,7 @@ See also:
 
 ### barrettp/Astrometry.jl
 
-[![curly braces](assets/code.png) Repository](https://github.com/barrettp/Astrometry.jl)
-
-[![book icon](assets/book.png) Documentation](https://barrettp.github.io/Astrometry/dev)
+[⦃⦄ Repository](https://github.com/barrettp/Astrometry.jl) | [🕮 Documentation](https://barrettp.github.io/Astrometry/dev)
 
 **Set of IAU standard algorithms for calculating the time and position of celestial objects**
 
@@ -216,9 +184,7 @@ See also:
 
 ### AstroTime.jl
 
-[![curly braces](assets/code.png) Repository](https://github.com/JuliaAstro/AstroTime.jl)
-
-[![book icon](assets/book.png) Documentation](https://juliaastro.org/AstroTime/stable/)
+[⦃⦄ Repository](https://github.com/JuliaAstro/AstroTime.jl) | [🕮 Documentation](https://juliaastro.org/AstroTime/stable/)
 
 **Astronomical time keeping**
 
@@ -228,9 +194,7 @@ See also:
 
 ### EarthOrientation.jl
 
-[![curly braces](assets/code.png) Repository](https://github.com/JuliaAstro/EarthOrientation.jl)
-
-[![book icon](assets/book.png) Documentation](https://juliaastro.org/EarthOrientation/stable/)
+[⦃⦄ Repository](https://github.com/JuliaAstro/EarthOrientation.jl) | [🕮 Documentation](https://juliaastro.org/EarthOrientation/stable/)
 
 **Earth orientation parameters**
 
@@ -239,9 +203,7 @@ See also:
 
 ### ERFA.jl
 
-[![curly braces](assets/code.png) Repository](https://github.com/JuliaAstro/ERFA.jl)
-
-[![book icon](assets/book.png) Documentation](https://juliaastro.github.io/ERFA.jl/stable)
+[⦃⦄ Repository](https://github.com/JuliaAstro/ERFA.jl) | [🕮 Documentation](https://juliaastro.github.io/ERFA.jl/stable)
 
 **Time systems conversions**
 
@@ -250,9 +212,7 @@ See also:
 
 ### ziotom78/Healpix.jl
 
-[![curly braces](assets/code.png) Repository](https://github.com/ziotom78/Healpix.jl)
-
-[![book icon](assets/book.png) Documentation](https://ziotom78.github.io/Healpix.jl/stable/)
+[⦃⦄ Repository](https://github.com/ziotom78/Healpix.jl) | [🕮 Documentation](https://ziotom78.github.io/Healpix.jl/stable/)
 
 **Implementation of Healpix spherical tesselation scheme in pure Julia**
 
@@ -263,9 +223,7 @@ See also:
 
 ### Reproject.jl
 
-[![curly braces](assets/code.png) Repository](https://github.com/JuliaAstro/Reproject.jl)
-
-[![book icon](assets/book.png) Documentation](https://juliaastro.org/Reproject.jl/dev/)
+[⦃⦄ Repository](https://github.com/JuliaAstro/Reproject.jl) | [🕮 Documentation](https://juliaastro.org/Reproject.jl/dev/)
 
 **Astronomical image reprojection**
 
@@ -274,9 +232,7 @@ See also:
 
 ### SkyCoords.jl
 
-[![curly braces](assets/code.png) Repository](https://github.com/JuliaAstro/SkyCoords.jl)
-
-[![book icon](assets/book.png) Documentation](https://juliaastro.org/SkyCoords/stable/)
+[⦃⦄ Repository](https://github.com/JuliaAstro/SkyCoords.jl) | [🕮 Documentation](https://juliaastro.org/SkyCoords/stable/)
 
 **Astronomical coordinate systems**
 
@@ -286,9 +242,7 @@ See also:
 
 ### WCS.jl
 
-[![curly braces](assets/code.png) Repository](https://github.com/JuliaAstro/WCS.jl)
-
-[![book icon](assets/book.png) Documentation](https://juliaastro.org/WCS/stable/)
+[⦃⦄ Repository](https://github.com/JuliaAstro/WCS.jl) | [🕮 Documentation](https://juliaastro.org/WCS/stable/)
 
 **World Coordinate System transformations**
 
@@ -299,9 +253,7 @@ See also:
 
 ### ajwheeler/Korg.jl
 
-[![curly braces](assets/code.png) Repository](https://github.com/ajwheeler/Korg.jl)
-
-[![book icon](assets/book.png) Documentation](https://ajwheeler.github.io/Korg.jl/stable/)
+[⦃⦄ Repository](https://github.com/ajwheeler/Korg.jl) | [🕮 Documentation](https://ajwheeler.github.io/Korg.jl/stable/)
 
 **Theoretical stellar spectra from 1D model atmospheres and linelists, assuming LTE**
 
@@ -309,9 +261,7 @@ See also:
 
 ### Spectra.jl
 
-[![curly braces](assets/code.png) Repository](https://github.com/JuliaAstro/Spectra.jl)
-
-[![book icon](assets/book.png) Documentation](https://juliaastro.org/Spectra/stable)
+[⦃⦄ Repository](https://github.com/JuliaAstro/Spectra.jl) | [🕮 Documentation](https://juliaastro.org/Spectra/stable)
 
 **Utilities for interfacing with astronomical spectra and synthetic spectra libraries**
 
@@ -320,9 +270,7 @@ See also:
 
 ### fjebaker/SpectralFitting.jl
 
-[![curly braces](assets/code.png) Repository](https://github.com/fjebaker/SpectralFitting.jl)
-
-[![book icon](assets/book.png) Documentation](https://fjebaker.github.io/SpectralFitting.jl/dev/)
+[⦃⦄ Repository](https://github.com/fjebaker/SpectralFitting.jl) | [🕮 Documentation](https://fjebaker.github.io/SpectralFitting.jl/dev/)
 
 **✨🛰 Fast and flexible spectral fitting in Julia**
 
@@ -335,9 +283,7 @@ See also:
 
 ### JuliaDSP/DSP.jl
 
-[![curly braces](assets/code.png) Repository](https://github.com/JuliaDSP/DSP.jl)
-
-[![book icon](assets/book.png) Documentation](https://docs.juliadsp.org/stable/)
+[⦃⦄ Repository](https://github.com/JuliaDSP/DSP.jl) | [🕮 Documentation](https://docs.juliadsp.org/stable/)
 
 **Filter design, periodograms, window functions, and other digital signal processing functionality**
 
@@ -346,9 +292,7 @@ See also:
 
 ### LombScargle.jl
 
-[![curly braces](assets/code.png) Repository](https://github.com/JuliaAstro/LombScargle.jl)
-
-[![book icon](assets/book.png) Documentation](https://juliaastro.org/LombScargle/stable/)
+[⦃⦄ Repository](https://github.com/JuliaAstro/LombScargle.jl) | [🕮 Documentation](https://juliaastro.org/LombScargle/stable/)
 
 **Compute Lomb-Scargle periodogram**
 
@@ -358,9 +302,7 @@ See also:
 
 ### JuliaStats/TimeSeries.jl
 
-[![curly braces](assets/code.png) Repository](https://github.com/JuliaStats/TimeSeries.jl)
-
-[![book icon](assets/book.png) Documentation](https://juliastats.github.io/TimeSeries.jl/stable)
+[⦃⦄ Repository](https://github.com/JuliaStats/TimeSeries.jl) | [🕮 Documentation](https://juliastats.github.io/TimeSeries.jl/stable)
 
 **Time series toolkit for Julia**
 
@@ -371,9 +313,7 @@ See also:
 
 ### JuliaAPlavin/Difmap.jl
 
-[![curly braces](assets/code.png) Repository](https://github.com/JuliaAPlavin/Difmap.jl)
-
-[![book icon](assets/book.png) Documentation](https://aplavin.github.io/Difmap.jl/test/examples.html)
+[⦃⦄ Repository](https://github.com/JuliaAPlavin/Difmap.jl) | [🕮 Documentation](https://aplavin.github.io/Difmap.jl/test/examples.html)
 
 **Wrapper for the Difmap program used in synthesis imaging**
 
@@ -383,9 +323,7 @@ See also:
 
 ### emmt/OIFITS.jl
 
-[![curly braces](assets/code.png) Repository](https://github.com/emmt/OIFITS.jl)
-
-[![book icon](assets/book.png) Documentation](https://github.com/emmt/OIFITS.jl?tab=readme-ov-file#support-for-oi-fits-data-in-julia)
+[⦃⦄ Repository](https://github.com/emmt/OIFITS.jl) | [🕮 Documentation](https://github.com/emmt/OIFITS.jl?tab=readme-ov-file#support-for-oi-fits-data-in-julia)
 
 **Support for OI-FITS**
 
@@ -394,9 +332,7 @@ See also:
 
 ### fabienbaron/OITOOLS.jl
 
-[![curly braces](assets/code.png) Repository](https://github.com/fabienbaron/OITOOLS.jl)
-
-[![book icon](assets/book.png) Documentation](https://fabienbaron.github.io/OITOOLS.jl/dev)
+[⦃⦄ Repository](https://github.com/fabienbaron/OITOOLS.jl) | [🕮 Documentation](https://fabienbaron.github.io/OITOOLS.jl/dev)
 
 **A collection of tools to load, visualize, model-fit and image optical interferometry data coming from CHARA, NPOI and VLTI**
 
@@ -406,9 +342,7 @@ See also:
 
 ### JuliaAPlavin/VLBIData.jl
 
-[![curly braces](assets/code.png) Repository](https://github.com/JuliaAPlavin/VLBIData.jl)
-
-[![book icon](assets/book.png) Documentation](https://aplavin.github.io/VLBIData.jl/test/examples.html)
+[⦃⦄ Repository](https://github.com/JuliaAPlavin/VLBIData.jl) | [🕮 Documentation](https://aplavin.github.io/VLBIData.jl/test/examples.html)
 
 **Work with data formats common in very long baseline interferometry (VLBI)**
 
@@ -422,9 +356,7 @@ See also:
 
 ### JuliaPhysics/Measurements.jl
 
-[![curly braces](assets/code.png) Repository](https://github.com/JuliaPhysics/Measurements.jl)
-
-[![book icon](assets/book.png) Documentation](https://juliaphysics.github.io/Measurements.jl/stable/)
+[⦃⦄ Repository](https://github.com/JuliaPhysics/Measurements.jl) | [🕮 Documentation](https://juliaphysics.github.io/Measurements.jl/stable/)
 
 **Error propagation calculator and library for physical measurements. It supports real and complex numbers with uncertainty, arbitrary precision calculations, operations with arrays, and numerical integration**
 
@@ -434,9 +366,7 @@ See also:
 
 ### MonteCarloMeasurements.jl
 
-[![curly braces](assets/code.png) Repository](https://github.com/baggepinnen/MonteCarloMeasurements.jl)
-
-[![book icon](assets/book.png) Documentation](https://baggepinnen.github.io/MonteCarloMeasurements.jl/stable/)
+[⦃⦄ Repository](https://github.com/baggepinnen/MonteCarloMeasurements.jl) | [🕮 Documentation](https://baggepinnen.github.io/MonteCarloMeasurements.jl/stable/)
 
 **Propagation of distributions by Monte-Carlo sampling: Real number types with uncertainty represented by samples**
 
@@ -445,9 +375,7 @@ See also:
 
 ### JuliaAPlavin/Uncertain.jl
 
-[![curly braces](assets/code.png) Repository](https://github.com/JuliaAPlavin/Uncertain.jl)
-
-[![book icon](assets/book.png) Documentation](https://baggepinnen.github.io/MonteCarloMeasurements.jl/stable/)
+[⦃⦄ Repository](https://github.com/JuliaAPlavin/Uncertain.jl) | [🕮 Documentation](https://baggepinnen.github.io/MonteCarloMeasurements.jl/stable/)
 
 **Handle uncertain values with ease and performance!**
 
@@ -458,9 +386,7 @@ See also:
 
 ### BoxLeastSquares.jl
 
-[![curly braces](assets/code.png) Repository](https://github.com/JuliaAstro/BoxLeastSquares.jl)
-
-[![book icon](assets/book.png) Documentation](https://juliaastro.org/BoxLeastSquares/stable/)
+[⦃⦄ Repository](https://github.com/JuliaAstro/BoxLeastSquares.jl) | [🕮 Documentation](https://juliaastro.org/BoxLeastSquares/stable/)
 
 **Compute box-least-squares periodogram**
 
@@ -471,9 +397,7 @@ See also:
 
 ### jump-dev/JuMP.jl
 
-[![curly braces](assets/code.png) Repository](https://github.com/jump-dev/JuMP.jl)
-
-[![book icon](assets/book.png) Documentation](http://jump.dev/JuMP.jl/)
+[⦃⦄ Repository](https://github.com/jump-dev/JuMP.jl) | [🕮 Documentation](http://jump.dev/JuMP.jl/)
 
 **Modeling language for Mathematical Optimization (linear, mixed-integer, conic, semidefinite, nonlinear)**
 
@@ -482,9 +406,7 @@ See also:
 
 ### SciML/NonlinearSolve.jl
 
-[![curly braces](assets/code.png) Repository](https://github.com/SciML/NonlinearSolve.jl)
-
-[![book icon](assets/book.png) Documentation](https://docs.sciml.ai/NonlinearSolve/stable/)
+[⦃⦄ Repository](https://github.com/SciML/NonlinearSolve.jl) | [🕮 Documentation](https://docs.sciml.ai/NonlinearSolve/stable/)
 
 **High-performance and differentiation-enabled nonlinear solvers (Newton methods), bracketed rootfinding (bisection, Falsi), with sparsity and Newton-Krylov support**
 
@@ -493,9 +415,7 @@ See also:
 
 ### SciML/Optimization.jl
 
-[![curly braces](assets/code.png) Repository](https://github.com/SciML/Optimization.jl)
-
-[![book icon](assets/book.png) Documentation](https://docs.sciml.ai/Optimization/stable/)
+[⦃⦄ Repository](https://github.com/SciML/Optimization.jl) | [🕮 Documentation](https://docs.sciml.ai/Optimization/stable/)
 
 **Mathematical Optimization in Julia. Local, global, gradient-based and derivative-free. Linear, Quadratic, Convex, Mixed-Integer, and Nonlinear Optimization in one simple, fast, and differentiable interface**
 
@@ -507,9 +427,7 @@ See also:
 
 ### AstroLib.jl
 
-[![curly braces](assets/code.png) Repository](https://github.com/JuliaAstro/astrolib.jl)
-
-[![book icon](assets/book.png) Documentation](https://juliaastro.org/AstroLib/stable/)
+[⦃⦄ Repository](https://github.com/JuliaAstro/astrolib.jl) | [🕮 Documentation](https://juliaastro.org/AstroLib/stable/)
 
 **Collection of generic astronomical and astrophysical functions**
 
@@ -518,9 +436,7 @@ See also:
 
 ### mileslucas/BiweightStats.jl
 
-[![curly braces](assets/code.png) Repository](https://github.com/mileslucas/BiweightStats.jl)
-
-[![book icon](assets/book.png) Documentation](http://mileslucas.com/BiweightStats.jl/stable/)
+[⦃⦄ Repository](https://github.com/mileslucas/BiweightStats.jl) | [🕮 Documentation](http://mileslucas.com/BiweightStats.jl/stable/)
 
 **Robust statistics based on the biweight transform**
 
@@ -529,9 +445,7 @@ See also:
 
 ### JuliaStats
 
-[![curly braces](assets/code.png) Repository](https://github.com/JuliaStats)
-
-[![book icon](assets/book.png) Documentation](https://juliastats.org/)
+[⦃⦄ Repository](https://github.com/JuliaStats) | [🕮 Documentation](https://juliastats.org/)
 
 **Statistics and Machine Learning made easy in Julia**
 
@@ -540,9 +454,7 @@ See also:
 
 ### JuliaStats/Distributions.jl
 
-[![curly braces](assets/code.png) Repository](https://github.com/JuliaStats/Distributions.jl)
-
-[![book icon](assets/book.png) Documentation](https://juliastats.github.io/Distributions.jl/stable/)
+[⦃⦄ Repository](https://github.com/JuliaStats/Distributions.jl) | [🕮 Documentation](https://juliastats.github.io/Distributions.jl/stable/)
 
 **A Julia package for probability distributions and associated functions**
 
@@ -555,9 +467,7 @@ See also:
 
 ### eschnett/ASDF2.jl
 
-[![curly braces](assets/code.png) Repository](https://github.com/eschnett/ASDF2.jl)
-
-[![book icon](assets/book.png) Documentation](https://eschnett.github.io/ASDF2.jl/dev/)
+[⦃⦄ Repository](https://github.com/eschnett/ASDF2.jl) | [🕮 Documentation](https://eschnett.github.io/ASDF2.jl/dev/)
 
 **ASDF, the Advanced Scientific Data Format**
 
@@ -566,9 +476,7 @@ See also:
 
 ### AstroImages.jl
 
-[![curly braces](assets/code.png) Repository](https://github.com/JuliaAstro/AstroImages.jl)
-
-[![book icon](assets/book.png) Documentation](https://juliaastro.org/AstroImages/stable/)
+[⦃⦄ Repository](https://github.com/JuliaAstro/AstroImages.jl) | [🕮 Documentation](https://juliaastro.org/AstroImages/stable/)
 
 **Load, manipulate, and visualize astronomical images**
 
@@ -577,9 +485,7 @@ See also:
 
 ### CFITSIO.jl
 
-[![curly braces](assets/code.png) Repository](https://github.com/JuliaAstro/CFITSIO.jl)
-
-[![book icon](assets/book.png) Documentation](https://juliaastro.org/CFITSIO/stable/)
+[⦃⦄ Repository](https://github.com/JuliaAstro/CFITSIO.jl) | [🕮 Documentation](https://juliaastro.org/CFITSIO/stable/)
 
 **Reading and writing FITS files**
 
@@ -589,9 +495,7 @@ See also:
 
 ### emmt/EasyFITS.jl
 
-[![curly braces](assets/code.png) Repository](https://github.com/emmt/EasyFITS.jl)
-
-[![book icon](assets/book.png) Documentation](https://emmt.github.io/EasyFITS.jl/dev)
+[⦃⦄ Repository](https://github.com/emmt/EasyFITS.jl) | [🕮 Documentation](https://emmt.github.io/EasyFITS.jl/dev)
 
 **Using FITS files made easier for Julia**
 
@@ -600,9 +504,7 @@ See also:
 
 ### barrettp/FITS.jl
 
-[![curly braces](assets/code.png) Repository](https://github.com/barrettp/FITS.jl)
-
-[![book icon](assets/book.png) Documentation](https://github.com/barrettp/FITS.jl?tab=readme-ov-file#fits)
+[⦃⦄ Repository](https://github.com/barrettp/FITS.jl) | [🕮 Documentation](https://github.com/barrettp/FITS.jl?tab=readme-ov-file#fits)
 
 **A Julia Flexible Image Transport System (FITS) file IO package**
 
@@ -611,9 +513,7 @@ See also:
 
 ### FITSIO.jl
 
-[![curly braces](assets/code.png) Repository](https://github.com/JuliaAstro/FITSIO.jl)
-
-[![book icon](assets/book.png) Documentation](https://juliaastro.org/FITSIO/stable/)
+[⦃⦄ Repository](https://github.com/JuliaAstro/FITSIO.jl) | [🕮 Documentation](https://juliaastro.org/FITSIO/stable/)
 
 **Reading and writing FITS files**
 
@@ -623,9 +523,7 @@ See also:
 
 ### FixedWidthTables.jl
 
-[![curly braces](assets/code.png) Repository](https://github.com/JuliaAPlavin/FixedWidthTables.jl)
-
-[![book icon](assets/book.png) Documentation](https://github.com/JuliaAPlavin/FixedWidthTables.jl?tab=readme-ov-file#fixedwidthtablesjl)
+[⦃⦄ Repository](https://github.com/JuliaAPlavin/FixedWidthTables.jl) | [🕮 Documentation](https://github.com/JuliaAPlavin/FixedWidthTables.jl?tab=readme-ov-file#fixedwidthtablesjl)
 
 **Read fixed width (so-called ASCII) tables**
 
@@ -634,9 +532,7 @@ See also:
 
 ### JuliaAPlavin/SkyImages.jl
 
-[![curly braces](assets/code.png) Repository](https://github.com/JuliaAPlavin/SkyImages.jl)
-
-[![book icon](assets/book.png) Documentation](https://aplavin.github.io/SkyImages.jl/test/notebook.html)
+[⦃⦄ Repository](https://github.com/JuliaAPlavin/SkyImages.jl) | [🕮 Documentation](https://aplavin.github.io/SkyImages.jl/test/notebook.html)
 
 **Load astronomical images of the sky and process them with convenient, general, and composable functions.**
 
@@ -647,9 +543,7 @@ See also:
 
 ### JuliaAPlavin/VirtualObservatory.jl
 
-[![curly braces](assets/code.png) Repository](https://github.com/JuliaAPlavin/VirtualObservatory.jl)
-
-[![book icon](assets/book.png) Documentation](https://github.com/JuliaAPlavin/VirtualObservatory.jl?tab=readme-ov-file#virtualobservatoryjl)
+[⦃⦄ Repository](https://github.com/JuliaAPlavin/VirtualObservatory.jl) | [🕮 Documentation](https://github.com/JuliaAPlavin/VirtualObservatory.jl?tab=readme-ov-file#virtualobservatoryjl)
 
 **Access remote data and services that follow VO protocols**
 
@@ -659,9 +553,7 @@ See also:
 
 ### JuliaAPlavin/VOTables.jl
 
-[![curly braces](assets/code.png) Repository](https://github.com/JuliaAPlavin/VOTables.jl)
-
-[![book icon](assets/book.png) Documentation](https://github.com/JuliaAPlavin/VOTables.jl)
+[⦃⦄ Repository](https://github.com/JuliaAPlavin/VOTables.jl) | [🕮 Documentation](https://github.com/JuliaAPlavin/VOTables.jl)
 
 **Read and write VOTable files**
 
@@ -671,22 +563,9 @@ See also:
 
 ---
 
-### AstroImages.jl
-
-[![curly braces](assets/code.png) Repository](https://github.com/JuliaAstro/AstroImages.jl)
-
-[![book icon](assets/book.png) Documentation](https://juliaastro.org/AstroImages/stable/)
-
-**Load, manipulate, and visualize astronomical images**
-
-- Works with the [FileIO.jl](https://github.com/JuliaIO/FileIO.jl) interface
-
-
 ### torrance/Casacore.jl
 
-[![curly braces](assets/code.png) Repository](https://github.com/torrance/Casacore.jl)
-
-[![book icon](assets/book.png) Documentation](https://github.com/torrance/Casacore.jl?tab=readme-ov-file#casacorejl)
+[⦃⦄ Repository](https://github.com/torrance/Casacore.jl) | [🕮 Documentation](https://github.com/torrance/Casacore.jl?tab=readme-ov-file#casacorejl)
 
 **A high level Julia interface to Casacore**
 
@@ -696,9 +575,7 @@ See also:
 
 ### JuliaData/DataFrames.jl
 
-[![curly braces](assets/code.png) Repository](https://github.com/JuliaData/DataFrames.jl)
-
-[![book icon](assets/book.png) Documentation](https://dataframes.juliadata.org/stable/)
+[⦃⦄ Repository](https://github.com/JuliaData/DataFrames.jl) | [🕮 Documentation](https://dataframes.juliadata.org/stable/)
 
 **In-memory tabular data in Julia**
 
@@ -707,9 +584,7 @@ See also:
 
 ### rafaqz/DimensionalData.jl
 
-[![curly braces](assets/code.png) Repository](https://github.com/rafaqz/DimensionalData.jl)
-
-[![book icon](assets/book.png) Documentation](https://rafaqz.github.io/DimensionalData.jl/stable/)
+[⦃⦄ Repository](https://github.com/rafaqz/DimensionalData.jl) | [🕮 Documentation](https://rafaqz.github.io/DimensionalData.jl/stable/)
 
 **Named dimensions and indexing for julia arrays and other data**
 
@@ -719,33 +594,16 @@ See also:
 
 ### JuliaAPlavin/FlexiJoins.jl
 
-[![curly braces](assets/code.png) Repository](https://github.com/JuliaAPlavin/FlexiJoins.jl)
-
-[![book icon](assets/book.png) Documentation](https://aplavin.github.io/FlexiJoins.jl/test/examples.html)
+[⦃⦄ Repository](https://github.com/JuliaAPlavin/FlexiJoins.jl) | [🕮 Documentation](https://aplavin.github.io/FlexiJoins.jl/test/examples.html)
 
 **`FlexiJoins.jl` is a fresh take on joining tabular or non-tabular datasets in Julia.**
 
 - From simple joins by key, to asof joins, to merging catalogs of terrestrial or celestial coordinates – `FlexiJoins` supports any usecase
 
 
-### JuliaAPlavin/SkyImages.jl
-
-[![curly braces](assets/code.png) Repository](https://github.com/JuliaAPlavin/SkyImages.jl)
-
-[![book icon](assets/book.png) Documentation](https://aplavin.github.io/SkyImages.jl/test/notebook.html)
-
-**Load astronomical images of the sky and process them with convenient, general, and composable functions.**
-
-- FITS WCS and Healpix images
-- Uniform interface and Makie plotting
-- Use original data as-is or project onto a rectangular grid
-
-
 ### gcalderone/SortMerge.jl
 
-[![curly braces](assets/code.png) Repository](https://github.com/gcalderone/SortMerge.jl)
-
-[![book icon](assets/book.png) Documentation](https://github.com/gcalderone/SortMerge.jl?tab=readme-ov-file#sortmerge)
+[⦃⦄ Repository](https://github.com/gcalderone/SortMerge.jl) | [🕮 Documentation](https://github.com/gcalderone/SortMerge.jl?tab=readme-ov-file#sortmerge)
 
 **A Julia implementation of the Sort-merge join algorithm**
 
@@ -757,9 +615,7 @@ See also:
 
 ### AstroImages.jl
 
-[![curly braces](assets/code.png) Repository](https://github.com/JuliaAstro/AstroImages.jl)
-
-[![book icon](assets/book.png) Documentation](https://juliaastro.org/AstroImages/stable/)
+[⦃⦄ Repository](https://github.com/JuliaAstro/AstroImages.jl) | [🕮 Documentation](https://juliaastro.org/AstroImages/stable/)
 
 **Load, manipulate, and visualize astronomical images**
 
@@ -768,9 +624,7 @@ See also:
 
 ### JuliaImages/ImageFiltering.jl
 
-[![curly braces](assets/code.png) Repository](https://github.com/JuliaImages/ImageFiltering.jl)
-
-[![book icon](assets/book.png) Documentation](https://juliaimages.github.io/ImageFiltering.jl/stable)
+[⦃⦄ Repository](https://github.com/JuliaImages/ImageFiltering.jl) | [🕮 Documentation](https://juliaimages.github.io/ImageFiltering.jl/stable)
 
 **ulia implementations of multidimensional array convolution and nonlinear stencil operations**
 
@@ -779,9 +633,7 @@ See also:
 
 ### ManuelBehrendt/Mera.jl
 
-[![curly braces](assets/code.png) Repository](https://github.com/ManuelBehrendt/Mera.jl)
-
-[![book icon](assets/book.png) Documentation](https://manuelbehrendt.github.io/Mera.jl/stable/)
+[⦃⦄ Repository](https://github.com/ManuelBehrendt/Mera.jl) | [🕮 Documentation](https://manuelbehrendt.github.io/Mera.jl/stable/)
 
 **Working with large hydrodynamical simulation data**
 
@@ -792,9 +644,7 @@ See also:
 
 ### sefffal/PairPlots.jl
 
-[![curly braces](assets/code.png) Repository](https://github.com/sefffal/PairPlots.jl)
-
-[![book icon](assets/book.png) Documentation](https://sefffal.github.io/PairPlots.jl/dev/)
+[⦃⦄ Repository](https://github.com/sefffal/PairPlots.jl) | [🕮 Documentation](https://sefffal.github.io/PairPlots.jl/dev/)
 
 **Beautiful and flexible visualizations of high dimensional data**
 
@@ -807,9 +657,7 @@ See also:
 
 ### JuliaAPlavin/SkyImages.jl
 
-[![curly braces](assets/code.png) Repository](https://github.com/JuliaAPlavin/SkyImages.jl)
-
-[![book icon](assets/book.png) Documentation](https://aplavin.github.io/SkyImages.jl/test/notebook.html)
+[⦃⦄ Repository](https://github.com/JuliaAPlavin/SkyImages.jl) | [🕮 Documentation](https://aplavin.github.io/SkyImages.jl/test/notebook.html)
 
 **Load astronomical images of the sky and process them with convenient, general, and composable functions.**
 
@@ -822,9 +670,7 @@ See also:
 
 ### AstroAngles.jl
 
-[![curly braces](assets/code.png) Repository](https://github.com/JuliaAstro/AstroAngles.jl)
-
-[![book icon](assets/book.png) Documentation](https://juliaastro.org/AstroAngles/stable/)
+[⦃⦄ Repository](https://github.com/JuliaAstro/AstroAngles.jl) | [🕮 Documentation](https://juliaastro.org/AstroAngles/stable/)
 
 **String parsing and representation of angles**
 
@@ -834,9 +680,7 @@ See also:
 
 ### SymbolicML/DynamicQuantities.jl
 
-[![curly braces](assets/code.png) Repository](https://github.com/SymbolicML/DynamicQuantities.jl)
-
-[![book icon](assets/book.png) Documentation](https://symbolicml.org/DynamicQuantities.jl/stable/)
+[⦃⦄ Repository](https://github.com/SymbolicML/DynamicQuantities.jl) | [🕮 Documentation](https://symbolicml.org/DynamicQuantities.jl/stable/)
 
 **Efficient and type-stable physical quantities in Julia**
 
@@ -846,9 +690,7 @@ See also:
 
 ### JuliaPhysics/PhysicalConstants.jl
 
-[![curly braces](assets/code.png) Repository](https://github.com/JuliaPhysics/PhysicalConstants.jl)
-
-[![book icon](assets/book.png) Documentation](https://juliaphysics.github.io/PhysicalConstants.jl/stable/)
+[⦃⦄ Repository](https://github.com/JuliaPhysics/PhysicalConstants.jl) | [🕮 Documentation](https://juliaphysics.github.io/PhysicalConstants.jl/stable/)
 
 **Collection of fundamental physical constants with uncertainties**
 
@@ -858,9 +700,7 @@ See also:
 
 ### PainterQubits/Unitful.jl
 
-[![curly braces](assets/code.png) Repository](https://github.com/PainterQubits/Unitful.jl)
-
-[![book icon](assets/book.png) Documentation](https://painterqubits.github.io/Unitful.jl/stable)
+[⦃⦄ Repository](https://github.com/PainterQubits/Unitful.jl) | [🕮 Documentation](https://painterqubits.github.io/Unitful.jl/stable)
 
 **Physical quantities with arbitrary units**
 
@@ -870,9 +710,7 @@ See also:
 
 ### UnitfulAstro.jl
 
-[![curly braces](assets/code.png) Repository](https://github.com/JuliaAstro/UnitfulAstro.jl)
-
-[![book icon](assets/book.png) Documentation](https://juliaastro.org/UnitfulAstro/stable/)
+[⦃⦄ Repository](https://github.com/JuliaAstro/UnitfulAstro.jl) | [🕮 Documentation](https://juliaastro.org/UnitfulAstro/stable/)
 
 **Astronomical units and things**
 

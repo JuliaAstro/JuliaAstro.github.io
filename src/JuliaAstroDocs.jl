@@ -530,7 +530,7 @@ ecosystem() = (
                 descr = """
                 - Works with the [FileIO.jl](https://github.com/JuliaIO/FileIO.jl) interface
                 """,
-                astropy = ["astropy.visualization"],
+                astropy = ["astropy.io.fits"],
             ),
             (
                 name = "CFITSIO.jl",
@@ -621,16 +621,6 @@ ecosystem() = (
         ),
         "Data processing" => (
             (
-                name = "AstroImages.jl",
-                repo = "https://github.com/JuliaAstro/AstroImages.jl",
-                doc = "https://juliaastro.org/AstroImages/stable/",
-                tagline = "Load, manipulate, and visualize astronomical images",
-                descr = """
-                - Works with the [FileIO.jl](https://github.com/JuliaIO/FileIO.jl) interface
-                """,
-                astropy = ["astropy.visualization"],
-            ),
-            (
                 name = "torrance/Casacore.jl",
                 repo = "https://github.com/torrance/Casacore.jl",
                 doc = "https://github.com/torrance/Casacore.jl?tab=readme-ov-file#casacorejl",
@@ -671,18 +661,6 @@ ecosystem() = (
                 - From simple joins by key, to asof joins, to merging catalogs of terrestrial or celestial coordinates – `FlexiJoins` supports any usecase
                 """,
                 astropy = ["astropy.table"],
-            ),
-            (
-                name = "JuliaAPlavin/SkyImages.jl",
-                repo = "https://github.com/JuliaAPlavin/SkyImages.jl",
-                doc = "https://aplavin.github.io/SkyImages.jl/test/notebook.html",
-                tagline = "Load astronomical images of the sky and process them with convenient, general, and composable functions.",
-                descr = """
-                - FITS WCS and Healpix images
-                - Uniform interface and Makie plotting
-                - Use original data as-is or project onto a rectangular grid
-                """,
-                astropy = [],
             ),
             (
                 name = "gcalderone/SortMerge.jl",
