@@ -15,3 +15,11 @@ table.compare td {
      * */
     vertical-align: middle !important;
 }
+
+#multi-page-nav .nav-dropdown-container {
+    overflow: auto !important;
+}
+
+#multi-page-nav .nav-mega-dropdown-container {
+    width: 100% !important;
+}
