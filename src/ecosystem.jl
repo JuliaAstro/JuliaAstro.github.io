@@ -16,8 +16,8 @@ function page_ecosystem(ecosystem)
             for (sublevel, packages) in sublevels
                 for p in packages
                     write(io, "### ", p.name, "\n\n")
-                    write(io, "[⦃⦄ Repository](", p.repo, ") | ")
-                    write(io, "[🕮 Documentation](", p.doc, ")\n\n",)
+                    write(io, "[💻 Repository](", p.repo, ") | ")
+                    write(io, "[📘 Documentation](", p.doc, ")\n\n",)
                     write(io, "**", p.tagline, "**", "\n\n")
                     write(io, p.descr, "\n\n")
                 end
