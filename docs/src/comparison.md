@@ -214,13 +214,17 @@ We highlight some of the major packages in Python's `astropy` ecosystem and thei
   <tbody>
 
   <tr>
-    <td rowspan=7>
+    <td rowspan=8>
       <a href="https://docs.astropy.org/en/stable/io/fits/index.html"><code>astropy.io.fits</code></a>
    </td>
   </tr>
   <tr>
     <td><a href="https://github.com/emmt/OIFITS.jl">emmt/OIFITS.jl</a></td>
     <td>Support for OI-FITS</td>
+  </tr>
+  <tr>
+    <td><a href="https://github.com/JuliaAstro/AstroImages.jl">AstroImages.jl</a></td>
+    <td>Load, manipulate, and visualize astronomical images</td>
   </tr>
   <tr>
     <td><a href="https://github.com/JuliaAstro/CFITSIO.jl">CFITSIO.jl</a></td>
@@ -323,17 +327,9 @@ We highlight some of the major packages in Python's `astropy` ecosystem and thei
   </tr>
 
   <tr>
-    <td rowspan=6>
+    <td rowspan=4>
       <a href="https://docs.astropy.org/en/stable/visualization/index.html"><code>astropy.visualization</code></a>
    </td>
-  </tr>
-  <tr>
-    <td><a href="https://github.com/JuliaAstro/AstroImages.jl">AstroImages.jl</a></td>
-    <td>Load, manipulate, and visualize astronomical images</td>
-  </tr>
-  <tr>
-    <td><a href="https://github.com/JuliaAstro/AstroImages.jl">AstroImages.jl</a></td>
-    <td>Load, manipulate, and visualize astronomical images</td>
   </tr>
   <tr>
     <td><a href="https://github.com/JuliaAstro/AstroImages.jl">AstroImages.jl</a></td>
