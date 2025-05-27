@@ -554,7 +554,7 @@ See also:
 
 ### barrettp/FITS.jl
 
-[💻 Repository](https://github.com/barrettp/FITS.jl) | [📘 Documentation](https://github.com/barrettp/FITS.jl?tab=readme-ov-file#fits)
+[💻 Repository](https://github.com/barrettp/FITS.jl) | [📘 Documentation](https://barrettp.github.io/FITS.jl/)
 
 **A Julia Flexible Image Transport System (FITS) file IO package**
 
