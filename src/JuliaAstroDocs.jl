@@ -611,7 +611,7 @@ ecosystem() = (
             (
                 name = "barrettp/FITS.jl",
                 repo = "https://github.com/barrettp/FITS.jl",
-                doc = "https://github.com/barrettp/FITS.jl?tab=readme-ov-file#fits",
+                doc = "https://barrettp.github.io/FITS.jl/",
                 tagline = "A Julia Flexible Image Transport System (FITS) file IO package",
                 descr = """
                 - A Julia Flexible Image Transport System (FITS) file IO package
