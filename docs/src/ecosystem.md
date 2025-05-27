@@ -115,6 +115,19 @@ See also:
 - Fully compatible with [Unitful.jl](https://github.com/painterqubits/Unitful.jl)
 
 
+### EHTJulia/ScatteringOptics.jl
+
+[![curly braces](assets/code.png) Repository](https://github.com/EHTJulia/ScatteringOptics.jl)
+
+[![book icon](assets/book.png) Documentation](https://ehtjulia.github.io/ScatteringOptics.jl/stable/)
+
+**A Julia package to simulate and model interstellar scattering in strong regime**
+
+- Analyze interstellar scintillation observed at radio wavelengths
+- Implements physical models for the anisotropic scattering of radio waves
+- Modeling, analyze, and interpret the images of the Galactic Center's supermassive black hole, Sagittarius A*, especially with the Event Horizon Telescope
+
+
 ---
 
 ## Techniques
@@ -311,6 +324,17 @@ See also:
 
 ---
 
+### ptiede/Comrade.jl
+
+[![curly braces](assets/code.png) Repository](https://github.com/ptiede/Comrade.jl)
+
+[![book icon](assets/book.png) Documentation](https://ptiede.github.io/Comrade.jl/stable/)
+
+**Composable Modeling of Radio Emission**
+
+- A Bayesian differentiable modular modeling package for very long baseline interferometry
+
+
 ### JuliaAPlavin/Difmap.jl
 
 [💻 Repository](https://github.com/JuliaAPlavin/Difmap.jl) | [📘 Documentation](https://aplavin.github.io/Difmap.jl/test/examples.html)
@@ -340,6 +364,19 @@ See also:
 - Note that despite having the same name as [JMMC's oitools](https://github.com/JMMC-OpenDev/oitools), they are completely unrelated and were developed independently
 
 
+### EHTJulia/PolarizedTypes.jl
+
+[![curly braces](assets/code.png) Repository](https://github.com/EHTJulia/PolarizedTypes.jl)
+
+[![book icon](assets/book.png) Documentation](https://ehtjulia.github.io/PolarizedTypes.jl/stable/)
+
+**Basic Polarized types for interferometry**
+
+- This defines the basic for polarized types for use in VLBI, including
+    - `StokesParams` for the stokes parameters
+    - `CoherencyMatrix` for coherency matrices in arbitrary bases, including a mixed basis
+
+
 ### JuliaAPlavin/VLBIData.jl
 
 [💻 Repository](https://github.com/JuliaAPlavin/VLBIData.jl) | [📘 Documentation](https://aplavin.github.io/VLBIData.jl/test/examples.html)
@@ -348,6 +385,17 @@ See also:
 
 - Read interferometric visibilities (`uvfits`), images (`fits`), and source models
 - Minimal writing support for source models
+
+
+### EHTJulia/VLBISkyModels.jl
+
+[![curly braces](assets/code.png) Repository](https://github.com/EHTJulia/VLBISkyModels.jl)
+
+[![book icon](assets/book.png) Documentation](https://ehtjulia.github.io/VLBISkyModels.jl/stable/)
+
+**Just the Comrade Models**
+
+- `VLBISkyModels` provides an interface and library for of models that can be used to describe the on-sky emission seen by VLBI interferometers
 
 
 ---
@@ -459,6 +507,18 @@ See also:
 **A Julia package for probability distributions and associated functions**
 
 - A Julia package for probability distributions and associated functions
+
+
+### EHTJulia/FastHartleyTransform.jl
+
+[![curly braces](assets/code.png) Repository](https://github.com/EHTJulia/FastHartleyTransform.jl)
+
+[![book icon](assets/book.png) Documentation](https://ehtjulia.github.io/FastHartleyTransform.jl/stable/)
+
+**A Julia implementation of the Fast Hartley Transform (FHT)**
+
+- This package provides a Julia implementation of the Fast Hartley Transform (FHT)
+- It supports both CPUs and NVIDIA CUDA GPUs
 
 
 ---
