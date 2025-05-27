@@ -117,9 +117,7 @@ See also:
 
 ### EHTJulia/ScatteringOptics.jl
 
-[![curly braces](assets/code.png) Repository](https://github.com/EHTJulia/ScatteringOptics.jl)
-
-[![book icon](assets/book.png) Documentation](https://ehtjulia.github.io/ScatteringOptics.jl/stable/)
+[💻 Repository](https://github.com/EHTJulia/ScatteringOptics.jl) | [📘 Documentation](https://ehtjulia.github.io/ScatteringOptics.jl/stable/)
 
 **A Julia package to simulate and model interstellar scattering in strong regime**
 
@@ -326,9 +324,7 @@ See also:
 
 ### ptiede/Comrade.jl
 
-[![curly braces](assets/code.png) Repository](https://github.com/ptiede/Comrade.jl)
-
-[![book icon](assets/book.png) Documentation](https://ptiede.github.io/Comrade.jl/stable/)
+[💻 Repository](https://github.com/ptiede/Comrade.jl) | [📘 Documentation](https://ptiede.github.io/Comrade.jl/stable/)
 
 **Composable Modeling of Radio Emission**
 
@@ -366,9 +362,7 @@ See also:
 
 ### EHTJulia/PolarizedTypes.jl
 
-[![curly braces](assets/code.png) Repository](https://github.com/EHTJulia/PolarizedTypes.jl)
-
-[![book icon](assets/book.png) Documentation](https://ehtjulia.github.io/PolarizedTypes.jl/stable/)
+[💻 Repository](https://github.com/EHTJulia/PolarizedTypes.jl) | [📘 Documentation](https://ehtjulia.github.io/PolarizedTypes.jl/stable/)
 
 **Basic Polarized types for interferometry**
 
@@ -389,9 +383,7 @@ See also:
 
 ### EHTJulia/VLBISkyModels.jl
 
-[![curly braces](assets/code.png) Repository](https://github.com/EHTJulia/VLBISkyModels.jl)
-
-[![book icon](assets/book.png) Documentation](https://ehtjulia.github.io/VLBISkyModels.jl/stable/)
+[💻 Repository](https://github.com/EHTJulia/VLBISkyModels.jl) | [📘 Documentation](https://ehtjulia.github.io/VLBISkyModels.jl/stable/)
 
 **Just the Comrade Models**
 
@@ -511,9 +503,7 @@ See also:
 
 ### EHTJulia/FastHartleyTransform.jl
 
-[![curly braces](assets/code.png) Repository](https://github.com/EHTJulia/FastHartleyTransform.jl)
-
-[![book icon](assets/book.png) Documentation](https://ehtjulia.github.io/FastHartleyTransform.jl/stable/)
+[💻 Repository](https://github.com/EHTJulia/FastHartleyTransform.jl) | [📘 Documentation](https://ehtjulia.github.io/FastHartleyTransform.jl/stable/)
 
 **A Julia implementation of the Fast Hartley Transform (FHT)**
 
