@@ -6,15 +6,20 @@
 
 Our contributors come from diverse backgrounds and have various levels of interactions within astronomy, aerospace, and academia. Use the packages, file issues, and join the conversation!
 
-- [JuliaAstro](https://github.com/juliaastro) on GitHub
-- [JuliaHCI](https://github.com/juliahci) on GitHub
-- [JuliaSpace](https://github.com/JuliaSpace) on GitHub
-- [EHTJulia](https://github.com/EHTJulia) on GitHub
-- [julia-astro](https://groups.google.com/forum/#!forum/julia-astro) mailing list on Google Groups
-- [Astro/Space](https://discourse.julialang.org/c/domain/astro) topics on JuliaLang Discourse
-- [#JuliaAstro:openastronomy.org](https://riot.im/app/#/room/#JuliaAstro:openastronomy.org) on Matrix
+### Organizations
+
+- [JuliaAstro](https://github.com/juliaastro) - our main astronomy organization on GitHub
+- [JuliaHCI](https://github.com/juliahci) - high-contrast imaging
+- [JuliaSpace](https://github.com/JuliaSpace) - astrodynamics and satellite mission planning
+- [EHTJulia](https://github.com/EHTJulia) - high-resolution radio interferometry
+
+### Community
+
 - [#astronomy](slack://channel?id=CMXU6SD7V&team=T68168MUP) on [JuliaLang Slack](https://julialang.org/slack/)
 - [#astronomy](https://julialang.zulipchat.com/#narrow/channel/astronomy) on [JuliaLang Zulip](https://julialang.zulipchat.com/register/)
+- [Astro/Space](https://discourse.julialang.org/c/domain/astro) topics on JuliaLang Discourse
+- [julia-astro](https://groups.google.com/forum/#!forum/julia-astro) mailing list on Google Groups
+- [Monthly JuliaAstro community call](https://julialang.org/community/#events) - Fourth Wednesday of each month at 12:00 ET
 
 ## Google Summer of Code (GSoC)
 
