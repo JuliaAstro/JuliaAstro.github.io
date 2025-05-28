@@ -97,6 +97,20 @@ See also:
 
 ---
 
+### Stars
+
+#### cgarling/StarFormationHistories.jl
+
+[💻 Repository](https://github.com/cgarling/StarFormationHistories.jl) | [📘 Documentation](https://cgarling.github.io/StarFormationHistories.jl/stable/)
+
+**Fitting astrophysical star formation histories via CMD modelling**
+
+- This package implements methods for modelling observed Hess diagrams (which are just binned color-magnitude diagrams, also called CMDs) and using them to fit astrophysical star formation histories (SFHs)
+- This package also provides utilities for simulating CMDs given input SFHs and photometric error and completeness functions, which can be useful for planning observations and writing proposals
+
+
+---
+
 ### Galaxies and Cosmology
 
 #### Cosmology.jl

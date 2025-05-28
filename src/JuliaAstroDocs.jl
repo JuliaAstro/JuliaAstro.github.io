@@ -101,6 +101,19 @@ ecosystem() = (
                 astropy = [],
             ),
         ),
+        "Stars" => (
+            (
+                name = "cgarling/StarFormationHistories.jl",
+                repo = "https://github.com/cgarling/StarFormationHistories.jl",
+                doc = "https://cgarling.github.io/StarFormationHistories.jl/stable/",
+                tagline = "Fitting astrophysical star formation histories via CMD modelling",
+                descr = """
+                - This package implements methods for modelling observed Hess diagrams (which are just binned color-magnitude diagrams, also called CMDs) and using them to fit astrophysical star formation histories (SFHs)
+                - This package also provides utilities for simulating CMDs given input SFHs and photometric error and completeness functions, which can be useful for planning observations and writing proposals
+                """,
+                astropy = [],
+            ),
+        ),
         "Galaxies and Cosmology" => (
             (
                 name = "Cosmology.jl",
