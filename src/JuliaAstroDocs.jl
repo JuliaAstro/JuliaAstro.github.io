@@ -126,6 +126,18 @@ ecosystem() = (
                 """,
                 astropy = [],
             ),
+            (
+                name = "EHTJulia/ScatteringOptics.jl",
+                repo = "https://github.com/EHTJulia/ScatteringOptics.jl",
+                doc = "https://ehtjulia.github.io/ScatteringOptics.jl/stable/",
+                tagline = "A Julia package to simulate and model interstellar scattering in strong regime",
+                descr = """
+                - Analyze interstellar scintillation observed at radio wavelengths
+                - Implements physical models for the anisotropic scattering of radio waves
+                - Modeling, analyze, and interpret the images of the Galactic Center's supermassive black hole, Sagittarius A*, especially with the Event Horizon Telescope
+                """,
+                astropy = [],
+            ),
         ),
     ),
     "Techniques" => (
@@ -342,6 +354,16 @@ ecosystem() = (
         ),
         "Interferometry" => (
             (
+                name = "ptiede/Comrade.jl",
+                repo = "https://github.com/ptiede/Comrade.jl",
+                doc = "https://ptiede.github.io/Comrade.jl/stable/",
+                tagline = "Composable Modeling of Radio Emission",
+                descr = """
+                - A Bayesian differentiable modular modeling package for very long baseline interferometry
+                """,
+                astropy = [],
+            ),
+            (
                 name = "JuliaAPlavin/Difmap.jl",
                 repo = "https://github.com/JuliaAPlavin/Difmap.jl",
                 doc = "https://aplavin.github.io/Difmap.jl/test/examples.html",
@@ -374,6 +396,18 @@ ecosystem() = (
                 astropy = [],
             ),
             (
+                name = "EHTJulia/PolarizedTypes.jl",
+                repo = "https://github.com/EHTJulia/PolarizedTypes.jl",
+                doc = "https://ehtjulia.github.io/PolarizedTypes.jl/stable/",
+                tagline = "Basic Polarized types for interferometry",
+                descr = """
+                - This defines the basic for polarized types for use in VLBI, including
+                    - `StokesParams` for the stokes parameters
+                    - `CoherencyMatrix` for coherency matrices in arbitrary bases, including a mixed basis
+                """,
+                astropy = [],
+            ),
+            (
                 name = "JuliaAPlavin/VLBIData.jl",
                 repo = "https://github.com/JuliaAPlavin/VLBIData.jl",
                 doc = "https://aplavin.github.io/VLBIData.jl/test/examples.html",
@@ -383,6 +417,16 @@ ecosystem() = (
                 - Minimal writing support for source models
                 """,
                 astropy = ["astropy.io.votable"],
+            ),
+            (
+                name = "EHTJulia/VLBISkyModels.jl",
+                repo = "https://github.com/EHTJulia/VLBISkyModels.jl",
+                doc = "https://ehtjulia.github.io/VLBISkyModels.jl/stable/",
+                tagline = "Just the Comrade Models",
+                descr = """
+                - `VLBISkyModels` provides an interface and library for of models that can be used to describe the on-sky emission seen by VLBI interferometers
+                """,
+                astropy = [],
             ),
         ),
     ),
@@ -467,8 +511,6 @@ ecosystem() = (
         ),
         "General" => (
             (
-                highlevel = "General",
-                sublevel = "Utilities and Data Viz",
                 name = "AstroLib.jl",
                 repo = "https://github.com/JuliaAstro/astrolib.jl",
                 doc = "https://juliaastro.org/AstroLib/stable/",
@@ -487,6 +529,16 @@ ecosystem() = (
                 - Implements the location, scale, midvariance, midcovariance, and midcorrelation statistics
                 """,
                 astropy = ["astropy.stats"],
+            ),
+            (
+                name = "jeff-regier/Celeste.jl",
+                repo = "https://github.com/jeff-regier/Celeste.jl",
+                doc = "https://github.com/jeff-regier/Celeste.jl/wiki/",
+                tagline = "Scalable inference for a generative model of astronomical images",
+                descr = """
+                - Find and characterize stars and galaxies in astronomical images via approximate Bayesian inference
+                """,
+                astropy = [],
             ),
             (
                 name = "gcalderone/GModelFit.jl",
@@ -518,6 +570,27 @@ ecosystem() = (
                 """,
                 astropy = ["astropy.uncertainty"],
             ),
+            (
+                name = "EHTJulia/FastHartleyTransform.jl",
+                repo = "https://github.com/EHTJulia/FastHartleyTransform.jl",
+                doc = "https://ehtjulia.github.io/FastHartleyTransform.jl/stable/",
+                tagline = "A Julia implementation of the Fast Hartley Transform (FHT)",
+                descr = """
+                - This package provides a Julia implementation of the Fast Hartley Transform (FHT)
+                - It supports both CPUs and NVIDIA CUDA GPUs
+                """,
+                astropy = [],
+            ),
+            (
+                name = "sefffal/Octofitter.jl",
+                repo = "https://github.com/sefffal/Octofitter.jl",
+                doc = "https://sefffal.github.io/Octofitter.jl/dev",
+                tagline = "Octofitter is a Julia package for performing Bayesian inference against a wide variety of exoplanet and binary star data",
+                descr = """
+                - You can also use Octofitter from Python using [octofitterpy](https://github.com/sefffal/octofitterpy)
+                """,
+                astropy = [],
+            ),
         ),
     ),
     "Utilities" => (
@@ -540,7 +613,7 @@ ecosystem() = (
                 descr = """
                 - Works with the [FileIO.jl](https://github.com/JuliaIO/FileIO.jl) interface
                 """,
-                astropy = ["astropy.visualization"],
+                astropy = ["astropy.io.fits"],
             ),
             (
                 name = "CFITSIO.jl",
@@ -566,7 +639,7 @@ ecosystem() = (
             (
                 name = "barrettp/FITS.jl",
                 repo = "https://github.com/barrettp/FITS.jl",
-                doc = "https://github.com/barrettp/FITS.jl?tab=readme-ov-file#fits",
+                doc = "https://barrettp.github.io/FITS.jl/",
                 tagline = "A Julia Flexible Image Transport System (FITS) file IO package",
                 descr = """
                 - A Julia Flexible Image Transport System (FITS) file IO package
@@ -631,16 +704,6 @@ ecosystem() = (
         ),
         "Data processing" => (
             (
-                name = "AstroImages.jl",
-                repo = "https://github.com/JuliaAstro/AstroImages.jl",
-                doc = "https://juliaastro.org/AstroImages/stable/",
-                tagline = "Load, manipulate, and visualize astronomical images",
-                descr = """
-                - Works with the [FileIO.jl](https://github.com/JuliaIO/FileIO.jl) interface
-                """,
-                astropy = ["astropy.visualization"],
-            ),
-            (
                 name = "torrance/Casacore.jl",
                 repo = "https://github.com/torrance/Casacore.jl",
                 doc = "https://github.com/torrance/Casacore.jl?tab=readme-ov-file#casacorejl",
@@ -681,18 +744,6 @@ ecosystem() = (
                 - From simple joins by key, to asof joins, to merging catalogs of terrestrial or celestial coordinates – `FlexiJoins` supports any usecase
                 """,
                 astropy = ["astropy.table"],
-            ),
-            (
-                name = "JuliaAPlavin/SkyImages.jl",
-                repo = "https://github.com/JuliaAPlavin/SkyImages.jl",
-                doc = "https://aplavin.github.io/SkyImages.jl/test/notebook.html",
-                tagline = "Load astronomical images of the sky and process them with convenient, general, and composable functions.",
-                descr = """
-                - FITS WCS and Healpix images
-                - Uniform interface and Makie plotting
-                - Use original data as-is or project onto a rectangular grid
-                """,
-                astropy = [],
             ),
             (
                 name = "gcalderone/SortMerge.jl",

@@ -1,9 +1,3 @@
-p > a > img {
-    /* make sure book icon for documentation and curly braces for repository
-       links are in line with the text */
-    vertical-align: text-bottom;
-}
-
 table.compare tbody > tr:last-child {
     border-bottom: solid grey !important;
 }
@@ -14,4 +8,12 @@ table.compare td {
      * themes from overriding things
      * */
     vertical-align: middle !important;
+}
+
+#multi-page-nav .nav-dropdown-container {
+    overflow: auto !important;
+}
+
+#multi-page-nav .nav-mega-dropdown-container {
+    width: 100% !important;
 }
