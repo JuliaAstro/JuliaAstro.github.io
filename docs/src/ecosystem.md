@@ -505,6 +505,15 @@ See also:
 - Implements the location, scale, midvariance, midcovariance, and midcorrelation statistics
 
 
+#### jeff-regier/Celeste.jl
+
+[💻 Repository](https://github.com/jeff-regier/Celeste.jl) | [📘 Documentation](https://github.com/jeff-regier/Celeste.jl/wiki/)
+
+**Scalable inference for a generative model of astronomical images**
+
+- Find and characterize stars and galaxies in astronomical images via approximate Bayesian inference
+
+
 #### JuliaStats
 
 [💻 Repository](https://github.com/JuliaStats) | [📘 Documentation](https://juliastats.org/)
@@ -531,6 +540,15 @@ See also:
 
 - This package provides a Julia implementation of the Fast Hartley Transform (FHT)
 - It supports both CPUs and NVIDIA CUDA GPUs
+
+
+#### sefffal/Octofitter.jl
+
+[💻 Repository](https://github.com/sefffal/Octofitter.jl) | [📘 Documentation](https://sefffal.github.io/Octofitter.jl/dev)
+
+**Octofitter is a Julia package for performing Bayesian inference against a wide variety of exoplanet and binary star data**
+
+- You can also use Octofitter from Python using [octofitterpy](https://github.com/sefffal/octofitterpy)
 
 
 ---
