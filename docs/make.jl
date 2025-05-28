@@ -1,4 +1,4 @@
-using Revise, MultiDocumenter, Documenter, DocumenterInterLinks
+using Revise, MultiDocumenter, Documenter, DocumenterInterLinks, DemoCards
 using LibGit2, Pkg, TOML, UUIDs, Downloads
 
 Revise.revise()
@@ -27,6 +27,9 @@ links = InterLinks(
         joinpath(@__DIR__, "clones", "AstroLib", "dev", "objects.inv"),
     )
 )
+
+# Case studies
+case_studies, postprocess_cb, case_studies_assets = makedemos("case_studies")
 
 # This make file compiles the documentation for the JuliaAstro website.
 # It consists of the usual documenter structure, but also follows the approach
@@ -77,12 +80,15 @@ makedocs(
                 "tutorials/curve-fit.md",
             ],
         ],
+        case_studies,
         "Ecosystem" => "ecosystem.md",
         "Comparison with Astropy" => "comparison.md",
     ],
     warnonly = [:missing_docs],
     plugins = [links],
 )
+
+postprocess_cb()
 
 # Differentiate between pure Julia and wrapper packages
 wrapper_packages = [
@@ -146,19 +152,19 @@ docs = [
     end...,
 ]
 
-MultiDocumenter.make(
-    outpath,
-    docs;
-    assets_dir = "docs/src/assets",
-    search_engine = MultiDocumenter.SearchConfig(
-        index_versions = ["stable"],
-        engine = MultiDocumenter.FlexSearch
-    ),
-    rootpath = "/",
-    canonical_domain = "https://JuliaAstro.org/",
-    brand_image = MultiDocumenter.BrandImage(".", joinpath("assets", "logo.svg")),
-    sitemap = true,
-)
+#MultiDocumenter.make(
+#    outpath,
+#    docs;
+#    assets_dir = "docs/src/assets",
+#    search_engine = MultiDocumenter.SearchConfig(
+#        index_versions = ["stable"],
+#        engine = MultiDocumenter.FlexSearch
+#    ),
+#    rootpath = "/",
+#    canonical_domain = "https://JuliaAstro.org/",
+#    brand_image = MultiDocumenter.BrandImage(".", joinpath("assets", "logo.svg")),
+#    sitemap = true,
+#)
 @info "Aggregate build done"
 
 # Download logo

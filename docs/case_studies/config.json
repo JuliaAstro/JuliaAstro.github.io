@@ -1,0 +1,9 @@
+{
+    "template": "index.md",
+    "theme": "bulmagrid",
+    "order": [
+        "solar_system",
+        "exoplanets",
+        "stars"
+    ]
+}
