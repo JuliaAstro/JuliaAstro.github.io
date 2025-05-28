@@ -511,8 +511,6 @@ ecosystem() = (
         ),
         "General" => (
             (
-                highlevel = "General",
-                sublevel = "Utilities and Data Viz",
                 name = "AstroLib.jl",
                 repo = "https://github.com/JuliaAstro/astrolib.jl",
                 doc = "https://juliaastro.org/AstroLib/stable/",
@@ -531,6 +529,16 @@ ecosystem() = (
                 - Implements the location, scale, midvariance, midcovariance, and midcorrelation statistics
                 """,
                 astropy = ["astropy.stats"],
+            ),
+            (
+                name = "jeff-regier/Celeste.jl",
+                repo = "https://github.com/jeff-regier/Celeste.jl",
+                doc = "https://github.com/jeff-regier/Celeste.jl/wiki/",
+                tagline = "Scalable inference for a generative model of astronomical images",
+                descr = """
+                - Find and characterize stars and galaxies in astronomical images via approximate Bayesian inference
+                """,
+                astropy = [],
             ),
             (
                 name = "JuliaStats",
@@ -560,6 +568,16 @@ ecosystem() = (
                 descr = """
                 - This package provides a Julia implementation of the Fast Hartley Transform (FHT)
                 - It supports both CPUs and NVIDIA CUDA GPUs
+                """,
+                astropy = [],
+            ),
+            (
+                name = "sefffal/Octofitter.jl",
+                repo = "https://github.com/sefffal/Octofitter.jl",
+                doc = "https://sefffal.github.io/Octofitter.jl/dev",
+                tagline = "Octofitter is a Julia package for performing Bayesian inference against a wide variety of exoplanet and binary star data",
+                descr = """
+                - You can also use Octofitter from Python using [octofitterpy](https://github.com/sefffal/octofitterpy)
                 """,
                 astropy = [],
             ),

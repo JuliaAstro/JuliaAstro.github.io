@@ -6,7 +6,9 @@ The joy of our community is the many astronomy and astrophysics packages availab
 
 ## Domain
 
-### EphemerisSources.jl
+### Solar System
+
+#### EphemerisSources.jl
 
 [💻 Repository](https://github.com/JuliaAstro/EphemerisSources.jl) | [📘 Documentation](https://juliaastro.org/EphemerisSources.jl/docs)
 
@@ -15,7 +17,7 @@ The joy of our community is the many astronomy and astrophysics packages availab
 - Calculate positions and velocities of solar system bodies
 
 
-### PerezHz/HORIZONS.jl
+#### PerezHz/HORIZONS.jl
 
 [💻 Repository](https://github.com/PerezHz/HORIZONS.jl) | [📘 Documentation](https://github.com/PerezHz/HORIZONS.jl?tab=readme-ov-file#horizonsjl)
 
@@ -24,7 +26,7 @@ The joy of our community is the many astronomy and astrophysics packages availab
 - Calculate positions and velocities of solar system bodies
 
 
-### JuliaSpace/SatelliteToolbox.jl
+#### JuliaSpace/SatelliteToolbox.jl
 
 [💻 Repository](https://github.com/JuliaSpace/SatelliteToolbox.jl) | [📘 Documentation](https://juliaspace.github.io/SatelliteToolbox.jl/stable/)
 
@@ -37,7 +39,7 @@ See also:
 - [ReferenceFrameRotations.jl](https://github.com/JuliaSpace/ReferenceFrameRotations.jl)
 
 
-### SPICE.jl
+#### SPICE.jl
 
 [💻 Repository](https://github.com/JuliaAstro/SPICE.jl) | [📘 Documentation](https://juliaastro.org/SPICE/stable/)
 
@@ -49,7 +51,9 @@ See also:
 
 ---
 
-### JuliaHCI/ADI.jl
+### Exoplanets
+
+#### JuliaHCI/ADI.jl
 
 [💻 Repository](https://github.com/JuliaHCI/ADI.jl) | [📘 Documentation](http://JuliaHCI.github.io/ADI.jl/stable/)
 
@@ -61,7 +65,7 @@ See also:
 - Common HCI metrics including S/N maps, contrast curves, throughput curves (from PSF injection), STIM, etc.
 
 
-### JuliaHCI/HCIToolbox.jl
+#### JuliaHCI/HCIToolbox.jl
 
 [💻 Repository](https://github.com/JuliaHCI/HCIToolbox.jl) | [📘 Documentation](http://JuliaHCI.github.io/HCIToolbox.jl/stable/)
 
@@ -72,7 +76,7 @@ See also:
 - Spectral scaling and descaling
 
 
-### sefffal/PlanetOrbits.jl
+#### sefffal/PlanetOrbits.jl
 
 [💻 Repository](https://github.com/sefffal/PlanetOrbits.jl) | [📘 Documentation](https://sefffal.github.io/PlanetOrbits.jl/dev/)
 
@@ -80,7 +84,7 @@ See also:
 
 
 
-### Transits.jl
+#### Transits.jl
 
 [💻 Repository](https://github.com/JuliaAstro/Transits.jl) | [📘 Documentation](https://juliaastro.org/Transits/stable/)
 
@@ -93,7 +97,9 @@ See also:
 
 ---
 
-### Cosmology.jl
+### Galaxies and Cosmology
+
+#### Cosmology.jl
 
 [💻 Repository](https://github.com/JuliaAstro/Cosmology.jl) | [📘 Documentation](https://juliaastro.org/Cosmology/stable/)
 
@@ -104,7 +110,7 @@ See also:
 - Fully compatible with [Unitful.jl](https://github.com/painterqubits/Unitful.jl)
 
 
-### DustExtinction.jl
+#### DustExtinction.jl
 
 [💻 Repository](https://github.com/JuliaAstro/DustExtinction.jl) | [📘 Documentation](https://juliaastro.org/DustExtinction/stable/)
 
@@ -115,7 +121,7 @@ See also:
 - Fully compatible with [Unitful.jl](https://github.com/painterqubits/Unitful.jl)
 
 
-### EHTJulia/ScatteringOptics.jl
+#### EHTJulia/ScatteringOptics.jl
 
 [💻 Repository](https://github.com/EHTJulia/ScatteringOptics.jl) | [📘 Documentation](https://ehtjulia.github.io/ScatteringOptics.jl/stable/)
 
@@ -130,7 +136,9 @@ See also:
 
 ## Techniques
 
-### CCDReduction.jl
+### Photometry
+
+#### CCDReduction.jl
 
 [💻 Repository](https://github.com/JuliaAstro/CCDReduction.jl) | [📘 Documentation](https://juliaastro.org/CCDReduction/stable/)
 
@@ -141,7 +149,7 @@ See also:
 - Specialized iterator for processing directories of FITS files using a table built from the FITS headers.
 
 
-### LACosmic.jl
+#### LACosmic.jl
 
 [💻 Repository](https://github.com/JuliaAstro/LACosmic.jl) | [📘 Documentation](https://juliaastro.org/LACosmic/stable/)
 
@@ -151,7 +159,7 @@ See also:
 - Returns bad pixel masks and cleaned data
 
 
-### Photometry.jl
+#### Photometry.jl
 
 [💻 Repository](https://github.com/JuliaAstro/Photometry.jl) | [📘 Documentation](https://juliaastro.org/Photometry/stable/)
 
@@ -161,7 +169,7 @@ See also:
 - Fast and precise aperture photometry
 
 
-### PSFModels.jl
+#### PSFModels.jl
 
 [💻 Repository](https://github.com/JuliaAstro/PSFModels.jl) | [📘 Documentation](https://juliaastro.org/PSFModels/stable/)
 
@@ -171,7 +179,7 @@ See also:
 - Gaussian (Normal), Moffat, and Airy disk.
 
 
-### SAOImageDS9.jl
+#### SAOImageDS9.jl
 
 [💻 Repository](https://github.com/JuliaAstro/SAOImageDS9.jl) | [📘 Documentation](https://juliaastro.org/SAOImageDS9/stable/)
 
@@ -184,7 +192,9 @@ See also:
 
 ---
 
-### barrettp/Astrometry.jl
+### Astrometry
+
+#### barrettp/Astrometry.jl
 
 [💻 Repository](https://github.com/barrettp/Astrometry.jl) | [📘 Documentation](https://barrettp.github.io/Astrometry/dev)
 
@@ -193,7 +203,7 @@ See also:
 - More information can be found on the official website of the [Standards of Fundamental Astronomy](http://www.iausofa.org/).
 
 
-### AstroTime.jl
+#### AstroTime.jl
 
 [💻 Repository](https://github.com/JuliaAstro/AstroTime.jl) | [📘 Documentation](https://juliaastro.org/AstroTime/stable/)
 
@@ -203,7 +213,7 @@ See also:
 - Support all commonly used astronomical time scales
 
 
-### EarthOrientation.jl
+#### EarthOrientation.jl
 
 [💻 Repository](https://github.com/JuliaAstro/EarthOrientation.jl) | [📘 Documentation](https://juliaastro.org/EarthOrientation/stable/)
 
@@ -212,7 +222,7 @@ See also:
 - Calculate Earth orientation parameters from IERS tables
 
 
-### ERFA.jl
+#### ERFA.jl
 
 [💻 Repository](https://github.com/JuliaAstro/ERFA.jl) | [📘 Documentation](https://juliaastro.github.io/ERFA.jl/stable)
 
@@ -221,7 +231,7 @@ See also:
 - Low-level wrapper for [liberfa](https://github.com/liberfa/erfa)
 
 
-### ziotom78/Healpix.jl
+#### ziotom78/Healpix.jl
 
 [💻 Repository](https://github.com/ziotom78/Healpix.jl) | [📘 Documentation](https://ziotom78.github.io/Healpix.jl/stable/)
 
@@ -232,7 +242,7 @@ See also:
 - plotting support
 
 
-### Reproject.jl
+#### Reproject.jl
 
 [💻 Repository](https://github.com/JuliaAstro/Reproject.jl) | [📘 Documentation](https://juliaastro.org/Reproject.jl/dev/)
 
@@ -241,7 +251,7 @@ See also:
 - Uses [FITSIO.jl](https://github.com/JuliaAstro/FITSIO.jl) and [WCS.jl](https://github.com/JuliaAstro/WCS.jl) to reproject coordinate systems between FITS images
 
 
-### SkyCoords.jl
+#### SkyCoords.jl
 
 [💻 Repository](https://github.com/JuliaAstro/SkyCoords.jl) | [📘 Documentation](https://juliaastro.org/SkyCoords/stable/)
 
@@ -251,7 +261,7 @@ See also:
 - Fast conversion of coordinates between different systems
 
 
-### WCS.jl
+#### WCS.jl
 
 [💻 Repository](https://github.com/JuliaAstro/WCS.jl) | [📘 Documentation](https://juliaastro.org/WCS/stable/)
 
@@ -262,7 +272,9 @@ See also:
 
 ---
 
-### ajwheeler/Korg.jl
+### Spectroscopy
+
+#### ajwheeler/Korg.jl
 
 [💻 Repository](https://github.com/ajwheeler/Korg.jl) | [📘 Documentation](https://ajwheeler.github.io/Korg.jl/stable/)
 
@@ -270,7 +282,7 @@ See also:
 
 
 
-### Spectra.jl
+#### Spectra.jl
 
 [💻 Repository](https://github.com/JuliaAstro/Spectra.jl) | [📘 Documentation](https://juliaastro.org/Spectra/stable)
 
@@ -279,7 +291,7 @@ See also:
 - Utilities for interfacing with astronomical spectra and synthetic spectra libraries
 
 
-### fjebaker/SpectralFitting.jl
+#### fjebaker/SpectralFitting.jl
 
 [💻 Repository](https://github.com/fjebaker/SpectralFitting.jl) | [📘 Documentation](https://fjebaker.github.io/SpectralFitting.jl/dev/)
 
@@ -292,7 +304,9 @@ See also:
 
 ---
 
-### JuliaDSP/DSP.jl
+### Time Series Analysis
+
+#### JuliaDSP/DSP.jl
 
 [💻 Repository](https://github.com/JuliaDSP/DSP.jl) | [📘 Documentation](https://docs.juliadsp.org/stable/)
 
@@ -301,7 +315,7 @@ See also:
 - DSP.jl provides a number of common [digital signal processing](https://en.wikipedia.org/wiki/Digital_signal_processing) routines in Julia
 
 
-### LombScargle.jl
+#### LombScargle.jl
 
 [💻 Repository](https://github.com/JuliaAstro/LombScargle.jl) | [📘 Documentation](https://juliaastro.org/LombScargle/stable/)
 
@@ -311,7 +325,7 @@ See also:
 - Supports multi-threading
 
 
-### JuliaStats/TimeSeries.jl
+#### JuliaStats/TimeSeries.jl
 
 [💻 Repository](https://github.com/JuliaStats/TimeSeries.jl) | [📘 Documentation](https://juliastats.github.io/TimeSeries.jl/stable)
 
@@ -322,7 +336,9 @@ See also:
 
 ---
 
-### ptiede/Comrade.jl
+### Interferometry
+
+#### ptiede/Comrade.jl
 
 [💻 Repository](https://github.com/ptiede/Comrade.jl) | [📘 Documentation](https://ptiede.github.io/Comrade.jl/stable/)
 
@@ -331,7 +347,7 @@ See also:
 - A Bayesian differentiable modular modeling package for very long baseline interferometry
 
 
-### JuliaAPlavin/Difmap.jl
+#### JuliaAPlavin/Difmap.jl
 
 [💻 Repository](https://github.com/JuliaAPlavin/Difmap.jl) | [📘 Documentation](https://aplavin.github.io/Difmap.jl/test/examples.html)
 
@@ -341,7 +357,7 @@ See also:
 - Display images and plots from Difmap in interactive Julia environments
 
 
-### emmt/OIFITS.jl
+#### emmt/OIFITS.jl
 
 [💻 Repository](https://github.com/emmt/OIFITS.jl) | [📘 Documentation](https://github.com/emmt/OIFITS.jl?tab=readme-ov-file#support-for-oi-fits-data-in-julia)
 
@@ -350,7 +366,7 @@ See also:
 - Read and write OI-FITS optical interferometry data format
 
 
-### fabienbaron/OITOOLS.jl
+#### fabienbaron/OITOOLS.jl
 
 [💻 Repository](https://github.com/fabienbaron/OITOOLS.jl) | [📘 Documentation](https://fabienbaron.github.io/OITOOLS.jl/dev)
 
@@ -360,7 +376,7 @@ See also:
 - Note that despite having the same name as [JMMC's oitools](https://github.com/JMMC-OpenDev/oitools), they are completely unrelated and were developed independently
 
 
-### EHTJulia/PolarizedTypes.jl
+#### EHTJulia/PolarizedTypes.jl
 
 [💻 Repository](https://github.com/EHTJulia/PolarizedTypes.jl) | [📘 Documentation](https://ehtjulia.github.io/PolarizedTypes.jl/stable/)
 
@@ -371,7 +387,7 @@ See also:
     - `CoherencyMatrix` for coherency matrices in arbitrary bases, including a mixed basis
 
 
-### JuliaAPlavin/VLBIData.jl
+#### JuliaAPlavin/VLBIData.jl
 
 [💻 Repository](https://github.com/JuliaAPlavin/VLBIData.jl) | [📘 Documentation](https://aplavin.github.io/VLBIData.jl/test/examples.html)
 
@@ -381,7 +397,7 @@ See also:
 - Minimal writing support for source models
 
 
-### EHTJulia/VLBISkyModels.jl
+#### EHTJulia/VLBISkyModels.jl
 
 [💻 Repository](https://github.com/EHTJulia/VLBISkyModels.jl) | [📘 Documentation](https://ehtjulia.github.io/VLBISkyModels.jl/stable/)
 
@@ -394,7 +410,9 @@ See also:
 
 ## Statistics
 
-### JuliaPhysics/Measurements.jl
+### Uncertainty
+
+#### JuliaPhysics/Measurements.jl
 
 [💻 Repository](https://github.com/JuliaPhysics/Measurements.jl) | [📘 Documentation](https://juliaphysics.github.io/Measurements.jl/stable/)
 
@@ -404,7 +422,7 @@ See also:
 - The [linear error propagation theory](https://en.wikipedia.org/wiki/Propagation_of_uncertainty#Linear_combinations) is employed to propagate the errors
 
 
-### MonteCarloMeasurements.jl
+#### MonteCarloMeasurements.jl
 
 [💻 Repository](https://github.com/baggepinnen/MonteCarloMeasurements.jl) | [📘 Documentation](https://baggepinnen.github.io/MonteCarloMeasurements.jl/stable/)
 
@@ -413,7 +431,7 @@ See also:
 -  This package facilitates working with probability distributions by means of Monte-Carlo methods, in a way that allows for propagation of probability distributions through functions
 
 
-### JuliaAPlavin/Uncertain.jl
+#### JuliaAPlavin/Uncertain.jl
 
 [💻 Repository](https://github.com/JuliaAPlavin/Uncertain.jl) | [📘 Documentation](https://baggepinnen.github.io/MonteCarloMeasurements.jl/stable/)
 
@@ -424,7 +442,9 @@ See also:
 
 ---
 
-### BoxLeastSquares.jl
+### Optimization
+
+#### BoxLeastSquares.jl
 
 [💻 Repository](https://github.com/JuliaAstro/BoxLeastSquares.jl) | [📘 Documentation](https://juliaastro.org/BoxLeastSquares/stable/)
 
@@ -435,7 +455,7 @@ See also:
 - Fully compatible with [Unitful.jl](https://github.com/painterqubits/Unitful.jl)
 
 
-### jump-dev/JuMP.jl
+#### jump-dev/JuMP.jl
 
 [💻 Repository](https://github.com/jump-dev/JuMP.jl) | [📘 Documentation](http://jump.dev/JuMP.jl/)
 
@@ -444,7 +464,7 @@ See also:
 - JuMP is a domain-specific modeling language for [mathematical optimization](https://en.wikipedia.org/wiki/Mathematical_optimization) embedded in [Julia](https://julialang.org/)
 
 
-### SciML/NonlinearSolve.jl
+#### SciML/NonlinearSolve.jl
 
 [💻 Repository](https://github.com/SciML/NonlinearSolve.jl) | [📘 Documentation](https://docs.sciml.ai/NonlinearSolve/stable/)
 
@@ -453,7 +473,7 @@ See also:
 - Fast implementations of root finding algorithms in Julia that satisfy the SciML common interface
 
 
-### SciML/Optimization.jl
+#### SciML/Optimization.jl
 
 [💻 Repository](https://github.com/SciML/Optimization.jl) | [📘 Documentation](https://docs.sciml.ai/Optimization/stable/)
 
@@ -465,7 +485,9 @@ See also:
 
 ---
 
-### AstroLib.jl
+### General
+
+#### AstroLib.jl
 
 [💻 Repository](https://github.com/JuliaAstro/astrolib.jl) | [📘 Documentation](https://juliaastro.org/AstroLib/stable/)
 
@@ -474,7 +496,7 @@ See also:
 - Translation of many IDL AstroLib procedures
 
 
-### mileslucas/BiweightStats.jl
+#### mileslucas/BiweightStats.jl
 
 [💻 Repository](https://github.com/mileslucas/BiweightStats.jl) | [📘 Documentation](http://mileslucas.com/BiweightStats.jl/stable/)
 
@@ -483,7 +505,16 @@ See also:
 - Implements the location, scale, midvariance, midcovariance, and midcorrelation statistics
 
 
-### JuliaStats
+#### jeff-regier/Celeste.jl
+
+[💻 Repository](https://github.com/jeff-regier/Celeste.jl) | [📘 Documentation](https://github.com/jeff-regier/Celeste.jl/wiki/)
+
+**Scalable inference for a generative model of astronomical images**
+
+- Find and characterize stars and galaxies in astronomical images via approximate Bayesian inference
+
+
+#### JuliaStats
 
 [💻 Repository](https://github.com/JuliaStats) | [📘 Documentation](https://juliastats.org/)
 
@@ -492,7 +523,7 @@ See also:
 - Easy to use tools for statistics and machine learning
 
 
-### JuliaStats/Distributions.jl
+#### JuliaStats/Distributions.jl
 
 [💻 Repository](https://github.com/JuliaStats/Distributions.jl) | [📘 Documentation](https://juliastats.github.io/Distributions.jl/stable/)
 
@@ -501,7 +532,7 @@ See also:
 - A Julia package for probability distributions and associated functions
 
 
-### EHTJulia/FastHartleyTransform.jl
+#### EHTJulia/FastHartleyTransform.jl
 
 [💻 Repository](https://github.com/EHTJulia/FastHartleyTransform.jl) | [📘 Documentation](https://ehtjulia.github.io/FastHartleyTransform.jl/stable/)
 
@@ -511,11 +542,22 @@ See also:
 - It supports both CPUs and NVIDIA CUDA GPUs
 
 
+#### sefffal/Octofitter.jl
+
+[💻 Repository](https://github.com/sefffal/Octofitter.jl) | [📘 Documentation](https://sefffal.github.io/Octofitter.jl/dev)
+
+**Octofitter is a Julia package for performing Bayesian inference against a wide variety of exoplanet and binary star data**
+
+- You can also use Octofitter from Python using [octofitterpy](https://github.com/sefffal/octofitterpy)
+
+
 ---
 
 ## Utilities
 
-### eschnett/ASDF2.jl
+### Data I/O
+
+#### eschnett/ASDF2.jl
 
 [💻 Repository](https://github.com/eschnett/ASDF2.jl) | [📘 Documentation](https://eschnett.github.io/ASDF2.jl/dev/)
 
@@ -524,7 +566,7 @@ See also:
 - A new [Advanced Scientific Data Format (ASDF)](https://asdf-standard.readthedocs.io/en/latest/index.html) package, written in Julia
 
 
-### AstroImages.jl
+#### AstroImages.jl
 
 [💻 Repository](https://github.com/JuliaAstro/AstroImages.jl) | [📘 Documentation](https://juliaastro.org/AstroImages/stable/)
 
@@ -533,7 +575,7 @@ See also:
 - Works with the [FileIO.jl](https://github.com/JuliaIO/FileIO.jl) interface
 
 
-### CFITSIO.jl
+#### CFITSIO.jl
 
 [💻 Repository](https://github.com/JuliaAstro/CFITSIO.jl) | [📘 Documentation](https://juliaastro.org/CFITSIO/stable/)
 
@@ -543,7 +585,7 @@ See also:
 - The c interface can be directly accessed with the [CFITSIO_jll package](https://juliapackaging.github.io/BinaryBuilder.jl/dev/jll/)
 
 
-### emmt/EasyFITS.jl
+#### emmt/EasyFITS.jl
 
 [💻 Repository](https://github.com/emmt/EasyFITS.jl) | [📘 Documentation](https://emmt.github.io/EasyFITS.jl/dev)
 
@@ -552,7 +594,7 @@ See also:
 - EasyFITS is a [Julia](https://julialang.org/) package designed to make it easier to read and write data in [FITS](https://fits.gsfc.nasa.gov/fits_standard.html) format without sacrificing performances, flexibility, or readability.
 
 
-### barrettp/FITS.jl
+#### barrettp/FITS.jl
 
 [💻 Repository](https://github.com/barrettp/FITS.jl) | [📘 Documentation](https://barrettp.github.io/FITS.jl/)
 
@@ -561,7 +603,7 @@ See also:
 - A Julia Flexible Image Transport System (FITS) file IO package
 
 
-### FITSIO.jl
+#### FITSIO.jl
 
 [💻 Repository](https://github.com/JuliaAstro/FITSIO.jl) | [📘 Documentation](https://juliaastro.org/FITSIO/stable/)
 
@@ -571,7 +613,7 @@ See also:
 - FITS tables follow the [Tables.jl](https://github.com/JuliaData/Tables.jl) interface, allowing seamless integration with the rich data ecosystem, like [CSV.jl](https://github.com/JuliaData/CSV.jl), [DataFrames.jl](https://github.com/JuliaData/DataFrames.jl), etc.
 
 
-### FixedWidthTables.jl
+#### FixedWidthTables.jl
 
 [💻 Repository](https://github.com/JuliaAPlavin/FixedWidthTables.jl) | [📘 Documentation](https://github.com/JuliaAPlavin/FixedWidthTables.jl?tab=readme-ov-file#fixedwidthtablesjl)
 
@@ -580,7 +622,7 @@ See also:
 - Read fixed width (so-called ASCII) tables. A wide range of format specification options, including autodetection
 
 
-### JuliaAPlavin/SkyImages.jl
+#### JuliaAPlavin/SkyImages.jl
 
 [💻 Repository](https://github.com/JuliaAPlavin/SkyImages.jl) | [📘 Documentation](https://aplavin.github.io/SkyImages.jl/test/notebook.html)
 
@@ -591,7 +633,7 @@ See also:
 - Use original data as-is or project onto a rectangular grid
 
 
-### JuliaAPlavin/VirtualObservatory.jl
+#### JuliaAPlavin/VirtualObservatory.jl
 
 [💻 Repository](https://github.com/JuliaAPlavin/VirtualObservatory.jl) | [📘 Documentation](https://github.com/JuliaAPlavin/VirtualObservatory.jl?tab=readme-ov-file#virtualobservatoryjl)
 
@@ -601,7 +643,7 @@ See also:
 - Currently supports the Table Access Protocol (TAP), and a few key features specific to the VizieR database
 
 
-### JuliaAPlavin/VOTables.jl
+#### JuliaAPlavin/VOTables.jl
 
 [💻 Repository](https://github.com/JuliaAPlavin/VOTables.jl) | [📘 Documentation](https://github.com/JuliaAPlavin/VOTables.jl)
 
@@ -613,7 +655,9 @@ See also:
 
 ---
 
-### torrance/Casacore.jl
+### Data processing
+
+#### torrance/Casacore.jl
 
 [💻 Repository](https://github.com/torrance/Casacore.jl) | [📘 Documentation](https://github.com/torrance/Casacore.jl?tab=readme-ov-file#casacorejl)
 
@@ -623,7 +667,7 @@ See also:
 - Uses [casacorecxx](https://github.com/torrance/casacorecxx) which uses [CxxWrap](https://github.com/JuliaInterop/CxxWrap.jl) to wrap the C++ Casacore codebase. These raw objects and methods are available in `Casacore.LibCasacore`
 
 
-### JuliaData/DataFrames.jl
+#### JuliaData/DataFrames.jl
 
 [💻 Repository](https://github.com/JuliaData/DataFrames.jl) | [📘 Documentation](https://dataframes.juliadata.org/stable/)
 
@@ -632,7 +676,7 @@ See also:
 - Tools for working with tabular data in Julia
 
 
-### rafaqz/DimensionalData.jl
+#### rafaqz/DimensionalData.jl
 
 [💻 Repository](https://github.com/rafaqz/DimensionalData.jl) | [📘 Documentation](https://rafaqz.github.io/DimensionalData.jl/stable/)
 
@@ -642,7 +686,7 @@ See also:
 - It provides no-cost abstractions for named indexing, and fast index lookups
 
 
-### JuliaAPlavin/FlexiJoins.jl
+#### JuliaAPlavin/FlexiJoins.jl
 
 [💻 Repository](https://github.com/JuliaAPlavin/FlexiJoins.jl) | [📘 Documentation](https://aplavin.github.io/FlexiJoins.jl/test/examples.html)
 
@@ -651,7 +695,7 @@ See also:
 - From simple joins by key, to asof joins, to merging catalogs of terrestrial or celestial coordinates – `FlexiJoins` supports any usecase
 
 
-### gcalderone/SortMerge.jl
+#### gcalderone/SortMerge.jl
 
 [💻 Repository](https://github.com/gcalderone/SortMerge.jl) | [📘 Documentation](https://github.com/gcalderone/SortMerge.jl?tab=readme-ov-file#sortmerge)
 
@@ -663,7 +707,9 @@ See also:
 
 ---
 
-### AstroImages.jl
+### Data Viz
+
+#### AstroImages.jl
 
 [💻 Repository](https://github.com/JuliaAstro/AstroImages.jl) | [📘 Documentation](https://juliaastro.org/AstroImages/stable/)
 
@@ -672,7 +718,7 @@ See also:
 - Works with the [FileIO.jl](https://github.com/JuliaIO/FileIO.jl) interface
 
 
-### JuliaImages/ImageFiltering.jl
+#### JuliaImages/ImageFiltering.jl
 
 [💻 Repository](https://github.com/JuliaImages/ImageFiltering.jl) | [📘 Documentation](https://juliaimages.github.io/ImageFiltering.jl/stable)
 
@@ -681,7 +727,7 @@ See also:
 - ImageFiltering implements blurring, sharpening, gradient computation, and other linear filtering operations, as well nonlinear filters like min/max
 
 
-### ManuelBehrendt/Mera.jl
+#### ManuelBehrendt/Mera.jl
 
 [💻 Repository](https://github.com/ManuelBehrendt/Mera.jl) | [📘 Documentation](https://manuelbehrendt.github.io/Mera.jl/stable/)
 
@@ -692,7 +738,7 @@ See also:
 - Many predefined functions and examples
 
 
-### sefffal/PairPlots.jl
+#### sefffal/PairPlots.jl
 
 [💻 Repository](https://github.com/sefffal/PairPlots.jl) | [📘 Documentation](https://sefffal.github.io/PairPlots.jl/dev/)
 
@@ -705,7 +751,7 @@ See also:
 - [ReferenceFrameRotations.jl](https://github.com/JuliaSpace/ReferenceFrameRotations.jl)
 
 
-### JuliaAPlavin/SkyImages.jl
+#### JuliaAPlavin/SkyImages.jl
 
 [💻 Repository](https://github.com/JuliaAPlavin/SkyImages.jl) | [📘 Documentation](https://aplavin.github.io/SkyImages.jl/test/notebook.html)
 
@@ -718,7 +764,9 @@ See also:
 
 ---
 
-### AstroAngles.jl
+### Units/Constants
+
+#### AstroAngles.jl
 
 [💻 Repository](https://github.com/JuliaAstro/AstroAngles.jl) | [📘 Documentation](https://juliaastro.org/AstroAngles/stable/)
 
@@ -728,7 +776,7 @@ See also:
 - Methods for converting to hour-minute-second angles from degrees and radians, and vice-versa
 
 
-### SymbolicML/DynamicQuantities.jl
+#### SymbolicML/DynamicQuantities.jl
 
 [💻 Repository](https://github.com/SymbolicML/DynamicQuantities.jl) | [📘 Documentation](https://symbolicml.org/DynamicQuantities.jl/stable/)
 
@@ -738,7 +786,7 @@ See also:
 - Physical dimensions are stored as a value, as opposed to a parametric type, as in [Unitful.jl](https://github.com/PainterQubits/Unitful.jl)
 
 
-### JuliaPhysics/PhysicalConstants.jl
+#### JuliaPhysics/PhysicalConstants.jl
 
 [💻 Repository](https://github.com/JuliaPhysics/PhysicalConstants.jl) | [📘 Documentation](https://juliaphysics.github.io/PhysicalConstants.jl/stable/)
 
@@ -748,7 +796,7 @@ See also:
 - They are defined as instances of the new `Constant` type, which is subtype of `AbstractQuantity` (from [`Unitful.jl`](https://github.com/PainterQubits/Unitful.jl) package) and can also be turned into `Measurement` objects (from [`Measurements.jl`](https://github.com/JuliaPhysics/Measurements.jl) package) at request
 
 
-### PainterQubits/Unitful.jl
+#### PainterQubits/Unitful.jl
 
 [💻 Repository](https://github.com/PainterQubits/Unitful.jl) | [📘 Documentation](https://painterqubits.github.io/Unitful.jl/stable)
 
@@ -758,7 +806,7 @@ See also:
 - We want to support not only SI units but also any other unit system
 
 
-### UnitfulAstro.jl
+#### UnitfulAstro.jl
 
 [💻 Repository](https://github.com/JuliaAstro/UnitfulAstro.jl) | [📘 Documentation](https://juliaastro.org/UnitfulAstro/stable/)
 
