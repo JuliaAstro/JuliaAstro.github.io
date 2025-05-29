@@ -66,6 +66,7 @@ makedocs(
         assets = String[
             "assets/styles.css",
             "assets/favicon.ico",
+            case_studies_assets,
         ],
         inventory_version = "",
         edit_link = "main",
