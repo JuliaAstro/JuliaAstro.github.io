@@ -1,7 +1,7 @@
 {
     "order": [
-        "photodynamics.md",
-        "nbodygradient.md",
-        "limbdark.md"
+        "langfzac-photodynamics.md",
+        "ericagol-nbodygradient.md",
+        "rodluger-limbdark.md"
     ]
 }

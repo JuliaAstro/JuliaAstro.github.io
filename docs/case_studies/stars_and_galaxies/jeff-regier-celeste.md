@@ -1,12 +1,13 @@
 ---
 title: "Achieving petaflop performance with Celeste.jl"
+id: "jeff-regier-Celeste"
 description: "See how this team used Julia to produce the most accurate catalog of 188 million astronomical objects in just 14.6 minutes with state-of-the-art point and uncertainty estimates."
 date: 2019-04-10
 ---
 
 As part of a multi-institution, multi-disciplinary team, including the National Energy Research Scientific Computing Center (NERSC), Princeton, Harvard, Intel, MIT, and JuliaHub, researchers develop a state-of-the-art parallel computing method to analyze massize astronomy datasets at petascale.
 
-**Package: [Celeste.jl](https://github.com/jeff-regier/Celeste.jl)**
+**Package: [jeff-regier/Celeste.jl](https://github.com/jeff-regier/Celeste.jl)**
 
 ![image](https://s3.amazonaws.com/adsabs-thumbnails/seri/arXiv/arXiv/1803/00113/arxiv1803.00113_f2.png)
 
@@ -21,6 +22,6 @@ The Celeste team set a number of new milestones, including:
 
 See the team's series of papers below and [JuliaHub article](https://juliahub.com/industries/case-studies/celeste?_gl=1*1iaui43*_ga*MTk1NzU0MDA0NS4xNzQ2MDMxMzUz*_ga_8FC7JQQLXX*czE3NDgzODc5NTQkbzIkZzEkdDE3NDgzODkyMDUkajYwJGwwJGgw) for more:
 
-1. [Jeffrey Regier, Andrew Miller, David Schlegel, Ryan Adams, Jon McAuliffe, and Prabhat. "Approximate inference for constructing astronomical catalogs from images." In: Annals of Applied Statistics, 13 (3), 2019.](https://ui.adsabs.harvard.edu/abs/2018arXiv180300113R/abstract)
-1. [Jeffrey Regier, Kiran Pamnany, Keno Fischer, Andreas Noack, Maximilian Lam, Jarrett Revels, Steve Howard, Ryan Giordano, David Schlegel, Jon McAuliffe, Rollin Thomas, and Prabhat. “Cataloging the visible universe through Bayesian inference at petascale.” In: International Parallel and Distributed Processing Symposium (IPDPS), 2018.](https://ui.adsabs.harvard.edu/abs/2018arXiv180110277R/abstract)
-1. [Jeffrey Regier, Andrew Miller, Jon McAuliffe, Ryan Adams, Matt Hoffman, Dustin Lang, David Schlegel, and Prabhat. “Celeste: Variational inference for a generative model of astronomical images.” In: Proceedings of the 32nd International Conference on Machine Learning (ICML). 2015.](https://ui.adsabs.harvard.edu/abs/2015arXiv150601351R/abstract)
+> 1. Jeffrey Regier, Andrew C. Miller, David Schlegel, Ryan P. Adams, Jon D. McAuliffe, & Prabhat (2019). Approximate inference for constructing astronomical catalogs from images. [The Annals of Applied Statistics, 13(3), 1884 – 1926](https://projecteuclid.org/journals/annals-of-applied-statistics/volume-13/issue-3/Approximate-inference-for-constructing-astronomical-catalogs-from-images/10.1214/19-AOAS1258.full?tab=ArticleLink). [[ADS]](https://ui.adsabs.harvard.edu/abs/2018arXiv180300113R/abstract)
+> 1. Regier, J., Pamnany, K., Fischer, K., Noack, A., Lam, M., Revels, J., Howard, S., Giordano, R., Schlegel, D., McAuliffe, J., Thomas, R., & Prabhat, .. (2018). Cataloging the Visible Universe Through Bayesian Inference at Petascale. [In 2018 IEEE International Parallel and Distributed Processing Symposium (IPDPS) (pp. 44-53)](https://ieeexplore.ieee.org/document/8425159). [[ADS]](https://ui.adsabs.harvard.edu/abs/2018arXiv180110277R/abstract)
+> 1. Regier, J., Miller, A., McAuliffe, J., Adams, R., Hoffman, M., Lang, D., Schlegel, D., & Prabhat, M. (2015). Celeste: Variational inference for a generative model of astronomical images. [In Proceedings of the 32nd International Conference on Machine Learning (pp. 2095–2103). PMLR](https://proceedings.mlr.press/v37/regier15.html). [[ADS]](https://ui.adsabs.harvard.edu/abs/2015arXiv150601351R/abstract)

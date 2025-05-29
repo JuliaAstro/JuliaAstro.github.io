@@ -1,5 +1,6 @@
 ---
 title: "Measuring Resolved Star Formation Histories from High-precision Color–Magnitude Diagrams with StarFormationHistories.jl"
+id: "cgarling-starformationhistories"
 description: "See how this team from the University of Virginia, Space Telescope Science Institute (STScI), Rutgers, and Johns Hopkins University (JHU) uses Julia to measure star formation histories (SFHs)."
 author: "[Christopher T. Garling](https://github.com/cgarling)"
 date: 2025-04-07
