@@ -103,13 +103,33 @@ ecosystem() = (
         ),
         "Stars" => (
             (
+                name = "cgarling/BolometricCorrections.jl",
+                repo = "https://github.com/cgarling/BolometricCorrections.jl",
+                doc = "https://cgarling.github.io/BolometricCorrections.jl/stable/",
+                tagline = "Interfaces to libraries of astrophysical bolometric correction",
+                descr = """
+                - Access to and interpolation of pre-computed grids of bolometric corrections
+                """,
+                astropy = [],
+            ),
+            (
+                name = "cgarling/InitialMassFunctions.jl",
+                repo = "https://github.com/cgarling/InitialMassFunctions.jl",
+                doc = "https://cgarling.github.io/InitialMassFunctions.jl/stable/",
+                tagline = "Evaluation of and sampling from stellar initial mass functions",
+                descr = """
+                - Provides a framework to evaluate and sample from stellar initial mass functions, including common literature models
+                """,
+                astropy = [],
+            ),
+            (
                 name = "cgarling/StarFormationHistories.jl",
                 repo = "https://github.com/cgarling/StarFormationHistories.jl",
                 doc = "https://cgarling.github.io/StarFormationHistories.jl/stable/",
-                tagline = "Fitting astrophysical star formation histories via CMD modelling",
+                tagline = "Fitting astrophysical star formation histories via CMD modeling",
                 descr = """
-                - This package implements methods for modelling observed Hess diagrams (which are just binned color-magnitude diagrams, also called CMDs) and using them to fit astrophysical star formation histories (SFHs)
-                - This package also provides utilities for simulating CMDs given input SFHs and photometric error and completeness functions, which can be useful for planning observations and writing proposals
+                - Implements methods for modeling observed Hess diagrams (i.e., binned color-magnitude diagrams) and using them to fit astrophysical star formation histories (SFHs)
+                - Provides utilities for simulating CMDs given input SFHs and photometric error and completeness functions, which can be useful for planning observations and writing proposals
                 """,
                 astropy = [],
             ),
