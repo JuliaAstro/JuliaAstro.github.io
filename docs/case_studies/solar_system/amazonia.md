@@ -1,8 +1,8 @@
 ---
-title: Julia in the Brazillian space program
-description: See how Julia is used for current and future satellite missions.
+title: "Julia in the Brazillian space program"
+description: "See how Julia is used for current and future satellite missions."
 author: "[Ronan Arraes Jardim Chagas](https://github.com/ronisbr)"
-date: 2021-03-19
+date: "2021-03-19"
 ---
 
 The [Brazilian National Institute for Space Research (INPE)](https://www.gov.br/inpe/) uses [SatelliteToolbox.jl](https://github.com/JuliaSpace/SatelliteToolbox.jl) to plan its current and future Earth satellite missions.

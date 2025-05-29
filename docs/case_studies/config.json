@@ -2,9 +2,8 @@
     "template": "index.md",
     "theme": "bulmagrid",
     "order": [
-        "photometry",
         "solar_system",
         "exoplanets",
-        "stars"
+        "stars_and_galaxies"
     ]
 }
