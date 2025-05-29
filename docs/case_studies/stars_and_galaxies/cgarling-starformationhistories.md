@@ -14,6 +14,6 @@ This team has developed a modular, open-source code for measuring resolved SFHs 
 
 This paper demonstrates its application to JWST/NIRCAM data of a dwarf irregular galaxy in the Local Group, and to HST/ACS data of an ultrafaint Milky Way satellite dwarf galaxy.
 
-See their paper in the Astrophysical Journal for more:
+See their paper below in _The Astrophysical Journal_ for more:
 
-> [Garling, C., Kallivayalil, N., McQuinn, K., Warfield, J., Gennaro, M., & Cohen, R. (2025). Measuring Resolved Star Formation Histories from High-precision Color–Magnitude Diagrams with StarFormationHistories.jl. The Astrophysical Journal Supplement Series, 277(2), 61.](https://iopscience.iop.org/article/10.3847/1538-4365/adbb64)
+> Garling, C., Kallivayalil, N., McQuinn, K., Warfield, J., Gennaro, M., & Cohen, R. (2025). Measuring Resolved Star Formation Histories from High-precision Color–Magnitude Diagrams with StarFormationHistories.jl. [The Astrophysical Journal Supplement Series, 277(2), 61](https://iopscience.iop.org/article/10.3847/1538-4365/adbb64). [[ADS]](https://ui.adsabs.harvard.edu/abs/2025ApJS..277...61G/abstract)

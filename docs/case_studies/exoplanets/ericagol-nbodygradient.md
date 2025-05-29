@@ -10,12 +10,10 @@ This team uses Julia to develop a fast and accurate N-body code to study the mul
 
 **Package: [ericagol/NbodyGradient.jl](https://github.com/ericagol/NbodyGradient.jl)**
 
-**[ADS link](https://ui.adsabs.harvard.edu/abs/2021MNRAS.507.1582A/abstract)**
-
 ![image](https://s3.amazonaws.com/adsabs-thumbnails/seri/MNRAS/0507/stab2044/stab2044fig7.jpeg)
 
 This is accomplished by using a novel method to obtain the derivatives of the transit times with respect to the initial conditions and masses using the chain rule, which is quicker and more accurate than using finite differences or automatic differentiation.
 
 See their paper published in _MNRAS_ below and follow-up code, [langfzac/Photodynamics.jl](@ref langfzac-photodynamics), for more:
 
-> Agol, E., Hernandez, D., & Langford, Z. (2021). A differentiable N-body code for transit timing and dynamical modelling – I. Algorithm and derivatives. [Monthly Notices of the Royal Astronomical Society, 507(2), 1582-1605](https://academic.oup.com/mnras/article/507/2/1582/6324024).
+> Agol, E., Hernandez, D., & Langford, Z. (2021). A differentiable N-body code for transit timing and dynamical modelling – I. Algorithm and derivatives. [Monthly Notices of the Royal Astronomical Society, 507(2), 1582-1605](https://academic.oup.com/mnras/article/507/2/1582/6324024). [[ADS]](https://ui.adsabs.harvard.edu/abs/2021MNRAS.507.1582A/abstract)
