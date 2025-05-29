@@ -660,9 +660,9 @@ ecosystem() = (
                 astropy = ["astropy.io.fits"],
             ),
             (
-                name = "barrettp/FITS.jl",
-                repo = "https://github.com/barrettp/FITS.jl",
-                doc = "https://barrettp.github.io/FITS.jl/",
+                name = "barrettp/FITSFiles.jl",
+                repo = "https://github.com/barrettp/FITSFiles.jl",
+                doc = "https://barrettp.github.io/FITSFiles.jl/",
                 tagline = "A Julia Flexible Image Transport System (FITS) file IO package",
                 descr = """
                 - A Julia Flexible Image Transport System (FITS) file IO package
