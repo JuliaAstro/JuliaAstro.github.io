@@ -99,15 +99,30 @@ See also:
 
 ### Stars
 
+#### cgarling/BolometricCorrections.jl
+[💻 Repository](https://github.com/cgarling/BolometricCorrections.jl) | [📘 Documentation](https://cgarling.github.io/BolometricCorrections.jl/stable/)
+
+**Interfaces to libraries of astrophysical bolometric corrections**
+
+ - A bolometric correction (BC) is the offset between a star's absolute bolometric magnitude and its absolute magnitude in a specific bandpass or filter (e.g., V band). In order to place theoretical stellar models into observational filter spaces, bolometric corrections must be applied to the bolometric magnitudes of the stellar models. Here we provide access to and interpolation of pre-computed grids of bolometric corrections.
+
+#### cgarling/InitialMassFunctions.jl
+
+[💻 Repository](https://github.com/cgarling/InitialMassFunctions.jl) | [📘 Documentation](https://cgarling.github.io/InitialMassFunctions.jl/stable/)
+
+**Evaluation of and sampling from stellar initial mass functions**
+
+ - Stellar initial mass functions (IMFs) describe the distribution of initial masses that stars are born with. This package aims to implement and provide interfaces for working with initial mass functions, including but not limited to evaluating and sampling from published distributions.
+ - Several commonly used IMFs from the literature are implemented, including those from Salpeter 1955, Chabrier 2001 (both the broken power law and lognormal forms), Chabrier 2003, and Kroupa 2001.
+
 #### cgarling/StarFormationHistories.jl
 
 [💻 Repository](https://github.com/cgarling/StarFormationHistories.jl) | [📘 Documentation](https://cgarling.github.io/StarFormationHistories.jl/stable/)
 
-**Fitting astrophysical star formation histories via CMD modelling**
+**Fitting astrophysical star formation histories via CMD modeling**
 
-- This package implements methods for modelling observed Hess diagrams (which are just binned color-magnitude diagrams, also called CMDs) and using them to fit astrophysical star formation histories (SFHs)
+- This package implements methods for modeling observed Hess diagrams (which are just binned color-magnitude diagrams, also called CMDs) and using them to fit astrophysical star formation histories (SFHs)
 - This package also provides utilities for simulating CMDs given input SFHs and photometric error and completeness functions, which can be useful for planning observations and writing proposals
-
 
 ---
 
