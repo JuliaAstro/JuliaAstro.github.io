@@ -22,7 +22,7 @@ jobs:
   dev-docs-cleanup:
     needs: docs
     name: dev docs cleanup
-        runs-on: ubuntu-latest
+    runs-on: ubuntu-latest
     steps:
       - name: Checkout gh-pages branch
         uses: actions/checkout@v4
