@@ -1,4 +1,4 @@
-using Revise, MultiDocumenter, Documenter, DocumenterInterLinks
+using Revise, MultiDocumenter, Documenter, DocumenterInterLinks, DemoCards
 using LibGit2, Pkg, TOML, UUIDs, Downloads
 
 Revise.revise()
@@ -27,6 +27,9 @@ links = InterLinks(
         joinpath(@__DIR__, "clones", "AstroLib", "dev", "objects.inv"),
     )
 )
+
+# Case studies
+case_studies, postprocess_cb, case_studies_assets = makedemos("case_studies")
 
 # This make file compiles the documentation for the JuliaAstro website.
 # It consists of the usual documenter structure, but also follows the approach
@@ -63,6 +66,7 @@ makedocs(
         assets = String[
             "assets/styles.css",
             "assets/favicon.ico",
+            case_studies_assets,
         ],
         inventory_version = "",
         edit_link = "main",
@@ -79,10 +83,13 @@ makedocs(
         ],
         "Ecosystem" => "ecosystem.md",
         "Comparison with Astropy" => "comparison.md",
+        case_studies,
     ],
     warnonly = [:missing_docs],
     plugins = [links],
 )
+
+postprocess_cb()
 
 # Differentiate between pure Julia and wrapper packages
 wrapper_packages = [
