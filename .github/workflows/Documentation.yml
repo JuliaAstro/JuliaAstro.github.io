@@ -36,7 +36,7 @@ jobs:
 
       - name: Delete dev docs
         run: |
-          git rm -rf ./*/dev/
+          git rm -rf ./Spectra/dev/
       - name: Push changes
         run: |
           git config user.name "Documenter.jl"
