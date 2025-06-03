@@ -210,6 +210,16 @@ ecosystem() = (
                 astropy = ["photutils", "regions"],
             ),
             (
+                name = "PhotometricFilters.jl",
+                repo = "https://github.com/JuliaAstro/PhotometricFilters.jl",
+                doc = "https://juliaastro.org/PhotometricFilters/stable/",
+                tagline = "A reference of common photometric filters",
+                descr = """
+                - Provides access to, and operations on, photometric filter curves
+                """,
+                astropy = [],
+            ),
+            (
                 name = "PSFModels.jl",
                 repo = "https://github.com/JuliaAstro/PSFModels.jl",
                 doc = "https://juliaastro.org/PSFModels/stable/",
