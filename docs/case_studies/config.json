@@ -1,6 +1,6 @@
 {
     "template": "index.md",
-    "theme": "bulmagrid",
+    "theme": "transitiongrid",
     "order": [
         "solar_system",
         "exoplanets",
