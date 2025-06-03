@@ -15,16 +15,32 @@ jobs:
         with:
           version: "1"
       - uses: julia-actions/cache@v2
-      - name: Install dependencies
-        shell: julia --color=yes --project=docs {0}
-        run: |
-          using Pkg
-          Pkg.instantiate()
-      - name: Aggregate and deploy
-        run: |
-          git config user.name github-actions
-          git config user.email github-actions@github.com
-          julia --color=yes --project=docs docs/make.jl
+      - uses: julia-actions/julia-docdeploy@v1
         env:
           DOCUMENTER_KEY: ${{ secrets.DOCUMENTER_KEY }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+  dev-docs-cleanup:
+    needs: docs
+    name: dev docs cleanup
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout gh-pages branch
+        uses: actions/checkout@v4
+        with:
+          ref: gh-pages
+
+      - uses: julia-actions/setup-julia@v2
+        with:
+          version: '1'
+      - uses: julia-actions/cache@v2
+
+      - name: Delete dev docs
+        run: |
+          git rm -rf ./Spectra/dev/
+      - name: Push changes
+        run: |
+          git config user.name "Documenter.jl"
+          git config user.email "documenter@juliadocs.github.io"
+          git commit -m "delete dev docs"
+          git branch gh-pages-new $(echo "delete history" | git commit-tree HEAD^{tree})
+          git push --force origin gh-pages-new:gh-pages
