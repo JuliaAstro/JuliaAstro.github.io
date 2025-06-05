@@ -14,17 +14,22 @@ JuliaAstroDocs.page_ecosystem(ecosystem)
 # Sync comparison.md
 JuliaAstroDocs.page_compare(ecosystem_t)
 
+# Aggregate documentation location
+clonedir = ("--temp" in ARGS) ? mktempdir(; cleanup=false) : joinpath(@__DIR__, "clones")
+# Build location
+outpath =  ("--temp" in ARGS) ? mktempdir(; cleanup=false) : joinpath(@__DIR__, "build")
+
 # Prefer online docs, use local as fallback
 links = InterLinks(
     "AstroImages" => (
         "https://juliaastro.org/AstroImages/dev/",
         "https://juliaastro.org/AstroImages/dev/objects.inv",
-        joinpath(@__DIR__, "clones", "AstroImages", "dev", "objects.inv"),
+        joinpath(clonedir, "AstroImages", "dev", "objects.inv"),
     ),
     "AstroLib" => (
         "https://juliaastro.org/AstroLib.jl/stable/",
         "https://juliaastro.org/AstroLib.jl/stable/objects.inv",
-        joinpath(@__DIR__, "clones", "AstroLib", "dev", "objects.inv"),
+        joinpath(clonedir, "AstroLib", "dev", "objects.inv"),
     )
 )
 
@@ -54,6 +59,7 @@ mathengine = MathJax3(Dict(
     ),
 ))
 
+@info "Beginning main build for JuliaAstro MultiDocumenter site"
 makedocs(
     sitename = "JuliaAstro",
     authors = "Julia Astro Contributors",
@@ -88,6 +94,7 @@ makedocs(
     warnonly = [:missing_docs],
     plugins = [links],
 )
+@info "Initial build complete"
 
 postprocess_cb()
 
@@ -103,9 +110,7 @@ wrapper_packages = [
     "WCS",
 ]
 
-
-@info "Building aggregate JuliaAstro site"
-function generate_multidoc_refs(p; clonedir=joinpath(@__DIR__, "clones"))
+function generate_multidoc_refs(p; clonedir=clonedir)
     package_path = string(chopsuffix(p.name, ".jl"))
     package_name = if package_path in wrapper_packages
         "◯ " * package_path
@@ -133,8 +138,6 @@ function generate_multidoc_refs(p; clonedir=joinpath(@__DIR__, "clones"))
     end
 end
 
-ecosystem = JuliaAstroDocs.ecosystem()
-
 docs = [
     # JuliaAstro's own generated pages
     MultiDocumenter.MultiDocRef(
@@ -153,6 +156,17 @@ docs = [
     end...,
 ]
 
+# This make file compiles the documentation for the JuliaAstro website.
+# It consists of the usual documenter structure, but also follows the approach
+# of the SciML docs page https://github.com/SciML/SciMLDocs/blob/main/docs/make.jl
+# by generating nested documentation for packages under the JuliaAstro organization.
+# That way, docs for all packages are browsable and searchable in one place!
+
+@info "Beginning aggregate build for JuliaAstro site"
+@info """
+Documentation clone directory: $(clonedir)
+Build directory: $(outpath)
+"""
 MultiDocumenter.make(
     outpath,
     docs;
@@ -166,7 +180,10 @@ MultiDocumenter.make(
     brand_image = MultiDocumenter.BrandImage(".", joinpath("assets", "logo.svg")),
     sitemap = true,
 )
-@info "Aggregate build done"
+@info "Aggregate build complete"
+
+# Remove dev docs from JuliaAstro site
+run(`rm -rf docs/build/Spectra/dev/`)
 
 # Download logo
 # assets_dir = joinpath(outpath, "assets")
