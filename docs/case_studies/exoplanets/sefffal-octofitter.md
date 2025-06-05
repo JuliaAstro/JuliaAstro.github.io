@@ -12,8 +12,7 @@ This team has developed a fast and differentiable multimethod orbit-modeling and
 
 ![image](https://sefffal.github.io/Octofitter.jl/stable/assets/gallery.png)
 
- There techniques include state-of-the-art Bayesian inference techniques to combine direct imaging, radial velocity, and interferometry data of exoplanets close to their host stars. Check out their series of papers below to see it in action on real exoplanetary systems.
-
+Their techniques include state-of-the-art Bayesian inference techniques to combine direct imaging, radial velocity, and interferometry data of exoplanets close to their host stars. Check out their series of papers below to see it in action on real exoplanetary systems.
 
 > 1. Thompson, W., Lawrence, J., Blakely, D., Marois, C., Wang, J., Giordano, M., Brandt, T., Johnstone, D., Ruffio, J.B., Ammons, S., Crotts, K., Do \'O, C., Gonzales, E., & Rice, M. (2023). Octofitter: Fast, Flexible, and Accurate Orbit Modeling to Detect Exoplanets. [The Astronomical Journal, 166(4), 164](https://iopscience.iop.org/article/10.3847/1538-3881/acf5cc). [[ADS]](https://ui.adsabs.harvard.edu/abs/2023AJ....166..164T/abstract)
 > 2. Hammond, I., Christiaens, V., Price, D., Blakely, D., Trevascus, D., Bonse, M., Cantalloube, F., Marleau, G.D., Pinte, C., Juillard, S., Samland, M., Thompson, W., & Wallace, A. (2025). Keplerian motion of a compact source orbiting the inner disc of PDS 70: a third protoplanet in resonance with b and c?. [Monthly Notices of the Royal Astronomical Society, 539(2), 1613-1627](https://academic.oup.com/mnras/article/539/2/1613/8110708). [[ADS]](https://ui.adsabs.harvard.edu/abs/2025MNRAS.539.1613H/abstract)

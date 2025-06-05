@@ -5,7 +5,7 @@ author: "[Joseph D. Carpinelli](https://github.com/cadojo)"
 date: "2024-04-21"
 ---
 
-This meta-packag makes performing common tasks in ephemeris fetching and parsin from a variety of different sources easy.
+This meta-package makes performing common tasks in ephemeris fetching and parsing from a variety of different sources easy.
 
 **Package: [EphemerisSources.jl](https://github.com/JuliaAstro/EphemerisSources.jl)**
 
