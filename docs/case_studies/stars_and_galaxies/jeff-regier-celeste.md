@@ -1,5 +1,5 @@
 ---
-title: "Achieving petaflop performance with Celeste.jl"
+title: "Achieving Petaflop Performance with Celeste.jl"
 id: "jeff-regier-Celeste"
 description: "See how this team used Julia to produce the most accurate catalog of 188 million astronomical objects in just 14.6 minutes with state-of-the-art point and uncertainty estimates."
 date: 2019-04-10
