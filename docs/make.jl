@@ -161,7 +161,7 @@ MultiDocumenter.make(
 @info "Aggregate build complete"
 
 # Remove dev docs from JuliaAstro site
-rm.(glob("*/dev/"); recursive=true)
+rm.(glob(joinpath("*", "dev"), outpath); recursive=true)
 
 # Download logo
 # assets_dir = joinpath(outpath, "assets")
