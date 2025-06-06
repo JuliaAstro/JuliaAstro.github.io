@@ -161,7 +161,7 @@ MultiDocumenter.make(
 @info "Aggregate build complete"
 
 # Remove dev docs from JuliaAstro site
-run(`rm -rf docs/build/Spectra/dev/`)
+run(`rm -rf docs/build/*/dev/`)
 
 # Download logo
 # assets_dir = joinpath(outpath, "assets")
