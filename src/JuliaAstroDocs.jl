@@ -21,12 +21,22 @@ ecosystem() = (
             (
                 name = "EphemerisSources.jl",
                 repo = "https://github.com/JuliaAstro/EphemerisSources.jl",
-                doc = "https://juliaastro.org/EphemerisSources.jl/docs",
+                doc = "https://juliaastro.org/EphemerisSources.jl",
                 tagline = "Meta package for accessing JPL HORIZONS and SPICE sources",
                 descr = """
                 - Calculate positions and velocities of solar system bodies
                 """,
                 astropy = ["astropy.coordinates"],
+            ),
+            (
+                name = "GeneralAstrodynamics.jl",
+                repo = "https://github.com/JuliaAstro/GeneralAstrodynamics.jl",
+                doc = "https://juliaastro.org/GeneralAstrodynamics.jl",
+                tagline = "Astrodynamics with units! Provides common astrodynamics calculations, plotting, and iterative Halo, Kepler, and Lambert solvers.",
+                descr = """
+                - Common astrodynamics calculations, with hooks into the SciML ecosystem.
+                """,
+                astropy = [],
             ),
             (
                 name = "PerezHz/HORIZONS.jl",
