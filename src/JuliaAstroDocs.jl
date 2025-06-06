@@ -8,6 +8,17 @@ ecosystem() = (
     "Domain" => (
         "Solar System" => (
             (
+                name = "CALCEPH.jl",
+                repo = "https://github.com/JuliaAstro/CALCEPH.jl",
+                doc = "https://juliaastro.org/CALCEPH/stable/",
+                tagline = "A wrapper to CALCEPH: IMCCE planetary ephemeris access library",
+                descr = """
+                - This is a julia wrapper for [CALCEPH](https://www.imcce.fr/inpop/calceph/) a C library for reading planetary ephemeris files, such as [INPOPxx](https://www.imcce.fr/inpop), JPL DExxx and SPICE ephemeris files
+                - [CALCEPH](https://www.imcce.fr/inpop/calceph/) C library is developped by [IMCCE](https://www.imcce.fr/)
+                """,
+                astropy = ["astropy.coordinates"],
+            ),
+            (
                 name = "EphemerisSources.jl",
                 repo = "https://github.com/JuliaAstro/EphemerisSources.jl",
                 doc = "https://juliaastro.org/EphemerisSources.jl/docs",
