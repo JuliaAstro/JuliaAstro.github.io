@@ -20,6 +20,7 @@ The rendered JuliaAstro site is published online using GitHub Pages at <https://
   ```julia
   JuliaAstro.github.io
   ├── docs/
+  │   ├── case_studies/
   │   ├── clones/
   │   ├── make.jl
   │   └── src/
@@ -39,7 +40,7 @@ The rendered JuliaAstro site is published online using GitHub Pages at <https://
 
 ## Contributing
 
-Below we walk through two main ways to contribute to the JuliaAstro site:
+Below we walk through three main ways to contribute to the JuliaAstro site:
 
 ### 1. Editing existing markdown content
 
@@ -67,6 +68,36 @@ Our Ecosystem page and Comparison page are integrated with the rest of the site,
 
 If appropriate, we appreciate a quick entry for your package in the `astropy` field that relates it to a similar package in the [Astropy ecosystem](https://www.astropy.org/). This helps new users who may be more familiar with Python get more easily oriented in the Julia ecosystem. See our [Comparison page](https://juliaastro.org/home/comparison/) for examples. If you feel that there is not a good match for your package, you can just leave the `astropy` field blank (i.e., as an empty array `[]`) and it will not appear in this page.
 
+### 3. Adding a new entry to our [Case studies page](https://juliaastro.org/home/case_studies/)
+
+This is a great way to showcase how packages in the JuliaAstro and wider aero/astro ecosystem are used in real world use cases. Each case study is organized in the following way within the `docs/case_studies` directory:
+
+```julia
+JuliaAstro.github.io/docs/case_studies/
+├── config.json
+├── exoplanets
+│   ├── config.json
+│   ├── <author username>-<package name>.md
+│   └── sefffal-octofitter.md
+├── index.md
+└── ...
+```
+
+Above is an example entry in the `exoplanets` section of the case studies page, which follows the same structure recommended in the [DemoCards.jl documentation](https://democards.juliadocs.org/stable/quickstart/). To summarize:
+
+* `index.md` is the main case-study page that all case study cards are displayed in
+* The top-level `config.json` sets the card theme and order that each case study category (e.g., solar system, exoplanets, etc.) appears.
+* The second-level `config.json` sets the order that each case study within a given category will appear in
+* `<author username>-<package name>.md` is the main entry point to adding a new case study and follows the same naming convention used in the rest of this site. You can follow other case study markdown files in this directory (e.g., `sefffal-octofitter.md`) as a template.
+
+
+All in all, to add a new case study:
+
+1. Navigate to the appropriate case study category, e.g., `exoplanets`
+1. Copy one of the existing case study markdown files, e.g., `sefffal-octofitter.md` into your own case study file following the same naming convention, i.e., `<author username>-<package>`
+1. Update the content in the new file with your case study text.
+1. Add an entry to `JuliaAstro.github.io/docs/case_studies/<case study category>/config.json` with your new case study filename. Note that trailing commas are not supported in the JSON spec.
+
 ## Testing locally / developer docs
 
 Add [LiveServer.jl](https://github.com/JuliaDocs/LiveServer.jl) to your global env and then run the following in the `JuliaAstro.github.io/` folder:
@@ -76,7 +107,7 @@ Add [LiveServer.jl](https://github.com/JuliaDocs/LiveServer.jl) to your global e
 
 julia> using LiveServer
 
-julia> 	servedocs(; include_dirs=["src/"], skip_files=["docs/src/comparison.md", "docs/src/ecosystem.md"], launch_browser=true)
+julia> servedocs(; include_dirs=["src/", "docs/case_studies/"], skip_files=["docs/src/comparison.md", "docs/src/ecosystem.md"], launch_browser=true)
 ```
 
 The `include_dirs` arg allows our internal Revise worklow to pick up changes in `src/JuliaAstro.jl` automatically, and the `skip_files` arg keeps Documenter.jl from falling into an infinite loop as `docs/make.jl` watches for changes to our markdown files.
