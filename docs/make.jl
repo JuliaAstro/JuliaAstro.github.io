@@ -1,5 +1,5 @@
 using Revise, MultiDocumenter, Documenter, DocumenterInterLinks
-using LibGit2, Pkg, TOML, UUIDs, Downloads
+using LibGit2, Pkg, TOML, UUIDs, Downloads, Glob
 
 Revise.revise()
 
@@ -161,7 +161,7 @@ MultiDocumenter.make(
 @info "Aggregate build complete"
 
 # Remove dev docs from JuliaAstro site
-run(`rm -rf docs/build/*/dev/`)
+rm.(glob("*/dev/"); recursive=true)
 
 # Download logo
 # assets_dir = joinpath(outpath, "assets")
