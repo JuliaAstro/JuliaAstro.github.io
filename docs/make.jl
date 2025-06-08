@@ -1,5 +1,5 @@
 using Revise, MultiDocumenter, Documenter, DocumenterInterLinks, DemoCards
-using LibGit2, Pkg, TOML, UUIDs, Downloads
+using LibGit2, Pkg, TOML, UUIDs, Downloads, Glob
 
 Revise.revise()
 
@@ -183,7 +183,7 @@ MultiDocumenter.make(
 @info "Aggregate build complete"
 
 # Remove dev docs from JuliaAstro site
-run(`rm -rf docs/build/Spectra/dev/`)
+rm.(glob(joinpath("*", "dev"), outpath); recursive=true)
 
 # Download logo
 # assets_dir = joinpath(outpath, "assets")
