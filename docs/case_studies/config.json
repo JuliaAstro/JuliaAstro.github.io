@@ -1,0 +1,9 @@
+{
+    "template": "index.md",
+    "theme": "transitiongrid",
+    "order": [
+        "solar_system",
+        "exoplanets",
+        "stars_and_galaxies"
+    ]
+}
