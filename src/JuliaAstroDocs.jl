@@ -327,7 +327,7 @@ ecosystem() = (
             (
                 name = "Reproject.jl",
                 repo = "https://github.com/JuliaAstro/Reproject.jl",
-                doc = "https://juliaastro.org/Reproject.jl/dev/",
+                doc = "https://juliaastro.org/Reproject/stable/",
                 tagline = "Astronomical image reprojection",
                 descr = """
                 - Uses [FITSIO.jl](https://github.com/JuliaAstro/FITSIO.jl) and [WCS.jl](https://github.com/JuliaAstro/WCS.jl) to reproject coordinate systems between FITS images
