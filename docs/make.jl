@@ -1,5 +1,5 @@
-using Revise, MultiDocumenter, Documenter, DocumenterInterLinks
-using LibGit2, Pkg, TOML, UUIDs, Downloads
+using Revise, MultiDocumenter, Documenter, DocumenterInterLinks, DemoCards
+using LibGit2, Pkg, TOML, UUIDs, Downloads, Glob
 
 Revise.revise()
 
@@ -33,6 +33,24 @@ links = InterLinks(
     )
 )
 
+# Case studies
+case_studies, postprocess_cb, case_studies_assets = makedemos("case_studies")
+
+# This make file compiles the documentation for the JuliaAstro website.
+# It consists of the usual documenter structure, but also follows the approach
+# of the SciML docs page https://github.com/SciML/SciMLDocs/blob/main/docs/make.jl
+# by generating nested documentation for packages under the JuliaAstro organization.
+# That way, docs for all packages are browsable and searchable in one place!
+
+clonedir = ("--temp" in ARGS) ? mktempdir(; cleanup=false) : joinpath(@__DIR__, "clones")
+outpath =  ("--temp" in ARGS) ? mktempdir(; cleanup=false) : joinpath(@__DIR__, "build")
+
+@info """
+Cloning packages into: $(clonedir)
+Building aggregate site into: $(outpath)
+"""
+
+@info "Building MultiDocumenter site for JuliaAstro"
 mathengine = MathJax3(Dict(
     :loader => Dict("load" => ["[tex]/require", "[tex]/mathtools"]),
     :tex => Dict(
@@ -54,6 +72,7 @@ makedocs(
         assets = String[
             "assets/styles.css",
             "assets/favicon.ico",
+            case_studies_assets,
         ],
         inventory_version = "",
         edit_link = "main",
@@ -70,11 +89,14 @@ makedocs(
         ],
         "Ecosystem" => "ecosystem.md",
         "Comparison with Astropy" => "comparison.md",
+        case_studies,
     ],
     warnonly = [:missing_docs],
     plugins = [links],
 )
 @info "Initial build complete"
+
+postprocess_cb()
 
 # Differentiate between pure Julia and wrapper packages
 wrapper_packages = [
@@ -161,7 +183,7 @@ MultiDocumenter.make(
 @info "Aggregate build complete"
 
 # Remove dev docs from JuliaAstro site
-run(`rm -rf docs/build/Spectra/dev/`)
+rm.(glob(joinpath("*", "dev"), outpath); recursive=true)
 
 # Download logo
 # assets_dir = joinpath(outpath, "assets")

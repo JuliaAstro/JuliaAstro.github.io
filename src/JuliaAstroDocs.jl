@@ -8,14 +8,35 @@ ecosystem() = (
     "Domain" => (
         "Solar System" => (
             (
+                name = "CALCEPH.jl",
+                repo = "https://github.com/JuliaAstro/CALCEPH.jl",
+                doc = "https://juliaastro.org/CALCEPH/stable/",
+                tagline = "A wrapper to CALCEPH: IMCCE planetary ephemeris access library",
+                descr = """
+                - This is a julia wrapper for [CALCEPH](https://www.imcce.fr/inpop/calceph/) a C library for reading planetary ephemeris files, such as [INPOPxx](https://www.imcce.fr/inpop), JPL DExxx and SPICE ephemeris files
+                - [CALCEPH](https://www.imcce.fr/inpop/calceph/) C library is developped by [IMCCE](https://www.imcce.fr/)
+                """,
+                astropy = ["astropy.coordinates"],
+            ),
+            (
                 name = "EphemerisSources.jl",
                 repo = "https://github.com/JuliaAstro/EphemerisSources.jl",
-                doc = "https://juliaastro.org/EphemerisSources.jl/docs",
+                doc = "https://juliaastro.org/EphemerisSources.jl",
                 tagline = "Meta package for accessing JPL HORIZONS and SPICE sources",
                 descr = """
                 - Calculate positions and velocities of solar system bodies
                 """,
                 astropy = ["astropy.coordinates"],
+            ),
+            (
+                name = "GeneralAstrodynamics.jl",
+                repo = "https://github.com/JuliaAstro/GeneralAstrodynamics.jl",
+                doc = "https://juliaastro.org/GeneralAstrodynamics.jl",
+                tagline = "Astrodynamics with units! Provides common astrodynamics calculations, plotting, and iterative Halo, Kepler, and Lambert solvers.",
+                descr = """
+                - Common astrodynamics calculations, with hooks into the SciML ecosystem.
+                """,
+                astropy = [],
             ),
             (
                 name = "PerezHz/HORIZONS.jl",
@@ -76,6 +97,22 @@ ecosystem() = (
                 - Morphological operations (rotation, stacking, shifting)
                 - Masking routines (circles, annulus, series of annuli)
                 - Spectral scaling and descaling
+                """,
+                astropy = [],
+            ),
+            (
+                name = "Orbits.jl",
+                repo = "https://github.com/JuliaAstro/Orbits.jl",
+                doc = "https://juliaastro.org/Orbits/stable/",
+                tagline = "Flexible and fast astronomical orbits",
+                descr = """
+                The goals of this package are, in this order:
+                
+                * have a simple interface with high composability
+                * be flexible with respect to numeric types and application
+                * be fully compatible with [ChainRules.jl](https://github.com/juliadiff/ChainRules.jl) automatic differentiation (AD) system to leverage the derived analytical gradients
+                * provide a codebase that is well-organized, instructive, and easy to extend
+                * maintain high performance: at least as fast as similar tools
                 """,
                 astropy = [],
             ),
@@ -300,7 +337,7 @@ ecosystem() = (
             (
                 name = "Reproject.jl",
                 repo = "https://github.com/JuliaAstro/Reproject.jl",
-                doc = "https://juliaastro.org/Reproject.jl/dev/",
+                doc = "https://juliaastro.org/Reproject/stable/",
                 tagline = "Astronomical image reprojection",
                 descr = """
                 - Uses [FITSIO.jl](https://github.com/JuliaAstro/FITSIO.jl) and [WCS.jl](https://github.com/JuliaAstro/WCS.jl) to reproject coordinate systems between FITS images
