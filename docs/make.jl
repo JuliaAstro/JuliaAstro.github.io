@@ -22,14 +22,14 @@ outpath =  ("--temp" in ARGS) ? mktempdir(; cleanup=false) : joinpath(@__DIR__, 
 # Prefer online docs, use local as fallback
 links = InterLinks(
     "AstroImages" => (
-        "https://juliaastro.org/AstroImages/dev/",
-        "https://juliaastro.org/AstroImages/dev/objects.inv",
-        joinpath(clonedir, "AstroImages", "dev", "objects.inv"),
+        "https://juliaastro.org/AstroImages/stable/",
+        "https://juliaastro.org/AstroImages/stable/objects.inv",
+        joinpath(clonedir, "AstroImages", "stable", "objects.inv"),
     ),
     "AstroLib" => (
-        "https://juliaastro.org/AstroLib.jl/stable/",
-        "https://juliaastro.org/AstroLib.jl/stable/objects.inv",
-        joinpath(clonedir, "AstroLib", "dev", "objects.inv"),
+        "https://juliaastro.org/AstroLib/stable/",
+        "https://juliaastro.org/AstroLib/stable/objects.inv",
+        joinpath(clonedir, "AstroLib", "stable", "objects.inv"),
     )
 )
 
