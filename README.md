@@ -1,8 +1,8 @@
 JuliaAstro.github.io
 ====================
 
-[![Static Badge](https://img.shields.io/badge/Docs-stable-blue)](https://juliaastro.org/)
-[![Build website](https://github.com/JuliaAstro/JuliaAstro.github.io/actions/workflows/Documentation.yml/badge.svg?branch=main)](https://github.com/JuliaAstro/JuliaAstro.github.io/actions/workflows/Documentation.yml)
+[![Stable](https://img.shields.io/badge/docs-stable-blue.svg)](https://juliaastro.org/)
+[![Build website](https://github.com/JuliaAstro/JuliaAstro.github.io/actions/workflows/Documentation.yml/badge.svg)](https://github.com/JuliaAstro/JuliaAstro.github.io/actions/workflows/Documentation.yml)
 [![pages-build-deployment](https://github.com/JuliaAstro/JuliaAstro.github.io/actions/workflows/pages/pages-build-deployment/badge.svg?branch=gh-pages)](https://github.com/JuliaAstro/JuliaAstro.github.io/actions/workflows/pages/pages-build-deployment)
 [![Test JuliaAstro packages](https://github.com/JuliaAstro/JuliaAstro.github.io/actions/workflows/CI.yml/badge.svg)](https://github.com/JuliaAstro/JuliaAstro.github.io/actions/workflows/CI.yml)
 
