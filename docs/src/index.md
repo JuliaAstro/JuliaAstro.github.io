@@ -18,7 +18,6 @@ Our contributors come from diverse backgrounds and have various levels of intera
 - [#astronomy](slack://channel?id=CMXU6SD7V&team=T68168MUP) on [JuliaLang Slack](https://julialang.org/slack/)
 - [#astronomy](https://julialang.zulipchat.com/#narrow/channel/astronomy) on [JuliaLang Zulip](https://julialang.zulipchat.com/register/)
 - [Astro/Space](https://discourse.julialang.org/c/domain/astro) topics on JuliaLang Discourse
-- [julia-astro](https://groups.google.com/forum/#!forum/julia-astro) mailing list on Google Groups
 - [Monthly JuliaAstro community call](https://julialang.org/community/#events) - Fourth Wednesday of each month at 12:00 ET
 
 ## Google Summer of Code (GSoC)
