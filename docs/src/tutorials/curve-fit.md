@@ -23,7 +23,7 @@ In your own code, you most likely won't need all of these packages. Pick and cho
 
 If you will be using these tools as part of a bigger project, it's strongly recommended to create a [Julia Project](https://pkgdocs.julialang.org/v1/environments/) to record package versions. If you're just experimenting, you can create a temporary project by running `] activate --temp` in the Julia REPL.
 
-If you're using [Pluto notebooks](https:/plutojl.org), installing and recording package versions in a project are handled for you automatically.
+If you're using [Pluto notebooks](https://plutojl.org), installing and recording package versions in a project are handled for you automatically.
 
 
 ## Generating the data
