@@ -23,7 +23,7 @@ If you will be using these tools as part of a bigger project, it's strongly reco
 pkg> activate --temp
 ```
 
-If you're using [Pluto notebooks](https://github.com/fonsp/Pluto.jl), installing and recording package versions in a project are handled for you automatically.
+If you're using [Pluto notebooks](https://plutojl.org), installing and recording package versions in a project are handled for you automatically.
 
 
 ## Downloading the data
