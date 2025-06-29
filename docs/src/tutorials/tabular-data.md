@@ -5,8 +5,8 @@ Tables are a common way to represent various forms of catalogs. One common forma
 In these examples, we will fetch and load the Hipparcos-GAIA Catalog of Accelerations [(HGCA, Brandt et al 2021)](https://iopscience.iop.org/article/10.3847/1538-4365/abf93c).
 This catalog cross matches stars from the Hipparcos and GAIA catalogs in order to calculate the long term astrometric proper motion anomaly; that is, the star's deviation from straight line motion in the plane of the sky over the ~20 baseline between the two missions.
 
-A wide range of tabular data formats are supported in Julia under a common [Tables.jl interface](https://tables.juliadata.org). For example, 
-[CSV](https://github.com/JuliaData/CSV.jl.git), [Excel](https://github.com/felipenoris/XLSX.jl.git), [Arrow](https://github.com/apache/arrow-julia), [CASA Tables](http://mweastwood.info/CasaCore.jl/stable/), and various SQL formats to name a few.
+A wide range of tabular data formats are supported in Julia under a common [Tables.jl interface](https://tables.juliadata.org). For example,
+[CSV](https://csv.juliadata.org), [Excel](https://felipenoris.github.io/XLSX.jl), [Arrow](https://github.com/apache/arrow-julia), [CASA Tables](http://mweastwood.info/CasaCore.jl/stable/), and various SQL formats to name a few.
 
 
 ## Packages
@@ -27,7 +27,7 @@ using Pkg; Pkg.add(["FITSIO", "DataFrames", "Plots", "AstroLib"])
 
 If you will be using these tools as part of a larger project, it's strongly recommended to create a [Julia Project](https://pkgdocs.julialang.org/v1/environments/) to record package versions.  If you're just experimenting, you can create a temporary project by running `] activate --temp`.
 
-If you're using [Pluto notebooks](https://github.com/fonsp/Pluto.jl), installing and recording package versions in a project are handled for you automatically.
+If you're using [Pluto notebooks](https://plutojl.org), installing and recording package versions in a project are handled for you automatically.
 
 
 
