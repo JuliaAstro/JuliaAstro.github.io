@@ -21,7 +21,7 @@ using Pkg; Pkg.add(["Plots", "Optimization", "OptimizationOptimJL", "Turing", "P
 ```
 In your own code, you most likely won't need all of these packages. Pick and choose the one that best fits your problem.
 
-If you will be using these tools as part of a bigger project, it's strongly recommended to create a [Julia Project](https://pkgdocs.julialang.org/v1/environments/) to record package versions. If you're just experimenting, you can create a temporary project by running `] activate --temp`.
+If you will be using these tools as part of a bigger project, it's strongly recommended to create a [Julia Project](https://pkgdocs.julialang.org/v1/environments/) to record package versions. If you're just experimenting, you can create a temporary project by running `] activate --temp` in the Julia REPL.
 
 If you're using [Pluto notebooks](https:/plutojl.org), installing and recording package versions in a project are handled for you automatically.
 
@@ -151,7 +151,7 @@ The packages [LsqFit](https://julianlsolvers.github.io/LsqFit.jl/dev/) and [GLM]
 
 The packages above can be used to fit different polynomial models, but if we have a truly arbitrary Julia function we would like to fit to some data we can use the [Optimization.jl](http://optimization.sciml.ai/stable/) package. Through its various backends, Optimization.jl supports a very wide range of algorithms for local, global, convex, and non-convex optimization.
 
-The first step is to define our objective function. We'll reuse our simple `linfunc` linear function from above:
+The first step is to define our objective function. We'll reuse our simple `linfunc` linear function from above and create an objective function based on the sum of the squared errors
 ```julia
 linfunc(x; slope, intercept) = slope*x + intercept
 
@@ -174,7 +174,10 @@ function objective(u, data)
     # Return the sum of squares of the residuals to minimize
     return sum(residuals.^2)
 end
+```
 
+Now, we'll use SciML's problem-algorithm-solve workflow to solve our optimization problem:
+```julia
 # Define the initial parameter values for slope and intercept
 u0 = [1.0, 1.0]
 # Pass through the data we want to fit
@@ -209,7 +212,7 @@ julia> plot!(x, yfit, label="best fit")
 ```
 ![](../assets/tutorials/curve-fit/optimization-linear-regression.svg)
 
-We can now test out a quadratic fit using the same package:
+We can now test out a quadratic fit using the same package, by defining a new objective function:
 ```julia
 function objective(u, data)
     x, y = data
@@ -224,7 +227,9 @@ function objective(u, data)
     # Return the sum of squares of the residuals to minimize
     return sum(residuals.^2)
 end
+```
 
+```julia
 u0 = [1.0, 1.0, 1.0]
 data = [x,y]
 prob = OptimizationProblem(objective,u0,data)
