@@ -68,15 +68,12 @@ Before using any packages, let's perform a linear fit from scratch using some li
 
 The equation of a line can be written in matrix form as
 ```math
-\quad
 \begin{pmatrix}
-N & \sum y_i \\
-\sum y_i & \sum y_{i}^2
+  N        & \sum y_i \\
+  \sum y_i & \sum y_i^2
 \end{pmatrix}
-\begin{pmatrix}
-c_1 \\
-c_2 \\
-\end{pmatrix}=
+\begin{pmatrix} c_1 \\ c_2 \end{pmatrix}
+=
 \begin{pmatrix}
 \sum y_i \\
 \sum y_i x_i
@@ -88,27 +85,20 @@ where $c_1$ and $c_2$ are the intercept and slope.
 Multiplying both sides by the inverse of the first matrix gives
 
 ```math
-\quad
-\begin{pmatrix}
-c_1 \\
-c_2 \\
-\end{pmatrix}=
-\begin{pmatrix}
-N & \sum y_i \\
-\sum y_i & \sum y_{i}^2
+\begin{pmatrix} c_1 \\ c_2 \end{pmatrix}
+= \begin{pmatrix}
+  N & \sum y_i \\
+  \sum y_i & \sum y_i^2
 \end{pmatrix}^{-1}
-\begin{pmatrix}
-\sum y_i \\
-\sum y_i x_i
-\end{pmatrix}
+\begin{pmatrix} \sum y_i \\ \sum y_i x_i \end{pmatrix}
 ```
 
 We can write the right-hand side matrix and vector (let's call them `A` and `b`) in Julia notation like so:
-```julia
+```julia-repl
 julia> A = [
           length(x) sum(x)
           sum(x)    sum(x.^2)
-      ]
+       ]
 2×2 Matrix{Int64}:
    21   1050
  1050  71750
@@ -181,22 +171,20 @@ Now, we'll use SciML's problem-algorithm-solve workflow to solve our optimizatio
 # Define the initial parameter values for slope and intercept
 u0 = [1.0, 1.0]
 # Pass through the data we want to fit
-data = [x,y]
+data = [x, y]
 
 # Create an OptimizationProblem object to hold the function, initial
 # values, and data.
 using Optimization
-prob = OptimizationProblem(objective,u0,data)
+prob = OptimizationProblem(objective, u0, data)
 
 # Import the optimization backend we want to use
 using OptimizationOptimJL
 
-# Minimize the function. Optimization.jl uses the SciML common solver
-# interface. Pass the problem you want to solve (optimization problem
-# here) and a solver to use.
-# NelderMead() is a derivative-free method for finding a function's
-# local minimum.
-sol = solve(prob,NelderMead())
+# Minimize the function. Optimization.jl uses the SciML common solver interface.
+# Pass the problem you want to solve (optimization problem here) and a solver to use.
+# NelderMead() is a derivative-free method for finding a function's local minimum.
+sol = solve(prob, NelderMead())
 
 # Exctract the best-fitting parameters
 slope, intercept = sol.u
@@ -231,10 +219,10 @@ end
 
 ```julia
 u0 = [1.0, 1.0, 1.0]
-data = [x,y]
-prob = OptimizationProblem(objective,u0,data)
+data = [x, y]
+prob = OptimizationProblem(objective, u0, data)
 using OptimizationOptimJL
-sol = solve(prob,NelderMead())
+sol = solve(prob, NelderMead())
 u = sol.u
 
 yfit = u[1] .* x.^2 .+ u[2] .* x .+ u[3]
@@ -251,8 +239,8 @@ First, you can use automatic differentiation and a higher order optimization alg
 ```julia
 using ForwardDiff
 optf = OptimizationFunction(objective, Optimization.AutoForwardDiff())
-prob = OptimizationProblem(optf,u0,data)
-@time sol = solve(prob,BFGS())  # another good algorithm is Newton()
+prob = OptimizationProblem(optf, u0, data)
+@time sol = solve(prob, BFGS())  # another good algorithm is Newton()
 ```
 You can also write an "in-place" version of `objective` that doesn't allocate new arrays with each iteration.
 
@@ -325,30 +313,26 @@ Quantiles
 ```
 
 
-```
+```julia
 intercept = chain["intercept"]
 slope = chain["slope"]
 σ₂ = chain["σ₂"]
 
-plot(x, x .* slope' .+ intercept';
-    label="",
-    color=:gray,
-    alpha=0.05
-)
+plot(x, x .* slope' .+ intercept'; label="", color=:gray, alpha=0.05)
 scatter!(x, y, xlabel="x", ylabel="y", label="data", color=1)
 ```
 ![](../assets/tutorials/curve-fit/bayesian-lin-regression.svg)
 
 Each gray curve is a sample from the posterior distribution of this model. To examine the model parameters and their covariance in greater detail, we can make a corner plot using the PairPlots.jl package. We'll need a few more samples for a nice plot, so re-run the NUTS sampler with more iterations first.
-```
+```julia
 Random.seed!(1234)
 chain = sample(model, NUTS(0.65), 25_000)
 
 using PairPlots
 table = (;
-    intercept= chain["intercept"],
-    slope= chain["slope"],
-    σ= sqrt.(chain["σ₂"])
+    intercept = chain["intercept"],
+    slope = chain["slope"],
+    σ = sqrt.(chain["σ₂"])
 )
 PairPlots.corner(table)
 ```
@@ -414,18 +398,13 @@ Quantiles
           u3    0.9635    1.7155    2.1211    2.5172    3.3960
 ```
 
-
-```
+```julia
 u1 = chain["u1"]
 u2 = chain["u2"]
 u3 = chain["u3"]
 posterior = u1' .* x.^2 .+ u2' .* x .+ u3'
 
-plot(x, posterior;
-    label="",
-    color=:gray,
-    alpha=0.1
-)
+plot(x, posterior; label="", color=:gray, alpha=0.1)
 scatter!(x, y, xlabel="x", ylabel="y", label="data", color=1)
 ```
 ![](../assets/tutorials/curve-fit/bayesian-quad-regression.svg)
@@ -440,7 +419,7 @@ table = (;
     u_1 = chain["u1"],
     u_2 = chain["u2"],
     u_3 = chain["u3"],
-    σ= sqrt.(chain["σ₂"])
+    σ = sqrt.(chain["σ₂"])
 )
 PairPlots.corner(table)
 ```

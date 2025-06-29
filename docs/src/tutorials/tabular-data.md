@@ -30,7 +30,6 @@ If you will be using these tools as part of a larger project, it's strongly reco
 If you're using [Pluto notebooks](https://plutojl.org), installing and recording package versions in a project are handled for you automatically.
 
 
-
 ## Downloading the data
 
 The table in question is hosted alongside the [article](https://iopscience.iop.org/article/10.3847/1538-4365/abf93c). Go to Table 4 and click the link at the bottom to download it in FITS format. You'll need to uncompress the archive to see the `HGCA_vEDR3.fits` file.
@@ -135,7 +134,6 @@ julia> describe(df)
   34 │ nonlinear_dpmdec        0.000311498  -4.1194        1.92019e-7   16.0394                     0  Float32
   35 │ chisq                   566.555      3.11559e-5     3.35103      3.67633e5                   0  Float32
                                                                                                   6 rows omitted
-
 ```
 
 
@@ -180,14 +178,14 @@ Let's now visualize these stars as they appear in the plane of the sky. We'll co
 ```julia-repl
 julia> using Plots
 julia> scatter(
-    nearby.gaia_ra,
-    nearby.gaia_dec;
-    marker_z = log10.(nearby.chisq),
-    colorbartitle="log10 χ²", # typed as \chi <tab> \^2 <tab>
-    label = "",
-    xlabel = "right ascension (°)", # typed as \degree <tab>
-    ylabel = "declination (°)",
-)
+           nearby.gaia_ra,
+           nearby.gaia_dec;
+           marker_z = log10.(nearby.chisq),
+           colorbartitle="log10 χ²", # typed as \chi <tab> \^2 <tab>
+           label = "",
+           xlabel = "right ascension (°)", # typed as \degree <tab>
+           ylabel = "declination (°)",
+       )
 ```
 
 Let's improve this plot by using a different map projection. We can make this conversion using [AstroLib.jl](https://juliaastro.org/AstroLib/stable/).
@@ -218,20 +216,20 @@ Finally, we'll make the plot and tweak some formatting options:
 
 ```julia-repl
 julia> scatter(
-    newx,
-    newy;
-    marker_z = log10.(nearby.chisq),
-    color = :turbo,
-    colorbartitle="log10 χ²", # typed as \chi <tab> \^2 <tab>
-    label = "",
-    xlabel = "right ascension (°)", # typed as \degree <tab>
-    ylabel = "declination (°)",
-    background=:transparent,
-    foreground=:gray,
-    framestyle=:box,
-    markerstrokewidth=0,
-    grid=:none
-)
+           newx,
+           newy;
+           marker_z = log10.(nearby.chisq),
+           color = :turbo,
+           colorbartitle="log10 χ²", # typed as \chi <tab> \^2 <tab>
+           label = "",
+           xlabel = "right ascension (°)", # typed as \degree <tab>
+           ylabel = "declination (°)",
+           background = :transparent,
+           foreground = :gray,
+           framestyle = :box,
+           markerstrokewidth = 0,
+           grid = :none,
+       )
 ```
 ![Plot of nearby stars with significant acceleration](../assets/tutorials/tabular-data/starplot-1.svg)
 
