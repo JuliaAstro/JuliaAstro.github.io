@@ -1,7 +1,7 @@
 # [Curve Fitting](@id curve-fit)
 
 
-This tutorial will demonstrate fitting data with a straight line (linear regression), an abitrary non-linear model, and finally a Bayesian model.
+This tutorial will demonstrate fitting data with a straight line (linear regression), an arbitrary non-linear model, and finally a Bayesian model.
 
 ## Packages
 
@@ -350,7 +350,7 @@ PairPlots.corner(table)
 ![](../assets/tutorials/curve-fit/lin-regress-corner.svg)
 
 
-Let's now repeat this proceedure with a Bayesian quadratic model.
+Let's now repeat this procedure with a Bayesian quadratic model.
 
 ```julia
 @model function quad_regression(x, y)

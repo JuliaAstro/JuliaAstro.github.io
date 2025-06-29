@@ -15,7 +15,7 @@ Visit the [julialang.org Downloads page](https://julialang.org/downloads), and s
 ## Installing Packages
 
 Julia packages are installed and managed using the built-in package manager called [Pkg.jl](https://pkgdocs.julialang.org/v1/).
-You can either use it interactively by entering "Pkg mode" in your terminal, or programatically. We'll illustrate interactive use here.
+You can either use it interactively by entering "Pkg mode" in your terminal, or programmatically. We'll illustrate interactive use here.
 
 1. Start julia in a terminal by running `julia`.
 2. Type `]` to enter package-mode (see Julia documentation for more details)

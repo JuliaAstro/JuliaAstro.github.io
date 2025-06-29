@@ -127,7 +127,7 @@ See [`AstroImages.implot`](@extref) for full documentation.
 
 ## Adding a Scalebar
 
-Another way we can communicate the scale of this image is by adding a scalebar. Since we are working in spherical coordinates, the cartesian Pythagorean theorem won't quite cut it. There are approximations we can use for small angles, but let's go ahead and compute the scale bar length in a fully general way.
+Another way we can communicate the scale of this image is by adding a scalebar. Since we are working in spherical coordinates, the Cartesian Pythagorean theorem won't quite cut it. There are approximations we can use for small angles, but let's go ahead and compute the scale bar length in a fully general way.
 
 For two points of right-ascension $\alpha$ and declination $\delta$, $a=(\alpha_a, \delta_a)$ and $b=(\alpha_b, \delta_b)$, the angular separation is
 ```math
@@ -182,7 +182,7 @@ annotate!(
 ![Carina nebula displayed with a scale bar](../assets/tutorials/jwst-1/carina-5.svg)
 
 
-Looking good! If we only want to communiate the scale and not the location, we can hide the tick marks and colorbar for a cleaner look:
+Looking good! If we only want to communicate the scale and not the location, we can hide the tick marks and colorbar for a cleaner look:
 ```julia
 
 # Hide decorations
