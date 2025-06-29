@@ -165,7 +165,7 @@ julia> nearby = filter(:parallax_gaia => >(50.0), df)
                                                         30 columns and 791 rows omitted
 ```
 
-Let's break this down. First, we specify the column name as `:parallax_gaia`. The `:` syntax defines a Symbol in Julia which is a bit like a string and a variable name. Next, we say what filter we want to apply to this column by passing a key-value `Pair` constructed with `=>`. This syntax, e.g. `1 => 2` just groups two values and is unrelated to keyword arguments. Then, we pass a predicate function, that is a function that takes one value and returns `true` or `false`. The expression `>(50.0)` produces such a function that takes a value and compares it with `50.0` milliarseconds of parallax. Finally, we pass the table we want to filter.
+Let's break this down. First, we specify the column name as `:parallax_gaia`. The `:` syntax defines a Symbol in Julia which is a bit like a string and a variable name. Next, we say what filter we want to apply to this column by passing a key-value `Pair` constructed with `=>`. This syntax, e.g. `1 => 2` just groups two values and is unrelated to keyword arguments. Then, we pass a predicate function, that is a function that takes one value and returns `true` or `false`. The expression `>(50.0)` produces such a function that takes a value and compares it with `50.0` milliarcseconds of parallax. Finally, we pass the table we want to filter.
 
 
 This [useful cheatsheet](https://www.ahsmart.com/pub/data-wrangling-with-data-frames-jl-cheat-sheet/) by Tom Kwong is a great reference for these sort of operations.
@@ -192,7 +192,7 @@ julia> scatter(
 
 Let's improve this plot by using a different map projection. We can make this conversion using [AstroLib.jl](https://juliaastro.org/AstroLib/stable/).
 
-The function [`AstroLib.aitoff`](@extref) takes longitude and latitude (or in this case, right-ascension and delcination) and returns a new position using an Aitoff projection.
+The function [`AstroLib.aitoff`](@extref) takes longitude and latitude (or in this case, right-ascension and declination) and returns a new position using an Aitoff projection.
 
 ```julia-repl
 julia> using AstroLib
