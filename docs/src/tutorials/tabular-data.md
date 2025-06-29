@@ -46,15 +46,15 @@ julia> fits = FITS("HGCA_vEDR3.fits")
 
 File: HGCA_vEDR3.fits
 Mode: "r" (read-only)
-HDUs: Num  Name  Type   
-      1          Image  
+HDUs: Num  Name  Type
+      1          Image
       2          Table
 julia> table_fits = fits[2]
 File: HGCA_vEDR3.fits
 HDU: 2
 Type: Table
 Rows: 115346
-Columns: Name                    Size  Type     TFORM  
+Columns: Name                    Size  Type     TFORM
          hip_id                        Int32    J
          gaia_source_id                Int64    K
          gaia_ra                       Float64  D
@@ -80,14 +80,14 @@ julia> df = DataFrame(table_fits)
         │ Int32   Int64                Float64        Float64  ⋯
 ────────┼───────────────────────────────────────────────────────
       1 │      1  2738327528519591936    0.000871957    1.0889 ⋯
-      2 │      2  2341871673090078592    0.00511158   -19.4988  
-      3 │      3  2881742980523997824    0.00506023    38.8593  
-      4 │      4  4973386040722654336    0.00907157   -51.8935  
+      2 │      2  2341871673090078592    0.00511158   -19.4988
+      3 │      3  2881742980523997824    0.00506023    38.8593
+      4 │      4  4973386040722654336    0.00907157   -51.8935
       5 │      5  2305974989264598272    0.00997423   -40.5912 ⋯
    ⋮    │   ⋮              ⋮                 ⋮            ⋮    ⋱
- 115343 │ 120401  5290738562888564736  119.382        -60.6309  
- 115344 │ 120402  5290832364972775808  119.449        -60.6097  
- 115345 │ 120403  5290725643625189504  119.455        -60.6836  
+ 115343 │ 120401  5290738562888564736  119.382        -60.6309
+ 115344 │ 120402  5290832364972775808  119.449        -60.6097
+ 115345 │ 120403  5290725643625189504  119.455        -60.6836
  115346 │ 120404  5290820682661822848  119.512        -60.6147 ⋯
                               32 columns and 115337 rows omitted
 
@@ -101,8 +101,8 @@ As a first step, let's summarize the contents of the data frame using `describe`
 ```julia-repl
 julia> describe(df)
 35×7 DataFrame
- Row │ variable                mean         min            median       max                  nmissing  eltype   
-     │ Symbol                  Union…       Any            Union…       Any                  Int64     DataType 
+ Row │ variable                mean         min            median       max                  nmissing  eltype
+     │ Symbol                  Union…       Any            Union…       Any                  Int64     DataType
 ─────┼──────────────────────────────────────────────────────────────────────────────────────────────────────────
    1 │ hip_id                  59162.8      1              59133.5      120404                      0  Int32
    2 │ gaia_source_id          3.5587e18    7632157690368  3.58418e18   6917489002841762304         0  Int64
@@ -172,7 +172,7 @@ This [useful cheatsheet](https://www.ahsmart.com/pub/data-wrangling-with-data-fr
 
 
 
-## Plotting 
+## Plotting
 
 Let's now visualize these stars as they appear in the plane of the sky. We'll colour them based on the significance of the anomalous acceleration they had between the two satellite missions. This acceleration could be caused by a hidden companion star or planet.
 
@@ -186,7 +186,7 @@ julia> scatter(
     colorbartitle="log10 χ²", # typed as \chi <tab> \^2 <tab>
     label = "",
     xlabel = "right ascension (°)", # typed as \degree <tab>
-    ylabel = "declination (°)" 
+    ylabel = "declination (°)",
 )
 ```
 

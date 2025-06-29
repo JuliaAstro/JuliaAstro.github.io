@@ -66,10 +66,10 @@ julia> scatter(x, y; xlabel="x", ylabel="y", label="data")
 
 Before using any packages, let's perform a linear fit from scratch using some linear algebra.
 
-The equation of a line can be written in matrix form as 
+The equation of a line can be written in matrix form as
 ```math
 \quad
-\begin{pmatrix} 
+\begin{pmatrix}
 N & \sum y_i \\
 \sum y_i & \sum y_{i}^2
 \end{pmatrix}
@@ -93,7 +93,7 @@ Multiplying both sides by the inverse of the first matrix gives
 c_1 \\
 c_2 \\
 \end{pmatrix}=
-\begin{pmatrix} 
+\begin{pmatrix}
 N & \sum y_i \\
 \sum y_i & \sum y_{i}^2
 \end{pmatrix}^{-1}
@@ -115,7 +115,7 @@ julia> A = [
 
 julia> b = [
            sum(y)
-           sum(y .* x)                                          
+           sum(y .* x)
        ]
 2-element Vector{Float64}:
    210.4250937868108
@@ -128,14 +128,12 @@ julia> c = A\b
 2-element Vector{Float64}:
  -1.67268257376372
   0.2338585027008085
-
 ```
 
 Let's make a helper function `linfunc` that takes an x value, a slope, and an intercept and calculates the corresponding y value:
 ```julia-repl
 julia> linfunc(x; slope, intercept) = slope*x + intercept
 linfunc (generic function with 1 method)
-
 ```
 
 Finally, we can plot the solution:
@@ -151,7 +149,7 @@ The packages [LsqFit](https://julianlsolvers.github.io/LsqFit.jl/dev/) and [GLM]
 
 ## (Non-)linear curve fit
 
-The packages above can be used to fit different polynomial models, but if we have a truly arbitrary Julia function we would like to fit to some data we can use the [Optimization.jl](http://optimization.sciml.ai/stable/) package. Through its various backends, Optimization.jl supports a very wide range of algorithms for local, global, convex, and non-convex optimization. 
+The packages above can be used to fit different polynomial models, but if we have a truly arbitrary Julia function we would like to fit to some data we can use the [Optimization.jl](http://optimization.sciml.ai/stable/) package. Through its various backends, Optimization.jl supports a very wide range of algorithms for local, global, convex, and non-convex optimization.
 
 The first step is to define our objective function. We'll reuse our simple `linfunc` linear function from above:
 ```julia
@@ -169,7 +167,7 @@ function objective(u, data)
 
     # Get the x and y vectors from data
     x, y = data
-    
+
     # Calculate the residuals between our model and the data
     residuals = linfunc.(x; slope, intercept) .- y
 
@@ -200,7 +198,7 @@ sol = solve(prob,NelderMead())
 # Exctract the best-fitting parameters
 slope, intercept = sol.u
 ```
-Note: the `NelderMead()` algorithm behaves nearly identically to MATLAB's `fminsearch`. 
+Note: the `NelderMead()` algorithm behaves nearly identically to MATLAB's `fminsearch`.
 
 
 We can now plot the solution:
@@ -215,7 +213,7 @@ We can now test out a quadratic fit using the same package:
 ```julia
 function objective(u, data)
     x, y = data
-    
+
     # Define an equation of a quadratic, e.g.:
     # 3x^2 + 2x + 1
     model = u[1] .* x.^2 .+ u[2] .* x .+ u[3]
@@ -305,7 +303,7 @@ parameters        = σ₂, intercept, slope
 internals         = lp, n_steps, is_accept, acceptance_rate, log_density, hamiltonian_energy, hamiltonian_energy_error, max_hamiltonian_energy_error, tree_depth, numerical_error, step_size, nom_step_size
 
 Summary Statistics
-  parameters      mean       std   naive_se      mcse          ess      rhat   ess_per_sec 
+  parameters      mean       std   naive_se      mcse          ess      rhat   ess_per_sec
       Symbol   Float64   Float64    Float64   Float64      Float64   Float64       Float64
 
           σ₂    6.7431    2.6279     0.0166    0.0265   10640.9415    1.0000     1810.6077
@@ -313,7 +311,7 @@ Summary Statistics
        slope    0.2328    0.0186     0.0001    0.0002   10306.9493    1.0001     1753.7773
 
 Quantiles
-  parameters      2.5%     25.0%     50.0%     75.0%     97.5% 
+  parameters      2.5%     25.0%     50.0%     75.0%     97.5%
       Symbol   Float64   Float64   Float64   Float64   Float64
 
           σ₂    3.3126    4.9457    6.1965    7.9372   13.3608
@@ -393,7 +391,7 @@ parameters        = σ₂, u1, u2, u3
 internals         = lp, n_steps, is_accept, acceptance_rate, log_density, hamiltonian_energy, hamiltonian_energy_error, max_hamiltonian_energy_error, tree_depth, numerical_error, step_size, nom_step_size
 
 Summary Statistics
-  parameters      mean       std   naive_se      mcse        ess      rhat   ess_per_sec 
+  parameters      mean       std   naive_se      mcse        ess      rhat   ess_per_sec
       Symbol   Float64   Float64    Float64   Float64    Float64   Float64       Float64
 
           σ₂    1.5698    0.6322     0.0283    0.0518   117.5553    0.9994       19.9517
@@ -402,7 +400,7 @@ Summary Statistics
           u3    2.1371    0.6109     0.0273    0.0562    87.2121    0.9995       14.8018
 
 Quantiles
-  parameters      2.5%     25.0%     50.0%     75.0%     97.5% 
+  parameters      2.5%     25.0%     50.0%     75.0%     97.5%
       Symbol   Float64   Float64   Float64   Float64   Float64
 
           σ₂    0.8757    1.1468    1.3945    1.8181    3.3834

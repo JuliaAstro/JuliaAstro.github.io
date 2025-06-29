@@ -28,7 +28,7 @@ If you're using [Pluto notebooks](https://github.com/fonsp/Pluto.jl), installing
 
 ## Downloading the data
 
-All JWST data is available from the [MAST archive](https://mast.stsci.edu/portal/Mashup/Clients/Mast/Portal.html). 
+All JWST data is available from the [MAST archive](https://mast.stsci.edu/portal/Mashup/Clients/Mast/Portal.html).
 
 A mirror of the JWST initial release data is also hosted on AWS. We'll use this to directly download a specific famous image by URL.
 
@@ -64,7 +64,7 @@ size(carina)
 ```
 (14436, 8568)
 ```
-Wow, that's over 120 megapixels! 
+Wow, that's over 120 megapixels!
 
 AstroImages will fall back to downscaling it automatically before displaying it using [`ImageTransformations.restrict`](https://juliaimages.org/stable/function_reference/#ImageTransformations.restrict), but let's make our lives simpler and just use every 10th pixel:
 
@@ -214,7 +214,7 @@ plot!(
 annx = 11000+arcmin_px/2
 anny = 1000+100
 annotate!(
-    (annx, anny, text(" 1' ", 10, :white, :center, :bottom)) 
+    (annx, anny, text(" 1' ", 10, :white, :center, :bottom))
 )
 ```
 ![Carina nebula displayed with a scale bar and no other plot decorations](../assets/tutorials/jwst-1/carina-6.svg)
