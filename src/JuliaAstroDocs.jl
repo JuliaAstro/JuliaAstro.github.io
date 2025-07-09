@@ -761,6 +761,17 @@ ecosystem() = (
                 """,
                 astropy = ["astropy.io.votable"],
             ),
+            (
+                name = "XPA.jl",
+                repo = "https://github.com/JuliaAstro/XPA.jl",
+                doc = "https://juliaastro.org/XPA/stable/",
+                tagline = "A Julia interface to the XPA Messaging System",
+                descr = """
+                - Seamless communication between many kinds of Unix/Windows programs, including X programs and Tcl/Tk programs
+                - Used for some popular astronomical tools such as [SAOImage-DS9](http://ds9.si.edu/site/Home.html)
+                """,
+                astropy = [],
+            ),
         ),
         "Data processing" => (
             (
