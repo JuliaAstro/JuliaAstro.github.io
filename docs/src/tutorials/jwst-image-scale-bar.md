@@ -23,12 +23,12 @@ If you will be using these tools as part of a bigger project, it's strongly reco
 pkg> activate --temp
 ```
 
-If you're using [Pluto notebooks](https://github.com/fonsp/Pluto.jl), installing and recording package versions in a project are handled for you automatically.
+If you're using [Pluto notebooks](https://plutojl.org), installing and recording package versions in a project are handled for you automatically.
 
 
 ## Downloading the data
 
-All JWST data is available from the [MAST archive](https://mast.stsci.edu/portal/Mashup/Clients/Mast/Portal.html). 
+All JWST data is available from the [MAST archive](https://mast.stsci.edu/portal/Mashup/Clients/Mast/Portal.html).
 
 A mirror of the JWST initial release data is also hosted on AWS. We'll use this to directly download a specific famous image by URL.
 
@@ -64,7 +64,7 @@ size(carina)
 ```
 (14436, 8568)
 ```
-Wow, that's over 120 megapixels! 
+Wow, that's over 120 megapixels!
 
 AstroImages will fall back to downscaling it automatically before displaying it using [`ImageTransformations.restrict`](https://juliaimages.org/stable/function_reference/#ImageTransformations.restrict), but let's make our lives simpler and just use every 10th pixel:
 
@@ -127,7 +127,7 @@ See [`AstroImages.implot`](@extref) for full documentation.
 
 ## Adding a Scalebar
 
-Another way we can communicate the scale of this image is by adding a scalebar. Since we are working in spherical coordinates, the cartesian Pythagorean theorem won't quite cut it. There are approximations we can use for small angles, but let's go ahead and compute the scale bar length in a fully general way.
+Another way we can communicate the scale of this image is by adding a scalebar. Since we are working in spherical coordinates, the Cartesian Pythagorean theorem won't quite cut it. There are approximations we can use for small angles, but let's go ahead and compute the scale bar length in a fully general way.
 
 For two points of right-ascension $\alpha$ and declination $\delta$, $a=(\alpha_a, \delta_a)$ and $b=(\alpha_b, \delta_b)$, the angular separation is
 ```math
@@ -182,7 +182,7 @@ annotate!(
 ![Carina nebula displayed with a scale bar](../assets/tutorials/jwst-1/carina-5.svg)
 
 
-Looking good! If we only want to communiate the scale and not the location, we can hide the tick marks and colorbar for a cleaner look:
+Looking good! If we only want to communicate the scale and not the location, we can hide the tick marks and colorbar for a cleaner look:
 ```julia
 
 # Hide decorations
@@ -214,7 +214,7 @@ plot!(
 annx = 11000+arcmin_px/2
 anny = 1000+100
 annotate!(
-    (annx, anny, text(" 1' ", 10, :white, :center, :bottom)) 
+    (annx, anny, text(" 1' ", 10, :white, :center, :bottom))
 )
 ```
 ![Carina nebula displayed with a scale bar and no other plot decorations](../assets/tutorials/jwst-1/carina-6.svg)

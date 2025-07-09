@@ -1,7 +1,7 @@
 # [Curve Fitting](@id curve-fit)
 
 
-This tutorial will demonstrate fitting data with a straight line (linear regression), an abitrary non-linear model, and finally a Bayesian model.
+This tutorial will demonstrate fitting data with a straight line (linear regression), an arbitrary non-linear model, and finally a Bayesian model.
 
 ## Packages
 
@@ -21,9 +21,9 @@ using Pkg; Pkg.add(["Plots", "Optimization", "OptimizationOptimJL", "Turing", "P
 ```
 In your own code, you most likely won't need all of these packages. Pick and choose the one that best fits your problem.
 
-If you will be using these tools as part of a bigger project, it's strongly recommended to create a [Julia Project](https://pkgdocs.julialang.org/v1/environments/) to record package versions. If you're just experimenting, you can create a temporary project by running `] activate --temp`.
+If you will be using these tools as part of a bigger project, it's strongly recommended to create a [Julia Project](https://pkgdocs.julialang.org/v1/environments/) to record package versions. If you're just experimenting, you can create a temporary project by running `] activate --temp` in the Julia REPL.
 
-If you're using [Pluto notebooks](https://github.com/fonsp/Pluto.jl), installing and recording package versions in a project are handled for you automatically.
+If you're using [Pluto notebooks](https://plutojl.org), installing and recording package versions in a project are handled for you automatically.
 
 
 ## Generating the data
@@ -66,17 +66,14 @@ julia> scatter(x, y; xlabel="x", ylabel="y", label="data")
 
 Before using any packages, let's perform a linear fit from scratch using some linear algebra.
 
-The equation of a line can be written in matrix form as 
+The equation of a line can be written in matrix form as
 ```math
-\quad
-\begin{pmatrix} 
-N & \sum y_i \\
-\sum y_i & \sum y_{i}^2
-\end{pmatrix}
 \begin{pmatrix}
-c_1 \\
-c_2 \\
-\end{pmatrix}=
+  N        & \sum y_i \\
+  \sum y_i & \sum y_i^2
+\end{pmatrix}
+\begin{pmatrix} c_1 \\ c_2 \end{pmatrix}
+=
 \begin{pmatrix}
 \sum y_i \\
 \sum y_i x_i
@@ -88,34 +85,27 @@ where $c_1$ and $c_2$ are the intercept and slope.
 Multiplying both sides by the inverse of the first matrix gives
 
 ```math
-\quad
-\begin{pmatrix}
-c_1 \\
-c_2 \\
-\end{pmatrix}=
-\begin{pmatrix} 
-N & \sum y_i \\
-\sum y_i & \sum y_{i}^2
+\begin{pmatrix} c_1 \\ c_2 \end{pmatrix}
+= \begin{pmatrix}
+  N & \sum y_i \\
+  \sum y_i & \sum y_i^2
 \end{pmatrix}^{-1}
-\begin{pmatrix}
-\sum y_i \\
-\sum y_i x_i
-\end{pmatrix}
+\begin{pmatrix} \sum y_i \\ \sum y_i x_i \end{pmatrix}
 ```
 
 We can write the right-hand side matrix and vector (let's call them `A` and `b`) in Julia notation like so:
-```julia
+```julia-repl
 julia> A = [
           length(x) sum(x)
           sum(x)    sum(x.^2)
-      ]
+       ]
 2×2 Matrix{Int64}:
    21   1050
  1050  71750
 
 julia> b = [
            sum(y)
-           sum(y .* x)                                          
+           sum(y .* x)
        ]
 2-element Vector{Float64}:
    210.4250937868108
@@ -128,14 +118,12 @@ julia> c = A\b
 2-element Vector{Float64}:
  -1.67268257376372
   0.2338585027008085
-
 ```
 
 Let's make a helper function `linfunc` that takes an x value, a slope, and an intercept and calculates the corresponding y value:
 ```julia-repl
 julia> linfunc(x; slope, intercept) = slope*x + intercept
 linfunc (generic function with 1 method)
-
 ```
 
 Finally, we can plot the solution:
@@ -151,9 +139,9 @@ The packages [LsqFit](https://julianlsolvers.github.io/LsqFit.jl/dev/) and [GLM]
 
 ## (Non-)linear curve fit
 
-The packages above can be used to fit different polynomial models, but if we have a truly arbitrary Julia function we would like to fit to some data we can use the [Optimization.jl](http://optimization.sciml.ai/stable/) package. Through its various backends, Optimization.jl supports a very wide range of algorithms for local, global, convex, and non-convex optimization. 
+The packages above can be used to fit different polynomial models, but if we have a truly arbitrary Julia function we would like to fit to some data we can use the [Optimization.jl](http://optimization.sciml.ai/stable/) package. Through its various backends, Optimization.jl supports a very wide range of algorithms for local, global, convex, and non-convex optimization.
 
-The first step is to define our objective function. We'll reuse our simple `linfunc` linear function from above:
+The first step is to define our objective function. We'll reuse our simple `linfunc` linear function from above and create an objective function based on the sum of the squared errors
 ```julia
 linfunc(x; slope, intercept) = slope*x + intercept
 
@@ -169,38 +157,39 @@ function objective(u, data)
 
     # Get the x and y vectors from data
     x, y = data
-    
+
     # Calculate the residuals between our model and the data
     residuals = linfunc.(x; slope, intercept) .- y
 
     # Return the sum of squares of the residuals to minimize
     return sum(residuals.^2)
 end
+```
 
+Now, we'll use SciML's problem-algorithm-solve workflow to solve our optimization problem:
+```julia
 # Define the initial parameter values for slope and intercept
 u0 = [1.0, 1.0]
 # Pass through the data we want to fit
-data = [x,y]
+data = [x, y]
 
 # Create an OptimizationProblem object to hold the function, initial
 # values, and data.
 using Optimization
-prob = OptimizationProblem(objective,u0,data)
+prob = OptimizationProblem(objective, u0, data)
 
 # Import the optimization backend we want to use
 using OptimizationOptimJL
 
-# Minimize the function. Optimization.jl uses the SciML common solver
-# interface. Pass the problem you want to solve (optimization problem
-# here) and a solver to use.
-# NelderMead() is a derivative-free method for finding a function's
-# local minimum.
-sol = solve(prob,NelderMead())
+# Minimize the function. Optimization.jl uses the SciML common solver interface.
+# Pass the problem you want to solve (optimization problem here) and a solver to use.
+# NelderMead() is a derivative-free method for finding a function's local minimum.
+sol = solve(prob, NelderMead())
 
 # Exctract the best-fitting parameters
 slope, intercept = sol.u
 ```
-Note: the `NelderMead()` algorithm behaves nearly identically to MATLAB's `fminsearch`. 
+Note: the `NelderMead()` algorithm behaves nearly identically to MATLAB's `fminsearch`.
 
 
 We can now plot the solution:
@@ -211,11 +200,11 @@ julia> plot!(x, yfit, label="best fit")
 ```
 ![](../assets/tutorials/curve-fit/optimization-linear-regression.svg)
 
-We can now test out a quadratic fit using the same package:
+We can now test out a quadratic fit using the same package, by defining a new objective function:
 ```julia
 function objective(u, data)
     x, y = data
-    
+
     # Define an equation of a quadratic, e.g.:
     # 3x^2 + 2x + 1
     model = u[1] .* x.^2 .+ u[2] .* x .+ u[3]
@@ -226,12 +215,14 @@ function objective(u, data)
     # Return the sum of squares of the residuals to minimize
     return sum(residuals.^2)
 end
+```
 
+```julia
 u0 = [1.0, 1.0, 1.0]
-data = [x,y]
-prob = OptimizationProblem(objective,u0,data)
+data = [x, y]
+prob = OptimizationProblem(objective, u0, data)
 using OptimizationOptimJL
-sol = solve(prob,NelderMead())
+sol = solve(prob, NelderMead())
 u = sol.u
 
 yfit = u[1] .* x.^2 .+ u[2] .* x .+ u[3]
@@ -248,8 +239,8 @@ First, you can use automatic differentiation and a higher order optimization alg
 ```julia
 using ForwardDiff
 optf = OptimizationFunction(objective, Optimization.AutoForwardDiff())
-prob = OptimizationProblem(optf,u0,data)
-@time sol = solve(prob,BFGS())  # another good algorithm is Newton()
+prob = OptimizationProblem(optf, u0, data)
+@time sol = solve(prob, BFGS())  # another good algorithm is Newton()
 ```
 You can also write an "in-place" version of `objective` that doesn't allocate new arrays with each iteration.
 
@@ -305,7 +296,7 @@ parameters        = σ₂, intercept, slope
 internals         = lp, n_steps, is_accept, acceptance_rate, log_density, hamiltonian_energy, hamiltonian_energy_error, max_hamiltonian_energy_error, tree_depth, numerical_error, step_size, nom_step_size
 
 Summary Statistics
-  parameters      mean       std   naive_se      mcse          ess      rhat   ess_per_sec 
+  parameters      mean       std   naive_se      mcse          ess      rhat   ess_per_sec
       Symbol   Float64   Float64    Float64   Float64      Float64   Float64       Float64
 
           σ₂    6.7431    2.6279     0.0166    0.0265   10640.9415    1.0000     1810.6077
@@ -313,7 +304,7 @@ Summary Statistics
        slope    0.2328    0.0186     0.0001    0.0002   10306.9493    1.0001     1753.7773
 
 Quantiles
-  parameters      2.5%     25.0%     50.0%     75.0%     97.5% 
+  parameters      2.5%     25.0%     50.0%     75.0%     97.5%
       Symbol   Float64   Float64   Float64   Float64   Float64
 
           σ₂    3.3126    4.9457    6.1965    7.9372   13.3608
@@ -322,37 +313,33 @@ Quantiles
 ```
 
 
-```
+```julia
 intercept = chain["intercept"]
 slope = chain["slope"]
 σ₂ = chain["σ₂"]
 
-plot(x, x .* slope' .+ intercept';
-    label="",
-    color=:gray,
-    alpha=0.05
-)
+plot(x, x .* slope' .+ intercept'; label="", color=:gray, alpha=0.05)
 scatter!(x, y, xlabel="x", ylabel="y", label="data", color=1)
 ```
 ![](../assets/tutorials/curve-fit/bayesian-lin-regression.svg)
 
 Each gray curve is a sample from the posterior distribution of this model. To examine the model parameters and their covariance in greater detail, we can make a corner plot using the PairPlots.jl package. We'll need a few more samples for a nice plot, so re-run the NUTS sampler with more iterations first.
-```
+```julia
 Random.seed!(1234)
 chain = sample(model, NUTS(0.65), 25_000)
 
 using PairPlots
 table = (;
-    intercept= chain["intercept"],
-    slope= chain["slope"],
-    σ= sqrt.(chain["σ₂"])
+    intercept = chain["intercept"],
+    slope = chain["slope"],
+    σ = sqrt.(chain["σ₂"])
 )
 PairPlots.corner(table)
 ```
 ![](../assets/tutorials/curve-fit/lin-regress-corner.svg)
 
 
-Let's now repeat this proceedure with a Bayesian quadratic model.
+Let's now repeat this procedure with a Bayesian quadratic model.
 
 ```julia
 @model function quad_regression(x, y)
@@ -393,7 +380,7 @@ parameters        = σ₂, u1, u2, u3
 internals         = lp, n_steps, is_accept, acceptance_rate, log_density, hamiltonian_energy, hamiltonian_energy_error, max_hamiltonian_energy_error, tree_depth, numerical_error, step_size, nom_step_size
 
 Summary Statistics
-  parameters      mean       std   naive_se      mcse        ess      rhat   ess_per_sec 
+  parameters      mean       std   naive_se      mcse        ess      rhat   ess_per_sec
       Symbol   Float64   Float64    Float64   Float64    Float64   Float64       Float64
 
           σ₂    1.5698    0.6322     0.0283    0.0518   117.5553    0.9994       19.9517
@@ -402,7 +389,7 @@ Summary Statistics
           u3    2.1371    0.6109     0.0273    0.0562    87.2121    0.9995       14.8018
 
 Quantiles
-  parameters      2.5%     25.0%     50.0%     75.0%     97.5% 
+  parameters      2.5%     25.0%     50.0%     75.0%     97.5%
       Symbol   Float64   Float64   Float64   Float64   Float64
 
           σ₂    0.8757    1.1468    1.3945    1.8181    3.3834
@@ -411,18 +398,13 @@ Quantiles
           u3    0.9635    1.7155    2.1211    2.5172    3.3960
 ```
 
-
-```
+```julia
 u1 = chain["u1"]
 u2 = chain["u2"]
 u3 = chain["u3"]
 posterior = u1' .* x.^2 .+ u2' .* x .+ u3'
 
-plot(x, posterior;
-    label="",
-    color=:gray,
-    alpha=0.1
-)
+plot(x, posterior; label="", color=:gray, alpha=0.1)
 scatter!(x, y, xlabel="x", ylabel="y", label="data", color=1)
 ```
 ![](../assets/tutorials/curve-fit/bayesian-quad-regression.svg)
@@ -437,7 +419,7 @@ table = (;
     u_1 = chain["u1"],
     u_2 = chain["u2"],
     u_3 = chain["u3"],
-    σ= sqrt.(chain["σ₂"])
+    σ = sqrt.(chain["σ₂"])
 )
 PairPlots.corner(table)
 ```
