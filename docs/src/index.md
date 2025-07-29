@@ -79,3 +79,4 @@ Would you like to contribute to JuliaAstro through Google Summer of Code? You ca
 
     **More aero/astro talks at JuliaCon**
     - [Tuning attitude control gains of a satellite using Julia](https://pretalx.com/juliacon-2025/talk/SAYCCZ/)
+    - [Interfacing Julia with Kerbal Space Program using KRPC.jl](https://pretalx.com/juliacon-2025/talk/3YTQY7/)
