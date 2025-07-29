@@ -63,8 +63,6 @@ Would you like to contribute to JuliaAstro through Google Summer of Code? You ca
     - Trajectory optimisation in space mechanics with Julia [[pretalx]](https://pretalx.com/juliacon2024/talk/UXJWXS/) [[video]](https://www.youtube.com/watch?v=a4-wynFTCmk)
     - Propagating large orbital uncertainty with TaylorIntegration.jl [[pretalx]](https://pretalx.com/juliacon2024/talk/SQFY3B/) [[video]](https://www.youtube.com/watch?v=G6uzqwDZCwA)
 
-### Upcoming
-
 !!! details "JuliaCon 2025"
     **Julia in Astronomy & Astrophysics Research Symposium 2025 [[website]](https://eford.github.io/AstroMiniSymposiumAtJuliaCon2025/)**
     - [Building an Astronomy Code for VLBI in Julia](https://pretalx.com/juliacon-2025/talk/NSZLHS/)
