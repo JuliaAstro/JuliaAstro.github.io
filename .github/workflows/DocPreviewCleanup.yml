@@ -39,8 +39,8 @@ jobs:
           end
 
           function all_prs()
-              url = "https://api.github.com/repos/$repo/pulls?per_page=100;page=$(page)"
-              query_prs(page) = JSON3.read(HTTP.get(url).body)
+              url = "https://api.github.com/repos/$repo/pulls?per_page=100;page="
+              query_prs(page) = JSON3.read(HTTP.get(url * page).body)
               prs = []
               page = 1
               while true
