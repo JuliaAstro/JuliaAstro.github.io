@@ -21,7 +21,7 @@ jobs:
       - uses: julia-actions/cache@v2
 
       - name: Check for stale PR previews
-        shell: julia {0}
+        shell: julia --color=yes {0}
         run: |
           using Pkg
           Pkg.activate(temp = true)
