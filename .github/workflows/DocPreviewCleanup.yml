@@ -62,8 +62,10 @@ jobs:
 
           if isempty(stale_previews)
               @info "No stale previews"
-              exit(1)
+              println(ENV["GITHUB_ENV"], "FOUND_STALE_PREVIEWS=false")
+              exit()
           end
+          println(ENV["GITHUB_ENV"], "FOUND_STALE_PREVIEWS=true")
 
           for pr in stale_previews
               path = joinpath("previews", "PR$pr")
@@ -71,6 +73,7 @@ jobs:
               run(`git rm -rf $path`)
           end
       - name: Push changes
+        if: ${{ env.FOUND_STALE_PREVIEWS == 'true' }}
         run: |
           git config user.name "Documenter.jl"
           git config user.email "documenter@juliadocs.github.io"
