@@ -1,0 +1,234 @@
+<!DOCTYPE html><HTML lang="en"><head><script charset="utf-8" src="../../../assets/default/multidoc_injector.js" type="text/javascript"></script><script charset="utf-8" type="text/javascript">window.MULTIDOCUMENTER_ROOT_PATH = '/'</script><script charset="utf-8" src="../../../assets/default/flexsearch.bundle.js" type="text/javascript"></script><script charset="utf-8" src="../../../assets/default/flexsearch_integration.js" type="text/javascript"></script><meta charset="UTF-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><title>Curve Fitting · JuliaAstro</title><meta content="Curve Fitting · JuliaAstro" name="title"/><meta content="Curve Fitting · JuliaAstro" property="og:title"/><meta content="Curve Fitting · JuliaAstro" property="twitter:title"/><meta content="Documentation for JuliaAstro." name="description"/><meta content="Documentation for JuliaAstro." property="og:description"/><meta content="Documentation for JuliaAstro." property="twitter:description"/><meta content="https://JuliaAstro.org/tutorials/curve-fit/" property="og:url"/><meta content="https://JuliaAstro.org/tutorials/curve-fit/" property="twitter:url"/><link href="https://JuliaAstro.org/tutorials/curve-fit/" rel="canonical"/><script data-outdated-warner="" src="../../assets/warner.js"></script><link href="https://cdnjs.cloudflare.com/ajax/libs/lato-font/3.0.0/css/lato-font.min.css" rel="stylesheet" type="text/css"/><link href="https://cdnjs.cloudflare.com/ajax/libs/juliamono/0.050/juliamono.min.css" rel="stylesheet" type="text/css"/><link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/fontawesome.min.css" rel="stylesheet" type="text/css"/><link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/solid.min.css" rel="stylesheet" type="text/css"/><link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/brands.min.css" rel="stylesheet" type="text/css"/><link href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.8/katex.min.css" rel="stylesheet" type="text/css"/><script>documenterBaseURL="../.."</script><script data-main="../../assets/documenter.js" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js"></script><script src="../../search_index.js"></script><script src="../../siteinfo.js"></script><script src="../../../versions.js"></script><link class="docs-theme-link" data-theme-name="catppuccin-mocha" href="../../assets/themes/catppuccin-mocha.css" rel="stylesheet" type="text/css"/><link class="docs-theme-link" data-theme-name="catppuccin-macchiato" href="../../assets/themes/catppuccin-macchiato.css" rel="stylesheet" type="text/css"/><link class="docs-theme-link" data-theme-name="catppuccin-frappe" href="../../assets/themes/catppuccin-frappe.css" rel="stylesheet" type="text/css"/><link class="docs-theme-link" data-theme-name="catppuccin-latte" href="../../assets/themes/catppuccin-latte.css" rel="stylesheet" type="text/css"/><link class="docs-theme-link" data-theme-name="documenter-dark" data-theme-primary-dark="" href="../../assets/themes/documenter-dark.css" rel="stylesheet" type="text/css"/><link class="docs-theme-link" data-theme-name="documenter-light" data-theme-primary="" href="../../assets/themes/documenter-light.css" rel="stylesheet" type="text/css"/><script src="../../assets/themeswap.js"></script><link href="../../assets/styles.css" rel="stylesheet" type="text/css"/><link href="../../assets/favicon.ico" rel="icon" type="image/x-icon"/><link href="../../democards/transitiongridtheme.css" rel="stylesheet" type="text/css"/><link href="../../../assets/default/multidoc.css" rel="stylesheet" type="text/css"/><link href="../../../assets/default/flexsearch.css" rel="stylesheet" type="text/css"/></head><body><nav id="multi-page-nav"><a class="brand" href="../../.."><img alt="home" src="../../../assets/logo.svg"/></a><div class="hidden-on-mobile" id="nav-items"><a class="nav-link active nav-item" href="../../">Home</a><div class="nav-dropdown"><button class="nav-item dropdown-label">Domain</button><div class="nav-dropdown-container nav-mega-dropdown-container"><div class="nav-mega-column"><div class="column-header">Solar System</div><ul class="column-content"><a class="nav-link nav-item" href="../../../CALCEPH/">⬤ CALCEPH</a><a class="nav-link nav-item" href="https://juliaastro.org/EphemerisSources.jl" target="_blank">⬤ EphemerisSources</a><a class="nav-link nav-item" href="https://juliaastro.org/GeneralAstrodynamics.jl" target="_blank">⬤ GeneralAstrodynamics</a><a class="nav-link nav-item" href="https://github.com/PerezHz/HORIZONS.jl?tab=readme-ov-file#horizonsjl" target="_blank">⬤ PerezHz/HORIZONS</a><a class="nav-link nav-item" href="https://juliaspace.github.io/SatelliteToolbox.jl/stable/" target="_blank">⬤ JuliaSpace/SatelliteToolbox</a><a class="nav-link nav-item" href="../../../SPICE/">⬤ SPICE</a></ul></div><div class="nav-mega-column"><div class="column-header">Exoplanets</div><ul class="column-content"><a class="nav-link nav-item" href="http://JuliaHCI.github.io/ADI.jl/stable/" target="_blank">⬤ JuliaHCI/ADI</a><a class="nav-link nav-item" href="http://JuliaHCI.github.io/HCIToolbox.jl/stable/" target="_blank">⬤ JuliaHCI/HCIToolbox</a><a class="nav-link nav-item" href="../../../Orbits/">⬤ Orbits</a><a class="nav-link nav-item" href="https://sefffal.github.io/PlanetOrbits.jl/dev/" target="_blank">⬤ sefffal/PlanetOrbits</a><a class="nav-link nav-item" href="../../../Transits/">⬤ Transits</a></ul></div><div class="nav-mega-column"><div class="column-header">Stars</div><ul class="column-content"><a class="nav-link nav-item" href="https://cgarling.github.io/BolometricCorrections.jl/stable/" target="_blank">⬤ cgarling/BolometricCorrections</a><a class="nav-link nav-item" href="https://cgarling.github.io/InitialMassFunctions.jl/stable/" target="_blank">⬤ cgarling/InitialMassFunctions</a><a class="nav-link nav-item" href="https://cgarling.github.io/StarFormationHistories.jl/stable/" target="_blank">⬤ cgarling/StarFormationHistories</a></ul></div><div class="nav-mega-column"><div class="column-header">Galaxies and Cosmology</div><ul class="column-content"><a class="nav-link nav-item" href="../../../Cosmology/">⬤ Cosmology</a><a class="nav-link nav-item" href="../../../DustExtinction/">⬤ DustExtinction</a><a class="nav-link nav-item" href="https://ehtjulia.github.io/ScatteringOptics.jl/stable/" target="_blank">⬤ EHTJulia/ScatteringOptics</a></ul></div></div></div><div class="nav-dropdown"><button class="nav-item dropdown-label">Techniques</button><div class="nav-dropdown-container nav-mega-dropdown-container"><div class="nav-mega-column"><div class="column-header">Photometry</div><ul class="column-content"><a class="nav-link nav-item" href="../../../CCDReduction/">⬤ CCDReduction</a><a class="nav-link nav-item" href="../../../LACosmic/">⬤ LACosmic</a><a class="nav-link nav-item" href="../../../Photometry/">⬤ Photometry</a><a class="nav-link nav-item" href="../../../PSFModels/">⬤ PSFModels</a><a class="nav-link nav-item" href="../../../SAOImageDS9/">⬤ SAOImageDS9</a></ul></div><div class="nav-mega-column"><div class="column-header">Astrometry</div><ul class="column-content"><a class="nav-link nav-item" href="https://barrettp.github.io/Astrometry/dev" target="_blank">⬤ barrettp/Astrometry</a><a class="nav-link nav-item" href="../../../AstroTime/">⬤ AstroTime</a><a class="nav-link nav-item" href="../../../EarthOrientation/">⬤ EarthOrientation</a><a class="nav-link nav-item" href="../../../ERFA/">◯ ERFA</a><a class="nav-link nav-item" href="https://ziotom78.github.io/Healpix.jl/stable/" target="_blank">⬤ ziotom78/Healpix</a><a class="nav-link nav-item" href="../../../Reproject/">⬤ Reproject</a><a class="nav-link nav-item" href="../../../SkyCoords/">⬤ SkyCoords</a><a class="nav-link nav-item" href="../../../WCS/">◯ WCS</a></ul></div><div class="nav-mega-column"><div class="column-header">Spectroscopy</div><ul class="column-content"><a class="nav-link nav-item" href="https://ajwheeler.github.io/Korg.jl/stable/" target="_blank">⬤ ajwheeler/Korg</a><a class="nav-link nav-item" href="../../../Spectra/">⬤ Spectra</a><a class="nav-link nav-item" href="https://fjebaker.github.io/SpectralFitting.jl/dev/" target="_blank">⬤ fjebaker/SpectralFitting</a></ul></div><div class="nav-mega-column"><div class="column-header">Time Series Analysis</div><ul class="column-content"><a class="nav-link nav-item" href="https://docs.juliadsp.org/stable/" target="_blank">⬤ JuliaDSP/DSP</a><a class="nav-link nav-item" href="../../../LombScargle/">⬤ LombScargle</a><a class="nav-link nav-item" href="https://juliastats.github.io/TimeSeries.jl/stable" target="_blank">⬤ JuliaStats/TimeSeries</a></ul></div><div class="nav-mega-column"><div class="column-header">Interferometry</div><ul class="column-content"><a class="nav-link nav-item" href="https://ptiede.github.io/Comrade.jl/stable/" target="_blank">⬤ ptiede/Comrade</a><a class="nav-link nav-item" href="https://aplavin.github.io/Difmap.jl/test/examples.html" target="_blank">◯ JuliaAPlavin/Difmap</a><a class="nav-link nav-item" href="https://github.com/emmt/OIFITS.jl?tab=readme-ov-file#support-for-oi-fits-data-in-julia" target="_blank">◯ emmt/OIFITS</a><a class="nav-link nav-item" href="https://fabienbaron.github.io/OITOOLS.jl/dev" target="_blank">⬤ fabienbaron/OITOOLS</a><a class="nav-link nav-item" href="https://ehtjulia.github.io/PolarizedTypes.jl/stable/" target="_blank">⬤ EHTJulia/PolarizedTypes</a><a class="nav-link nav-item" href="https://aplavin.github.io/VLBIData.jl/test/examples.html" target="_blank">⬤ JuliaAPlavin/VLBIData</a><a class="nav-link nav-item" href="https://ehtjulia.github.io/VLBISkyModels.jl/stable/" target="_blank">⬤ EHTJulia/VLBISkyModels</a></ul></div></div></div><div class="nav-dropdown"><button class="nav-item dropdown-label">Statistics</button><div class="nav-dropdown-container nav-mega-dropdown-container"><div class="nav-mega-column"><div class="column-header">Uncertainty</div><ul class="column-content"><a class="nav-link nav-item" href="https://juliaphysics.github.io/Measurements.jl/stable/" target="_blank">⬤ JuliaPhysics/Measurements</a><a class="nav-link nav-item" href="https://baggepinnen.github.io/MonteCarloMeasurements.jl/stable/" target="_blank">⬤ MonteCarloMeasurements</a><a class="nav-link nav-item" href="https://baggepinnen.github.io/MonteCarloMeasurements.jl/stable/" target="_blank">⬤ JuliaAPlavin/Uncertain</a></ul></div><div class="nav-mega-column"><div class="column-header">Optimization</div><ul class="column-content"><a class="nav-link nav-item" href="../../../BoxLeastSquares/">⬤ BoxLeastSquares</a><a class="nav-link nav-item" href="http://jump.dev/JuMP.jl/" target="_blank">⬤ jump-dev/JuMP</a><a class="nav-link nav-item" href="https://docs.sciml.ai/NonlinearSolve/stable/" target="_blank">⬤ SciML/NonlinearSolve</a><a class="nav-link nav-item" href="https://docs.sciml.ai/Optimization/stable/" target="_blank">⬤ SciML/Optimization</a></ul></div><div class="nav-mega-column"><div class="column-header">General</div><ul class="column-content"><a class="nav-link nav-item" href="../../../AstroLib/">⬤ AstroLib</a><a class="nav-link nav-item" href="http://mileslucas.com/BiweightStats.jl/stable/" target="_blank">⬤ mileslucas/BiweightStats</a><a class="nav-link nav-item" href="https://github.com/jeff-regier/Celeste.jl/wiki/" target="_blank">⬤ jeff-regier/Celeste</a><a class="nav-link nav-item" href="https://juliastats.org/" target="_blank">⬤ JuliaStats</a><a class="nav-link nav-item" href="https://juliastats.github.io/Distributions.jl/stable/" target="_blank">⬤ JuliaStats/Distributions</a><a class="nav-link nav-item" href="https://ehtjulia.github.io/FastHartleyTransform.jl/stable/" target="_blank">⬤ EHTJulia/FastHartleyTransform</a><a class="nav-link nav-item" href="https://sefffal.github.io/Octofitter.jl/dev" target="_blank">⬤ sefffal/Octofitter</a></ul></div></div></div><div class="nav-dropdown"><button class="nav-item dropdown-label">Utilities</button><div class="nav-dropdown-container nav-mega-dropdown-container"><div class="nav-mega-column"><div class="column-header">Data I/O</div><ul class="column-content"><a class="nav-link nav-item" href="https://eschnett.github.io/ASDF2.jl/dev/" target="_blank">⬤ eschnett/ASDF2</a><a class="nav-link nav-item" href="../../../AstroImages/">⬤ AstroImages</a><a class="nav-link nav-item" href="../../../CFITSIO/">◯ CFITSIO</a><a class="nav-link nav-item" href="https://emmt.github.io/EasyFITS.jl/dev" target="_blank">◯ emmt/EasyFITS</a><a class="nav-link nav-item" href="https://barrettp.github.io/FITSFiles.jl/" target="_blank">⬤ barrettp/FITSFiles</a><a class="nav-link nav-item" href="../../../FITSIO/">◯ FITSIO</a><a class="nav-link nav-item" href="https://github.com/JuliaAPlavin/FixedWidthTables.jl?tab=readme-ov-file#fixedwidthtablesjl" target="_blank">⬤ FixedWidthTables</a><a class="nav-link nav-item" href="https://aplavin.github.io/SkyImages.jl/test/notebook.html" target="_blank">⬤ JuliaAPlavin/SkyImages</a><a class="nav-link nav-item" href="https://github.com/JuliaAPlavin/VirtualObservatory.jl?tab=readme-ov-file#virtualobservatoryjl" target="_blank">⬤ JuliaAPlavin/VirtualObservatory</a><a class="nav-link nav-item" href="https://github.com/JuliaAPlavin/VOTables.jl" target="_blank">⬤ JuliaAPlavin/VOTables</a><a class="nav-link nav-item" href="../../../XPA/">⬤ XPA</a></ul></div><div class="nav-mega-column"><div class="column-header">Data processing</div><ul class="column-content"><a class="nav-link nav-item" href="../../../Astroalign/">⬤ Astroalign</a><a class="nav-link nav-item" href="https://github.com/torrance/Casacore.jl?tab=readme-ov-file#casacorejl" target="_blank">◯ torrance/Casacore</a><a class="nav-link nav-item" href="https://dataframes.juliadata.org/stable/" target="_blank">⬤ JuliaData/DataFrames</a><a class="nav-link nav-item" href="https://rafaqz.github.io/DimensionalData.jl/stable/" target="_blank">⬤ rafaqz/DimensionalData</a><a class="nav-link nav-item" href="https://aplavin.github.io/FlexiJoins.jl/test/examples.html" target="_blank">⬤ JuliaAPlavin/FlexiJoins</a><a class="nav-link nav-item" href="https://github.com/gcalderone/SortMerge.jl?tab=readme-ov-file#sortmerge" target="_blank">⬤ gcalderone/SortMerge</a></ul></div><div class="nav-mega-column"><div class="column-header">Data Viz</div><ul class="column-content"><a class="nav-link nav-item" href="../../../AstroImages/">⬤ AstroImages</a><a class="nav-link nav-item" href="https://juliaimages.github.io/ImageFiltering.jl/stable" target="_blank">⬤ JuliaImages/ImageFiltering</a><a class="nav-link nav-item" href="https://manuelbehrendt.github.io/Mera.jl/stable/" target="_blank">⬤ ManuelBehrendt/Mera</a><a class="nav-link nav-item" href="https://sefffal.github.io/PairPlots.jl/dev/" target="_blank">⬤ sefffal/PairPlots</a><a class="nav-link nav-item" href="https://aplavin.github.io/SkyImages.jl/test/notebook.html" target="_blank">⬤ JuliaAPlavin/SkyImages</a></ul></div><div class="nav-mega-column"><div class="column-header">Units/Constants</div><ul class="column-content"><a class="nav-link nav-item" href="../../../AstroAngles/">⬤ AstroAngles</a><a class="nav-link nav-item" href="https://symbolicml.org/DynamicQuantities.jl/stable/" target="_blank">⬤ SymbolicML/DynamicQuantities</a><a class="nav-link nav-item" href="https://juliaphysics.github.io/PhysicalConstants.jl/stable/" target="_blank">⬤ JuliaPhysics/PhysicalConstants</a><a class="nav-link nav-item" href="https://painterqubits.github.io/Unitful.jl/stable" target="_blank">⬤ PainterQubits/Unitful</a><a class="nav-link nav-item" href="../../../UnitfulAstro/">⬤ UnitfulAstro</a></ul></div></div></div><div class="search nav-item"><input id="search-input" placeholder="Search everywhere..."/><ul class="suggestions hidden" id="search-result-container"></ul><div class="search-keybinding">/</div></div></div><button id="multidoc-toggler"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"></path></svg></button></nav><div id="documenter"><nav class="docs-sidebar"><a class="docs-logo" href="../../"><img alt="JuliaAstro logo" src="../../assets/logo.svg"/></a><div class="docs-package-name"><span class="docs-autofit"><a href="../../">JuliaAstro</a></span></div><button class="docs-search-query input is-rounded is-small is-clickable my-2 mx-auto py-1 px-2" id="documenter-search-query">Search docs (Ctrl + /)</button><ul class="docs-menu"><li><a class="tocitem" href="../../">Home</a></li><li><span class="tocitem">Tutorials</span><ul><li><a class="tocitem" href="../">Getting Started</a></li><li><input checked="" class="collapse-toggle" id="menuitem-2-2" type="checkbox"/><label class="tocitem" for="menuitem-2-2"><span class="docs-label">General</span><i class="docs-chevron"></i></label><ul class="collapsed"><li><a class="tocitem" href="../jwst-image-scale-bar/">JWST image with scale bar</a></li><li><a class="tocitem" href="../tabular-data/">Working with tabular data</a></li><li class="is-active"><a class="tocitem" href="">Curve Fitting</a><ul class="internal"><li><a class="tocitem" href="#Packages"><span>Packages</span></a></li><li><a class="tocitem" href="#Generating-the-data"><span>Generating the data</span></a></li><li><a class="tocitem" href="#Linear-regression"><span>Linear regression</span></a></li><li><a class="tocitem" href="#(Non-)linear-curve-fit"><span>(Non-)linear curve fit</span></a></li><li><a class="tocitem" href="#Bayesian-models"><span>Bayesian models</span></a></li></ul></li></ul></li></ul></li><li><a class="tocitem" href="../../ecosystem/">Package Ecosystem</a></li><li><a class="tocitem" href="../../comparison/">Comparison with Astropy</a></li><li><a class="tocitem" href="../../case_studies/">Case studies</a></li></ul><div class="docs-version-selector field has-addons"><div class="control"><span class="docs-label button is-static is-size-7">Version</span></div><div class="docs-selector control is-expanded"><div class="select is-fullwidth is-size-7"><select id="documenter-version-selector"></select></div></div></div></nav><div class="docs-main"><header class="docs-navbar"><a class="docs-sidebar-button docs-navbar-link fa-solid fa-bars is-hidden-desktop" href="#" id="documenter-sidebar-button"></a><nav class="breadcrumb"><ul class="is-hidden-mobile"><li><a class="is-disabled">Tutorials</a></li><li><a class="is-disabled">General</a></li><li class="is-active"><a href="">Curve Fitting</a></li></ul><ul class="is-hidden-tablet"><li class="is-active"><a href="">Curve Fitting</a></li></ul></nav><div class="docs-right"><a class="docs-navbar-link" href="https://github.com/JuliaAstro/JuliaAstro.github.io" title="View the repository on GitHub"><span class="docs-icon fa-brands"></span><span class="docs-label is-hidden-touch">GitHub</span></a><a class="docs-navbar-link" href="https://github.com/JuliaAstro/JuliaAstro.github.io/blob/main/docs/src/tutorials/curve-fit.md" title="Edit source on GitHub"><span class="docs-icon fa-solid"></span></a><a class="docs-settings-button docs-navbar-link fa-solid fa-gear" href="#" id="documenter-settings-button" title="Settings"></a><a class="docs-article-toggle-button fa-solid fa-chevron-up" href="javascript:;" id="documenter-article-toggle-button" title="Collapse all docstrings"></a></div></header><article class="content" id="documenter-page"><h1 id="curve-fit"><a class="docs-heading-anchor" href="#curve-fit">Curve Fitting</a><a id="curve-fit-1"></a><a class="docs-heading-anchor-permalink" href="#curve-fit" title="Permalink"></a></h1><p>This tutorial will demonstrate fitting data with a straight line (linear regression), an arbitrary non-linear model, and finally a Bayesian model.</p><h2 id="Packages"><a class="docs-heading-anchor" href="#Packages">Packages</a><a id="Packages-1"></a><a class="docs-heading-anchor-permalink" href="#Packages" title="Permalink"></a></h2><ul><li><a href="https://docs.julialang.org/en/v1/stdlib/LinearAlgebra/"><code>LinearAlgebra</code></a> we'll use this built-in Julia standard library to perform a linear regression</li><li><a href="http://optimization.sciml.ai/stable/"><code>Optimization</code></a>: we'll use this package to display coordinates along the image and add the scalebar</li><li><code>OptimizationOptimJL</code>: the specific optimizer backend we will use.  For your own problems, select the best backend from the Optimization.jl documentation page.</li><li><a href="https://turing.ml/stable/"><code>Turing</code></a>: we'll use this package for Bayesian modelling.</li><li><a href="https://github.com/sefffal/PairPlots.jl"><code>PairPlots</code></a>: we'll use this for creating a corner plot of the posterior from our Bayesian models.</li></ul><p>You can install the necessary packages by running Julia, and typing <code>]</code> to enter Pkg-mode. Then:</p><pre><code class="language-julia-repl hljs">pkg&gt; add Plots Optimization OptimizationOptimJL Turing PairPlots</code></pre><p>Alternatively, you can run</p><pre><code class="language-julia hljs">using Pkg; Pkg.add(["Plots", "Optimization", "OptimizationOptimJL", "Turing", "PairPlots"])</code></pre><p>In your own code, you most likely won't need all of these packages. Pick and choose the one that best fits your problem.</p><p>If you will be using these tools as part of a bigger project, it's strongly recommended to create a <a href="https://pkgdocs.julialang.org/v1/environments/">Julia Project</a> to record package versions. If you're just experimenting, you can create a temporary project by running <code>] activate --temp</code> in the Julia REPL.</p><p>If you're using <a href="https://plutojl.org">Pluto notebooks</a>, installing and recording package versions in a project are handled for you automatically.</p><h2 id="Generating-the-data"><a class="docs-heading-anchor" href="#Generating-the-data">Generating the data</a><a id="Generating-the-data-1"></a><a class="docs-heading-anchor-permalink" href="#Generating-the-data" title="Permalink"></a></h2><p>We'll generate synthetic data for this problem. We'll make a weak parabola with some noise. For consistency, we'll seed the Julia random number generator so that we see the same noise each time the tutorial is run.</p><pre><code class="language-julia-repl hljs">julia&gt; using Random
+julia&gt; Random.seed!(1234)</code></pre><p>By calling <code>seed!</code>, the pattern of random numbers generated by <code>rand</code> and <code>randn</code> will be the same each time.</p><p>Now we'll generate the data:</p><pre><code class="language-julia-repl hljs">julia&gt; x = 0:5:100 # Or equivalently: range(0, 100, step=5)
+0:1:100
+
+julia&gt; y = (x ./ 20 .- 0.2).^2 .+ 2 .+ randn(length(x))
+101-element Vector{Float64}:
+  3.010656328855214
+  1.0432815884648003
+  ⋮
+ 25.653998582068482
+ 26.260043796712125
+</code></pre><p>The <code>randn</code> function generates a random value normally distributed around <code>0</code> with a standard deviation of <code>1</code>. <code>rand</code> on the other hand creates uniformly distributed random values distributed between <code>0</code> and <code>1</code>.</p><p>Let's plot the data to see what it looks like:</p><pre><code class="language-julia-repl hljs">julia&gt; using Plots
+julia&gt; scatter(x, y; xlabel="x", ylabel="y", label="data")</code></pre><p><img alt="" src="../../assets/tutorials/curve-fit/data-scatter.svg"/></p><h2 id="Linear-regression"><a class="docs-heading-anchor" href="#Linear-regression">Linear regression</a><a id="Linear-regression-1"></a><a class="docs-heading-anchor-permalink" href="#Linear-regression" title="Permalink"></a></h2><p>Before using any packages, let's perform a linear fit from scratch using some linear algebra.</p><p>The equation of a line can be written in matrix form as</p><p class="math-container">\[\begin{pmatrix}
+  N        &amp; \sum y_i \\
+  \sum y_i &amp; \sum y_i^2
+\end{pmatrix}
+\begin{pmatrix} c_1 \\ c_2 \end{pmatrix}
+=
+\begin{pmatrix}
+\sum y_i \\
+\sum y_i x_i
+\end{pmatrix}\]</p><p>where <span>$c_1$</span> and <span>$c_2$</span> are the intercept and slope.</p><p>Multiplying both sides by the inverse of the first matrix gives</p><p class="math-container">\[\begin{pmatrix} c_1 \\ c_2 \end{pmatrix}
+= \begin{pmatrix}
+  N &amp; \sum y_i \\
+  \sum y_i &amp; \sum y_i^2
+\end{pmatrix}^{-1}
+\begin{pmatrix} \sum y_i \\ \sum y_i x_i \end{pmatrix}\]</p><p>We can write the right-hand side matrix and vector (let's call them <code>A</code> and <code>b</code>) in Julia notation like so:</p><pre><code class="language-julia-repl hljs">julia&gt; A = [
+          length(x) sum(x)
+          sum(x)    sum(x.^2)
+       ]
+2×2 Matrix{Int64}:
+   21   1050
+ 1050  71750
+
+julia&gt; b = [
+           sum(y)
+           sum(y .* x)
+       ]
+2-element Vector{Float64}:
+   210.4250937868108
+ 15023.030866331104</code></pre><p>We can now perform the linear fit by solving the system of equations with the <code>\</code> operator:</p><pre><code class="language-julia-repl hljs">julia&gt; c = A\b
+2-element Vector{Float64}:
+ -1.67268257376372
+  0.2338585027008085</code></pre><p>Let's make a helper function <code>linfunc</code> that takes an x value, a slope, and an intercept and calculates the corresponding y value:</p><pre><code class="language-julia-repl hljs">julia&gt; linfunc(x; slope, intercept) = slope*x + intercept
+linfunc (generic function with 1 method)</code></pre><p>Finally, we can plot the solution:</p><pre><code class="language-julia-repl hljs">julia&gt; yfit = linfunc.(x; slope=c[2], intercept=c[1])
+julia&gt; scatter(x, y, xlabel="x", ylabel="y", label="data")
+julia&gt; plot!(x, yfit, label="best fit")</code></pre><p><img alt="" src="../../assets/tutorials/curve-fit/linear-regression.svg"/></p><p>The packages <a href="https://julianlsolvers.github.io/LsqFit.jl/dev/">LsqFit</a> and <a href="https://juliastats.org/GLM.jl/v0.11/#Minimal-examples-1">GLM</a> (for generalized linear models) contain functions for performing and evaluating these types of linear fits.</p><h2 id="(Non-)linear-curve-fit"><a class="docs-heading-anchor" href="#(Non-)linear-curve-fit">(Non-)linear curve fit</a><a id="(Non-)linear-curve-fit-1"></a><a class="docs-heading-anchor-permalink" href="#(Non-)linear-curve-fit" title="Permalink"></a></h2><p>The packages above can be used to fit different polynomial models, but if we have a truly arbitrary Julia function we would like to fit to some data we can use the <a href="http://optimization.sciml.ai/stable/">Optimization.jl</a> package. Through its various backends, Optimization.jl supports a very wide range of algorithms for local, global, convex, and non-convex optimization.</p><p>The first step is to define our objective function. We'll reuse our simple <code>linfunc</code> linear function from above and create an objective function based on the sum of the squared errors</p><pre><code class="language-julia hljs">linfunc(x; slope, intercept) = slope*x + intercept
+
+# We must supply an objective function that will be minimized
+# The u argument is a vector of parameters from the optimizer.
+# data is a vector of static parameters passed through below.
+function objective(u, data)
+    # Get our fit parameters from u
+    slope, intercept = u
+    # equivalent to:
+    # slope = u[1]
+    # intercept = u[2]
+
+    # Get the x and y vectors from data
+    x, y = data
+
+    # Calculate the residuals between our model and the data
+    residuals = linfunc.(x; slope, intercept) .- y
+
+    # Return the sum of squares of the residuals to minimize
+    return sum(residuals.^2)
+end</code></pre><p>Now, we'll use SciML's problem-algorithm-solve workflow to solve our optimization problem:</p><pre><code class="language-julia hljs"># Define the initial parameter values for slope and intercept
+u0 = [1.0, 1.0]
+# Pass through the data we want to fit
+data = [x, y]
+
+# Create an OptimizationProblem object to hold the function, initial
+# values, and data.
+using Optimization
+prob = OptimizationProblem(objective, u0, data)
+
+# Import the optimization backend we want to use
+using OptimizationOptimJL
+
+# Minimize the function. Optimization.jl uses the SciML common solver interface.
+# Pass the problem you want to solve (optimization problem here) and a solver to use.
+# NelderMead() is a derivative-free method for finding a function's local minimum.
+sol = solve(prob, NelderMead())
+
+# Exctract the best-fitting parameters
+slope, intercept = sol.u</code></pre><p>Note: the <code>NelderMead()</code> algorithm behaves nearly identically to MATLAB's <code>fminsearch</code>.</p><p>We can now plot the solution:</p><pre><code class="language-julia-repl hljs">julia&gt; yfit = linfunc.(x; slope, intercept)
+julia&gt; scatter(x, y, xlabel="x", ylabel="y", label="data")
+julia&gt; plot!(x, yfit, label="best fit")</code></pre><p><img alt="" src="../../assets/tutorials/curve-fit/optimization-linear-regression.svg"/></p><p>We can now test out a quadratic fit using the same package, by defining a new objective function:</p><pre><code class="language-julia hljs">function objective(u, data)
+    x, y = data
+
+    # Define an equation of a quadratic, e.g.:
+    # 3x^2 + 2x + 1
+    model = u[1] .* x.^2 .+ u[2] .* x .+ u[3]
+
+    # Calculate the residuals between our model and the data
+    residuals = model .- y
+
+    # Return the sum of squares of the residuals to minimize
+    return sum(residuals.^2)
+end</code></pre><pre><code class="language-julia hljs">u0 = [1.0, 1.0, 1.0]
+data = [x, y]
+prob = OptimizationProblem(objective, u0, data)
+using OptimizationOptimJL
+sol = solve(prob, NelderMead())
+u = sol.u
+
+yfit = u[1] .* x.^2 .+ u[2] .* x .+ u[3]
+
+scatter(x, y, xlabel="x", ylabel="y", label="data")
+plot!(x,  yfit, label="quadratic fit")</code></pre><p><img alt="" src="../../assets/tutorials/curve-fit/optimization-quad-regression.svg"/></p><p>This is already very fast; however, as the scale of your problem grows, there are several routes you can take to improve the optimization performance. First, you can use automatic differentiation and a higher order optimization algorithm:</p><pre><code class="language-julia hljs">using ForwardDiff
+optf = OptimizationFunction(objective, Optimization.AutoForwardDiff())
+prob = OptimizationProblem(optf, u0, data)
+@time sol = solve(prob, BFGS())  # another good algorithm is Newton()</code></pre><p>You can also write an "in-place" version of <code>objective</code> that doesn't allocate new arrays with each iteration.</p><h2 id="Bayesian-models"><a class="docs-heading-anchor" href="#Bayesian-models">Bayesian models</a><a id="Bayesian-models-1"></a><a class="docs-heading-anchor-permalink" href="#Bayesian-models" title="Permalink"></a></h2><p>Let's shift gears and now create a fully Bayesian model using the <a href="https://turing.ml/stable/">Turing.jl</a> package.</p><p>Instead of defining an arbitrary Julia function, this package requires us to use a macro called <code>@model</code>.</p><p>Let's start with a linear model once more, now with the Turing <code>@model</code> syntax:</p><pre><code class="language-julia hljs"># Bayesian linear regression.
+@model function linear_regression(x, y)
+    # Set variance prior.
+    σ₂ ~ truncated(Normal(0, 100), 0, Inf)
+    # Typed as \sigma &lt;tab&gt; \_2 &lt;tab&gt;
+
+    # Set intercept prior.
+    intercept ~ Normal(0, 5)
+
+    # Set the prior on our slope coefficient.
+    slope ~ Normal(0, 10)
+
+    # Each point is drawn from a gaussian (Normal) distribution
+    # with mean calculated form our linear model, and standard
+    # deviation as the square root of the variance variable
+    for i in eachindex(x,y)
+        y[i] ~ Normal(x[i] * slope + intercept, sqrt(σ₂))
+    end
+end
+</code></pre><p>We can now draw posterior samples from this model using one of many available samplers, <code>NUTS</code>, the No U-Turn Sampler.</p><pre><code class="language-julia hljs">model = linear_regression(x, y)
+chain = sample(model, NUTS(0.65), 500)</code></pre><pre><code class="nohighlight hljs">┌ Info: Found initial step size
+└   ϵ = 0.003125
+Sampling 100%|█████████████████████████████████████| Time: 0:00:05
+Chains MCMC chain (25000×15×1 Array{Float64, 3}):
+
+Iterations        = 1001:1:26000
+Number of chains  = 1
+Samples per chain = 25000
+Wall duration     = 5.88 seconds
+Compute duration  = 5.88 seconds
+parameters        = σ₂, intercept, slope
+internals         = lp, n_steps, is_accept, acceptance_rate, log_density, hamiltonian_energy, hamiltonian_energy_error, max_hamiltonian_energy_error, tree_depth, numerical_error, step_size, nom_step_size
+
+Summary Statistics
+  parameters      mean       std   naive_se      mcse          ess      rhat   ess_per_sec
+      Symbol   Float64   Float64    Float64   Float64      Float64   Float64       Float64
+
+          σ₂    6.7431    2.6279     0.0166    0.0265   10640.9415    1.0000     1810.6077
+   intercept   -1.5979    1.0739     0.0068    0.0105   10239.7534    1.0001     1742.3436
+       slope    0.2328    0.0186     0.0001    0.0002   10306.9493    1.0001     1753.7773
+
+Quantiles
+  parameters      2.5%     25.0%     50.0%     75.0%     97.5%
+      Symbol   Float64   Float64   Float64   Float64   Float64
+
+          σ₂    3.3126    4.9457    6.1965    7.9372   13.3608
+   intercept   -3.6910   -2.2965   -1.5992   -0.9049    0.5423
+       slope    0.1959    0.2206    0.2329    0.2449    0.2690</code></pre><pre><code class="language-julia hljs">intercept = chain["intercept"]
+slope = chain["slope"]
+σ₂ = chain["σ₂"]
+
+plot(x, x .* slope' .+ intercept'; label="", color=:gray, alpha=0.05)
+scatter!(x, y, xlabel="x", ylabel="y", label="data", color=1)</code></pre><p><img alt="" src="../../assets/tutorials/curve-fit/bayesian-lin-regression.svg"/></p><p>Each gray curve is a sample from the posterior distribution of this model. To examine the model parameters and their covariance in greater detail, we can make a corner plot using the PairPlots.jl package. We'll need a few more samples for a nice plot, so re-run the NUTS sampler with more iterations first.</p><pre><code class="language-julia hljs">Random.seed!(1234)
+chain = sample(model, NUTS(0.65), 25_000)
+
+using PairPlots
+table = (;
+    intercept = chain["intercept"],
+    slope = chain["slope"],
+    σ = sqrt.(chain["σ₂"])
+)
+PairPlots.corner(table)</code></pre><p><img alt="" src="../../assets/tutorials/curve-fit/lin-regress-corner.svg"/></p><p>Let's now repeat this procedure with a Bayesian quadratic model.</p><pre><code class="language-julia hljs">@model function quad_regression(x, y)
+    # Prior on the variance of the data around the best-fit line
+    σ₂ ~ truncated(Normal(0, 10), 0, Inf)
+
+    # Priors on the three quadratic parameters
+    u1 ~ Normal(0,0.01)
+    u2 ~ Normal(0,0.1)
+    u3 ~ Normal(0,5)
+
+    for i in eachindex(x,y)
+        model = u1 * x[i]^2 + u2*x[i] + u3
+        y[i] ~ Normal(model, sqrt(σ₂))
+    end
+end
+</code></pre><p>We can now draw posterior samples from this model using one of many available samplers, <code>NUTS</code>, or the No U-Turn Sampler.</p><pre><code class="language-julia hljs">model = quad_regression(x, y)
+chain = sample(model, NUTS(0.65), 500)</code></pre><pre><code class="nohighlight hljs">┌ Info: Found initial step size
+└   ϵ = 0.0001953125
+Sampling 100%|█████████████████████████████████████| Time: 0:00:05
+Chains MCMC chain (500×16×1 Array{Float64, 3}):
+
+Iterations        = 251:1:750
+Number of chains  = 1
+Samples per chain = 500
+Wall duration     = 5.89 seconds
+Compute duration  = 5.89 seconds
+parameters        = σ₂, u1, u2, u3
+internals         = lp, n_steps, is_accept, acceptance_rate, log_density, hamiltonian_energy, hamiltonian_energy_error, max_hamiltonian_energy_error, tree_depth, numerical_error, step_size, nom_step_size
+
+Summary Statistics
+  parameters      mean       std   naive_se      mcse        ess      rhat   ess_per_sec
+      Symbol   Float64   Float64    Float64   Float64    Float64   Float64       Float64
+
+          σ₂    1.5698    0.6322     0.0283    0.0518   117.5553    0.9994       19.9517
+          u1    0.0024    0.0003     0.0000    0.0000   134.9184    0.9997       22.8986
+          u2   -0.0059    0.0283     0.0013    0.0024   107.3698    0.9995       18.2230
+          u3    2.1371    0.6109     0.0273    0.0562    87.2121    0.9995       14.8018
+
+Quantiles
+  parameters      2.5%     25.0%     50.0%     75.0%     97.5%
+      Symbol   Float64   Float64   Float64   Float64   Float64
+
+          σ₂    0.8757    1.1468    1.3945    1.8181    3.3834
+          u1    0.0018    0.0022    0.0024    0.0026    0.0030
+          u2   -0.0612   -0.0237   -0.0045    0.0133    0.0438
+          u3    0.9635    1.7155    2.1211    2.5172    3.3960</code></pre><pre><code class="language-julia hljs">u1 = chain["u1"]
+u2 = chain["u2"]
+u3 = chain["u3"]
+posterior = u1' .* x.^2 .+ u2' .* x .+ u3'
+
+plot(x, posterior; label="", color=:gray, alpha=0.1)
+scatter!(x, y, xlabel="x", ylabel="y", label="data", color=1)</code></pre><p><img alt="" src="../../assets/tutorials/curve-fit/bayesian-quad-regression.svg"/></p><pre><code class="language-julia hljs">Random.seed!(1)
+chain = sample(model, NUTS(0.65), 25_000)
+
+using PairPlots
+table = (;
+    u_1 = chain["u1"],
+    u_2 = chain["u2"],
+    u_3 = chain["u3"],
+    σ = sqrt.(chain["σ₂"])
+)
+PairPlots.corner(table)</code></pre><p><img alt="" src="../../assets/tutorials/curve-fit/quad-regress-corner.svg"/></p></article><nav class="docs-footer"><a class="docs-footer-prevpage" href="../tabular-data/">« Working with tabular data</a><a class="docs-footer-nextpage" href="../../ecosystem/">Package Ecosystem »</a><div class="flexbox-break"></div><p class="footer-message">Powered by <a href="https://github.com/JuliaDocs/Documenter.jl">Documenter.jl</a> and the <a href="https://julialang.org/">Julia Programming Language</a>.</p></nav></div><div class="modal" id="documenter-settings"><div class="modal-background"></div><div class="modal-card"><header class="modal-card-head"><p class="modal-card-title">Settings</p><button class="delete"></button></header><section class="modal-card-body"><p><label class="label">Theme</label></p><div class="select"><select id="documenter-themepicker"><option value="auto">Automatic (OS)</option><option value="documenter-light">documenter-light</option><option value="documenter-dark">documenter-dark</option><option value="catppuccin-latte">catppuccin-latte</option><option value="catppuccin-frappe">catppuccin-frappe</option><option value="catppuccin-macchiato">catppuccin-macchiato</option><option value="catppuccin-mocha">catppuccin-mocha</option></select></div><p></p><hr/><p>This document was generated with <a href="https://github.com/JuliaDocs/Documenter.jl">Documenter.jl</a> version 1.14.1 on <span class="colophon-date" title="Friday 29 August 2025 19:00">Friday 29 August 2025</span>. Using Julia version 1.11.6.</p></section><footer class="modal-card-foot"></footer></div></div></div></body></HTML>
