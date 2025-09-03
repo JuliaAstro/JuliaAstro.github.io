@@ -87,7 +87,7 @@ makedocs(
                 "tutorials/curve-fit.md",
             ],
         ],
-        "Ecosystem" => "ecosystem.md",
+        "Package Ecosystem" => "ecosystem.md",
         "Comparison with Astropy" => "comparison.md",
         case_studies,
     ],

@@ -785,6 +785,16 @@ ecosystem() = (
         ),
         "Data processing" => (
             (
+                name = "Astroalign.jl",
+                repo = "https://github.com/JuliaAstro/Astroalign.jl",
+                doc = "https://juliaastro.org/Astroalign/stable/",
+                tagline = "An experimental reimplementation of astroalign.py",
+                descr = """
+                - An experimental reimplementation of [astroalign](https://github.com/quatrope/astroalign) in Julia
+                """,
+                astropy = ["astroalign"],
+            ),
+            (
                 name = "torrance/Casacore.jl",
                 repo = "https://github.com/torrance/Casacore.jl",
                 doc = "https://github.com/torrance/Casacore.jl?tab=readme-ov-file#casacorejl",
