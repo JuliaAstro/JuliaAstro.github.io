@@ -617,6 +617,7 @@ ecosystem() = (
                 tagline = "A model fitting framework for Julia",
                 descr = """
                 - `GModelFit` is a general purpose, data-driven model fitting framework for Julia
+                - Powers the spectral fitting library, [QSFit.jl](https://github.com/gcalderone/QSFit.jl)
                 """,
                 astropy = ["astropy.modeling"],
             ),
