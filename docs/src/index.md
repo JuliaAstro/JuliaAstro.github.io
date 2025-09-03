@@ -1,6 +1,6 @@
 # JuliaAstro
 
-[JuliaAstro](https://github.com/JuliaAstro) and its affiliated organizations are a community for astronomy in Julia. We have a wide variety of packages from [aperture photometry](https://github.com/juliaastro/Photometry.jl) to [cosmology](https://github.com/juliaastro/Cosmology.jl). Check out a curated list of packages in the JuliaAstro ecosystem (and beyond) on the [Ecosystem page](@ref eco), or visit their documentation directly via the navbar above. Pure Julia packages are marked with a closed circle ⬤, while wrapper packages for other languages are marked with an open circle ◯. 
+[JuliaAstro](https://github.com/JuliaAstro) and its affiliated organizations are a community for astronomy in Julia. We have a wide variety of packages from [aperture photometry](https://github.com/juliaastro/Photometry.jl) to [cosmology](https://github.com/juliaastro/Cosmology.jl). Check out a curated list of packages in the JuliaAstro ecosystem (and beyond) on the [Package Ecosystem page](@ref eco), or visit their documentation directly via the navbar above. Pure Julia packages are marked with a closed circle ⬤, while wrapper packages for other languages are marked with an open circle ◯. 
 
 ## Contributing
 
@@ -63,20 +63,18 @@ Would you like to contribute to JuliaAstro through Google Summer of Code? You ca
     - Trajectory optimisation in space mechanics with Julia [[pretalx]](https://pretalx.com/juliacon2024/talk/UXJWXS/) [[video]](https://www.youtube.com/watch?v=a4-wynFTCmk)
     - Propagating large orbital uncertainty with TaylorIntegration.jl [[pretalx]](https://pretalx.com/juliacon2024/talk/SQFY3B/) [[video]](https://www.youtube.com/watch?v=G6uzqwDZCwA)
 
-### Upcoming
-
 !!! details "JuliaCon 2025"
     **Julia in Astronomy & Astrophysics Research Symposium 2025 [[website]](https://eford.github.io/AstroMiniSymposiumAtJuliaCon2025/)**
     - [Building an Astronomy Code for VLBI in Julia](https://pretalx.com/juliacon-2025/talk/NSZLHS/)
-    - [Instrument Modelling for Radio Telescopes with Julia](https://pretalx.com/juliacon-2025/talk/Q7XZBZ/)
-    - Bayesian Multifrequency Imaging for Radio Astronomy (TBC)
+    - [Astrometry.jl: A Fundamental Julia Package for Astronomy](https://pretalx.com/juliacon-2025/talk/SGJEKU/)
+    - [Bayesian Multifrequency Imaging for Radio Astronomy](https://pretalx.com/juliacon-2025/talk/BNCPT8/)
     - [Regularized Maximum Likelihood Methods for Black Hole Imaging](https://pretalx.com/juliacon-2025/talk/AYBT3G/)
-    - Space time and accretion inference from images of black holes (TBC)
+    - [Krang.jl: Physics inference from images fo Black Holes](https://pretalx.com/juliacon-2025/talk/GCSQQC/)
     - [Building an End-to-End Spectral Reduction Pipeline for APOGEE](https://pretalx.com/juliacon-2025/talk/HYYXTA/)
     - [Juggling astro catalogs in Julia: convenience meets performance](https://pretalx.com/juliacon-2025/talk/TUXFSL/)
     - [ScatteringOptics.jl: An Interstellar Scattering Framework](https://pretalx.com/juliacon-2025/talk/N7ZEMF/)
-    - Astrometry.jl: A Fundamental Julia Package for Astronomy (TBC)
-    - Panel Discussion (TBC)
+    - [Panel Discussion](https://pretalx.com/juliacon-2025/talk/EWRB37/)
 
     **More aero/astro talks at JuliaCon**
     - [Tuning attitude control gains of a satellite using Julia](https://pretalx.com/juliacon-2025/talk/SAYCCZ/)
+    - [Interfacing Julia with Kerbal Space Program using KRPC.jl](https://pretalx.com/juliacon-2025/talk/3YTQY7/)

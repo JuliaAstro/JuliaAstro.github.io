@@ -11,7 +11,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout gh-pages branch
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
         with:
           ref: gh-pages
 
@@ -21,7 +21,7 @@ jobs:
       - uses: julia-actions/cache@v2
 
       - name: Check for stale PR previews
-        shell: julia {0}
+        shell: julia --color=yes {0}
         run: |
           using Pkg
           Pkg.activate(temp = true)
@@ -39,8 +39,8 @@ jobs:
           end
 
           function all_prs()
-              url = "https://api.github.com/repos/$repo/pulls?per_page=100;page=$(page)"
-              query_prs(page) = JSON3.read(HTTP.get(url).body)
+              url = "https://api.github.com/repos/$repo/pulls?per_page=100;page="
+              query_prs(page) = JSON3.read(HTTP.get(url * string(page)).body)
               prs = []
               page = 1
               while true
@@ -62,8 +62,10 @@ jobs:
 
           if isempty(stale_previews)
               @info "No stale previews"
-              exit(1)
+              println(ENV["GITHUB_ENV"], "FOUND_STALE_PREVIEWS=false")
+              exit()
           end
+          println(ENV["GITHUB_ENV"], "FOUND_STALE_PREVIEWS=true")
 
           for pr in stale_previews
               path = joinpath("previews", "PR$pr")
@@ -71,6 +73,7 @@ jobs:
               run(`git rm -rf $path`)
           end
       - name: Push changes
+        if: ${{ env.FOUND_STALE_PREVIEWS == 'true' }}
         run: |
           git config user.name "Documenter.jl"
           git config user.email "documenter@juliadocs.github.io"
