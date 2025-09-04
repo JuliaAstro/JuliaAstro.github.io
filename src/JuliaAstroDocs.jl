@@ -39,7 +39,7 @@ ecosystem() = (
                 astropy = [],
             ),
             (
-                name = "PerezHz/HORIZONS.jl",
+                name = "HORIZONS.jl",
                 repo = "https://github.com/PerezHz/HORIZONS.jl",
                 doc = "https://github.com/PerezHz/HORIZONS.jl?tab=readme-ov-file#horizonsjl",
                 tagline = "An interface to NASA-JPL HORIZONS system and other Solar System Dynamics APIs in Julia",
@@ -49,7 +49,7 @@ ecosystem() = (
                 astropy = ["astropy.coordinates"],
             ),
             (
-                name = "JuliaSpace/SatelliteToolbox.jl",
+                name = "SatelliteToolbox.jl",
                 repo = "https://github.com/JuliaSpace/SatelliteToolbox.jl",
                 doc = "https://juliaspace.github.io/SatelliteToolbox.jl/stable/",
                 tagline = "Perform analysis and build simulations related to satellites",
@@ -76,7 +76,7 @@ ecosystem() = (
         ),
         "Exoplanets" => (
             (
-                name = "JuliaHCI/ADI.jl",
+                name = "ADI.jl",
                 repo = "https://github.com/JuliaHCI/ADI.jl",
                 doc = "http://JuliaHCI.github.io/ADI.jl/stable/",
                 tagline = "Angular Differential Imaging (ADI) routines in Julia",
@@ -89,7 +89,7 @@ ecosystem() = (
                 astropy = [],
             ),
             (
-                name = "JuliaHCI/HCIToolbox.jl",
+                name = "HCIToolbox.jl",
                 repo = "https://github.com/JuliaHCI/HCIToolbox.jl",
                 doc = "http://JuliaHCI.github.io/HCIToolbox.jl/stable/",
                 tagline = "Common utilities for high-contrast imaging (HCI) processing",
@@ -117,7 +117,7 @@ ecosystem() = (
                 astropy = [],
             ),
             (
-                name = "sefffal/PlanetOrbits.jl",
+                name = "PlanetOrbits.jl",
                 repo = "https://github.com/sefffal/PlanetOrbits.jl",
                 doc = "https://sefffal.github.io/PlanetOrbits.jl/dev/",
                 tagline = "Tools for displaying and solving Keplerian orbits in the context of direct imaging",
@@ -140,7 +140,7 @@ ecosystem() = (
         ),
         "Stars" => (
             (
-                name = "cgarling/BolometricCorrections.jl",
+                name = "BolometricCorrections.jl",
                 repo = "https://github.com/cgarling/BolometricCorrections.jl",
                 doc = "https://cgarling.github.io/BolometricCorrections.jl/stable/",
                 tagline = "Interfaces to libraries of astrophysical bolometric correction",
@@ -150,7 +150,7 @@ ecosystem() = (
                 astropy = [],
             ),
             (
-                name = "cgarling/InitialMassFunctions.jl",
+                name = "InitialMassFunctions.jl",
                 repo = "https://github.com/cgarling/InitialMassFunctions.jl",
                 doc = "https://cgarling.github.io/InitialMassFunctions.jl/stable/",
                 tagline = "Evaluation of and sampling from stellar initial mass functions",
@@ -160,7 +160,7 @@ ecosystem() = (
                 astropy = [],
             ),
             (
-                name = "cgarling/StarFormationHistories.jl",
+                name = "StarFormationHistories.jl",
                 repo = "https://github.com/cgarling/StarFormationHistories.jl",
                 doc = "https://cgarling.github.io/StarFormationHistories.jl/stable/",
                 tagline = "Fitting astrophysical star formation histories via CMD modeling",
@@ -197,7 +197,7 @@ ecosystem() = (
                 astropy = [],
             ),
             (
-                name = "EHTJulia/ScatteringOptics.jl",
+                name = "ScatteringOptics.jl",
                 repo = "https://github.com/EHTJulia/ScatteringOptics.jl",
                 doc = "https://ehtjulia.github.io/ScatteringOptics.jl/stable/",
                 tagline = "A Julia package to simulate and model interstellar scattering in strong regime",
@@ -272,7 +272,7 @@ ecosystem() = (
         ),
         "Astrometry" => (
             (
-                name = "barrettp/Astrometry.jl",
+                name = "Astrometry.jl",
                 repo = "https://github.com/barrettp/Astrometry.jl",
                 doc = "https://barrettp.github.io/Astrometry/dev",
                 tagline = "Set of IAU standard algorithms for calculating the time and position of celestial objects",
@@ -313,7 +313,7 @@ ecosystem() = (
                 astropy = [],
             ),
             (
-                name = "ziotom78/Healpix.jl",
+                name = "Healpix.jl",
                 repo = "https://github.com/ziotom78/Healpix.jl",
                 doc = "https://ziotom78.github.io/Healpix.jl/stable/",
                 tagline = "Implementation of Healpix spherical tesselation scheme in pure Julia",
@@ -358,7 +358,7 @@ ecosystem() = (
         ),
         "Spectroscopy" => (
             (
-                name = "ajwheeler/Korg.jl",
+                name = "Korg.jl",
                 repo = "https://github.com/ajwheeler/Korg.jl",
                 doc = "https://ajwheeler.github.io/Korg.jl/stable/",
                 tagline = "Theoretical stellar spectra from 1D model atmospheres and linelists, assuming LTE",
@@ -377,7 +377,7 @@ ecosystem() = (
                 astropy = ["specreduce", "specutils"],
             ),
             (
-                name = "fjebaker/SpectralFitting.jl",
+                name = "SpectralFitting.jl",
                 repo = "https://github.com/fjebaker/SpectralFitting.jl",
                 doc = "https://fjebaker.github.io/SpectralFitting.jl/dev/",
                 tagline = "✨🛰 Fast and flexible spectral fitting in Julia",
@@ -391,7 +391,7 @@ ecosystem() = (
         ),
         "Time Series Analysis" => (
             (
-                name = "JuliaDSP/DSP.jl",
+                name = "DSP.jl",
                 repo = "https://github.com/JuliaDSP/DSP.jl",
                 doc = "https://docs.juliadsp.org/stable/",
                 tagline = "Filter design, periodograms, window functions, and other digital signal processing functionality",
@@ -412,7 +412,7 @@ ecosystem() = (
                 astropy = ["astropy.timeseries"],
             ),
             (
-                name = "JuliaStats/TimeSeries.jl",
+                name = "TimeSeries.jl",
                 repo = "https://github.com/JuliaStats/TimeSeries.jl",
                 doc = "https://juliastats.github.io/TimeSeries.jl/stable",
                 tagline = "Time series toolkit for Julia",
@@ -424,7 +424,7 @@ ecosystem() = (
         ),
         "Interferometry" => (
             (
-                name = "ptiede/Comrade.jl",
+                name = "Comrade.jl",
                 repo = "https://github.com/ptiede/Comrade.jl",
                 doc = "https://ptiede.github.io/Comrade.jl/stable/",
                 tagline = "Composable Modeling of Radio Emission",
@@ -434,7 +434,7 @@ ecosystem() = (
                 astropy = [],
             ),
             (
-                name = "JuliaAPlavin/Difmap.jl",
+                name = "Difmap.jl",
                 repo = "https://github.com/JuliaAPlavin/Difmap.jl",
                 doc = "https://aplavin.github.io/Difmap.jl/test/examples.html",
                 tagline = "Wrapper for the Difmap program used in synthesis imaging",
@@ -445,7 +445,7 @@ ecosystem() = (
                 astropy = [],
             ),
             (
-                name = "emmt/OIFITS.jl",
+                name = "OIFITS.jl",
                 repo = "https://github.com/emmt/OIFITS.jl",
                 doc = "https://github.com/emmt/OIFITS.jl?tab=readme-ov-file#support-for-oi-fits-data-in-julia",
                 tagline = "Support for OI-FITS",
@@ -455,7 +455,7 @@ ecosystem() = (
                 astropy = ["astropy.io.fits"],
             ),
             (
-                name = "fabienbaron/OITOOLS.jl",
+                name = "OITOOLS.jl",
                 repo = "https://github.com/fabienbaron/OITOOLS.jl",
                 doc = "https://fabienbaron.github.io/OITOOLS.jl/dev",
                 tagline = "A collection of tools to load, visualize, model-fit and image optical interferometry data coming from CHARA, NPOI and VLTI",
@@ -466,7 +466,7 @@ ecosystem() = (
                 astropy = [],
             ),
             (
-                name = "EHTJulia/PolarizedTypes.jl",
+                name = "PolarizedTypes.jl",
                 repo = "https://github.com/EHTJulia/PolarizedTypes.jl",
                 doc = "https://ehtjulia.github.io/PolarizedTypes.jl/stable/",
                 tagline = "Basic Polarized types for interferometry",
@@ -478,7 +478,7 @@ ecosystem() = (
                 astropy = [],
             ),
             (
-                name = "JuliaAPlavin/VLBIData.jl",
+                name = "VLBIData.jl",
                 repo = "https://github.com/JuliaAPlavin/VLBIData.jl",
                 doc = "https://aplavin.github.io/VLBIData.jl/test/examples.html",
                 tagline = "Work with data formats common in very long baseline interferometry (VLBI)",
@@ -489,7 +489,7 @@ ecosystem() = (
                 astropy = ["astropy.io.votable"],
             ),
             (
-                name = "EHTJulia/VLBISkyModels.jl",
+                name = "VLBISkyModels.jl",
                 repo = "https://github.com/EHTJulia/VLBISkyModels.jl",
                 doc = "https://ehtjulia.github.io/VLBISkyModels.jl/stable/",
                 tagline = "Just the Comrade Models",
@@ -503,7 +503,7 @@ ecosystem() = (
     "Statistics" => (
         "Uncertainty" => (
             (
-                name = "JuliaPhysics/Measurements.jl",
+                name = "Measurements.jl",
                 repo = "https://github.com/JuliaPhysics/Measurements.jl",
                 doc = "https://juliaphysics.github.io/Measurements.jl/stable/",
                 tagline = "Error propagation calculator and library for physical measurements. It supports real and complex numbers with uncertainty, arbitrary precision calculations, operations with arrays, and numerical integration",
@@ -524,7 +524,7 @@ ecosystem() = (
                 astropy = ["astropy.uncertainty"],
             ),
             (
-                name = "JuliaAPlavin/Uncertain.jl",
+                name = "Uncertain.jl",
                 repo = "https://github.com/JuliaAPlavin/Uncertain.jl",
                 doc = "https://baggepinnen.github.io/MonteCarloMeasurements.jl/stable/",
                 tagline = "Handle uncertain values with ease and performance!",
@@ -548,7 +548,7 @@ ecosystem() = (
                 astropy = ["astropy.timeseries"],
             ),
             (
-                name = "jump-dev/JuMP.jl",
+                name = "JuMP.jl",
                 repo = "https://github.com/jump-dev/JuMP.jl",
                 doc = "http://jump.dev/JuMP.jl/",
                 tagline = "Modeling language for Mathematical Optimization (linear, mixed-integer, conic, semidefinite, nonlinear)",
@@ -558,7 +558,7 @@ ecosystem() = (
                 astropy = ["astropy.modeling"],
             ),
             (
-                name = "SciML/NonlinearSolve.jl",
+                name = "NonlinearSolve.jl",
                 repo = "https://github.com/SciML/NonlinearSolve.jl",
                 doc = "https://docs.sciml.ai/NonlinearSolve/stable/",
                 tagline = "High-performance and differentiation-enabled nonlinear solvers (Newton methods), bracketed rootfinding (bisection, Falsi), with sparsity and Newton-Krylov support",
@@ -568,7 +568,7 @@ ecosystem() = (
                 astropy = ["astropy.modeling"],
             ),
             (
-                name = "SciML/Optimization.jl",
+                name = "Optimization.jl",
                 repo = "https://github.com/SciML/Optimization.jl",
                 doc = "https://docs.sciml.ai/Optimization/stable/",
                 tagline = "Mathematical Optimization in Julia. Local, global, gradient-based and derivative-free. Linear, Quadratic, Convex, Mixed-Integer, and Nonlinear Optimization in one simple, fast, and differentiable interface",
@@ -591,7 +591,7 @@ ecosystem() = (
                 astropy = [],
             ),
             (
-                name = "mileslucas/BiweightStats.jl",
+                name = "BiweightStats.jl",
                 repo = "https://github.com/mileslucas/BiweightStats.jl",
                 doc = "http://mileslucas.com/BiweightStats.jl/stable/",
                 tagline = "Robust statistics based on the biweight transform",
@@ -601,7 +601,7 @@ ecosystem() = (
                 astropy = ["astropy.stats"],
             ),
             (
-                name = "jeff-regier/Celeste.jl",
+                name = "Celeste.jl",
                 repo = "https://github.com/jeff-regier/Celeste.jl",
                 doc = "https://github.com/jeff-regier/Celeste.jl/wiki/",
                 tagline = "Scalable inference for a generative model of astronomical images",
@@ -621,7 +621,7 @@ ecosystem() = (
                 astropy = ["astropy.stats"],
             ),
             (
-                name = "JuliaStats/Distributions.jl",
+                name = "Distributions.jl",
                 repo = "https://github.com/JuliaStats/Distributions.jl",
                 doc = "https://juliastats.github.io/Distributions.jl/stable/",
                 tagline = "A Julia package for probability distributions and associated functions",
@@ -631,7 +631,7 @@ ecosystem() = (
                 astropy = ["astropy.uncertainty"],
             ),
             (
-                name = "EHTJulia/FastHartleyTransform.jl",
+                name = "FastHartleyTransform.jl",
                 repo = "https://github.com/EHTJulia/FastHartleyTransform.jl",
                 doc = "https://ehtjulia.github.io/FastHartleyTransform.jl/stable/",
                 tagline = "A Julia implementation of the Fast Hartley Transform (FHT)",
@@ -642,7 +642,7 @@ ecosystem() = (
                 astropy = [],
             ),
             (
-                name = "sefffal/Octofitter.jl",
+                name = "Octofitter.jl",
                 repo = "https://github.com/sefffal/Octofitter.jl",
                 doc = "https://sefffal.github.io/Octofitter.jl/dev",
                 tagline = "Octofitter is a Julia package for performing Bayesian inference against a wide variety of exoplanet and binary star data",
@@ -656,7 +656,7 @@ ecosystem() = (
     "Utilities" => (
         "Data I/O" => (
             (
-                name = "eschnett/ASDF2.jl",
+                name = "ASDF2.jl",
                 repo = "https://github.com/eschnett/ASDF2.jl",
                 doc = "https://eschnett.github.io/ASDF2.jl/dev/",
                 tagline = "ASDF, the Advanced Scientific Data Format",
@@ -687,7 +687,7 @@ ecosystem() = (
                 astropy = ["astropy.io.fits"],
             ),
             (
-                name = "emmt/EasyFITS.jl",
+                name = "EasyFITS.jl",
                 repo = "https://github.com/emmt/EasyFITS.jl",
                 doc = "https://emmt.github.io/EasyFITS.jl/dev",
                 tagline = "Using FITS files made easier for Julia",
@@ -697,7 +697,7 @@ ecosystem() = (
                 astropy = ["astropy.io.fits"],
             ),
             (
-                name = "barrettp/FITSFiles.jl",
+                name = "FITSFiles.jl",
                 repo = "https://github.com/barrettp/FITSFiles.jl",
                 doc = "https://barrettp.github.io/FITSFiles.jl/",
                 tagline = "A Julia Flexible Image Transport System (FITS) file IO package",
@@ -728,7 +728,7 @@ ecosystem() = (
                 astropy = ["astropy.io.ascii"],
             ),
             (
-                name = "JuliaAPlavin/SkyImages.jl",
+                name = "SkyImages.jl",
                 repo = "https://github.com/JuliaAPlavin/SkyImages.jl",
                 doc = "https://aplavin.github.io/SkyImages.jl/test/notebook.html",
                 tagline = "Load astronomical images of the sky and process them with convenient, general, and composable functions.",
@@ -740,7 +740,7 @@ ecosystem() = (
                 astropy = ["astropy.io.fits"],
             ),
             (
-                name = "JuliaAPlavin/VirtualObservatory.jl",
+                name = "VirtualObservatory.jl",
                 repo = "https://github.com/JuliaAPlavin/VirtualObservatory.jl",
                 doc = "https://github.com/JuliaAPlavin/VirtualObservatory.jl?tab=readme-ov-file#virtualobservatoryjl",
                 tagline = "Access remote data and services that follow VO protocols",
@@ -751,7 +751,7 @@ ecosystem() = (
                 astropy = ["astropy.io.votable", "astroquery"],
             ),
             (
-                name = "JuliaAPlavin/VOTables.jl",
+                name = "VOTables.jl",
                 repo = "https://github.com/JuliaAPlavin/VOTables.jl",
                 doc = "https://github.com/JuliaAPlavin/VOTables.jl",
                 tagline = "Read and write VOTable files",
@@ -785,7 +785,7 @@ ecosystem() = (
                 astropy = ["astroalign"],
             ),
             (
-                name = "torrance/Casacore.jl",
+                name = "Casacore.jl",
                 repo = "https://github.com/torrance/Casacore.jl",
                 doc = "https://github.com/torrance/Casacore.jl?tab=readme-ov-file#casacorejl",
                 tagline = "A high level Julia interface to Casacore",
@@ -796,7 +796,7 @@ ecosystem() = (
                 astropy = [],
             ),
             (
-                name = "JuliaData/DataFrames.jl",
+                name = "DataFrames.jl",
                 repo = "https://github.com/JuliaData/DataFrames.jl",
                 doc = "https://dataframes.juliadata.org/stable/",
                 tagline = "In-memory tabular data in Julia",
@@ -806,7 +806,7 @@ ecosystem() = (
                 astropy = ["astropy.table"],
             ),
             (
-                name = "rafaqz/DimensionalData.jl",
+                name = "DimensionalData.jl",
                 repo = "https://github.com/rafaqz/DimensionalData.jl",
                 doc = "https://rafaqz.github.io/DimensionalData.jl/stable/",
                 tagline = "Named dimensions and indexing for julia arrays and other data",
@@ -817,7 +817,7 @@ ecosystem() = (
                 astropy = ["astropy.nddata"],
             ),
             (
-                name = "JuliaAPlavin/FlexiJoins.jl",
+                name = "FlexiJoins.jl",
                 repo = "https://github.com/JuliaAPlavin/FlexiJoins.jl",
                 doc = "https://aplavin.github.io/FlexiJoins.jl/test/examples.html",
                 tagline = "`FlexiJoins.jl` is a fresh take on joining tabular or non-tabular datasets in Julia.",
@@ -827,7 +827,7 @@ ecosystem() = (
                 astropy = ["astropy.table"],
             ),
             (
-                name = "gcalderone/SortMerge.jl",
+                name = "SortMerge.jl",
                 repo = "https://github.com/gcalderone/SortMerge.jl",
                 doc = "https://github.com/gcalderone/SortMerge.jl?tab=readme-ov-file#sortmerge",
                 tagline = "A Julia implementation of the Sort-merge join algorithm",
@@ -850,7 +850,7 @@ ecosystem() = (
                 astropy = ["astropy.visualization"],
             ),
             (
-                name = "JuliaImages/ImageFiltering.jl",
+                name = "ImageFiltering.jl",
                 repo = "https://github.com/JuliaImages/ImageFiltering.jl",
                 doc = "https://juliaimages.github.io/ImageFiltering.jl/stable",
                 tagline = "ulia implementations of multidimensional array convolution and nonlinear stencil operations",
@@ -860,7 +860,7 @@ ecosystem() = (
                 astropy = ["astropy.convolution"],
             ),
             (
-                name = "ManuelBehrendt/Mera.jl",
+                name = "Mera.jl",
                 repo = "https://github.com/ManuelBehrendt/Mera.jl",
                 doc = "https://manuelbehrendt.github.io/Mera.jl/stable/",
                 tagline = "Working with large hydrodynamical simulation data",
@@ -872,7 +872,7 @@ ecosystem() = (
                 astropy = [],
             ),
             (
-                name = "sefffal/PairPlots.jl",
+                name = "PairPlots.jl",
                 repo = "https://github.com/sefffal/PairPlots.jl",
                 doc = "https://sefffal.github.io/PairPlots.jl/dev/",
                 tagline = "Beautiful and flexible visualizations of high dimensional data",
@@ -886,7 +886,7 @@ ecosystem() = (
                 astropy = ["astropy.visualization"],
             ),
             (
-                name = "JuliaAPlavin/SkyImages.jl",
+                name = "SkyImages.jl",
                 repo = "https://github.com/JuliaAPlavin/SkyImages.jl",
                 doc = "https://aplavin.github.io/SkyImages.jl/test/notebook.html",
                 tagline = "Load astronomical images of the sky and process them with convenient, general, and composable functions.",
@@ -911,7 +911,7 @@ ecosystem() = (
                 astropy = [],
             ),
             (
-                name = "SymbolicML/DynamicQuantities.jl",
+                name = "DynamicQuantities.jl",
                 repo = "https://github.com/SymbolicML/DynamicQuantities.jl",
                 doc = "https://symbolicml.org/DynamicQuantities.jl/stable/",
                 tagline = "Efficient and type-stable physical quantities in Julia",
@@ -922,7 +922,7 @@ ecosystem() = (
                 astropy = ["astropy.constants", "astropy.units"],
             ),
             (
-                name = "JuliaPhysics/PhysicalConstants.jl",
+                name = "PhysicalConstants.jl",
                 repo = "https://github.com/JuliaPhysics/PhysicalConstants.jl",
                 doc = "https://juliaphysics.github.io/PhysicalConstants.jl/stable/",
                 tagline = "Collection of fundamental physical constants with uncertainties",
@@ -933,7 +933,7 @@ ecosystem() = (
                 astropy = ["astropy.constants", "astropy.units"],
             ),
             (
-                name = "PainterQubits/Unitful.jl",
+                name = "Unitful.jl",
                 repo = "https://github.com/PainterQubits/Unitful.jl",
                 doc = "https://painterqubits.github.io/Unitful.jl/stable",
                 tagline = "Physical quantities with arbitrary units",
