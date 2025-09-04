@@ -196,7 +196,7 @@ rm.(glob(joinpath("*", "dev"), outpath); recursive=true)
 
 @info "Deploying docs"
 deploydocs(;
-    repo = "github.com/JuliaAstro/JuliaAstro.github.io",
+    repo = "JuliaAstro.org",
     push_preview = true,
     branch = "gh-pages",
     devbranch = "main",
