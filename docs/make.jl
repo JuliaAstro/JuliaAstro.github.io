@@ -67,7 +67,7 @@ makedocs(
     doctest = false,
     format = Documenter.HTML(;
         mathengine,
-        prettyurls = get(ENV, "CI", "false") == "true",
+        prettyurls = true,
         canonical = "https://JuliaAstro.org/",
         assets = String[
             "assets/styles.css",
@@ -87,9 +87,10 @@ makedocs(
                 "tutorials/curve-fit.md",
             ],
         ],
-        "Package Ecosystem" => "ecosystem.md",
-        "Comparison with Astropy" => "comparison.md",
         case_studies,
+        "Comparison with Astropy" => "comparison.md",
+        "Community" => "community.md",
+        "Package Ecosystem" => "ecosystem.md",
     ],
     warnonly = [:missing_docs],
     plugins = [links],
