@@ -44,7 +44,7 @@ ecosystem() = (
                 doc = "https://github.com/PerezHz/HORIZONS.jl?tab=readme-ov-file#horizonsjl",
                 tagline = "An interface to NASA-JPL HORIZONS system and other Solar System Dynamics APIs in Julia",
                 descr = """
-                - Calculate positions and velocities of solar system bodies TODO
+                - Calculate positions and velocities of solar system bodies
                 """,
                 astropy = ["astropy.coordinates"],
             ),
