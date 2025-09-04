@@ -67,7 +67,7 @@ makedocs(
     doctest = false,
     format = Documenter.HTML(;
         mathengine,
-        prettyurls = get(ENV, "CI", "false") == "true",
+        prettyurls = true,
         canonical = "https://JuliaAstro.org/",
         assets = String[
             "assets/styles.css",
