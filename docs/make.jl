@@ -67,7 +67,7 @@ makedocs(
     doctest = false,
     format = Documenter.HTML(;
         mathengine,
-        prettyurls = get(ENV, "CI", "false") == "true",
+        prettyurls = true,
         canonical = "https://JuliaAstro.org/",
         assets = String[
             "assets/styles.css",
@@ -196,7 +196,7 @@ rm.(glob(joinpath("*", "dev"), outpath); recursive=true)
 
 @info "Deploying docs"
 deploydocs(;
-    repo = "github.com/JuliaAstro/JuliaAstro.github.io",
+    repo = "JuliaAstro.org",
     push_preview = true,
     branch = "gh-pages",
     devbranch = "main",
