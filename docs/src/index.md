@@ -8,6 +8,6 @@ JuliaAstro and its affiliated organizations are a community for astronomy in Jul
 * Want to see real world applications of JuliaAstro? Check out our [Case Studies](@ref) page.
 * Coming from astropy? See our [Comparison with Astropy](@ref) page.
 * Want to see our code? Check out our [GitHub organization](https://github.com/JuliaAstro).
-* Want to learn more about getting involved? Check out our Community page.
+* Want to learn more about getting involved? Check out our [Community](@ref) page.
 
 Further documentation for curated packages in the JuliaAstro and larger Julia astronomy ecosystem can be viewed directly via the navbar above. Pure Julia packages are marked with a closed circle ⬤, while wrapper packages for other languages are marked with an open circle ◯. We also provide a brief summary for each on our [Package Ecosystem](@ref eco) page.
