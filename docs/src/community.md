@@ -29,5 +29,5 @@ Would you like to contribute to JuliaAstro through Google Summer of Code? You ca
 
 
 ## Code of Conduct
-The JuliaAstro community strongly values inclusivity and diversity. Everyone should treat others with the utmost respect. All members of JuliaAstro and other Julia organizations are expected to adhere to the [Julia Community Standards](https://julialang.org/community/standards/).
+The JuliaAstro community is committed to maintaining a welcoming, civil and constructive environment. All members are expected to adhere to the [Julia Community Standards](https://julialang.org/community/standards/).
 
