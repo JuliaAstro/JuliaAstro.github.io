@@ -1,7 +1,7 @@
 const ECOSYSTEM_HEADER = """
 # [Package Ecosystem](@id eco)
 
-The joy of our community is the many astronomy and astrophysics packages available for wide use. Packages are separated by functionality and Julia's declarative package manager takes care of resolving dependencies. You get just the functionality you need, and smaller packages lead to more rapid development.
+The joy of our community is the many astronomy and astrophysics packages available for wide use. Packages are separated by functionality and Julia's declarative package manager takes care of resolving dependencies. You get just the functionality you need, and smaller packages lead to more rapid development. This page serves as the index of packages available in the dropdown navigation menus above.
 
 ---
 
