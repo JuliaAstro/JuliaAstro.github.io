@@ -1,4 +1,4 @@
-# Community
+# JuliaAstro Community
 
 ## Platforms
 

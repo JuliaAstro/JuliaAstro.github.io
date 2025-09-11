@@ -8,13 +8,13 @@
 * Want to see a curated list of different packages available? Check out our [Package Ecosystem](@ref eco) page.
 * Want to see real world applications of JuliaAstro? Check out our [Case Studies](@ref) page.
 * Coming from astropy? Check out our [Comparison with Astropy](@ref) page.
-* Want to learn more about getting involved? Check out our [Community](@ref) page.
+* Want to learn more about getting involved? Check out our [Community](@ref "JuliaAstro Community") page.
 
 Further documentation for curated packages in the JuliaAstro and larger Julia ecosystem can be viewed directly via the navbar above. Pure Julia packages are marked with a closed circle ⬤, while wrapper packages for other languages are marked with an open circle ◯.
 
 ## Talks and Presentations
 
-Below is a growing list of JuliaAstro and other related aero/astro presentations in Julia. If you have a presentation that you think would be a good addition, [please get in touch](@ref Community)!
+Below is a growing list of JuliaAstro and other related aero/astro presentations in Julia. If you have a presentation that you think would be a good addition, [please get in touch](@ref "JuliaAstro Community")!
 
 !!! details "JuliaCon 2021"
     - A Short History of AstroTime.jl [[pretalx]](https://pretalx.com/juliacon2021/talk/TJ3FNS/) [[video]](https://www.youtube.com/watch?v=HGlsRoy1JxU)
