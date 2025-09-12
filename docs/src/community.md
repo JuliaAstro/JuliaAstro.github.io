@@ -17,6 +17,7 @@ See below for our and other aero/astro-related organizations in Julia.
 - [JuliaHCI](https://github.com/juliahci) - high-contrast imaging
 - [JuliaSpace](https://github.com/JuliaSpace) - astrodynamics and satellite mission planning
 - [EHTJulia](https://github.com/EHTJulia) - high-resolution radio interferometry
+- [@juliaastro.org](https://bsky.app/profile/juliaastro.org) - find us on Bluesky 🦋
 
 
 ## Contributing
