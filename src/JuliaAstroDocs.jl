@@ -657,8 +657,8 @@ ecosystem() = (
         "Data I/O" => (
             (
                 name = "ASDF2.jl",
-                repo = "https://github.com/eschnett/ASDF2.jl",
-                doc = "https://eschnett.github.io/ASDF2.jl/dev/",
+                repo = "https://github.com/JuliaAstro/ASDF2.jl",
+                doc = "https://juliaastro.org/ASDF2.jl/dev/",
                 tagline = "ASDF, the Advanced Scientific Data Format",
                 descr = """
                 - A new [Advanced Scientific Data Format (ASDF)](https://asdf-standard.readthedocs.io/en/latest/index.html) package, written in Julia
