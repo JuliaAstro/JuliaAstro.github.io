@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <url><loc>https://JuliaAstro.org/</loc></url>
-<url><loc>https://JuliaAstro.org/ASDF2/dev/</loc></url>
+<url><loc>https://JuliaAstro.org/ASDF2/stable/</loc></url>
 <url><loc>https://JuliaAstro.org/AstroAngles/stable/</loc></url>
 <url><loc>https://JuliaAstro.org/AstroAngles/stable/api/</loc></url>
 <url><loc>https://JuliaAstro.org/AstroImages/stable/</loc></url>
