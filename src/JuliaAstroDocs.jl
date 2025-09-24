@@ -279,7 +279,7 @@ ecosystem() = (
                 descr = """
                 - More information can be found on the official website of the [Standards of Fundamental Astronomy](http://www.iausofa.org/).
                 """,
-                astropy = [],
+                astropy = ["astropy.time", "astropy.coordinates"],
             ),
             (
                 name = "AstroTime.jl",
@@ -702,7 +702,7 @@ ecosystem() = (
                 doc = "https://barrettp.github.io/FITSFiles.jl/",
                 tagline = "A Julia Flexible Image Transport System (FITS) file IO package",
                 descr = """
-                - A Julia Flexible Image Transport System (FITS) file IO package
+                - A Flexible Image Transport System (FITS) file IO package written in Julia.
                 """,
                 astropy = ["astropy.io.fits"],
             ),
