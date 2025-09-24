@@ -702,7 +702,7 @@ ecosystem() = (
                 doc = "https://barrettp.github.io/FITSFiles.jl/",
                 tagline = "A Julia Flexible Image Transport System (FITS) file IO package",
                 descr = """
-                - A Flexible Image Transport System (FITS) file IO package written in Julia.
+                - A Flexible Image Transport System (FITS) file IO package written in Julia
                 """,
                 astropy = ["astropy.io.fits"],
             ),
