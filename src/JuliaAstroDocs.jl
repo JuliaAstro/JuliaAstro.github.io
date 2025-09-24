@@ -314,8 +314,8 @@ ecosystem() = (
             ),
             (
                 name = "Healpix.jl",
-                repo = "https://github.com/ziotom78/Healpix.jl",
-                doc = "https://ziotom78.github.io/Healpix.jl/stable/",
+                repo = "https://github.com/JuliaAstro/Healpix.jl",
+                doc = "https://juliaastro.org/Healpix/stable/",
                 tagline = "Implementation of Healpix spherical tesselation scheme in pure Julia",
                 descr = """
                 - pixel functions, query functions, map functions
