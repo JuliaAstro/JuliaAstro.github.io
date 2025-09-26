@@ -90,7 +90,10 @@ makedocs(
         "Package Ecosystem" => "ecosystem.md",
         case_studies,
         "Comparison with Astropy" => "comparison.md",
-        "Community" => "community.md",
+        "Community" => [
+            "community/juliaastro_community.md",
+            "community/governance.md",
+        ],
     ],
     warnonly = [:missing_docs],
     plugins = [links],
