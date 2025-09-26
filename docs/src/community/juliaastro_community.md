@@ -8,6 +8,7 @@ Our community members can be found in the following places. Feel free to reach o
 - [#astronomy](https://julialang.zulipchat.com/#narrow/channel/astronomy) on [JuliaLang Zulip](https://julialang.zulipchat.com/register/)
 - [Astro/Space](https://discourse.julialang.org/c/domain/astro) topics on JuliaLang Discourse
 - [Monthly JuliaAstro community call](https://julialang.org/community/#events) - Fourth Wednesday of each month at 12:00 ET
+- [@juliaastro.org](https://bsky.app/profile/juliaastro.org) - find us on Bluesky 🦋
 
 ## Organizations
 
@@ -17,6 +18,7 @@ See below for our and other aero/astro-related organizations in Julia.
 - [JuliaHCI](https://github.com/juliahci) - high-contrast imaging
 - [JuliaSpace](https://github.com/JuliaSpace) - astrodynamics and satellite mission planning
 - [EHTJulia](https://github.com/EHTJulia) - high-resolution radio interferometry
+- [CosmologicalEmulators](https://github.com/CosmologicalEmulators) - emulate cosmological observables
 
 
 ## Contributing
