@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <url><loc>https://JuliaAstro.org/</loc></url>
+<url><loc>https://JuliaAstro.org/ASDF2/stable/</loc></url>
 <url><loc>https://JuliaAstro.org/AstroAngles/stable/</loc></url>
 <url><loc>https://JuliaAstro.org/AstroAngles/stable/api/</loc></url>
 <url><loc>https://JuliaAstro.org/AstroImages/stable/</loc></url>
@@ -100,6 +101,16 @@
 <url><loc>https://JuliaAstro.org/FITSIO/stable/libcfitsio.html</loc></url>
 <url><loc>https://JuliaAstro.org/FITSIO/stable/search.html</loc></url>
 <url><loc>https://JuliaAstro.org/FITSIO/stable/search/</loc></url>
+<url><loc>https://JuliaAstro.org/Healpix/stable/</loc></url>
+<url><loc>https://JuliaAstro.org/Healpix/stable/Cl/</loc></url>
+<url><loc>https://JuliaAstro.org/Healpix/stable/alm/</loc></url>
+<url><loc>https://JuliaAstro.org/Healpix/stable/mapfunc/</loc></url>
+<url><loc>https://JuliaAstro.org/Healpix/stable/misc/</loc></url>
+<url><loc>https://JuliaAstro.org/Healpix/stable/pixelfunc/</loc></url>
+<url><loc>https://JuliaAstro.org/Healpix/stable/query/</loc></url>
+<url><loc>https://JuliaAstro.org/Healpix/stable/resolutions/</loc></url>
+<url><loc>https://JuliaAstro.org/Healpix/stable/search/</loc></url>
+<url><loc>https://JuliaAstro.org/Healpix/stable/visualization/</loc></url>
 <url><loc>https://JuliaAstro.org/LACosmic/stable/</loc></url>
 <url><loc>https://JuliaAstro.org/LACosmic/stable/api/</loc></url>
 <url><loc>https://JuliaAstro.org/LACosmic/stable/examples/</loc></url>
@@ -190,6 +201,7 @@
 <url><loc>https://JuliaAstro.org/XPA/stable/search/</loc></url>
 <url><loc>https://JuliaAstro.org/XPA/stable/server/</loc></url>
 <url><loc>https://JuliaAstro.org/case_studies/</loc></url>
+<url><loc>https://JuliaAstro.org/case_studies/cosmology/marcobonici-effort/</loc></url>
 <url><loc>https://JuliaAstro.org/case_studies/exoplanets/ericagol-nbodygradient/</loc></url>
 <url><loc>https://JuliaAstro.org/case_studies/exoplanets/langfzac-photodynamics/</loc></url>
 <url><loc>https://JuliaAstro.org/case_studies/exoplanets/rodluger-limbdark/</loc></url>
