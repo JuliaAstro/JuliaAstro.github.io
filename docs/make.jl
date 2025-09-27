@@ -93,6 +93,7 @@ makedocs(
         "Community" => [
             "community/juliaastro_community.md",
             "community/governance.md",
+            "community/roadmap.md",
         ],
     ],
     warnonly = [:missing_docs],
