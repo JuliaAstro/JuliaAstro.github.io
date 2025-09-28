@@ -189,7 +189,7 @@ MultiDocumenter.make(
 
 # Remove dev/latest docs from JuliaAstro site
 rm.(glob(joinpath("*", "dev"), outpath); recursive=true)
-rm.(glob(joinpath("*", "latest"), outpath); recursive=true)
+rm.(glob(joinpath("*", "latest*"), outpath); recursive=true)
 
 # Download logo
 # assets_dir = joinpath(outpath, "assets")
