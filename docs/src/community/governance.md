@@ -12,10 +12,6 @@ The JuliaAstro community is committed to maintaining a welcoming, civil and cons
 
 * tbd
 
-## Advisory Committee
-
-* tbd
-
 ## Governing Rules and Duties
 
 ### Steering Council
