@@ -4,8 +4,7 @@ JuliaAstro.github.io
 [![docs](https://img.shields.io/badge/docs-stable-blue.svg)](https://juliaastro.org/)
 [![Build](https://github.com/JuliaAstro/JuliaAstro.github.io/actions/workflows/Documentation.yml/badge.svg)](https://github.com/JuliaAstro/JuliaAstro.github.io/actions/workflows/Documentation.yml)
 [![Deploy](https://github.com/JuliaAstro/JuliaAstro.github.io/actions/workflows/pages/pages-build-deployment/badge.svg?branch=gh-pages)](https://github.com/JuliaAstro/JuliaAstro.github.io/actions/workflows/pages/pages-build-deployment)
-[![Test JuliaAstro (stable)](https://github.com/JuliaAstro/JuliaAstro.github.io/actions/workflows/CI_stable.yml/badge.svg)](https://github.com/JuliaAstro/JuliaAstro.github.io/actions/workflows/CI_stable.yml)
-[![Test JuliaAstro (nightly)](https://github.com/JuliaAstro/JuliaAstro.github.io/actions/workflows/CI_nightly.yml/badge.svg)](https://github.com/JuliaAstro/JuliaAstro.github.io/actions/workflows/CI_nightly.yml)
+[![Test JuliaAstro](https://github.com/JuliaAstro/JuliaAstro.github.io/actions/workflows/CI.yml/badge.svg)](https://github.com/JuliaAstro/JuliaAstro.github.io/actions/workflows/CI.yml)
 
 ## Description
 
