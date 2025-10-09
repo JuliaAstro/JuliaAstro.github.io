@@ -43,7 +43,7 @@ The standard Julia logo, but with the circle shapes replaced by star shapes.
 """
 
 # ╔═╡ 3a69b14f-903f-4966-81fd-db9b8a3f0b2b
-const WIDTH, HEIGHT = 300, 300
+const WIDTH, HEIGHT = 250, 250
 
 # ╔═╡ 55a36f1b-e6e1-4ff8-96b7-838776f51ad1
 md"""
@@ -164,7 +164,7 @@ $(@bind four_point_star_a Slider(0:0.01:2; default = 1.0, show_value = true)) | 
 
 r1 | r2 | r3
 :-: | :-: | :-:
-$(@bind four_point_star_r1 Slider(10:150; default = 50, show_value = true)) | $(@bind four_point_star_r2 Slider(10:150; default = 80, show_value = true)) | $(@bind four_point_star_r3 Slider(10:150; default = 60, show_value = true))
+$(@bind four_point_star_r1 Slider(10:150; default = 40, show_value = true)) | $(@bind four_point_star_r2 Slider(10:150; default = 70, show_value = true)) | $(@bind four_point_star_r3 Slider(10:150; default = 55, show_value = true))
 """
 end
 
@@ -218,7 +218,7 @@ $(@bind six_point_star_a Slider(0:0.01:2; default = 1.0, show_value = true)) | $
 
 r1 | r2 | r3
 :-: | :-: | :-:
-$(@bind six_point_star_r1 Slider(50:150; default = 50, show_value = true)) | $(@bind six_point_star_r2 Slider(50:150; default = 74, show_value = true)) | $(@bind six_point_star_r3 Slider(50:150; default = 60, show_value = true))
+$(@bind six_point_star_r1 Slider(10:150; default = 40, show_value = true)) | $(@bind six_point_star_r2 Slider(10:150; default = 64, show_value = true)) | $(@bind six_point_star_r3 Slider(10:150; default = 50, show_value = true))
 """
 end
 
@@ -239,7 +239,7 @@ end
 
 # ╔═╡ 2d59cbf1-6b8d-43fc-8887-1d739875f320
 let
-	Drawing(WIDTH, HEIGHT, :svg)
+	Drawing(WIDTH, HEIGHT, :png)
 	origin()
 	setline(0)
 	background(COLORS_BG.transparent)
@@ -1043,7 +1043,7 @@ version = "4.1.0+0"
 # ╟─5b5baa4f-c974-45e9-aef6-6ad817a18e1f
 # ╟─982175b8-8e4c-46e4-979b-0d141679f1d8
 # ╟─aa7b4ef1-7bc5-486a-92e2-326b37d4b08f
-# ╟─2d59cbf1-6b8d-43fc-8887-1d739875f320
+# ╠═2d59cbf1-6b8d-43fc-8887-1d739875f320
 # ╟─fe55b59b-1920-4e93-8809-a39fd75193f5
 # ╟─834c539e-a6d4-433e-8693-3e154f18733f
 # ╟─59ddcb43-1973-472a-af40-26dbb734740a
