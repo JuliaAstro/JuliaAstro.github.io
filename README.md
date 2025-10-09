@@ -1,10 +1,10 @@
 JuliaAstro.github.io
 ====================
 
-[![Stable](https://img.shields.io/badge/docs-stable-blue.svg)](https://juliaastro.org/)
-[![Build website](https://github.com/JuliaAstro/JuliaAstro.github.io/actions/workflows/Documentation.yml/badge.svg)](https://github.com/JuliaAstro/JuliaAstro.github.io/actions/workflows/Documentation.yml)
-[![pages-build-deployment](https://github.com/JuliaAstro/JuliaAstro.github.io/actions/workflows/pages/pages-build-deployment/badge.svg?branch=gh-pages)](https://github.com/JuliaAstro/JuliaAstro.github.io/actions/workflows/pages/pages-build-deployment)
-[![Test JuliaAstro packages](https://github.com/JuliaAstro/JuliaAstro.github.io/actions/workflows/CI.yml/badge.svg)](https://github.com/JuliaAstro/JuliaAstro.github.io/actions/workflows/CI.yml)
+[![docs](https://img.shields.io/badge/docs-stable-blue.svg)](https://juliaastro.org/)
+[![Build](https://github.com/JuliaAstro/JuliaAstro.github.io/actions/workflows/Documentation.yml/badge.svg)](https://github.com/JuliaAstro/JuliaAstro.github.io/actions/workflows/Documentation.yml)
+[![Deploy](https://github.com/JuliaAstro/JuliaAstro.github.io/actions/workflows/pages/pages-build-deployment/badge.svg?branch=gh-pages)](https://github.com/JuliaAstro/JuliaAstro.github.io/actions/workflows/pages/pages-build-deployment)
+[![Test JuliaAstro](https://github.com/JuliaAstro/JuliaAstro.github.io/actions/workflows/CI.yml/badge.svg)](https://github.com/JuliaAstro/JuliaAstro.github.io/actions/workflows/CI.yml)
 
 ## Description
 
