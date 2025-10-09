@@ -90,7 +90,11 @@ makedocs(
         "Package Ecosystem" => "ecosystem.md",
         case_studies,
         "Comparison with Astropy" => "comparison.md",
-        "Community" => "community.md",
+        "Community" => [
+            "community/juliaastro_community.md",
+            "community/governance.md",
+            "community/roadmap.md",
+        ],
     ],
     warnonly = [:missing_docs],
     plugins = [links],
@@ -185,7 +189,7 @@ MultiDocumenter.make(
 
 # Remove dev/latest docs from JuliaAstro site
 rm.(glob(joinpath("*", "dev"), outpath); recursive=true)
-rm.(glob(joinpath("*", "latest"), outpath); recursive=true)
+rm.(glob(joinpath("*", "latest*"), outpath); recursive=true)
 
 # Download logo
 # assets_dir = joinpath(outpath, "assets")

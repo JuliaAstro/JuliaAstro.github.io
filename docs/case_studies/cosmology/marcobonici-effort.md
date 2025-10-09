@@ -2,13 +2,13 @@
 title: "Effort.jl: a fast and differentiable emulator for the Effective Field Theory of the Large Scale Structure of the Universe"
 id: "marcobonici-effort"
 description: "See how this team uses Julia to emulate cosmological observables at the largest scales."
-author: "[William Thompson](https://github.com/sefffal)"
+author: "[CosmologicalEmulators/Effort.jl](https://github.com/marcobonici)"
 date: "2025-09-16"
 ---
 
 This team has developed a novel and efficient emulator designed for the Effective Field Theory of Large-Scale Structure (EFTofLSS).
 
-**Package: [CosmologicalEmulators/Effort.jl](https://github.com/sefffal/Octofitter.jl)**
+**Package: [CosmologicalEmulators/Effort.jl](https://github.com/CosmologicalEmulators/Effort.jl)**
 
 ![image](https://raw.githubusercontent.com/CosmologicalEmulators/Effort.jl/refs/heads/main/docs/src/assets/logo.svg)
 
