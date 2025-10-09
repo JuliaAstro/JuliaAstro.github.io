@@ -18,7 +18,7 @@ The JuliaAstro community is committed to maintaining a welcoming, civil and cons
 * [Eric Agol (University of Washington)](https://astro.washington.edu/people/eric-agol)
 * [Eric Ford (Pennsylvania State University)](https://science.psu.edu/astro/people/ebf11)
 * [Eric Schlegel (University of Texas at San Antonio)](https://sciences.utsa.edu/faculty/profiles/schlegel-eric.html)
-* [Mose Giordano (University College London)](https://profiles.ucl.ac.uk/70657-mos%C3%A8-giordano)
+* [Mosè Giordano (University College London)](https://profiles.ucl.ac.uk/70657-mos%C3%A8-giordano)
 * [Paul Tiede (Harvard University)](https://www.cfa.harvard.edu/people/paul-tiede)
 
 ## Governing Rules and Duties
