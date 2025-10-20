@@ -3,7 +3,7 @@
 **Last revised: September 2025**
 
 * [Introduction](#Introduction)
-* [Status Legend](#Status-Legend)i
+* [Status Legend](#Status-Legend)
 * [Functionality](#Functionality)
 * [Infrastructure, Documentation](#Infrastructure-Documentation)
 * [Interoperability and compatibility](#Interoperability-and-Compatibility)
