@@ -67,7 +67,7 @@ makedocs(
     doctest = false,
     format = Documenter.HTML(;
         mathengine,
-        prettyurls = get(ENV, "CI", "false") == "true",
+        prettyurls = true,
         canonical = "https://JuliaAstro.org/",
         assets = String[
             "assets/styles.css",
@@ -88,8 +88,13 @@ makedocs(
             ],
         ],
         "Package Ecosystem" => "ecosystem.md",
-        "Comparison with Astropy" => "comparison.md",
         case_studies,
+        "Comparison with Astropy" => "comparison.md",
+        "Community" => [
+            "community/juliaastro_community.md",
+            "community/governance.md",
+            "community/roadmap.md",
+        ],
     ],
     warnonly = [:missing_docs],
     plugins = [links],
@@ -182,8 +187,9 @@ MultiDocumenter.make(
 )
 @info "Aggregate build complete"
 
-# Remove dev docs from JuliaAstro site
+# Remove dev/latest docs from JuliaAstro site
 rm.(glob(joinpath("*", "dev"), outpath); recursive=true)
+rm.(glob(joinpath("*", "latest*"), outpath); recursive=true)
 
 # Download logo
 # assets_dir = joinpath(outpath, "assets")
