@@ -22,11 +22,7 @@ sort!(packages_juliaastro)
         for package in packages_juliaastro
             p_name = package.name
             @testset "$(p_name)" begin
-                if p_name == "Spectra.jl"
-                    @test Pkg.add(url="https://github.com/JuliaAstro/Spectra.jl") == nothing
-                else
-                    @test Pkg.add(chopsuffix(p_name, ".jl")) == nothing
-                end
+                @test Pkg.add(chopsuffix(p_name, ".jl")) == nothing
             end
         end
     end
