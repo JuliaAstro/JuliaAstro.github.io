@@ -8,7 +8,6 @@ MultiDocumenter = "87ed4bf0-c935-4a67-83c3-2a03bee4197c"
 Revise = "295af30f-e4ad-537b-8983-00126c2a3abe"
 
 [sources]
-JuliaAstroDocs = {path = ".."}
 MultiDocumenter = {url = "https://github.com/JuliaComputing/MultiDocumenter.jl"}
 
 [compat]
