@@ -1,0 +1,239 @@
+<!DOCTYPE html><HTML lang="en"><head><script charset="utf-8" src="../../../assets/default/multidoc_injector.js" type="text/javascript"></script><script charset="utf-8" type="text/javascript">window.MULTIDOCUMENTER_ROOT_PATH = '/'</script><script charset="utf-8" src="../../../assets/default/flexsearch.bundle.js" type="text/javascript"></script><script charset="utf-8" src="../../../assets/default/flexsearch_integration.js" type="text/javascript"></script><meta charset="UTF-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><title>Header · CFITSIO.jl</title><meta content="Header · CFITSIO.jl" name="title"/><meta content="Header · CFITSIO.jl" property="og:title"/><meta content="Header · CFITSIO.jl" property="twitter:title"/><meta content="Documentation for CFITSIO.jl." name="description"/><meta content="Documentation for CFITSIO.jl." property="og:description"/><meta content="Documentation for CFITSIO.jl." property="twitter:description"/><meta content="https://juliaastro.github.io/CFITSIO.jl/header/" property="og:url"/><meta content="https://juliaastro.github.io/CFITSIO.jl/header/" property="twitter:url"/><link href="https://JuliaAstro.org/CFITSIO/stable/header/" rel="canonical"/><script data-outdated-warner="" src="../assets/warner.js"></script><link href="https://cdnjs.cloudflare.com/ajax/libs/lato-font/3.0.0/css/lato-font.min.css" rel="stylesheet" type="text/css"/><link href="https://cdnjs.cloudflare.com/ajax/libs/juliamono/0.050/juliamono.min.css" rel="stylesheet" type="text/css"/><link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/fontawesome.min.css" rel="stylesheet" type="text/css"/><link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/solid.min.css" rel="stylesheet" type="text/css"/><link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/brands.min.css" rel="stylesheet" type="text/css"/><link href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.8/katex.min.css" rel="stylesheet" type="text/css"/><script>documenterBaseURL=".."</script><script data-main="../assets/documenter.js" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js"></script><script src="../search_index.js"></script><script src="../siteinfo.js"></script><script src="../../versions.js"></script><link class="docs-theme-link" data-theme-name="catppuccin-mocha" href="../assets/themes/catppuccin-mocha.css" rel="stylesheet" type="text/css"/><link class="docs-theme-link" data-theme-name="catppuccin-macchiato" href="../assets/themes/catppuccin-macchiato.css" rel="stylesheet" type="text/css"/><link class="docs-theme-link" data-theme-name="catppuccin-frappe" href="../assets/themes/catppuccin-frappe.css" rel="stylesheet" type="text/css"/><link class="docs-theme-link" data-theme-name="catppuccin-latte" href="../assets/themes/catppuccin-latte.css" rel="stylesheet" type="text/css"/><link class="docs-theme-link" data-theme-name="documenter-dark" data-theme-primary-dark="" href="../assets/themes/documenter-dark.css" rel="stylesheet" type="text/css"/><link class="docs-theme-link" data-theme-name="documenter-light" data-theme-primary="" href="../assets/themes/documenter-light.css" rel="stylesheet" type="text/css"/><script src="../assets/themeswap.js"></script><link href="../../../assets/default/multidoc.css" rel="stylesheet" type="text/css"/><link href="../../../assets/default/flexsearch.css" rel="stylesheet" type="text/css"/></head><body><nav id="multi-page-nav"><a class="brand" href="../../.."><img alt="home" src="../../../assets/logo.svg"/></a><div class="hidden-on-mobile" id="nav-items"><a class="nav-link nav-item" href="../../../home/">Home</a><div class="nav-dropdown"><button class="nav-item dropdown-label">Domain</button><div class="nav-dropdown-container nav-mega-dropdown-container"><div class="nav-mega-column"><div class="column-header">Solar System</div><ul class="column-content"><a class="nav-link nav-item" href="../../../CALCEPH/">⬤ CALCEPH</a><a class="nav-link nav-item" href="https://juliaastro.org/EphemerisSources.jl" target="_blank">⬤ EphemerisSources</a><a class="nav-link nav-item" href="https://juliaastro.org/GeneralAstrodynamics.jl" target="_blank">⬤ GeneralAstrodynamics</a><a class="nav-link nav-item" href="https://github.com/PerezHz/HORIZONS.jl?tab=readme-ov-file#horizonsjl" target="_blank">⬤ HORIZONS</a><a class="nav-link nav-item" href="https://juliaspace.github.io/SatelliteToolbox.jl/stable/" target="_blank">⬤ SatelliteToolbox</a><a class="nav-link nav-item" href="../../../SPICE/">⬤ SPICE</a></ul></div><div class="nav-mega-column"><div class="column-header">Exoplanets</div><ul class="column-content"><a class="nav-link nav-item" href="http://JuliaHCI.github.io/ADI.jl/stable/" target="_blank">⬤ ADI</a><a class="nav-link nav-item" href="http://JuliaHCI.github.io/HCIToolbox.jl/stable/" target="_blank">⬤ HCIToolbox</a><a class="nav-link nav-item" href="../../../Orbits/">⬤ Orbits</a><a class="nav-link nav-item" href="https://sefffal.github.io/PlanetOrbits.jl/dev/" target="_blank">⬤ PlanetOrbits</a><a class="nav-link nav-item" href="../../../Transits/">⬤ Transits</a></ul></div><div class="nav-mega-column"><div class="column-header">Stars</div><ul class="column-content"><a class="nav-link nav-item" href="https://cgarling.github.io/BolometricCorrections.jl/stable/" target="_blank">⬤ BolometricCorrections</a><a class="nav-link nav-item" href="https://cgarling.github.io/InitialMassFunctions.jl/stable/" target="_blank">⬤ InitialMassFunctions</a><a class="nav-link nav-item" href="https://cgarling.github.io/StarFormationHistories.jl/stable/" target="_blank">⬤ StarFormationHistories</a></ul></div><div class="nav-mega-column"><div class="column-header">Galaxies and Cosmology</div><ul class="column-content"><a class="nav-link nav-item" href="../../../Cosmology/">⬤ Cosmology</a><a class="nav-link nav-item" href="../../../DustExtinction/">⬤ DustExtinction</a><a class="nav-link nav-item" href="https://ehtjulia.github.io/ScatteringOptics.jl/stable/" target="_blank">⬤ ScatteringOptics</a></ul></div></div></div><div class="nav-dropdown"><button class="nav-item dropdown-label">Techniques</button><div class="nav-dropdown-container nav-mega-dropdown-container"><div class="nav-mega-column"><div class="column-header">Photometry</div><ul class="column-content"><a class="nav-link nav-item" href="../../../CCDReduction/">⬤ CCDReduction</a><a class="nav-link nav-item" href="../../../LACosmic/">⬤ LACosmic</a><a class="nav-link nav-item" href="../../../Photometry/">⬤ Photometry</a><a class="nav-link nav-item" href="../../../PSFModels/">⬤ PSFModels</a><a class="nav-link nav-item" href="../../../SAOImageDS9/">⬤ SAOImageDS9</a></ul></div><div class="nav-mega-column"><div class="column-header">Astrometry</div><ul class="column-content"><a class="nav-link nav-item" href="https://barrettp.github.io/Astrometry/dev" target="_blank">⬤ Astrometry</a><a class="nav-link nav-item" href="../../../AstroTime/">⬤ AstroTime</a><a class="nav-link nav-item" href="../../../EarthOrientation/">⬤ EarthOrientation</a><a class="nav-link nav-item" href="../../../ERFA/">◯ ERFA</a><a class="nav-link nav-item" href="../../../Healpix/">⬤ Healpix</a><a class="nav-link nav-item" href="../../../Reproject/">⬤ Reproject</a><a class="nav-link nav-item" href="../../../SkyCoords/">⬤ SkyCoords</a><a class="nav-link nav-item" href="../../../WCS/">◯ WCS</a></ul></div><div class="nav-mega-column"><div class="column-header">Spectroscopy</div><ul class="column-content"><a class="nav-link nav-item" href="https://ajwheeler.github.io/Korg.jl/stable/" target="_blank">⬤ Korg</a><a class="nav-link nav-item" href="https://fjebaker.github.io/SpectralFitting.jl/dev/" target="_blank">⬤ SpectralFitting</a></ul></div><div class="nav-mega-column"><div class="column-header">Time Series Analysis</div><ul class="column-content"><a class="nav-link nav-item" href="https://docs.juliadsp.org/stable/" target="_blank">⬤ DSP</a><a class="nav-link nav-item" href="../../../LombScargle/">⬤ LombScargle</a><a class="nav-link nav-item" href="https://juliastats.github.io/TimeSeries.jl/stable" target="_blank">⬤ TimeSeries</a></ul></div><div class="nav-mega-column"><div class="column-header">Interferometry</div><ul class="column-content"><a class="nav-link nav-item" href="https://ptiede.github.io/Comrade.jl/stable/" target="_blank">⬤ Comrade</a><a class="nav-link nav-item" href="https://aplavin.github.io/Difmap.jl/test/examples.html" target="_blank">⬤ Difmap</a><a class="nav-link nav-item" href="https://github.com/emmt/OIFITS.jl?tab=readme-ov-file#support-for-oi-fits-data-in-julia" target="_blank">⬤ OIFITS</a><a class="nav-link nav-item" href="https://fabienbaron.github.io/OITOOLS.jl/dev" target="_blank">⬤ OITOOLS</a><a class="nav-link nav-item" href="https://ehtjulia.github.io/PolarizedTypes.jl/stable/" target="_blank">⬤ PolarizedTypes</a><a class="nav-link nav-item" href="https://aplavin.github.io/VLBIData.jl/test/examples.html" target="_blank">⬤ VLBIData</a><a class="nav-link nav-item" href="https://ehtjulia.github.io/VLBISkyModels.jl/stable/" target="_blank">⬤ VLBISkyModels</a></ul></div></div></div><div class="nav-dropdown"><button class="nav-item dropdown-label">Statistics</button><div class="nav-dropdown-container nav-mega-dropdown-container"><div class="nav-mega-column"><div class="column-header">Uncertainty</div><ul class="column-content"><a class="nav-link nav-item" href="https://juliaphysics.github.io/Measurements.jl/stable/" target="_blank">⬤ Measurements</a><a class="nav-link nav-item" href="https://baggepinnen.github.io/MonteCarloMeasurements.jl/stable/" target="_blank">⬤ MonteCarloMeasurements</a><a class="nav-link nav-item" href="https://baggepinnen.github.io/MonteCarloMeasurements.jl/stable/" target="_blank">⬤ Uncertain</a></ul></div><div class="nav-mega-column"><div class="column-header">Optimization</div><ul class="column-content"><a class="nav-link nav-item" href="../../../BoxLeastSquares/">⬤ BoxLeastSquares</a><a class="nav-link nav-item" href="http://jump.dev/JuMP.jl/" target="_blank">⬤ JuMP</a><a class="nav-link nav-item" href="https://docs.sciml.ai/NonlinearSolve/stable/" target="_blank">⬤ NonlinearSolve</a><a class="nav-link nav-item" href="https://docs.sciml.ai/Optimization/stable/" target="_blank">⬤ Optimization</a></ul></div><div class="nav-mega-column"><div class="column-header">General</div><ul class="column-content"><a class="nav-link nav-item" href="../../../AstroLib/">⬤ AstroLib</a><a class="nav-link nav-item" href="http://mileslucas.com/BiweightStats.jl/stable/" target="_blank">⬤ BiweightStats</a><a class="nav-link nav-item" href="https://github.com/jeff-regier/Celeste.jl/wiki/" target="_blank">⬤ Celeste</a><a class="nav-link nav-item" href="https://juliastats.org/" target="_blank">⬤ JuliaStats</a><a class="nav-link nav-item" href="https://juliastats.github.io/Distributions.jl/stable/" target="_blank">⬤ Distributions</a><a class="nav-link nav-item" href="https://ehtjulia.github.io/FastHartleyTransform.jl/stable/" target="_blank">⬤ FastHartleyTransform</a><a class="nav-link nav-item" href="https://sefffal.github.io/Octofitter.jl/dev" target="_blank">⬤ Octofitter</a></ul></div></div></div><div class="nav-dropdown"><button class="nav-item dropdown-label">Utilities</button><div class="nav-dropdown-container nav-mega-dropdown-container"><div class="nav-mega-column"><div class="column-header">Data I/O</div><ul class="column-content"><a class="nav-link nav-item" href="../../../ASDF2/">⬤ ASDF2</a><a class="nav-link nav-item" href="../../../AstroImages/">⬤ AstroImages</a><a class="nav-link active nav-item" href="../../">◯ CFITSIO</a><a class="nav-link nav-item" href="https://emmt.github.io/EasyFITS.jl/dev" target="_blank">⬤ EasyFITS</a><a class="nav-link nav-item" href="https://barrettp.github.io/FITSFiles.jl/" target="_blank">⬤ FITSFiles</a><a class="nav-link nav-item" href="../../../FITSIO/">◯ FITSIO</a><a class="nav-link nav-item" href="https://github.com/JuliaAPlavin/FixedWidthTables.jl?tab=readme-ov-file#fixedwidthtablesjl" target="_blank">⬤ FixedWidthTables</a><a class="nav-link nav-item" href="https://aplavin.github.io/SkyImages.jl/test/notebook.html" target="_blank">⬤ SkyImages</a><a class="nav-link nav-item" href="https://github.com/JuliaAPlavin/VirtualObservatory.jl?tab=readme-ov-file#virtualobservatoryjl" target="_blank">⬤ VirtualObservatory</a><a class="nav-link nav-item" href="https://github.com/JuliaAPlavin/VOTables.jl" target="_blank">⬤ VOTables</a><a class="nav-link nav-item" href="../../../XPA/">⬤ XPA</a></ul></div><div class="nav-mega-column"><div class="column-header">Data processing</div><ul class="column-content"><a class="nav-link nav-item" href="../../../Astroalign/">⬤ Astroalign</a><a class="nav-link nav-item" href="https://github.com/torrance/Casacore.jl?tab=readme-ov-file#casacorejl" target="_blank">⬤ Casacore</a><a class="nav-link nav-item" href="https://dataframes.juliadata.org/stable/" target="_blank">⬤ DataFrames</a><a class="nav-link nav-item" href="https://rafaqz.github.io/DimensionalData.jl/stable/" target="_blank">⬤ DimensionalData</a><a class="nav-link nav-item" href="https://aplavin.github.io/FlexiJoins.jl/test/examples.html" target="_blank">⬤ FlexiJoins</a><a class="nav-link nav-item" href="https://github.com/gcalderone/SortMerge.jl?tab=readme-ov-file#sortmerge" target="_blank">⬤ SortMerge</a></ul></div><div class="nav-mega-column"><div class="column-header">Data Viz</div><ul class="column-content"><a class="nav-link nav-item" href="../../../AstroImages/">⬤ AstroImages</a><a class="nav-link nav-item" href="https://juliaimages.github.io/ImageFiltering.jl/stable" target="_blank">⬤ ImageFiltering</a><a class="nav-link nav-item" href="https://manuelbehrendt.github.io/Mera.jl/stable/" target="_blank">⬤ Mera</a><a class="nav-link nav-item" href="https://sefffal.github.io/PairPlots.jl/dev/" target="_blank">⬤ PairPlots</a><a class="nav-link nav-item" href="https://aplavin.github.io/SkyImages.jl/test/notebook.html" target="_blank">⬤ SkyImages</a></ul></div><div class="nav-mega-column"><div class="column-header">Units/Constants</div><ul class="column-content"><a class="nav-link nav-item" href="../../../AstroAngles/">⬤ AstroAngles</a><a class="nav-link nav-item" href="https://symbolicml.org/DynamicQuantities.jl/stable/" target="_blank">⬤ DynamicQuantities</a><a class="nav-link nav-item" href="https://juliaphysics.github.io/PhysicalConstants.jl/stable/" target="_blank">⬤ PhysicalConstants</a><a class="nav-link nav-item" href="https://painterqubits.github.io/Unitful.jl/stable" target="_blank">⬤ Unitful</a><a class="nav-link nav-item" href="../../../UnitfulAstro/">⬤ UnitfulAstro</a></ul></div></div></div><div class="search nav-item"><input id="search-input" placeholder="Search everywhere..."/><ul class="suggestions hidden" id="search-result-container"></ul><div class="search-keybinding">/</div></div></div><button id="multidoc-toggler"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"></path></svg></button></nav><div id="documenter"><nav class="docs-sidebar"><div class="docs-package-name"><span class="docs-autofit"><a href="../">CFITSIO.jl</a></span></div><button class="docs-search-query input is-rounded is-small is-clickable my-2 mx-auto py-1 px-2" id="documenter-search-query">Search docs (Ctrl + /)</button><ul class="docs-menu"><li><a class="tocitem" href="../">Home</a></li><li><a class="tocitem" href="../types/">Type Conversions</a></li><li><a class="tocitem" href="../file/">File</a></li><li><a class="tocitem" href="../hdu/">HDU</a></li><li class="is-active"><a class="tocitem" href="">Header</a><ul class="internal"><li><a class="tocitem" href="#Header-Keyword-Routines"><span>Header Keyword Routines</span></a></li></ul></li><li><a class="tocitem" href="../image/">Image</a></li><li><a class="tocitem" href="../table/">Table</a></li><li><a class="tocitem" href="../misc/">Miscellaneous</a></li></ul><div class="docs-version-selector field has-addons"><div class="control"><span class="docs-label button is-static is-size-7">Version</span></div><div class="docs-selector control is-expanded"><div class="select is-fullwidth is-size-7"><select id="documenter-version-selector"></select></div></div></div></nav><div class="docs-main"><header class="docs-navbar"><a class="docs-sidebar-button docs-navbar-link fa-solid fa-bars is-hidden-desktop" href="#" id="documenter-sidebar-button"></a><nav class="breadcrumb"><ul class="is-hidden-mobile"><li class="is-active"><a href="">Header</a></li></ul><ul class="is-hidden-tablet"><li class="is-active"><a href="">Header</a></li></ul></nav><div class="docs-right"><a class="docs-navbar-link" href="https://github.com/JuliaAstro/CFITSIO.jl" title="View the repository on GitHub"><span class="docs-icon fa-brands"></span><span class="docs-label is-hidden-touch">GitHub</span></a><a class="docs-navbar-link" href="https://github.com/JuliaAstro/CFITSIO.jl/blob/master/docs/src/header.md" title="Edit source on GitHub"><span class="docs-icon fa-solid"></span></a><a class="docs-settings-button docs-navbar-link fa-solid fa-gear" href="#" id="documenter-settings-button" title="Settings"></a><a class="docs-article-toggle-button fa-solid fa-chevron-up" href="javascript:;" id="documenter-article-toggle-button" title="Collapse all docstrings"></a></div></header><article class="content" id="documenter-page"><h2 id="Header-Keyword-Routines"><a class="docs-heading-anchor" href="#Header-Keyword-Routines">Header Keyword Routines</a><a id="Header-Keyword-Routines-1"></a><a class="docs-heading-anchor-permalink" href="#Header-Keyword-Routines" title="Permalink"></a></h2><article class="docstring"><header><a class="docstring-article-toggle-button fa-solid fa-chevron-down" href="javascript:;" title="Collapse docstring"></a><a class="docstring-binding" href="#CFITSIO.fits_copy_header" id="CFITSIO.fits_copy_header"><code>CFITSIO.fits_copy_header</code></a> — <span class="docstring-category">Function</span><span class="is-flex-grow-1 docstring-article-toggle-button" title="Collapse docstring"></span></header><section><div><pre><code class="language-julia hljs">fits_copy_header(fin::FITSFile, fout::FITSFile)</code></pre><p>Copy the header (not the data) associated with the current HDU from <code>fin</code> to <code>fout</code>. If the current HDU in <code>fout</code> is not empty, it will be closed and a new HDU will be appended. An empty output HDU will be created with the header but no data.</p><p><strong>Example</strong></p><pre><code class="language-julia-repl hljs">julia&gt; fname_in = joinpath(mktempdir(), "test_in.fits");
+
+julia&gt; fname_out = joinpath(mktempdir(), "test_out.fits");
+
+julia&gt; fin = fits_create_file(fname_in);
+
+julia&gt; fits_create_empty_img(fin)
+
+julia&gt; fits_write_key(fin, "KEY1", 1, "First keyword")
+
+julia&gt; fout = fits_create_file(fname_out);
+
+julia&gt; fits_copy_header(fin, fout)
+
+julia&gt; fits_read_key_str(fout, "NAXIS")
+("0", "number of data axes")
+
+julia&gt; fits_read_key_str(fout, "KEY1")
+("1", "First keyword")
+
+julia&gt; foreach(close, (fin, fout))</code></pre></div><a class="docs-sourcelink" href="https://github.com/JuliaAstro/CFITSIO.jl/blob/27f77a8c91198a52e8a64ce2e56b0ff9aa23bbc9/src/CFITSIO.jl#L1983-L2014" target="_blank">source</a></section></article><article class="docstring"><header><a class="docstring-article-toggle-button fa-solid fa-chevron-down" href="javascript:;" title="Collapse docstring"></a><a class="docstring-binding" href="#CFITSIO.fits_delete_key" id="CFITSIO.fits_delete_key"><code>CFITSIO.fits_delete_key</code></a> — <span class="docstring-category">Function</span><span class="is-flex-grow-1 docstring-article-toggle-button" title="Collapse docstring"></span></header><section><div><pre><code class="language-julia hljs">fits_delete_key(f::FITSFile, keyname::String)</code></pre><p>Delete the keyword named <code>keyname</code>.</p><p><strong>Example</strong></p><pre><code class="language-julia-repl hljs">julia&gt; fname = joinpath(mktempdir(), "test.fits");
+
+julia&gt; f = fits_create_file(fname);
+
+julia&gt; fits_create_empty_img(f)
+
+julia&gt; fits_write_key(f, "KEY1", 1, "First keyword")
+
+julia&gt; fits_read_key_str(f, "KEY1")
+("1", "First keyword")
+
+julia&gt; fits_delete_key(f, "KEY1") # delete the keyword
+
+julia&gt; fits_read_key_str(f, "KEY1")
+ERROR: CFITSIO has encountered an error. Error code 202: keyword not found in header
+[...]
+
+julia&gt; close(f)</code></pre></div><a class="docs-sourcelink" href="https://github.com/JuliaAstro/CFITSIO.jl/blob/27f77a8c91198a52e8a64ce2e56b0ff9aa23bbc9/src/CFITSIO.jl#L1911-L1937" target="_blank">source</a></section></article><article class="docstring"><header><a class="docstring-article-toggle-button fa-solid fa-chevron-down" href="javascript:;" title="Collapse docstring"></a><a class="docstring-binding" href="#CFITSIO.fits_delete_record" id="CFITSIO.fits_delete_record"><code>CFITSIO.fits_delete_record</code></a> — <span class="docstring-category">Function</span><span class="is-flex-grow-1 docstring-article-toggle-button" title="Collapse docstring"></span></header><section><div><pre><code class="language-julia hljs">fits_delete_record(f::FITSFile, keynum::Integer)</code></pre><p>Delete the keyword record at the specified index.</p><p><strong>Example</strong></p><pre><code class="language-julia-repl hljs">julia&gt; fname = joinpath(mktempdir(), "test.fits");
+
+julia&gt; f = fits_create_file(fname);
+
+julia&gt; fits_create_empty_img(f)
+
+julia&gt; fits_write_key(f, "KEY1", 1, "First keyword")
+
+julia&gt; fits_read_key_str(f, "KEY1")
+("1", "First keyword")
+
+julia&gt; fits_delete_record(f, 7) # delete the keyword
+
+julia&gt; fits_read_key_str(f, "KEY1")
+ERROR: CFITSIO has encountered an error. Error code 202: keyword not found in header
+[...]
+
+julia&gt; close(f)</code></pre></div><a class="docs-sourcelink" href="https://github.com/JuliaAstro/CFITSIO.jl/blob/27f77a8c91198a52e8a64ce2e56b0ff9aa23bbc9/src/CFITSIO.jl#L1877-L1903" target="_blank">source</a></section></article><article class="docstring"><header><a class="docstring-article-toggle-button fa-solid fa-chevron-down" href="javascript:;" title="Collapse docstring"></a><a class="docstring-binding" href="#CFITSIO.fits_hdr2str" id="CFITSIO.fits_hdr2str"><code>CFITSIO.fits_hdr2str</code></a> — <span class="docstring-category">Function</span><span class="is-flex-grow-1 docstring-article-toggle-button" title="Collapse docstring"></span></header><section><div><pre><code class="language-julia hljs">fits_hdr2str(f::FITSFile, nocomments::Bool=false)</code></pre><p>Return the header of the CHDU as a string. If <code>nocomments</code> is <code>true</code>, comment cards are stripped from the output.</p></div><a class="docs-sourcelink" href="https://github.com/JuliaAstro/CFITSIO.jl/blob/27f77a8c91198a52e8a64ce2e56b0ff9aa23bbc9/src/CFITSIO.jl#L1952-L1957" target="_blank">source</a></section></article><article class="docstring"><header><a class="docstring-article-toggle-button fa-solid fa-chevron-down" href="javascript:;" title="Collapse docstring"></a><a class="docstring-binding" href="#CFITSIO.fits_get_hdrspace" id="CFITSIO.fits_get_hdrspace"><code>CFITSIO.fits_get_hdrspace</code></a> — <span class="docstring-category">Function</span><span class="is-flex-grow-1 docstring-article-toggle-button" title="Collapse docstring"></span></header><section><div><pre><code class="language-julia hljs">fits_get_hdrspace(f::FITSFile) -&gt; (keysexist, morekeys)</code></pre><p>Return the number of existing keywords (not counting the END keyword) and the amount of space currently available for more keywords.</p><p><strong>Example</strong></p><pre><code class="language-julia-repl hljs">julia&gt; fname = joinpath(mktempdir(), "test.fits");
+
+julia&gt; f = fits_clobber_file(fname);
+
+julia&gt; fits_create_img(f, Int32, (2, 2));
+
+julia&gt; nkeywords, _ = fits_get_hdrspace(f)
+(8, -1)
+
+julia&gt; [fits_read_keyn(f, i) for i in 1:nkeywords]
+8-element Vector{Tuple{String, String, String}}:
+ ("SIMPLE", "T", "file does conform to FITS standard")
+ ("BITPIX", "32", "number of bits per data pixel")
+ ("NAXIS", "2", "number of data axes")
+ ("NAXIS1", "2", "length of data axis 1")
+ ("NAXIS2", "2", "length of data axis 2")
+ ("EXTEND", "T", "FITS dataset may contain extensions")
+ ("COMMENT", "", "  FITS (Flexible Image Transport System) format is defined in 'Astronomy")
+ ("COMMENT", "", "  and Astrophysics', volume 376, page 359; bibcode: 2001A&amp;A...376..359H")
+
+julia&gt; close(f)</code></pre></div><a class="docs-sourcelink" href="https://github.com/JuliaAstro/CFITSIO.jl/blob/27f77a8c91198a52e8a64ce2e56b0ff9aa23bbc9/src/CFITSIO.jl#L866-L896" target="_blank">source</a></section></article><article class="docstring"><header><a class="docstring-article-toggle-button fa-solid fa-chevron-down" href="javascript:;" title="Collapse docstring"></a><a class="docstring-binding" href="#CFITSIO.fits_read_key_lng" id="CFITSIO.fits_read_key_lng"><code>CFITSIO.fits_read_key_lng</code></a> — <span class="docstring-category">Function</span><span class="is-flex-grow-1 docstring-article-toggle-button" title="Collapse docstring"></span></header><section><div><pre><code class="language-julia hljs">fits_read_key_lng(f::FITSFile, keyname::String)</code></pre><p>Read the value of a keyword as a <code>Clong</code>, as well as the comment associated with the keyword.</p><p><strong>Example</strong></p><pre><code class="language-julia-repl hljs">julia&gt; fname = joinpath(mktempdir(), "test.fits");
+
+julia&gt; f = fits_create_file(fname);
+
+julia&gt; fits_create_img(f, Int32, (100, 100));
+
+julia&gt; fits_read_key_lng(f, "NAXIS1")
+(100, "length of data axis 1")
+
+julia&gt; close(f)</code></pre></div><a class="docs-sourcelink" href="https://github.com/JuliaAstro/CFITSIO.jl/blob/27f77a8c91198a52e8a64ce2e56b0ff9aa23bbc9/src/CFITSIO.jl#L963-L982" target="_blank">source</a></section></article><article class="docstring"><header><a class="docstring-article-toggle-button fa-solid fa-chevron-down" href="javascript:;" title="Collapse docstring"></a><a class="docstring-binding" href="#CFITSIO.fits_read_key_str" id="CFITSIO.fits_read_key_str"><code>CFITSIO.fits_read_key_str</code></a> — <span class="docstring-category">Function</span><span class="is-flex-grow-1 docstring-article-toggle-button" title="Collapse docstring"></span></header><section><div><pre><code class="language-julia hljs">fits_read_key_str(f::FITSFile, keyname::String)</code></pre><p>Read the value associated with the keyword as a <code>String</code>, along with the comment.</p><p><strong>Example</strong></p><pre><code class="language-julia-repl hljs">julia&gt; fname = joinpath(mktempdir(), "test.fits");
+
+julia&gt; f = fits_create_file(fname);
+
+julia&gt; fits_create_empty_img(f)
+
+julia&gt; fits_read_key_str(f, "SIMPLE")
+("T", "file does conform to FITS standard")
+
+julia&gt; close(f)</code></pre></div><a class="docs-sourcelink" href="https://github.com/JuliaAstro/CFITSIO.jl/blob/27f77a8c91198a52e8a64ce2e56b0ff9aa23bbc9/src/CFITSIO.jl#L921-L939" target="_blank">source</a></section></article><article class="docstring"><header><a class="docstring-article-toggle-button fa-solid fa-chevron-down" href="javascript:;" title="Collapse docstring"></a><a class="docstring-binding" href="#CFITSIO.fits_read_key_unit" id="CFITSIO.fits_read_key_unit"><code>CFITSIO.fits_read_key_unit</code></a> — <span class="docstring-category">Function</span><span class="is-flex-grow-1 docstring-article-toggle-button" title="Collapse docstring"></span></header><section><div><pre><code class="language-julia hljs">fits_read_key_unit(f::FITSFile, keyname::String)</code></pre><p>Read the physical unit of the keyword <code>keyname</code> in the header.</p><p><strong>Example</strong></p><pre><code class="language-julia-repl hljs">julia&gt; fname = joinpath(mktempdir(), "test.fits");
+
+julia&gt; f = fits_create_file(fname);
+
+julia&gt; fits_create_empty_img(f)
+
+julia&gt; fits_write_key(f, "Velocity", 2.0, "Velocity of the object")
+
+julia&gt; fits_write_key_unit(f, "Velocity", "m/s")
+
+julia&gt; fits_read_key_unit(f, "Velocity")
+"m/s"
+
+julia&gt; fits_read_keyword(f, "Velocity")
+("2.", "[m/s] Velocity of the object")
+
+julia&gt; close(f)</code></pre><p>See also <a href="#CFITSIO.fits_write_key_unit"><code>fits_write_key_unit</code></a> to write a unit to a keyword.</p></div><a class="docs-sourcelink" href="https://github.com/JuliaAstro/CFITSIO.jl/blob/27f77a8c91198a52e8a64ce2e56b0ff9aa23bbc9/src/CFITSIO.jl#L1202-L1229" target="_blank">source</a></section></article><article class="docstring"><header><a class="docstring-article-toggle-button fa-solid fa-chevron-down" href="javascript:;" title="Collapse docstring"></a><a class="docstring-binding" href="#CFITSIO.fits_read_keyn" id="CFITSIO.fits_read_keyn"><code>CFITSIO.fits_read_keyn</code></a> — <span class="docstring-category">Function</span><span class="is-flex-grow-1 docstring-article-toggle-button" title="Collapse docstring"></span></header><section><div><pre><code class="language-julia hljs">fits_read_keyn(f::FITSFile, keynum::Int) -&gt; (name, value, comment)</code></pre><p>Return the nth header record in the CHU. The first keyword in the header is at <code>keynum = 1</code>.</p><p><strong>Example</strong></p><pre><code class="language-julia-repl hljs">julia&gt; fname = joinpath(mktempdir(), "test.fits");
+
+julia&gt; f = fits_create_file(fname);
+
+julia&gt; fits_create_empty_img(f)
+
+julia&gt; fits_read_keyn(f, 1)
+("SIMPLE", "T", "file does conform to FITS standard")
+
+julia&gt; fits_read_keyn(f, 3)
+("NAXIS", "0", "number of data axes")
+
+julia&gt; close(f)</code></pre></div><a class="docs-sourcelink" href="https://github.com/JuliaAstro/CFITSIO.jl/blob/27f77a8c91198a52e8a64ce2e56b0ff9aa23bbc9/src/CFITSIO.jl#L1149-L1170" target="_blank">source</a></section></article><article class="docstring"><header><a class="docstring-article-toggle-button fa-solid fa-chevron-down" href="javascript:;" title="Collapse docstring"></a><a class="docstring-binding" href="#CFITSIO.fits_read_keyword" id="CFITSIO.fits_read_keyword"><code>CFITSIO.fits_read_keyword</code></a> — <span class="docstring-category">Function</span><span class="is-flex-grow-1 docstring-article-toggle-button" title="Collapse docstring"></span></header><section><div><pre><code class="language-julia hljs">fits_read_keyword(f::FITSFile, keyname::String) -&gt; (value, comment)</code></pre><p>Return the specified keyword value and comment (as a tuple of strings), throws and error if the keyword is not found.</p><p><strong>Example</strong></p><pre><code class="language-julia-repl hljs">julia&gt; fname = joinpath(mktempdir(), "test.fits");
+
+julia&gt; f = fits_create_file(fname);
+
+julia&gt; fits_create_empty_img(f)
+
+julia&gt; fits_read_keyword(f, "SIMPLE")
+("T", "file does conform to FITS standard")
+
+julia&gt; close(f)</code></pre></div><a class="docs-sourcelink" href="https://github.com/JuliaAstro/CFITSIO.jl/blob/27f77a8c91198a52e8a64ce2e56b0ff9aa23bbc9/src/CFITSIO.jl#L1053-L1072" target="_blank">source</a></section></article><article class="docstring"><header><a class="docstring-article-toggle-button fa-solid fa-chevron-down" href="javascript:;" title="Collapse docstring"></a><a class="docstring-binding" href="#CFITSIO.fits_read_record" id="CFITSIO.fits_read_record"><code>CFITSIO.fits_read_record</code></a> — <span class="docstring-category">Function</span><span class="is-flex-grow-1 docstring-article-toggle-button" title="Collapse docstring"></span></header><section><div><pre><code class="language-julia hljs">fits_read_record(f::FITSFile, keynum::Int)::String</code></pre><p>Return the <code>keynum</code>-th header record in the CHU. The first keyword in the header is at <code>keynum = 1</code>.</p><p><strong>Example</strong></p><pre><code class="language-julia-repl hljs">julia&gt; fname = joinpath(mktempdir(), "test.fits");
+
+julia&gt; f = fits_create_file(fname);
+
+julia&gt; fits_create_empty_img(f)
+
+julia&gt; fits_read_record(f, 1)
+"SIMPLE  =                    T / file does conform to FITS standard"
+
+julia&gt; fits_read_record(f, 3)
+"NAXIS   =                    0 / number of data axes"
+
+julia&gt; close(f)</code></pre></div><a class="docs-sourcelink" href="https://github.com/JuliaAstro/CFITSIO.jl/blob/27f77a8c91198a52e8a64ce2e56b0ff9aa23bbc9/src/CFITSIO.jl#L1096-L1118" target="_blank">source</a></section></article><article class="docstring"><header><a class="docstring-article-toggle-button fa-solid fa-chevron-down" href="javascript:;" title="Collapse docstring"></a><a class="docstring-binding" href="#CFITSIO.fits_update_key" id="CFITSIO.fits_update_key"><code>CFITSIO.fits_update_key</code></a> — <span class="docstring-category">Function</span><span class="is-flex-grow-1 docstring-article-toggle-button" title="Collapse docstring"></span></header><section><div><pre><code class="language-julia hljs">fits_update_key(f::FITSFile, key::String, value, comment::Union{String,Ptr{Nothing},Nothing} = nothing)</code></pre><p>Update the value of an existing keyword in the FITS header, or add a new keyword if it does not exist. This function is a convenience wrapper that calls the appropriate <code>ffuk*</code> function based on the type of <code>value</code>.</p><p>If <code>comment</code> is provided, it is added to the keyword comment field. If <code>value</code> is <code>Nothing</code>, the keyword is set to a null value. If <code>value</code> is a string, it is checked to be ASCII compliant. If <code>value</code> is a floating-point number, it is written as a double-precision value. If <code>value</code> is a boolean, it is written as an integer (1 for true, 0 for false).</p><p><strong>Example</strong></p><pre><code class="language-julia-repl hljs">julia&gt; fname = joinpath(mktempdir(), "test.fits");
+
+julia&gt; f = fits_create_file(fname);
+
+julia&gt; fits_create_empty_img(f)
+
+julia&gt; fits_update_key(f, "NEWKEY", 2, "This is a new keyword")
+
+julia&gt; fits_read_key_str(f, "NEWKEY")
+("2", "This is a new keyword")
+
+julia&gt; fits_update_key(f, "NEWKEY", 3.14, "Updated value")
+
+julia&gt; fits_read_key_str(f, "NEWKEY")
+("3.14", "Updated value")
+
+julia&gt; fits_update_key(f, "NEWKEY", true, "Boolean value")
+
+julia&gt; fits_read_key_str(f, "NEWKEY")
+("T", "Boolean value")
+
+julia&gt; fits_update_key(f, "NEWKEY", "Value", "String value")
+
+julia&gt; fits_read_key_str(f, "NEWKEY")
+("Value", "String value")
+
+julia&gt; close(f)</code></pre></div><a class="docs-sourcelink" href="https://github.com/JuliaAstro/CFITSIO.jl/blob/27f77a8c91198a52e8a64ce2e56b0ff9aa23bbc9/src/CFITSIO.jl#L1709-L1751" target="_blank">source</a></section></article><article class="docstring"><header><a class="docstring-article-toggle-button fa-solid fa-chevron-down" href="javascript:;" title="Collapse docstring"></a><a class="docstring-binding" href="#CFITSIO.fits_write_comment" id="CFITSIO.fits_write_comment"><code>CFITSIO.fits_write_comment</code></a> — <span class="docstring-category">Function</span><span class="is-flex-grow-1 docstring-article-toggle-button" title="Collapse docstring"></span></header><section><div><pre><code class="language-julia hljs">fits_write_comment(f::FITSFile, comment::String)</code></pre><p>Append to the keyword <code>COMMENT</code> in the FITS header. If the keyword does not exist, it is created.</p><p><strong>Example</strong></p><pre><code class="language-julia-repl hljs">julia&gt; fname = joinpath(mktempdir(), "test.fits");
+
+julia&gt; f = fits_create_file(fname);
+
+julia&gt; fits_create_empty_img(f)
+
+julia&gt; fits_write_comment(f, "This is a comment")
+
+julia&gt; fits_read_record(f, 7)
+"COMMENT This is a comment"
+
+julia&gt; close(f)</code></pre></div><a class="docs-sourcelink" href="https://github.com/JuliaAstro/CFITSIO.jl/blob/27f77a8c91198a52e8a64ce2e56b0ff9aa23bbc9/src/CFITSIO.jl#L1636-L1657" target="_blank">source</a></section></article><article class="docstring"><header><a class="docstring-article-toggle-button fa-solid fa-chevron-down" href="javascript:;" title="Collapse docstring"></a><a class="docstring-binding" href="#CFITSIO.fits_write_date" id="CFITSIO.fits_write_date"><code>CFITSIO.fits_write_date</code></a> — <span class="docstring-category">Function</span><span class="is-flex-grow-1 docstring-article-toggle-button" title="Collapse docstring"></span></header><section><div><pre><code class="language-julia hljs">fits_write_date(f::FITSFile)</code></pre><p>Write the current date and time into the FITS header. If a DATE keyword already exists, it is replaced by the new value. The date is written in the format <code>YYYY-MM-DDThh:mm:ss</code> (ISO 8601).</p><p><strong>Example</strong></p><pre><code class="language-julia-repl hljs">julia&gt; fname = joinpath(mktempdir(), "test.fits");
+
+julia&gt; f = fits_create_file(fname);
+
+julia&gt; fits_create_empty_img(f)
+
+julia&gt; fits_write_date(f)
+
+julia&gt; fits_read_key_str(f, "DATE")
+("2025-05-28T10:41:08", "file creation date (YYYY-MM-DDThh:mm:ss UT)")
+
+julia&gt; close(f)</code></pre></div><a class="docs-sourcelink" href="https://github.com/JuliaAstro/CFITSIO.jl/blob/27f77a8c91198a52e8a64ce2e56b0ff9aa23bbc9/src/CFITSIO.jl#L1606-L1628" target="_blank">source</a></section></article><article class="docstring"><header><a class="docstring-article-toggle-button fa-solid fa-chevron-down" href="javascript:;" title="Collapse docstring"></a><a class="docstring-binding" href="#CFITSIO.fits_write_history" id="CFITSIO.fits_write_history"><code>CFITSIO.fits_write_history</code></a> — <span class="docstring-category">Function</span><span class="is-flex-grow-1 docstring-article-toggle-button" title="Collapse docstring"></span></header><section><div><pre><code class="language-julia hljs">fits_write_history(f::FITSFile, history::String)</code></pre><p>Append to the keyword <code>HISTORY</code> in the FITS header. If the keyword does not exist, it is created.</p><p><strong>Example</strong></p><pre><code class="language-julia-repl hljs">julia&gt; fname = joinpath(mktempdir(), "test.fits");
+
+julia&gt; f = fits_create_file(fname);
+
+julia&gt; fits_create_empty_img(f)
+
+julia&gt; fits_write_history(f, "This is a history entry")
+
+julia&gt; fits_read_record(f, 7)
+"HISTORY This is a history entry"
+
+julia&gt; close(f)</code></pre></div><a class="docs-sourcelink" href="https://github.com/JuliaAstro/CFITSIO.jl/blob/27f77a8c91198a52e8a64ce2e56b0ff9aa23bbc9/src/CFITSIO.jl#L1673-L1693" target="_blank">source</a></section></article><article class="docstring"><header><a class="docstring-article-toggle-button fa-solid fa-chevron-down" href="javascript:;" title="Collapse docstring"></a><a class="docstring-binding" href="#CFITSIO.fits_write_key" id="CFITSIO.fits_write_key"><code>CFITSIO.fits_write_key</code></a> — <span class="docstring-category">Function</span><span class="is-flex-grow-1 docstring-article-toggle-button" title="Collapse docstring"></span></header><section><div><pre><code class="language-julia hljs">fits_write_key(f::FITSFile, keyname::String, value, comment::Union{String, Nothing} = nothing)</code></pre><p>Write a keyword of the appropriate data type into the CHU. If <code>comment</code> is <code>nothing</code>, the keyword is written without a comment.</p><p><strong>Example</strong></p><pre><code class="language-julia-repl hljs">julia&gt; fname = joinpath(mktempdir(), "test.fits");
+
+julia&gt; f = fits_create_file(fname);
+
+julia&gt; fits_create_empty_img(f)
+
+julia&gt; fits_write_key(f, "NEWKEY", 2, "This is a new keyword")
+
+julia&gt; fits_read_key_str(f, "NEWKEY")
+("2", "This is a new keyword")
+
+julia&gt; close(f)</code></pre></div><a class="docs-sourcelink" href="https://github.com/JuliaAstro/CFITSIO.jl/blob/27f77a8c91198a52e8a64ce2e56b0ff9aa23bbc9/src/CFITSIO.jl#L1512-L1533" target="_blank">source</a></section></article><article class="docstring"><header><a class="docstring-article-toggle-button fa-solid fa-chevron-down" href="javascript:;" title="Collapse docstring"></a><a class="docstring-binding" href="#CFITSIO.fits_write_key_unit" id="CFITSIO.fits_write_key_unit"><code>CFITSIO.fits_write_key_unit</code></a> — <span class="docstring-category">Function</span><span class="is-flex-grow-1 docstring-article-toggle-button" title="Collapse docstring"></span></header><section><div><pre><code class="language-julia hljs">fits_write_key_unit(f::FITSFile, keyname::String, unit::String)</code></pre><p>Write the physical units string into an existing keyword record. The keyword must already exist in the header. The unit string is enclosed in square brackets at the beginning of the keyword comment field.</p><p><strong>Example</strong></p><pre><code class="language-julia-repl hljs">julia&gt; fname = joinpath(mktempdir(), "test.fits");
+
+julia&gt; f = fits_create_file(fname);
+
+julia&gt; fits_create_empty_img(f)
+
+julia&gt; fits_write_key(f, "Velocity", 2.0, "Velocity of the object")
+
+julia&gt; fits_write_key_unit(f, "Velocity", "m/s")
+
+julia&gt; fits_read_key_unit(f, "Velocity")
+"m/s"
+
+julia&gt; fits_read_keyword(f, "Velocity")
+("2.", "[m/s] Velocity of the object")
+
+julia&gt; close(f)</code></pre></div><a class="docs-sourcelink" href="https://github.com/JuliaAstro/CFITSIO.jl/blob/27f77a8c91198a52e8a64ce2e56b0ff9aa23bbc9/src/CFITSIO.jl#L1561-L1588" target="_blank">source</a></section></article><article class="docstring"><header><a class="docstring-article-toggle-button fa-solid fa-chevron-down" href="javascript:;" title="Collapse docstring"></a><a class="docstring-binding" href="#CFITSIO.fits_write_record" id="CFITSIO.fits_write_record"><code>CFITSIO.fits_write_record</code></a> — <span class="docstring-category">Function</span><span class="is-flex-grow-1 docstring-article-toggle-button" title="Collapse docstring"></span></header><section><div><pre><code class="language-julia hljs">fits_write_record(f::FITSFile, card::String)</code></pre><p>Write a user specified keyword record into the CHU. This is a low–level routine which can be used to write any arbitrary record into the header. It is not recommended to use this function unless you know what you are doing. It is typically used to write hierarchical keywords in the ESO convention, which allows keyword names longer than 8 characters. It is also used to write comments or history entries directly into the header. If the keyword already exists, it is replaced by the new value. If the keyword does not exist, it is added to the header.</p><p><strong>Example</strong></p><pre><code class="language-julia-repl hljs">julia&gt; fname = joinpath(mktempdir(), "test.fits");
+
+julia&gt; f = fits_create_file(fname);
+
+julia&gt; fits_create_empty_img(f)
+
+julia&gt; fits_write_record(f, "HIERARCH ESO OBS ID = '12345'")
+
+julia&gt; fits_read_record(f, 7)
+"HIERARCH ESO OBS ID = '12345'"
+
+julia&gt; close(f)</code></pre></div><a class="docs-sourcelink" href="https://github.com/JuliaAstro/CFITSIO.jl/blob/27f77a8c91198a52e8a64ce2e56b0ff9aa23bbc9/src/CFITSIO.jl#L1833-L1861" target="_blank">source</a></section></article></article><nav class="docs-footer"><a class="docs-footer-prevpage" href="../hdu/">« HDU</a><a class="docs-footer-nextpage" href="../image/">Image »</a><div class="flexbox-break"></div><p class="footer-message">Powered by <a href="https://github.com/JuliaDocs/Documenter.jl">Documenter.jl</a> and the <a href="https://julialang.org/">Julia Programming Language</a>.</p></nav></div><div class="modal" id="documenter-settings"><div class="modal-background"></div><div class="modal-card"><header class="modal-card-head"><p class="modal-card-title">Settings</p><button class="delete"></button></header><section class="modal-card-body"><p><label class="label">Theme</label></p><div class="select"><select id="documenter-themepicker"><option value="auto">Automatic (OS)</option><option value="documenter-light">documenter-light</option><option value="documenter-dark">documenter-dark</option><option value="catppuccin-latte">catppuccin-latte</option><option value="catppuccin-frappe">catppuccin-frappe</option><option value="catppuccin-macchiato">catppuccin-macchiato</option><option value="catppuccin-mocha">catppuccin-mocha</option></select></div><p></p><hr/><p>This document was generated with <a href="https://github.com/JuliaDocs/Documenter.jl">Documenter.jl</a> version 1.11.4 on <span class="colophon-date" title="Thursday 5 June 2025 06:15">Thursday 5 June 2025</span>. Using Julia version 1.10.9.</p></section><footer class="modal-card-foot"></footer></div></div></div></body></HTML>
