@@ -4,52 +4,26 @@ This file defines integration tests for the JuliaAstro package ecosystem.
 These are tests that confirm various packages can be installed and work together.
 =#
 
-using Test, Pkg, InteractiveUtils
-
+using ParallelTestRunner: runtests, find_tests, parse_args
 import JuliaAstroDocs
 
-ecosystem_t = JuliaAstroDocs.ecosystem_t()
+const init_code = quote
+    # Start by testing that we can install all packages
+    # Worry if they compile successfully after
+    ENV["JULIA_PKG_PRECOMPILE_AUTO"] = 0
 
-packages_juliaastro = filter(ecosystem_t) do package
-    occursin("juliaastro", lowercase(package.repo))
+    import Pkg
+    using JuliaAstroDocs: ecosystem_t
+    using InteractiveUtils: @time_imports
+
+    packages_juliaastro = filter(ecosystem_t()) do package
+        occursin("juliaastro", lowercase(package.repo))
+    end
+    unique!(p -> p.name, packages_juliaastro)
+    sort!(packages_juliaastro)
 end
-unique!(p -> p.name, packages_juliaastro)
-sort!(packages_juliaastro)
 
-@testset "JuliaAstro Package Evalauation" begin
-    @testset "Compatible versions exist" begin
-        ENV["JULIA_PKG_PRECOMPILE_AUTO"] = 0
-        for package in packages_juliaastro
-            p_name = package.name
-            @testset "$(p_name)" begin
-                @test Pkg.add(chopsuffix(p_name, ".jl")) == nothing
-            end
-        end
-    end
+args = parse_args(Base.ARGS)
+testsuite = find_tests(@__DIR__)
 
-    @testset "Development versions compatible" begin
-        # Start by testing that we can install all packages
-        # Worry if they compile successfully after
-        ENV["JULIA_PKG_PRECOMPILE_AUTO"] = 0
-
-        for package in packages_juliaastro
-            @testset "$(package.name)" begin
-                @test Pkg.add(url=package.repo) == nothing
-            end
-        end
-    end
-
-    @testset "Precompilation" begin
-        @test Pkg.precompile(; strict=true) == nothing
-    end
-
-    @testset "Package loading" begin
-        for package in packages_juliaastro
-            @testset "$(package.name)" begin
-                @test eval(quote
-                    @time_imports using $(Symbol(chopsuffix(package.name, ".jl")))
-                end) == nothing
-            end
-        end
-    end
-end
+runtests(JuliaAstroDocs, args; testsuite, init_code)
