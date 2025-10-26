@@ -45,9 +45,11 @@ sort!(packages_juliaastro)
 
     @testset "Package loading" begin
         for package in packages_juliaastro
-            @test eval(quote
-                @time_imports using $(Symbol(chopsuffix(package.name, ".jl")))
-            end) == nothing
+            @testset "$(package.name)" begin
+                @test eval(quote
+                    @time_imports using $(Symbol(chopsuffix(package.name, ".jl")))
+                end) == nothing
+            end
         end
     end
 end
