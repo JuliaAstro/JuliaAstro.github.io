@@ -1,8 +1,5 @@
 # JuliaAstro Governance
 
-!!! note
-    This document is still a work in progress.
-
 The following contains the formal governance structure of the JuliaAstro project. This document clarifies how decisions are made with respect to community interactions, including the relationship between open source development and work that may be funded by for-profit and non-profit entities.
 
 ## Code of Conduct
@@ -10,7 +7,19 @@ The JuliaAstro community is committed to maintaining a welcoming, civil and cons
 
 ## Current Steering Council
 
-* tbd
+* [Chris Garling (University of Virginia)](https://astronomy.as.virginia.edu/christopher-garling)
+* [Fergus Baker (Newcastle University)](https://www.cosroe.com/)
+* [Ian Weaver (SETI Institute)](https://archive.seti.org/our-scientists/ian-weaver)
+* [Paul Barrett (The George Washington University)](https://physics.columbian.gwu.edu/paul-barrett)
+
+## Current Advisory Committee
+
+* [Andrew Young (University of Bristol)](https://www.bristol.ac.uk/people/person/Andrew-Young-05884318-2412-4ab4-9433-ac586e893582/)
+* [Eric Agol (University of Washington)](https://astro.washington.edu/people/eric-agol)
+* [Eric Ford (Pennsylvania State University)](https://science.psu.edu/astro/people/ebf11)
+* [Eric Schlegel (University of Texas at San Antonio)](https://sciences.utsa.edu/faculty/profiles/schlegel-eric.html)
+* [Mosè Giordano (University College London)](https://profiles.ucl.ac.uk/70657-mos%C3%A8-giordano)
+* [Paul Tiede (Harvard University)](https://www.cfa.harvard.edu/people/paul-tiede)
 
 ## Governing Rules and Duties
 
@@ -40,13 +49,14 @@ If a Council Member becomes inactive in the project for a period of one year, th
 
 The Council reserves the right to eject current Members if they are deemed to be actively harmful to the Project's well-being, and attempts at communication and conflict resolution have failed.
 
+### Advisory Committee
+
+The Project has an Advisory Committee that works to ensure the long-term well-being of the Project. The Committee advises the Steering Council and may be called upon to break deadlocks or serious disagreements in the Council. The Community can ask the Committee to review actions taken by the Council, and the Committee will meet annually to review Project activities. Committee decisions are taken in consensus. Members of the Advisory Committee are appointed by the Steering Council.
+
+
 ## Fiscal Decisions
 
 All fiscal decisions are made by the steering council to ensure any funds are spent in a manner that furthers the mission of the Project. Fiscal decisions require majority approval by acting steering council members.
-
-## Advisory Committee
-
-The Project has an Advisory Committee that works to ensure the long-term well-being of the Project. The Committee advises the Steering Council and may be called upon to break deadlocks or serious disagreements in the Council. The Community can ask the Committee to review actions taken by the Council, and the Committee will meet annually to review Project activities. Committee decisions are taken in consensus. Members of the Advisory Committee are appointed by the Steering Council.
 
 ## Conflict of Interest
 
