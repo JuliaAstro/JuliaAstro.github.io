@@ -1,30 +1,20 @@
 # JuliaAstro
 
-[JuliaAstro](https://github.com/JuliaAstro) and its affiliated organizations are a community for astronomy in Julia. We have a wide variety of packages from [aperture photometry](https://github.com/juliaastro/Photometry.jl) to [cosmology](https://github.com/juliaastro/Cosmology.jl). Check out a curated list of packages in the JuliaAstro ecosystem (and beyond) on the [Package Ecosystem page](@ref eco), or visit their documentation directly via the navbar above. Pure Julia packages are marked with a closed circle ⬤, while wrapper packages for other languages are marked with an open circle ◯. 
+[JuliaAstro](https://github.com/JuliaAstro) and its affiliated organizations are a community for astronomy in Julia. We strive to foster an ecosystem of packages that interoperate well with each other for a wide variety of different domains ranging from solar system science to large-scale cosmology. As part of the larger Julia ecosystem, our mission is to provide code that is fast, dynamic, composable, and reproducible.
 
-## Contributing
+## Where to Start?
 
-Our contributors come from diverse backgrounds and have various levels of interactions within astronomy, aerospace, and academia. Use the packages, file issues, and join the conversation!
+* Want to get started running some code? Check out our [Getting Started](@ref) page.
+* Want to see a curated list of different packages available? Check out our [Package Ecosystem](@ref eco) page.
+* Want to see real world applications of JuliaAstro? Check out our [Case Studies](@ref) page.
+* Coming from astropy? Check out our [Comparison with Astropy](@ref) page.
+* Want to learn more about getting involved? Check out our [Community](@ref "JuliaAstro Community") page.
 
-### Organizations
-
-- [JuliaAstro](https://github.com/juliaastro) - our main astronomy organization on GitHub
-- [JuliaHCI](https://github.com/juliahci) - high-contrast imaging
-- [JuliaSpace](https://github.com/JuliaSpace) - astrodynamics and satellite mission planning
-- [EHTJulia](https://github.com/EHTJulia) - high-resolution radio interferometry
-
-### Community
-
-- [#astronomy](slack://channel?id=CMXU6SD7V&team=T68168MUP) on [JuliaLang Slack](https://julialang.org/slack/)
-- [#astronomy](https://julialang.zulipchat.com/#narrow/channel/astronomy) on [JuliaLang Zulip](https://julialang.zulipchat.com/register/)
-- [Astro/Space](https://discourse.julialang.org/c/domain/astro) topics on JuliaLang Discourse
-- [Monthly JuliaAstro community call](https://julialang.org/community/#events) - Fourth Wednesday of each month at 12:00 ET
-
-## Google Summer of Code (GSoC)
-
-Would you like to contribute to JuliaAstro through Google Summer of Code? You can! We are member of [OpenAstronomy](https://openastronomy.org); go to the [GSoC page](https://openastronomy.org/gsoc/) to see how to apply and the list of ideas. You can also propose your own idea to us!
+Further documentation for curated packages in the JuliaAstro and larger Julia ecosystem can be viewed directly via the navbar above. Pure Julia packages are marked with a closed circle ⬤, while wrapper packages for other languages are marked with an open circle ◯.
 
 ## Talks and Presentations
+
+Below is a growing list of JuliaAstro and other related aero/astro presentations in Julia. If you have a presentation that you think would be a good addition, [please get in touch](@ref "JuliaAstro Community")!
 
 !!! details "JuliaCon 2021"
     - A Short History of AstroTime.jl [[pretalx]](https://pretalx.com/juliacon2021/talk/TJ3FNS/) [[video]](https://www.youtube.com/watch?v=HGlsRoy1JxU)

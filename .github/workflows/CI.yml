@@ -1,4 +1,4 @@
-name: Test JuliaAstro packages
+name: Test JuliaAstro
 
 on:
   push:
@@ -14,12 +14,12 @@ jobs:
       fail-fast: false
       matrix:
         version:
-          - '1' # Leave this line unchanged. '1' will automatically expand to the latest stable 1.x release of Julia.
-          - 'nightly'
+          - "1" # Leave this line unchanged. '1' will automatically expand to the latest stable 1.x release of Julia.
+          - "pre"
         os:
           - ubuntu-latest
         arch:
-          - x64
+          - default
     steps:
       - uses: actions/checkout@v5
       - uses: julia-actions/setup-julia@v2
