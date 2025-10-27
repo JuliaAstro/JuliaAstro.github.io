@@ -8,6 +8,6 @@ on:
     - cron:  '15 2 * * *' # 2:15 AM UTC every day
 
 jobs:
-  uses: ./github/workflows/CI.yml
+  uses: ./.github/workflows/CI.yml
   with:
     test_args: "--verbose release"
