@@ -171,6 +171,13 @@
 <url><loc>https://JuliaAstro.org/SkyCoords/stable/</loc></url>
 <url><loc>https://JuliaAstro.org/SkyCoords/stable/api/</loc></url>
 <url><loc>https://JuliaAstro.org/SkyCoords/stable/search/</loc></url>
+<url><loc>https://JuliaAstro.org/Spectra/stable/</loc></url>
+<url><loc>https://JuliaAstro.org/Spectra/stable/analysis/</loc></url>
+<url><loc>https://JuliaAstro.org/Spectra/stable/assets/test.html</loc></url>
+<url><loc>https://JuliaAstro.org/Spectra/stable/contrib/</loc></url>
+<url><loc>https://JuliaAstro.org/Spectra/stable/fitting/</loc></url>
+<url><loc>https://JuliaAstro.org/Spectra/stable/spectrum/</loc></url>
+<url><loc>https://JuliaAstro.org/Spectra/stable/transforms/</loc></url>
 <url><loc>https://JuliaAstro.org/Transits/stable/</loc></url>
 <url><loc>https://JuliaAstro.org/Transits/stable/api/</loc></url>
 <url><loc>https://JuliaAstro.org/Transits/stable/bench/</loc></url>
@@ -204,6 +211,7 @@
 <url><loc>https://JuliaAstro.org/case_studies/stars_and_galaxies/cgarling-starformationhistories/</loc></url>
 <url><loc>https://JuliaAstro.org/case_studies/stars_and_galaxies/jeff-regier-celeste/</loc></url>
 <url><loc>https://JuliaAstro.org/case_studies/stars_and_galaxies/ptiede-comrade/</loc></url>
+<url><loc>https://JuliaAstro.org/case_studies/stars_and_galaxies/ptiede-polarization/</loc></url>
 <url><loc>https://JuliaAstro.org/community/governance/</loc></url>
 <url><loc>https://JuliaAstro.org/community/juliaastro_community/</loc></url>
 <url><loc>https://JuliaAstro.org/community/roadmap/</loc></url>
