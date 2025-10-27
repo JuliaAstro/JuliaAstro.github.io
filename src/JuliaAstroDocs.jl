@@ -367,6 +367,16 @@ ecosystem() = (
                 astropy = ["specreduce", "specutils"],
             ),
             (
+                name = "Spectra.jl",
+                repo = "https://github.com/JuliaAstro/Spectra.jl",
+                doc = "https://juliaastro.org/Spectra/stable",
+                tagline = "Utilities for interfacing with astronomical spectra and synthetic spectra libraries",
+                descr = """
+                - Utilities for interfacing with astronomical spectra and synthetic spectra libraries
+                """,
+                astropy = ["specreduce", "specutils"],
+            ),
+            (
                 name = "SpectralFitting.jl",
                 repo = "https://github.com/fjebaker/SpectralFitting.jl",
                 doc = "https://fjebaker.github.io/SpectralFitting.jl/dev/",
