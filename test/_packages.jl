@@ -5,7 +5,12 @@ function test_packages(mode)
             @info string("Adding: ", p_name)
             @testset "$(p_name)" begin
                 if mode == :release
-                    @test Pkg.add(chopsuffix(p_name, ".jl")) == nothing
+                    if p_name == "Spectra.jl"
+                        # TODO: Register
+                        @test Pkg.add(url="https://github.com/JuliaAstro/Spectra.jl") == nothing
+                    else
+                        @test Pkg.add(chopsuffix(p_name, ".jl")) == nothing
+                    end
                 else
                     @test Pkg.add(url=package.repo) == nothing
                 end
