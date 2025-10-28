@@ -11,4 +11,4 @@ jobs:
   test-release:
     uses: ./.github/workflows/CI.yml
     with:
-      test_args: "--verbose release"
+      test_args: "--verbose packages_release"

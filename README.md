@@ -133,12 +133,12 @@ julia> ]
 pkg> test
 ```
 
-Run specific tests (currently  `release` and `dev`):
+Run specific tests (currently  `packages_release` and `packages_dev`):
 
 ```julia-repl
 julia --proj
 
 julia> import Pkg
 
-julia> Pkg.test("JuliaAstroDocs"; test_args=`--verbose release`) # or dev
+julia> Pkg.test("JuliaAstroDocs"; test_args=`--verbose packages_release`) # or packages_dev
 ```

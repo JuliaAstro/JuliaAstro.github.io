@@ -25,5 +25,6 @@ end
 
 args = parse_args(Base.ARGS)
 testsuite = find_tests(@__DIR__)
+delete!(testsuite, "_packages")
 
 runtests(JuliaAstroDocs, args; testsuite, init_code)
