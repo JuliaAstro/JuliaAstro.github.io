@@ -175,6 +175,15 @@
 <url><loc>https://JuliaAstro.org/SkyCoords/stable/</loc></url>
 <url><loc>https://JuliaAstro.org/SkyCoords/stable/api/</loc></url>
 <url><loc>https://JuliaAstro.org/SkyCoords/stable/search/</loc></url>
+<url><loc>https://JuliaAstro.org/SolarPosition/stable/</loc></url>
+<url><loc>https://JuliaAstro.org/SolarPosition/stable/contributing/</loc></url>
+<url><loc>https://JuliaAstro.org/SolarPosition/stable/deltat/</loc></url>
+<url><loc>https://JuliaAstro.org/SolarPosition/stable/examples/getting-started/</loc></url>
+<url><loc>https://JuliaAstro.org/SolarPosition/stable/examples/plotting/</loc></url>
+<url><loc>https://JuliaAstro.org/SolarPosition/stable/literature/</loc></url>
+<url><loc>https://JuliaAstro.org/SolarPosition/stable/positioning/</loc></url>
+<url><loc>https://JuliaAstro.org/SolarPosition/stable/reference/</loc></url>
+<url><loc>https://JuliaAstro.org/SolarPosition/stable/refraction/</loc></url>
 <url><loc>https://JuliaAstro.org/Spectra/stable/</loc></url>
 <url><loc>https://JuliaAstro.org/Spectra/stable/analysis/</loc></url>
 <url><loc>https://JuliaAstro.org/Spectra/stable/assets/test.html</loc></url>
