@@ -63,6 +63,16 @@ ecosystem() = (
                 astropy = [],
             ),
             (
+                name = "SolarPosition.jl",
+                repo = "https://github.com/JuliaAstro/SolarPosition.jl",
+                doc = "https://juliaastro.org/SolarPosition.jl/stable/",
+                tagline = "Meta package for accessing JPL HORIZONS and SPICE sources",
+                descr = """
+                - SolarPosition.jl provides a simple, unified interface to a collection of validated solar position algorithms written in pure, performant julia
+                """,
+                astropy = ["astropy.coordinates"],
+            ),
+            (
                 name = "SPICE.jl",
                 repo = "https://github.com/JuliaAstro/SPICE.jl",
                 doc = "https://juliaastro.org/SPICE/stable/",
@@ -783,6 +793,16 @@ ecosystem() = (
                 - An experimental reimplementation of [astroalign](https://github.com/quatrope/astroalign) in Julia
                 """,
                 astropy = ["astroalign"],
+            ),
+            (
+                name = "BackgroundMeshes.jl",
+                repo = "https://github.com/JuliaAstro/BackgroundMeshes.jl",
+                doc = "https://juliaastro.org/BackgroundMeshes/stable",
+                tagline = "Create meshes for estimating the background in astronomical images",
+                descr = """
+                - Create meshes for estimating the background in astronomical images. Originally a submodule of [Photometry.jl](https://juliaastro.org/Photometry).
+                """,
+                astropy = ["photutils", "regions"],
             ),
             (
                 name = "Casacore.jl",
