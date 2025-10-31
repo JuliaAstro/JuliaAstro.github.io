@@ -1,0 +1,441 @@
+<!DOCTYPE html><HTML lang="en"><head><script charset="utf-8" src="../../../assets/default/multidoc_injector.js" type="text/javascript"></script><script charset="utf-8" type="text/javascript">window.MULTIDOCUMENTER_ROOT_PATH = '/'</script><script charset="utf-8" src="../../../assets/default/flexsearch.bundle.js" type="text/javascript"></script><script charset="utf-8" src="../../../assets/default/flexsearch_integration.js" type="text/javascript"></script><meta charset="UTF-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><title>Table · CFITSIO.jl</title><meta content="Table · CFITSIO.jl" name="title"/><meta content="Table · CFITSIO.jl" property="og:title"/><meta content="Table · CFITSIO.jl" property="twitter:title"/><meta content="Documentation for CFITSIO.jl." name="description"/><meta content="Documentation for CFITSIO.jl." property="og:description"/><meta content="Documentation for CFITSIO.jl." property="twitter:description"/><meta content="https://juliaastro.github.io/CFITSIO.jl/table/" property="og:url"/><meta content="https://juliaastro.github.io/CFITSIO.jl/table/" property="twitter:url"/><link href="https://JuliaAstro.org/CFITSIO/stable/table/" rel="canonical"/><script data-outdated-warner="" src="../assets/warner.js"></script><link href="https://cdnjs.cloudflare.com/ajax/libs/lato-font/3.0.0/css/lato-font.min.css" rel="stylesheet" type="text/css"/><link href="https://cdnjs.cloudflare.com/ajax/libs/juliamono/0.050/juliamono.min.css" rel="stylesheet" type="text/css"/><link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/fontawesome.min.css" rel="stylesheet" type="text/css"/><link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/solid.min.css" rel="stylesheet" type="text/css"/><link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/brands.min.css" rel="stylesheet" type="text/css"/><link href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.8/katex.min.css" rel="stylesheet" type="text/css"/><script>documenterBaseURL=".."</script><script data-main="../assets/documenter.js" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js"></script><script src="../search_index.js"></script><script src="../siteinfo.js"></script><script src="../../versions.js"></script><link class="docs-theme-link" data-theme-name="catppuccin-mocha" href="../assets/themes/catppuccin-mocha.css" rel="stylesheet" type="text/css"/><link class="docs-theme-link" data-theme-name="catppuccin-macchiato" href="../assets/themes/catppuccin-macchiato.css" rel="stylesheet" type="text/css"/><link class="docs-theme-link" data-theme-name="catppuccin-frappe" href="../assets/themes/catppuccin-frappe.css" rel="stylesheet" type="text/css"/><link class="docs-theme-link" data-theme-name="catppuccin-latte" href="../assets/themes/catppuccin-latte.css" rel="stylesheet" type="text/css"/><link class="docs-theme-link" data-theme-name="documenter-dark" data-theme-primary-dark="" href="../assets/themes/documenter-dark.css" rel="stylesheet" type="text/css"/><link class="docs-theme-link" data-theme-name="documenter-light" data-theme-primary="" href="../assets/themes/documenter-light.css" rel="stylesheet" type="text/css"/><script src="../assets/themeswap.js"></script><link href="../../../assets/default/multidoc.css" rel="stylesheet" type="text/css"/><link href="../../../assets/default/flexsearch.css" rel="stylesheet" type="text/css"/></head><body><nav id="multi-page-nav"><a class="brand" href="../../.."><img alt="home" src="../../../assets/logo.svg"/></a><div class="hidden-on-mobile" id="nav-items"><a class="nav-link nav-item" href="../../../home/">Home</a><div class="nav-dropdown"><button class="nav-item dropdown-label">Domain</button><div class="nav-dropdown-container nav-mega-dropdown-container"><div class="nav-mega-column"><div class="column-header">Solar System</div><ul class="column-content"><a class="nav-link nav-item" href="../../../CALCEPH/">⬤ CALCEPH</a><a class="nav-link nav-item" href="https://juliaastro.org/EphemerisSources.jl" target="_blank">⬤ EphemerisSources</a><a class="nav-link nav-item" href="https://juliaastro.org/GeneralAstrodynamics.jl" target="_blank">⬤ GeneralAstrodynamics</a><a class="nav-link nav-item" href="https://github.com/PerezHz/HORIZONS.jl?tab=readme-ov-file#horizonsjl" target="_blank">⬤ HORIZONS</a><a class="nav-link nav-item" href="https://juliaspace.github.io/SatelliteToolbox.jl/stable/" target="_blank">⬤ SatelliteToolbox</a><a class="nav-link nav-item" href="../../../SolarPosition/">⬤ SolarPosition</a><a class="nav-link nav-item" href="../../../SPICE/">⬤ SPICE</a></ul></div><div class="nav-mega-column"><div class="column-header">Exoplanets</div><ul class="column-content"><a class="nav-link nav-item" href="http://JuliaHCI.github.io/ADI.jl/stable/" target="_blank">⬤ ADI</a><a class="nav-link nav-item" href="http://JuliaHCI.github.io/HCIToolbox.jl/stable/" target="_blank">⬤ HCIToolbox</a><a class="nav-link nav-item" href="../../../Orbits/">⬤ Orbits</a><a class="nav-link nav-item" href="https://sefffal.github.io/PlanetOrbits.jl/dev/" target="_blank">⬤ PlanetOrbits</a><a class="nav-link nav-item" href="../../../Transits/">⬤ Transits</a></ul></div><div class="nav-mega-column"><div class="column-header">Stars</div><ul class="column-content"><a class="nav-link nav-item" href="https://cgarling.github.io/BolometricCorrections.jl/stable/" target="_blank">⬤ BolometricCorrections</a><a class="nav-link nav-item" href="https://cgarling.github.io/InitialMassFunctions.jl/stable/" target="_blank">⬤ InitialMassFunctions</a><a class="nav-link nav-item" href="https://cgarling.github.io/StarFormationHistories.jl/stable/" target="_blank">⬤ StarFormationHistories</a></ul></div><div class="nav-mega-column"><div class="column-header">Galaxies and Cosmology</div><ul class="column-content"><a class="nav-link nav-item" href="../../../Cosmology/">⬤ Cosmology</a><a class="nav-link nav-item" href="../../../DustExtinction/">⬤ DustExtinction</a><a class="nav-link nav-item" href="https://ehtjulia.github.io/ScatteringOptics.jl/stable/" target="_blank">⬤ ScatteringOptics</a></ul></div></div></div><div class="nav-dropdown"><button class="nav-item dropdown-label">Techniques</button><div class="nav-dropdown-container nav-mega-dropdown-container"><div class="nav-mega-column"><div class="column-header">Photometry</div><ul class="column-content"><a class="nav-link nav-item" href="../../../CCDReduction/">⬤ CCDReduction</a><a class="nav-link nav-item" href="../../../LACosmic/">⬤ LACosmic</a><a class="nav-link nav-item" href="../../../Photometry/">⬤ Photometry</a><a class="nav-link nav-item" href="../../../PSFModels/">⬤ PSFModels</a><a class="nav-link nav-item" href="../../../SAOImageDS9/">⬤ SAOImageDS9</a></ul></div><div class="nav-mega-column"><div class="column-header">Astrometry</div><ul class="column-content"><a class="nav-link nav-item" href="https://barrettp.github.io/Astrometry/dev" target="_blank">⬤ Astrometry</a><a class="nav-link nav-item" href="../../../AstroTime/">⬤ AstroTime</a><a class="nav-link nav-item" href="../../../EarthOrientation/">⬤ EarthOrientation</a><a class="nav-link nav-item" href="../../../ERFA/">◯ ERFA</a><a class="nav-link nav-item" href="../../../Healpix/">⬤ Healpix</a><a class="nav-link nav-item" href="../../../Reproject/">⬤ Reproject</a><a class="nav-link nav-item" href="../../../SkyCoords/">⬤ SkyCoords</a><a class="nav-link nav-item" href="../../../WCS/">◯ WCS</a></ul></div><div class="nav-mega-column"><div class="column-header">Spectroscopy</div><ul class="column-content"><a class="nav-link nav-item" href="https://ajwheeler.github.io/Korg.jl/stable/" target="_blank">⬤ Korg</a><a class="nav-link nav-item" href="../../../Spectra/">⬤ Spectra</a><a class="nav-link nav-item" href="https://fjebaker.github.io/SpectralFitting.jl/dev/" target="_blank">⬤ SpectralFitting</a></ul></div><div class="nav-mega-column"><div class="column-header">Time Series Analysis</div><ul class="column-content"><a class="nav-link nav-item" href="https://docs.juliadsp.org/stable/" target="_blank">⬤ DSP</a><a class="nav-link nav-item" href="../../../LombScargle/">⬤ LombScargle</a><a class="nav-link nav-item" href="https://juliastats.github.io/TimeSeries.jl/stable" target="_blank">⬤ TimeSeries</a></ul></div><div class="nav-mega-column"><div class="column-header">Interferometry</div><ul class="column-content"><a class="nav-link nav-item" href="https://ptiede.github.io/Comrade.jl/stable/" target="_blank">⬤ Comrade</a><a class="nav-link nav-item" href="https://aplavin.github.io/Difmap.jl/test/examples.html" target="_blank">⬤ Difmap</a><a class="nav-link nav-item" href="https://github.com/emmt/OIFITS.jl?tab=readme-ov-file#support-for-oi-fits-data-in-julia" target="_blank">⬤ OIFITS</a><a class="nav-link nav-item" href="https://fabienbaron.github.io/OITOOLS.jl/dev" target="_blank">⬤ OITOOLS</a><a class="nav-link nav-item" href="https://ehtjulia.github.io/PolarizedTypes.jl/stable/" target="_blank">⬤ PolarizedTypes</a><a class="nav-link nav-item" href="https://aplavin.github.io/VLBIData.jl/test/examples.html" target="_blank">⬤ VLBIData</a><a class="nav-link nav-item" href="https://ehtjulia.github.io/VLBISkyModels.jl/stable/" target="_blank">⬤ VLBISkyModels</a></ul></div></div></div><div class="nav-dropdown"><button class="nav-item dropdown-label">Statistics</button><div class="nav-dropdown-container nav-mega-dropdown-container"><div class="nav-mega-column"><div class="column-header">Uncertainty</div><ul class="column-content"><a class="nav-link nav-item" href="https://juliaphysics.github.io/Measurements.jl/stable/" target="_blank">⬤ Measurements</a><a class="nav-link nav-item" href="https://baggepinnen.github.io/MonteCarloMeasurements.jl/stable/" target="_blank">⬤ MonteCarloMeasurements</a><a class="nav-link nav-item" href="https://baggepinnen.github.io/MonteCarloMeasurements.jl/stable/" target="_blank">⬤ Uncertain</a></ul></div><div class="nav-mega-column"><div class="column-header">Optimization</div><ul class="column-content"><a class="nav-link nav-item" href="../../../BoxLeastSquares/">⬤ BoxLeastSquares</a><a class="nav-link nav-item" href="http://jump.dev/JuMP.jl/" target="_blank">⬤ JuMP</a><a class="nav-link nav-item" href="https://docs.sciml.ai/NonlinearSolve/stable/" target="_blank">⬤ NonlinearSolve</a><a class="nav-link nav-item" href="https://docs.sciml.ai/Optimization/stable/" target="_blank">⬤ Optimization</a></ul></div><div class="nav-mega-column"><div class="column-header">General</div><ul class="column-content"><a class="nav-link nav-item" href="../../../AstroLib/">⬤ AstroLib</a><a class="nav-link nav-item" href="http://mileslucas.com/BiweightStats.jl/stable/" target="_blank">⬤ BiweightStats</a><a class="nav-link nav-item" href="https://github.com/jeff-regier/Celeste.jl/wiki/" target="_blank">⬤ Celeste</a><a class="nav-link nav-item" href="https://juliastats.org/" target="_blank">⬤ JuliaStats</a><a class="nav-link nav-item" href="https://juliastats.github.io/Distributions.jl/stable/" target="_blank">⬤ Distributions</a><a class="nav-link nav-item" href="https://ehtjulia.github.io/FastHartleyTransform.jl/stable/" target="_blank">⬤ FastHartleyTransform</a><a class="nav-link nav-item" href="https://sefffal.github.io/Octofitter.jl/dev" target="_blank">⬤ Octofitter</a></ul></div></div></div><div class="nav-dropdown"><button class="nav-item dropdown-label">Utilities</button><div class="nav-dropdown-container nav-mega-dropdown-container"><div class="nav-mega-column"><div class="column-header">Data I/O</div><ul class="column-content"><a class="nav-link nav-item" href="../../../ASDF2/">⬤ ASDF2</a><a class="nav-link nav-item" href="../../../AstroImages/">⬤ AstroImages</a><a class="nav-link active nav-item" href="../../">◯ CFITSIO</a><a class="nav-link nav-item" href="https://emmt.github.io/EasyFITS.jl/dev" target="_blank">⬤ EasyFITS</a><a class="nav-link nav-item" href="https://barrettp.github.io/FITSFiles.jl/" target="_blank">⬤ FITSFiles</a><a class="nav-link nav-item" href="../../../FITSIO/">◯ FITSIO</a><a class="nav-link nav-item" href="https://github.com/JuliaAPlavin/FixedWidthTables.jl?tab=readme-ov-file#fixedwidthtablesjl" target="_blank">⬤ FixedWidthTables</a><a class="nav-link nav-item" href="https://aplavin.github.io/SkyImages.jl/test/notebook.html" target="_blank">⬤ SkyImages</a><a class="nav-link nav-item" href="https://github.com/JuliaAPlavin/VirtualObservatory.jl?tab=readme-ov-file#virtualobservatoryjl" target="_blank">⬤ VirtualObservatory</a><a class="nav-link nav-item" href="https://github.com/JuliaAPlavin/VOTables.jl" target="_blank">⬤ VOTables</a><a class="nav-link nav-item" href="../../../XPA/">⬤ XPA</a></ul></div><div class="nav-mega-column"><div class="column-header">Data processing</div><ul class="column-content"><a class="nav-link nav-item" href="../../../Astroalign/">⬤ Astroalign</a><a class="nav-link nav-item" href="../../../BackgroundMeshes/">⬤ BackgroundMeshes</a><a class="nav-link nav-item" href="https://github.com/torrance/Casacore.jl?tab=readme-ov-file#casacorejl" target="_blank">⬤ Casacore</a><a class="nav-link nav-item" href="https://dataframes.juliadata.org/stable/" target="_blank">⬤ DataFrames</a><a class="nav-link nav-item" href="https://rafaqz.github.io/DimensionalData.jl/stable/" target="_blank">⬤ DimensionalData</a><a class="nav-link nav-item" href="https://aplavin.github.io/FlexiJoins.jl/test/examples.html" target="_blank">⬤ FlexiJoins</a><a class="nav-link nav-item" href="https://github.com/gcalderone/SortMerge.jl?tab=readme-ov-file#sortmerge" target="_blank">⬤ SortMerge</a></ul></div><div class="nav-mega-column"><div class="column-header">Data Viz</div><ul class="column-content"><a class="nav-link nav-item" href="../../../AstroImages/">⬤ AstroImages</a><a class="nav-link nav-item" href="https://juliaimages.github.io/ImageFiltering.jl/stable" target="_blank">⬤ ImageFiltering</a><a class="nav-link nav-item" href="https://manuelbehrendt.github.io/Mera.jl/stable/" target="_blank">⬤ Mera</a><a class="nav-link nav-item" href="https://sefffal.github.io/PairPlots.jl/dev/" target="_blank">⬤ PairPlots</a><a class="nav-link nav-item" href="https://aplavin.github.io/SkyImages.jl/test/notebook.html" target="_blank">⬤ SkyImages</a></ul></div><div class="nav-mega-column"><div class="column-header">Units/Constants</div><ul class="column-content"><a class="nav-link nav-item" href="../../../AstroAngles/">⬤ AstroAngles</a><a class="nav-link nav-item" href="https://symbolicml.org/DynamicQuantities.jl/stable/" target="_blank">⬤ DynamicQuantities</a><a class="nav-link nav-item" href="https://juliaphysics.github.io/PhysicalConstants.jl/stable/" target="_blank">⬤ PhysicalConstants</a><a class="nav-link nav-item" href="https://painterqubits.github.io/Unitful.jl/stable" target="_blank">⬤ Unitful</a><a class="nav-link nav-item" href="../../../UnitfulAstro/">⬤ UnitfulAstro</a></ul></div></div></div><div class="search nav-item"><input id="search-input" placeholder="Search everywhere..."/><ul class="suggestions hidden" id="search-result-container"></ul><div class="search-keybinding">/</div></div></div><button id="multidoc-toggler"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"></path></svg></button></nav><div id="documenter"><nav class="docs-sidebar"><div class="docs-package-name"><span class="docs-autofit"><a href="../">CFITSIO.jl</a></span></div><button class="docs-search-query input is-rounded is-small is-clickable my-2 mx-auto py-1 px-2" id="documenter-search-query">Search docs (Ctrl + /)</button><ul class="docs-menu"><li><a class="tocitem" href="../">Home</a></li><li><a class="tocitem" href="../types/">Type Conversions</a></li><li><a class="tocitem" href="../file/">File</a></li><li><a class="tocitem" href="../hdu/">HDU</a></li><li><a class="tocitem" href="../header/">Header</a></li><li><a class="tocitem" href="../image/">Image</a></li><li class="is-active"><a class="tocitem" href="">Table</a><ul class="internal"><li><a class="tocitem" href="#Table-Routines"><span>Table Routines</span></a></li></ul></li><li><a class="tocitem" href="../misc/">Miscellaneous</a></li></ul><div class="docs-version-selector field has-addons"><div class="control"><span class="docs-label button is-static is-size-7">Version</span></div><div class="docs-selector control is-expanded"><div class="select is-fullwidth is-size-7"><select id="documenter-version-selector"></select></div></div></div></nav><div class="docs-main"><header class="docs-navbar"><a class="docs-sidebar-button docs-navbar-link fa-solid fa-bars is-hidden-desktop" href="#" id="documenter-sidebar-button"></a><nav class="breadcrumb"><ul class="is-hidden-mobile"><li class="is-active"><a href="">Table</a></li></ul><ul class="is-hidden-tablet"><li class="is-active"><a href="">Table</a></li></ul></nav><div class="docs-right"><a class="docs-navbar-link" href="https://github.com/JuliaAstro/CFITSIO.jl" title="View the repository on GitHub"><span class="docs-icon fa-brands"></span><span class="docs-label is-hidden-touch">GitHub</span></a><a class="docs-navbar-link" href="https://github.com/JuliaAstro/CFITSIO.jl/blob/master/docs/src/table.md" title="Edit source on GitHub"><span class="docs-icon fa-solid"></span></a><a class="docs-settings-button docs-navbar-link fa-solid fa-gear" href="#" id="documenter-settings-button" title="Settings"></a><a class="docs-article-toggle-button fa-solid fa-chevron-up" href="javascript:;" id="documenter-article-toggle-button" title="Collapse all docstrings"></a></div></header><article class="content" id="documenter-page"><h2 id="Table-Routines"><a class="docs-heading-anchor" href="#Table-Routines">Table Routines</a><a id="Table-Routines-1"></a><a class="docs-heading-anchor-permalink" href="#Table-Routines" title="Permalink"></a></h2><p>There are two functions to create a new HDU table extension: <code>fits_create_ascii_table</code> and <code>fits_create_binary_table</code>. In general, one should pick the second as binary tables require less space on the disk and are more efficient to read and write. (Moreover, a few datatypes are not supported in ASCII tables). In order to create a table, the programmer must specify the characteristics of each column by passing an array of tuples. Here is an example:</p><pre><code class="language-julia hljs">f = fits_create_file("!new.fits")
+coldefs = [("SPEED", "1D", "m/s"),
+           ("MASS", "1E", "kg"),
+           ("PARTICLE", "20A", "Name")]
+fits_create_binary_tbl(f, 10, coldefs, "PARTICLE")</code></pre><p>This example creates a table with room for 10 entries, each of them describing the characteristics of a particle: its speed, its mass, and its name (codified as a 20-character string). See the documentation of <code>fits_create_ascii_tbl</code> for more details.</p><article class="docstring"><header><a class="docstring-article-toggle-button fa-solid fa-chevron-down" href="javascript:;" title="Collapse docstring"></a><a class="docstring-binding" href="#CFITSIO.fits_create_ascii_tbl" id="CFITSIO.fits_create_ascii_tbl"><code>CFITSIO.fits_create_ascii_tbl</code></a> — <span class="docstring-category">Function</span><span class="is-flex-grow-1 docstring-article-toggle-button" title="Collapse docstring"></span></header><section><div><pre><code class="language-julia hljs">fits_create_ascii_tbl(f::FITSFile, numrows::Integer,
+                      coldefs::Union{Array{NTuple{3,String}}, Array{NTuple{2,String}}},
+                      extname::Union{String, Nothing} = nothing)</code></pre><p>Append a new HDU containing an ASCII table.</p><p>The table will have <code>numrows</code> rows (this parameter can be set to zero), each initialized with the default value. In order to create a table, the programmer must specify the characteristics of each column. The columns are specified by the <code>coldefs</code> variable, which is an array of tuples. Each tuple must have two or three string fields:</p><ol><li>The name of the column.</li><li>The data type and the repetition count. It must be a string made by a number (the repetition count) followed by a letter specifying the type (in the example above, <code>D</code> stands for <code>Float64</code>, <code>E</code> stands for <code>Float32</code>, <code>A</code> stands for <code>Char</code>). Refer to the CFITSIO documentation for more information about the syntax of this parameter.</li><li>The unit of this field. This is used to set the corresponding <code>TUNITn</code> keywords. If <code>coldefs</code> is a two-tuple, the unit keywords are left unset. If the third field of a tuple is an empty string, the corresponding unit keyword is also left unset.</li></ol><p>The value of <code>extname</code> sets the "extended name" of the table, i.e., a string that in some situations can be used to refer to the HDU itself. This may be omitted by setting <code>extname</code> to <code>nothing</code> (which is the default behavior).</p><p>Note that, unlike for binary tables, CFITSIO puts some limitations to the types that can be used in an ASCII table column. Refer to the CFITSIO manual for further information.</p><p>See also <a href="#CFITSIO.fits_create_binary_tbl"><code>fits_create_binary_tbl</code></a> for a similar function which creates binary tables. In general, one should pick this function for creating tables in a new HDU, as binary tables require less space on the disk and are more efficient to read and write. (Moreover, a few datatypes are not supported in ASCII tables).</p><p><strong>Example</strong></p><pre><code class="language-julia-repl hljs">julia&gt; fname = joinpath(mktempdir(), "test.fits");
+
+julia&gt; f = fits_create_file(fname);
+
+julia&gt; cols = [
+                ("ID", "I6", ""),
+                ("VALUE", "F10.2", "meters"),
+                ("NAME", "A10", "")
+            ];
+
+julia&gt; fits_create_ascii_tbl(f, 0, cols);
+
+julia&gt; fits_write_col(f, 1, 1, 1, Int32[1, 2, 3, 4, 5])
+
+julia&gt; fits_write_col(f, 2, 1, 1, Float64[1.1, 2.2, 3.3, 4.4, 5.5])
+
+julia&gt; fits_write_col(f, 3, 1, 1, ["alpha", "beta", "gamma", "delta", "epsilon"])
+
+julia&gt; close(f)
+
+julia&gt; f = fits_open_file(fname, CFITSIO.READONLY);
+
+julia&gt; fits_get_num_hdus(f)
+2
+
+julia&gt; fits_movabs_hdu(f, 2)
+:ascii_table
+
+julia&gt; nrows = fits_get_num_rows(f)
+5
+
+julia&gt; fits_get_num_cols(f)
+3
+
+julia&gt; fits_read_col(f, 1, 1, 1, Vector{Int32}(undef, nrows))
+5-element Vector{Int32}:
+ 1
+ 2
+ 3
+ 4
+ 5
+
+julia&gt; close(f)</code></pre></div><a class="docs-sourcelink" href="https://github.com/JuliaAstro/CFITSIO.jl/blob/27f77a8c91198a52e8a64ce2e56b0ff9aa23bbc9/src/CFITSIO.jl#L4405-L4488" target="_blank">source</a></section></article><article class="docstring"><header><a class="docstring-article-toggle-button fa-solid fa-chevron-down" href="javascript:;" title="Collapse docstring"></a><a class="docstring-binding" href="#CFITSIO.fits_create_binary_tbl" id="CFITSIO.fits_create_binary_tbl"><code>CFITSIO.fits_create_binary_tbl</code></a> — <span class="docstring-category">Function</span><span class="is-flex-grow-1 docstring-article-toggle-button" title="Collapse docstring"></span></header><section><div><pre><code class="language-julia hljs">fits_create_binary_tbl(f::FITSFile, numrows::Integer,
+                       coldefs::Union{Array{NTuple{3,String}}, Array{NTuple{2,String}}},
+                       extname::Union{String, Nothing} = nothing)</code></pre><p>Append a new HDU containing a binary table. The meaning of the parameters is the same as in a call to <a href="#CFITSIO.fits_create_ascii_tbl"><code>fits_create_ascii_tbl</code></a>.</p><p>In general, one should pick this function for creating tables in a new HDU, as binary tables require less space on the disk and are more efficient to read and write. (Moreover, a few datatypes are not supported in ASCII tables).</p><p><strong>Example</strong></p><pre><code class="language-julia-repl hljs">julia&gt; fname = joinpath(mktempdir(), "test.fits");
+
+julia&gt; f = fits_create_file(fname);
+
+julia&gt; coldefs = [
+           ("col1", "1J", "units"),
+           ("col2", "1E", ""),
+           ("col3", "1A", "m/s"),
+       ];
+
+julia&gt; fits_create_binary_tbl(f, 0, coldefs);
+
+julia&gt; fits_write_col(f, 1, 1, 1, [1, 2, 3]);
+
+julia&gt; fits_write_col(f, 2, 1, 1, [1.0, 2.0, 3.0]);
+
+julia&gt; fits_write_col(f, 3, 1, 1, ["a", "b", "c"]);
+
+julia&gt; close(f)
+
+julia&gt; f = fits_open_file(fname, CFITSIO.READONLY);
+
+julia&gt; fits_get_num_hdus(f)
+2
+
+julia&gt; fits_movabs_hdu(f, 2)
+:binary_table
+
+julia&gt; fits_get_num_rows(f)
+3
+
+julia&gt; fits_get_num_cols(f)
+3
+
+julia&gt; fits_read_col(f, 1, 1, 1, zeros(Int32, 3))
+3-element Vector{Int32}:
+ 1
+ 2
+ 3
+
+julia&gt; close(f)</code></pre></div><a class="docs-sourcelink" href="https://github.com/JuliaAstro/CFITSIO.jl/blob/27f77a8c91198a52e8a64ce2e56b0ff9aa23bbc9/src/CFITSIO.jl#L4346-L4402" target="_blank">source</a></section></article><article class="docstring"><header><a class="docstring-article-toggle-button fa-solid fa-chevron-down" href="javascript:;" title="Collapse docstring"></a><a class="docstring-binding" href="#CFITSIO.fits_create_tbl" id="CFITSIO.fits_create_tbl"><code>CFITSIO.fits_create_tbl</code></a> — <span class="docstring-category">Function</span><span class="is-flex-grow-1 docstring-article-toggle-button" title="Collapse docstring"></span></header><section><div><pre><code class="language-julia hljs">fits_create_tbl(f::FITSFile, tbltype, numrows::Integer,
+    ttype::Vector{String}, tform::Vector{String},
+    tunit::Union{Vector{String}, Nothing} = nothing,
+    extname::Union{String, Nothing} = nothing)</code></pre><p>Create a new table HDU in the FITS file <code>f</code> with the specified parameters. The <code>tbltype</code> sets the type of the table, which can be either <code>CFITSIO.ASCII_TBL</code> or <code>CFITSIO.BINARY_TBL</code>. The <code>numrows</code> parameter reserves space for a specified number of rows in the table, and it can be set to zero if the table is populated later. The <code>ttype</code> and <code>tform</code> parameters specify the names and types of the columns in the table, respectively. The <code>tunit</code> parameter is optional and can be used to specify the units of the columns. If <code>tunit</code> is not provided, the units will not be set in the table. The <code>extname</code> parameter is also optional and can be used to set the extended name of the table. If <code>extname</code> is not provided, the table will not have an extended name. The <code>ttype</code>, <code>tform</code>, and <code>tunit</code> parameters must be vectors of the same length, where each element corresponds to a column in the table.</p><p><strong>Example</strong></p><pre><code class="language-julia-repl hljs">julia&gt; fname = joinpath(mktempdir(), "test.fits");
+
+julia&gt; f = fits_create_file(fname);
+
+julia&gt; ttype = ["col1", "col2", "col3"];
+
+julia&gt; tform = ["1J", "1E", "1A"];
+
+julia&gt; tunit = ["units1", "units2", "m/s"];
+
+julia&gt; fits_create_tbl(f, CFITSIO.BINARY_TBL, 0, ttype, tform, tunit);
+
+julia&gt; fits_write_col(f, 1, 1, 1, [1, 2, 3]);
+
+julia&gt; fits_write_col(f, 2, 1, 1, [1.0, 2.0, 3.0]);
+
+julia&gt; fits_write_col(f, 3, 1, 1, ["a", "b", "c"]);
+
+julia&gt; close(f);
+
+julia&gt; f = fits_open_file(fname, CFITSIO.READONLY);
+
+julia&gt; fits_get_num_hdus(f)
+2
+
+julia&gt; fits_movabs_hdu(f, 2)
+:binary_table
+
+julia&gt; fits_get_num_rows(f)
+3
+
+julia&gt; fits_get_num_cols(f)
+3
+
+julia&gt; fits_read_col(f, 1, 1, 1, zeros(Int32, 3))
+3-element Vector{Int32}:
+ 1
+ 2
+ 3
+
+julia&gt; close(f);</code></pre><p>See also <a href="#CFITSIO.fits_create_ascii_tbl"><code>fits_create_ascii_tbl</code></a> and <a href="#CFITSIO.fits_create_binary_tbl"><code>fits_create_binary_tbl</code></a> for similar functions that create ASCII and binary tables, respectively.</p></div><a class="docs-sourcelink" href="https://github.com/JuliaAstro/CFITSIO.jl/blob/27f77a8c91198a52e8a64ce2e56b0ff9aa23bbc9/src/CFITSIO.jl#L4527-L4592" target="_blank">source</a></section></article><article class="docstring"><header><a class="docstring-article-toggle-button fa-solid fa-chevron-down" href="javascript:;" title="Collapse docstring"></a><a class="docstring-binding" href="#CFITSIO.fits_delete_col" id="CFITSIO.fits_delete_col"><code>CFITSIO.fits_delete_col</code></a> — <span class="docstring-category">Function</span><span class="is-flex-grow-1 docstring-article-toggle-button" title="Collapse docstring"></span></header><section><div><pre><code class="language-julia hljs">fits_delete_col(f::FITSFile, colnum::Integer)</code></pre><p>Delete the column at position <code>colnum</code> in the current HDU.</p><p><strong>Example</strong></p><pre><code class="language-julia-repl hljs">julia&gt; fname = joinpath(mktempdir(), "test.fits");
+
+julia&gt; f = fits_create_file(fname);
+
+julia&gt; fits_create_binary_tbl(f, 0, [("col1", "1J", "units"), ("col2", "1E", "units")]);
+
+julia&gt; fits_write_col(f, 1, 1, 1, [1, 2, 3]);
+
+julia&gt; fits_write_col(f, 2, 1, 1, [1.0, 2.0, 3.0]);
+
+julia&gt; fits_get_num_cols(f)
+2
+
+julia&gt; fits_get_coltype(f, 1)
+(41, 1, 4)
+
+julia&gt; fits_delete_col(f, 1); # delete the first column
+
+julia&gt; fits_get_num_cols(f)
+1
+
+julia&gt; fits_get_coltype(f, 1)
+(42, 1, 4)
+
+julia&gt; close(f)</code></pre></div><a class="docs-sourcelink" href="https://github.com/JuliaAstro/CFITSIO.jl/blob/27f77a8c91198a52e8a64ce2e56b0ff9aa23bbc9/src/CFITSIO.jl#L5614-L5647" target="_blank">source</a></section></article><article class="docstring"><header><a class="docstring-article-toggle-button fa-solid fa-chevron-down" href="javascript:;" title="Collapse docstring"></a><a class="docstring-binding" href="#CFITSIO.fits_delete_rowlist" id="CFITSIO.fits_delete_rowlist"><code>CFITSIO.fits_delete_rowlist</code></a> — <span class="docstring-category">Function</span><span class="is-flex-grow-1 docstring-article-toggle-button" title="Collapse docstring"></span></header><section><div><pre><code class="language-julia hljs">fits_delete_rowlist(f::FITSFile, rowlist::Vector{&lt;:Integer})</code></pre><p>Delete a list of rows from the current HDU. The rows to be deleted are specified by the <code>rowlist</code> vector, which contains the row numbers to be deleted. The row numbers are 1-based, so the first row is at position 1.</p><p><strong>Example</strong></p><pre><code class="language-julia-repl hljs">julia&gt; fname = joinpath(mktempdir(), "test.fits");
+
+julia&gt; f = fits_create_file(fname);
+
+julia&gt; fits_create_binary_tbl(f, 0, [("col1", "1J", "units")]);
+
+julia&gt; fits_write_col(f, 1, 1, 1, [1, 2, 3, 4, 5])
+
+julia&gt; CFITSIO.fits_flush_file(f); # flush the file to disk
+
+julia&gt; fits_delete_rowlist(f, [1, 3, 5]); # delete rows 1, 3 and 5
+
+julia&gt; fits_read_col(f, 1, 1, 1, zeros(Int32, 2))
+2-element Vector{Int32}:
+ 2
+ 4
+
+julia&gt; close(f);</code></pre></div><a class="docs-sourcelink" href="https://github.com/JuliaAstro/CFITSIO.jl/blob/27f77a8c91198a52e8a64ce2e56b0ff9aa23bbc9/src/CFITSIO.jl#L5468-L5496" target="_blank">source</a></section></article><article class="docstring"><header><a class="docstring-article-toggle-button fa-solid fa-chevron-down" href="javascript:;" title="Collapse docstring"></a><a class="docstring-binding" href="#CFITSIO.fits_get_colnum" id="CFITSIO.fits_get_colnum"><code>CFITSIO.fits_get_colnum</code></a> — <span class="docstring-category">Function</span><span class="is-flex-grow-1 docstring-article-toggle-button" title="Collapse docstring"></span></header><section><div><pre><code class="language-julia hljs">fits_get_colnum(f::FITSFile, tmplt::String; case_sensitive::Bool = true)</code></pre><p>Return the column number of the first column whose name matches the template <code>tmplt</code>. If no column matches, an error is thrown. The template can contain the <code>*</code> character, which matches any number of characters. The keyword argument <code>case_sensitive</code> determines whether the search is case-sensitive or not.</p><p><strong>Example</strong></p><pre><code class="language-julia-repl hljs">julia&gt; fname = joinpath(mktempdir(), "test.fits");
+
+julia&gt; f = fits_create_file(fname);
+
+julia&gt; fits_create_binary_tbl(f, 0, [("Count", "1J", "units"), ("Energy", "1E", "eV")]);
+
+julia&gt; fits_get_colnum(f, "Energy")
+2
+
+julia&gt; fits_get_colnum(f, "e*"; case_sensitive = false)
+2
+
+julia&gt; fits_get_colnum(f, "col")
+ERROR: CFITSIO has encountered an error. Error code 219: named column not found
+Detailed error message follows:
+ffgcnn could not find column: col
+[...]
+
+julia&gt; close(f)</code></pre></div><a class="docs-sourcelink" href="https://github.com/JuliaAstro/CFITSIO.jl/blob/27f77a8c91198a52e8a64ce2e56b0ff9aa23bbc9/src/CFITSIO.jl#L4725-L4755" target="_blank">source</a></section></article><article class="docstring"><header><a class="docstring-article-toggle-button fa-solid fa-chevron-down" href="javascript:;" title="Collapse docstring"></a><a class="docstring-binding" href="#CFITSIO.fits_get_coltype" id="CFITSIO.fits_get_coltype"><code>CFITSIO.fits_get_coltype</code></a> — <span class="docstring-category">Function</span><span class="is-flex-grow-1 docstring-article-toggle-button" title="Collapse docstring"></span></header><section><div><pre><code class="language-julia hljs">fits_get_coltype(f::FITSFile, colnum::Integer)</code></pre><p>Provided that the current HDU contains either an ASCII or binary table, return information about the column at position <code>colnum</code> (counting from 1).</p><p>Returns a tuple containing</p><ul><li><code>typecode</code>: CFITSIO integer type code of the column.</li><li><code>repcount</code>: Repetition count for the column.</li><li><code>width</code>: Width of an individual element.</li></ul><p><strong>Example</strong></p><pre><code class="language-julia-repl hljs">julia&gt; fname = joinpath(mktempdir(), "test.fits");
+
+julia&gt; f = fits_create_file(fname);
+
+julia&gt; fits_create_binary_tbl(f, 0, [("col1", "1J", "units")]);
+
+julia&gt; fits_get_coltype(f, 1)
+(41, 1, 4)
+
+julia&gt; close(f)</code></pre></div><a class="docs-sourcelink" href="https://github.com/JuliaAstro/CFITSIO.jl/blob/27f77a8c91198a52e8a64ce2e56b0ff9aa23bbc9/src/CFITSIO.jl#L4777-L4802" target="_blank">source</a></section></article><article class="docstring"><header><a class="docstring-article-toggle-button fa-solid fa-chevron-down" href="javascript:;" title="Collapse docstring"></a><a class="docstring-binding" href="#CFITSIO.fits_get_eqcoltype" id="CFITSIO.fits_get_eqcoltype"><code>CFITSIO.fits_get_eqcoltype</code></a> — <span class="docstring-category">Function</span><span class="is-flex-grow-1 docstring-article-toggle-button" title="Collapse docstring"></span></header><section><div><pre><code class="language-julia hljs">fits_get_eqcoltype(ff::FITSFile, colnum::Integer)</code></pre><p>Provided that the current HDU contains either an ASCII or binary table, return information about the column at position <code>colnum</code> (counting from 1). This returns the equivalent data type of the column.</p><p>Returns a tuple containing</p><ul><li><code>typecode</code>: CFITSIO integer type code of the column.</li><li><code>repcount</code>: Repetition count for the column.</li><li><code>width</code>: Width of an individual element.</li></ul><p><strong>Example</strong></p><pre><code class="language-julia-repl hljs">julia&gt; fname = joinpath(mktempdir(), "test.fits");
+
+julia&gt; f = fits_create_file(fname);
+
+julia&gt; fits_create_binary_tbl(f, 0, [("col1", "1I", "units")]); # Int16 values
+
+julia&gt; fits_write_key(f, "TSCAL1", 0.1, "scale factor")
+
+julia&gt; fits_write_key(f, "TZERO1", 0.0, "zero point")
+
+julia&gt; fits_get_eqcoltype(f, 1) # equivalent element type is Float32, code 42
+(42, 1, 2)
+
+julia&gt; close(f)</code></pre></div><a class="docs-sourcelink" href="https://github.com/JuliaAstro/CFITSIO.jl/blob/27f77a8c91198a52e8a64ce2e56b0ff9aa23bbc9/src/CFITSIO.jl#L4805-L4835" target="_blank">source</a></section></article><article class="docstring"><header><a class="docstring-article-toggle-button fa-solid fa-chevron-down" href="javascript:;" title="Collapse docstring"></a><a class="docstring-binding" href="#CFITSIO.fits_get_num_cols" id="CFITSIO.fits_get_num_cols"><code>CFITSIO.fits_get_num_cols</code></a> — <span class="docstring-category">Function</span><span class="is-flex-grow-1 docstring-article-toggle-button" title="Collapse docstring"></span></header><section><div><pre><code class="language-julia hljs">fits_get_num_cols(f::FITSFile)</code></pre><p>Return the number of columns in the current table HDU.</p><p><strong>Example</strong></p><pre><code class="language-julia-repl hljs">julia&gt; fname = joinpath(mktempdir(), "test.fits");
+
+julia&gt; f = fits_create_file(fname);
+
+julia&gt; fits_create_binary_tbl(f, 0, [("col1", "1J", "units")]);
+
+julia&gt; close(f)
+
+julia&gt; f = fits_open_file(fname, CFITSIO.READONLY);
+
+julia&gt; fits_movabs_hdu(f, 2);
+
+julia&gt; fits_get_num_cols(f)
+1
+
+julia&gt; close(f)</code></pre></div><a class="docs-sourcelink" href="https://github.com/JuliaAstro/CFITSIO.jl/blob/27f77a8c91198a52e8a64ce2e56b0ff9aa23bbc9/src/CFITSIO.jl#L4668-L4692" target="_blank">source</a></section></article><article class="docstring"><header><a class="docstring-article-toggle-button fa-solid fa-chevron-down" href="javascript:;" title="Collapse docstring"></a><a class="docstring-binding" href="#CFITSIO.fits_get_num_rows" id="CFITSIO.fits_get_num_rows"><code>CFITSIO.fits_get_num_rows</code></a> — <span class="docstring-category">Function</span><span class="is-flex-grow-1 docstring-article-toggle-button" title="Collapse docstring"></span></header><section><div><pre><code class="language-julia hljs">fits_get_num_rows(f::FITSFile)</code></pre><p>Return the number of rows in the current table HDU.</p><p><strong>Example</strong></p><pre><code class="language-julia-repl hljs">julia&gt; fname = joinpath(mktempdir(), "test.fits");
+
+julia&gt; f = fits_create_file(fname);
+
+julia&gt; fits_create_binary_tbl(f, 0, [("col1", "1J", "units")]);
+
+julia&gt; fits_get_num_rows(f)
+0
+
+julia&gt; fits_write_col(f, 1, 1, 1, [1, 2, 3]);
+
+julia&gt; fits_get_num_rows(f)
+3
+
+julia&gt; close(f)</code></pre></div><a class="docs-sourcelink" href="https://github.com/JuliaAstro/CFITSIO.jl/blob/27f77a8c91198a52e8a64ce2e56b0ff9aa23bbc9/src/CFITSIO.jl#L4838-L4861" target="_blank">source</a></section></article><article class="docstring"><header><a class="docstring-article-toggle-button fa-solid fa-chevron-down" href="javascript:;" title="Collapse docstring"></a><a class="docstring-binding" href="#CFITSIO.fits_get_rowsize" id="CFITSIO.fits_get_rowsize"><code>CFITSIO.fits_get_rowsize</code></a> — <span class="docstring-category">Function</span><span class="is-flex-grow-1 docstring-article-toggle-button" title="Collapse docstring"></span></header><section><div><pre><code class="language-julia hljs">fits_get_rowsize(f::FITSFile)</code></pre><p>Return optimal number of rows to read or write at one time for maximum I/O efficiency.</p></div><a class="docs-sourcelink" href="https://github.com/JuliaAstro/CFITSIO.jl/blob/27f77a8c91198a52e8a64ce2e56b0ff9aa23bbc9/src/CFITSIO.jl#L4695-L4699" target="_blank">source</a></section></article><article class="docstring"><header><a class="docstring-article-toggle-button fa-solid fa-chevron-down" href="javascript:;" title="Collapse docstring"></a><a class="docstring-binding" href="#CFITSIO.fits_insert_col" id="CFITSIO.fits_insert_col"><code>CFITSIO.fits_insert_col</code></a> — <span class="docstring-category">Function</span><span class="is-flex-grow-1 docstring-article-toggle-button" title="Collapse docstring"></span></header><section><div><pre><code class="language-julia hljs">fits_insert_col(f::FITSFile, colnum::Integer, ttype::String, tform::String)</code></pre><p>Insert a new column at position <code>colnum</code> in the current table HDU. The <code>ttype</code> and <code>tform</code> parameters specify the name and type of the column, respectively.</p><p><strong>Example</strong></p><pre><code class="language-julia-repl hljs">julia&gt; fname = joinpath(mktempdir(), "test.fits");
+
+julia&gt; f = fits_create_file(fname);
+
+julia&gt; fits_create_binary_tbl(f, 0, [("col1", "1J", "units")]);
+
+julia&gt; fits_insert_col(f, 2, "col2", "1E");
+
+julia&gt; fits_write_col(f, 2, 1, 1, [1.0, 2.0, 3.0]);
+
+julia&gt; fits_read_col(f, 2, 1, 1, zeros(Float32, 3))
+3-element Vector{Float32}:
+ 1.0
+ 2.0
+ 3.0
+
+julia&gt; close(f);</code></pre></div><a class="docs-sourcelink" href="https://github.com/JuliaAstro/CFITSIO.jl/blob/27f77a8c91198a52e8a64ce2e56b0ff9aa23bbc9/src/CFITSIO.jl#L5512-L5538" target="_blank">source</a></section></article><article class="docstring"><header><a class="docstring-article-toggle-button fa-solid fa-chevron-down" href="javascript:;" title="Collapse docstring"></a><a class="docstring-binding" href="#CFITSIO.fits_insert_cols" id="CFITSIO.fits_insert_cols"><code>CFITSIO.fits_insert_cols</code></a> — <span class="docstring-category">Function</span><span class="is-flex-grow-1 docstring-article-toggle-button" title="Collapse docstring"></span></header><section><div><pre><code class="language-julia hljs">fits_insert_cols(f::FITSFile, colnum::Integer,
+    ttype::Vector{String}, tform::Vector{String})</code></pre><p>Insert a number of new columns at position <code>colnum</code> in the current table HDU. The <code>ttype</code> and <code>tform</code> parameters specify the names and types of the columns, respectively. The length of <code>ttype</code> and <code>tform</code> must match, as each column corresponds to one element in these vectors.</p><p><strong>Example</strong></p><pre><code class="language-julia-repl hljs">julia&gt; fname = joinpath(mktempdir(), "test.fits");
+
+julia&gt; f = fits_create_file(fname);
+
+julia&gt; fits_create_binary_tbl(f, 0, [("col1", "1J", "units")]);
+
+julia&gt; fits_insert_cols(f, 2, ["col2", "col3"], ["1E", "1D"]);
+
+julia&gt; fits_write_col(f, 2, 1, 1, [1.0, 2.0, 3.0]);
+
+julia&gt; fits_write_col(f, 3, 1, 1, [1.0, 2.0, 3.0]);
+
+julia&gt; fits_read_col(f, 2, 1, 1, zeros(Float32, 3))
+3-element Vector{Float32}:
+ 1.0
+ 2.0
+ 3.0
+
+julia&gt; fits_read_col(f, 3, 1, 1, zeros(Float64, 3))
+3-element Vector{Float64}:
+ 1.0
+ 2.0
+ 3.0
+
+julia&gt; close(f);</code></pre></div><a class="docs-sourcelink" href="https://github.com/JuliaAstro/CFITSIO.jl/blob/27f77a8c91198a52e8a64ce2e56b0ff9aa23bbc9/src/CFITSIO.jl#L5555-L5591" target="_blank">source</a></section></article><article class="docstring"><header><a class="docstring-article-toggle-button fa-solid fa-chevron-down" href="javascript:;" title="Collapse docstring"></a><a class="docstring-binding" href="#CFITSIO.fits_insert_rows" id="CFITSIO.fits_insert_rows"><code>CFITSIO.fits_insert_rows</code></a> — <span class="docstring-category">Function</span><span class="is-flex-grow-1 docstring-article-toggle-button" title="Collapse docstring"></span></header><section><div><pre><code class="language-julia hljs">fits_insert_rows(f::FITSFile, firstrow::Integer, nrows::Integer)</code></pre><p>Insert a number of rows equal to <code>nrows</code><em>after</em> the row number <code>firstrow</code>.</p><p>The elements in each row are initialized to their default value: you can modify them later using <a href="#CFITSIO.fits_write_col"><code>fits_write_col</code></a>.</p><p>Since the first row is at position 1, in order to insert rows <em>before</em> the first one <code>firstrow</code> must be equal to zero.</p><p><strong>Example</strong></p><pre><code class="language-julia-repl hljs">julia&gt; fname = joinpath(mktempdir(), "test.fits");
+
+julia&gt; f = fits_create_file(fname);
+
+julia&gt; fits_create_binary_tbl(f, 0, [("col1", "1J", "units")])
+
+julia&gt; fits_write_col(f, 1, 1, 1, [1, 2, 3])
+
+julia&gt; fits_insert_rows(f, 0, 2)
+
+julia&gt; fits_write_col(f, 1, 1, 1, [4, 5])
+
+julia&gt; fits_read_col(f, 1, 1, 1, zeros(Int32, 5))
+5-element Vector{Int32}:
+ 4
+ 5
+ 1
+ 2
+ 3
+
+julia&gt; close(f)</code></pre></div><a class="docs-sourcelink" href="https://github.com/JuliaAstro/CFITSIO.jl/blob/27f77a8c91198a52e8a64ce2e56b0ff9aa23bbc9/src/CFITSIO.jl#L5384-L5419" target="_blank">source</a></section></article><article class="docstring"><header><a class="docstring-article-toggle-button fa-solid fa-chevron-down" href="javascript:;" title="Collapse docstring"></a><a class="docstring-binding" href="#CFITSIO.fits_delete_rows" id="CFITSIO.fits_delete_rows"><code>CFITSIO.fits_delete_rows</code></a> — <span class="docstring-category">Function</span><span class="is-flex-grow-1 docstring-article-toggle-button" title="Collapse docstring"></span></header><section><div><pre><code class="language-julia hljs">fits_delete_rows(f::FITSFile, firstrow::integer, nrows::Integer)</code></pre><p>Delete <code>nrows</code> rows, starting from the one at position <code>firstrow</code>. The index of the first row is 1.</p><p><strong>Example</strong></p><pre><code class="language-julia-repl hljs">julia&gt; fname = joinpath(mktempdir(), "test.fits");
+
+julia&gt; f = fits_create_file(fname);
+
+julia&gt; fits_create_binary_tbl(f, 0, [("col1", "1J", "units")]);
+
+julia&gt; fits_write_col(f, 1, 1, 1, [1, 2, 3]);
+
+julia&gt; fits_delete_rows(f, 1, 2); # delete the first two rows
+
+julia&gt; fits_read_col(f, 1, 1, 1, zeros(Int32, 1))
+1-element Vector{Int32}:
+ 3
+
+julia&gt; close(f);</code></pre></div><a class="docs-sourcelink" href="https://github.com/JuliaAstro/CFITSIO.jl/blob/27f77a8c91198a52e8a64ce2e56b0ff9aa23bbc9/src/CFITSIO.jl#L5422-L5446" target="_blank">source</a></section></article><article class="docstring"><header><a class="docstring-article-toggle-button fa-solid fa-chevron-down" href="javascript:;" title="Collapse docstring"></a><a class="docstring-binding" href="#CFITSIO.fits_read_col" id="CFITSIO.fits_read_col"><code>CFITSIO.fits_read_col</code></a> — <span class="docstring-category">Function</span><span class="is-flex-grow-1 docstring-article-toggle-button" title="Collapse docstring"></span></header><section><div><pre><code class="language-julia hljs">fits_read_col(f::FITSFile, colnum::Integer, firstrow::Integer, firstelem::Integer, data::Array)</code></pre><p>Read data from one column of an ASCII/binary table into <code>data</code>.</p><p><strong>Arguments</strong></p><ul><li><code>f::FITSFile</code>: the file to be read.</li><li><code>colnum::Integer</code>: the column number, where the value of the first column is <code>1</code>.</li><li><code>firstrow::Integer</code>: the elements to be read start from this row.</li><li><code>firstelem::Integer</code>: specifies which is the first element to be read, when each cell contains more than one element (i.e., the "repetition count" of the field is greater than one).</li><li><code>data::Array</code>: at the end of the call, this will be filled with the elements read</li></ul><p>from the column. The length of the array gives the overall number of elements.</p><p><strong>Example</strong></p><pre><code class="language-julia-repl hljs">julia&gt; fname = joinpath(mktempdir(), "test.fits");
+
+julia&gt; f = fits_create_file(fname);
+
+julia&gt; fits_create_binary_tbl(f, 0, [("col1", "1J", "units")]);
+
+julia&gt; fits_write_col(f, 1, 1, 1, [1, 2, 3]);
+
+julia&gt; fits_read_col(f, 1, 1, 1, zeros(Int32, 3))
+3-element Vector{Int32}:
+ 1
+ 2
+ 3
+
+julia&gt; close(f)</code></pre></div><a class="docs-sourcelink" href="https://github.com/JuliaAstro/CFITSIO.jl/blob/27f77a8c91198a52e8a64ce2e56b0ff9aa23bbc9/src/CFITSIO.jl#L5164-L5198" target="_blank">source</a></section></article><article class="docstring"><header><a class="docstring-article-toggle-button fa-solid fa-chevron-down" href="javascript:;" title="Collapse docstring"></a><a class="docstring-binding" href="#CFITSIO.fits_read_atblhdr" id="CFITSIO.fits_read_atblhdr"><code>CFITSIO.fits_read_atblhdr</code></a> — <span class="docstring-category">Function</span><span class="is-flex-grow-1 docstring-article-toggle-button" title="Collapse docstring"></span></header><section><div><pre><code class="language-julia hljs">fits_read_atblhdr(f::FITSFile, maxdim::Integer = 99)</code></pre><p>Read the header of an ASCII table HDU, where <code>maxdim</code> represents the maximum number of columns to read. The function returns the length of a row in bytes, the number of rows, the number of columns, the column names as a <code>Vector{String}</code>, the byte offsets to each column, the TFORMn values as a <code>Vector{String}</code>, the TUNITn values as a <code>Vector{String}</code>, and the <code>EXTNAME::String</code> keyword, if any.</p><p><strong>Example</strong></p><pre><code class="language-julia-repl hljs">julia&gt; fname = joinpath(mktempdir(), "test.fits");
+
+julia&gt; f = fits_create_file(fname);
+
+julia&gt; fits_create_ascii_tbl(f, 0, [("col1", "D10"), ("col2", "F10.2")])
+
+julia&gt; fits_read_atblhdr(f)
+(21, 0, 2, ["col1", "col2"], [1, 12], ["D10", "F10.2"], ["", ""], "")
+
+julia&gt; close(f)</code></pre></div><a class="docs-sourcelink" href="https://github.com/JuliaAstro/CFITSIO.jl/blob/27f77a8c91198a52e8a64ce2e56b0ff9aa23bbc9/src/CFITSIO.jl#L1249-L1272" target="_blank">source</a></section></article><article class="docstring"><header><a class="docstring-article-toggle-button fa-solid fa-chevron-down" href="javascript:;" title="Collapse docstring"></a><a class="docstring-binding" href="#CFITSIO.fits_read_btblhdr" id="CFITSIO.fits_read_btblhdr"><code>CFITSIO.fits_read_btblhdr</code></a> — <span class="docstring-category">Function</span><span class="is-flex-grow-1 docstring-article-toggle-button" title="Collapse docstring"></span></header><section><div><pre><code class="language-julia hljs">fits_read_btblhdr(f::FITSFile, maxdim::Integer = 99)</code></pre><p>Read the header of a binary table HDU, where <code>maxdim</code> represents the maximum number of columns to read. The function returns the number of rows, the number of columns, the column names as a <code>Vector{String}</code>, the TFORMn values  as a <code>Vector{String}</code>, the TUNITn values as a <code>Vector{String}</code>, and the <code>EXTNAME::String</code> and <code>PCOUNT::Int</code> keywords.</p><p><strong>Example</strong></p><pre><code class="language-julia-repl hljs">julia&gt; fname = joinpath(mktempdir(), "test.fits");
+
+julia&gt; f = fits_create_file(fname);
+
+julia&gt; fits_create_binary_tbl(f, 0, [("col1", "1J"), ("col2", "1E")])
+
+julia&gt; fits_read_btblhdr(f)
+(0, 2, ["col1", "col2"], ["1J", "1E"], ["", ""], "", 0)
+
+julia&gt; close(f)</code></pre></div><a class="docs-sourcelink" href="https://github.com/JuliaAstro/CFITSIO.jl/blob/27f77a8c91198a52e8a64ce2e56b0ff9aa23bbc9/src/CFITSIO.jl#L1275-L1298" target="_blank">source</a></section></article><article class="docstring"><header><a class="docstring-article-toggle-button fa-solid fa-chevron-down" href="javascript:;" title="Collapse docstring"></a><a class="docstring-binding" href="#CFITSIO.fits_read_descript" id="CFITSIO.fits_read_descript"><code>CFITSIO.fits_read_descript</code></a> — <span class="docstring-category">Function</span><span class="is-flex-grow-1 docstring-article-toggle-button" title="Collapse docstring"></span></header><section><div><pre><code class="language-julia hljs">fits_read_descript(ff::FITSFile, colnum::Integer, rownum::Integer)</code></pre><p>Return the descriptor for a variable length column in a binary table. The descriptor consists of 2 integer parameters: the number of elements in the array and the starting offset relative to the start of the heap.</p><p><strong>Example</strong></p><pre><code class="language-julia-repl hljs">julia&gt; fname = joinpath(mktempdir(), "test.fits");
+
+julia&gt; f = fits_create_file(fname);
+
+julia&gt; fits_create_binary_tbl(f, 0, [("col1", "1PJ", "units")]) # P = variable length column
+
+julia&gt; fits_write_col(f, 1, 1, 1, [1, 2, 3]) # write a vector to the column
+
+julia&gt; fits_read_descript(f, 1, 1) # read the descriptor for the first row and first column
+(3, 0)
+
+julia&gt; fits_write_col(f, 1, 2, 1, [1, 2, 3, 4])
+
+julia&gt; fits_read_descript(f, 1, 2)
+(4, 12)
+
+julia&gt; close(f)</code></pre></div><a class="docs-sourcelink" href="https://github.com/JuliaAstro/CFITSIO.jl/blob/27f77a8c91198a52e8a64ce2e56b0ff9aa23bbc9/src/CFITSIO.jl#L4949-L4976" target="_blank">source</a></section></article><article class="docstring"><header><a class="docstring-article-toggle-button fa-solid fa-chevron-down" href="javascript:;" title="Collapse docstring"></a><a class="docstring-binding" href="#CFITSIO.fits_read_keys_lng" id="CFITSIO.fits_read_keys_lng"><code>CFITSIO.fits_read_keys_lng</code></a> — <span class="docstring-category">Function</span><span class="is-flex-grow-1 docstring-article-toggle-button" title="Collapse docstring"></span></header><section><div><pre><code class="language-julia hljs">fits_read_keys_lng(f::FITSFile, keyname::String, nstart::Integer, nmax::Integer)</code></pre><p>Read a sequence of indexed keyword values (e.g., <code>NAXIS1</code>, <code>NAXIS2</code>, ...) as an <code>Integer</code> vector. Return the values of the keywords as a <code>Vector{Clong}</code>, as well as the number of values found.</p><p><strong>Example</strong></p><pre><code class="language-julia-repl hljs">julia&gt; fname = joinpath(mktempdir(), "test.fits");
+
+julia&gt; f = fits_create_file(fname);
+
+julia&gt; fits_create_img(f, Int32, (2, 3));
+
+julia&gt; fits_read_keys_lng(f, "NAXIS", 1, 2)
+([2, 3], 2)
+
+julia&gt; close(f)</code></pre></div><a class="docs-sourcelink" href="https://github.com/JuliaAstro/CFITSIO.jl/blob/27f77a8c91198a52e8a64ce2e56b0ff9aa23bbc9/src/CFITSIO.jl#L1005-L1025" target="_blank">source</a></section></article><article class="docstring"><header><a class="docstring-article-toggle-button fa-solid fa-chevron-down" href="javascript:;" title="Collapse docstring"></a><a class="docstring-binding" href="#CFITSIO.fits_read_tdim" id="CFITSIO.fits_read_tdim"><code>CFITSIO.fits_read_tdim</code></a> — <span class="docstring-category">Function</span><span class="is-flex-grow-1 docstring-article-toggle-button" title="Collapse docstring"></span></header><section><div><pre><code class="language-julia hljs">fits_read_tdim(ff::FITSFile, colnum::Integer)</code></pre><p>Return the dimensions of a multidimensional array column in a binary table. The elements are stored contiguously in the column, and the dimensions of the array are normally provided by the <code>TDIMn</code> keyword. If this keyword is not present, then this routine returns <code>[r]</code> with <code>r</code> equals to the repeat count in the TFORM keyword. If the <code>TDIMn</code> keyword is present, it returns the dimensions as specified in that keyword. If the HDU is not a binary table, an error is thrown.</p><p><strong>Example</strong></p><pre><code class="language-julia-repl hljs">julia&gt; fname = joinpath(mktempdir(), "test.fits");
+
+julia&gt; f = fits_create_file(fname);
+
+julia&gt; fits_create_binary_tbl(f, 0, [("col1", "3E", "units")])
+
+julia&gt; fits_write_col(f, 1, 1, 1, [1.0 2.0 3.0])
+
+julia&gt; fits_read_tdim(f, 1)
+1-element Vector{Int64}:
+ 3
+
+julia&gt; fits_write_tdim(f, 1, [1,3]) # specify the dimensions
+
+julia&gt; fits_read_key_str(f, "TDIM1")
+("(1,3)", "size of the multidimensional array")
+
+julia&gt; fits_read_tdim(f, 1)
+2-element Vector{Int64}:
+ 1
+ 3
+
+julia&gt; close(f)</code></pre><p>See also <a href="#CFITSIO.fits_write_tdim"><code>fits_write_tdim</code></a> for writing the dimensions of arrays stored in a column.</p></div><a class="docs-sourcelink" href="https://github.com/JuliaAstro/CFITSIO.jl/blob/27f77a8c91198a52e8a64ce2e56b0ff9aa23bbc9/src/CFITSIO.jl#L4864-L4902" target="_blank">source</a></section></article><article class="docstring"><header><a class="docstring-article-toggle-button fa-solid fa-chevron-down" href="javascript:;" title="Collapse docstring"></a><a class="docstring-binding" href="#CFITSIO.fits_write_col" id="CFITSIO.fits_write_col"><code>CFITSIO.fits_write_col</code></a> — <span class="docstring-category">Function</span><span class="is-flex-grow-1 docstring-article-toggle-button" title="Collapse docstring"></span></header><section><div><pre><code class="language-julia hljs">fits_write_col(f::FITSFile, colnum::Integer, firstrow::Integer, firstelem::Integer, data::Array)</code></pre><p>Write some data in one column of a ASCII/binary table.</p><p>If there is no room for the elements, new rows will be created. (It is therefore useless to call <a href="#CFITSIO.fits_insert_rows"><code>fits_insert_rows</code></a> if you only need to <em>append</em> elements to the end of a table.)</p><ul><li><code>f::FITSFile</code>: the file in which data will be written.</li><li><code>colnum::Integer</code>: the column number, where the value of the first column is <code>1</code>.</li><li><code>firstrow::Integer</code>: the data wil be written from this row onwards.</li><li><code>firstelem::Integer</code>: specifies the position in the row where the first element will be written.</li><li><code>data::Array</code>: contains the elements that are to be written to the column of the table.</li></ul><p><strong>Example</strong></p><pre><code class="language-julia-repl hljs">julia&gt; fname = joinpath(mktempdir(), "test.fits");
+
+julia&gt; f = fits_create_file(fname);
+
+julia&gt; fits_create_binary_tbl(f, 0, [("col1", "1J", "units")]);
+
+julia&gt; fits_write_col(f, 1, 1, 1, [1, 2, 3]);
+
+julia&gt; fits_read_col(f, 1, 1, 1, zeros(Int32, 3))
+3-element Vector{Int32}:
+ 1
+ 2
+ 3
+
+julia&gt; close(f)</code></pre></div><a class="docs-sourcelink" href="https://github.com/JuliaAstro/CFITSIO.jl/blob/27f77a8c91198a52e8a64ce2e56b0ff9aa23bbc9/src/CFITSIO.jl#L5295-L5329" target="_blank">source</a></section></article><article class="docstring"><header><a class="docstring-article-toggle-button fa-solid fa-chevron-down" href="javascript:;" title="Collapse docstring"></a><a class="docstring-binding" href="#CFITSIO.fits_write_tdim" id="CFITSIO.fits_write_tdim"><code>CFITSIO.fits_write_tdim</code></a> — <span class="docstring-category">Function</span><span class="is-flex-grow-1 docstring-article-toggle-button" title="Collapse docstring"></span></header><section><div><pre><code class="language-julia hljs">fits_write_tdim(ff::FITSFile, colnum::Integer, naxes::Vector{Int64})</code></pre><p>Write the dimensions of a multidimensional array column in a binary table. The data is stored contiguously in the column, and the dimensions are specified by the <code>TDIMn</code> keyword.</p><p><strong>Example</strong></p><pre><code class="language-julia-repl hljs">julia&gt; fname = joinpath(mktempdir(), "test.fits");
+
+julia&gt; f = fits_create_file(fname);
+
+julia&gt; fits_create_binary_tbl(f, 0, [("col1", "3E", "units")])
+
+julia&gt; fits_write_col(f, 1, 1, 1, [1.0 2.0 3.0])
+
+julia&gt; fits_write_tdim(f, 1, [3]) # interpret the data as a 1D array
+
+julia&gt; fits_read_key_str(f, "TDIM1")
+("(3)", "size of the multidimensional array")
+
+julia&gt; fits_read_tdim(f, 1)
+1-element Vector{Int64}:
+ 3
+
+julia&gt; fits_delete_key(f, "TDIM1") # remove the TDIM keyword
+
+julia&gt; fits_write_tdim(f, 1, [1,3]) # interpret the data as a 2D array
+
+julia&gt; fits_read_key_str(f, "TDIM1")
+("(1,3)", "size of the multidimensional array")
+
+julia&gt; fits_read_tdim(f, 1)
+2-element Vector{Int64}:
+ 1
+ 3
+
+julia&gt; close(f)</code></pre><p>See also <a href="#CFITSIO.fits_read_tdim"><code>fits_read_tdim</code></a> for reading the dimensions of arrays stored in a column.</p></div><a class="docs-sourcelink" href="https://github.com/JuliaAstro/CFITSIO.jl/blob/27f77a8c91198a52e8a64ce2e56b0ff9aa23bbc9/src/CFITSIO.jl#L4905-L4946" target="_blank">source</a></section></article></article><nav class="docs-footer"><a class="docs-footer-prevpage" href="../image/">« Image</a><a class="docs-footer-nextpage" href="../misc/">Miscellaneous »</a><div class="flexbox-break"></div><p class="footer-message">Powered by <a href="https://github.com/JuliaDocs/Documenter.jl">Documenter.jl</a> and the <a href="https://julialang.org/">Julia Programming Language</a>.</p></nav></div><div class="modal" id="documenter-settings"><div class="modal-background"></div><div class="modal-card"><header class="modal-card-head"><p class="modal-card-title">Settings</p><button class="delete"></button></header><section class="modal-card-body"><p><label class="label">Theme</label></p><div class="select"><select id="documenter-themepicker"><option value="auto">Automatic (OS)</option><option value="documenter-light">documenter-light</option><option value="documenter-dark">documenter-dark</option><option value="catppuccin-latte">catppuccin-latte</option><option value="catppuccin-frappe">catppuccin-frappe</option><option value="catppuccin-macchiato">catppuccin-macchiato</option><option value="catppuccin-mocha">catppuccin-mocha</option></select></div><p></p><hr/><p>This document was generated with <a href="https://github.com/JuliaDocs/Documenter.jl">Documenter.jl</a> version 1.11.4 on <span class="colophon-date" title="Thursday 5 June 2025 06:15">Thursday 5 June 2025</span>. Using Julia version 1.10.9.</p></section><footer class="modal-card-foot"></footer></div></div></div></body></HTML>
