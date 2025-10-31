@@ -796,6 +796,16 @@ ecosystem() = (
                 astropy = ["astroalign"],
             ),
             (
+                name = "BackgroundMeshes.jl",
+                repo = "https://github.com/JuliaAstro/BackgroundMeshes.jl",
+                doc = "https://juliaastro.org/BackgroundMeshes/stable",
+                tagline = "Create meshes for estimating the background in astronomical images",
+                descr = """
+                - Create meshes for estimating the background in astronomical images. Originally a submodule of [Photometry.jl](https://juliaastro.org/Photometry).
+                """,
+                astropy = ["photutils", "regions"],
+            ),
+            (
                 name = "Casacore.jl",
                 repo = "https://github.com/torrance/Casacore.jl",
                 doc = "https://github.com/torrance/Casacore.jl?tab=readme-ov-file#casacorejl",
