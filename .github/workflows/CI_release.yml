@@ -1,0 +1,14 @@
+name: Test JuliaAstro (release)
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  schedule:
+    - cron:  '15 2 * * 1' # 2:15 AM UTC every Monday
+
+jobs:
+  test-release:
+    uses: ./.github/workflows/CI.yml
+    with:
+      test_args: "--verbose packages_release"

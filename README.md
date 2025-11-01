@@ -4,7 +4,9 @@ JuliaAstro.github.io
 [![docs](https://img.shields.io/badge/docs-stable-blue.svg)](https://juliaastro.org/)
 [![Build](https://github.com/JuliaAstro/JuliaAstro.github.io/actions/workflows/Documentation.yml/badge.svg)](https://github.com/JuliaAstro/JuliaAstro.github.io/actions/workflows/Documentation.yml)
 [![Deploy](https://github.com/JuliaAstro/JuliaAstro.github.io/actions/workflows/pages/pages-build-deployment/badge.svg?branch=gh-pages)](https://github.com/JuliaAstro/JuliaAstro.github.io/actions/workflows/pages/pages-build-deployment)
-[![Test JuliaAstro](https://github.com/JuliaAstro/JuliaAstro.github.io/actions/workflows/CI.yml/badge.svg)](https://github.com/JuliaAstro/JuliaAstro.github.io/actions/workflows/CI.yml)
+
+[![Test JuliaAstro (release)](https://github.com/JuliaAstro/JuliaAstro.github.io/actions/workflows/CI_release.yml/badge.svg)](https://github.com/JuliaAstro/JuliaAstro.github.io/actions/workflows/CI_release.yml)
+[![Test JuliaAstro (dev)](https://github.com/JuliaAstro/JuliaAstro.github.io/actions/workflows/CI_dev.yml/badge.svg)](https://github.com/JuliaAstro/JuliaAstro.github.io/actions/workflows/CI_dev.yml)
 
 ## Description
 
@@ -98,12 +100,14 @@ All in all, to add a new case study:
 1. Update the content in the new file with your case study text.
 1. Add an entry to `JuliaAstro.github.io/docs/case_studies/<case study category>/config.json` with your new case study filename. Note that trailing commas are not supported in the JSON spec.
 
-## Testing locally / developer docs
+## Developer docs
+
+### Documentation
 
 Add [LiveServer.jl](https://github.com/JuliaDocs/LiveServer.jl) to your global env and then run the following in the `JuliaAstro.github.io/` folder:
 
 ```julia-repl
-> julia --proj=docs/
+julia --proj=docs/
 
 julia> using LiveServer
 
@@ -117,3 +121,24 @@ The `include_dirs` arg allows our internal Revise worklow to pick up changes in 
 
 See our [Contributing page](https://juliaastro.org/home/#Contributing) for more.
 
+### Testing
+
+Run all tests:
+
+```julia-repl
+julia --proj
+
+julia> ]
+
+pkg> test
+```
+
+Run specific tests (currently  `packages_release` and `packages_dev`):
+
+```julia-repl
+julia --proj
+
+julia> import Pkg
+
+julia> Pkg.test("JuliaAstroDocs"; test_args=`--verbose packages_release`) # or packages_dev
+```
