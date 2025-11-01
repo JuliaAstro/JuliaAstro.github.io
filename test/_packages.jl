@@ -11,8 +11,10 @@ function test_packages(mode)
                     else
                         @test Pkg.add(chopsuffix(p_name, ".jl")) == nothing
                     end
-                else
+                elseif mode == :dev
                     @test Pkg.add(url=package.repo) == nothing
+                else
+                    throw(ArgumentError("`mode` argument to `test_packages` must be either `:release` or `:dev`."))
                 end
             end
         end
