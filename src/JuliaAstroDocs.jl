@@ -63,6 +63,16 @@ ecosystem() = (
                 astropy = [],
             ),
             (
+                name = "SolarPosition.jl",
+                repo = "https://github.com/JuliaAstro/SolarPosition.jl",
+                doc = "https://juliaastro.org/SolarPosition.jl/stable/",
+                tagline = "Meta package for accessing JPL HORIZONS and SPICE sources",
+                descr = """
+                - SolarPosition.jl provides a simple, unified interface to a collection of validated solar position algorithms written in pure, performant julia
+                """,
+                astropy = ["astropy.coordinates"],
+            ),
+            (
                 name = "SPICE.jl",
                 repo = "https://github.com/JuliaAstro/SPICE.jl",
                 doc = "https://juliaastro.org/SPICE/stable/",

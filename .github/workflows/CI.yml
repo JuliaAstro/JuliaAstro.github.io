@@ -1,11 +1,12 @@
-name: Test JuliaAstro
+name: CI
 
 on:
-  push:
-    branches: [main]
-  pull_request:
-  schedule:
-    - cron:  '15 2 * * *' # 2:15 AM UTC every day
+  workflow_call:
+    inputs:
+      test_args:
+        required: true
+        type: string
+
 jobs:
   test:
     name: Julia ${{ matrix.version }} - ${{ matrix.os }} - ${{ matrix.arch }} - ${{ github.event_name }}
@@ -14,6 +15,8 @@ jobs:
       fail-fast: false
       matrix:
         version:
+          - "min"
+          - "1.11"
           - "1" # Leave this line unchanged. '1' will automatically expand to the latest stable 1.x release of Julia.
           - "pre"
         os:
@@ -30,4 +33,5 @@ jobs:
       - uses: julia-actions/julia-buildpkg@v1
       - uses: julia-actions/julia-runtest@v1
         with:
-            coverage: false
+          test_args: ${{ inputs.test_args }}
+          coverage: false
