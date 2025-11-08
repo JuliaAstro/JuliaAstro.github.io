@@ -79,7 +79,7 @@ All in all, to add a new case study:
 ### Documentation organization
 
 <details>
-  <summary>Development details</summary>
+  <summary>File structure</summary>
 
   The main portions of this documentation package are organized as follows:
 
@@ -145,14 +145,18 @@ julia> import Pkg
 julia> Pkg.test("JuliaAstroDocs"; test_args=`--verbose packages_release`) # or packages_dev
 ```
 
-### Continuous Integration organization
+### Continuous integration organization
 
 We use CI to automatically re-build and deploy our documentation, and test that all JuliaAstro packages install and are compatible with each other across supported platforms and Julia versions. We accomplish this with the following GitHub action workflows:
 
 ```mermaid
-graph TD;
-    A-->B;
-    A-->C;
-    B-->D;
-    C-->D;
+---
+config:
+  look: handDrawn
+---
+
+graph TD
+    CI.yml --> |weekly| CI_release.yml;
+    CI.yml --> |daily| CI_dev.yml;
 ```
+
