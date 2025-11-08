@@ -14,32 +14,6 @@ This repo is an in-development project to produce a landing page for JuliaAstro,
 
 The rendered JuliaAstro site is published online using GitHub Pages at <https://juliaastro.org/>. A GitHub action rebuilds the site on every successful pull request.
 
-<details>
-  <summary>Development details</summary>
-
-  The main bits of this documentation package are organized in the following way:
-
-  ```julia
-  JuliaAstro.github.io
-  ├── docs/
-  │   ├── case_studies/
-  │   ├── clones/
-  │   ├── make.jl
-  │   └── src/
-  │       ├── comparison.md
-  │       └──  ecosystem.md
-  └── src/
-      ├── comparison.jl
-      ├── ecosystem.jl
-      └── JuliaAstroDocs.jl
-  ```
-
-  1. All packages to document are stored in a nested NamedTuple (`ecosystem`) in `src/JuliaAstroDocs.jl`. This contains all of the metadata needed to build the rest of the site, and is the main entrypoint for making documentation contributions.
-  1. Using this information, the markdown in `doc/src/` for our [comparison page](https://juliaastro.org/home/comparison/) and [ecosystem page](https://juliaastro.org/home/ecosystem/) are programatically created by `src/comparison.jl` and `src/ecosystem.jl`, respectively.
-  1.  MultiDocumenter then builds the site via `docs/make.jl`, which also pulls the documentation for each JuliaAstro package and stores it in `docs/clones/`
-
-</details>
-
 ## Contributing
 
 Below we walk through three main ways to contribute to the JuliaAstro site:
@@ -100,9 +74,37 @@ All in all, to add a new case study:
 1. Update the content in the new file with your case study text.
 1. Add an entry to `JuliaAstro.github.io/docs/case_studies/<case study category>/config.json` with your new case study filename. Note that trailing commas are not supported in the JSON spec.
 
-## Developer docs
+## Developer documentation
 
-### Documentation
+### Documentation organization
+
+<details>
+  <summary>File structure</summary>
+
+  The main portions of this documentation package are organized as follows:
+
+  ```julia
+  JuliaAstro.github.io
+  ├── docs/
+  │   ├── case_studies/
+  │   ├── clones/
+  │   ├── make.jl
+  │   └── src/
+  │       ├── comparison.md
+  │       └──  ecosystem.md
+  └── src/
+      ├── comparison.jl
+      ├── ecosystem.jl
+      └── JuliaAstroDocs.jl
+  ```
+
+  1. All packages to document are stored in a nested NamedTuple (`ecosystem`) in `src/JuliaAstroDocs.jl`. This contains all of the metadata needed to build the rest of the site, and is the main entrypoint for making documentation contributions.
+  1. Using this information, the markdown in `doc/src/` for our [comparison page](https://juliaastro.org/home/comparison/) and [ecosystem page](https://juliaastro.org/home/ecosystem/) are programatically created by `src/comparison.jl` and `src/ecosystem.jl`, respectively.
+  1.  MultiDocumenter then builds the site via `docs/make.jl`, which also pulls the documentation for each JuliaAstro package and stores it in `docs/clones/`
+
+</details>
+
+### Running locally
 
 Add [LiveServer.jl](https://github.com/JuliaDocs/LiveServer.jl) to your global env and then run the following in the `JuliaAstro.github.io/` folder:
 
@@ -121,7 +123,7 @@ The `include_dirs` arg allows our internal Revise worklow to pick up changes in 
 
 See our [Contributing page](https://juliaastro.org/home/#Contributing) for more.
 
-### Testing
+### Testing locally
 
 Run all tests:
 
@@ -142,3 +144,19 @@ julia> import Pkg
 
 julia> Pkg.test("JuliaAstroDocs"; test_args=`--verbose packages_release`) # or packages_dev
 ```
+
+### Continuous integration organization
+
+We use CI to automatically re-build and deploy our documentation, and test that all JuliaAstro packages install and are compatible with each other across supported platforms and Julia versions. We accomplish this with the following GitHub action workflows:
+
+```mermaid
+---
+config:
+  look: handDrawn
+---
+
+graph TD
+    CI.yml --> |weekly| CI_release.yml;
+    CI.yml --> |daily| CI_dev.yml;
+```
+
