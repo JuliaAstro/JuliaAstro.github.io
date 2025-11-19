@@ -9,8 +9,8 @@ For more advanced usage examples, please see the documentation pages of the indi
 
 ## Installing Julia
 
-To install Julia, it's strongly recommended to download the official binary for your operating system.
-Visit the [julialang.org Downloads page](https://julialang.org/downloads), and select the latest stable version for your operating system. Currently, this is 1.7.3. Click the [help] links next to your operating system if you require more detailed instructions.
+Navigate to the [Install Julia](https://julialang.org/install/) section of the official Julia website for instructions on getting started.
+
 
 ## Installing Packages
 
@@ -26,7 +26,6 @@ This will take a little while to download all the required packages and precompi
 It's recommended to use Julia projects to store what packages you use and make it easier to reproduce your work. You can create or activate a previously created project by entering Pkg-mode (type `]`) and running `activate myproject`. Another option is to create a folder for your project, and start julia in that folder with the option `julia --project`.
 
 For more information on how to use the Julia package manager, refer to the [Pkg.jl documentation](https://pkgdocs.julialang.org/v1/repl/).
-
 
 
 ## Tutorial Index
