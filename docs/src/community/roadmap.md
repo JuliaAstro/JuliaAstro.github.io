@@ -42,7 +42,7 @@ The core product of JuliaAstro is high quality astronomical software, including 
 
 🟢 Determine a plan for [long-term support of FITS](https://github.com/JuliaAstro/FITSIO.jl), while also improving performance and making contributions easier.
 
-🔶 Determine a plan for long-term support of a [pure Julia implementation of FITS](https://github.com/barrettp/FITSFiles.jl) and [ASDF](https://github.com/JuliaAstro/ASDF2.jl), while also improving performance and making contribution easier.
+🔶 Determine a plan for long-term support of a [pure Julia implementation of FITS](https://github.com/JuliaAstro/FITSFiles.jl) and [ASDF](https://github.com/JuliaAstro/ASDF2.jl), while also improving performance and making contribution easier.
 
 🟥 Provide next-generation radio analysis tools usable by individual researchers and larger surveys with [EHTJulia coordinated packages](https://github.com/EHTJulia) and formation of a Radio Astronomy Group (RAG).
 

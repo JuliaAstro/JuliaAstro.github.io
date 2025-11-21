@@ -718,8 +718,8 @@ ecosystem() = (
             ),
             (
                 name = "FITSFiles.jl",
-                repo = "https://github.com/barrettp/FITSFiles.jl",
-                doc = "https://barrettp.github.io/FITSFiles.jl/",
+                repo = "https://github.com/JuliaAstro/FITSFiles.jl",
+                doc = "https://juliaastro.org/FITSFiles/stable/",
                 tagline = "A Julia Flexible Image Transport System (FITS) file IO package",
                 descr = """
                 - A Flexible Image Transport System (FITS) file IO package written in Julia
