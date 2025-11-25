@@ -398,8 +398,8 @@ ecosystem() = (
             ),
             (
                 name = "SpectralFitting.jl",
-                repo = "https://github.com/fjebaker/SpectralFitting.jl",
-                doc = "https://fjebaker.github.io/SpectralFitting.jl/dev/",
+                repo = "https://github.com/JuliaAstro/SpectralFitting.jl",
+                doc = "https://juliaastro.org/SpectralFitting/stable/",
                 tagline = "✨🛰 Fast and flexible spectral fitting in Julia",
                 descr = """
                 - Spectral fitting routines and models with a focus on X-ray astronomy
