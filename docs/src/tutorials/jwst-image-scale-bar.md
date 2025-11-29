@@ -39,10 +39,7 @@ A mirror of the JWST initial release data is also hosted on AWS. We'll use this 
 ```julia
 using Downloads
 
-fname = Downloads.download(
-   "https://stpubdata-jwst.stsci.edu/ero/jw02731/L3/t/"*
-   "jw02731-o001_t017_nircam_clear-f187n_i2d.fits"
-)
+fname = Downloads.download("https://mast.stsci.edu/api/v0.1/Download/file?bundle_name=MAST_2025-11-29T2146.sh&uri=mast:JWST/product/jw02731-o001_t017_nircam_clear-f187n_i2d.fits")
 ```
 
 ## Loading the image
@@ -59,10 +56,10 @@ carina_full = load(fname); # semi-colon prevents displaying the image
 
 Let's check the resolution of the image:
 ```julia
-size(carina)
+size(carina_full)
 ```
 ```
-(14436, 8568)
+(14340, 8582)
 ```
 Wow, that's over 120 megapixels!
 
