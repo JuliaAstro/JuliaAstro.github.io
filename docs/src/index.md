@@ -23,7 +23,7 @@ Below is a growing list of JuliaAstro and other related aero/astro presentations
 !!! details "JuliaCon 2022"
     **Julia in Astronomy & Astrophysics Research Symposium 2022 [[website]](https://eford.github.io/AstroMiniSymposiumAtJuliaCon2022/)**
     - [Using Julia to build the simulation pipeline of an astronomical instrument](https://www.youtube.com/watch?v=vj1uzilanQI&t=102s)
-    - [Jointly Modeling Telluric Features and Setellar Variability with StellarSpectraObservationFitting.jl](https://www.youtube.com/watch?v=vj1uzilanQI&t=1138s)
+    - [Jointly Modeling Telluric Features and Stellar Variability with StellarSpectraObservationFitting.jl](https://www.youtube.com/watch?v=vj1uzilanQI&t=1138s)
     - [Characterizing the TRAPPIST-1 System with Julia](https://www.youtube.com/watch?v=vj1uzilanQI&t=1977s)
     - [Gradients of the Big Bang with Bolt.jl](https://www.youtube.com/watch?v=vj1uzilanQI&t=3001s)
     - [High-dimensional inference from the Cosmic Microwave Background on GPU](https://www.youtube.com/watch?v=vj1uzilanQI&t=4143s)
