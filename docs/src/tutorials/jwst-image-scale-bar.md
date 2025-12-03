@@ -92,7 +92,7 @@ println(carina["CTYPE1", Comment])
 println(carina["CTYPE1"])
 ```
 ```
-first axis coordinate type
+Axis 1 type
 RA---TAN
 ```
 
@@ -152,7 +152,7 @@ b_px = world_to_pix(carina_full, b_deg)
 # Measure the angular distance in pixel coordinates
 # note: in theory this depends on where in the image we make this calculation
 # because the coordinate system is warped
-arcmin_px = norm(stop_coord_pix .- start_coord_pix)
+arcmin_px = norm(b_px .- a_px)
 
 # Plot our image again
 implot(carina; grid=false, clims=Percent(98))
