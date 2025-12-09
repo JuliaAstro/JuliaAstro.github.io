@@ -1,0 +1,60 @@
+{
+    "$schema": "https://juliaastro.org/funding.json",
+
+    "version": "v1.0.0",
+
+    "entity": {
+        "type": "organisation",
+        "role": "owner",
+        "name": "JuliaAstro",
+        "email": "astro@julialang.org",
+        "description": "JuliaAstro and its affiliated organizations are a community for astronomy in Julia. We strive to foster an ecosystem of packages that interoperate well with each other for a wide variety of different domains ranging from solar system science to large-scale cosmology. As part of the larger Julia ecosystem, our mission is to provide code that is fast, dynamic, composable, and reproducible.",
+        "webpageUrl": {
+            "url": "https://juliaastro.org"
+        }
+    },
+
+    "projects": [{
+        "guid": "fits-files-jl",
+        "name": "FITSFiles.jl",
+        "description": "A Julia implementation of the Flexible Image Transport System (FITS) file format.",
+        "webpageUrl": {
+            "url": "https://juliaastro.org/FITSFiles"
+        },
+        "repositoryUrl": {
+            "url": "https://github.com/JuliaAstro/FITSFiles.jl",
+            "wellKnown": "https://github.com/JuliaAstro/FITSFiles.jl/main/.well-known/funding-manifest-urls"
+        },
+        "licenses": ["spdx:MIT"],
+        "tags": ["astronomy","data", "programming", "science", "scientific-computing"]
+    }],
+
+    "funding": {
+        "channels": [{
+            "guid": "github-sponsors",
+            "type": "payment-provider",
+            "address": "https://github.com/sponsors/JuliaAstro",
+            "description": "Donate via GitHub Sponsors, and get recognized on your GitHub profile."
+        }],
+
+        "plans": [{
+            "guid": "support-juliaastro",
+            "status": "active",
+            "name": "Supporting JuliaAstro",
+            "description": "Your support will help us continue to grow our organization, and provide tools for the next generation of astronomers.",
+            "amount": 0,
+            "currency": "USD",
+            "frequency": "monthly",
+            "channels": ["github-sponsors"]
+        }],
+
+        "history": [{
+            "year": 2024,
+            "income": 0,
+            "expenses": 0,
+            "taxes": 0,
+            "currency": "USD",
+            "description": ""
+        }]
+    }
+}
