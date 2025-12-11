@@ -191,6 +191,10 @@ MultiDocumenter.make(
 rm.(glob(joinpath("*", "dev"), outpath); recursive=true)
 rm.(glob(joinpath("*", "latest*"), outpath); recursive=true)
 
+# Add funding.json to build folder
+@info "Copying over funding.json"
+cp("docs/src/funding.json", "docs/build/funding.json"; force = true)
+
 # Download logo
 # assets_dir = joinpath(outpath, "assets")
 # mkpath(assets_dir)
