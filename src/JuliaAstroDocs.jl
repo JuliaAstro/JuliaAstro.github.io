@@ -188,7 +188,7 @@ ecosystem() = (
                 doc = "https://xzackli.github.io/Bolt.jl/",
                 tagline = "Pure-Julia integrator for the Boltzmann equations in cosmology",
                 descr = """
-                - Computes accurate gradients of power spectra wrt. cosmological parameters using forward-mode automatic differentiation.
+                - In addition to integrating the cosmological Boltzmann equations, Bolt.jl can accurately compute the gradients of power spectra with respect to cosmological parameters using forward-mode automatic differentiation.
                 """,
                 astropy = [],
             ),
@@ -198,8 +198,8 @@ ecosystem() = (
                 doc = "https://github.com/hersle/CLASS.jl?tab=readme-ov-file#classjl",
                 tagline = "Julia wrapper for the cosmological Boltzmann solver [CLASS](http://class-code.net/)",
                 descr = """
-                - Lightweight problem/solution wrapper around CLASS' input/output files.
-                - Reads CLASS' output files to [DataFrames](https://github.com/JuliaData/DataFrames.jl).
+                - Lightweight problem/solution wrapper around CLASS input/output files.
+                - Reads CLASS output files to [DataFrames](https://github.com/JuliaData/DataFrames.jl).
                 """,
                 astropy = [],
             ),
