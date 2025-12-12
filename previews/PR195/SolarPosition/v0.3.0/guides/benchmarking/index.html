@@ -1,0 +1,406 @@
+<!DOCTYPE html><HTML lang="en"><head><script charset="utf-8" src="../../../../assets/default/multidoc_injector.js" type="text/javascript"></script><script charset="utf-8" type="text/javascript">window.MULTIDOCUMENTER_ROOT_PATH = '/'</script><script charset="utf-8" src="../../../../assets/default/flexsearch.bundle.js" type="text/javascript"></script><script charset="utf-8" src="../../../../assets/default/flexsearch_integration.js" type="text/javascript"></script><meta charset="UTF-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><title>Benchmarking · SolarPosition.jl</title><meta content="Benchmarking · SolarPosition.jl" name="title"/><meta content="Benchmarking · SolarPosition.jl" property="og:title"/><meta content="Benchmarking · SolarPosition.jl" property="twitter:title"/><meta content="Documentation for SolarPosition.jl." name="description"/><meta content="Documentation for SolarPosition.jl." property="og:description"/><meta content="Documentation for SolarPosition.jl." property="twitter:description"/><meta content="https://juliaastro.org/SolarPosition/stable/guides/benchmarking/" property="og:url"/><meta content="https://juliaastro.org/SolarPosition/stable/guides/benchmarking/" property="twitter:url"/><link href="https://JuliaAstro.org/SolarPosition/stable/guides/benchmarking/" rel="canonical"/><script data-outdated-warner="" src="../../assets/warner.js"></script><link href="https://cdnjs.cloudflare.com/ajax/libs/lato-font/3.0.0/css/lato-font.min.css" rel="stylesheet" type="text/css"/><link href="https://cdnjs.cloudflare.com/ajax/libs/juliamono/0.050/juliamono.min.css" rel="stylesheet" type="text/css"/><link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/fontawesome.min.css" rel="stylesheet" type="text/css"/><link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/solid.min.css" rel="stylesheet" type="text/css"/><link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/brands.min.css" rel="stylesheet" type="text/css"/><link href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.8/katex.min.css" rel="stylesheet" type="text/css"/><script>documenterBaseURL="../.."</script><script data-main="../../assets/documenter.js" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js"></script><script src="../../search_index.js"></script><script src="../../siteinfo.js"></script><script src="../../../versions.js"></script><link class="docs-theme-link" data-theme-name="catppuccin-mocha" href="../../assets/themes/catppuccin-mocha.css" rel="stylesheet" type="text/css"/><link class="docs-theme-link" data-theme-name="catppuccin-macchiato" href="../../assets/themes/catppuccin-macchiato.css" rel="stylesheet" type="text/css"/><link class="docs-theme-link" data-theme-name="catppuccin-frappe" href="../../assets/themes/catppuccin-frappe.css" rel="stylesheet" type="text/css"/><link class="docs-theme-link" data-theme-name="catppuccin-latte" href="../../assets/themes/catppuccin-latte.css" rel="stylesheet" type="text/css"/><link class="docs-theme-link" data-theme-name="documenter-dark" data-theme-primary-dark="" href="../../assets/themes/documenter-dark.css" rel="stylesheet" type="text/css"/><link class="docs-theme-link" data-theme-name="documenter-light" data-theme-primary="" href="../../assets/themes/documenter-light.css" rel="stylesheet" type="text/css"/><script src="../../assets/themeswap.js"></script><link href="../../../../assets/default/multidoc.css" rel="stylesheet" type="text/css"/><link href="../../../../assets/default/flexsearch.css" rel="stylesheet" type="text/css"/></head><body><nav id="multi-page-nav"><a class="brand" href="../../../.."><img alt="home" src="../../../../assets/logo.svg"/></a><div class="hidden-on-mobile" id="nav-items"><a class="nav-link nav-item" href="../../../../home/">Home</a><div class="nav-dropdown"><button class="nav-item dropdown-label">Domain</button><div class="nav-dropdown-container nav-mega-dropdown-container"><div class="nav-mega-column"><div class="column-header">Solar System</div><ul class="column-content"><a class="nav-link nav-item" href="../../../../CALCEPH/">⬤ CALCEPH</a><a class="nav-link nav-item" href="https://juliaastro.org/EphemerisSources.jl" target="_blank">⬤ EphemerisSources</a><a class="nav-link nav-item" href="https://juliaastro.org/GeneralAstrodynamics.jl" target="_blank">⬤ GeneralAstrodynamics</a><a class="nav-link nav-item" href="https://github.com/PerezHz/HORIZONS.jl?tab=readme-ov-file#horizonsjl" target="_blank">⬤ HORIZONS</a><a class="nav-link nav-item" href="https://juliaspace.github.io/SatelliteToolbox.jl/stable/" target="_blank">⬤ SatelliteToolbox</a><a class="nav-link active nav-item" href="../../../">⬤ SolarPosition</a><a class="nav-link nav-item" href="../../../../SPICE/">⬤ SPICE</a></ul></div><div class="nav-mega-column"><div class="column-header">Exoplanets</div><ul class="column-content"><a class="nav-link nav-item" href="http://JuliaHCI.github.io/ADI.jl/stable/" target="_blank">⬤ ADI</a><a class="nav-link nav-item" href="http://JuliaHCI.github.io/HCIToolbox.jl/stable/" target="_blank">⬤ HCIToolbox</a><a class="nav-link nav-item" href="../../../../Orbits/">⬤ Orbits</a><a class="nav-link nav-item" href="https://sefffal.github.io/PlanetOrbits.jl/dev/" target="_blank">⬤ PlanetOrbits</a><a class="nav-link nav-item" href="../../../../Transits/">⬤ Transits</a></ul></div><div class="nav-mega-column"><div class="column-header">Stars</div><ul class="column-content"><a class="nav-link nav-item" href="https://cgarling.github.io/BolometricCorrections.jl/stable/" target="_blank">⬤ BolometricCorrections</a><a class="nav-link nav-item" href="https://cgarling.github.io/InitialMassFunctions.jl/stable/" target="_blank">⬤ InitialMassFunctions</a><a class="nav-link nav-item" href="https://cgarling.github.io/StarFormationHistories.jl/stable/" target="_blank">⬤ StarFormationHistories</a></ul></div><div class="nav-mega-column"><div class="column-header">Galaxies and Cosmology</div><ul class="column-content"><a class="nav-link nav-item" href="https://xzackli.github.io/Bolt.jl/" target="_blank">⬤ Bolt</a><a class="nav-link nav-item" href="https://github.com/hersle/CLASS.jl?tab=readme-ov-file#classjl" target="_blank">⬤ CLASS</a><a class="nav-link nav-item" href="../../../../Cosmology/">⬤ Cosmology</a><a class="nav-link nav-item" href="../../../../DustExtinction/">⬤ DustExtinction</a><a class="nav-link nav-item" href="https://ehtjulia.github.io/ScatteringOptics.jl/stable/" target="_blank">⬤ ScatteringOptics</a><a class="nav-link nav-item" href="https://hersle.github.io/SymBoltz.jl/stable/" target="_blank">⬤ SymBoltz</a></ul></div></div></div><div class="nav-dropdown"><button class="nav-item dropdown-label">Techniques</button><div class="nav-dropdown-container nav-mega-dropdown-container"><div class="nav-mega-column"><div class="column-header">Photometry</div><ul class="column-content"><a class="nav-link nav-item" href="../../../../CCDReduction/">⬤ CCDReduction</a><a class="nav-link nav-item" href="../../../../LACosmic/">⬤ LACosmic</a><a class="nav-link nav-item" href="../../../../Photometry/">⬤ Photometry</a><a class="nav-link nav-item" href="../../../../PhotometricFilters/">⬤ PhotometricFilters</a><a class="nav-link nav-item" href="../../../../PSFModels/">⬤ PSFModels</a><a class="nav-link nav-item" href="../../../../SAOImageDS9/">⬤ SAOImageDS9</a></ul></div><div class="nav-mega-column"><div class="column-header">Astrometry</div><ul class="column-content"><a class="nav-link nav-item" href="https://barrettp.github.io/Astrometry/dev" target="_blank">⬤ Astrometry</a><a class="nav-link nav-item" href="../../../../AstroTime/">⬤ AstroTime</a><a class="nav-link nav-item" href="../../../../EarthOrientation/">⬤ EarthOrientation</a><a class="nav-link nav-item" href="../../../../ERFA/">◯ ERFA</a><a class="nav-link nav-item" href="../../../../Healpix/">⬤ Healpix</a><a class="nav-link nav-item" href="../../../../Reproject/">⬤ Reproject</a><a class="nav-link nav-item" href="../../../../SkyCoords/">⬤ SkyCoords</a><a class="nav-link nav-item" href="../../../../WCS/">◯ WCS</a></ul></div><div class="nav-mega-column"><div class="column-header">Spectroscopy</div><ul class="column-content"><a class="nav-link nav-item" href="https://ajwheeler.github.io/Korg.jl/stable/" target="_blank">⬤ Korg</a><a class="nav-link nav-item" href="../../../../Spectra/">⬤ Spectra</a><a class="nav-link nav-item" href="../../../../SpectralFitting/">⬤ SpectralFitting</a></ul></div><div class="nav-mega-column"><div class="column-header">Time Series Analysis</div><ul class="column-content"><a class="nav-link nav-item" href="https://docs.juliadsp.org/stable/" target="_blank">⬤ DSP</a><a class="nav-link nav-item" href="../../../../LombScargle/">⬤ LombScargle</a><a class="nav-link nav-item" href="https://juliastats.github.io/TimeSeries.jl/stable" target="_blank">⬤ TimeSeries</a></ul></div><div class="nav-mega-column"><div class="column-header">Interferometry</div><ul class="column-content"><a class="nav-link nav-item" href="https://ptiede.github.io/Comrade.jl/stable/" target="_blank">⬤ Comrade</a><a class="nav-link nav-item" href="https://aplavin.github.io/Difmap.jl/test/examples.html" target="_blank">⬤ Difmap</a><a class="nav-link nav-item" href="https://github.com/emmt/OIFITS.jl?tab=readme-ov-file#support-for-oi-fits-data-in-julia" target="_blank">⬤ OIFITS</a><a class="nav-link nav-item" href="https://fabienbaron.github.io/OITOOLS.jl/dev" target="_blank">⬤ OITOOLS</a><a class="nav-link nav-item" href="https://ehtjulia.github.io/PolarizedTypes.jl/stable/" target="_blank">⬤ PolarizedTypes</a><a class="nav-link nav-item" href="https://aplavin.github.io/VLBIData.jl/test/examples.html" target="_blank">⬤ VLBIData</a><a class="nav-link nav-item" href="https://ehtjulia.github.io/VLBISkyModels.jl/stable/" target="_blank">⬤ VLBISkyModels</a></ul></div></div></div><div class="nav-dropdown"><button class="nav-item dropdown-label">Statistics</button><div class="nav-dropdown-container nav-mega-dropdown-container"><div class="nav-mega-column"><div class="column-header">Uncertainty</div><ul class="column-content"><a class="nav-link nav-item" href="https://juliaphysics.github.io/Measurements.jl/stable/" target="_blank">⬤ Measurements</a><a class="nav-link nav-item" href="https://baggepinnen.github.io/MonteCarloMeasurements.jl/stable/" target="_blank">⬤ MonteCarloMeasurements</a><a class="nav-link nav-item" href="https://baggepinnen.github.io/MonteCarloMeasurements.jl/stable/" target="_blank">⬤ Uncertain</a></ul></div><div class="nav-mega-column"><div class="column-header">Optimization</div><ul class="column-content"><a class="nav-link nav-item" href="../../../../BoxLeastSquares/">⬤ BoxLeastSquares</a><a class="nav-link nav-item" href="http://jump.dev/JuMP.jl/" target="_blank">⬤ JuMP</a><a class="nav-link nav-item" href="https://docs.sciml.ai/NonlinearSolve/stable/" target="_blank">⬤ NonlinearSolve</a><a class="nav-link nav-item" href="https://docs.sciml.ai/Optimization/stable/" target="_blank">⬤ Optimization</a></ul></div><div class="nav-mega-column"><div class="column-header">General</div><ul class="column-content"><a class="nav-link nav-item" href="../../../../AstroLib/">⬤ AstroLib</a><a class="nav-link nav-item" href="http://mileslucas.com/BiweightStats.jl/stable/" target="_blank">⬤ BiweightStats</a><a class="nav-link nav-item" href="https://github.com/jeff-regier/Celeste.jl/wiki/" target="_blank">⬤ Celeste</a><a class="nav-link nav-item" href="https://juliastats.org/" target="_blank">⬤ JuliaStats</a><a class="nav-link nav-item" href="https://juliastats.github.io/Distributions.jl/stable/" target="_blank">⬤ Distributions</a><a class="nav-link nav-item" href="https://ehtjulia.github.io/FastHartleyTransform.jl/stable/" target="_blank">⬤ FastHartleyTransform</a><a class="nav-link nav-item" href="https://sefffal.github.io/Octofitter.jl/dev" target="_blank">⬤ Octofitter</a></ul></div></div></div><div class="nav-dropdown"><button class="nav-item dropdown-label">Utilities</button><div class="nav-dropdown-container nav-mega-dropdown-container"><div class="nav-mega-column"><div class="column-header">Data I/O</div><ul class="column-content"><a class="nav-link nav-item" href="../../../../ASDF2/">⬤ ASDF2</a><a class="nav-link nav-item" href="../../../../AstroImages/">⬤ AstroImages</a><a class="nav-link nav-item" href="../../../../CFITSIO/">◯ CFITSIO</a><a class="nav-link nav-item" href="https://emmt.github.io/EasyFITS.jl/dev" target="_blank">⬤ EasyFITS</a><a class="nav-link nav-item" href="../../../../FITSFiles/">⬤ FITSFiles</a><a class="nav-link nav-item" href="../../../../FITSIO/">◯ FITSIO</a><a class="nav-link nav-item" href="https://github.com/JuliaAPlavin/FixedWidthTables.jl?tab=readme-ov-file#fixedwidthtablesjl" target="_blank">⬤ FixedWidthTables</a><a class="nav-link nav-item" href="https://aplavin.github.io/SkyImages.jl/test/notebook.html" target="_blank">⬤ SkyImages</a><a class="nav-link nav-item" href="https://github.com/JuliaAPlavin/VirtualObservatory.jl?tab=readme-ov-file#virtualobservatoryjl" target="_blank">⬤ VirtualObservatory</a><a class="nav-link nav-item" href="https://github.com/JuliaAPlavin/VOTables.jl" target="_blank">⬤ VOTables</a><a class="nav-link nav-item" href="../../../../XPA/">⬤ XPA</a></ul></div><div class="nav-mega-column"><div class="column-header">Data processing</div><ul class="column-content"><a class="nav-link nav-item" href="../../../../Astroalign/">⬤ Astroalign</a><a class="nav-link nav-item" href="../../../../BackgroundMeshes/">⬤ BackgroundMeshes</a><a class="nav-link nav-item" href="https://github.com/torrance/Casacore.jl?tab=readme-ov-file#casacorejl" target="_blank">⬤ Casacore</a><a class="nav-link nav-item" href="https://dataframes.juliadata.org/stable/" target="_blank">⬤ DataFrames</a><a class="nav-link nav-item" href="https://rafaqz.github.io/DimensionalData.jl/stable/" target="_blank">⬤ DimensionalData</a><a class="nav-link nav-item" href="https://aplavin.github.io/FlexiJoins.jl/test/examples.html" target="_blank">⬤ FlexiJoins</a><a class="nav-link nav-item" href="https://github.com/gcalderone/SortMerge.jl?tab=readme-ov-file#sortmerge" target="_blank">⬤ SortMerge</a></ul></div><div class="nav-mega-column"><div class="column-header">Data Viz</div><ul class="column-content"><a class="nav-link nav-item" href="../../../../AstroImages/">⬤ AstroImages</a><a class="nav-link nav-item" href="https://juliaimages.github.io/ImageFiltering.jl/stable" target="_blank">⬤ ImageFiltering</a><a class="nav-link nav-item" href="https://manuelbehrendt.github.io/Mera.jl/stable/" target="_blank">⬤ Mera</a><a class="nav-link nav-item" href="https://sefffal.github.io/PairPlots.jl/dev/" target="_blank">⬤ PairPlots</a><a class="nav-link nav-item" href="https://aplavin.github.io/SkyImages.jl/test/notebook.html" target="_blank">⬤ SkyImages</a></ul></div><div class="nav-mega-column"><div class="column-header">Units/Constants</div><ul class="column-content"><a class="nav-link nav-item" href="../../../../AstroAngles/">⬤ AstroAngles</a><a class="nav-link nav-item" href="https://symbolicml.org/DynamicQuantities.jl/stable/" target="_blank">⬤ DynamicQuantities</a><a class="nav-link nav-item" href="https://juliaphysics.github.io/PhysicalConstants.jl/stable/" target="_blank">⬤ PhysicalConstants</a><a class="nav-link nav-item" href="https://painterqubits.github.io/Unitful.jl/stable" target="_blank">⬤ Unitful</a><a class="nav-link nav-item" href="../../../../UnitfulAstro/">⬤ UnitfulAstro</a></ul></div></div></div><div class="search nav-item"><input id="search-input" placeholder="Search everywhere..."/><ul class="suggestions hidden" id="search-result-container"></ul><div class="search-keybinding">/</div></div></div><button id="multidoc-toggler"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"></path></svg></button></nav><div id="documenter"><nav class="docs-sidebar"><div class="docs-package-name"><span class="docs-autofit"><a href="../../">SolarPosition.jl</a></span></div><button class="docs-search-query input is-rounded is-small is-clickable my-2 mx-auto py-1 px-2" id="documenter-search-query">Search docs (Ctrl + /)</button><ul class="docs-menu"><li><a class="tocitem" href="../../">Home</a></li><li><span class="tocitem">Guides</span><ul><li><a class="tocitem" href="../getting-started/">Getting Started</a></li><li><a class="tocitem" href="../plotting/">Plotting with Makie.jl</a></li><li><a class="tocitem" href="../parallel/">Parallel Computing with OhMyThreads.jl</a></li><li><a class="tocitem" href="../modelingtoolkit/">Building models with ModelingToolkit.jl</a></li><li class="is-active"><a class="tocitem" href="">Benchmarking</a><ul class="internal"><li><a class="tocitem" href="#Algorithm-Overview"><span>Algorithm Overview</span></a></li><li><a class="tocitem" href="#Accuracy-Analysis"><span>Accuracy Analysis</span></a></li><li><a class="tocitem" href="#Performance-Benchmarks"><span>Performance Benchmarks</span></a></li><li><a class="tocitem" href="#Comparison-with-solposx-(Python)"><span>Comparison with solposx (Python)</span></a></li></ul></li><li><a class="tocitem" href="../new-algorithm/">Adding a New Solar Position Algorithm</a></li></ul></li><li><a class="tocitem" href="../../reference/">API reference</a></li><li><a class="tocitem" href="../../positioning/">Solar Positioning</a></li><li><a class="tocitem" href="../../refraction/">Refraction Correction</a></li><li><a class="tocitem" href="../../deltat/">Delta T (ΔT)</a></li><li><a class="tocitem" href="../../literature/">Literature</a></li><li><a class="tocitem" href="../../contributing/">Contributing guidelines</a></li></ul><div class="docs-version-selector field has-addons"><div class="control"><span class="docs-label button is-static is-size-7">Version</span></div><div class="docs-selector control is-expanded"><div class="select is-fullwidth is-size-7"><select id="documenter-version-selector"></select></div></div></div></nav><div class="docs-main"><header class="docs-navbar"><a class="docs-sidebar-button docs-navbar-link fa-solid fa-bars is-hidden-desktop" href="#" id="documenter-sidebar-button"></a><nav class="breadcrumb"><ul class="is-hidden-mobile"><li><a class="is-disabled">Guides</a></li><li class="is-active"><a href="">Benchmarking</a></li></ul><ul class="is-hidden-tablet"><li class="is-active"><a href="">Benchmarking</a></li></ul></nav><div class="docs-right"><a class="docs-navbar-link" href="https://github.com/JuliaAstro/SolarPosition.jl" title="View the repository on GitHub"><span class="docs-icon fa-brands"></span><span class="docs-label is-hidden-touch">GitHub</span></a><a class="docs-navbar-link" href="https://github.com/JuliaAstro/SolarPosition.jl/blob/main/docs/src/guides/benchmarking.md" title="Edit source on GitHub"><span class="docs-icon fa-solid"></span></a><a class="docs-settings-button docs-navbar-link fa-solid fa-gear" href="#" id="documenter-settings-button" title="Settings"></a><a class="docs-article-toggle-button fa-solid fa-chevron-up" href="javascript:;" id="documenter-article-toggle-button" title="Collapse all docstrings"></a></div></header><article class="content" id="documenter-page"><h1 id="benchmarking"><a class="docs-heading-anchor" href="#benchmarking">Benchmarking</a><a id="benchmarking-1"></a><a class="docs-heading-anchor-permalink" href="#benchmarking" title="Permalink"></a></h1><p>This page provides comprehensive benchmarks of the solar position algorithms available in <code>SolarPosition.jl</code>, comparing their computational performance and accuracy. The <a href="../../positioning/#SolarPosition.Positioning.SPA">SPA</a> algorithm is used as the reference "gold standard" due to its high precision (±0.0003°).</p><pre><code class="language-julia hljs">using SolarPosition
+using CairoMakie
+using Dates
+using DataFrames
+using Statistics
+using BenchmarkTools</code></pre><h2 id="Algorithm-Overview"><a class="docs-heading-anchor" href="#Algorithm-Overview">Algorithm Overview</a><a id="Algorithm-Overview-1"></a><a class="docs-heading-anchor-permalink" href="#Algorithm-Overview" title="Permalink"></a></h2><p>SolarPosition.jl provides several solar positioning algorithms with different accuracy/performance trade-offs:</p><table><tbody><tr><th style="text-align: right">Algorithm</th><th style="text-align: right">Claimed Accuracy</th><th style="text-align: right">Complexity</th></tr><tr><td style="text-align: right"><a href="../../positioning/#SolarPosition.Positioning.SPA"><code>SPA</code></a></td><td style="text-align: right">±0.0003°</td><td style="text-align: right">High</td></tr><tr><td style="text-align: right"><a href="../../positioning/#SolarPosition.Positioning.PSA"><code>PSA</code></a></td><td style="text-align: right">±0.0083°</td><td style="text-align: right">Low</td></tr><tr><td style="text-align: right"><a href="../../positioning/#SolarPosition.Positioning.NOAA"><code>NOAA</code></a></td><td style="text-align: right">±0.0167°</td><td style="text-align: right">Low</td></tr><tr><td style="text-align: right"><a href="../../positioning/#SolarPosition.Positioning.Walraven"><code>Walraven</code></a></td><td style="text-align: right">±0.0100°</td><td style="text-align: right">Low</td></tr><tr><td style="text-align: right"><a href="../../positioning/#SolarPosition.Positioning.USNO"><code>USNO</code></a></td><td style="text-align: right">±0.0500°</td><td style="text-align: right">Low</td></tr></tbody></table><h2 id="Accuracy-Analysis"><a class="docs-heading-anchor" href="#Accuracy-Analysis">Accuracy Analysis</a><a id="Accuracy-Analysis-1"></a><a class="docs-heading-anchor-permalink" href="#Accuracy-Analysis" title="Permalink"></a></h2><p>To evaluate accuracy, we compare each algorithm against SPA across a full year of hourly timestamps at various geographic locations.</p><pre><code class="language-julia hljs"># Test locations representing different latitudes
+locations = [
+    (name = "Equator", obs = Observer(0.0, 0.0, 0.0)),
+    (name = "Mid-latitude (London)", obs = Observer(51.5074, -0.1278, 11.0)),
+    (name = "High-latitude (Oslo)", obs = Observer(59.9139, 10.7522, 23.0)),
+    (name = "Southern hemisphere (Sydney)", obs = Observer(-33.8688, 151.2093, 58.0)),
+]
+
+# Generate hourly timestamps for a full year
+times = collect(DateTime(2024, 1, 1):Hour(1):DateTime(2024, 12, 31, 23))
+println("Testing with $(length(times)) timestamps per location")</code></pre><pre class="documenter-example-output"><code class="nohighlight hljs ansi">Testing with 8784 timestamps per location</code></pre><details class="admonition is-details" id="Accuracy-comparison-5ce135969daf7bfb"><summary class="admonition-header">Accuracy comparison<a class="admonition-anchor" href="#Accuracy-comparison-5ce135969daf7bfb" title="Permalink"></a></summary><div class="admonition-body"><pre><code class="language-julia hljs">using Statistics: quantile
+
+"""
+Compare algorithm accuracy against SPA reference.
+Returns DataFrame with error statistics including percentiles.
+"""
+function compare_accuracy(obs::Observer, times::Vector{DateTime}, algo)
+    # Get SPA reference positions
+    spa_pos = solar_position(obs, times, SPA())
+
+    # Get algorithm positions
+    algo_pos = solar_position(obs, times, algo)
+
+    # Calculate errors for all positions
+    elev_errors = abs.(algo_pos.elevation .- spa_pos.elevation)
+    azim_errors = abs.(algo_pos.azimuth .- spa_pos.azimuth)
+
+    # Handle azimuth wraparound (0° and 360° are the same)
+    azim_errors = min.(azim_errors, 360.0 .- azim_errors)
+
+    return (
+        elevation_mean = mean(elev_errors),
+        elevation_p2_5 = quantile(elev_errors, 0.025),
+        elevation_p97_5 = quantile(elev_errors, 0.975),
+        elevation_max = maximum(elev_errors),
+        azimuth_mean = mean(azim_errors),
+        azimuth_p2_5 = quantile(azim_errors, 0.025),
+        azimuth_p97_5 = quantile(azim_errors, 0.975),
+        azimuth_max = maximum(azim_errors),
+        n_samples = length(times),
+    )
+end</code></pre></div></details><details class="admonition is-details" id="Data-collection-d42e2efdd2d8cd27"><summary class="admonition-header">Data collection<a class="admonition-anchor" href="#Data-collection-d42e2efdd2d8cd27" title="Permalink"></a></summary><div class="admonition-body"><pre><code class="language-julia hljs"># Algorithms to compare (excluding SPA which is the reference)
+algorithms = [
+    ("PSA", PSA()),
+    ("NOAA", NOAA()),
+    ("Walraven", Walraven()),
+    ("USNO", USNO()),
+]
+
+# Collect accuracy data
+accuracy_results = DataFrame(
+    Algorithm = String[],
+    Location = String[],
+    Elevation_Mean_Error = Float64[],
+    Elevation_P2_5 = Float64[],
+    Elevation_P97_5 = Float64[],
+    Elevation_Max_Error = Float64[],
+    Azimuth_Mean_Error = Float64[],
+    Azimuth_P2_5 = Float64[],
+    Azimuth_P97_5 = Float64[],
+    Azimuth_Max_Error = Float64[],
+)
+
+for (algo_name, algo) in algorithms
+    for loc in locations
+        stats = compare_accuracy(loc.obs, times, algo)
+        push!(accuracy_results, (
+            Algorithm = algo_name,
+            Location = loc.name,
+            Elevation_Mean_Error = stats.elevation_mean,
+            Elevation_P2_5 = stats.elevation_p2_5,
+            Elevation_P97_5 = stats.elevation_p97_5,
+            Elevation_Max_Error = stats.elevation_max,
+            Azimuth_Mean_Error = stats.azimuth_mean,
+            Azimuth_P2_5 = stats.azimuth_p2_5,
+            Azimuth_P97_5 = stats.azimuth_p97_5,
+            Azimuth_Max_Error = stats.azimuth_max,
+        ))
+    end
+end
+
+accuracy_results</code></pre><div><div style="float: left;"><span>16×10 DataFrame</span></div><div style="clear: both;"></div></div><div class="data-frame" style="overflow-x: scroll;"><table class="data-frame" style="margin-bottom: 6px;"><thead><tr class="columnLabelRow"><th class="stubheadLabel" style="font-weight: bold; text-align: right;">Row</th><th style="text-align: left;">Algorithm</th><th style="text-align: left;">Location</th><th style="text-align: left;">Elevation_Mean_Error</th><th style="text-align: left;">Elevation_P2_5</th><th style="text-align: left;">Elevation_P97_5</th><th style="text-align: left;">Elevation_Max_Error</th><th style="text-align: left;">Azimuth_Mean_Error</th><th style="text-align: left;">Azimuth_P2_5</th><th style="text-align: left;">Azimuth_P97_5</th><th style="text-align: left;">Azimuth_Max_Error</th></tr><tr class="columnLabelRow"><th class="stubheadLabel" style="font-weight: bold; text-align: right;"></th><th style="text-align: left;" title="String">String</th><th style="text-align: left;" title="String">String</th><th style="text-align: left;" title="Float64">Float64</th><th style="text-align: left;" title="Float64">Float64</th><th style="text-align: left;" title="Float64">Float64</th><th style="text-align: left;" title="Float64">Float64</th><th style="text-align: left;" title="Float64">Float64</th><th style="text-align: left;" title="Float64">Float64</th><th style="text-align: left;" title="Float64">Float64</th><th style="text-align: left;" title="Float64">Float64</th></tr></thead><tbody><tr class="dataRow"><td class="rowLabel" style="font-weight: bold; text-align: right;">1</td><td style="text-align: left;">PSA</td><td style="text-align: left;">Equator</td><td style="text-align: right;">0.00121745</td><td style="text-align: right;">4.46789e-5</td><td style="text-align: right;">0.00334261</td><td style="text-align: right;">0.0038712</td><td style="text-align: right;">0.00157786</td><td style="text-align: right;">2.61068e-5</td><td style="text-align: right;">0.00831938</td><td style="text-align: right;">0.0681224</td></tr><tr class="dataRow"><td class="rowLabel" style="font-weight: bold; text-align: right;">2</td><td style="text-align: left;">PSA</td><td style="text-align: left;">Mid-latitude (London)</td><td style="text-align: right;">0.000689003</td><td style="text-align: right;">1.86942e-5</td><td style="text-align: right;">0.00252155</td><td style="text-align: right;">0.003289</td><td style="text-align: right;">0.00145074</td><td style="text-align: right;">6.2594e-5</td><td style="text-align: right;">0.00408151</td><td style="text-align: right;">0.00666008</td></tr><tr class="dataRow"><td class="rowLabel" style="font-weight: bold; text-align: right;">3</td><td style="text-align: left;">PSA</td><td style="text-align: left;">High-latitude (Oslo)</td><td style="text-align: right;">0.000581013</td><td style="text-align: right;">1.91489e-5</td><td style="text-align: right;">0.0022497</td><td style="text-align: right;">0.00295758</td><td style="text-align: right;">0.00144994</td><td style="text-align: right;">6.91808e-5</td><td style="text-align: right;">0.00382428</td><td style="text-align: right;">0.00551483</td></tr><tr class="dataRow"><td class="rowLabel" style="font-weight: bold; text-align: right;">4</td><td style="text-align: left;">PSA</td><td style="text-align: left;">Southern hemisphere (Sydney)</td><td style="text-align: right;">0.000940508</td><td style="text-align: right;">3.10488e-5</td><td style="text-align: right;">0.00299724</td><td style="text-align: right;">0.00378125</td><td style="text-align: right;">0.0014582</td><td style="text-align: right;">4.02358e-5</td><td style="text-align: right;">0.00560808</td><td style="text-align: right;">0.0142766</td></tr><tr class="dataRow"><td class="rowLabel" style="font-weight: bold; text-align: right;">5</td><td style="text-align: left;">NOAA</td><td style="text-align: left;">Equator</td><td style="text-align: right;">0.00371466</td><td style="text-align: right;">0.000131678</td><td style="text-align: right;">0.0109585</td><td style="text-align: right;">0.0128709</td><td style="text-align: right;">0.00406937</td><td style="text-align: right;">4.94055e-5</td><td style="text-align: right;">0.0247847</td><td style="text-align: right;">0.157852</td></tr><tr class="dataRow"><td class="rowLabel" style="font-weight: bold; text-align: right;">6</td><td style="text-align: left;">NOAA</td><td style="text-align: left;">Mid-latitude (London)</td><td style="text-align: right;">0.00274283</td><td style="text-align: right;">0.000166422</td><td style="text-align: right;">0.00698196</td><td style="text-align: right;">0.00998113</td><td style="text-align: right;">0.00401022</td><td style="text-align: right;">0.000126333</td><td style="text-align: right;">0.0118543</td><td style="text-align: right;">0.0175856</td></tr><tr class="dataRow"><td class="rowLabel" style="font-weight: bold; text-align: right;">7</td><td style="text-align: left;">NOAA</td><td style="text-align: left;">High-latitude (Oslo)</td><td style="text-align: right;">0.00258248</td><td style="text-align: right;">0.000203615</td><td style="text-align: right;">0.00607827</td><td style="text-align: right;">0.00882385</td><td style="text-align: right;">0.0040052</td><td style="text-align: right;">0.000137447</td><td style="text-align: right;">0.0109518</td><td style="text-align: right;">0.0149296</td></tr><tr class="dataRow"><td class="rowLabel" style="font-weight: bold; text-align: right;">8</td><td style="text-align: left;">NOAA</td><td style="text-align: left;">Southern hemisphere (Sydney)</td><td style="text-align: right;">0.00303157</td><td style="text-align: right;">0.00012467</td><td style="text-align: right;">0.00930871</td><td style="text-align: right;">0.012174</td><td style="text-align: right;">0.00404034</td><td style="text-align: right;">9.39007e-5</td><td style="text-align: right;">0.0159962</td><td style="text-align: right;">0.0392285</td></tr><tr class="dataRow"><td class="rowLabel" style="font-weight: bold; text-align: right;">9</td><td style="text-align: left;">Walraven</td><td style="text-align: left;">Equator</td><td style="text-align: right;">0.00292731</td><td style="text-align: right;">0.000122914</td><td style="text-align: right;">0.00706936</td><td style="text-align: right;">0.00835027</td><td style="text-align: right;">0.0053801</td><td style="text-align: right;">0.000219938</td><td style="text-align: right;">0.018372</td><td style="text-align: right;">0.133819</td></tr><tr class="dataRow"><td class="rowLabel" style="font-weight: bold; text-align: right;">10</td><td style="text-align: left;">Walraven</td><td style="text-align: left;">Mid-latitude (London)</td><td style="text-align: right;">0.00295305</td><td style="text-align: right;">9.02431e-5</td><td style="text-align: right;">0.00783931</td><td style="text-align: right;">0.00908632</td><td style="text-align: right;">0.00314946</td><td style="text-align: right;">0.00014002</td><td style="text-align: right;">0.0077489</td><td style="text-align: right;">0.0113622</td></tr><tr class="dataRow"><td class="rowLabel" style="font-weight: bold; text-align: right;">11</td><td style="text-align: left;">Walraven</td><td style="text-align: left;">High-latitude (Oslo)</td><td style="text-align: right;">0.00296743</td><td style="text-align: right;">9.30684e-5</td><td style="text-align: right;">0.00772813</td><td style="text-align: right;">0.00896714</td><td style="text-align: right;">0.00305173</td><td style="text-align: right;">0.000160852</td><td style="text-align: right;">0.00676189</td><td style="text-align: right;">0.00926879</td></tr><tr class="dataRow"><td class="rowLabel" style="font-weight: bold; text-align: right;">12</td><td style="text-align: left;">Walraven</td><td style="text-align: left;">Southern hemisphere (Sydney)</td><td style="text-align: right;">0.00304675</td><td style="text-align: right;">0.000163423</td><td style="text-align: right;">0.00714855</td><td style="text-align: right;">0.00809611</td><td style="text-align: right;">0.00369838</td><td style="text-align: right;">0.000183722</td><td style="text-align: right;">0.0118405</td><td style="text-align: right;">0.029953</td></tr><tr class="dataRow"><td class="rowLabel" style="font-weight: bold; text-align: right;">13</td><td style="text-align: left;">USNO</td><td style="text-align: left;">Equator</td><td style="text-align: right;">0.00251801</td><td style="text-align: right;">0.000120657</td><td style="text-align: right;">0.00681849</td><td style="text-align: right;">0.00853729</td><td style="text-align: right;">0.00352438</td><td style="text-align: right;">0.000150705</td><td style="text-align: right;">0.0136207</td><td style="text-align: right;">0.0714088</td></tr><tr class="dataRow"><td class="rowLabel" style="font-weight: bold; text-align: right;">14</td><td style="text-align: left;">USNO</td><td style="text-align: left;">Mid-latitude (London)</td><td style="text-align: right;">0.00268801</td><td style="text-align: right;">8.72288e-5</td><td style="text-align: right;">0.00658313</td><td style="text-align: right;">0.00795245</td><td style="text-align: right;">0.00238829</td><td style="text-align: right;">9.20632e-5</td><td style="text-align: right;">0.00663273</td><td style="text-align: right;">0.00976728</td></tr><tr class="dataRow"><td class="rowLabel" style="font-weight: bold; text-align: right;">15</td><td style="text-align: left;">USNO</td><td style="text-align: left;">High-latitude (Oslo)</td><td style="text-align: right;">0.00274458</td><td style="text-align: right;">9.02397e-5</td><td style="text-align: right;">0.00634479</td><td style="text-align: right;">0.00760349</td><td style="text-align: right;">0.00228672</td><td style="text-align: right;">9.7486e-5</td><td style="text-align: right;">0.00613286</td><td style="text-align: right;">0.00820491</td></tr><tr class="dataRow"><td class="rowLabel" style="font-weight: bold; text-align: right;">16</td><td style="text-align: left;">USNO</td><td style="text-align: left;">Southern hemisphere (Sydney)</td><td style="text-align: right;">0.00231139</td><td style="text-align: right;">7.92274e-5</td><td style="text-align: right;">0.00570601</td><td style="text-align: right;">0.00721132</td><td style="text-align: right;">0.00283971</td><td style="text-align: right;">0.000130919</td><td style="text-align: right;">0.00969949</td><td style="text-align: right;">0.0199054</td></tr></tbody></table></div></div></details><h3 id="Accuracy-Visualization"><a class="docs-heading-anchor" href="#Accuracy-Visualization">Accuracy Visualization</a><a id="Accuracy-Visualization-1"></a><a class="docs-heading-anchor-permalink" href="#Accuracy-Visualization" title="Permalink"></a></h3><p>The following plots show the mean error with 95% confidence intervals (2.5th to 97.5th percentile) for each algorithm compared to SPA.</p><details class="admonition is-details" id="Accuracy-visualization-c703b8a44a47071e"><summary class="admonition-header">Accuracy visualization<a class="admonition-anchor" href="#Accuracy-visualization-c703b8a44a47071e" title="Permalink"></a></summary><div class="admonition-body"><pre><code class="language-julia hljs"># Aggregate results by algorithm (mean across all locations)
+algo_stats = combine(
+    groupby(accuracy_results, :Algorithm),
+    :Elevation_Mean_Error =&gt; mean =&gt; :Elev_Mean,
+    :Elevation_P2_5 =&gt; mean =&gt; :Elev_P2_5,
+    :Elevation_P97_5 =&gt; mean =&gt; :Elev_P97_5,
+    :Azimuth_Mean_Error =&gt; mean =&gt; :Azim_Mean,
+    :Azimuth_P2_5 =&gt; mean =&gt; :Azim_P2_5,
+    :Azimuth_P97_5 =&gt; mean =&gt; :Azim_P97_5,
+)
+
+# Sort by algorithm order
+algo_order = ["PSA", "NOAA", "Walraven", "USNO"]
+algo_stats = algo_stats[sortperm([findfirst(==(algo), algo_order) for algo in algo_stats.Algorithm]), :]
+
+fig = Figure(size = (900, 400), backgroundcolor = :transparent, fontsize = 12, textcolor = "#f5ab35")
+
+# Elevation error plot with error bars
+ax1 = Axis(fig[1, 1],
+    title = "Elevation Error vs SPA (95% CI)",
+    xlabel = "Algorithm",
+    ylabel = "Error (degrees)",
+    xticks = (1:4, algo_stats.Algorithm),
+    backgroundcolor = :transparent,
+)
+
+# Error bars showing 95% interval
+errorbars!(ax1, 1:4, algo_stats.Elev_Mean,
+    algo_stats.Elev_Mean .- algo_stats.Elev_P2_5,
+    algo_stats.Elev_P97_5 .- algo_stats.Elev_Mean,
+    color = :steelblue, linewidth = 2, whiskerwidth = 10)
+scatter!(ax1, 1:4, algo_stats.Elev_Mean, color = :steelblue, markersize = 12)
+
+# Azimuth error plot with error bars
+ax2 = Axis(fig[1, 2],
+    title = "Azimuth Error vs SPA (95% CI)",
+    xlabel = "Algorithm",
+    ylabel = "Error (degrees)",
+    xticks = (1:4, algo_stats.Algorithm),
+    backgroundcolor = :transparent,
+)
+
+errorbars!(ax2, 1:4, algo_stats.Azim_Mean,
+    algo_stats.Azim_Mean .- algo_stats.Azim_P2_5,
+    algo_stats.Azim_P97_5 .- algo_stats.Azim_Mean,
+    color = :coral, linewidth = 2, whiskerwidth = 10)
+scatter!(ax2, 1:4, algo_stats.Azim_Mean, color = :coral, markersize = 12)</code></pre></div></details><img alt="Example block output" src="c0b43d95.png"/><h3 id="PSA-Error-Over-Time"><a class="docs-heading-anchor" href="#PSA-Error-Over-Time">PSA Error Over Time</a><a id="PSA-Error-Over-Time-1"></a><a class="docs-heading-anchor-permalink" href="#PSA-Error-Over-Time" title="Permalink"></a></h3><p>To better understand how errors vary throughout the year, we compare the PSA algorithm against SPA at hourly resolution for a full year at a single location.</p><pre><code class="language-julia hljs"># Generate hourly timestamps for a full year (reduces memory usage vs minute resolution)
+hourly_times = collect(DateTime(2024, 1, 1):Hour(1):DateTime(2024, 12, 31, 23))
+obs_london = Observer(51.5074, -0.1278, 11.0)
+
+# Calculate positions
+spa_positions = solar_position(obs_london, hourly_times, SPA())
+psa_positions = solar_position(obs_london, hourly_times, PSA())
+
+# Calculate errors
+elev_errors = psa_positions.elevation .- spa_positions.elevation
+azim_errors = psa_positions.azimuth .- spa_positions.azimuth
+
+# Handle azimuth wraparound
+azim_errors = [abs(e) &gt; 180 ? e - sign(e) * 360 : e for e in azim_errors]
+
+println("PSA vs SPA at hourly resolution ($(length(hourly_times)) samples):")
+println("  Elevation: mean=$(round(mean(abs.(elev_errors)), digits=6))°, max=$(round(maximum(abs.(elev_errors)), digits=4))°")
+println("  Azimuth: mean=$(round(mean(abs.(azim_errors)), digits=6))°, max=$(round(maximum(abs.(azim_errors)), digits=4))°")</code></pre><pre class="documenter-example-output"><code class="nohighlight hljs ansi">PSA vs SPA at hourly resolution (8784 samples):
+  Elevation: mean=0.000689°, max=0.0033°
+  Azimuth: mean=0.001451°, max=0.0067°</code></pre><details class="admonition is-details" id="PSA-error-visualization-6da1561cdf3a9016"><summary class="admonition-header">PSA error visualization<a class="admonition-anchor" href="#PSA-error-visualization-6da1561cdf3a9016" title="Permalink"></a></summary><div class="admonition-body"><pre><code class="language-julia hljs">fig_err = Figure(size = (900, 500), backgroundcolor = :transparent, fontsize = 12, textcolor = "#f5ab35")
+
+# Convert to day of year for x-axis
+day_of_year = [Dates.dayofyear(t) for t in hourly_times]
+
+ax1 = Axis(fig_err[1, 1],
+    title = "PSA Elevation Error vs SPA (2024, London)",
+    xlabel = "Day of Year",
+    ylabel = "Error (degrees)",
+    backgroundcolor = :transparent,
+)
+scatter!(ax1, day_of_year, elev_errors, markersize = 1.5, color = (:steelblue, 0.5))
+hlines!(ax1, [0.0], color = :gray, linestyle = :dash)
+
+ax2 = Axis(fig_err[2, 1],
+    title = "PSA Azimuth Error vs SPA (2024, London)",
+    xlabel = "Day of Year",
+    ylabel = "Error (degrees)",
+    backgroundcolor = :transparent,
+)
+scatter!(ax2, day_of_year, azim_errors, markersize = 1.5, color = (:coral, 0.5))
+hlines!(ax2, [0.0], color = :gray, linestyle = :dash)</code></pre></div></details><img alt="Example block output" src="f375b35b.png"/><h3 id="Error-Distribution-by-Location"><a class="docs-heading-anchor" href="#Error-Distribution-by-Location">Error Distribution by Location</a><a id="Error-Distribution-by-Location-1"></a><a class="docs-heading-anchor-permalink" href="#Error-Distribution-by-Location" title="Permalink"></a></h3><details class="admonition is-details" id="Error-distribution-visualization-463b040b2740da6f"><summary class="admonition-header">Error distribution visualization<a class="admonition-anchor" href="#Error-distribution-visualization-463b040b2740da6f" title="Permalink"></a></summary><div class="admonition-body"><pre><code class="language-julia hljs">fig2 = Figure(size = (900, 500), backgroundcolor = :transparent, fontsize = 11, textcolor = "#f5ab35")
+
+for (i, loc) in enumerate(locations)
+    row = (i - 1) ÷ 2 + 1
+    col = (i - 1) % 2 + 1
+
+    ax = Axis(fig2[row, col],
+        title = loc.name,
+        xlabel = "Algorithm",
+        ylabel = "Mean Elevation Error (°)",
+        xticks = (1:4, [a[1] for a in algorithms]),
+        backgroundcolor = :transparent,
+    )
+
+    loc_data = filter(r -&gt; r.Location == loc.name, accuracy_results)
+    barplot!(ax, 1:4, loc_data.Elevation_Mean_Error, color = :teal)
+end
+
+Label(fig2[0, :], "Elevation Error by Location", fontsize = 14, font = :bold)</code></pre></div></details><img alt="Example block output" src="47a6baff.png"/><h2 id="Performance-Benchmarks"><a class="docs-heading-anchor" href="#Performance-Benchmarks">Performance Benchmarks</a><a id="Performance-Benchmarks-1"></a><a class="docs-heading-anchor-permalink" href="#Performance-Benchmarks" title="Permalink"></a></h2><p>We benchmark the computational performance of each algorithm across different input sizes, from single timestamp calculations to bulk operations with 100,000 timestamps.</p><details class="admonition is-details" id="Single-benchmark-49a16178c1b1537a"><summary class="admonition-header">Single benchmark<a class="admonition-anchor" href="#Single-benchmark-49a16178c1b1537a" title="Permalink"></a></summary><div class="admonition-body"><pre><code class="language-julia hljs"># Single position benchmarks
+obs = Observer(51.5074, -0.1278, 11.0)  # London
+dt = DateTime(2024, 6, 21, 12, 0, 0)
+
+single_benchmarks = DataFrame(
+    Algorithm = String[],
+    Time_ns = Float64[],
+    Allocations = Int[],
+)
+
+for (name, algo) in [("PSA", PSA()), ("NOAA", NOAA()), ("Walraven", Walraven()),
+                      ("USNO", USNO()), ("SPA", SPA())]
+    b = @benchmark solar_position($obs, $dt, $algo) samples=100 evals=10
+    push!(single_benchmarks, (
+        Algorithm = name,
+        Time_ns = median(b.times),
+        Allocations = b.allocs,
+    ))
+end
+
+# Add relative timing
+single_benchmarks.Time_μs = single_benchmarks.Time_ns ./ 1000
+spa_time = filter(row -&gt; row.Algorithm == "SPA", single_benchmarks).Time_ns[1]
+single_benchmarks.Relative_to_SPA = single_benchmarks.Time_ns ./ spa_time
+
+single_benchmarks[:, [:Algorithm, :Time_μs, :Allocations, :Relative_to_SPA]]</code></pre><div><div style="float: left;"><span>5×4 DataFrame</span></div><div style="clear: both;"></div></div><div class="data-frame" style="overflow-x: scroll;"><table class="data-frame" style="margin-bottom: 6px;"><thead><tr class="columnLabelRow"><th class="stubheadLabel" style="font-weight: bold; text-align: right;">Row</th><th style="text-align: left;">Algorithm</th><th style="text-align: left;">Time_μs</th><th style="text-align: left;">Allocations</th><th style="text-align: left;">Relative_to_SPA</th></tr><tr class="columnLabelRow"><th class="stubheadLabel" style="font-weight: bold; text-align: right;"></th><th style="text-align: left;" title="String">String</th><th style="text-align: left;" title="Float64">Float64</th><th style="text-align: left;" title="Int64">Int64</th><th style="text-align: left;" title="Float64">Float64</th></tr></thead><tbody><tr class="dataRow"><td class="rowLabel" style="font-weight: bold; text-align: right;">1</td><td style="text-align: left;">PSA</td><td style="text-align: right;">0.1633</td><td style="text-align: right;">0</td><td style="text-align: right;">0.0553466</td></tr><tr class="dataRow"><td class="rowLabel" style="font-weight: bold; text-align: right;">2</td><td style="text-align: left;">NOAA</td><td style="text-align: right;">0.4138</td><td style="text-align: right;">0</td><td style="text-align: right;">0.140247</td></tr><tr class="dataRow"><td class="rowLabel" style="font-weight: bold; text-align: right;">3</td><td style="text-align: left;">Walraven</td><td style="text-align: right;">0.1954</td><td style="text-align: right;">0</td><td style="text-align: right;">0.0662261</td></tr><tr class="dataRow"><td class="rowLabel" style="font-weight: bold; text-align: right;">4</td><td style="text-align: left;">USNO</td><td style="text-align: right;">0.3807</td><td style="text-align: right;">0</td><td style="text-align: right;">0.129029</td></tr><tr class="dataRow"><td class="rowLabel" style="font-weight: bold; text-align: right;">5</td><td style="text-align: left;">SPA</td><td style="text-align: right;">2.9505</td><td style="text-align: right;">0</td><td style="text-align: right;">1.0</td></tr></tbody></table></div></div></details><details class="admonition is-details" id="Vector-benchmark-b661523f0a291420"><summary class="admonition-header">Vector benchmark<a class="admonition-anchor" href="#Vector-benchmark-b661523f0a291420" title="Permalink"></a></summary><div class="admonition-body"><pre><code class="language-julia hljs"># Vector benchmarks for different sizes
+sizes = [100, 1_000, 10_000, 100_000]
+
+vector_benchmarks = DataFrame(
+    Algorithm = String[],
+    N = Int[],
+    Time_ms = Float64[],
+    Throughput = Float64[],  # positions per second
+)
+
+for n in sizes
+    times_vec = collect(DateTime(2024, 1, 1):Hour(1):(DateTime(2024, 1, 1) + Hour(n-1)))
+
+    for (name, algo) in [("PSA", PSA()), ("NOAA", NOAA()), ("Walraven", Walraven()),
+                          ("USNO", USNO()), ("SPA", SPA())]
+        b = @benchmark solar_position($obs, $times_vec, $algo) samples=10 evals=1
+        time_ms = median(b.times) / 1e6
+        push!(vector_benchmarks, (
+            Algorithm = name,
+            N = n,
+            Time_ms = time_ms,
+            Throughput = n / (time_ms / 1000),
+        ))
+    end
+end
+
+# Pivot for display
+vector_pivot = unstack(vector_benchmarks, :Algorithm, :N, :Time_ms)
+vector_pivot</code></pre><div><div style="float: left;"><span>5×5 DataFrame</span></div><div style="clear: both;"></div></div><div class="data-frame" style="overflow-x: scroll;"><table class="data-frame" style="margin-bottom: 6px;"><thead><tr class="columnLabelRow"><th class="stubheadLabel" style="font-weight: bold; text-align: right;">Row</th><th style="text-align: left;">Algorithm</th><th style="text-align: left;">100</th><th style="text-align: left;">1000</th><th style="text-align: left;">10000</th><th style="text-align: left;">100000</th></tr><tr class="columnLabelRow"><th class="stubheadLabel" style="font-weight: bold; text-align: right;"></th><th style="text-align: left;" title="String">String</th><th style="text-align: left;" title="Union{Missing, Float64}">Float64?</th><th style="text-align: left;" title="Union{Missing, Float64}">Float64?</th><th style="text-align: left;" title="Union{Missing, Float64}">Float64?</th><th style="text-align: left;" title="Union{Missing, Float64}">Float64?</th></tr></thead><tbody><tr class="dataRow"><td class="rowLabel" style="font-weight: bold; text-align: right;">1</td><td style="text-align: left;">PSA</td><td style="text-align: right;">0.016972</td><td style="text-align: right;">0.167457</td><td style="text-align: right;">1.70288</td><td style="text-align: right;">17.0643</td></tr><tr class="dataRow"><td class="rowLabel" style="font-weight: bold; text-align: right;">2</td><td style="text-align: left;">NOAA</td><td style="text-align: right;">0.042894</td><td style="text-align: right;">0.41916</td><td style="text-align: right;">4.19889</td><td style="text-align: right;">42.7756</td></tr><tr class="dataRow"><td class="rowLabel" style="font-weight: bold; text-align: right;">3</td><td style="text-align: left;">Walraven</td><td style="text-align: right;">0.0196065</td><td style="text-align: right;">0.194467</td><td style="text-align: right;">1.97723</td><td style="text-align: right;">19.8448</td></tr><tr class="dataRow"><td class="rowLabel" style="font-weight: bold; text-align: right;">4</td><td style="text-align: left;">USNO</td><td style="text-align: right;">0.039038</td><td style="text-align: right;">0.376936</td><td style="text-align: right;">3.82641</td><td style="text-align: right;">38.5104</td></tr><tr class="dataRow"><td class="rowLabel" style="font-weight: bold; text-align: right;">5</td><td style="text-align: left;">SPA</td><td style="text-align: right;">0.303214</td><td style="text-align: right;">3.06786</td><td style="text-align: right;">30.949</td><td style="text-align: right;">310.511</td></tr></tbody></table></div></div></details><h3 id="Performance-Visualization"><a class="docs-heading-anchor" href="#Performance-Visualization">Performance Visualization</a><a id="Performance-Visualization-1"></a><a class="docs-heading-anchor-permalink" href="#Performance-Visualization" title="Permalink"></a></h3><details class="admonition is-details" id="Performance-visualization-fb667b94e60bcd7d"><summary class="admonition-header">Performance visualization<a class="admonition-anchor" href="#Performance-visualization-fb667b94e60bcd7d" title="Permalink"></a></summary><div class="admonition-body"><pre><code class="language-julia hljs">fig3 = Figure(size = (900, 400), backgroundcolor = :transparent, fontsize = 12, textcolor = "#f5ab35")
+
+# Scaling plot (log-log)
+ax1 = Axis(fig3[1, 1],
+    title = "Computation Time vs Input Size",
+    xlabel = "Number of Timestamps",
+    ylabel = "Time (ms)",
+    xscale = log10,
+    yscale = log10,
+    backgroundcolor = :transparent,
+)
+
+colors = [:blue, :orange, :green, :purple, :red]
+algo_names = ["PSA", "NOAA", "Walraven", "USNO", "SPA"]
+
+for (i, algo) in enumerate(algo_names)
+    data = filter(r -&gt; r.Algorithm == algo, vector_benchmarks)
+    lines!(ax1, data.N, data.Time_ms, label = algo, color = colors[i], linewidth = 2)
+    scatter!(ax1, data.N, data.Time_ms, color = colors[i], markersize = 8)
+end
+axislegend(ax1, position = :rb, framevisible = false, labelsize = 10)
+
+# Throughput plot
+ax2 = Axis(fig3[1, 2],
+    title = "Throughput at N=100,000",
+    xlabel = "Algorithm",
+    ylabel = "Positions per Second",
+    xticks = (1:5, algo_names),
+    backgroundcolor = :transparent,
+)
+
+throughput_100k = filter(r -&gt; r.N == 100_000, vector_benchmarks)
+barplot!(ax2, 1:5, throughput_100k.Throughput ./ 1e6, color = colors)
+ax2.ylabel = "Million Positions / Second"</code></pre></div></details><img alt="Example block output" src="6012368b.png"/><h2 id="Comparison-with-solposx-(Python)"><a class="docs-heading-anchor" href="#Comparison-with-solposx-(Python)">Comparison with solposx (Python)</a><a id="Comparison-with-solposx-(Python)-1"></a><a class="docs-heading-anchor-permalink" href="#Comparison-with-solposx-(Python)" title="Permalink"></a></h2><p>The <a href="https://github.com/assessingsolar/solposx">solposx</a> package is a Python library that implements the same solar position algorithms. This section compares the performance of SolarPosition.jl against solposx to demonstrate the benefits of using Julia.</p><div class="admonition is-info" id="Benchmarking-Methodology-b3abe99d1106274a"><header class="admonition-header">Benchmarking Methodology<a class="admonition-anchor" href="#Benchmarking-Methodology-b3abe99d1106274a" title="Permalink"></a></header><div class="admonition-body"><p>The benchmarks below use <a href="https://github.com/JuliaPy/PythonCall.jl">PythonCall.jl</a> to call <code>solposx</code> from within Julia. We have also benchmarked <code>solposx</code> directly in a pure Python environment (without <code>PythonCall.jl</code> overhead) and found no significant difference in the results.</p></div></div><h3 id="Setup"><a class="docs-heading-anchor" href="#Setup">Setup</a><a id="Setup-1"></a><a class="docs-heading-anchor-permalink" href="#Setup" title="Permalink"></a></h3><p>First, we install and import solposx using <a href="https://github.com/JuliaPy/PythonCall.jl">PythonCall.jl</a> and <a href="https://github.com/JuliaPy/CondaPkg.jl">CondaPkg.jl</a>:</p><pre><code class="language-julia hljs">using CondaPkg
+CondaPkg.add_pip("solposx")
+CondaPkg.add_pip("pandas")
+
+using PythonCall
+
+# Import Python modules
+sp = pyimport("solposx.solarposition")
+pd = pyimport("pandas")</code></pre><pre class="documenter-example-output"><code class="nohighlight hljs ansi">Python: &lt;module 'pandas' from '/home/runner/work/SolarPosition.jl/SolarPosition.jl/docs/.CondaPkg/.pixi/envs/default/lib/python3.13/site-packages/pandas/__init__.py'&gt;</code></pre><h3 id="Benchmark-Configuration"><a class="docs-heading-anchor" href="#Benchmark-Configuration">Benchmark Configuration</a><a id="Benchmark-Configuration-1"></a><a class="docs-heading-anchor-permalink" href="#Benchmark-Configuration" title="Permalink"></a></h3><p>For fair comparison, we use the same test conditions for both libraries:</p><ul><li><strong>Observer</strong>: London (51.5074°N, 0.1278°W, 11m elevation)</li><li><strong>Timestamps</strong>: Hourly data from January 1, 2024</li><li><strong>Algorithms</strong>: PSA, NOAA, Walraven, USNO, SPA</li></ul><pre><code class="language-julia hljs"># Helper function to create pandas DatetimeIndex
+function create_pandas_times(n::Int)
+    pd.date_range(start="2024-01-01 00:00:00", periods=n, freq="h", tz="UTC")
+end
+
+# solposx algorithm mapping - use Symbol keys for kwargs
+solposx_algorithms = Dict(
+    "PSA" =&gt; (sp.psa, (coefficients = 2020,)),
+    "NOAA" =&gt; (sp.noaa, NamedTuple()),
+    "Walraven" =&gt; (sp.walraven, NamedTuple()),
+    "USNO" =&gt; (sp.usno, NamedTuple()),
+    "SPA" =&gt; (sp.spa, NamedTuple()),
+)
+
+lat, lon = 51.5074, -0.1278</code></pre><pre class="documenter-example-output"><code class="nohighlight hljs ansi">(51.5074, -0.1278)</code></pre><h3 id="Running-the-Benchmarks"><a class="docs-heading-anchor" href="#Running-the-Benchmarks">Running the Benchmarks</a><a id="Running-the-Benchmarks-1"></a><a class="docs-heading-anchor-permalink" href="#Running-the-Benchmarks" title="Permalink"></a></h3><p>We benchmark both libraries across different input sizes:</p><details class="admonition is-details" id="Benchmark-code-707bd8021b1871da"><summary class="admonition-header">Benchmark code<a class="admonition-anchor" href="#Benchmark-code-707bd8021b1871da" title="Permalink"></a></summary><div class="admonition-body"><pre><code class="language-julia hljs"># Benchmark sizes
+sizes = [100, 1_000, 10_000]
+
+# Results storage
+comparison_results = DataFrame(
+    Algorithm = String[],
+    N = Int[],
+    Julia_ms = Float64[],
+    Python_ms = Float64[],
+    Speedup = Float64[],
+)
+
+for n in sizes
+    # Create time vectors
+    julia_times_vec = collect(DateTime(2024, 1, 1):Hour(1):(DateTime(2024, 1, 1) + Hour(n-1)))
+    py_times_idx = create_pandas_times(n)
+
+    for (algo_name, algo) in [("PSA", PSA()), ("NOAA", NOAA()), ("Walraven", Walraven()),
+                               ("USNO", USNO()), ("SPA", SPA())]
+        # Julia benchmark
+        julia_bench = @benchmark solar_position($obs, $julia_times_vec, $algo) samples=5 evals=1
+        julia_time_ms = median(julia_bench.times) / 1e6
+
+        # Python benchmark
+        py_func, py_kwargs = solposx_algorithms[algo_name]
+
+        # Benchmark Python function using BenchmarkTools
+        if isempty(py_kwargs)
+            py_bench = @benchmark $py_func($py_times_idx, $lat, $lon) samples=5 evals=1
+        else
+            py_bench = @benchmark $py_func($py_times_idx, $lat, $lon; $py_kwargs...) samples=5 evals=1
+        end
+        python_time_ms = median(py_bench.times) / 1e6
+
+        speedup = python_time_ms / julia_time_ms
+
+        push!(comparison_results, (
+            Algorithm = algo_name,
+            N = n,
+            Julia_ms = round(julia_time_ms, digits=3),
+            Python_ms = round(python_time_ms, digits=3),
+            Speedup = round(speedup, digits=1),
+        ))
+    end
+end
+
+comparison_results</code></pre><div><div style="float: left;"><span>15×5 DataFrame</span></div><div style="clear: both;"></div></div><div class="data-frame" style="overflow-x: scroll;"><table class="data-frame" style="margin-bottom: 6px;"><thead><tr class="columnLabelRow"><th class="stubheadLabel" style="font-weight: bold; text-align: right;">Row</th><th style="text-align: left;">Algorithm</th><th style="text-align: left;">N</th><th style="text-align: left;">Julia_ms</th><th style="text-align: left;">Python_ms</th><th style="text-align: left;">Speedup</th></tr><tr class="columnLabelRow"><th class="stubheadLabel" style="font-weight: bold; text-align: right;"></th><th style="text-align: left;" title="String">String</th><th style="text-align: left;" title="Int64">Int64</th><th style="text-align: left;" title="Float64">Float64</th><th style="text-align: left;" title="Float64">Float64</th><th style="text-align: left;" title="Float64">Float64</th></tr></thead><tbody><tr class="dataRow"><td class="rowLabel" style="font-weight: bold; text-align: right;">1</td><td style="text-align: left;">PSA</td><td style="text-align: right;">100</td><td style="text-align: right;">0.017</td><td style="text-align: right;">2.811</td><td style="text-align: right;">164.9</td></tr><tr class="dataRow"><td class="rowLabel" style="font-weight: bold; text-align: right;">2</td><td style="text-align: left;">NOAA</td><td style="text-align: right;">100</td><td style="text-align: right;">0.042</td><td style="text-align: right;">3.947</td><td style="text-align: right;">93.7</td></tr><tr class="dataRow"><td class="rowLabel" style="font-weight: bold; text-align: right;">3</td><td style="text-align: left;">Walraven</td><td style="text-align: right;">100</td><td style="text-align: right;">0.02</td><td style="text-align: right;">1.236</td><td style="text-align: right;">62.5</td></tr><tr class="dataRow"><td class="rowLabel" style="font-weight: bold; text-align: right;">4</td><td style="text-align: left;">USNO</td><td style="text-align: right;">100</td><td style="text-align: right;">0.039</td><td style="text-align: right;">3.014</td><td style="text-align: right;">76.9</td></tr><tr class="dataRow"><td class="rowLabel" style="font-weight: bold; text-align: right;">5</td><td style="text-align: left;">SPA</td><td style="text-align: right;">100</td><td style="text-align: right;">0.303</td><td style="text-align: right;">3.17</td><td style="text-align: right;">10.5</td></tr><tr class="dataRow"><td class="rowLabel" style="font-weight: bold; text-align: right;">6</td><td style="text-align: left;">PSA</td><td style="text-align: right;">1000</td><td style="text-align: right;">0.174</td><td style="text-align: right;">3.138</td><td style="text-align: right;">18.1</td></tr><tr class="dataRow"><td class="rowLabel" style="font-weight: bold; text-align: right;">7</td><td style="text-align: left;">NOAA</td><td style="text-align: right;">1000</td><td style="text-align: right;">0.421</td><td style="text-align: right;">4.533</td><td style="text-align: right;">10.8</td></tr><tr class="dataRow"><td class="rowLabel" style="font-weight: bold; text-align: right;">8</td><td style="text-align: left;">Walraven</td><td style="text-align: right;">1000</td><td style="text-align: right;">0.198</td><td style="text-align: right;">1.424</td><td style="text-align: right;">7.2</td></tr><tr class="dataRow"><td class="rowLabel" style="font-weight: bold; text-align: right;">9</td><td style="text-align: left;">USNO</td><td style="text-align: right;">1000</td><td style="text-align: right;">0.376</td><td style="text-align: right;">6.945</td><td style="text-align: right;">18.5</td></tr><tr class="dataRow"><td class="rowLabel" style="font-weight: bold; text-align: right;">10</td><td style="text-align: left;">SPA</td><td style="text-align: right;">1000</td><td style="text-align: right;">3.079</td><td style="text-align: right;">7.713</td><td style="text-align: right;">2.5</td></tr><tr class="dataRow"><td class="rowLabel" style="font-weight: bold; text-align: right;">11</td><td style="text-align: left;">PSA</td><td style="text-align: right;">10000</td><td style="text-align: right;">1.812</td><td style="text-align: right;">6.927</td><td style="text-align: right;">3.8</td></tr><tr class="dataRow"><td class="rowLabel" style="font-weight: bold; text-align: right;">12</td><td style="text-align: left;">NOAA</td><td style="text-align: right;">10000</td><td style="text-align: right;">4.109</td><td style="text-align: right;">10.743</td><td style="text-align: right;">2.6</td></tr><tr class="dataRow"><td class="rowLabel" style="font-weight: bold; text-align: right;">13</td><td style="text-align: left;">Walraven</td><td style="text-align: right;">10000</td><td style="text-align: right;">2.001</td><td style="text-align: right;">3.996</td><td style="text-align: right;">2.0</td></tr><tr class="dataRow"><td class="rowLabel" style="font-weight: bold; text-align: right;">14</td><td style="text-align: left;">USNO</td><td style="text-align: right;">10000</td><td style="text-align: right;">3.843</td><td style="text-align: right;">46.686</td><td style="text-align: right;">12.1</td></tr><tr class="dataRow"><td class="rowLabel" style="font-weight: bold; text-align: right;">15</td><td style="text-align: left;">SPA</td><td style="text-align: right;">10000</td><td style="text-align: right;">31.024</td><td style="text-align: right;">50.816</td><td style="text-align: right;">1.6</td></tr></tbody></table></div></div></details><details class="admonition is-details" id="Performance-comparison-visualization-d4f83f760d670758"><summary class="admonition-header">Performance comparison visualization<a class="admonition-anchor" href="#Performance-comparison-visualization-d4f83f760d670758" title="Permalink"></a></summary><div class="admonition-body"><pre><code class="language-julia hljs">fig5 = Figure(size = (600, 750), backgroundcolor = :transparent, fontsize = 12, textcolor = "#f5ab35")
+
+# Group by algorithm for plotting
+algo_names = ["PSA", "NOAA", "Walraven", "USNO", "SPA"]
+colors_julia = [:blue, :green, :purple, :orange, :red]
+
+ax1 = Axis(fig5[1, 1],
+    title = "Computation Time: Julia vs Python",
+    xlabel = "Number of Timestamps",
+    ylabel = "Time (ms)",
+    xscale = log10,
+    yscale = log10,
+    backgroundcolor = :transparent,
+)
+
+# Store line objects for legends
+julia_lines = []
+python_lines = []
+
+for (i, algo) in enumerate(algo_names)
+    data = filter(r -&gt; r.Algorithm == algo, comparison_results)
+
+    # Julia times (solid lines)
+    l1 = lines!(ax1, data.N, data.Julia_ms,
+        color = colors_julia[i],
+        linewidth = 2)
+    scatter!(ax1, data.N, data.Julia_ms, color = colors_julia[i], markersize = 6)
+    push!(julia_lines, l1)
+
+    # Python times (dashed lines)
+    l2 = lines!(ax1, data.N, data.Python_ms,
+        color = colors_julia[i],
+        linewidth = 2,
+        linestyle = :dash)
+    scatter!(ax1, data.N, data.Python_ms, color = colors_julia[i], markersize = 6,
+        marker = :utriangle)
+    push!(python_lines, l2)
+end
+
+# Algorithm legend (colors)
+leg1 = Legend(fig5[1, 2][1, 1], julia_lines, algo_names, "Algorithm",
+    framevisible = true, backgroundcolor = :transparent, labelsize = 10, titlesize = 11)
+
+# Line style legend (solid vs dashed)
+style_lines = [LineElement(color = :gray, linewidth = 2, linestyle = :solid),
+               LineElement(color = :gray, linewidth = 2, linestyle = :dash)]
+leg2 = Legend(fig5[1, 2][2, 1], style_lines, ["Julia", "Python"], "Library",
+    framevisible = true, backgroundcolor = :transparent, labelsize = 10, titlesize = 11)
+
+# Speedup bar chart
+ax2 = Axis(fig5[2, 1:2],
+    title = "Julia vs Python at N=1,000",
+    xlabel = "Algorithm",
+    ylabel = "Speedup Factor (×)",
+    xticks = (1:5, algo_names),
+    backgroundcolor = :transparent,
+)
+
+speedup_1k = filter(r -&gt; r.N == 1_000, comparison_results)
+barplot!(ax2, 1:5, speedup_1k.Speedup, color = colors_julia)
+hlines!(ax2, [1.0], color = :gray, linestyle = :dash)</code></pre></div></details><img alt="Example block output" src="a5a2d02b.png"/><h3 id="Summary"><a class="docs-heading-anchor" href="#Summary">Summary</a><a id="Summary-1"></a><a class="docs-heading-anchor-permalink" href="#Summary" title="Permalink"></a></h3><p>The benchmarks demonstrate that SolarPosition.jl offers significant performance advantages over the solposx Python library across all tested algorithms and input sizes.</p><div class="admonition is-info" id="Multi-threading-5b4e606c8e6215a3"><header class="admonition-header">Multi-threading<a class="admonition-anchor" href="#Multi-threading-5b4e606c8e6215a3" title="Permalink"></a></header><div class="admonition-body"><p><code>SolarPosition.jl</code> can leverage Julia's native multi-threading capabilities (see <a href="../parallel/#parallel-computing">Parallel Computing</a>) for further performance improvements on large datasets. The benchmarks above were conducted using a single thread for fair comparison with <code>solposx</code>, but enabling multi-threading can yield even greater speedups in practical applications.</p></div></div><pre><code class="language-julia hljs">speedup_table = unstack(comparison_results[:, [:Algorithm, :N, :Speedup]], :Algorithm, :N, :Speedup)
+speedup_table</code></pre><div><div style="float: left;"><span>5×4 DataFrame</span></div><div style="clear: both;"></div></div><div class="data-frame" style="overflow-x: scroll;"><table class="data-frame" style="margin-bottom: 6px;"><thead><tr class="columnLabelRow"><th class="stubheadLabel" style="font-weight: bold; text-align: right;">Row</th><th style="text-align: left;">Algorithm</th><th style="text-align: left;">100</th><th style="text-align: left;">1000</th><th style="text-align: left;">10000</th></tr><tr class="columnLabelRow"><th class="stubheadLabel" style="font-weight: bold; text-align: right;"></th><th style="text-align: left;" title="String">String</th><th style="text-align: left;" title="Union{Missing, Float64}">Float64?</th><th style="text-align: left;" title="Union{Missing, Float64}">Float64?</th><th style="text-align: left;" title="Union{Missing, Float64}">Float64?</th></tr></thead><tbody><tr class="dataRow"><td class="rowLabel" style="font-weight: bold; text-align: right;">1</td><td style="text-align: left;">PSA</td><td style="text-align: right;">164.9</td><td style="text-align: right;">18.1</td><td style="text-align: right;">3.8</td></tr><tr class="dataRow"><td class="rowLabel" style="font-weight: bold; text-align: right;">2</td><td style="text-align: left;">NOAA</td><td style="text-align: right;">93.7</td><td style="text-align: right;">10.8</td><td style="text-align: right;">2.6</td></tr><tr class="dataRow"><td class="rowLabel" style="font-weight: bold; text-align: right;">3</td><td style="text-align: left;">Walraven</td><td style="text-align: right;">62.5</td><td style="text-align: right;">7.2</td><td style="text-align: right;">2.0</td></tr><tr class="dataRow"><td class="rowLabel" style="font-weight: bold; text-align: right;">4</td><td style="text-align: left;">USNO</td><td style="text-align: right;">76.9</td><td style="text-align: right;">18.5</td><td style="text-align: right;">12.1</td></tr><tr class="dataRow"><td class="rowLabel" style="font-weight: bold; text-align: right;">5</td><td style="text-align: left;">SPA</td><td style="text-align: right;">10.5</td><td style="text-align: right;">2.5</td><td style="text-align: right;">1.6</td></tr></tbody></table></div></article><nav class="docs-footer"><a class="docs-footer-prevpage" href="../modelingtoolkit/">« Building models with ModelingToolkit.jl</a><a class="docs-footer-nextpage" href="../new-algorithm/">Adding a New Solar Position Algorithm »</a><div class="flexbox-break"></div><p class="footer-message">Powered by <a href="https://github.com/JuliaDocs/Documenter.jl">Documenter.jl</a> and the <a href="https://julialang.org/">Julia Programming Language</a>.</p></nav></div><div class="modal" id="documenter-settings"><div class="modal-background"></div><div class="modal-card"><header class="modal-card-head"><p class="modal-card-title">Settings</p><button class="delete"></button></header><section class="modal-card-body"><p><label class="label">Theme</label></p><div class="select"><select id="documenter-themepicker"><option value="auto">Automatic (OS)</option><option value="documenter-light">documenter-light</option><option value="documenter-dark">documenter-dark</option><option value="catppuccin-latte">catppuccin-latte</option><option value="catppuccin-frappe">catppuccin-frappe</option><option value="catppuccin-macchiato">catppuccin-macchiato</option><option value="catppuccin-mocha">catppuccin-mocha</option></select></div><p></p><hr/><p>This document was generated with <a href="https://github.com/JuliaDocs/Documenter.jl">Documenter.jl</a> version 1.16.1 on <span class="colophon-date" title="Wednesday 10 December 2025 01:13">Wednesday 10 December 2025</span>. Using Julia version 1.12.2.</p></section><footer class="modal-card-foot"></footer></div></div></div></body></HTML>
