@@ -55,15 +55,15 @@ Below is a growing list of JuliaAstro and other related aero/astro presentations
 
 !!! details "JuliaCon 2025"
     **Julia in Astronomy & Astrophysics Research Symposium 2025 [[website]](https://eford.github.io/AstroMiniSymposiumAtJuliaCon2025/)**
-    - [Building an Astronomy Code for VLBI in Julia](https://pretalx.com/juliacon-2025/talk/NSZLHS/)
-    - [Astrometry.jl: A Fundamental Julia Package for Astronomy](https://pretalx.com/juliacon-2025/talk/SGJEKU/)
-    - [Bayesian Multifrequency Imaging for Radio Astronomy](https://pretalx.com/juliacon-2025/talk/BNCPT8/)
-    - [Regularized Maximum Likelihood Methods for Black Hole Imaging](https://pretalx.com/juliacon-2025/talk/AYBT3G/)
-    - [Krang.jl: Physics inference from images of Black Holes](https://pretalx.com/juliacon-2025/talk/GCSQQC/)
-    - [Building an End-to-End Spectral Reduction Pipeline for APOGEE](https://pretalx.com/juliacon-2025/talk/HYYXTA/)
-    - [Juggling astro catalogs in Julia: convenience meets performance](https://pretalx.com/juliacon-2025/talk/TUXFSL/)
-    - [ScatteringOptics.jl: An Interstellar Scattering Framework](https://pretalx.com/juliacon-2025/talk/N7ZEMF/)
-    - [Panel Discussion](https://pretalx.com/juliacon-2025/talk/EWRB37/)
+    - Building an Astronomy Code for VLBI in Julia [[pretalx]](https://pretalx.com/juliacon-2025/talk/NSZLHS/) [[video]](https://www.youtube.com/watch?v=iWJX7HOGYN0)
+    - Astrometry.jl: A Fundamental Julia Package for Astronomy [[pretalx]](https://pretalx.com/juliacon-2025/talk/SGJEKU/) [[video]](https://www.youtube.com/watch?v=LblgHIDEjGc)
+    - Bayesian Multifrequency Imaging for Radio Astronomy [[pretalx]](https://pretalx.com/juliacon-2025/talk/BNCPT8/) [[video]](https://www.youtube.com/watch?v=f0F2CzhHn1Q)
+    - Regularized Maximum Likelihood Methods for Black Hole Imaging [[pretalx]](https://pretalx.com/juliacon-2025/talk/AYBT3G/) [[video]](https://www.youtube.com/watch?v=ATCJubds0sU)
+    - Krang.jl: Physics inference from images of Black Holes [[pretalx]](https://pretalx.com/juliacon-2025/talk/GCSQQC/) [[video]](https://www.youtube.com/watch?v=kj5g2frIycI)
+    - Building an End-to-End Spectral Reduction Pipeline for APOGEE [[pretalx]](https://pretalx.com/juliacon-2025/talk/HYYXTA/) [[video]](https://www.youtube.com/watch?v=WongWjTc0XQ)
+    - Juggling astro catalogs in Julia: convenience meets performance [[pretalx]](https://pretalx.com/juliacon-2025/talk/TUXFSL/) [[video]](https://www.youtube.com/watch?v=KdiuNzmIl2U)
+    - Korg.jl [[pretalx] - tbd] [[video] - tbd]
+    - Panel Discussion [[pretalx]](https://pretalx.com/juliacon-2025/talk/EWRB37/) [[video] - tbd]
 
     **More aero/astro talks at JuliaCon**
     - [Tuning attitude control gains of a satellite using Julia](https://pretalx.com/juliacon-2025/talk/SAYCCZ/)
