@@ -183,6 +183,27 @@ ecosystem() = (
         ),
         "Galaxies and Cosmology" => (
             (
+                name = "Bolt.jl",
+                repo = "https://github.com/xzackli/Bolt.jl/",
+                doc = "https://xzackli.github.io/Bolt.jl/",
+                tagline = "Pure-Julia integrator for the Boltzmann equations in cosmology",
+                descr = """
+                - In addition to integrating the cosmological Boltzmann equations, Bolt.jl can accurately compute the gradients of power spectra with respect to cosmological parameters using forward-mode automatic differentiation.
+                """,
+                astropy = [],
+            ),
+            (
+                name = "CLASS.jl",
+                repo = "https://github.com/hersle/CLASS.jl",
+                doc = "https://github.com/hersle/CLASS.jl?tab=readme-ov-file#classjl",
+                tagline = "Julia wrapper for the cosmological Boltzmann solver [CLASS](http://class-code.net/)",
+                descr = """
+                - Lightweight problem/solution wrapper around CLASS input/output files.
+                - Reads CLASS output files to [DataFrames](https://github.com/JuliaData/DataFrames.jl).
+                """,
+                astropy = [],
+            ),
+            (
                 name = "Cosmology.jl",
                 repo = "https://github.com/JuliaAstro/Cosmology.jl",
                 doc = "https://juliaastro.org/Cosmology/stable/",
@@ -215,6 +236,18 @@ ecosystem() = (
                 - Analyze interstellar scintillation observed at radio wavelengths
                 - Implements physical models for the anisotropic scattering of radio waves
                 - Modeling, analyze, and interpret the images of the Galactic Center's supermassive black hole, Sagittarius A*, especially with the Event Horizon Telescope
+                """,
+                astropy = [],
+            ),
+            (
+                name = "SymBoltz.jl",
+                repo = "https://github.com/hersle/SymBoltz.jl",
+                doc = "https://hersle.github.io/SymBoltz.jl/stable/",
+                tagline = "Julia package for solving the linear Einstein-Boltzmann equations in cosmology",
+                descr = """
+                - Symbolic-numeric interface for specifying models with simple symbolic equations and automatically compiling them to fast numerical ODE code.
+                - Approximation-free equations are solved without tight-coupling, ultra-relativistic fluid and radiation-streaming approximations.
+                - Differentiable output (e.g. power spectra) with respect to any input (e.g. cosmological parameters).
                 """,
                 astropy = [],
             ),
@@ -398,8 +431,8 @@ ecosystem() = (
             ),
             (
                 name = "SpectralFitting.jl",
-                repo = "https://github.com/fjebaker/SpectralFitting.jl",
-                doc = "https://fjebaker.github.io/SpectralFitting.jl/dev/",
+                repo = "https://github.com/JuliaAstro/SpectralFitting.jl",
+                doc = "https://juliaastro.org/SpectralFitting/stable/",
                 tagline = "✨🛰 Fast and flexible spectral fitting in Julia",
                 descr = """
                 - Spectral fitting routines and models with a focus on X-ray astronomy
@@ -729,8 +762,8 @@ ecosystem() = (
             ),
             (
                 name = "FITSFiles.jl",
-                repo = "https://github.com/barrettp/FITSFiles.jl",
-                doc = "https://barrettp.github.io/FITSFiles.jl/",
+                repo = "https://github.com/JuliaAstro/FITSFiles.jl",
+                doc = "https://juliaastro.org/FITSFiles/stable/",
                 tagline = "A Julia Flexible Image Transport System (FITS) file IO package",
                 descr = """
                 - A Flexible Image Transport System (FITS) file IO package written in Julia
