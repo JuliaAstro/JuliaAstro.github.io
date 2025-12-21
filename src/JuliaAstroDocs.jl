@@ -326,8 +326,8 @@ ecosystem() = (
         "Astrometry" => (
             (
                 name = "Astrometry.jl",
-                repo = "https://github.com/barrettp/Astrometry.jl",
-                doc = "https://barrettp.github.io/Astrometry/dev",
+                repo = "https://github.com/JuliaAstro/Astrometry.jl",
+                doc = "https://juliaastro.org/Astrometry/stable/",
                 tagline = "Set of IAU standard algorithms for calculating the time and position of celestial objects",
                 descr = """
                 - More information can be found on the official website of the [Standards of Fundamental Astronomy](http://www.iausofa.org/).
