@@ -23,7 +23,7 @@
         },
         "repositoryUrl": {
             "url": "https://github.com/JuliaAstro/FITSFiles.jl",
-            "wellKnown": "https://github.com/JuliaAstro/FITSFiles.jl/main/.well-known/funding-manifest-urls"
+            "wellKnown": "https://github.com/JuliaAstro/FITSFiles.jl/blob/main/.well-known/funding-manifest-urls"
         },
         "licenses": ["spdx:MIT"],
         "tags": ["astronomy","data", "programming", "science", "scientific-computing"]
