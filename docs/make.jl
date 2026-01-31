@@ -105,7 +105,7 @@ postprocess_cb()
 
 # Differentiate between pure Julia and wrapper packages
 wrapper_packages = [
-    "torrance/Casacore",
+    "Casacore",
     "CFITSIO",
     "JuliaAPlavin/Difmap",
     "emmt/EasyFITS",
