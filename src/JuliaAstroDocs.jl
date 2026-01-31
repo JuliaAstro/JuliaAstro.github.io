@@ -849,12 +849,12 @@ ecosystem() = (
             ),
             (
                 name = "Casacore.jl",
-                repo = "https://github.com/torrance/Casacore.jl",
-                doc = "https://github.com/torrance/Casacore.jl?tab=readme-ov-file#casacorejl",
+                repo = "https://github.com/JuliaAstro/Casacore.jl",
+                doc = "https://juliaastro.org/JuliaAstro/stable",
                 tagline = "A high level Julia interface to Casacore",
                 descr = """
-                - Wrapper for [CasaCore](http://casacore.github.io/casacore/)
-                - Uses [casacorecxx](https://github.com/torrance/casacorecxx) which uses [CxxWrap](https://github.com/JuliaInterop/CxxWrap.jl) to wrap the C++ Casacore codebase. These raw objects and methods are available in `Casacore.LibCasacore`
+                - Wrapper for [casa ore](http://casacore.github.io/casacore/)
+                - Uses [casacorecxx](https://github.com/JuliaBinaryWrappers/casacorecxx_jll.jl) which uses [CxxWrap](https://github.com/JuliaInterop/CxxWrap.jl) to wrap the C++ Casacore codebase. These raw objects and methods are available in `Casacore.LibCasacore`
                 """,
                 astropy = [],
             ),
