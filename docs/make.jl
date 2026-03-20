@@ -86,6 +86,9 @@ makedocs(
                 "tutorials/tabular-data.md",
                 "tutorials/curve-fit.md",
             ],
+            "Spectroscopy" => [
+                "Multi-wavelength spectroscopy" => "tutorials/multi-wavelength-spectroscopy.md",
+        ],
         ],
         "Package Ecosystem" => "ecosystem.md",
         case_studies,

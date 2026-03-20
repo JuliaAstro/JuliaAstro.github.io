@@ -39,3 +39,7 @@ The following tutorials show how to use Julia to perform common tasks in astrono
 * [Load tabular data from a FITS file and plot acceleration of nearby stars](@ref tabular-data)
 
 * [Curve fitting: least square and Bayesian](@ref curve-fit)
+
+### Spectroscopy
+
+* [Multi-wavelength spectroscopy: loading, transforming, and analyzing spectra](@ref tutorial-multiwavelength-spectroscopy)
