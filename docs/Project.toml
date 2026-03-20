@@ -21,11 +21,4 @@ UnitfulAstro = "6112ee07-acf9-5e0f-b108-d242c714bf9f"
 MultiDocumenter = {url = "https://github.com/JuliaComputing/MultiDocumenter.jl"}
 
 [compat]
-Cosmology = "1"
 Documenter = "1"
-DustExtinction = "0.6, 1"
-FITSIO = "0.17"
-Measurements = "2"
-Plots = "1"
-Unitful = "1"
-UnitfulAstro = "1"
