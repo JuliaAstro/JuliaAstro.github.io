@@ -711,7 +711,7 @@ ecosystem() = (
             (
                 name = "ASDF.jl",
                 repo = "https://github.com/JuliaAstro/ASDF.jl",
-                doc = "https://juliaastro.org/ASDF/stable/",
+                doc = "https://juliaastro.org/ASDF.jl/dev/",
                 tagline = "ASDF, the Advanced Scientific Data Format",
                 descr = """
                 - A Julia implementation of the Advanced Scientific Data Format (ASDF)
