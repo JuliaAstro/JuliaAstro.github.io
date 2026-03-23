@@ -6,7 +6,7 @@ In these examples, we will fetch and load the Hipparcos-GAIA Catalog of Accelera
 This catalog cross matches stars from the Hipparcos and GAIA catalogs in order to calculate the long term astrometric proper motion anomaly; that is, the star's deviation from straight line motion in the plane of the sky over the ~20 baseline between the two missions.
 
 A wide range of tabular data formats are supported in Julia under a common [Tables.jl interface](https://tables.juliadata.org). For example,
-[CSV](https://csv.juliadata.org), [Excel](https://felipenoris.github.io/XLSX.jl), [Arrow](https://github.com/apache/arrow-julia), [CASA Tables](http://mweastwood.info/CasaCore.jl/stable/), and various SQL formats to name a few.
+[CSV](https://csv.juliadata.org), [Excel](https://felipenoris.github.io/XLSX.jl), [Arrow](https://github.com/apache/arrow-julia), [CASA Tables](http://juliaastro.org/Casacore/stable/), and various SQL formats to name a few.
 
 
 ## Packages
