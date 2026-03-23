@@ -709,12 +709,12 @@ ecosystem() = (
     "Utilities" => (
         "Data I/O" => (
             (
-                name = "ASDF2.jl",
-                repo = "https://github.com/JuliaAstro/ASDF2.jl",
-                doc = "https://juliaastro.org/ASDF2.jl/dev/",
+                name = "ASDF.jl",
+                repo = "https://github.com/JuliaAstro/ASDF.jl",
+                doc = "https://juliaastro.org/ASDF/stable/",
                 tagline = "ASDF, the Advanced Scientific Data Format",
                 descr = """
-                - A new [Advanced Scientific Data Format (ASDF)](https://asdf-standard.readthedocs.io/en/latest/index.html) package, written in Julia
+                - A Julia implementation of the Advanced Scientific Data Format (ASDF)
                 """,
                 astropy = ["asdf-astropy"],
             ),
