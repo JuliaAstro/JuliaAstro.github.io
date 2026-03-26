@@ -1,13 +1,20 @@
-package_row(p) = """
+t_astropy(ecosystem) = Table(
+    (name = package_name, repo = package_info["repo"], astropy = package_info["astropy"], tagline = package_info["tagline"])
+    for (highlevel, sublevels) in ecosystem
+        for (sublevel, packages) in sublevels
+            for (package_name, package_info) in packages if !isempty(package_info["astropy"])
+)
+
+package_row(t) = """
   <tr>
-    <td><a href="$(p.repo)">$(p.name)</a></td>
-    <td>$(p.tagline)</td>
+  <td><a href="$(t.repo)">$(t.name)</a></td>
+  <td>$(t.tagline)</td>
   </tr>
 """
 
 function package_section(t, astropy_module, astropy_url)
     io = IOBuffer()
-    t_astropy = Iterators.filter(x -> astropy_module in x.astropy, t) |> collect
+    t_astropy = filter(x -> astropy_module in x.astropy, t)
     write(io, """
       <tr>
         <td rowspan=$(length(t_astropy)+1)>
@@ -17,13 +24,15 @@ function package_section(t, astropy_module, astropy_url)
     """)
 
     for p in t_astropy
-      write(io, package_row(p))
+        write(io, package_row(p))
     end
 
     JuliaAstroDocs.stake!(io)
 end
 
-function page_compare(t)
+function page_compare(ecosystem)
+    t = JuliaAstroDocs.t_astropy(ecosystem)
+
     fpath = joinpath(dirname(@__DIR__), "docs", "src", "comparison.md")
 
     open(fpath, "w") do io

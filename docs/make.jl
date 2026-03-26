@@ -3,16 +3,15 @@ using LibGit2, Pkg, TOML, UUIDs, Downloads, Glob
 
 Revise.revise()
 
-import JuliaAstroDocs
+using JuliaAstroDocs: JuliaAstroDocs
 
 ecosystem = JuliaAstroDocs.ecosystem()
-ecosystem_t = JuliaAstroDocs.ecosystem_t()
 
 # Sync ecosystem.md
 JuliaAstroDocs.page_ecosystem(ecosystem)
 
 # Sync comparison.md
-JuliaAstroDocs.page_compare(ecosystem_t)
+JuliaAstroDocs.page_compare(ecosystem)
 
 # Aggregate documentation location
 clonedir = ("--temp" in ARGS) ? mktempdir(; cleanup=false) : joinpath(@__DIR__, "clones")
@@ -115,14 +114,14 @@ wrapper_packages = [
     "WCS",
 ]
 
-function generate_multidoc_refs(p; clonedir=clonedir)
-    package_path = string(chopsuffix(p.name, ".jl"))
+function generate_multidoc_refs(name, p; clonedir = clonedir)
+    package_path = name
     package_name = if package_path in wrapper_packages
         "◯ " * package_path
     else
         "⬤ " * package_path
     end
-    multidoc_type = if any(occursin.(("stable", "dev"), p.doc)) && startswith(p.doc, "https://juliaastro")
+    multidoc_type = if any(occursin.(("stable", "dev"), p["doc"])) && startswith(p["doc"], "https://juliaastro")
             "MultiDocRef"
         else
             "Link"
@@ -133,12 +132,12 @@ function generate_multidoc_refs(p; clonedir=clonedir)
             upstream = joinpath(clonedir, package_path),
             path = package_path,
             name = package_name,
-            giturl = p.repo,
+            giturl = p["repo"],
         )
     else
         MultiDocumenter.Link(
             package_name,
-            p.doc,
+            p["doc"],
         )
     end
 end
@@ -152,13 +151,16 @@ docs = [
         fix_canonical_url = false,
     ),
     # MultiDocumenter pages
-    map(ecosystem) do (highlevel, sublevels)
-        MultiDocumenter.MegaDropdownNav(highlevel,
-            map(sublevels) do (sublevel, packages)
-                MultiDocumenter.Column(sublevel, collect(generate_multidoc_refs.(packages)))
-            end |> collect
+    [
+        MultiDocumenter.MegaDropdownNav(
+            highlevel,
+            [
+                MultiDocumenter.Column(sublevel, [generate_multidoc_refs(name, p) for (name, p) in packages])
+                for (sublevel, packages) in sublevels
+            ]
         )
-    end...,
+        for (highlevel, sublevels) in ecosystem
+    ]...,
 ]
 
 # This make file compiles the documentation for the JuliaAstro website.

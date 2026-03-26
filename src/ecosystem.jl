@@ -15,14 +15,14 @@ function page_ecosystem(ecosystem)
             write(io, "## ", highlevel, "\n\n")
             for (sublevel, packages) in sublevels
                 write(io, "### ", sublevel, "\n\n")
-                for p in packages
-                    org_name = split(p.repo, '/')[4]
-                    write(io, "#### ", p.name, "\n\n")
-                    write(io, "[💻 Repository](", p.repo, ") | ")
-                    write(io, "[📘 Documentation](", p.doc, ")")
+                for (p_name, p_info) in packages
+                    org_name = split(p_info["repo"], '/')[4]
+                    write(io, "#### ", p_name, "\n\n")
+                    write(io, "[💻 Repository](", p_info["repo"], ") | ")
+                    write(io, "[📘 Documentation](", p_info["doc"], ")")
                     write(io, " | `", org_name, "`\n\n")
-                    write(io, "**", p.tagline, "**", "\n\n")
-                    write(io, p.descr, "\n\n")
+                    write(io, "**", p_info["tagline"], "**", "\n\n")
+                    write(io, p_info["descr"], "\n")
                 end
                 write(io, "---\n\n")
             end
