@@ -1,299 +1,452 @@
 # [Multi-wavelength spectroscopy](@id tutorial-multiwavelength-spectroscopy)
 
-Spectroscopy is one of the most powerful tools in an astronomer's toolkit. By splitting
-light into its component wavelengths, we can learn about a source's chemical composition,
-temperature, velocity, and much more.
+Spectroscopy is one of the most powerful tools in an astronomer's toolkit. By splitting light
+into its component wavelengths, we can learn about a source's chemical composition, temperature,
+velocity, and much more.
 
-In this tutorial we walk through a realistic workflow: downloading a real SDSS optical
-spectrum, loading it with [`FITSIO.jl`](https://juliaastro.org/FITSIO/stable/), wrapping
-it in a `Spectrum` object with physical units via
-[`UnitfulAstro.jl`](https://juliaastro.org/UnitfulAstro/stable/), applying dust corrections
-with [`DustExtinction.jl`](https://juliaastro.org/DustExtinction/stable/), propagating
-uncertainties with [`Measurements.jl`](https://juliaphysics.github.io/Measurements.jl/stable/),
-and computing cosmological distances with
-[`Cosmology.jl`](https://juliaastro.org/Cosmology/stable/).
+In this tutorial we'll walk through a realistic spectroscopy workflow: downloading a real SDSS
+optical spectrum, loading it with [`FITSIO.jl`](https://juliaastro.org/FITSIO/stable/), wrapping
+it in [`Spectra.jl`](https://juliaastro.org/Spectra/stable/) types with proper physical units
+from [`UnitfulAstro.jl`](https://juliaastro.org/UnitfulAstro/stable/), applying dust corrections
+with [`DustExtinction.jl`](https://juliaastro.org/DustExtinction/stable/), fitting the continuum,
+and visualizing the results with [`Plots.jl`](https://docs.juliaplots.org/stable/).
 
-!!! note
-    This tutorial uses Julia 1.9+. `Spectra.jl` is under active development and installed
-    from GitHub. Code blocks show the intended API; some call signatures may evolve.
+Along the way, we'll also generate synthetic spectra and show how to work with spectra at
+different wavelength ranges — demonstrating the composability that makes the JuliaAstro
+ecosystem so powerful.
 
 ## Packages
+
+- [`FITSIO`](https://juliaastro.org/FITSIO/stable/): load spectral data from FITS files
+- [`Spectra`](https://juliaastro.org/Spectra/stable/): core spectral types, operations, and transformations
+- [`DustExtinction`](https://juliaastro.org/DustExtinction/stable/): interstellar dust reddening/dereddening
+- [`Unitful`](https://painterqubits.github.io/Unitful.jl/stable) and [`UnitfulAstro`](https://juliaastro.org/UnitfulAstro/stable/): physical units
+- [`Measurements`](https://juliaphysics.github.io/Measurements.jl/stable/): uncertainty propagation
+- [`Plots`](https://docs.juliaplots.org/stable/): visualization
+- [`Cosmology`](https://juliaastro.org/Cosmology/stable/): cosmological distance calculations
+
+Install them by pressing `]` in the Julia REPL to enter Pkg mode:
+
 ```
-pkg> add FITSIO Unitful UnitfulAstro DustExtinction Measurements Cosmology Plots
-pkg> add https://github.com/JuliaAstro/Spectra.jl
+pkg> add FITSIO Spectra DustExtinction Unitful UnitfulAstro Measurements Plots Cosmology
 ```
 
-| Package | Role |
-|---|---|
-| `FITSIO` | Read spectral data from FITS binary tables |
-| `Spectra` | Core `Spectrum` type, blackbody, reddening |
-| `DustExtinction` | Empirical extinction laws (CCM89, OD94, CAL00) |
-| `Unitful` / `UnitfulAstro` | Physical units — Å, nm, Jy, erg/s/cm²/Å |
-| `Measurements` | Automatic uncertainty propagation |
-| `Cosmology` | ΛCDM luminosity distances |
-| `Plots` | Visualisation |
-
----
+!!! note
+    `Spectra.jl` is not yet registered in the General registry. Install it from GitHub:
+    ```
+    pkg> add https://github.com/JuliaAstro/Spectra.jl
+    ```
 
 ## Part 1: Loading a real SDSS spectrum
 
-We work with a publicly available spectrum from SDSS DR14 — a galaxy observed on
-plate 1323, MJD 52797, fiber 12. The FITS file stores the coadded spectrum as a
-binary table with log₁₀-spaced wavelengths and calibrated flux in units of
-10⁻¹⁷ erg/s/cm²/Å.
+We'll work with a publicly available spectrum from the Sloan Digital Sky Survey (SDSS). This is
+a "lite" format spectrum of a galaxy observed on plate 1323, MJD 52797, fiber 12. The FITS file
+contains the coadded spectrum as a binary table with log-spaced wavelengths and calibrated flux.
 
 ### Downloading the data
-```julia
+
+```@example spectroscopy
 using Downloads
 
-sdss_url = "https://dr14.sdss.org/optical/spectrum/view/data/format=fits/spec=lite" *
-           "?plateid=1323&mjd=52797&fiberid=12"
+sdss_url = "https://dr14.sdss.org/optical/spectrum/view/data/format=fits/spec=lite?plateid=1323&mjd=52797&fiberid=12"
 sdss_file = joinpath(@__DIR__, "sdss_example.fits")
-
 if !isfile(sdss_file)
     Downloads.download(sdss_url, sdss_file)
 end
+nothing # hide
 ```
 
 ### Reading the FITS file
-```julia
-using FITSIO, Unitful, UnitfulAstro
 
-f        = FITS(sdss_file)
-loglam   = read(f[2], "loglam")
-flux_raw = read(f[2], "flux")
-ivar     = read(f[2], "ivar")
+Let's open the file and see what's inside:
 
-wave = (10 .^ loglam) * u"angstrom"
-flux = (flux_raw .* 1e-17) * u"erg/s/cm^2/angstrom"
+```@example spectroscopy
+using FITSIO
+
+f = FITS(sdss_file)
+```
+
+The spectrum lives in HDU 2 (the `COADD` table). SDSS stores wavelengths in log10 form, so
+we need to convert them. The flux is in units of 10⁻¹⁷ erg/s/cm²/Å.
+
+```@example spectroscopy
+using Unitful, UnitfulAstro
+
+# Read the raw arrays from the FITS binary table
+loglam = read(f[2], "loglam")   # log10(wavelength in Angstrom)
+flux_raw = read(f[2], "flux")   # flux in 10^-17 erg/s/cm^2/Å
+ivar = read(f[2], "ivar")       # inverse variance
+
+# Convert to physical quantities with proper units
+wave = (10 .^ loglam)u"angstrom"
+flux = (flux_raw .* 1e-17)u"erg/s/cm^2/angstrom"
+
 close(f)
 
-println("Wavelength range : ", minimum(wave), " — ", maximum(wave))
-println("Number of pixels : ", length(wave))
+println("Wavelength range: $(minimum(wave)) — $(maximum(wave))")
+println("Number of pixels: $(length(wave))")
 ```
 
 ### Creating a Spectrum object
-```julia
+
+Now we wrap these arrays into a `Spectra.jl` `Spectrum` object. This gives us access to all
+the package's built-in operations — plotting, arithmetic, continuum fitting, reddening, etc.
+
+```@example spectroscopy
 using Spectra
 
 spec = spectrum(wave, flux)
-println(spec)
 ```
 
-### Plotting the raw spectrum
-```julia
+That's it — `spectrum()` is the universal constructor. It automatically picks the right
+internal type based on the shape of your data (1D spectrum, echelle, etc.).
+
+### Quick plot
+
+```@example spectroscopy
 using Plots
 
-waves  = spectral_axis(spec)
-fluxes = flux_axis(spec)
-
-plot(ustrip.(waves), ustrip.(fluxes),
-    xlabel  = "Wavelength (Å)",
-    ylabel  = "Flux  (erg s⁻¹ cm⁻² Å⁻¹)",
-    title   = "SDSS Galaxy — plate 1323, fiber 12",
-    legend  = false, lw = 0.5, color = :steelblue, size = (800, 400))
+plot(spec,
+    xlabel = "Wavelength (Å)",
+    ylabel = "Flux (erg s⁻¹ cm⁻² Å⁻¹)",
+    title = "SDSS Galaxy Spectrum — Plate 1323, Fiber 12",
+    legend = false,
+    linewidth = 0.5,
+    color = :steelblue,
+    size = (800, 400),
+)
+savefig("sdss_raw.svg") # hide
+nothing # hide
 ```
 
----
+![SDSS raw spectrum](sdss_raw.svg)
 
-## Part 2: Working with physical units
+You can already see emission lines (the sharp peaks) and absorption features. Let's identify
+some of them in the next sections.
 
-### Wavelength conversions
-```julia
+## Part 2: Working with units
+
+One of Julia's strengths is zero-cost unit handling. Let's see how `Spectra.jl` and
+`UnitfulAstro.jl` make unit conversions effortless.
+
+### Inspecting units
+
+```@example spectroscopy
+# Get the units attached to our spectrum
+w_unit, f_unit = unit(spec)
+println("Wavelength unit: $w_unit")
+println("Flux unit: $f_unit")
+```
+
+### Converting wavelength to different representations
+
+Astronomers working at different wavelengths think in different units: optical astronomers use
+Ångströms or nanometers, infrared astronomers use microns, radio astronomers use GHz, and
+X-ray astronomers use keV. Julia's unit system handles all of these natively:
+
+```@example spectroscopy
+# Pick a reference wavelength — the Hα line at 6563 Å
 ha_wave = 6563.0u"angstrom"
 
-ha_nm = uconvert(u"nm",  ha_wave)
-ha_um = uconvert(u"μm",  ha_wave)
+# Convert to other representations
+ha_nm = uconvert(u"nm", ha_wave)
+ha_um = uconvert(u"μm", ha_wave)
 
-println("Hα = $ha_wave = $ha_nm = $ha_um")
+println("Hα wavelength:")
+println("  $(ha_wave)")
+println("  $(ha_nm)")
+println("  $(ha_um)")
 ```
 
 ### Converting between Fλ and Fν
 
-Radio and infrared data are usually stored as Fν (flux per unit frequency, often in
-Jansky). The conversion is Fν = Fλ × λ² / c.
-```julia
-using Unitful: c0
+Spectra can be expressed per unit wavelength (Fλ) or per unit frequency (Fν). The conversion
+involves a factor of λ²/c. Here's how to do it manually:
 
+```@example spectroscopy
+using Unitful: c0   # speed of light
+
+# Take a single flux measurement at Hα
 Flambda = 2.5e-17u"erg/s/cm^2/angstrom"
-Fnu     = Flambda * ha_wave^2 / c0 |> u"erg/s/cm^2/Hz"
-Fnu_jy  = uconvert(u"Jy", Fnu)
+
+# Fν = Fλ × λ² / c
+Fnu = Flambda * ha_wave^2 / c0 |> u"erg/s/cm^2/Hz"
+
+# Often expressed in Jansky (1 Jy = 10^-23 erg/s/cm^2/Hz)
+Fnu_jy = uconvert(u"Jy", Fnu)
 
 println("Fλ = $Flambda")
-println("Fν = $Fnu  =  $Fnu_jy")
+println("Fν = $Fnu")
+println("Fν = $Fnu_jy")
 ```
-
----
 
 ## Part 3: Dust extinction and dereddening
 
-Interstellar dust makes sources appear fainter and redder — it preferentially absorbs
-blue photons. `Spectra.jl` integrates with `DustExtinction.jl` for one-line corrections.
+Interstellar dust absorbs and scatters starlight, making sources appear fainter and redder than
+they really are. Before doing any science with a spectrum, we often need to correct for this
+extinction. `Spectra.jl` integrates directly with `DustExtinction.jl` to make this easy.
 
-### Reddening a blackbody
-```julia
-using DustExtinction
+### Simulating reddened spectra
 
-wave_bb = range(3000, 10000, length = 500)
-bb      = blackbody(wave_bb, 10_000)
+Let's first see what dust does to a clean spectrum. We'll generate a blackbody and apply
+different amounts of reddening:
 
-bb_05 = redden(bb, 0.5)
-bb_15 = redden(bb, 1.5)
-bb_30 = redden(bb, 3.0)
+```@example spectroscopy
+# Generate a blackbody spectrum at T = 10,000 K (a hot A-type star)
+wave_bb = range(3000, 10000, length=500)
+bb = blackbody(wave_bb, 10000)
 
-plot(spectral_axis(bb),  ustrip.(flux_axis(bb)),   label = "Av = 0",   lw = 2)
-plot!(spectral_axis(bb), ustrip.(flux_axis(bb_05)), label = "Av = 0.5", lw = 2)
-plot!(spectral_axis(bb), ustrip.(flux_axis(bb_15)), label = "Av = 1.5", lw = 2)
-plot!(spectral_axis(bb), ustrip.(flux_axis(bb_30)), label = "Av = 3.0", lw = 2)
-plot!(xlabel = "Wavelength (Å)", ylabel = "Flux",
-      title  = "Effect of dust extinction (T = 10 000 K blackbody)",
-      size   = (800, 400))
+# Apply different amounts of extinction (Av = visual extinction in magnitudes)
+bb_av1 = redden(bb, 0.5)    # mild reddening
+bb_av2 = redden(bb, 1.5)    # moderate reddening
+bb_av3 = redden(bb, 3.0)    # heavy reddening
+
+plot(bb, label="Original (Av=0)", linewidth=2, color=:blue)
+plot!(bb_av1, label="Av = 0.5", linewidth=2, color=:green)
+plot!(bb_av2, label="Av = 1.5", linewidth=2, color=:orange)
+plot!(bb_av3, label="Av = 3.0", linewidth=2, color=:red)
+plot!(xlabel="Wavelength (Å)", ylabel="Flux",
+    title="Effect of Dust Extinction on a Blackbody (T=10,000 K)",
+    size=(800, 400))
+savefig("dust_reddening.svg") # hide
+nothing # hide
 ```
 
-### Comparing extinction laws
-```julia
-bb_ccm  = redden(bb, 1.0, law = CCM89)
-bb_od94 = redden(bb, 1.0, law = OD94)
-bb_cal  = redden(bb, 1.0, law = CAL00)
-```
+![Dust reddening effect](dust_reddening.svg)
 
-### Dereddening the SDSS spectrum
-```julia
+Notice how dust preferentially absorbs blue/UV light — the spectrum gets both fainter and
+redder with increasing extinction.
+
+### Dereddening our SDSS spectrum
+
+Now let's correct our real SDSS spectrum. We'll assume a typical Milky Way extinction of
+Av = 0.1 magnitudes along this line of sight (you'd normally look this up from a dust map):
+
+```@example spectroscopy
+# Deredden the observed spectrum
 spec_dered = deredden(spec, 0.1)
 
-ws = ustrip.(spectral_axis(spec))
-plot(ws, ustrip.(flux_axis(spec)),       label = "Observed",    lw = 0.5, color = :gray, alpha = 0.6)
-plot!(ws, ustrip.(flux_axis(spec_dered)), label = "Dereddened",  lw = 0.5, color = :steelblue)
-plot!(xlabel = "Wavelength (Å)", ylabel = "Flux  (erg s⁻¹ cm⁻² Å⁻¹)",
-      title  = "Dereddening the SDSS spectrum", size = (800, 400))
+plot(spec, label="Observed", alpha=0.5, linewidth=0.5, color=:gray)
+plot!(spec_dered, label="Dereddened (Av=0.1)", linewidth=0.5, color=:steelblue)
+plot!(xlabel="Wavelength (Å)", ylabel="Flux (erg s⁻¹ cm⁻² Å⁻¹)",
+    title="Dereddening the SDSS Spectrum",
+    size=(800, 400))
+savefig("dereddened.svg") # hide
+nothing # hide
 ```
 
----
+![Dereddened spectrum](dereddened.svg)
 
-## Part 4: Inspecting spectral axes
+The dereddened spectrum is slightly bluer (more flux at shorter wavelengths), as expected.
 
-`Spectra.jl` provides `spectral_axis` and `flux_axis` helpers to extract the wavelength
-and flux arrays from any `Spectrum` object. This is useful for passing data to external
-fitting routines.
-```julia
-waves  = spectral_axis(spec_dered)
-fluxes = flux_axis(spec_dered)
+### Using different extinction laws
 
-println("First wavelength : ", waves[1])
-println("Last  wavelength : ", waves[end])
+`DustExtinction.jl` provides several empirical extinction laws. The default is `CCM89`
+(Cardelli, Clayton & Mathis 1989), but you can also use others:
 
-# Zoom around Hα (6563 Å)
-ha_mask = (ustrip.(waves) .> 6400) .& (ustrip.(waves) .< 6700)
-plot(ustrip.(waves[ha_mask]), ustrip.(fluxes[ha_mask]),
-    xlabel = "Wavelength (Å)", ylabel = "Flux  (erg s⁻¹ cm⁻² Å⁻¹)",
-    title  = "SDSS spectrum near Hα (6563 Å)",
-    lw = 1.5, color = :steelblue, legend = false, size = (800, 400))
+```@example spectroscopy
+using DustExtinction
+
+# Compare extinction laws on our blackbody
+bb_ccm = redden(bb, 1.0, law=CCM89)
+bb_od94 = redden(bb, 1.0, law=OD94)
+bb_cal00 = redden(bb, 1.0, law=CAL00)
+
+plot(bb, label="Original", linewidth=2, color=:black, linestyle=:dash)
+plot!(bb_ccm, label="CCM89", linewidth=2, color=:blue)
+plot!(bb_od94, label="OD94", linewidth=2, color=:red)
+plot!(bb_cal00, label="CAL00 (starburst)", linewidth=2, color=:orange)
+plot!(xlabel="Wavelength (Å)", ylabel="Flux",
+    title="Comparison of Extinction Laws (Av = 1.0)",
+    size=(800, 400))
+savefig("extinction_laws.svg") # hide
+nothing # hide
 ```
 
-!!! note
-    Chebyshev continuum fitting (`continuum()`) is planned for a future `Spectra.jl`
-    release — see [JuliaAstro/Spectra.jl#41](https://github.com/JuliaAstro/Spectra.jl/issues/41).
-    For now, `SpectralFitting.jl` provides full continuum and line fitting with
-    OGIP-compatible models.
+![Extinction law comparison](extinction_laws.svg)
 
----
+## Part 4: Continuum fitting and spectral features
+
+The *continuum* is the smooth, slowly-varying component of a spectrum — think of it as the
+"baseline" on top of which emission and absorption lines sit. Fitting and removing the
+continuum is a key step in measuring line properties.
+
+### Fitting the continuum
+
+`Spectra.jl` provides a Chebyshev polynomial continuum fitter:
+
+```@example spectroscopy
+# Fit the continuum with a degree-3 Chebyshev polynomial
+spec_cont = continuum(spec_dered)
+
+# The result is a normalized spectrum (flux / continuum)
+# Let's plot a zoom around the Hα region
+plot(spec_cont,
+    xlims=(6400, 6700),
+    xlabel="Wavelength (Å)",
+    ylabel="Normalized Flux",
+    title="Continuum-Normalized Spectrum near Hα",
+    linewidth=1.5, color=:steelblue,
+    legend=false,
+    size=(800, 400))
+hline!([1.0], color=:gray, linestyle=:dash, label="Continuum level")
+savefig("continuum_zoom.svg") # hide
+nothing # hide
+```
+
+![Continuum normalized zoom](continuum_zoom.svg)
+
+In a continuum-normalized spectrum, emission lines appear as peaks above 1.0, and absorption
+lines dip below 1.0. The strong peak you see is the Hα emission line at 6563 Å — a signature
+of ionized hydrogen.
 
 ## Part 5: Spectra with uncertainties
-```julia
+
+Real measurements always come with uncertainties. Julia's `Measurements.jl` package propagates
+errors automatically through any calculation. `Spectra.jl` supports this natively.
+
+```@example spectroscopy
 using Measurements
 
-wave_m  = range(4000, 7000, length = 200) * u"angstrom"
-flux_m  = ((5e-17 .± 0.5e-17) .* ones(200)) * u"erg/s/cm^2/angstrom"
-spec_m  = spectrum(wave_m, flux_m)
+# Create a spectrum with measurement uncertainties
+wave_m = range(4000, 7000, length=200)u"angstrom"
 
-spec_red = redden(spec_m, 0.5)
+# Simulate flux with realistic noise
+flux_vals = 5e-17 .* ones(200)
+sigma_vals = 0.5e-17 .* ones(200)
 
-println("Original  flux[1] : ", flux_axis(spec_m)[1])
-println("Reddened  flux[1] : ", flux_axis(spec_red)[1])
+flux_m = (flux_vals .± sigma_vals)u"erg/s/cm^2/angstrom"
+
+spec_m = spectrum(wave_m, flux_m)
+
+# Now all operations propagate uncertainties automatically!
+spec_reddened = redden(spec_m, 0.5)
+
+# Check that uncertainties were propagated
+println("Original flux[1]:  $(spec_m.flux[1])")
+println("Reddened flux[1]:  $(spec_reddened.flux[1])")
 ```
 
----
+The uncertainties are propagated correctly through the reddening calculation — no manual
+error propagation needed.
 
-## Part 6: Synthetic blackbody spectra
-```julia
-wave_synth = range(1000, 20000, length = 1000)
+## Part 6: Generating synthetic spectra
 
-bb_3k  = blackbody(wave_synth,  3_000)
-bb_6k  = blackbody(wave_synth,  6_000)
-bb_10k = blackbody(wave_synth, 10_000)
-bb_30k = blackbody(wave_synth, 30_000)
+`Spectra.jl` includes a blackbody generator, which is useful for quick comparisons and testing:
 
-plot(spectral_axis(bb_3k),  ustrip.(flux_axis(bb_3k)),  label = "3 000 K",  lw = 2, color = :red)
-plot!(spectral_axis(bb_6k),  ustrip.(flux_axis(bb_6k)),  label = "6 000 K",  lw = 2, color = :orange)
-plot!(spectral_axis(bb_10k), ustrip.(flux_axis(bb_10k)), label = "10 000 K", lw = 2, color = :steelblue)
-plot!(spectral_axis(bb_30k), ustrip.(flux_axis(bb_30k)), label = "30 000 K", lw = 2, color = :purple)
-plot!(xlabel = "Wavelength (Å)", ylabel = "Flux",
-      title  = "Planck blackbodies at four temperatures", size = (800, 400))
+```@example spectroscopy
+# Generate blackbodies at different temperatures
+wave_synth = range(1000, 20000, length=1000)
+
+bb_3000 = blackbody(wave_synth, 3000)    # cool M-star
+bb_6000 = blackbody(wave_synth, 6000)    # Sun-like G-star
+bb_10000 = blackbody(wave_synth, 10000)  # hot A-star
+bb_30000 = blackbody(wave_synth, 30000)  # very hot O-star
+
+plot(bb_3000, label="3,000 K (M-star)", linewidth=2, color=:red)
+plot!(bb_6000, label="6,000 K (G-star, Sun-like)", linewidth=2, color=:orange)
+plot!(bb_10000, label="10,000 K (A-star)", linewidth=2, color=:steelblue)
+plot!(bb_30000, label="30,000 K (O-star)", linewidth=2, color=:purple)
+plot!(xlabel="Wavelength (Å)", ylabel="Flux",
+    title="Blackbody Spectra at Different Temperatures",
+    size=(800, 400))
+savefig("blackbodies.svg") # hide
+nothing # hide
 ```
 
----
+![Blackbody comparison](blackbodies.svg)
+
+Notice how hotter stars peak at shorter (bluer) wavelengths — this is Wien's displacement law
+in action.
 
 ## Part 7: Spectral arithmetic
-```julia
-wave_a  = range(4000, 8000, length = 500)
-source  = blackbody(wave_a, 8_000)
-sky     = blackbody(wave_a,   300) * 0.1
 
-science = source - sky
+We can combine spectra using standard arithmetic. This is useful for things like subtracting a
+sky background, computing ratios, or combining observations:
 
-plot(spectral_axis(source), ustrip.(flux_axis(source)),  label = "Source", lw = 2)
-plot!(spectral_axis(sky),    ustrip.(flux_axis(sky)),     label = "Sky",    lw = 2)
-plot!(spectral_axis(science),ustrip.(flux_axis(science)), label = "Source − Sky", lw = 2, ls = :dash)
-plot!(xlabel = "Wavelength (Å)", ylabel = "Flux",
-      title  = "Spectral arithmetic: sky subtraction", size = (800, 400))
+```@example spectroscopy
+# Create two simple spectra
+wave_arith = range(4000, 8000, length=500)
+source = blackbody(wave_arith, 8000)
+background = blackbody(wave_arith, 300) * 0.1  # faint thermal background
+
+# Subtract the background
+clean = source - background
+
+plot(source, label="Source", linewidth=2, color=:steelblue)
+plot!(background, label="Background (×0.1)", linewidth=2, color=:red)
+plot!(clean, label="Source − Background", linewidth=2, color=:black, linestyle=:dash)
+plot!(xlabel="Wavelength (Å)", ylabel="Flux",
+    title="Spectral Arithmetic: Background Subtraction",
+    size=(800, 400))
+savefig("spectral_arithmetic.svg") # hide
+nothing # hide
 ```
 
----
+![Spectral arithmetic](spectral_arithmetic.svg)
 
-## Part 8: Cosmological redshift
-```julia
+## Part 8: Redshift and cosmological context
+
+Distant galaxies have their spectra shifted to longer wavelengths by the expansion of the
+universe. If a source is at redshift `z`, every wavelength is stretched by a factor of `(1+z)`.
+
+Let's compute what our SDSS spectrum would look like at different redshifts:
+
+```@example spectroscopy
 using Cosmology
 
+# Standard ΛCDM cosmology
 cosmo = cosmology()
 
-for z in [0.1, 0.5, 1.0, 2.0]
-    d = luminosity_dist(cosmo, z)
-    println("z = $z  →  dL = ", round(typeof(d), d, digits = 0))
-end
+# Our SDSS spectrum is at some redshift — let's work with the raw wavelengths
+# and show what happens when we shift them
+wave_rest = range(3000, 8000, length=500)
+source_rest = blackbody(wave_rest, 6000)
 
-wave_rest = range(3000, 8000, length = 500)
-bb_rest   = blackbody(wave_rest, 6_000)
+z_vals = [0.0, 0.5, 1.0, 2.0]
+colors = [:black, :blue, :green, :red]
 
-p = plot(xlabel = "Observed wavelength (Å)", ylabel = "Flux",
-         title  = "Cosmological redshift", size = (800, 400))
+p = plot(xlabel="Observed Wavelength (Å)", ylabel="Flux (arbitrary)",
+    title="Effect of Cosmological Redshift",
+    size=(800, 400))
 
-for (z, c) in zip([0.0, 0.5, 1.0, 2.0], [:black, :blue, :green, :red])
+for (z, c) in zip(z_vals, colors)
+    # Shift wavelengths: λ_obs = λ_rest × (1 + z)
     wave_obs = wave_rest .* (1 + z)
-    flux_obs = flux_axis(bb_rest) ./ (1 + z)^2
-    spec_z   = spectrum(wave_obs, flux_obs)
-    lbl = z == 0 ? "z = 0 (rest frame)" : "z = $z"
-    plot!(p, spectral_axis(spec_z), ustrip.(flux_axis(spec_z)), label = lbl, lw = 2, color = c)
+    spec_z = spectrum(wave_obs, source_rest.flux ./ (1 + z))  # flux dims by (1+z)
+
+    dist = z > 0 ? luminosity_dist(cosmo, z) : 0.0u"Mpc"
+    label_str = z == 0 ? "z = 0 (rest frame)" : "z = $z (dₗ = $(round(typeof(dist), dist, digits=0)))"
+
+    plot!(p, spec_z, label=label_str, linewidth=2, color=c)
 end
-p
+
+savefig("redshift_demo.svg") # hide
+nothing # hide
 ```
 
----
+![Redshift demonstration](redshift_demo.svg)
+
+Each curve shows the same intrinsic spectrum as it would appear at different redshifts. The
+spectral features shift to longer wavelengths and the flux decreases with distance.
 
 ## Summary
 
-1. **Loading real spectral data** from SDSS FITS files with `FITSIO.jl`
-2. **Physical units** with `Unitful.jl` + `UnitfulAstro.jl`
-3. **Dust extinction** with CCM89, OD94, CAL00 laws via `DustExtinction.jl`
-4. **Spectral axis inspection** using `spectral_axis` and `flux_axis`
-5. **Uncertainty propagation** via `Measurements.jl`
-6. **Synthetic blackbody spectra** from `Spectra.jl`
-7. **Spectral arithmetic** — sky subtraction, scaling
-8. **Cosmological redshift** and luminosity distances via `Cosmology.jl`
+In this tutorial we covered:
 
-### Where to go next
+1. **Loading real spectral data** from SDSS FITS files using `FITSIO.jl`
+2. **Creating `Spectrum` objects** with proper units using `Spectra.jl` + `UnitfulAstro.jl`
+3. **Unit conversions** between Å, nm, μm, and flux density conversions (Fλ ↔ Fν)
+4. **Dust extinction correction** using `DustExtinction.jl` with multiple extinction laws
+5. **Continuum fitting** and normalization with Chebyshev polynomials
+6. **Uncertainty propagation** through spectral operations using `Measurements.jl`
+7. **Synthetic spectra** generation with blackbody models
+8. **Spectral arithmetic** for background subtraction and combining data
+9. **Cosmological redshift** effects on spectral observations
 
-| Package | What it adds |
-|---|---|
-| [`SpectralFitting.jl`](https://juliaastro.org/SpectralFitting/stable/) | X-ray spectral fitting with OGIP PHA/RMF/ARF |
-| [`Korg.jl`](https://ajwheeler.github.io/Korg.jl/stable/) | Synthetic stellar spectra from model atmospheres |
-| [`AstroImages.jl`](https://juliaastro.org/AstroImages/stable/) | IFU data-cubes — spectra at every spaxel |
+The JuliaAstro spectroscopy stack is under active development. For X-ray spectral analysis,
+check out [`SpectralFitting.jl`](https://juliaastro.org/SpectralFitting/stable/). For generating
+theoretical stellar spectra from model atmospheres, see
+[`Korg.jl`](https://ajwheeler.github.io/Korg.jl/stable/). These packages are designed to
+compose together — you can load X-ray data with `SpectralFitting.jl`, generate a model with
+`Korg.jl`, and manipulate both using `Spectra.jl`'s interface.
