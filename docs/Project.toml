@@ -1,21 +1,25 @@
 [deps]
 CairoMakie = "13f3f980-e62b-5c42-98c6-ff1f3baf88f0"
-Cosmology = "76746363-e552-5dba-9a5a-acec00a98992"
-DemoCards = "311a05b2-6137-4a5a-b473-18580a3d38b5"
-Documenter = "e30172f5-a6a5-5a46-863b-614d45cd2de4"
-DocumenterInterLinks = "d12716ef-a0f6-4df4-a9f1-a5a34e75c656"
-DustExtinction = "2b7ca5e9-e8cc-48f0-a26a-d0defd0ff5a0"
-FITSIO = "525bcba6-941b-5504-bd06-fd0dc1a4d2eb"
-Glob = "c27321d9-0574-5035-807b-f59d2c89b15c"
-JuliaAstroDocs = "5ba9df79-bc07-467f-bade-66a1d49082bd"
+Cosmology = "76746363-e552-5a8a-bebb-4561cc67a010"
+DustExtinction = "2b5b7284-53b6-5ad7-8f70-67a9b4bd4ab6"
+FITSIO = "525bcba6-032f-4cfc-8c88-b57ef6ff7f75"
 Measurements = "eff96d63-e80a-5855-80a2-b1b0885c5895"
-MultiDocumenter = "87ed4bf0-c935-4a67-83c3-2a03bee4197c"
-Revise = "295af30f-e4ad-537b-8983-00126c2a3abe"
 SkyCoords = "fc659fc5-75a3-5475-a2ea-3da92c065361"
-Spectra = "aaa37d97-6571-4936-b3f5-c1a06b3eed37"
+Spectra = "bf2a4824-ca82-4512-8e48-15a4485d87b4"
 Unitful = "1986cc42-f94f-5a68-af5c-568840ba703d"
-UnitfulAstro = "6112ee07-acf9-27e0-a3d1-52decb599099"
+UnitfulAstro = "6112ee07-acf9-5e0f-b5d4-a0950463b4dc"
+Downloads = "f43a241f-c20a-4ad4-852c-f6b1247861c6"
+
+[compat]
+julia = "1"
+CairoMakie = "0.10, 0.11, 0.12"
+Cosmology = "1"
+DustExtinction = "0.8, 0.9, 1"
+FITSIO = "0.17"
+Measurements = "2"
+SkyCoords = "1"
+Unitful = "1"
+UnitfulAstro = "0.2, 1"
 
 [sources]
-MultiDocumenter = {url = "https://github.com/JuliaComputing/MultiDocumenter.jl"}
 Spectra = {url = "https://github.com/JuliaAstro/Spectra.jl"}
