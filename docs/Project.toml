@@ -1,6 +1,6 @@
 [deps]
 CairoMakie = "13f3f980-e62b-5c42-98c6-ff1f3baf88f0"
-Cosmology = "76746363-e552-5a8a-bebb-4561cc67a010"
+Cosmology = "76746363-e552-5dba-9a5a-cef6fa9cc5ab"
 DustExtinction = "2b5b7284-53b6-5ad7-8f70-67a9b4bd4ab6"
 FITSIO = "525bcba6-032f-4cfc-8c88-b57ef6ff7f75"
 Measurements = "eff96d63-e80a-5855-80a2-b1b0885c5895"
