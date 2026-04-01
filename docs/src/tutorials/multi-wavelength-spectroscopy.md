@@ -45,7 +45,7 @@ contains the coadded spectrum as a binary table with log-spaced wavelengths and 
 
 ### Downloading the data
 
-```@example spectroscopy
+```julia
 using Downloads
 
 sdss_url = "https://dr14.sdss.org/optical/spectrum/view/data/format=fits/spec=lite?plateid=1323&mjd=52797&fiberid=12"
@@ -60,7 +60,7 @@ nothing # hide
 
 Let's open the file and see what's inside:
 
-```@example spectroscopy
+```julia
 using FITSIO
 
 f = FITS(sdss_file)
@@ -69,7 +69,7 @@ f = FITS(sdss_file)
 The spectrum lives in HDU 2 (the `COADD` table). SDSS stores wavelengths in log10 form, so
 we need to convert them. The flux is in units of 10⁻¹⁷ erg/s/cm²/Å.
 
-```@example spectroscopy
+```julia
 using Unitful, UnitfulAstro
 
 # Read the raw arrays from the FITS binary table
@@ -92,7 +92,7 @@ println("Number of pixels: $(length(wave))")
 Now we wrap these arrays into a `Spectra.jl` `Spectrum` object. This gives us access to all
 the package's built-in operations — plotting, arithmetic, continuum fitting, reddening, etc.
 
-```@example spectroscopy
+```julia
 using Spectra
 
 spec = spectrum(wave, flux)
@@ -103,7 +103,7 @@ internal type based on the shape of your data (1D spectrum, echelle, etc.).
 
 ### Quick plot
 
-```@example spectroscopy
+```julia
 using Plots
 
 plot(spec,
@@ -131,7 +131,7 @@ One of Julia's strengths is zero-cost unit handling. Let's see how `Spectra.jl` 
 
 ### Inspecting units
 
-```@example spectroscopy
+```julia
 # Get the units attached to our spectrum
 w_unit, f_unit = unit(spec)
 println("Wavelength unit: $w_unit")
@@ -144,7 +144,7 @@ Astronomers working at different wavelengths think in different units: optical a
 Ångströms or nanometers, infrared astronomers use microns, radio astronomers use GHz, and
 X-ray astronomers use keV. Julia's unit system handles all of these natively:
 
-```@example spectroscopy
+```julia
 # Pick a reference wavelength — the Hα line at 6563 Å
 ha_wave = 6563.0u"angstrom"
 
@@ -163,7 +163,7 @@ println("  $(ha_um)")
 Spectra can be expressed per unit wavelength (Fλ) or per unit frequency (Fν). The conversion
 involves a factor of λ²/c. Here's how to do it manually:
 
-```@example spectroscopy
+```julia
 using Unitful: c0   # speed of light
 
 # Take a single flux measurement at Hα
@@ -191,7 +191,7 @@ extinction. `Spectra.jl` integrates directly with `DustExtinction.jl` to make th
 Let's first see what dust does to a clean spectrum. We'll generate a blackbody and apply
 different amounts of reddening:
 
-```@example spectroscopy
+```julia
 # Generate a blackbody spectrum at T = 10,000 K (a hot A-type star)
 wave_bb = range(3000, 10000, length=500)
 bb = blackbody(wave_bb, 10000)
@@ -222,7 +222,7 @@ redder with increasing extinction.
 Now let's correct our real SDSS spectrum. We'll assume a typical Milky Way extinction of
 Av = 0.1 magnitudes along this line of sight (you'd normally look this up from a dust map):
 
-```@example spectroscopy
+```julia
 # Deredden the observed spectrum
 spec_dered = deredden(spec, 0.1)
 
@@ -244,7 +244,7 @@ The dereddened spectrum is slightly bluer (more flux at shorter wavelengths), as
 `DustExtinction.jl` provides several empirical extinction laws. The default is `CCM89`
 (Cardelli, Clayton & Mathis 1989), but you can also use others:
 
-```@example spectroscopy
+```julia
 using DustExtinction
 
 # Compare extinction laws on our blackbody
@@ -275,7 +275,7 @@ continuum is a key step in measuring line properties.
 
 `Spectra.jl` provides a Chebyshev polynomial continuum fitter:
 
-```@example spectroscopy
+```julia
 # Fit the continuum with a degree-3 Chebyshev polynomial
 spec_cont = continuum(spec_dered)
 
@@ -305,7 +305,7 @@ of ionized hydrogen.
 Real measurements always come with uncertainties. Julia's `Measurements.jl` package propagates
 errors automatically through any calculation. `Spectra.jl` supports this natively.
 
-```@example spectroscopy
+```julia
 using Measurements
 
 # Create a spectrum with measurement uncertainties
@@ -334,7 +334,7 @@ error propagation needed.
 
 `Spectra.jl` includes a blackbody generator, which is useful for quick comparisons and testing:
 
-```@example spectroscopy
+```julia
 # Generate blackbodies at different temperatures
 wave_synth = range(1000, 20000, length=1000)
 
@@ -364,7 +364,7 @@ in action.
 We can combine spectra using standard arithmetic. This is useful for things like subtracting a
 sky background, computing ratios, or combining observations:
 
-```@example spectroscopy
+```julia
 # Create two simple spectra
 wave_arith = range(4000, 8000, length=500)
 source = blackbody(wave_arith, 8000)
@@ -392,7 +392,7 @@ universe. If a source is at redshift `z`, every wavelength is stretched by a fac
 
 Let's compute what our SDSS spectrum would look like at different redshifts:
 
-```@example spectroscopy
+```julia
 using Cosmology
 
 # Standard ΛCDM cosmology
