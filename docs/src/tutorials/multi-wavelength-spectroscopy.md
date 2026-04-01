@@ -20,41 +20,57 @@ using Measurements, Cosmology, CairoMakie, SkyCoords
 using Spectra
 ```
 
-## Part 1: Creating a spectrum
+## Part 1: Loading a real SDSS spectrum
 
-We build a synthetic galaxy spectrum — a smooth stellar continuum plus an Hα emission line.
+We use a publicly available spectrum from SDSS DR14 — a galaxy on
+plate 1323, MJD 52797, fiber 12. The FITS file stores flux in units
+of 10⁻¹⁷ erg s⁻¹ cm⁻² Å⁻¹ and an `ivar` (inverse-variance) column
+that encodes real per-pixel measurement uncertainties.
 ```julia
-using Unitful, UnitfulAstro, Measurements, CairoMakie, SkyCoords
-using Spectra, DustExtinction, Cosmology
+using Downloads, FITSIO, Unitful, UnitfulAstro, Measurements
 
-# Synthetic galaxy: continuum + Hα emission line
-wave_raw  = collect(range(3815.0, 9206.6, length = 3827))
-flux_raw  = @. 2.5e-17 * exp(-((wave_raw - 6000.0)/2000.0)^2) +
-               8e-16   * exp(-((wave_raw - 6563.0)/5.0)^2)
+# Download the spectrum (skipped if already present)
+sdss_url  = "https://dr14.sdss.org/optical/spectrum/view/data/format=fits/spec=lite" *
+            "?plateid=1323&mjd=52797&fiberid=12"
+sdss_file = joinpath(@__DIR__, "sdss_example.fits")
+isfile(sdss_file) || Downloads.download(sdss_url, sdss_file)
 
-# 5% per-pixel noise (simulating SDSS ivar: σ = 1/√ivar)
-sigma_raw = abs.(flux_raw) .* 0.05 .+ 1e-18
+# Read spectral columns
+f        = FITS(sdss_file)
+loglam   = read(f[2], "loglam")   # log₁₀(λ / Å)
+flux_raw = read(f[2], "flux")     # 10⁻¹⁷ erg s⁻¹ cm⁻² Å⁻¹
+ivar     = read(f[2], "ivar")     # inverse variance
+close(f)
 
-# Attach physical units + Measurements.jl uncertainties
-wave_aa   = wave_raw .* u"angstrom"
-flux_meas = measurement.(flux_raw, sigma_raw) .* (1e-17u"erg/s/cm^2/angstrom")
+# Convert wavelength + attach units
+wave_raw = 10 .^ loglam            # Å (plain numbers for dust map)
+wave_aa  = wave_raw .* u"angstrom" # with units
 
+# Real per-pixel σ from ivar: σ = 1/√ivar
+sigma_raw = map(iv -> iv > 0 ? 1/sqrt(iv) : 0.0, ivar)
+
+# Attach units + Measurements.jl uncertainties
+flux_meas = ((flux_raw .± sigma_raw) .* 1e-17) * u"erg/s/cm^2/angstrom"
+
+using Spectra
 spec = spectrum(wave_aa, flux_meas)
+
 println("Wavelength : ", round(wave_raw[1], digits=1),
-        " – ", round(wave_raw[end], digits=1), " Å")
+        " — ",  round(wave_raw[end], digits=1), " Å")
 println("Pixels     : ", length(wave_raw))
+println("Example px : ", flux_meas[100])   # shows value ± uncertainty
 ```
 
 Plot the spectrum with its uncertainty band:
 ```julia
-wv = ustrip.(spec.wave)
-fv = Measurements.value.(ustrip.(spec.flux))
-fe = Measurements.uncertainty.(ustrip.(spec.flux))
+wv = ustrip.(wave_aa)
+fv = Measurements.value.(ustrip.(flux_meas))
+fe = Measurements.uncertainty.(ustrip.(flux_meas))
 
 fig, ax = lines(wv, fv;
     axis = (xlabel = "Wavelength (Å)",
             ylabel = "Flux Density (erg s⁻¹ cm⁻² Å⁻¹)",
-            title  = "Synthetic Galaxy Spectrum"))
+            title  = "SDSS Galaxy — plate 1323, fiber 12"))
 band!(ax, wv, fv .- fe, fv .+ fe; color = (:steelblue, 0.3))
 fig
 ```
