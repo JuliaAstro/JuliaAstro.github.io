@@ -13,6 +13,13 @@ function test_packages(mode)
                         @test Pkg.add(url = "https://github.com/JuliaAstro/Spectra.jl") == nothing
                     elseif p_name == "GeneralAstrodynamics.jl"
                         # https://github.com/JuliaAstro/GeneralAstrodynamics.jl/pull/275
+                        repo = "https://github.com/JuliaAstro/GeneralAstrodynamics.jl"
+                        Pkg.add([
+                            Pkg.PackageSpec(; url = repo, subdir = "lib/AstrodynamicalCalculations"),
+                            Pkg.PackageSpec(; url = repo, subdir = "lib/AstrodynamicalModels"),
+                            Pkg.PackageSpec(; url = repo, subdir = "lib/AstrodynamicalSolvers"),
+                            Pkg.PackageSpec(; url = repo),
+                        ])
                         @test Pkg.add(url = "https://github.com/JuliaAstro/GeneralAstrodynamics.jl") == nothing
                     else
                         @test Pkg.add(chopsuffix(p_name, ".jl")) == nothing
@@ -26,7 +33,7 @@ function test_packages(mode)
         end
 
         @testset "Precompilation" begin
-            @test Pkg.precompile(; strict=true) == nothing
+            @test Pkg.precompile(; strict = true) == nothing
         end
 
         @testset "Package loading" begin
