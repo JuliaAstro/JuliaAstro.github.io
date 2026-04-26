@@ -7,11 +7,17 @@ function test_packages(mode)
                 if mode == :release
                     if p_name == "ASDF.jl"
                         # TODO: Register ASDF.jl v2 (v1 Python version currently broken)
-                        @test Pkg.add(url = "https://github.com/JuliaAstro/ASDF.jl") == nothing
+                        @test_skip p_name
                     elseif p_name == "Spectra.jl"
                         # TODO: Register SpectrumBase.jl
-                        @test Pkg.add(url = "https://github.com/JuliaAstro/Spectra.jl") == nothing
+                        @test_skip p_name
                     elseif p_name == "GeneralAstrodynamics.jl"
+                        @test_skip p_name
+                    else
+                        @test Pkg.add(chopsuffix(p_name, ".jl")) == nothing
+                    end
+                elseif mode == :dev
+                    if p_name == "GeneralAstrodynamics.jl"
                         # https://github.com/JuliaAstro/GeneralAstrodynamics.jl/pull/275
                         repo = "https://github.com/JuliaAstro/GeneralAstrodynamics.jl"
                         Pkg.add([
@@ -22,10 +28,8 @@ function test_packages(mode)
                         ])
                         @test Pkg.add(url = "https://github.com/JuliaAstro/GeneralAstrodynamics.jl") == nothing
                     else
-                        @test Pkg.add(chopsuffix(p_name, ".jl")) == nothing
+                        @test Pkg.add(url=package.repo) == nothing
                     end
-                elseif mode == :dev
-                    @test Pkg.add(url=package.repo) == nothing
                 else
                     throw(ArgumentError("`mode` argument to `test_packages` must be either `:release` or `:dev`."))
                 end
