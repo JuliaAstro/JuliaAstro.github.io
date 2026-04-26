@@ -19,6 +19,7 @@ jobs:
         shell: julia --project=. --color=yes {0}
         run: |
           import Pkg
+          Pkg.Registry.add("General")
           Pkg.Registry.add(Pkg.RegistrySpec(url="https://github.com/astro-group-bristol/AstroRegistry/"))
       - uses: julia-actions/julia-docdeploy@v1
         env:
