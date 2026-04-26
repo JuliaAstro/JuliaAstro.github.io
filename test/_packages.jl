@@ -1,4 +1,5 @@
 function test_packages(mode)
+    Pkg.activate(; temp = true)
     @testset "Compatibility - $(mode)" begin
         for package in packages_juliaastro
             p_name = package.name
@@ -38,7 +39,7 @@ function test_packages(mode)
         end
 
         @testset "Precompilation" begin
-            @test Pkg.precompile(; strict = true) == nothing
+            @test (Pkg.precompile(; strict = true); true)
         end
 
         @testset "Package loading" begin
