@@ -19,6 +19,8 @@ function test_packages(mode)
                         @test Pkg.add(chopsuffix(p_name, ".jl")) == nothing
                     end
                 elseif mode == :dev
+                    # Currently needed for Astroalign.jl until ConsensFitting.jl is registered
+                    Pkg.add(url = "https://github.com/JuliaAstro/ConsensFitting.jl")
                     if p_name == "GeneralAstrodynamics.jl"
                         # https://github.com/JuliaAstro/GeneralAstrodynamics.jl/pull/275
                         repo = "https://github.com/JuliaAstro/GeneralAstrodynamics.jl"
