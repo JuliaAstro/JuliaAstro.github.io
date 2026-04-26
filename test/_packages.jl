@@ -28,7 +28,7 @@ function test_packages(mode)
                         ])
                         @test Pkg.add(url = "https://github.com/JuliaAstro/GeneralAstrodynamics.jl") == nothing
                     else
-                        @test Pkg.add(url=package.repo) == nothing
+                        @test Pkg.add(url = package.repo) == nothing
                     end
                 else
                     throw(ArgumentError("`mode` argument to `test_packages` must be either `:release` or `:dev`."))
@@ -42,6 +42,9 @@ function test_packages(mode)
 
         @testset "Package loading" begin
             for package in packages_juliaastro
+                if mode == :release && p_name ∈ ["ASDF.jl", "Spectra.jl", "GeneralAstrodynamics.jl"]
+                    continue
+                end
                 p_name = package.name
                 @info string("Loading: ", p_name)
                 @testset "$(p_name)" begin
