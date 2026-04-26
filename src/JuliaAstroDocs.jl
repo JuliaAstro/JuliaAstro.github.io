@@ -664,6 +664,17 @@ ecosystem() = (
                 astropy = [],
             ),
             (
+                name = "gcalderone/GModelFit.jl",
+                repo = "https://github.com/gcalderone/GModelFit.jl",
+                doc = "https://gcalderone.github.io/GModelFit.jl/",
+                tagline = "A model fitting framework for Julia",
+                descr = """
+                - `GModelFit` is a general purpose, data-driven model fitting framework for Julia
+                - Powers the spectral fitting library, [QSFit.jl](https://github.com/gcalderone/QSFit.jl)
+                """,
+                astropy = ["astropy.modeling"],
+            ),
+            (
                 name = "JuliaStats",
                 repo = "https://github.com/JuliaStats",
                 doc = "https://juliastats.org/",
