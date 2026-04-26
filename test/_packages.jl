@@ -5,13 +5,13 @@ function test_packages(mode)
             @info string("Adding: ", p_name)
             @testset "$(p_name)" begin
                 if mode == :release
-                    if p_name = "ASDF.jl"
+                    if p_name == "ASDF.jl"
                         # TODO: Register ASDF.jl v2 (v1 Python version currently broken)
                         @test Pkg.add(url = "https://github.com/JuliaAstro/ASDF.jl") == nothing
                     elseif p_name == "Spectra.jl"
                         # TODO: Register SpectrumBase.jl
                         @test Pkg.add(url = "https://github.com/JuliaAstro/Spectra.jl") == nothing
-                    elseif p_name = "GeneralAstrodynamics.jl"
+                    elseif p_name == "GeneralAstrodynamics.jl"
                         @test_skip Pkg.add("GeneralAstrodynamics") == nothing
                     else
                         @test Pkg.add(chopsuffix(p_name, ".jl")) == nothing
