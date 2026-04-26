@@ -42,10 +42,10 @@ function test_packages(mode)
 
         @testset "Package loading" begin
             for package in packages_juliaastro
+                p_name = package.name
                 if mode == :release && p_name ∈ ["ASDF.jl", "Spectra.jl", "GeneralAstrodynamics.jl"]
                     continue
                 end
-                p_name = package.name
                 @info string("Loading: ", p_name)
                 @testset "$(p_name)" begin
                     @test eval(quote
