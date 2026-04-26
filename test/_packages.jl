@@ -14,6 +14,7 @@ function test_packages(mode)
                     elseif p_name == "GeneralAstrodynamics.jl"
                         @test_skip p_name
                     else
+                        @info "Adding package" p_name
                         @test Pkg.add(chopsuffix(p_name, ".jl")) == nothing
                     end
                 elseif mode == :dev
