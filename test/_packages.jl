@@ -12,7 +12,7 @@ function test_packages(mode)
                         # TODO: Register SpectrumBase.jl
                         @test Pkg.add(url = "https://github.com/JuliaAstro/Spectra.jl") == nothing
                     elseif p_name == "GeneralAstrodynamics.jl"
-                        @test_skip Pkg.add("GeneralAstrodynamics") == nothing
+                        @test Pkg.add("GeneralAstrodynamics") == nothing
                     else
                         @test Pkg.add(chopsuffix(p_name, ".jl")) == nothing
                     end
