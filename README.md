@@ -28,19 +28,23 @@ Our Package Ecosystem page and Comparison page are integrated with the rest of t
 
 ```julia
   (
-      name = "eschnett/ASDF2.jl",
-      repo = "https://github.com/eschnett/ASDF2.jl",
-      doc = "https://eschnett.github.io/ASDF2.jl/dev/",
-      tagline = "ASDF, the Advanced Scientific Data Format",
+      name = "PairPlots.jl",
+      repo = "https://github.com/sefffal/PairPlots.jl",
+      doc = "https://sefffal.github.io/PairPlots.jl/dev/",
+      tagline = "Beautiful and flexible visualizations of high dimensional data",
       descr = """
-      - A new [Advanced Scientific Data Format (ASDF)](https://asdf-standard.readthedocs.io/en/latest/index.html) package, written in Julia
+      - Corner plots or scatter plot matrices. Both Julia and Python are supported (PairPlots.jl and [pairplots.py](https://pypi.org/project/pairplots/))
+      - Inspired by [corner.py](https://corner.readthedocs.io/en/latest/index.html) and [chainconsumer.py](https://samreay.github.io/ChainConsumer/usage.html)
+
+      See also:
+      - [ReferenceFrameRotations.jl](https://github.com/JuliaSpace/ReferenceFrameRotations.jl)
       """,
-      astropy = ["asdf-astropy"],
+      astropy = ["astropy.visualization"],
   ),
 ```
 
 > [!NOTE]
-> The overall `ecosystem` object that this entry is stored in determines the order of the top level dropdown menus on the site (`highlevel`) and how each package appears on both pages, alphabetically by package name (`name`). Packages under the JuliaAstro organization are listed as their bare name, while packages outside of the organization have their parent repo name prepended to it, e.g., `eschnett/ASDF2.jl`
+> The overall `ecosystem` object that this entry is stored in determines the order of the top level dropdown menus on the site (`highlevel`) and how each package appears on both pages, alphabetically by package name (`name`). Packages under the JuliaAstro organization are listed as their bare name, while packages outside of the organization have their parent repo name prepended to it, e.g., `sefffal/PairPlots.jl`
 
 If appropriate, we appreciate a quick entry for your package in the `astropy` field that relates it to a similar package in the [Astropy ecosystem](https://www.astropy.org/). This helps new users who may be more familiar with Python get more easily oriented in the Julia ecosystem. See our [Comparison page](https://juliaastro.org/home/comparison/) for examples. If you feel that there is not a good match for your package, you can just leave the `astropy` field blank (i.e., as an empty array `[]`) and it will not appear in this page.
 
