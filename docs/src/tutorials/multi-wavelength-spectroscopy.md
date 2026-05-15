@@ -103,7 +103,7 @@ eq  = ICRSCoords(deg2rad(178.90417), deg2rad(0.66278))
 gal = convert(GalCoords, eq)
 
 dustmap = SFD98Map()
-ebv     = dustmap(rad2deg(gal.l), rad2deg(gal.b))
+ebv     = dustmap(gal.l, gal.b)
 Av      = 3.1 * ebv
 println("E(B-V) = ", round(ebv, digits=4), "  Av = ", round(Av, digits=4), " mag")
 
