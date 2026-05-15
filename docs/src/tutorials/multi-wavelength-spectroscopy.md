@@ -146,15 +146,15 @@ temps      = [3_000u"K", 6_000u"K", 10_000u"K", 30_000u"K"]
 labels_bb  = ["3 000 K", "6 000 K", "10 000 K", "30 000 K"]
 colors_bb  = [:red, :orange, :steelblue, :purple]
 
-fig3, ax3 = lines(ustrip.(wave_synth),
-                  ustrip.(blackbody(wave_synth, temps[1]).flux);
+fig3, ax3 = lines(wave_synth,
+                  blackbody(wave_synth, temps[1]).flux;
     label = labels_bb[1], color = colors_bb[1],
-    axis  = (xlabel = "Wavelength (Å)",
-             ylabel = "Flux Density (erg s⁻¹ cm⁻² Å⁻¹ sr⁻¹)",
-             title  = "Blackbody Spectra"))
+    axis  = (title  = "Blackbody Spectra",
+    yscale = log10, yticks = LogTicks(LinearTicks(5))))
+    
 for (T, lab, col) in zip(temps[2:end], labels_bb[2:end], colors_bb[2:end])
-    lines!(ax3, ustrip.(wave_synth),
-           ustrip.(blackbody(wave_synth, T).flux);
+    lines!(ax3, wave_synth,
+           blackbody(wave_synth, T).flux;
            label = lab, color = col)
 end
 axislegend(ax3, position = :rt)
