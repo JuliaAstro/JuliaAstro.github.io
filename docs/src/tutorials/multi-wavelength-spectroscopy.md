@@ -109,17 +109,13 @@ println("E(B-V) = ", round(ebv, digits=4), "  Av = ", round(Av, digits=4), " mag
 
 # Apply CCM89 extinction law
 ext   = CCM89(Rv = 3.1)
-tau   = [ustrip(ext(w * u"angstrom")) * Av for w in wave_raw]
-corr  = 10 .^ (tau ./ 2.5)
+A_lambda = ext.(wave_raw) .* Av
+corr = exp10.(-A_lambda ./ 2.5)
+flux_dered = flux_meas ./ corr
 
-fv_raw = Measurements.value.(ustrip.(spec.flux))
-fv_ded = fv_raw .* corr
-
-fig2, ax2 = lines(wv, fv_raw; label = "Raw",
-    axis = (xlabel = "Wavelength (Å)",
-            ylabel = "Flux Density (erg s⁻¹ cm⁻² Å⁻¹)",
-            title  = "CCM89 Dust Dereddening"))
-lines!(ax2, wv, fv_ded; label = "Dereddened", color = :orange)
+fig2, ax2 = lines(wave_aa, flux_meas; label = "Raw",
+    axis = (title  = "CCM89 Dust Dereddening",))
+lines!(ax2, wave_aa, flux_dered; label = "Dereddened", color = :orange)
 axislegend(ax2)
 fig2
 ```
