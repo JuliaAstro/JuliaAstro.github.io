@@ -52,7 +52,6 @@ sigma_raw = map(iv -> iv > 0 ? 1/sqrt(iv) : 0.0, ivar)
 # Attach units + Measurements.jl uncertainties
 flux_meas = ((flux_raw .± sigma_raw) .* 1e-17) * u"erg/s/cm^2/angstrom"
 
-using Spectra
 spec = spectrum(wave_aa, flux_meas)
 
 println("Wavelength : ", round(wave_raw[1], digits=1),
