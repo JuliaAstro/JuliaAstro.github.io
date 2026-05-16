@@ -388,6 +388,17 @@ ecosystem() = (
                 astropy = ["reproject"],
             ),
             (
+                name = "SOFA.jl",
+                repo = "https://github.com/JuliaAstro/SOFA.jl",
+                doc = "https://juliaastro.org/SOFA/stable/",
+                tagline = "Unofficial wrapper of the IAU SOFA C libraries for fundamental astronomy",
+                descr = """
+                - The purpose of this package is to wrap the SOFA C library of fundamental astonomical function to make it easily accessible in Julia. This package serves as a wrapper only. All functions ultimately call the original, unmodified, SOFA C library functions which are compiled as part of the package build process.
+                - The full SOFA C test suite is reproduced as part of the package to prove compliance and reproducibility of the core SOFA C functionality.
+                """,
+                astropy = ["astropy.time", "astropy.coordinates"],
+            ),
+            (
                 name = "SkyCoords.jl",
                 repo = "https://github.com/JuliaAstro/SkyCoords.jl",
                 doc = "https://juliaastro.org/SkyCoords/stable/",
@@ -709,12 +720,12 @@ ecosystem() = (
     "Utilities" => (
         "Data I/O" => (
             (
-                name = "ASDF2.jl",
-                repo = "https://github.com/JuliaAstro/ASDF2.jl",
-                doc = "https://juliaastro.org/ASDF2.jl/dev/",
+                name = "ASDF.jl",
+                repo = "https://github.com/JuliaAstro/ASDF.jl",
+                doc = "https://juliaastro.org/ASDF.jl/dev/",
                 tagline = "ASDF, the Advanced Scientific Data Format",
                 descr = """
-                - A new [Advanced Scientific Data Format (ASDF)](https://asdf-standard.readthedocs.io/en/latest/index.html) package, written in Julia
+                - A Julia implementation of the Advanced Scientific Data Format (ASDF)
                 """,
                 astropy = ["asdf-astropy"],
             ),

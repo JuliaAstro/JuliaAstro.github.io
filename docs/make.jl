@@ -115,6 +115,7 @@ wrapper_packages = [
     "ERFA",
     "FITSIO",
     "emmt/OIFITS",
+    "SOFA",
     "WCS",
 ]
 
