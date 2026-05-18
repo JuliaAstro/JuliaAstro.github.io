@@ -388,6 +388,17 @@ ecosystem() = (
                 astropy = ["reproject"],
             ),
             (
+                name = "SOFA.jl",
+                repo = "https://github.com/JuliaAstro/SOFA.jl",
+                doc = "https://juliaastro.org/SOFA/stable/",
+                tagline = "Unofficial wrapper of the IAU SOFA C libraries for fundamental astronomy",
+                descr = """
+                - The purpose of this package is to wrap the SOFA C library of fundamental astonomical function to make it easily accessible in Julia. This package serves as a wrapper only. All functions ultimately call the original, unmodified, SOFA C library functions which are compiled as part of the package build process.
+                - The full SOFA C test suite is reproduced as part of the package to prove compliance and reproducibility of the core SOFA C functionality.
+                """,
+                astropy = ["astropy.time", "astropy.coordinates"],
+            ),
+            (
                 name = "SkyCoords.jl",
                 repo = "https://github.com/JuliaAstro/SkyCoords.jl",
                 doc = "https://juliaastro.org/SkyCoords/stable/",
