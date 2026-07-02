@@ -24,23 +24,21 @@ Typo fixes or suggested changes to existing prose is appreciated! The most direc
 
 ### 2. Adding a package to our [Package Ecosystem page](https://juliaastro.org/home/ecosystem/) or [Comparison to Astropy page](https://juliaastro.org/home/comparison/)
 
-Our Package Ecosystem page and Comparison page are integrated with the rest of the site, including the global navbar dropdown menu across the top, and in our [integration testing suite](https://github.com/JuliaAstro/JuliaAstro.github.io/actions/workflows/CI.yml). To add a package, include an entry in [`src/JuliaAstroDocs.jl`](https://github.com/JuliaAstro/JuliaAstro.github.io/blob/main/src/JuliaAstroDocs.jl), following the same format as the other packages. Below is an example entry of how that might look:
+Our Package Ecosystem page and Comparison page are integrated with the rest of the site, including the global navbar dropdown menu across the top, and in our [integration testing suite](https://github.com/JuliaAstro/JuliaAstro.github.io/actions/workflows/CI.yml). To add a package, include an entry in [`ecosystem.asdf`](https://github.com/JuliaAstro/JuliaAstro.github.io/blob/main/ecosystem.asdf), following the same format as the other packages. Below is an example entry of how that might look:
 
-```julia
-  (
-      name = "PairPlots.jl",
-      repo = "https://github.com/sefffal/PairPlots.jl",
-      doc = "https://sefffal.github.io/PairPlots.jl/dev/",
-      tagline = "Beautiful and flexible visualizations of high dimensional data",
-      descr = """
-      - Corner plots or scatter plot matrices. Both Julia and Python are supported (PairPlots.jl and [pairplots.py](https://pypi.org/project/pairplots/))
-      - Inspired by [corner.py](https://corner.readthedocs.io/en/latest/index.html) and [chainconsumer.py](https://samreay.github.io/ChainConsumer/usage.html)
+```yaml
+PairPlots.jl:
+  repo: "https://github.com/sefffal/PairPlots.jl"
+  doc: "https://sefffal.github.io/PairPlots.jl/dev/"
+  tagline: "Beautiful and flexible visualizations of high dimensional data"
+  descr: |
+    - Corner plots or scatter plot matrices. Both Julia and Python are supported (PairPlots.jl and [pairplots.py](https://pypi.org/project/pairplots/))
+    - Inspired by [corner.py](https://corner.readthedocs.io/en/latest/index.html) and [chainconsumer.py](https://samreay.github.io/ChainConsumer/usage.html)
 
-      See also:
-      - [ReferenceFrameRotations.jl](https://github.com/JuliaSpace/ReferenceFrameRotations.jl)
-      """,
-      astropy = ["astropy.visualization"],
-  ),
+    See also:
+    - [ReferenceFrameRotations.jl](https://github.com/JuliaSpace/ReferenceFrameRotations.jl)
+  astropy:
+    - "astropy.visualization"
 ```
 
 > [!NOTE]
@@ -102,7 +100,7 @@ All in all, to add a new case study:
       └── JuliaAstroDocs.jl
   ```
 
-  1. All packages to document are stored in a nested NamedTuple (`ecosystem`) in `src/JuliaAstroDocs.jl`. This contains all of the metadata needed to build the rest of the site, and is the main entrypoint for making documentation contributions.
+  1. All packages to document are stored in the top-level `ecosyste,asdf` file. This contains all of the metadata needed to build the rest of the site, and is the main entrypoint for making documentation contributions.
   1. Using this information, the markdown in `doc/src/` for our [comparison page](https://juliaastro.org/home/comparison/) and [ecosystem page](https://juliaastro.org/home/ecosystem/) are programatically created by `src/comparison.jl` and `src/ecosystem.jl`, respectively.
   1.  MultiDocumenter then builds the site via `docs/make.jl`, which also pulls the documentation for each JuliaAstro package and stores it in `docs/clones/`
 
