@@ -13,14 +13,18 @@ const init_code = quote
     ENV["JULIA_PKG_PRECOMPILE_AUTO"] = 0
 
     import Pkg
-    using JuliaAstroDocs: ecosystem_t
+    using JuliaAstroDocs: ecosystem
     using InteractiveUtils: @time_imports
 
-    packages_juliaastro = filter(ecosystem_t()) do package
-        occursin("juliaastro", lowercase(package.repo))
-    end
-    unique!(p -> p.name, packages_juliaastro)
-    sort!(packages_juliaastro)
+    packages_juliaastro = [
+        name => p
+        for (highlevel, sublevels) in ecosystem()
+            for (sublevel, packages) in sublevels
+                for (name, p) in packages
+                    if occursin("juliaastro", lowercase(p["repo"]))
+    ]
+    unique!(first, packages_juliaastro)
+    sort!(packages_juliaastro; by = first)
 end
 
 args = parse_args(Base.ARGS)

@@ -5,8 +5,8 @@ uuid = "5ba9df79-bc07-467f-bade-66a1d49082bd"
 projects = ["test", "docs"]
 
 [deps]
-TypedTables = "9d95f2ec-7b3d-5a63-8d20-e2491e220bb9"
+ASDF = "686f71d1-807d-59a4-a860-28280ea06d7b"
 
 [compat]
-TypedTables = "1.4.6"
+ASDF = "2"
 julia = "1.10"

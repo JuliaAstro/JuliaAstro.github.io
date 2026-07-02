@@ -1,15 +1,11 @@
 function test_packages(mode)
     Pkg.activate(; temp = true)
     @testset "Compatibility - $(mode)" begin
-        for package in packages_juliaastro
-            p_name = package.name
+        for (p_name, package) in packages_juliaastro
             @info string("Adding: ", p_name)
             @testset "$(p_name)" begin
                 if mode == :release
-                    if p_name == "ASDF.jl"
-                        # TODO: Register ASDF.jl v2 (v1 Python version currently broken)
-                        @test_skip p_name
-                    elseif p_name == "Spectra.jl"
+                    if p_name == "SpectrumBase.jl"
                         # TODO: Register SpectrumBase.jl
                         @test_skip p_name
                     elseif p_name == "GeneralAstrodynamics.jl"
@@ -32,7 +28,7 @@ function test_packages(mode)
                         ])
                         @test Pkg.add(url = "https://github.com/JuliaAstro/GeneralAstrodynamics.jl") == nothing
                     else
-                        @test Pkg.add(url = package.repo) == nothing
+                        @test Pkg.add(url = package["repo"]) == nothing
                     end
                 else
                     throw(ArgumentError("`mode` argument to `test_packages` must be either `:release` or `:dev`."))
@@ -45,9 +41,8 @@ function test_packages(mode)
         end
 
         @testset "Package loading" begin
-            for package in packages_juliaastro
-                p_name = package.name
-                if mode == :release && p_name ∈ ["ASDF.jl", "Spectra.jl", "GeneralAstrodynamics.jl"]
+            for (p_name, package) in packages_juliaastro
+                if mode == :release && p_name ∈ ["SpectrumBase.jl", "GeneralAstrodynamics.jl"]
                     continue
                 end
                 @info string("Loading: ", p_name)
