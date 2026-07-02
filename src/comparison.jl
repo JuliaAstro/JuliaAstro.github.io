@@ -1,13 +1,21 @@
-package_row(p) = """
+stake! = String ∘ take!
+
+package_row((name, p)) = """
   <tr>
-    <td><a href="$(p.repo)">$(p.name)</a></td>
-    <td>$(p.tagline)</td>
+    <td><a href="$(p["repo"])">$(name)</a></td>
+    <td>$(p["tagline"])</td>
   </tr>
 """
 
 function package_section(t, astropy_module, astropy_url)
     io = IOBuffer()
-    t_astropy = Iterators.filter(x -> astropy_module in x.astropy, t) |> collect
+    t_astropy = [
+        name => p
+        for (highlevel, sublevels) in t
+            for (sublevel, packages) in sublevels
+                for (name, p) in packages
+                    if astropy_module in p["astropy"]
+    ]
     write(io, """
       <tr>
         <td rowspan=$(length(t_astropy)+1)>
@@ -20,7 +28,7 @@ function package_section(t, astropy_module, astropy_url)
       write(io, package_row(p))
     end
 
-    JuliaAstroDocs.stake!(io)
+    stake!(io)
 end
 
 function page_compare(t)
