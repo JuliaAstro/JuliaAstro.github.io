@@ -108,7 +108,6 @@ wrapper_packages = [
     "CFITSIO",
     "JuliaAPlavin/Difmap",
     "emmt/EasyFITS",
-    "ERFA",
     "FITSIO",
     "emmt/OIFITS",
     "SOFA",

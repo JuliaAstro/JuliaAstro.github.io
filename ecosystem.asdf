@@ -262,12 +262,6 @@ Techniques:
       descr: "- Calculate Earth orientation parameters from IERS tables\n"
       astropy:
         - "astropy.utils.iers"
-    ERFA.jl:
-      repo: "https://github.com/JuliaAstro/ERFA.jl"
-      doc: "https://juliaastro.github.io/ERFA.jl/stable"
-      tagline: "Time systems conversions"
-      descr: "- Low-level wrapper for [liberfa](https://github.com/liberfa/erfa)\n"
-      astropy: []
     Healpix.jl:
       repo: "https://github.com/JuliaAstro/Healpix.jl"
       doc: "https://juliaastro.org/Healpix/stable/"
