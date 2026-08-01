@@ -333,7 +333,7 @@ Techniques:
         - "specutils"
     SpectrumBase.jl:
       repo: "https://github.com/JuliaAstro/SpectrumBase.jl"
-      doc: "https://juliaastro.org/Spectra/stable"
+      doc: "https://juliaastro.org/SpectrumBase/stable"
       tagline: "Utilities for interfacing with astronomical spectra and synthetic spectra libraries"
       descr: "- Utilities for interfacing with astronomical spectra and synthetic spectra libraries\n"
       astropy:
