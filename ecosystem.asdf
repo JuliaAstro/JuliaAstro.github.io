@@ -288,7 +288,7 @@ Techniques:
     SOFA.jl:
       repo: "https://github.com/JuliaAstro/SOFA.jl"
       doc: "https://juliaastro.org/SOFA/stable/"
-      tagline: "Julia implementation of the IAU SOFA C libraries for fundamental astronomy"
+      tagline: "A Julia implementation of the IAU's Standards of Fundamental Astronomy (SOFA)"
       descr: |
         - The purpose of this package is to provide a Julia implementation of the SOFA C library of fundamental astonomical functions.
         - The full SOFA C test suite is reproduced as part of the package to prove compliance and reproducibility of the core SOFA C functionality.
