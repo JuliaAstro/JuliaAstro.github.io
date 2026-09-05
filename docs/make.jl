@@ -110,7 +110,6 @@ wrapper_packages = [
     "emmt/EasyFITS",
     "FITSIO",
     "emmt/OIFITS",
-    "SOFA",
     "WCS",
 ]
 
