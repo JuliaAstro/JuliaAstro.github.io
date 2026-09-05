@@ -11,4 +11,8 @@ Revise = "295af30f-e4ad-537b-8983-00126c2a3abe"
 MultiDocumenter = {url = "https://github.com/JuliaComputing/MultiDocumenter.jl"}
 
 [compat]
+DemoCards = "0.5.5"
 Documenter = "1"
+DocumenterInterLinks = "1.1.0"
+Glob = "1.5.0"
+Revise = "3.16.1"
