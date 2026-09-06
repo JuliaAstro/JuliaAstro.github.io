@@ -1,5 +1,7 @@
 # JuliaAstro
 
+### Better Software = Better Science
+
 [JuliaAstro](https://github.com/JuliaAstro) and its affiliated organizations are a community for astronomy in Julia. We strive to foster an ecosystem of packages that interoperate well with each other for a wide variety of different domains ranging from solar system science to large-scale cosmology. As part of the larger Julia ecosystem, our mission is to provide code that is fast, dynamic, composable, and reproducible.
 
 ## Where to Start?
