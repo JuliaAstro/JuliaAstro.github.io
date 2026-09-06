@@ -373,6 +373,14 @@ Techniques:
         - Execute [Difmap](http://www.ascl.net/1103.001) scripts, handle inputs/outputs and logs
         - Display images and plots from Difmap in interactive Julia environments
       astropy: []
+    MeasurementSets.jl:
+      repo: "https://github.com/JuliaAstro/MeasurementSets.jl"
+      doc: "https://juliaastro.org/MeasurementSets/stable/"
+      tagline: "A pure-Julia reader and writer for the Measurement Set v2 (casacore CTDS) radio-interferometry format"
+      descr: |
+        - Reads and writes MS v2 directories with no C-library dependency: every casacore storage manager and virtual column engine, MultiFile / MultiHDF5 containers, RefTable / ConcatTable, and a TaQL-lite query engine
+        - Optional weak-dependency extensions for physical units (Unitful) and reference-frame conversions (SOFA)
+      astropy: []
     OIFITS.jl:
       repo: "https://github.com/emmt/OIFITS.jl"
       doc: "https://github.com/emmt/OIFITS.jl?tab=readme-ov-file#support-for-oi-fits-data-in-julia"
