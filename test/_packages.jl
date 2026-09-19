@@ -5,20 +5,16 @@ function test_packages(mode)
             @info string("Adding: ", p_name)
             @testset "$(p_name)" begin
                 if mode == :release
-                    if p_name == "SpectrumBase.jl"
-                        # TODO: Register SpectrumBase.jl
-                        @test_skip p_name
-                    elseif p_name == "GeneralAstrodynamics.jl"
+                    # TODO: Register these packages
+                    if p_name ∈ ("SpectrumBase.jl", "GeneralAstrodynamics.jl", "MeasurementSets.jl")
                         @test_skip p_name
                     else
                         @info "Adding package" p_name
                         @test Pkg.add(chopsuffix(p_name, ".jl")) == nothing
                     end
                 elseif mode == :dev
-                    # Currently needed for Astroalign.jl until ConsensusFitting.jl is registered
-                    Pkg.add(url = "https://github.com/JuliaAstro/ConsensusFitting.jl")
                     if p_name == "GeneralAstrodynamics.jl"
-                        # https://github.com/JuliaAstro/GeneralAstrodynamics.jl/pull/275
+                        # TODO: https://github.com/JuliaAstro/GeneralAstrodynamics.jl/pull/275
                         repo = "https://github.com/JuliaAstro/GeneralAstrodynamics.jl"
                         Pkg.add([
                             Pkg.PackageSpec(; url = repo, subdir = "lib/AstrodynamicalCalculations"),
