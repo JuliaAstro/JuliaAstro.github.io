@@ -5,8 +5,7 @@ function test_packages(mode)
             @info string("Adding: ", p_name)
             @testset "$(p_name)" begin
                 if mode == :release
-                    # TODO: Register these packages
-                    if p_name ∈ ("SpectrumBase.jl", "GeneralAstrodynamics.jl", "MeasurementSets.jl")
+                    if p_name ∈ NOT_REGISTERED
                         @test_skip p_name
                     else
                         @info "Adding package" p_name
@@ -38,7 +37,7 @@ function test_packages(mode)
 
         @testset "Package loading" begin
             for (p_name, package) in packages_juliaastro
-                if mode == :release && p_name ∈ ["SpectrumBase.jl", "GeneralAstrodynamics.jl"]
+                if mode == :release && p_name ∈ NOT_REGISTERED
                     continue
                 end
                 @info string("Loading: ", p_name)

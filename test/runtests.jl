@@ -12,6 +12,10 @@ const init_code = quote
     # Worry if they compile successfully after
     ENV["JULIA_PKG_PRECOMPILE_AUTO"] = 0
 
+    # TODO: Register these packages
+    const NOT_REGISTERED = ("SpectrumBase.jl", "GeneralAstrodynamics.jl", "MeasurementSets.jl")
+
+
     import Pkg
     using JuliaAstroDocs: ecosystem
     using InteractiveUtils: @time_imports
