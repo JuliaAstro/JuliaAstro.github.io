@@ -5,6 +5,12 @@ on:
   pull_request:
   schedule:
     - cron:  '15 2 * * *' # 2:15 AM UTC every day
+
+concurrency:
+  group: gh-pages
+  cancel-in-progress: false
+  queue: max
+
 jobs:
   docs:
     name: build
