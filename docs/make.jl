@@ -113,6 +113,15 @@ wrapper_packages = [
     "WCS",
 ]
 
+function pages_url(repo)
+    m = match(r"^https://github\.com/([^/]+)/([^/]+?)(?:\.git)?/?$", repo)
+    if isnothing(m)
+        @warn "Cannot derive a GitHub Pages URL; the version selector will have no \"See All Versions\" entry" repo
+        return nothing
+    end
+    return "https://$(lowercase(m[1])).github.io/$(m[2])/"
+end
+
 function generate_multidoc_refs((name, p); clonedir=clonedir)
     package_path = string(chopsuffix(name, ".jl"))
     package_name = if package_path in wrapper_packages
@@ -132,6 +141,10 @@ function generate_multidoc_refs((name, p); clonedir=clonedir)
             path = package_path,
             name = package_name,
             giturl = p["repo"],
+            versions = MultiDocumenter.VersionSelection(
+                ["stable"];
+                all_versions_url = pages_url(p["repo"]),
+            ),
         )
     else
         MultiDocumenter.Link(
@@ -187,7 +200,7 @@ MultiDocumenter.make(
 )
 @info "Aggregate build complete"
 
-# Remove dev/latest docs from JuliaAstro site
+# Cleanup
 rm.(glob(joinpath("*", "dev"), outpath); recursive=true)
 rm.(glob(joinpath("*", "latest*"), outpath); recursive=true)
 
