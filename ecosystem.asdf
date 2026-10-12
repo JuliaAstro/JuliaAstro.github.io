@@ -337,7 +337,7 @@ Techniques:
     CoherentSearch.jl:
       repo: "https://github.com/scottransom/CoherentSearch.jl"
       doc: "https://arxiv.org/abs/2610.11749"
-      tagline: "Sensitive, fast, and prallel coherent harmonic summing pulsar search code (GPU optional)"
+      tagline: "Sensitive, fast, and parallel coherent harmonic summing pulsar search code (GPU optional)"
       descr: "- CoherentSearch.jl is one of the all-around best pulsar search codes available; FFA-like but in the Fourier domain.\n"
       astropy:
         - "astropy.timeseries"
