@@ -3,37 +3,44 @@
 # This is an ASDF file <https://asdf-standard.readthedocs.io/>
 %YAML 1.1
 %TAG ! tag:stsci.edu:asdf/
----
-!core/asdf-1.1.0
+--- !core/asdf-1.1.0
+asdf_library: !core/software-1.0.0
+  name: "ASDF.jl"
+  author: "Erik Schnetter <schnetter@gmail.com>"
+  homepage: "https://github.com/JuliaAstro/ASDF.jl"
+  version: "2.0.2"
 Domain:
-  "Solar System":
+  Solar System:
     CALCEPH.jl:
       repo: "https://github.com/JuliaAstro/CALCEPH.jl"
       doc: "https://juliaastro.org/CALCEPH/stable/"
       tagline: "A wrapper to CALCEPH: IMCCE planetary ephemeris access library"
       descr: |
         - This is a julia wrapper for [CALCEPH](https://www.imcce.fr/inpop/calceph/) a C library for reading planetary ephemeris files, such as [INPOPxx](https://www.imcce.fr/inpop), JPL DExxx and SPICE ephemeris files
-        - [CALCEPH](https://www.imcce.fr/inpop/calceph/) C library is developped by [IMCCE](https://www.imcce.fr/)
+        - [CALCEPH](https://www.imcce.fr/inpop/calceph/) C library is developed by [IMCCE](https://www.imcce.fr/)
       astropy:
         - "astropy.coordinates"
     EphemerisSources.jl:
       repo: "https://github.com/JuliaAstro/EphemerisSources.jl"
       doc: "https://juliaastro.org/EphemerisSources.jl"
       tagline: "Meta package for accessing JPL HORIZONS and SPICE sources"
-      descr: "- Calculate positions and velocities of solar system bodies\n"
+      descr: |
+        - Calculate positions and velocities of solar system bodies
       astropy:
         - "astropy.coordinates"
     GeneralAstrodynamics.jl:
       repo: "https://github.com/JuliaAstro/GeneralAstrodynamics.jl"
       doc: "https://juliaastro.org/GeneralAstrodynamics.jl"
       tagline: "Astrodynamics with units! Provides common astrodynamics calculations, plotting, and iterative Halo, Kepler, and Lambert solvers."
-      descr: "- Common astrodynamics calculations, with hooks into the SciML ecosystem.\n"
+      descr: |
+        - Common astrodynamics calculations, with hooks into the SciML ecosystem.
       astropy: []
     HORIZONS.jl:
       repo: "https://github.com/PerezHz/HORIZONS.jl"
       doc: "https://github.com/PerezHz/HORIZONS.jl?tab=readme-ov-file#horizonsjl"
       tagline: "An interface to NASA-JPL HORIZONS system and other Solar System Dynamics APIs in Julia"
-      descr: "- Calculate positions and velocities of solar system bodies\n"
+      descr: |
+        - Calculate positions and velocities of solar system bodies
       astropy:
         - "astropy.coordinates"
     SatelliteToolbox.jl:
@@ -50,8 +57,9 @@ Domain:
     SolarPosition.jl:
       repo: "https://github.com/JuliaAstro/SolarPosition.jl"
       doc: "https://juliaastro.org/SolarPosition.jl/stable/"
-      tagline: "Meta package for accessing JPL HORIZONS and SPICE sources"
-      descr: "- SolarPosition.jl provides a simple, unified interface to a collection of validated solar position algorithms written in pure, performant julia\n"
+      tagline: "Solar positioning algorithms for Julia"
+      descr: |
+        - SolarPosition.jl provides a simple, unified interface to a collection of validated solar position algorithms written in pure, performant julia
       astropy:
         - "astropy.coordinates"
     SPICE.jl:
@@ -116,13 +124,15 @@ Domain:
       repo: "https://github.com/cgarling/BolometricCorrections.jl"
       doc: "https://cgarling.github.io/BolometricCorrections.jl/stable/"
       tagline: "Interfaces to libraries of astrophysical bolometric correction"
-      descr: "- Access to and interpolation of pre-computed grids of bolometric corrections\n"
+      descr: |
+        - Access to and interpolation of pre-computed grids of bolometric corrections
       astropy: []
     InitialMassFunctions.jl:
       repo: "https://github.com/cgarling/InitialMassFunctions.jl"
       doc: "https://cgarling.github.io/InitialMassFunctions.jl/stable/"
       tagline: "Evaluation of and sampling from stellar initial mass functions"
-      descr: "- Provides a framework to evaluate and sample from stellar initial mass functions, including common literature models\n"
+      descr: |
+        - Provides a framework to evaluate and sample from stellar initial mass functions, including common literature models
       astropy: []
     StarFormationHistories.jl:
       repo: "https://github.com/cgarling/StarFormationHistories.jl"
@@ -132,12 +142,13 @@ Domain:
         - Implements methods for modeling observed Hess diagrams (i.e., binned color-magnitude diagrams) and using them to fit astrophysical star formation histories (SFHs)
         - Provides utilities for simulating CMDs given input SFHs and photometric error and completeness functions, which can be useful for planning observations and writing proposals
       astropy: []
-  "Galaxies and Cosmology":
+  Galaxies and Cosmology:
     Bolt.jl:
       repo: "https://github.com/xzackli/Bolt.jl/"
       doc: "https://xzackli.github.io/Bolt.jl/"
       tagline: "Pure-Julia integrator for the Boltzmann equations in cosmology"
-      descr: "- In addition to integrating the cosmological Boltzmann equations, Bolt.jl can accurately compute the gradients of power spectra with respect to cosmological parameters using forward-mode automatic differentiation.\n"
+      descr: |
+        - In addition to integrating the cosmological Boltzmann equations, Bolt.jl can accurately compute the gradients of power spectra with respect to cosmological parameters using forward-mode automatic differentiation.
       astropy: []
     CLASS.jl:
       repo: "https://github.com/hersle/CLASS.jl"
@@ -218,7 +229,8 @@ Techniques:
       repo: "https://github.com/JuliaAstro/PhotometricFilters.jl"
       doc: "https://juliaastro.org/PhotometricFilters/stable/"
       tagline: "A reference of common photometric filters"
-      descr: "- Provides access to, and operations on, photometric filter curves\n"
+      descr: |
+        - Provides access to, and operations on, photometric filter curves
       astropy: []
     PSFModels.jl:
       repo: "https://github.com/JuliaAstro/PSFModels.jl"
@@ -242,7 +254,8 @@ Techniques:
       repo: "https://github.com/JuliaAstro/Astrometry.jl"
       doc: "https://juliaastro.org/Astrometry/stable/"
       tagline: "Set of IAU standard algorithms for calculating the time and position of celestial objects"
-      descr: "- More information can be found on the official website of the [Standards of Fundamental Astronomy](http://www.iausofa.org/).\n"
+      descr: |
+        - More information can be found on the official website of the [Standards of Fundamental Astronomy](http://www.iausofa.org/).
       astropy:
         - "astropy.time"
         - "astropy.coordinates"
@@ -259,7 +272,8 @@ Techniques:
       repo: "https://github.com/JuliaAstro/EarthOrientation.jl"
       doc: "https://juliaastro.org/EarthOrientation/stable/"
       tagline: "Earth orientation parameters"
-      descr: "- Calculate Earth orientation parameters from IERS tables\n"
+      descr: |
+        - Calculate Earth orientation parameters from IERS tables
       astropy:
         - "astropy.utils.iers"
     Healpix.jl:
@@ -276,7 +290,8 @@ Techniques:
       repo: "https://github.com/JuliaAstro/Reproject.jl"
       doc: "https://juliaastro.org/Reproject/stable/"
       tagline: "Astronomical image reprojection"
-      descr: "- Uses [FITSIO.jl](https://github.com/JuliaAstro/FITSIO.jl) and [WCS.jl](https://github.com/JuliaAstro/WCS.jl) to reproject coordinate systems between FITS images\n"
+      descr: |
+        - Uses [FITSIO.jl](https://github.com/JuliaAstro/FITSIO.jl) and [WCS.jl](https://github.com/JuliaAstro/WCS.jl) to reproject coordinate systems between FITS images
       astropy:
         - "reproject"
     SOFA.jl:
@@ -284,7 +299,7 @@ Techniques:
       doc: "https://juliaastro.org/SOFA/stable/"
       tagline: "A Julia implementation of the IAU's Standards of Fundamental Astronomy (SOFA)"
       descr: |
-        - The purpose of this package is to provide a Julia implementation of the SOFA C library of fundamental astonomical functions.
+        - The purpose of this package is to provide a Julia implementation of the SOFA C library of fundamental astronomical functions.
         - The full SOFA C test suite is reproduced as part of the package to prove compliance and reproducibility of the core SOFA C functionality.
       astropy:
         - "astropy.time"
@@ -302,7 +317,8 @@ Techniques:
       repo: "https://github.com/JuliaAstro/WCS.jl"
       doc: "https://juliaastro.org/WCS/stable/"
       tagline: "World Coordinate System transformations"
-      descr: "- Wrapper for [wcslib](https://www.atnf.csiro.au/people/mcalabre/WCS/wcslib/)\n"
+      descr: |
+        - Wrapper for [wcslib](https://www.atnf.csiro.au/people/mcalabre/WCS/wcslib/)
       astropy:
         - "astropy.wcs"
   Spectroscopy:
@@ -329,23 +345,26 @@ Techniques:
       repo: "https://github.com/JuliaAstro/SpectrumBase.jl"
       doc: "https://juliaastro.org/SpectrumBase/stable"
       tagline: "Utilities for interfacing with astronomical spectra and synthetic spectra libraries"
-      descr: "- Utilities for interfacing with astronomical spectra and synthetic spectra libraries\n"
+      descr: |
+        - Utilities for interfacing with astronomical spectra and synthetic spectra libraries
       astropy:
         - "specreduce"
         - "specutils"
-  "Time Series Analysis":
+  Time Series Analysis:
     CoherentSearch.jl:
       repo: "https://github.com/scottransom/CoherentSearch.jl"
       doc: "https://arxiv.org/abs/2610.11749"
       tagline: "Sensitive, fast, and parallel coherent harmonic summing pulsar search code (GPU optional)"
-      descr: "- CoherentSearch.jl is one of the all-around best pulsar search codes available; FFA-like but in the Fourier domain.\n"
+      descr: |
+        - CoherentSearch.jl is one of the all-around best pulsar search codes available; FFA-like but in the Fourier domain.
       astropy:
         - "astropy.timeseries"
     DSP.jl:
       repo: "https://github.com/JuliaDSP/DSP.jl"
       doc: "https://docs.juliadsp.org/stable/"
       tagline: "Filter design, periodograms, window functions, and other digital signal processing functionality"
-      descr: "- DSP.jl provides a number of common [digital signal processing](https://en.wikipedia.org/wiki/Digital_signal_processing) routines in Julia\n"
+      descr: |
+        - DSP.jl provides a number of common [digital signal processing](https://en.wikipedia.org/wiki/Digital_signal_processing) routines in Julia
       astropy:
         - "astropy.convolution"
         - "astropy.timeseries"
@@ -362,7 +381,8 @@ Techniques:
       repo: "https://github.com/JuliaStats/TimeSeries.jl"
       doc: "https://juliastats.github.io/TimeSeries.jl/stable"
       tagline: "Time series toolkit for Julia"
-      descr: "- TimeSeries aims to provide a lightweight framework for working with time series data in Julia\n"
+      descr: |
+        - TimeSeries aims to provide a lightweight framework for working with time series data in Julia
       astropy:
         - "astropy.timeseries"
   Interferometry:
@@ -370,7 +390,8 @@ Techniques:
       repo: "https://github.com/ptiede/Comrade.jl"
       doc: "https://ptiede.github.io/Comrade.jl/stable/"
       tagline: "Composable Modeling of Radio Emission"
-      descr: "- A Bayesian differentiable modular modeling package for very long baseline interferometry\n"
+      descr: |
+        - A Bayesian differentiable modular modeling package for very long baseline interferometry
       astropy: []
     Difmap.jl:
       repo: "https://github.com/JuliaAPlavin/Difmap.jl"
@@ -392,7 +413,8 @@ Techniques:
       repo: "https://github.com/emmt/OIFITS.jl"
       doc: "https://github.com/emmt/OIFITS.jl?tab=readme-ov-file#support-for-oi-fits-data-in-julia"
       tagline: "Support for OI-FITS"
-      descr: "- Read and write OI-FITS optical interferometry data format\n"
+      descr: |
+        - Read and write OI-FITS optical interferometry data format
       astropy:
         - "astropy.io.fits"
     OITOOLS.jl:
@@ -425,7 +447,8 @@ Techniques:
       repo: "https://github.com/EHTJulia/VLBISkyModels.jl"
       doc: "https://ehtjulia.github.io/VLBISkyModels.jl/stable/"
       tagline: "Just the Comrade Models"
-      descr: "- `VLBISkyModels` provides an interface and library for of models that can be used to describe the on-sky emission seen by VLBI interferometers\n"
+      descr: |
+        - `VLBISkyModels` provides an interface and library for of models that can be used to describe the on-sky emission seen by VLBI interferometers
       astropy: []
 Statistics:
   Uncertainty:
@@ -434,7 +457,7 @@ Statistics:
       doc: "https://juliaphysics.github.io/Measurements.jl/stable/"
       tagline: "Error propagation calculator and library for physical measurements. It supports real and complex numbers with uncertainty, arbitrary precision calculations, operations with arrays, and numerical integration"
       descr: |
-        -  [Measurements.jl](https://github.com/JuliaPhysics/Measurements.jl) relieves you from the hassle of propagating uncertainties coming from physical measurements, when performing mathematical operations involving them
+        - [Measurements.jl](https://github.com/JuliaPhysics/Measurements.jl) relieves you from the hassle of propagating uncertainties coming from physical measurements, when performing mathematical operations involving them
         - The [linear error propagation theory](https://en.wikipedia.org/wiki/Propagation_of_uncertainty#Linear_combinations) is employed to propagate the errors
       astropy:
         - "astropy.uncertainty"
@@ -442,14 +465,16 @@ Statistics:
       repo: "https://github.com/baggepinnen/MonteCarloMeasurements.jl"
       doc: "https://baggepinnen.github.io/MonteCarloMeasurements.jl/stable/"
       tagline: "Propagation of distributions by Monte-Carlo sampling: Real number types with uncertainty represented by samples"
-      descr: "-  This package facilitates working with probability distributions by means of Monte-Carlo methods, in a way that allows for propagation of probability distributions through functions\n"
+      descr: |
+        - This package facilitates working with probability distributions by means of Monte-Carlo methods, in a way that allows for propagation of probability distributions through functions
       astropy:
         - "astropy.uncertainty"
     Uncertain.jl:
       repo: "https://github.com/JuliaAPlavin/Uncertain.jl"
-      doc: "https://baggepinnen.github.io/MonteCarloMeasurements.jl/stable/"
+      doc: "https://github.com/JuliaAPlavin/Uncertain.jl"
       tagline: "Handle uncertain values with ease and performance!"
-      descr: "-  The ultimate goal of Uncertain.jl is to support arbitrary uncertainty specifications – asymmetric errors, intervals, more complex distributions, and go beyond plain numbers. All within a single uniform interface\n"
+      descr: |
+        - The ultimate goal of Uncertain.jl is to support arbitrary uncertainty specifications – asymmetric errors, intervals, more complex distributions, and go beyond plain numbers. All within a single uniform interface
       astropy:
         - "astropy.uncertainty"
   Optimization:
@@ -467,14 +492,16 @@ Statistics:
       repo: "https://github.com/jump-dev/JuMP.jl"
       doc: "http://jump.dev/JuMP.jl/"
       tagline: "Modeling language for Mathematical Optimization (linear, mixed-integer, conic, semidefinite, nonlinear)"
-      descr: "- JuMP is a domain-specific modeling language for [mathematical optimization](https://en.wikipedia.org/wiki/Mathematical_optimization) embedded in [Julia](https://julialang.org/)\n"
+      descr: |
+        - JuMP is a domain-specific modeling language for [mathematical optimization](https://en.wikipedia.org/wiki/Mathematical_optimization) embedded in [Julia](https://julialang.org/)
       astropy:
         - "astropy.modeling"
     NonlinearSolve.jl:
       repo: "https://github.com/SciML/NonlinearSolve.jl"
       doc: "https://docs.sciml.ai/NonlinearSolve/stable/"
       tagline: "High-performance and differentiation-enabled nonlinear solvers (Newton methods), bracketed rootfinding (bisection, Falsi), with sparsity and Newton-Krylov support"
-      descr: "- Fast implementations of root finding algorithms in Julia that satisfy the SciML common interface\n"
+      descr: |
+        - Fast implementations of root finding algorithms in Julia that satisfy the SciML common interface
       astropy:
         - "astropy.modeling"
     Optimization.jl:
@@ -491,33 +518,38 @@ Statistics:
       repo: "https://github.com/JuliaAstro/astrolib.jl"
       doc: "https://juliaastro.org/AstroLib/stable/"
       tagline: "Collection of generic astronomical and astrophysical functions"
-      descr: "- Translation of many IDL AstroLib procedures\n"
+      descr: |
+        - Translation of many IDL AstroLib procedures
       astropy: []
     BiweightStats.jl:
       repo: "https://github.com/mileslucas/BiweightStats.jl"
       doc: "http://mileslucas.com/BiweightStats.jl/stable/"
       tagline: "Robust statistics based on the biweight transform"
-      descr: "- Implements the location, scale, midvariance, midcovariance, and midcorrelation statistics\n"
+      descr: |
+        - Implements the location, scale, midvariance, midcovariance, and midcorrelation statistics
       astropy:
         - "astropy.stats"
     Celeste.jl:
       repo: "https://github.com/jeff-regier/Celeste.jl"
       doc: "https://github.com/jeff-regier/Celeste.jl/wiki/"
       tagline: "Scalable inference for a generative model of astronomical images"
-      descr: "- Find and characterize stars and galaxies in astronomical images via approximate Bayesian inference\n"
+      descr: |
+        - Find and characterize stars and galaxies in astronomical images via approximate Bayesian inference
       astropy: []
     JuliaStats:
       repo: "https://github.com/JuliaStats"
       doc: "https://juliastats.org/"
       tagline: "Statistics and Machine Learning made easy in Julia"
-      descr: "- Easy to use tools for statistics and machine learning\n"
+      descr: |
+        - Easy to use tools for statistics and machine learning
       astropy:
         - "astropy.stats"
     Distributions.jl:
       repo: "https://github.com/JuliaStats/Distributions.jl"
       doc: "https://juliastats.github.io/Distributions.jl/stable/"
       tagline: "A Julia package for probability distributions and associated functions"
-      descr: "- A Julia package for probability distributions and associated functions\n"
+      descr: |
+        - A Julia package for probability distributions and associated functions
       astropy:
         - "astropy.uncertainty"
     FastHartleyTransform.jl:
@@ -532,22 +564,25 @@ Statistics:
       repo: "https://github.com/sefffal/Octofitter.jl"
       doc: "https://sefffal.github.io/Octofitter.jl/dev"
       tagline: "Octofitter is a Julia package for performing Bayesian inference against a wide variety of exoplanet and binary star data"
-      descr: "- You can also use Octofitter from Python using [octofitterpy](https://github.com/sefffal/octofitterpy)\n"
+      descr: |
+        - You can also use Octofitter from Python using [octofitterpy](https://github.com/sefffal/octofitterpy)
       astropy: []
 Utilities:
-  "Data I/O":
+  Data I/O:
     ASDF.jl:
       repo: "https://github.com/JuliaAstro/ASDF.jl"
       doc: "https://juliaastro.org/ASDF/stable/"
       tagline: "ASDF, the Advanced Scientific Data Format"
-      descr: "- A Julia implementation of the Advanced Scientific Data Format (ASDF)\n"
+      descr: |
+        - A Julia implementation of the Advanced Scientific Data Format (ASDF)
       astropy:
         - "asdf-astropy"
     AstroImages.jl:
       repo: "https://github.com/JuliaAstro/AstroImages.jl"
       doc: "https://juliaastro.org/AstroImages/stable/"
       tagline: "Load, manipulate, and visualize astronomical images"
-      descr: "- Works with the [FileIO.jl](https://github.com/JuliaIO/FileIO.jl) interface\n"
+      descr: |
+        - Works with the [FileIO.jl](https://github.com/JuliaIO/FileIO.jl) interface
       astropy:
         - "astropy.io.fits"
     CFITSIO.jl:
@@ -563,14 +598,16 @@ Utilities:
       repo: "https://github.com/emmt/EasyFITS.jl"
       doc: "https://emmt.github.io/EasyFITS.jl/dev"
       tagline: "Using FITS files made easier for Julia"
-      descr: "- EasyFITS is a [Julia](https://julialang.org/) package designed to make it easier to read and write data in [FITS](https://fits.gsfc.nasa.gov/fits_standard.html) format without sacrificing performances, flexibility, or readability.\n"
+      descr: |
+        - EasyFITS is a [Julia](https://julialang.org/) package designed to make it easier to read and write data in [FITS](https://fits.gsfc.nasa.gov/fits_standard.html) format without sacrificing performances, flexibility, or readability.
       astropy:
         - "astropy.io.fits"
     FITSFiles.jl:
       repo: "https://github.com/JuliaAstro/FITSFiles.jl"
       doc: "https://juliaastro.org/FITSFiles/stable/"
       tagline: "A Julia Flexible Image Transport System (FITS) file IO package"
-      descr: "- A Flexible Image Transport System (FITS) file IO package written in Julia\n"
+      descr: |
+        - A Flexible Image Transport System (FITS) file IO package written in Julia
       astropy:
         - "astropy.io.fits"
     FITSIO.jl:
@@ -586,7 +623,8 @@ Utilities:
       repo: "https://github.com/JuliaAPlavin/FixedWidthTables.jl"
       doc: "https://github.com/JuliaAPlavin/FixedWidthTables.jl?tab=readme-ov-file#fixedwidthtablesjl"
       tagline: "Read fixed width (so-called ASCII) tables"
-      descr: "- Read fixed width (so-called ASCII) tables. A wide range of format specification options, including autodetection\n"
+      descr: |
+        - Read fixed width (so-called ASCII) tables. A wide range of format specification options, including autodetection
       astropy:
         - "astropy.io.ascii"
     SkyImages.jl:
@@ -626,35 +664,38 @@ Utilities:
         - Seamless communication between many kinds of Unix/Windows programs, including X programs and Tcl/Tk programs
         - Used for some popular astronomical tools such as [SAOImage-DS9](http://ds9.si.edu/site/Home.html)
       astropy: []
-  "Data processing":
+  Data processing:
     Astroalign.jl:
       repo: "https://github.com/JuliaAstro/Astroalign.jl"
       doc: "https://juliaastro.org/Astroalign/stable/"
       tagline: "An experimental reimplementation of astroalign.py"
-      descr: "- An experimental reimplementation of [astroalign](https://github.com/quatrope/astroalign) in Julia\n"
+      descr: |
+        - An experimental reimplementation of [astroalign](https://github.com/quatrope/astroalign) in Julia
       astropy:
         - "astroalign"
     BackgroundMeshes.jl:
       repo: "https://github.com/JuliaAstro/BackgroundMeshes.jl"
       doc: "https://juliaastro.org/BackgroundMeshes/stable"
       tagline: "Create meshes for estimating the background in astronomical images"
-      descr: "- Create meshes for estimating the background in astronomical images. Originally a submodule of [Photometry.jl](https://juliaastro.org/Photometry).\n"
+      descr: |
+        - Create meshes for estimating the background in astronomical images. Originally a submodule of [Photometry.jl](https://juliaastro.org/Photometry).
       astropy:
         - "photutils"
         - "regions"
     Casacore.jl:
       repo: "https://github.com/JuliaAstro/Casacore.jl"
-      doc: "https://juliaastro.org/JuliaAstro/stable"
+      doc: "https://juliaastro.org/Casacore/stable/"
       tagline: "A high level Julia interface to Casacore"
       descr: |
-        - Wrapper for [casa ore](http://casacore.github.io/casacore/)
+        - Wrapper for [casacore](http://casacore.github.io/casacore/)
         - Uses [casacorecxx](https://github.com/JuliaBinaryWrappers/casacorecxx_jll.jl) which uses [CxxWrap](https://github.com/JuliaInterop/CxxWrap.jl) to wrap the C++ Casacore codebase. These raw objects and methods are available in `Casacore.LibCasacore`
       astropy: []
     DataFrames.jl:
       repo: "https://github.com/JuliaData/DataFrames.jl"
       doc: "https://dataframes.juliadata.org/stable/"
       tagline: "In-memory tabular data in Julia"
-      descr: "- Tools for working with tabular data in Julia\n"
+      descr: |
+        - Tools for working with tabular data in Julia
       astropy:
         - "astropy.table"
     DimensionalData.jl:
@@ -670,7 +711,8 @@ Utilities:
       repo: "https://github.com/JuliaAPlavin/FlexiJoins.jl"
       doc: "https://aplavin.github.io/FlexiJoins.jl/test/examples.html"
       tagline: "`FlexiJoins.jl` is a fresh take on joining tabular or non-tabular datasets in Julia."
-      descr: "- From simple joins by key, to asof joins, to merging catalogs of terrestrial or celestial coordinates – `FlexiJoins` supports any usecase\n"
+      descr: |
+        - From simple joins by key, to asof joins, to merging catalogs of terrestrial or celestial coordinates – `FlexiJoins` supports any usecase
       astropy:
         - "astropy.table"
     SortMerge.jl:
@@ -678,23 +720,25 @@ Utilities:
       doc: "https://github.com/gcalderone/SortMerge.jl?tab=readme-ov-file#sortmerge"
       tagline: "A Julia implementation of the Sort-merge join algorithm"
       descr: |
-        - The [Sort-merge join ](https://en.wikipedia.org/wiki/Sort-merge_join) algorithm allows to **quickly** find the matching pairs in two separate arrays or collections
+        - The [Sort-merge join](https://en.wikipedia.org/wiki/Sort-merge_join) algorithm allows to **quickly** find the matching pairs in two separate arrays or collections
         - The best performances are obtained when the input data are already sorted, but the package is able to sort the data if they are not
       astropy:
         - "astropy.table"
-  "Data Viz":
+  Data Viz:
     AstroImages.jl:
       repo: "https://github.com/JuliaAstro/AstroImages.jl"
       doc: "https://juliaastro.org/AstroImages/stable/"
       tagline: "Load, manipulate, and visualize astronomical images"
-      descr: "- Works with the [FileIO.jl](https://github.com/JuliaIO/FileIO.jl) interface\n"
+      descr: |
+        - Works with the [FileIO.jl](https://github.com/JuliaIO/FileIO.jl) interface
       astropy:
         - "astropy.visualization"
     ImageFiltering.jl:
       repo: "https://github.com/JuliaImages/ImageFiltering.jl"
       doc: "https://juliaimages.github.io/ImageFiltering.jl/stable"
-      tagline: "ulia implementations of multidimensional array convolution and nonlinear stencil operations"
-      descr: "- ImageFiltering implements blurring, sharpening, gradient computation, and other linear filtering operations, as well nonlinear filters like min/max\n"
+      tagline: "Julia implementations of multidimensional array convolution and nonlinear stencil operations"
+      descr: |
+        - ImageFiltering implements blurring, sharpening, gradient computation, and other linear filtering operations, as well nonlinear filters like min/max
       astropy:
         - "astropy.convolution"
     Mera.jl:
@@ -713,9 +757,6 @@ Utilities:
       descr: |
         - Corner plots or scatter plot matrices. Both Julia and Python are supported (PairPlots.jl and [pairplots.py](https://pypi.org/project/pairplots/))
         - Inspired by [corner.py](https://corner.readthedocs.io/en/latest/index.html) and [chainconsumer.py](https://samreay.github.io/ChainConsumer/usage.html)
-
-        See also:
-        - [ReferenceFrameRotations.jl](https://github.com/JuliaSpace/ReferenceFrameRotations.jl)
       astropy:
         - "astropy.visualization"
     SkyImages.jl:
@@ -771,12 +812,9 @@ Utilities:
       repo: "https://github.com/JuliaAstro/UnitfulAstro.jl"
       doc: "https://juliaastro.org/UnitfulAstro/stable/"
       tagline: "Astronomical units and things"
-      descr: "- Extension of [Unitful.jl](https://github.com/painterqubits/Unitful.jl)\n"
+      descr: |
+        - Extension of [Unitful.jl](https://github.com/painterqubits/Unitful.jl)
       astropy:
         - "astropy.constants"
         - "astropy.units"
-asdf_library: !core/software-1.0.0
-  author: "Erik Schnetter <schnetter@gmail.com>"
-  homepage: "https://github.com/JuliaAstro/ASDF.jl"
-  version: "2.0.0"
 ...
