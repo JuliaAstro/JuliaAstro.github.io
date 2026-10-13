@@ -1,7 +1,6 @@
 [deps]
 DemoCards = "311a05b2-6137-4a5a-b473-18580a3d38b5"
 Documenter = "e30172f5-a6a5-5a46-863b-614d45cd2de4"
-DocumenterInterLinks = "d12716ef-a0f6-4df4-a9f1-a5a34e75c656"
 Glob = "c27321d9-0574-5035-807b-f59d2c89b15c"
 JuliaAstroDocs = "5ba9df79-bc07-467f-bade-66a1d49082bd"
 MultiDocumenter = "87ed4bf0-c935-4a67-83c3-2a03bee4197c"
@@ -13,7 +12,6 @@ MultiDocumenter = {url = "https://github.com/JuliaComputing/MultiDocumenter.jl"}
 [compat]
 DemoCards = "0.5.5"
 Documenter = "1"
-DocumenterInterLinks = "1.1.0"
 Glob = "1.5.0"
 MultiDocumenter = "0.8.1"
 Revise = "3.16.1"
