@@ -5,7 +5,7 @@ author: "[Ronan Arraes Jardim Chagas](https://github.com/ronisbr)"
 date: "2021-03-19"
 ---
 
-The [Brazilian National Institute for Space Research (INPE)](https://www.gov.br/inpe/) uses [SatelliteToolbox.jl](https://github.com/JuliaSpace/SatelliteToolbox.jl) to plan its current and future Earth satellite missions.
+The [Brazilian National Institute for Space Research (INPE)](https://www.gov.br/inpe/) uses [JuliaSpace/SatelliteToolbox.jl](https://github.com/JuliaSpace/SatelliteToolbox.jl) to plan its current and future Earth satellite missions.
 
 ![image](https://global.discourse-cdn.com/julialang/original/3X/e/5/e59846ff7eaf27725ccb8f0555b7c7e8600a32c0.jpeg)
 
