@@ -2,7 +2,7 @@ stake! = String ∘ take!
 
 package_row((name, p)) = """
   <tr>
-    <td><a href="$(p["repo"])">$(name)</a></td>
+    <td><a href="$(p["repo"])">$(display_name(name, p))</a></td>
     <td>$(p["tagline"])</td>
   </tr>
 """

@@ -7,6 +7,17 @@ The joy of our community is the many astronomy and astrophysics packages availab
 
 """;
 
+# Prefix packages outside of JuliaAstro with their org, e.g., JuliaSpace/SatelliteToolbox.jl
+function display_name(name, p)
+    url_parts = split(p["repo"], '/')
+    org_name = url_parts[4]
+    # Org-level entries (e.g., https://github.com/JuliaStats) are left as is
+    if lowercase(org_name) == "juliaastro" || length(url_parts) < 5
+        return name
+    end
+    return string(org_name, '/', name)
+end
+
 function page_ecosystem(ecosystem)
     fpath = joinpath(dirname(@__DIR__), "docs", "src", "ecosystem.md")
     open(fpath, "w") do io
@@ -16,11 +27,9 @@ function page_ecosystem(ecosystem)
             for (sublevel, packages) in sublevels
                 write(io, "### ", sublevel, "\n\n")
                 for (name, p) in packages
-                    org_name = split(p["repo"], '/')[4]
-                    write(io, "#### ", name, "\n\n")
+                    write(io, "#### ", display_name(name, p), "\n\n")
                     write(io, "[💻 Repository](", p["repo"], ") | ")
-                    write(io, "[📘 Documentation](", p["doc"], ")")
-                    write(io, " | `", org_name, "`\n\n")
+                    write(io, "[📘 Documentation](", p["doc"], ")\n\n")
                     write(io, "**", p["tagline"], "**", "\n\n")
                     write(io, p["descr"], "\n\n")
                 end

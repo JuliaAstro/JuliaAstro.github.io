@@ -6,7 +6,7 @@ author: "[Paul Tiede](https://github.com/ptiede); [Kazu Akiyama](https://github.
 date: 2025-09-04
 ---
 
-A new result from the team behind [Comrade.jl](@ref) at the [Event Horizon Telescope (EHT) collaboration](https://eventhorizontelescope.org/) has discovered an unexpected flip in the measured polarization of the magnetic fields around the supermassive black hole, M87*. Using Julia, this team was able to detect the magnetic spirals first spiraling one way in 2017, settling in 2018, and then reversing direction in 2021, indicating a dynamic environment with changing  polarization patterns.
+A new result from the team behind [ptiede/Comrade.jl](@ref) at the [Event Horizon Telescope (EHT) collaboration](https://eventhorizontelescope.org/) has discovered an unexpected flip in the measured polarization of the magnetic fields around the supermassive black hole, M87*. Using Julia, this team was able to detect the magnetic spirals first spiraling one way in 2017, settling in 2018, and then reversing direction in 2021, indicating a dynamic environment with changing  polarization patterns.
 
 **Package: [ptiede/Comrade.jl](https://github.com/ptiede/Comrade.jl)**
 
