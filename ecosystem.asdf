@@ -647,6 +647,17 @@ Utilities:
       astropy:
         - "astropy.io.votable"
         - "astroquery"
+    VirtualObservatorySAMP.jl:
+      repo: "https://github.com/astrozot/VirtualObservatorySAMP.jl"
+      doc: "https://astrozot.github.io/VirtualObservatorySAMP.jl/dev/"
+      tagline: "Pure-Julia implementation of the Simple Application Messaging Protocol (SAMP)"
+      descr: |
+        - This package provides a Julia implementation of the [Simple Application Messaging Protocol (SAMP)](https://www.ivoa.net/documents/SAMP/), a messaging protocol that enables astronomy software tools to interoperate and communicate (see also [Taylor et al. 2015](https://ui.adsabs.harvard.edu/abs/2015A%26C....11...81T/abstract)).
+        - Currently, the package implements only the non-callable client interface: this allows one to send synchronous message to SAMP-aware applications such as [SAOImage DS9](https://sites.google.com/cfa.harvard.edu/saoimageds9), [TOPCAT](https://www.star.bris.ac.uk/~mbt/topcat/), [Aladin Sky Atlas](https://aladin.cds.unistra.fr) and similar.
+        - The package can also connect using a WEB hub provided, for example, by [Aladin lite](https://aladin.cds.unistra.fr/AladinLite/).
+
+      astropy:
+        - "astropy.samp"
     VOTables.jl:
       repo: "https://github.com/JuliaAPlavin/VOTables.jl"
       doc: "https://github.com/JuliaAPlavin/VOTables.jl"
