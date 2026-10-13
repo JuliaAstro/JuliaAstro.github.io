@@ -39,7 +39,7 @@ PairPlots.jl:
 ```
 
 > [!NOTE]
-> The overall `ecosystem` object that this entry is stored in determines the order of the top level dropdown menus on the site (`highlevel`) and how each package appears on both pages, alphabetically by package name (`name`). Packages under the JuliaAstro organization are listed as their bare name, while packages outside of the organization have their parent repo name prepended to it, e.g., `sefffal/PairPlots.jl`
+> The overall `ecosystem` object that this entry is stored in determines the order of the top level dropdown menus on the site (`highlevel`) and how each package appears on both pages, alphabetically by package name (`name`). Entries are keyed by their bare package name (e.g., `PairPlots.jl`). Packages outside of the JuliaAstro organization are automatically displayed with their GitHub org prepended to the name based on their `repo` field, e.g., `sefffal/PairPlots.jl`
 
 If appropriate, we appreciate a quick entry for your package in the `astropy` field that relates it to a similar package in the [Astropy ecosystem](https://www.astropy.org/). This helps new users who may be more familiar with Python get more easily oriented in the Julia ecosystem. See our [Comparison page](https://juliaastro.org/home/comparison/) for examples. If you feel that there is not a good match for your package, you can just leave the `astropy` field blank (i.e., as an empty array `[]`) and it will not appear in this page.
 
