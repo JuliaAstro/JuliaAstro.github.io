@@ -1,4 +1,4 @@
-using Revise, MultiDocumenter, Documenter, DocumenterInterLinks, DemoCards
+using Revise, MultiDocumenter, Documenter, DemoCards
 using LibGit2, Pkg, TOML, UUIDs, Downloads, Glob
 
 Revise.revise()
@@ -17,20 +17,6 @@ JuliaAstroDocs.page_compare(ecosystem)
 clonedir = ("--temp" in ARGS) ? mktempdir(; cleanup=false) : joinpath(@__DIR__, "clones")
 # Build location
 outpath =  ("--temp" in ARGS) ? mktempdir(; cleanup=false) : joinpath(@__DIR__, "build")
-
-# Prefer online docs, use local as fallback
-links = InterLinks(
-    "AstroImages" => (
-        "https://juliaastro.org/AstroImages/stable/",
-        "https://juliaastro.org/AstroImages/stable/objects.inv",
-        joinpath(clonedir, "AstroImages", "stable", "objects.inv"),
-    ),
-    "AstroLib" => (
-        "https://juliaastro.org/AstroLib/stable/",
-        "https://juliaastro.org/AstroLib/stable/objects.inv",
-        joinpath(clonedir, "AstroLib", "stable", "objects.inv"),
-    )
-)
 
 # Case studies
 case_studies, postprocess_cb, case_studies_assets = makedemos("case_studies")
@@ -78,14 +64,7 @@ makedocs(
     ),
     pages = [
         "Home" => "index.md",
-        "Tutorials" => [
-            "tutorials/index.md",
-            "General" => [
-                "tutorials/jwst-image-scale-bar.md",
-                "tutorials/tabular-data.md",
-                "tutorials/curve-fit.md",
-            ],
-        ],
+        "Tutorials" => "tutorials.md",
         "Package Ecosystem" => "ecosystem.md",
         case_studies,
         "Comparison with Astropy" => "comparison.md",
@@ -96,7 +75,6 @@ makedocs(
         ],
     ],
     warnonly = [:missing_docs],
-    plugins = [links],
 )
 @info "Initial build complete"
 
