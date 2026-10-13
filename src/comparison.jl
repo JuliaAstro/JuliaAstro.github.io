@@ -94,6 +94,7 @@ function page_compare(t)
         write(io, package_section(t, "astropy.io.fits", "https://docs.astropy.org/en/stable/io/fits/index.html"), "\n")
         write(io, package_section(t, "astropy.io.ascii", "https://docs.astropy.org/en/stable/io/ascii/index.html"), "\n")
         write(io, package_section(t, "astropy.io.votable", "https://docs.astropy.org/en/stable/io/votable/index.html"), "\n")
+        write(io, package_section(t, "astropy.samp", "https://docs.astropy.org/en/stable/samp/index.html"), "\n")
 
         write(io, """
           </tbody>
