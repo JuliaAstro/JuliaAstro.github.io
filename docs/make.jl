@@ -102,10 +102,11 @@ end
 
 function generate_multidoc_refs((name, p); clonedir=clonedir)
     package_path = string(chopsuffix(name, ".jl"))
-    package_name = if package_path in wrapper_packages
-        "◯ " * package_path
+    package_label = chopsuffix(JuliaAstroDocs.display_name(name, p), ".jl")
+    package_name = if package_label in wrapper_packages
+        "◯ " * package_label
     else
-        "⬤ " * package_path
+        "⬤ " * package_label
     end
     multidoc_type = if any(occursin.(("stable", "dev"), p["doc"])) && startswith(p["doc"], "https://juliaastro")
             "MultiDocRef"

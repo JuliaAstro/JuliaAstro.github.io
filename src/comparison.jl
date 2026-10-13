@@ -2,7 +2,7 @@ stake! = String ∘ take!
 
 package_row((name, p)) = """
   <tr>
-    <td><a href="$(p["repo"])">$(name)</a></td>
+    <td><a href="$(p["repo"])">$(display_name(name, p))</a></td>
     <td>$(p["tagline"])</td>
   </tr>
 """
@@ -94,6 +94,7 @@ function page_compare(t)
         write(io, package_section(t, "astropy.io.fits", "https://docs.astropy.org/en/stable/io/fits/index.html"), "\n")
         write(io, package_section(t, "astropy.io.ascii", "https://docs.astropy.org/en/stable/io/ascii/index.html"), "\n")
         write(io, package_section(t, "astropy.io.votable", "https://docs.astropy.org/en/stable/io/votable/index.html"), "\n")
+        write(io, package_section(t, "astropy.samp", "https://docs.astropy.org/en/stable/samp/index.html"), "\n")
 
         write(io, """
           </tbody>
