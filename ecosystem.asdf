@@ -450,6 +450,16 @@ Techniques:
       descr: |
         - `VLBISkyModels` provides an interface and library for of models that can be used to describe the on-sky emission seen by VLBI interferometers
       astropy: []
+  Simulation:
+    Aether.jl:
+      repo: "https://github.com/MHDFlows/Aether.jl"
+      doc: "https://mhdflows.github.io/Aether.jl/stable/"
+      tagline: "🌌 Fast and Flexible Julia code for simulating Astrophysical MHD on CPUs and GPUs"
+      descr: |
+        - Finite volume hydrodynamics and MHD with constrained transport in Cartesian, cylindrical, and spherical-polar coordinates
+        - Any number of dust fluids coupled to the gas through stiff drag
+        - Kernels written once with [KernelAbstractions.jl](https://github.com/JuliaGPU/KernelAbstractions.jl) run on CPUs and NVIDIA, AMD, Apple, and Intel GPUs, with optional GPU-aware MPI
+      astropy: []
 Statistics:
   Uncertainty:
     Measurements.jl:
