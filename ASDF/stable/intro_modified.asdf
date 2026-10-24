@@ -28,5 +28,5 @@ asdf_library: !core/software-1.0.0
   name: "ASDF.jl"
   author: "Erik Schnetter <schnetter@gmail.com>"
   homepage: "https://github.com/JuliaAstro/ASDF.jl"
-  version: "2.0.2"
+  version: "2.1.0"
 ...
