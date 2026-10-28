@@ -594,6 +594,14 @@ Utilities:
         - The c interface can be directly accessed with the [CFITSIO_jll package](https://juliapackaging.github.io/BinaryBuilder.jl/dev/jll/)
       astropy:
         - "astropy.io.fits"
+    CRDSClient.jl:
+      repo: "https://github.com/JuliaAstro/CRDSClient.jl"
+      doc: "https://juliaastro.org/CRDSClient/stable/"
+      tagline: "Client for STScI's Calibration Reference Data System (CRDS)"
+      descr: |
+        - Find and download the calibration reference files (flats, darks, ePSFs, ...) that apply to Roman, JWST, and HST exposures
+        - Evaluates CRDS rules locally and shares the Python `crds` client's cache and environment variables
+      astropy: []
     EasyFITS.jl:
       repo: "https://github.com/emmt/EasyFITS.jl"
       doc: "https://emmt.github.io/EasyFITS.jl/dev"
