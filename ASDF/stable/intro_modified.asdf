@@ -1,0 +1,32 @@
+#ASDF 1.0.0
+#ASDF_STANDARD 1.6.0
+# This is an ASDF file <https://asdf-standard.readthedocs.io/>
+%YAML 1.1
+%TAG ! tag:stsci.edu:asdf/
+---
+!core/asdf-1.1.0
+field_1:
+  - 50
+  - 60
+  - 70
+  - 80
+field_2:
+  - "up"
+  - "down"
+  - "left"
+  - "right"
+field_3:
+  field_3a:
+    - "apple"
+    - "orange"
+    - "pear"
+  field_3b:
+    - 1.0
+    - 2.0
+    - 3.0
+asdf_library: !core/software-1.0.0
+  name: "ASDF.jl"
+  author: "Erik Schnetter <schnetter@gmail.com>"
+  homepage: "https://github.com/JuliaAstro/ASDF.jl"
+  version: "2.1.0"
+...
