@@ -10,9 +10,9 @@ Developed at the Kavli Institute for Theoretical Physics (KITP), Aether is a fin
 
 **Package: [MHDFlows/Aether.jl](https://github.com/MHDFlows/Aether.jl)**
 
-![Orszag-Tang Vortex](https://arxiv.org/html/2608.14048v3/fig_orszag_tang.png)
+![3D Rendering from Aether's MHD simulation](https://github.com/doraemonho/visualization_for_public/blob/main/aether_ism2048_cube_web.jpg?raw=true)
 
-Every performance-critical kernel is written once with [KernelAbstractions.jl](https://github.com/JuliaGPU/KernelAbstractions.jl) and runs on CPUs and on NVIDIA, AMD, Apple, and Intel GPUs. On a single GPU, Aether's throughput is comparable to or higher than C++ codes on the same hardware, and in weak scaling tests on Frontier it keeps above 93% parallel efficiency out to 4096 GPU compute dies (GCDs). Aether was also built from scratch in an interactive human–coding agent workflow, with every design decision and development session recorded in the repository.
+Every performance-critical kernel is written once with [KernelAbstractions.jl](https://github.com/JuliaGPU/KernelAbstractions.jl) and runs on CPUs and on NVIDIA, AMD, Apple, and Intel GPUs. On a single GPU, Aether's throughput is comparable to or higher than C++ codes on the same hardware, and in weak scaling tests on Frontier it keeps above 91% parallel efficiency out to 32768 GPU compute dies (GCDs). Aether was also built from scratch in an interactive human–coding agent workflow, with every design decision and development session recorded in the repository.
 
 See the paper below on arXiv for more:
 
